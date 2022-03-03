@@ -1,0 +1,30 @@
+#!/usr/bin/env python3
+from pathlib import Path
+import shutil
+
+import nmtestrunner
+"""
+                            Config
+"""
+
+nmtestrunner.config(
+    # Directory that all testing stuff is dumped into
+    testingroot="testing",
+    # Location of student's source code
+    studentroot="submission",
+    # Location of the testset
+    testsetdir="source/testset",
+    # Location of all the testing framework code
+    testframeworkroot="source/framework",
+    # Path to testing Makefile
+    makefile="",
+    # All the programs the student's Makefile is responsible for
+    studentexecutables=["CalcYouLater"]
+)
+"""
+                        Run the autograder
+"""
+nmtestrunner.setup({})
+shutil.copy("source/link/Datum.cpp", "testing/student.1")
+shutil.copy("source/link/Datum.h", "testing/student.1")
+nmtestrunner.main(**vars(nmtestrunner.parseArgs()))

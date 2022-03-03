@@ -1,0 +1,1139 @@
+{
+    "description": null,
+    "tests": [
+        {
+            "program": "CalcYouLater",
+            "arglist": [
+                "< .tdir/input/#{name}"
+            ],
+            "shell": "True",
+            "valgrind": "valgrind",
+            "cpulimit": 30,
+            "category": "private",
+            "successreport": {
+                "summarizer": "default",
+                "criteria": {
+                    "timedout": false,
+                    "fileMatch": [
+                        "stdout",
+                        "stderr"
+                    ],
+                    "not": {
+                        "signal_name": "SIGSEGV"
+                    },
+                    "missingexecutable": false,
+                    "exitcode": 0
+                }
+            },
+            "name": "test01",
+            "description": "test01 - quits on EOF"
+        },
+        {
+            "program": "CalcYouLater",
+            "arglist": [
+                "< .tdir/input/#{name}"
+            ],
+            "shell": "True",
+            "valgrind": "valgrind",
+            "cpulimit": 30,
+            "category": "private",
+            "successreport": {
+                "summarizer": "default",
+                "criteria": {
+                    "timedout": false,
+                    "fileMatch": [
+                        "stdout",
+                        "stderr"
+                    ],
+                    "not": {
+                        "signal_name": "SIGSEGV"
+                    },
+                    "missingexecutable": false,
+                    "exitcode": 0
+                }
+            },
+            "name": "test02",
+            "description": "test02 - push ints"
+        },
+        {
+            "program": "CalcYouLater",
+            "arglist": [
+                "< .tdir/input/#{name}"
+            ],
+            "shell": "True",
+            "valgrind": "valgrind",
+            "cpulimit": 30,
+            "category": "public",
+            "successreport": {
+                "summarizer": "default",
+                "criteria": {
+                    "timedout": false,
+                    "fileMatch": [
+                        "stdout",
+                        "stderr"
+                    ],
+                    "not": {
+                        "signal_name": "SIGSEGV"
+                    },
+                    "missingexecutable": false,
+                    "exitcode": 0
+                }
+            },
+            "name": "test03",
+            "description": "test03 - push bools"
+        },
+        {
+            "program": "CalcYouLater",
+            "arglist": [
+                "< .tdir/input/#{name}"
+            ],
+            "shell": "True",
+            "valgrind": "valgrind",
+            "cpulimit": 30,
+            "category": "public",
+            "successreport": {
+                "summarizer": "default",
+                "criteria": {
+                    "timedout": false,
+                    "fileMatch": [
+                        "stdout",
+                        "stderr"
+                    ],
+                    "not": {
+                        "signal_name": "SIGSEGV"
+                    },
+                    "missingexecutable": false,
+                    "exitcode": 0
+                }
+            },
+            "name": "test04",
+            "description": "test04 - push non-nested rstring"
+        },
+        {
+            "program": "CalcYouLater",
+            "arglist": [
+                "< .tdir/input/#{name}"
+            ],
+            "shell": "True",
+            "valgrind": "valgrind",
+            "cpulimit": 30,
+            "category": "public",
+            "successreport": {
+                "summarizer": "default",
+                "criteria": {
+                    "timedout": false,
+                    "fileMatch": [
+                        "stdout",
+                        "stderr"
+                    ],
+                    "not": {
+                        "signal_name": "SIGSEGV"
+                    },
+                    "missingexecutable": false,
+                    "exitcode": 0
+                }
+            },
+            "name": "test05",
+            "description": "test05 - push nested rstring"
+        },
+        {
+            "program": "CalcYouLater",
+            "arglist": [
+                "< .tdir/input/#{name}"
+            ],
+            "shell": "True",
+            "valgrind": "valgrind",
+            "cpulimit": 30,
+            "category": "private",
+            "successreport": {
+                "summarizer": "default",
+                "criteria": {
+                    "timedout": false,
+                    "fileMatch": [
+                        "stdout",
+                        "stderr"
+                    ],
+                    "not": {
+                        "signal_name": "SIGSEGV"
+                    },
+                    "missingexecutable": false,
+                    "exitcode": 0
+                }
+            },
+            "name": "test06",
+            "description": "test06 - push empty rstring"
+        },
+        {
+            "program": "CalcYouLater",
+            "arglist": [
+                "< .tdir/input/#{name}"
+            ],
+            "shell": "True",
+            "valgrind": "valgrind",
+            "cpulimit": 30,
+            "category": "private",
+            "successreport": {
+                "summarizer": "default",
+                "criteria": {
+                    "timedout": false,
+                    "fileMatch": [
+                        "stdout",
+                        "stderr"
+                    ],
+                    "not": {
+                        "signal_name": "SIGSEGV"
+                    },
+                    "missingexecutable": false,
+                    "exitcode": 0
+                }
+            },
+            "name": "test07",
+            "description": "test07 - push nested sequential rstring"
+        },
+        {
+            "program": "CalcYouLater",
+            "arglist": [
+                "< .tdir/input/#{name}"
+            ],
+            "shell": "True",
+            "valgrind": "valgrind",
+            "cpulimit": 30,
+            "category": "public",
+            "successreport": {
+                "summarizer": "default",
+                "criteria": {
+                    "timedout": false,
+                    "fileMatch": [
+                        "stdout",
+                        "stderr"
+                    ],
+                    "not": {
+                        "signal_name": "SIGSEGV"
+                    },
+                    "missingexecutable": false,
+                    "exitcode": 0
+                }
+            },
+            "name": "test08",
+            "description": "test08 - single quit"
+        },
+        {
+            "program": "CalcYouLater",
+            "arglist": [
+                "< .tdir/input/#{name}"
+            ],
+            "shell": "True",
+            "valgrind": "valgrind",
+            "cpulimit": 30,
+            "category": "public",
+            "successreport": {
+                "summarizer": "default",
+                "criteria": {
+                    "timedout": false,
+                    "fileMatch": [
+                        "stdout",
+                        "stderr"
+                    ],
+                    "not": {
+                        "signal_name": "SIGSEGV"
+                    },
+                    "missingexecutable": false,
+                    "exitcode": 0
+                }
+            },
+            "name": "test09",
+            "description": "test09 - single addition"
+        },
+        {
+            "program": "CalcYouLater",
+            "arglist": [
+                "< .tdir/input/#{name}"
+            ],
+            "shell": "True",
+            "valgrind": "valgrind",
+            "cpulimit": 30,
+            "category": "private",
+            "successreport": {
+                "summarizer": "default",
+                "criteria": {
+                    "timedout": false,
+                    "fileMatch": [
+                        "stdout",
+                        "stderr"
+                    ],
+                    "not": {
+                        "signal_name": "SIGSEGV"
+                    },
+                    "missingexecutable": false,
+                    "exitcode": 0
+                }
+            },
+            "name": "test10",
+            "description": "test10 - sequential additions"
+        },
+        {
+            "program": "CalcYouLater",
+            "arglist": [
+                "< .tdir/input/#{name}"
+            ],
+            "shell": "True",
+            "valgrind": "valgrind",
+            "cpulimit": 30,
+            "category": "private",
+            "successreport": {
+                "summarizer": "default",
+                "criteria": {
+                    "timedout": false,
+                    "fileMatch": [
+                        "stdout",
+                        "stderr"
+                    ],
+                    "not": {
+                        "signal_name": "SIGSEGV"
+                    },
+                    "missingexecutable": false,
+                    "exitcode": 0
+                }
+            },
+            "name": "test11",
+            "description": "test11 - single multiplication"
+        },
+        {
+            "program": "CalcYouLater",
+            "arglist": [
+                "< .tdir/input/#{name}"
+            ],
+            "shell": "True",
+            "valgrind": "valgrind",
+            "cpulimit": 30,
+            "category": "private",
+            "successreport": {
+                "summarizer": "default",
+                "criteria": {
+                    "timedout": false,
+                    "fileMatch": [
+                        "stdout",
+                        "stderr"
+                    ],
+                    "not": {
+                        "signal_name": "SIGSEGV"
+                    },
+                    "missingexecutable": false,
+                    "exitcode": 0
+                }
+            },
+            "name": "test12",
+            "description": "test12 - sequential multiplications"
+        },
+        {
+            "program": "CalcYouLater",
+            "arglist": [
+                "< .tdir/input/#{name}"
+            ],
+            "shell": "True",
+            "valgrind": "valgrind",
+            "cpulimit": 30,
+            "category": "public",
+            "successreport": {
+                "summarizer": "default",
+                "criteria": {
+                    "timedout": false,
+                    "fileMatch": [
+                        "stdout",
+                        "stderr"
+                    ],
+                    "not": {
+                        "signal_name": "SIGSEGV"
+                    },
+                    "missingexecutable": false,
+                    "exitcode": 0
+                }
+            },
+            "name": "test13",
+            "description": "test13 - single subtraction"
+        },
+        {
+            "program": "CalcYouLater",
+            "arglist": [
+                "< .tdir/input/#{name}"
+            ],
+            "shell": "True",
+            "valgrind": "valgrind",
+            "cpulimit": 30,
+            "category": "private",
+            "successreport": {
+                "summarizer": "default",
+                "criteria": {
+                    "timedout": false,
+                    "fileMatch": [
+                        "stdout",
+                        "stderr"
+                    ],
+                    "not": {
+                        "signal_name": "SIGSEGV"
+                    },
+                    "missingexecutable": false,
+                    "exitcode": 0
+                }
+            },
+            "name": "test14",
+            "description": "test14 - sequential subtractions"
+        },
+        {
+            "program": "CalcYouLater",
+            "arglist": [
+                "< .tdir/input/#{name}"
+            ],
+            "shell": "True",
+            "valgrind": "valgrind",
+            "cpulimit": 30,
+            "category": "private",
+            "successreport": {
+                "summarizer": "default",
+                "criteria": {
+                    "timedout": false,
+                    "fileMatch": [
+                        "stdout",
+                        "stderr"
+                    ],
+                    "not": {
+                        "signal_name": "SIGSEGV"
+                    },
+                    "missingexecutable": false,
+                    "exitcode": 0
+                }
+            },
+            "name": "test15",
+            "description": "test15 - single division"
+        },
+        {
+            "program": "CalcYouLater",
+            "arglist": [
+                "< .tdir/input/#{name}"
+            ],
+            "shell": "True",
+            "valgrind": "valgrind",
+            "cpulimit": 30,
+            "category": "private",
+            "successreport": {
+                "summarizer": "default",
+                "criteria": {
+                    "timedout": false,
+                    "fileMatch": [
+                        "stdout",
+                        "stderr"
+                    ],
+                    "not": {
+                        "signal_name": "SIGSEGV"
+                    },
+                    "missingexecutable": false,
+                    "exitcode": 0
+                }
+            },
+            "name": "test16",
+            "description": "test16 - sequential divisions"
+        },
+        {
+            "program": "CalcYouLater",
+            "arglist": [
+                "< .tdir/input/#{name}"
+            ],
+            "shell": "True",
+            "valgrind": "valgrind",
+            "cpulimit": 30,
+            "category": "public",
+            "successreport": {
+                "summarizer": "default",
+                "criteria": {
+                    "timedout": false,
+                    "fileMatch": [
+                        "stdout",
+                        "stderr"
+                    ],
+                    "not": {
+                        "signal_name": "SIGSEGV"
+                    },
+                    "missingexecutable": false,
+                    "exitcode": 0
+                }
+            },
+            "name": "test17",
+            "description": "test17 - div and mod by 0"
+        },
+        {
+            "program": "CalcYouLater",
+            "arglist": [
+                "< .tdir/input/#{name}"
+            ],
+            "shell": "True",
+            "valgrind": "valgrind",
+            "cpulimit": 30,
+            "category": "private",
+            "successreport": {
+                "summarizer": "default",
+                "criteria": {
+                    "timedout": false,
+                    "fileMatch": [
+                        "stdout",
+                        "stderr"
+                    ],
+                    "not": {
+                        "signal_name": "SIGSEGV"
+                    },
+                    "missingexecutable": false,
+                    "exitcode": 0
+                }
+            },
+            "name": "test18",
+            "description": "test18 - swap"
+        },
+        {
+            "program": "CalcYouLater",
+            "arglist": [
+                "< .tdir/input/#{name}"
+            ],
+            "shell": "True",
+            "valgrind": "valgrind",
+            "cpulimit": 30,
+            "category": "public",
+            "successreport": {
+                "summarizer": "default",
+                "criteria": {
+                    "timedout": false,
+                    "fileMatch": [
+                        "stdout",
+                        "stderr"
+                    ],
+                    "not": {
+                        "signal_name": "SIGSEGV"
+                    },
+                    "missingexecutable": false,
+                    "exitcode": 0
+                }
+            },
+            "name": "test19",
+            "description": "test19 - drop"
+        },
+        {
+            "program": "CalcYouLater",
+            "arglist": [
+                "< .tdir/input/#{name}"
+            ],
+            "shell": "True",
+            "valgrind": "valgrind",
+            "cpulimit": 30,
+            "category": "private",
+            "successreport": {
+                "summarizer": "default",
+                "criteria": {
+                    "timedout": false,
+                    "fileMatch": [
+                        "stdout",
+                        "stderr"
+                    ],
+                    "not": {
+                        "signal_name": "SIGSEGV"
+                    },
+                    "missingexecutable": false,
+                    "exitcode": 0
+                }
+            },
+            "name": "test20",
+            "description": "test20 - less than"
+        },
+        {
+            "program": "CalcYouLater",
+            "arglist": [
+                "< .tdir/input/#{name}"
+            ],
+            "shell": "True",
+            "valgrind": "valgrind",
+            "cpulimit": 30,
+            "category": "private",
+            "successreport": {
+                "summarizer": "default",
+                "criteria": {
+                    "timedout": false,
+                    "fileMatch": [
+                        "stdout",
+                        "stderr"
+                    ],
+                    "not": {
+                        "signal_name": "SIGSEGV"
+                    },
+                    "missingexecutable": false,
+                    "exitcode": 0
+                }
+            },
+            "name": "test21",
+            "description": "test21 - greater than"
+        },
+        {
+            "program": "CalcYouLater",
+            "arglist": [
+                "< .tdir/input/#{name}"
+            ],
+            "shell": "True",
+            "valgrind": "valgrind",
+            "cpulimit": 30,
+            "category": "private",
+            "successreport": {
+                "summarizer": "default",
+                "criteria": {
+                    "timedout": false,
+                    "fileMatch": [
+                        "stdout",
+                        "stderr"
+                    ],
+                    "not": {
+                        "signal_name": "SIGSEGV"
+                    },
+                    "missingexecutable": false,
+                    "exitcode": 0
+                }
+            },
+            "name": "test22",
+            "description": "test22 - less than or equal to"
+        },
+        {
+            "program": "CalcYouLater",
+            "arglist": [
+                "< .tdir/input/#{name}"
+            ],
+            "shell": "True",
+            "valgrind": "valgrind",
+            "cpulimit": 30,
+            "category": "private",
+            "successreport": {
+                "summarizer": "default",
+                "criteria": {
+                    "timedout": false,
+                    "fileMatch": [
+                        "stdout",
+                        "stderr"
+                    ],
+                    "not": {
+                        "signal_name": "SIGSEGV"
+                    },
+                    "missingexecutable": false,
+                    "exitcode": 0
+                }
+            },
+            "name": "test23",
+            "description": "test23 - greater than or equal to"
+        },
+        {
+            "program": "CalcYouLater",
+            "arglist": [
+                "< .tdir/input/#{name}"
+            ],
+            "shell": "True",
+            "valgrind": "valgrind",
+            "cpulimit": 30,
+            "category": "private",
+            "successreport": {
+                "summarizer": "default",
+                "criteria": {
+                    "timedout": false,
+                    "fileMatch": [
+                        "stdout",
+                        "stderr"
+                    ],
+                    "not": {
+                        "signal_name": "SIGSEGV"
+                    },
+                    "missingexecutable": false,
+                    "exitcode": 0
+                }
+            },
+            "name": "test24",
+            "description": "test24 - invalid operands to comparison operators"
+        },
+        {
+            "program": "CalcYouLater",
+            "arglist": [
+                "< .tdir/input/#{name}"
+            ],
+            "shell": "True",
+            "valgrind": "valgrind",
+            "cpulimit": 30,
+            "category": "private",
+            "successreport": {
+                "summarizer": "default",
+                "criteria": {
+                    "timedout": false,
+                    "fileMatch": [
+                        "stdout",
+                        "stderr"
+                    ],
+                    "not": {
+                        "signal_name": "SIGSEGV"
+                    },
+                    "missingexecutable": false,
+                    "exitcode": 0
+                }
+            },
+            "name": "test25",
+            "description": "test25 - not"
+        },
+        {
+            "program": "CalcYouLater",
+            "arglist": [
+                "< .tdir/input/#{name}"
+            ],
+            "shell": "True",
+            "valgrind": "valgrind",
+            "cpulimit": 30,
+            "category": "private",
+            "successreport": {
+                "summarizer": "default",
+                "criteria": {
+                    "timedout": false,
+                    "fileMatch": [
+                        "stdout",
+                        "stderr"
+                    ],
+                    "not": {
+                        "signal_name": "SIGSEGV"
+                    },
+                    "missingexecutable": false,
+                    "exitcode": 0
+                }
+            },
+            "name": "test26",
+            "description": "test26 - not - error case"
+        },
+        {
+            "program": "CalcYouLater",
+            "arglist": [
+                "< .tdir/input/#{name}"
+            ],
+            "shell": "True",
+            "valgrind": "valgrind",
+            "cpulimit": 30,
+            "category": "private",
+            "successreport": {
+                "summarizer": "default",
+                "criteria": {
+                    "timedout": false,
+                    "fileMatch": [
+                        "stdout",
+                        "stderr"
+                    ],
+                    "not": {
+                        "signal_name": "SIGSEGV"
+                    },
+                    "missingexecutable": false,
+                    "exitcode": 0
+                }
+            },
+            "name": "test27",
+            "description": "test27 - clear"
+        },
+        {
+            "program": "CalcYouLater",
+            "arglist": [
+                "< .tdir/input/#{name}"
+            ],
+            "shell": "True",
+            "valgrind": "valgrind",
+            "cpulimit": 30,
+            "category": "private",
+            "successreport": {
+                "summarizer": "default",
+                "criteria": {
+                    "timedout": false,
+                    "fileMatch": [
+                        "stdout",
+                        "stderr"
+                    ],
+                    "not": {
+                        "signal_name": "SIGSEGV"
+                    },
+                    "missingexecutable": false,
+                    "exitcode": 0
+                }
+            },
+            "name": "test28",
+            "description": "test28 - clear on empty"
+        },
+        {
+            "program": "CalcYouLater",
+            "arglist": [
+                "< .tdir/input/#{name}"
+            ],
+            "shell": "True",
+            "valgrind": "valgrind",
+            "cpulimit": 30,
+            "category": "private",
+            "successreport": {
+                "summarizer": "default",
+                "criteria": {
+                    "timedout": false,
+                    "fileMatch": [
+                        "stdout",
+                        "stderr"
+                    ],
+                    "not": {
+                        "signal_name": "SIGSEGV"
+                    },
+                    "missingexecutable": false,
+                    "exitcode": 0
+                }
+            },
+            "name": "test29",
+            "description": "test29 - dup"
+        },
+        {
+            "program": "CalcYouLater",
+            "arglist": [
+                "< .tdir/input/#{name}"
+            ],
+            "shell": "True",
+            "valgrind": "valgrind",
+            "cpulimit": 30,
+            "category": "private",
+            "successreport": {
+                "summarizer": "default",
+                "criteria": {
+                    "timedout": false,
+                    "fileMatch": [
+                        "stdout",
+                        "stderr"
+                    ],
+                    "not": {
+                        "signal_name": "SIGSEGV"
+                    },
+                    "missingexecutable": false,
+                    "exitcode": 0
+                }
+            },
+            "name": "test30",
+            "description": "test30 - unimplemented commands"
+        },
+        {
+            "program": "CalcYouLater",
+            "arglist": [
+                "< .tdir/input/#{name}"
+            ],
+            "shell": "True",
+            "valgrind": "valgrind",
+            "cpulimit": 30,
+            "category": "private",
+            "successreport": {
+                "summarizer": "default",
+                "criteria": {
+                    "timedout": false,
+                    "fileMatch": [
+                        "stdout",
+                        "stderr"
+                    ],
+                    "not": {
+                        "signal_name": "SIGSEGV"
+                    },
+                    "missingexecutable": false,
+                    "exitcode": 0
+                }
+            },
+            "name": "test31",
+            "description": "test31 - exec"
+        },
+        {
+            "program": "CalcYouLater",
+            "arglist": [
+                "< .tdir/input/#{name}"
+            ],
+            "shell": "True",
+            "valgrind": "valgrind",
+            "cpulimit": 30,
+            "category": "private",
+            "successreport": {
+                "summarizer": "default",
+                "criteria": {
+                    "timedout": false,
+                    "fileMatch": [
+                        "stdout",
+                        "stderr"
+                    ],
+                    "not": {
+                        "signal_name": "SIGSEGV"
+                    },
+                    "missingexecutable": false,
+                    "exitcode": 0
+                }
+            },
+            "name": "test32",
+            "description": "test32 - invalid exec"
+        },
+        {
+            "program": "CalcYouLater",
+            "arglist": [
+                "< .tdir/input/#{name}"
+            ],
+            "shell": "True",
+            "valgrind": "valgrind",
+            "cpulimit": 30,
+            "category": "public",
+            "successreport": {
+                "summarizer": "default",
+                "criteria": {
+                    "timedout": false,
+                    "fileMatch": [
+                        "stdout",
+                        "stderr"
+                    ],
+                    "not": {
+                        "signal_name": "SIGSEGV"
+                    },
+                    "missingexecutable": false,
+                    "exitcode": 0
+                }
+            },
+            "name": "test33",
+            "description": "test33 - if - true case"
+        },
+        {
+            "program": "CalcYouLater",
+            "arglist": [
+                "< .tdir/input/#{name}"
+            ],
+            "shell": "True",
+            "valgrind": "valgrind",
+            "cpulimit": 30,
+            "category": "private",
+            "successreport": {
+                "summarizer": "default",
+                "criteria": {
+                    "timedout": false,
+                    "fileMatch": [
+                        "stdout",
+                        "stderr"
+                    ],
+                    "not": {
+                        "signal_name": "SIGSEGV"
+                    },
+                    "missingexecutable": false,
+                    "exitcode": 0
+                }
+            },
+            "name": "test34",
+            "description": "test34 - if - false case"
+        },
+        {
+            "program": "CalcYouLater",
+            "arglist": [
+                "< .tdir/input/#{name}"
+            ],
+            "shell": "True",
+            "valgrind": "valgrind",
+            "cpulimit": 30,
+            "category": "private",
+            "successreport": {
+                "summarizer": "default",
+                "criteria": {
+                    "timedout": false,
+                    "fileMatch": [
+                        "stdout",
+                        "stderr"
+                    ],
+                    "not": {
+                        "signal_name": "SIGSEGV"
+                    },
+                    "missingexecutable": false,
+                    "exitcode": 0
+                }
+            },
+            "name": "test35",
+            "description": "test35 - if - condition not bool"
+        },
+        {
+            "program": "CalcYouLater",
+            "arglist": [
+                "< .tdir/input/#{name}"
+            ],
+            "shell": "True",
+            "valgrind": "valgrind",
+            "cpulimit": 30,
+            "category": "private",
+            "successreport": {
+                "summarizer": "default",
+                "criteria": {
+                    "timedout": false,
+                    "fileMatch": [
+                        "stdout",
+                        "stderr"
+                    ],
+                    "not": {
+                        "signal_name": "SIGSEGV"
+                    },
+                    "missingexecutable": false,
+                    "exitcode": 0
+                }
+            },
+            "name": "test36",
+            "description": "test36 - if - T/F case not rstring"
+        },
+        {
+            "program": "CalcYouLater",
+            "arglist": [
+                "< .tdir/input/#{name}"
+            ],
+            "shell": "True",
+            "valgrind": "valgrind",
+            "cpulimit": 30,
+            "category": "private",
+            "successreport": {
+                "summarizer": "default",
+                "criteria": {
+                    "timedout": false,
+                    "fileMatch": [
+                        "stdout",
+                        "stderr"
+                    ],
+                    "not": {
+                        "signal_name": "SIGSEGV"
+                    },
+                    "missingexecutable": false,
+                    "exitcode": 0
+                }
+            },
+            "name": "test37",
+            "description": "test37 - file - print simple"
+        },
+        {
+            "program": "CalcYouLater",
+            "arglist": [
+                "< .tdir/input/#{name}"
+            ],
+            "shell": "True",
+            "valgrind": "valgrind",
+            "cpulimit": 30,
+            "category": "private",
+            "successreport": {
+                "summarizer": "default",
+                "criteria": {
+                    "timedout": false,
+                    "fileMatch": [
+                        "stdout",
+                        "stderr"
+                    ],
+                    "not": {
+                        "signal_name": "SIGSEGV"
+                    },
+                    "missingexecutable": false,
+                    "exitcode": 0
+                }
+            },
+            "name": "test38",
+            "description": "test38 - file - invalid file"
+        },
+        {
+            "program": "CalcYouLater",
+            "arglist": [
+                "< .tdir/input/#{name}"
+            ],
+            "shell": "True",
+            "valgrind": "valgrind",
+            "cpulimit": 30,
+            "category": "private",
+            "successreport": {
+                "summarizer": "default",
+                "criteria": {
+                    "timedout": false,
+                    "fileMatch": [
+                        "stdout",
+                        "stderr"
+                    ],
+                    "not": {
+                        "signal_name": "SIGSEGV"
+                    },
+                    "missingexecutable": false,
+                    "exitcode": 0
+                }
+            },
+            "name": "test39",
+            "description": "test39 - file - not an rstring"
+        },
+        {
+            "program": "CalcYouLater",
+            "arglist": [
+                "< .tdir/input/#{name}"
+            ],
+            "shell": "True",
+            "valgrind": "valgrind",
+            "cpulimit": 30,
+            "category": "private",
+            "successreport": {
+                "summarizer": "default",
+                "criteria": {
+                    "timedout": false,
+                    "fileMatch": [
+                        "stdout",
+                        "stderr"
+                    ],
+                    "not": {
+                        "signal_name": "SIGSEGV"
+                    },
+                    "missingexecutable": false,
+                    "exitcode": 0
+                }
+            },
+            "name": "test40",
+            "description": "test40 - stress test - fact.cylc"
+        },
+        {
+            "program": "CalcYouLater",
+            "arglist": [
+                "< .tdir/input/#{name}"
+            ],
+            "shell": "True",
+            "valgrind": "valgrind",
+            "cpulimit": 30,
+            "category": "public",
+            "successreport": {
+                "summarizer": "default",
+                "criteria": {
+                    "timedout": false,
+                    "fileMatch": [
+                        "stdout",
+                        "stderr"
+                    ],
+                    "not": {
+                        "signal_name": "SIGSEGV"
+                    },
+                    "missingexecutable": false,
+                    "exitcode": 0
+                }
+            },
+            "name": "test41",
+            "description": "test41 - correct error prints on empty stack (unary/binary)"
+        },
+        {
+            "program": "CalcYouLater",
+            "arglist": [
+                "< .tdir/input/#{name}"
+            ],
+            "shell": "True",
+            "valgrind": "valgrind",
+            "cpulimit": 30,
+            "category": "private",
+            "successreport": {
+                "summarizer": "default",
+                "criteria": {
+                    "timedout": false,
+                    "fileMatch": [
+                        "stdout",
+                        "stderr"
+                    ],
+                    "not": {
+                        "signal_name": "SIGSEGV"
+                    },
+                    "missingexecutable": false,
+                    "exitcode": 0
+                }
+            },
+            "name": "test42",
+            "description": "test42 - quit in nested rstring"
+        }
+    ]
+}

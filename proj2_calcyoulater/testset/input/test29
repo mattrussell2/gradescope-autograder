@@ -1,0 +1,22 @@
+42
+dup
+print
+drop
+print
+drop
+print
+#t
+dup
+print
+drop
+print
+drop
+print
+{ 1 2 3 3 2 1 }
+dup
+print
+drop
+print
+drop
+print
+quit

@@ -1,0 +1,3 @@
+This is the root package directory for default implementations of summarizers, canonicalizers, etc. that can be overriden, supplemented, or in some cases subclassed by users.
+
+The directory (subpackage) structure below this dir parallels what a user may supply in his/her testset definition directory, I.e. a summarizer package for summarizers, canonicalizer for canonicalizers, etc.

@@ -1,0 +1,14 @@
+dup
+0
+==
+{
+  drop
+  1
+}
+{
+  dup 1 -
+  { .tdir/input/fact.cylc }
+  file
+  *
+}
+if

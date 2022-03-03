@@ -1,0 +1,15 @@
+{ 1 2 + }
+print
+exec
+print
+{ 10 101 { + } }
+print
+exec
+print
+exec
+print
+{ 50 10 { > } exec print }
+print
+exec
+print
+quit
