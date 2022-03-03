@@ -13,9 +13,9 @@ nmtestrunner.config(
     # Location of student's source code
     studentroot="submission",
     # Location of the testset
-    testsetdir="source/cs-15-autograding-repo/testset",
+    testsetdir="source/testset",
     # Location of all the testing framework code
-    testframeworkroot="source/cs-15-autograding-repo/framework",
+    testframeworkroot="source/framework",
     # Path to testing Makefile
     makefile="",
     # All the programs the student's Makefile is responsible for
