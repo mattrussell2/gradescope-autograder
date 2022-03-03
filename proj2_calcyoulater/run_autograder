@@ -1,6 +1,13 @@
 #!/usr/bin/env python3
 from pathlib import Path
 import shutil
+import subprocess
+import os
+
+wd = os.getcwd()
+os.chdir('cs-15-autograding-repo')
+subprocess.run(["git", "pull"])
+os.chdir(wd)
 
 import nmtestrunner
 """
