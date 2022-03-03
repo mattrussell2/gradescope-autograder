@@ -29,6 +29,6 @@ nmtestrunner.config(
                         Run the autograder
 """
 nmtestrunner.setup({})
-shutil.copy("source/link/Datum.cpp", "testing/student.1")
-shutil.copy("source/link/Datum.h", "testing/student.1")
+shutil.copy("source/cs-15-autograding-repo/link/Datum.cpp", "testing/student.1")
+shutil.copy("source/cs-15-autograding-repo/link/Datum.h", "testing/student.1")
 nmtestrunner.main(**vars(nmtestrunner.parseArgs()))
