@@ -1,6 +1,0 @@
-#t
-{ #t }
-{ #f }
-if
-print
-quit

@@ -1,7 +1,0 @@
-#!/bin/bash
-
-cd source/cs-15-autograding-repo
-git pull origin master
-
-./run_autograder
-
