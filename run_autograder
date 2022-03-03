@@ -1,10 +1,6 @@
 #!/usr/bin/env python3
 from pathlib import Path
 import shutil
-import subprocess
-import os
-
-subprocess.run(["git", "pull"], cwd = "/autograder/source/cs-15-autograding-repo")
 
 import nmtestrunner
 """
@@ -13,13 +9,13 @@ import nmtestrunner
 
 nmtestrunner.config(
     # Directory that all testing stuff is dumped into
-    testingroot="testing",
+    testingroot="/autograder/testing",
     # Location of student's source code
-    studentroot="submission",
+    studentroot="/autograder/submission",
     # Location of the testset
-    testsetdir="source/cs-15-autograding-repo/testset",
+    testsetdir="/autograder/source/cs-15-autograding-repo/testset",
     # Location of all the testing framework code
-    testframeworkroot="source/cs-15-autograding-repo/framework",
+    testframeworkroot="/autograder/source/cs-15-autograding-repo/framework",
     # Path to testing Makefile
     makefile="",
     # All the programs the student's Makefile is responsible for
@@ -29,6 +25,6 @@ nmtestrunner.config(
                         Run the autograder
 """
 nmtestrunner.setup({})
-shutil.copy("source/cs-15-autograding-repo/link/Datum.cpp", "testing/student.1")
-shutil.copy("source/cs-15-autograding-repo/link/Datum.h", "testing/student.1")
+shutil.copy("link/Datum.cpp", "/autograder/testing/student.1")
+shutil.copy("link/Datum.h", "/autograder/testing/student.1")
 nmtestrunner.main(**vars(nmtestrunner.parseArgs()))
