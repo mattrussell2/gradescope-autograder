@@ -6,7 +6,7 @@ import os
 
 wd = os.getcwd()
 os.chdir('cs-15-autograding-repo')
-subprocess.run(["git", "pull"])
+subprocess.run(["git", "pull"], cwd = "/autograder/")
 os.chdir(wd)
 
 import nmtestrunner
