@@ -1,0 +1,61 @@
+\documentclass[11pt]{report}
+\author{Matt Russell}
+\usepackage{color} 
+\usepackage{hyperref}
+\usepackage{xcolor}
+\usepackage{listings}
+\usepackage{graphicx}
+\usepackage{array}
+\usepackage[hang,flushmargin]{footmisc} 
+\input{../../admin/code_environment.tex} 
+
+\pagestyle{headings}
+\title{Gradescope Autograder Configuration}
+ 
+\begin{document}
+\maketitle
+
+\chapter*{Inroduction}
+Gradescope is great tool for autograding assignments. However, there are two difficulties  
+regarding the setup for an autograder which this document addresses:
+\begin{enumerate}
+      \item How to streamline the general setup of autograding.
+      \item Provide a grading framework to develop tests in an efficient (and enjoyable!) manner.
+\end{enumerate}
+Setup from start to finish is intended to take roughly 30 minutes. If you have any questions, please reach out 
+to me at \code{mrussell@cs.tufts.edu}. Thanks!
+
+\section*{Infrastructure Background}
+Gradescope's autograders rely on Docker containers which are spun up each time 
+a submission is graded. The default container runs a variant of \code{Ubuntu 18.04},
+coupled with the bare-bones scripts to make the autograding framework function. The usual 
+workflow is to manually upload a \code{.zip} file containing two scripts: 
+\code{setup.sh}, which installs dependencies (e.g. \code{Python}, etc.), and a shell script 
+named \code{run_autograder}, which runs the autograder. The main issue here is that each time you 
+upload the \code{.zip} file, the Docker container must be built from scratch, which can take quite
+a bit of time; this can compound quickly during the development of an autograder. This document 
+provides an optional solution to the problem. 
+
+\section*{Autograding Background}
+Once the container is built, there is of course the issue of how to run and test student's code. 
+This is no easy task! This document provides documentation on an autograding framework we have 
+developed which makes writing tests for student code as easy as possible. 
+
+\chapter*{Infrastructure Solution}
+The solution for streamlining the infrastructure setup with Gradescope I've developed is twofold:
+\begin{enumerate}
+      \item Build and upload our own Docker container to Dockerhub, which Gradescope will use.
+      \item Put the autograding code in a \code{git} repository which the Docker container can access at autograding time. 
+\end{enumerate}
+Note that these two elements are distinct from one another; if using Docker is something you really don't want to do, that's fine. The container building 
+will just take more time. In that case, follow the instructions on Gradescope's website regarding 
+setup:\\ \textcolor{blue}{\href{https://gradescope-autograders.readthedocs.io/en/latest/specs/}{https://gradescope-autograders.readthedocs.io/en/latest/specs/}}.
+In this case, you can still use the \code{.git} integration from above; just integrate the \code{git} commands 
+from the Docker setup below into the \code{setup.sh} script. 
+
+\section*{Install Docker}
+Install Docker Desktop: \textcolor{blue}{\href{https://www.docker.com/products/docker-desktop/}{https://www.docker.com/products/docker-desktop/}}
+Note that you don't need to have it start on boot; you can start it before uploading the setup. 
+
+\section*{Clone the autograding repo}
+\end{document}
