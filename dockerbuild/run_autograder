@@ -7,8 +7,8 @@
 cd /build/course-repo
 git pull -f > /autograder/run_autograder_log 2>&1
 
-cp -r assignments/$ASSIGNMENT_TITLE/autograder/*   /autograder/
-cp    staff-bin/autograding/framework/autograde.py /autograder/
+cp -r $ASSIGNMENT_TITLE/*   /autograder/
+cp    framework/autograde.py /autograder/
 
 cd /autograder/
 chmod +x testrunner.sh

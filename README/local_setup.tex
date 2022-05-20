@@ -122,7 +122,9 @@ Feel free to use anything in place of YOURTAGNAMEHERE. Note that the first secti
 \subsection*{.dockercreds}
 We are using a single Dockerhub account for all of the autograding courses. The file
 \code{.dockercreds} should be available in the course's Tufts Box folder. If not, reach out to 
-me at \code{mrussell@cs.tufts.edu} from your Tufts email address, and I'll send it to you ASAP.
+me at \code{mrussell@cs.tufts.edu} from your Tufts email address, and I'll send it to you ASAP. 
+Note that this access token must be kept private; to that end, please keep your course autograding
+repository private (this is the default on \code{gitlab}).
 
 \section*{Conclusion}
 Okay, you are ready to begin developing an autograder! Continue to the next section to learn 
@@ -130,5 +132,57 @@ about the autograder, and for a walkthrough to setup an assignment.
 
 \chapter*{Autograding Framework}
 \section*{Introduction}
+The autograding framework is designed to have you writing and deploying tests as quickly as possible. 
+It supports a variety of options related to test types, etc, however, in general tests will be a 
+set of \code{.cpp} files. Each one will be compiled and run, and the output of the test will be \code{diff}'d
+against a reference implementation that you provide. \code{Valgrind} can be run on tests, \code{stderr} can be
+\code{diff}'d. The framework depends on a \code{.toml} file for the configuration. 
+\section*{.toml configutation}
+The \code{.toml} file will be configured as follows:
+\begin{bashcodeblock}
+[common]
+!\#! common test options will go here
+!\#! this section is mandatory - it must be named `common' 
 
+[set_of_tests] 
+!\#! subsequent sections will each contain a group of tests to run
+!\#! configuration options placed here will override [common]
+!\#! test groups names (e.g. [set_of_tests]) can be anything
+!\#! tests in a section must be placed in a list named `tests'
+!\#! tests = [
+      {testname="test_0", description="my first test"},
+      {testname="test_1", description="my second test"},
+      ..., 
+      {testname="test_n", description="my nth test"},
+]
+!\#! each test must have testname and description fields
+!\#! you may add any other option to a given test
+!\#! test-specific options override any `parent' options
+\end{bashcodeblock}
+
+\section*{Test Configuration Options}
+\begin{tabular}{ | l | c | l | }
+\hline			
+\textbf{option} & \textbf{default} & \textbf{purpose} \\ \hline\hline
+max\_time & 30 & maximum time (in seconds) for a test \\\hline
+max\_ram & -1 (unlimited) & maximum ram (in kb) for a test \\\hline
+valgrind & true & run an additional test with valgrind \\\hline
+diff\_stdout & true & test diff of student vs. reference stdout \\\hline
+diff\_stderr & true & test diff of student vs. reference stderr \\\hline
+diff\_ofiles & true & test diff of student vs. reference output files \\\hline
+ccize\_stdout & false & diff canonicalized stdout \\\hline
+ccize\_stderr & false & diff canonicalized stderr \\\hline
+ccize\_ofiles & false & diff canonicalized ofiles \\\hline
+ccizer\_name & ``" & name of a canonicalizer function to use \\\hline
+our\_makefile & true & use testset/makefile/Makefile to build tests \\\hline
+pretty\_diff & true & use diff-so-pretty for easy-to-ready diffs \\\hline
+max\_score & 1 & maximum points (on gradescope) for this test \\\hline
+visibility &``after-due-date" & gradescope visibility setting \\\hline
+argv & [ ] & argv input to the program \\\hline
+\end{tabular}
+
+\section*{Autograder Directory Structure}
+\begin{bashcodeblock}
+
+\end{bashcodeblock}
 \end{document}
