@@ -1,39 +1,46 @@
-FROM gradescope/auto-builds:ubuntu-18.04
+# need to use gradescope's image as base
+FROM gradescope/auto-builds:ubuntu-22.04
 
-COPY . build
-
+# initial apt stuff
 RUN apt-get update -y && apt-get upgrade -y
 RUN apt-get install software-properties-common -y
 
-RUN add-apt-repository ppa:apt-fast/stable
-RUN apt-get update
-RUN echo debconf apt-fast/maxdownloads string 16 | debconf-set-selections
-RUN echo debconf apt-fast/dlflag boolean true | debconf-set-selections
-RUN echo debconf apt-fast/aptmanager string apt-get | debconf-set-selections
-RUN DEBIAN_FRONTEND=noninteractive apt-get install apt-fast -y 
-
+# install necessary packages
 RUN apt-get install lsb-release \
                     build-essential \
                     wget \
                     git \
-                    clang-format-10 \
+                    clang-format \
                     valgrind \
                     ssh \
-                    sudo \
-                    python3.7 \
-                    python3-pip -y
+                    sudo \                    
+                    time \
+                    clang-12 -y
 
-RUN chmod +x ./build/install_clang
-RUN bash ./build/install_clang 8
-RUN ln -s /usr/bin/clang-8 /usr/bin/clang++
-RUN ln -s /usr/bin/clang-format-10 /usr/bin/clang-format
+# install python packages
+RUN python3 -m pip install --upgrade pip
+RUN python3 -m pip install toml dataclasses tqdm filelock python_dateutil
 
-RUN bash ./build/update_motd.sh
+# install diff-so-fancy
+COPY dockerbuild/diff-so-fancy    /bin/
+COPY dockerbuild/DiffHighlight.pm /bin/
 
-RUN printf "export PS1=\"\\u@gs:\\W\\$ \"" >> ~/.bashrc
+# pretty bash terminal header
+RUN printf "export PS1=\"\\u@gs:\\W\\$ \"\n" >> ~/.bashrc
 
-RUN python3 -m pip install ./build/autograder-base/nmtestrunner/
-RUN python3 -m pip install git+https://github.com/jeffkaufman/icdiff.git
+RUN ln -s /usr/bin/clang++-12 /usr/bin/clang++
 
-RUN cp ./build/run_autograder /autograder/run_autograder
-RUN chmod +x /autograder/run_autograder
+# mkdir to move setup scripts and copy necessary files
+RUN mkdir /build
+
+# update the message of the day
+COPY dockerbuild/update_motd.sh   /build/
+RUN bash /build/update_motd.sh 
+
+COPY dockerbuild/update_results.py /autograder/update_results.py
+COPY dockerbuild/run_autograder    /autograder/run_autograder
+RUN chmod +x /autograder/run_autograder 
+
+# Do these last because the layers are going to change depending on what's going on.
+# clone the course repository
+RUN --mount=type=secret,id=REPOPATH cd /build && git clone $(cat /run/secrets/REPOPATH) course-repo 
