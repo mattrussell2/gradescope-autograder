@@ -6,6 +6,7 @@
 \usepackage{listings}
 \usepackage{graphicx}
 \usepackage{array}
+\usepackage{wrapfig}
 \usepackage[hang,flushmargin]{footmisc} 
 \input{code_environment.tex} 
 
@@ -41,8 +42,8 @@ Once the container is built, there is of course the issue of how to run and test
 This is no easy task! This document provides documentation on an autograding framework we have 
 developed which makes writing tests for student code as easy as possible. 
 
-\chapter*{Infrastructure Solution}
-The solution for streamlining the infrastructure setup with Gradescope I've developed is twofold:
+\chapter*{Infrastructure Setup}
+The solution for streamlining the infrastructure setup with Gradescope is twofold:
 \begin{enumerate}
       \item Build and upload our own Docker container to Dockerhub, which Gradescope will use.
       \item Put the autograding code in a \code{git} repository which the Docker container can access at autograding time. 
@@ -57,8 +58,77 @@ from the Docker setup below into the \code{setup.sh} script. However, if you wou
 Install Docker Desktop: \textcolor{blue}{\href{https://www.docker.com/products/docker-desktop/}{https://www.docker.com/products/docker-desktop/}}
 Note that you don't need to have it start on boot; you can start it before uploading the setup. 
 
-\section*{Clone the example autograding repo}
-We have a sample repo for you to use. 
+\section*{Setting up the Autograding Repo}
+If you don't currently have a repository related to course material, please make one. We suggest using
+\code{gitlab} for this: go to \textcolor{blue}{\href{https://gitlab.cs.tufts.edu}{https://gitlab.cs.tufts.edu}}, and 
+login with \code{LDAP}, using your Tufts eecs \code{utln} and password. You do not need a \code{README}.
+The example below will be for \code{cs 15}, but please follow the instructions for whichever course you're running.
+Now, in your terminal:
 \begin{bashcodeblock}
-      git clone git@gitlab.cs.tufts.edu:mrussell/gradescope-autograding
+mkdir cs-15-autograding
+cd cs-15-autograding
+git init
+git remote add origin git@gitlab.cs.tufts.edu:your_utln/path_to_your_repo.git
+git switch -c main 
+\end{bashcodeblock}
+We have a sample repo for you to get starter code from. Copy the files as follows:
+\begin{bashcodeblock}
+git clone git@gitlab.cs.tufts.edu:mrussell/gradescope-autograding
+rm -rf gradescope-autograding/.git
+mv gradescope-autograding/* .
+rm -rf gradescope-autograding
+\end{bashcodeblock}
+\section*{Configuring the Docker build}
+Great! Now you have both the grading framework, as well as the elements necessary to build the 
+Docker container for gradescope. We will need to do a few configuration steps to make this work.
+First, \code{cd Dockerbuild}.
+We will need to add three files here (more details for each are below):
+\begin{itemize}
+      \item \code{.repopath}    - the remote path of the repository, including an Access Token.
+      \item \code{.dockertag}   - the tag of the Docker container to build
+      \item \code{.dockercreds} - the credentials to login to Dockerhub.
+\end{itemize}
+
+\subsection*{.repopath}
+
+\begin{wrapfigure}[9]{l}{0.25\textwidth}
+\includegraphics[scale=0.75]{access_token.png}
+\end{wrapfigure}
+First, go to \code{gitlab} in your browser, and navigate to the course repository you just created.
+Next, hover over the settings cog on the lower left, and select `Access Tokens'.
+Create an access token; this will be used by the Gradescope autograder to pull the most recent version 
+of the autograding files for an assignment. We suggest only providing `read repository' access to the token. Feel free 
+to select whatever you'd like for the name, expiration date, and role (Maintainer is fine). Once the 
+token is created, copy the key. Now, open a file named \code{.repopath} [in the \code{Dockerbuild} directory].
+You will want to format the repository path as follows: 
+\\
+\begin{bashcodeblock}
+https://REPOSITORY-NAME:ACCESS-TOKEN@gitlab.cs.tufts.edu/path/to/repository.git
+\end{bashcodeblock}
+For example:
+\begin{bashcodeblock}
+https://cs-15-2022uc:glpat-Blah8173Blah8023Blah@gitlab.cs.tufts.edu/mrussell/cs-15-2022uc.git
+\end{bashcodeblock}
+Great! Now the autograder will be able to pull the most recent version of the autograding files.
+
+\subsection*{.dockertag}
+This will be the tag you'd like to use for your Docker container. Open a file named \code{.dockertag}
+and write:
+\begin{bashcodeblock}
+tuftscs/gradescope-docker:YOURTAGNAMEHERE      
+\end{bashcodeblock}
+Feel free to use anything in place of YOURTAGNAMEHERE. Note that the first section is required. 
+
+\subsection*{.dockercreds}
+We are using a single Dockerhub account for all of the autograding courses. The file
+\code{.dockercreds} should be available in the course's Tufts Box folder. If not, reach out to 
+me at \code{mrussell@cs.tufts.edu} from your Tufts email address, and I'll send it to you ASAP.
+
+\section*{Conclusion}
+Okay, you are ready to begin developing an autograder! Continue to the next section to learn 
+about the autograder, and for a walkthrough to setup an assignment. 
+
+\chapter*{Autograding Framework}
+\section*{Introduction}
+
 \end{document}
