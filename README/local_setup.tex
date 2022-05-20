@@ -7,7 +7,7 @@
 \usepackage{graphicx}
 \usepackage{array}
 \usepackage[hang,flushmargin]{footmisc} 
-\input{../../admin/code_environment.tex} 
+\input{code_environment.tex} 
 
 \pagestyle{headings}
 \title{Gradescope Autograder Configuration}
@@ -48,14 +48,17 @@ The solution for streamlining the infrastructure setup with Gradescope I've deve
       \item Put the autograding code in a \code{git} repository which the Docker container can access at autograding time. 
 \end{enumerate}
 Note that these two elements are distinct from one another; if using Docker is something you really don't want to do, that's fine. The container building 
-will just take more time. In that case, follow the instructions on Gradescope's website regarding 
+will just take more time in the aggregegate. In that case, follow the instructions on Gradescope's website regarding 
 setup:\\ \textcolor{blue}{\href{https://gradescope-autograders.readthedocs.io/en/latest/specs/}{https://gradescope-autograders.readthedocs.io/en/latest/specs/}}.
-In this case, you can still use the \code{.git} integration from above; just integrate the \code{git} commands 
-from the Docker setup below into the \code{setup.sh} script. 
+Note that you can still use the \code{.git} integration from above; just integrate the \code{git} commands 
+from the Docker setup below into the \code{setup.sh} script. However, if you wouldn't like to do that either, okay! Just skip ahead to the \code{Autograding Framework} section below. 
 
 \section*{Install Docker}
 Install Docker Desktop: \textcolor{blue}{\href{https://www.docker.com/products/docker-desktop/}{https://www.docker.com/products/docker-desktop/}}
 Note that you don't need to have it start on boot; you can start it before uploading the setup. 
 
-\section*{Clone the autograding repo}
+\section*{Clone the example autograding repo}
+We have a sample repo for you to use. 
+\begin{bashcodeblock}
+      git clone git@gitlab.cs.tufts.edu:mrussell/gradescope-autograding
 \end{document}
