@@ -9,33 +9,34 @@
 
 #define INITAL_CAPACITY 10
 
-#include <iostream>
 #include <string>
 
 class CharArrayList {
 
 public:
-    //constructors
-   CharArrayList();
-   CharArrayList(char a);
-   CharArrayList(char arr[], int size);
-   // copy constructor 
-   CharArrayList(const CharArrayList &other);
-    //destructor
-   ~CharArrayList();
-    //Assignment operator overload
-   CharArrayList &operator =(const CharArrayList &rhs);
-    //getters
-    bool isEmpty();
-    int size();
-    char first();
-    char last();
-    char elementAt(int index);
-    void print();
+    // constructors
+    CharArrayList();
+    CharArrayList(char a);
+    CharArrayList(char arr[], int size);
+    // copy constructor
+    CharArrayList(const CharArrayList &other);
+    // destructor
+    ~CharArrayList();
+    // Assignment operator overload
+    CharArrayList &operator=(const CharArrayList &rhs);
+    // getters
+    bool        isEmpty() const;
+    int         size() const;
+    char        first() const;
+    char        last() const;
+    char        elementAt(int index) const;
+    std::string toString() const;
+    std::string toReverseString() const;
+
 
     // setters
     void clear();
-    void pushAtFront (char a);
+    void pushAtFront(char a);
     void pushAtBack(char a);
     void insertAt(char a, int index);
     void insertInOrder(char a);
@@ -47,8 +48,8 @@ public:
     void shrink();
 
     // JFFEs
-    void sort();
-   CharArrayList *slice(int left, int right);
+    void           sort();
+    CharArrayList *slice(int left, int right);
 
 private:
     // State Variables/Data Members
@@ -56,11 +57,11 @@ private:
     int   arrCapacity;
     int   arrSize;
 
-    //private methods
+    // private methods
     void ensureCapacity(int newSize);
-    void checkBoundsWithThrow(int index);
-    void checkEmptyWithThrow(std::string message);
+    void checkBoundsWithThrow(int index) const;
+    void checkEmptyWithThrow(std::string message) const;
 };
 
 
-#endif //HW1_REF_CHARSEQUENCE_H
+#endif // HW1_REF_CHARSEQUENCE_H

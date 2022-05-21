@@ -1,8 +1,8 @@
 # Fdb version 3
-["pdflatex"] 1653074578 "/home/matt/gradescope-autograding/README/local_setup.tex" "/home/matt/gradescope-autograding/README/local_setup.pdf" "local_setup" 1653074579
+["pdflatex"] 1653145518 "/home/matt/gradescope-autograding/README/local_setup.tex" "/home/matt/gradescope-autograding/README/local_setup.pdf" "local_setup" 1653145518
   "/etc/texmf/web2c/texmf.cnf" 1642097567 475 c0e671620eb5563b2130f56340a5fde8 ""
-  "/home/matt/gradescope-autograding/README/local_setup.aux" 1653074578 662 b2b94621371df8d9296b8bf5bec1b851 ""
-  "/home/matt/gradescope-autograding/README/local_setup.tex" 1653074577 9831 798291f6f4bf12131663d88fbf34c2a4 ""
+  "/home/matt/gradescope-autograding/README/local_setup.aux" 1653145518 662 b2b94621371df8d9296b8bf5bec1b851 ""
+  "/home/matt/gradescope-autograding/README/local_setup.tex" 1653145517 12070 ae0ec3b66c1c0007993161ccc09fa388 ""
   "/usr/share/texlive/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/share/texlive/texmf-dist/fonts/tfm/jknappen/ec/tcrm1095.tfm" 1136768653 1536 02c06700a42be0f5a28664c7273f82e7 ""
   "/usr/share/texlive/texmf-dist/fonts/tfm/public/cm/cmbx10.tfm" 1136768653 1328 c834bbb027764024c09d3d2bf908b5f0 ""
@@ -87,13 +87,13 @@
   "/var/lib/texmf/web2c/pdftex/pdflatex.fmt" 1642099106 8256354 560aa35bb7a0ada4aad7f3845862cfc5 ""
   "access_token.png" 1653063248 17707 707acaaffc175b19704b9463ee8ce85f ""
   "code_environment.tex" 1653061166 3522 abe2bc5fc2a07aaa276bfe4d931e9e57 ""
-  "local_setup.aux" 1653074578 662 b2b94621371df8d9296b8bf5bec1b851 "pdflatex"
-  "local_setup.out" 1653074578 0 d41d8cd98f00b204e9800998ecf8427e "pdflatex"
-  "local_setup.tex" 1653074577 9831 798291f6f4bf12131663d88fbf34c2a4 ""
+  "local_setup.aux" 1653145518 662 b2b94621371df8d9296b8bf5bec1b851 "pdflatex"
+  "local_setup.out" 1653145518 0 d41d8cd98f00b204e9800998ecf8427e "pdflatex"
+  "local_setup.tex" 1653145517 12070 ae0ec3b66c1c0007993161ccc09fa388 ""
   (generated)
+  "/home/matt/gradescope-autograding/README/local_setup.pdf"
+  "local_setup.pdf"
   "local_setup.aux"
   "local_setup.out"
   "/home/matt/gradescope-autograding/README/local_setup.log"
   "local_setup.log"
-  "local_setup.pdf"
-  "/home/matt/gradescope-autograding/README/local_setup.pdf"

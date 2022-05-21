@@ -19,4 +19,4 @@ then
     cat results/stdout
 fi
 
-python3.9 update_results.py
+python3 update_results.py

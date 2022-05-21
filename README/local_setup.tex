@@ -16,22 +16,24 @@
 \begin{document}
 \maketitle
 
-\chapter*{Inroduction}
-Gradescope is great tool for autograding assignments. However, there are two difficulties  
-regarding the setup for an autograder which this document addresses:
-\begin{enumerate}
-      \item How to streamline the general setup of autograding.
-      \item Provide a grading framework to develop tests in an efficient (and enjoyable!) manner.
-\end{enumerate}
-Setup from start to finish is intended to take roughly 30 minutes. If you have any questions, please reach out 
-to me at \code{mrussell@cs.tufts.edu}. Thanks!
+\chapter*{Introduction}
+Gradescope is great tool for autograding assignments. However, there is still a substantial amount
+of infrastructure required to deploy and run an autograder on gradescope. This document provides 
+instructions for both setting up autograders on Gradescope, and for an autograding framework for
+\code{C/C++} code. Setup from start to finish is intended to take roughly 30 minutes. If you have 
+any questions, please reach out to me at \code{mrussell@cs.tufts.edu}. Thanks!
+
+\section*{Notes}
+This setup requires the use of Docker Desktop. In most cases, you will be able to uninstall it after 
+the initial setup. However, it is suggested that you start the Docker installation while reading the 
+document, as it may take a few minutes. 
 
 \section*{Infrastructure Background}
 Gradescope's autograders rely on Docker containers which are spun up each time 
 a submission is graded. The default container runs a variant of \code{Ubuntu 18.04},
 coupled with the bare-bones scripts to make the autograding framework function. The usual 
 workflow is to manually upload a \code{.zip} file containing two scripts: 
-\code{setup.sh}, which installs dependencies (e.g. \code{Python}, etc.), and a shell script 
+\code{setup.sh}, which installs dependencies (e.g. \code{Python}, \code{clang}, etc.), and a shell script 
 named \code{run_autograder}, which runs the autograder. The main issue here is that each time you 
 upload the \code{.zip} file, the Docker container must be built from scratch, which can take quite
 a bit of time; this can compound quickly during the development of an autograder. This document 
@@ -51,8 +53,7 @@ The solution for streamlining the infrastructure setup with Gradescope is twofol
 Note that these two elements are distinct from one another; if using Docker is something you really don't want to do, that's fine. The container building 
 will just take more time in the aggregegate. In that case, follow the instructions on Gradescope's website regarding 
 setup:\\ \textcolor{blue}{\href{https://gradescope-autograders.readthedocs.io/en/latest/specs/}{https://gradescope-autograders.readthedocs.io/en/latest/specs/}}.
-Note that you can still use the \code{.git} integration from above; just integrate the \code{git} commands 
-from the Docker setup below into the \code{setup.sh} script. However, if you wouldn't like to do that either, okay! Just skip ahead to the \code{Autograding Framework} section below. 
+Note that you can still use the \code{.git} integration;  However, if you wouldn't like to do that either, okay! Just skip ahead to the \code{Autograding Framework} section below. 
 
 \section*{Install Docker}
 Install Docker Desktop: \textcolor{blue}{\href{https://www.docker.com/products/docker-desktop/}{https://www.docker.com/products/docker-desktop/}}
@@ -160,7 +161,7 @@ The \code{.toml} file will be configured as follows:
 !\#! test-specific options override any `parent' options
 \end{bashcodeblock}
 
-\section*{Test Configuration Options}
+\section*{Test .toml Configuration Options}
 \begin{tabular}{ | l | c | l | }
 \hline			
 \textbf{option} & \textbf{default} & \textbf{purpose} \\ \hline\hline
@@ -170,9 +171,9 @@ valgrind & true & run an additional test with valgrind \\\hline
 diff\_stdout & true & test diff of student vs. reference stdout \\\hline
 diff\_stderr & true & test diff of student vs. reference stderr \\\hline
 diff\_ofiles & true & test diff of student vs. reference output files \\\hline
-ccize\_stdout & false & diff canonicalized stdout \\\hline
-ccize\_stderr & false & diff canonicalized stderr \\\hline
-ccize\_ofiles & false & diff canonicalized ofiles \\\hline
+ccize\_stdout & false & diff canonicalized stdout instead of stdout \\\hline
+ccize\_stderr & false & diff canonicalized stderr instead of stderr \\\hline
+ccize\_ofiles & false & diff canonicalized ofiles instead of ofiles \\\hline
 ccizer\_name & ``" & name of a canonicalizer function to use \\\hline
 our\_makefile & true & use testset/makefile/Makefile to build tests \\\hline
 pretty\_diff & true & use diff-so-pretty for easy-to-ready diffs \\\hline
@@ -181,8 +182,63 @@ visibility &``after-due-date" & gradescope visibility setting \\\hline
 argv & [ ] & argv input to the program \\\hline
 \end{tabular}
 
-\section*{Autograder Directory Structure}
+\section*{Autograder Files and Directories}
+\subsection*{Files/Directories Required to Run Autograder}
+These are all of the possible options, but you may not need many of them 
+depending on your test configuration.
+[TODO] - ensure that the autograder is 'flexible' - not sure if missing some directories/files will
+cause an unexpected crash.
 \begin{bashcodeblock}
-
+.
+|---canonicalizers.py [opt. file with canonicalization fn(s)]
+|---testrunner.sh     [script that runs this file]
+|---submission/       [student submission (provided by gs)]
+|---testset/          [everything needed to run tests]
+|   |---copy/         [files here will be copied to build/]
+|   |---cpp/          [.cpp driver files]
+|   |---link          [files here will be symlinked in build/]
+|   |---makefile/     [contains custom Makefile]
+|   |---ref_output/   [output of reference implementation]
+|   |---solution/     [solution code]
+|   |---stdin/        [files here are sent as stdin]
+|---testst.toml       [testing configuration file]
+|-
 \end{bashcodeblock}
+\newpage
+\subsection*{Files/Directories Created After Running Autograder}
+\begin{bashcodeblock}
+.
+|--- results
+|   |--- build      [student submission files]
+|   |   |--- 
+|   |   |--- test01 [compiled executables]
+|   |   |--- ...
+|   |   |--- test21
+|   |--- logs
+|   |   |--- status
+|   |   |--- test01.compile.log
+|   |   |--- test01.summary
+|   |   |--- ...
+|   |   |--- test21.summary
+|   |--- output
+|       |--- test01.ofile
+|       |--- test01.ofile.diff
+|       |--- test01.ofile.ccized
+|       |--- test01.ofile.ccized.diff
+|       |--- test01.stderr
+|       |--- test01.stderr.diff
+|       |--- test01.stderr.ccized
+|       |--- test01.stderr.ccized.diff 
+|       |--- test01.stdout
+|       |--- test01.stdout.diff
+|       |--- test01.stdout.ccized
+|       |--- test01.stdout.ccized.diff
+|       |--- test01.valgrind
+|       |--- ...
+|       |--- test21.valgrind
+|-
+\end{bashcodeblock}
+The \code{.diff}, \code{.ccized}, and \code{.valgrind} output files for each test 
+will only be created if your configuation requires them; \code{.stdout} and \code{.stderr}
+files will be created for each test.
 \end{document}
