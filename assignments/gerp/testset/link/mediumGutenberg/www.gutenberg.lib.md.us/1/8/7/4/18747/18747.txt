@@ -1,0 +1,1018 @@
+The Project Gutenberg EBook of Transactions of the American Society of
+Civil Engineers, Vol. LXX, Dec. 1910, by Beverly S.  Randolph
+
+This eBook is for the use of anyone anywhere at no cost and with
+almost no restrictions whatsoever.  You may copy it, give it away or
+re-use it under the terms of the Project Gutenberg License included
+with this eBook or online at www.gutenberg.org
+
+
+Title: Transactions of the American Society of Civil Engineers, Vol. LXX, Dec. 1910
+       Locomotive Performance On Grades Of Various Lengths, Paper No. 1172
+
+Author: Beverly S.  Randolph
+
+Release Date: July 3, 2006 [EBook #18747]
+
+Language: English
+
+Character set encoding: ASCII
+
+*** START OF THIS PROJECT GUTENBERG EBOOK AMERICAN SOCIETY OF CIVIL ENGINEERS ***
+
+
+
+
+Produced by Juliet Sutherland, Sigal Alon and the Online
+Distributed Proofreading Team at http://www.pgdp.net
+
+
+
+
+
+
+
+
+
+AMERICAN SOCIETY OF CIVIL ENGINEERS
+
+INSTITUTED 1852
+
+
+TRANSACTIONS
+
+Paper No. 1172
+
+
+LOCOMOTIVE PERFORMANCE ON GRADES OF
+VARIOUS LENGTHS.
+
+BY BEVERLY S. RANDOLPH, M. AM. SOC. C. E.
+
+WITH DISCUSSION BY MESSRS. C. D. PURDON, JOHN C. TRAUTWINE, JR.,
+AND BEVERLY S. RANDOLPH.
+
+
+
+
+In the location of new railways and the improvement of lines already in
+operation, it is now well recognized that large economies can be
+effected by the careful study of train resistance due to grades and
+alignment, distributing this resistance so as to secure a minimum cost
+of operation with the means available for construction.
+
+While engaged in such studies some years ago, the attention of the
+writer was attracted by the fact that the usual method of calculating
+the traction of a locomotive--by assuming from 20 to 25% of the weight
+on the drivers--was subject to no small modification in practice.
+
+In order to obtain a working basis, for use in relation to this feature,
+he undertook the collection of data from the practical operation of
+various roads. Subsequent engagements in an entirely different direction
+caused this to be laid aside until the present time. The results are
+given in Table 1, from which it will be seen that the percentage of
+driver weight utilized in draft is a function of the length as well as
+the rate of grade encountered in the practical operation of railways.
+
+In this table, performance will be found expressed as the percentage of
+the weight on the drivers which is utilized in draft. This is calculated
+on a basis of 6 lb. per ton of train resistance, for dates prior to
+1880, this being the amount given by the late A. M. Wellington, M. Am.
+Soc. C.. E.,[A] and 4.7 lb. per ton for those of 1908-10, as obtained by
+A. C. Dennis, M. Am. Soc. C. E.,[B] assuming this difference to
+represent the advance in practice from 1880 to the present time. Most of
+the data have been obtained from the "Catalogue of the Baldwin
+Locomotive Works" for 1881, to which have been added some later figures
+from "Record No. 65" of the same establishment, and also some obtained
+by the writer directly from the roads concerned. Being taken thus at
+random, the results may be accepted as fairly representative of American
+practice.
+
+Attention should be directed to the fact that the performance of the
+10-34 E, Consolidation locomotive on the Lehigh Valley Railroad in 1871
+is practically equal to that of the latest Mallet compounds on the Great
+Northern Railway. In other words, in the ratio between the ability to
+produce steam and the weight on the drivers there has been no change in
+the last forty years. This would indicate that the figures are not
+likely to be changed much as long as steam-driven locomotives are in
+use. What will obtain with the introduction of electric traction is
+"another story."
+
+These results have also been platted, and are presented in Fig. 1, with
+the lengths of grade as abscissas and the percentages of weight utilized
+as ordinates. The curve sketched to represent a general average will
+show the conditions at a glance. The results may at first sight seem
+irregular, but the agreement is really remarkable when the variety of
+sources is considered; that in many cases the "reputed" rate of grade is
+doubtless given without actual measurement; that the results also
+include momentum, the ability to utilize which depends on the conditions
+of grade, alignment, and operating practice which obtain about the foot
+of each grade; and that the same amount of energy due to momentum will
+carry a train farther on a light grade than on a heavy one.
+
+There are four items in Table 1 which vary materially from the general
+consensus. For Item 9, the authorities of the road particularly state
+that their loads are light, because, owing to the congested condition of
+their business, their trains must make fast time. Item 10 represents
+very old practice, certainly prior to 1882, and is "second-hand." The
+load consisted of empty coal cars, and the line was very tortuous, so
+that it is quite probable that the resistance assumed in the calculation
+is far below the actual. Items 15 and 17 are both high. To account for
+this, it is to be noted that this road has been recently completed,
+regardless of cost in the matter of both track and rolling stock, and
+doubtless represents the highest development of railroad practice. Its
+rolling stock is all new, and is probably in better condition to offer
+low resistance than it will ever be again, and there were no "foreign"
+cars in the trains considered. The train resistance, therefore, may be
+naturally assumed to be much less than that of roads hauling all classes
+of cars, many of which are barely good enough to pass inspection. As the
+grades are light in both cases, this feature of train resistance is
+larger than in items including heavier grades. Attention should be
+called to the fact that a line connecting the two points representing
+these items on Fig. 1 would make only a small angle with the sketched
+curve, and would be practically parallel to a similar line connecting
+the points represented by Items 13 and 16. There is, therefore, an
+agreement of ratios, which is all that needs consideration in this
+discussion.
+
+[Illustration: FIG. 1.--DIAGRAM SHOWING PERCENTAGE OF WEIGHT ON DRIVERS
+WHICH IS UTILIZED IN TRACTION ON GRADES OF VARIOUS LENGTHS]
+
+Wellington, in his monumental work on railway location, presents a table
+of this character. The percentages of weight on the drivers which is
+utilized in draft show the greatest irregularity. He does not give the
+length of the grades considered, so that it is impossible to say how far
+the introduction of this feature would have contributed to bring order
+out of the chaos. In his discussion of the table he admits the
+unsatisfactory character of the results, and finally decides on 25% as a
+rough average, "very approximately the safe operating load in regular
+service." He further states that a number of results, which he omits for
+want of space, exceeds 33 per cent. The highest shown in Table 1 will be
+found in Item 1 (0.06 mile, 0.066 grade), showing 33 per cent. There is
+no momentum effect here, as the grade is a short incline extending down
+to the river, and the start is necessarily a "dead" one. The reports of
+Item 3, which shows 31%, and Item 5, which shows 27%, state specifically
+that the locomotives will stop and start the loads given at any point on
+the grade.
+
+The results of a series of experiments reported by Mr. A. C. Dennis in
+his paper, "Virtual Grades for Freight Trains," previously referred to,
+indicate a utilization of somewhat more than 23%, decreasing with the
+speed.
+
+All this indicates that the general failure of locomotives to utilize
+more than from 16 to 18% on long grades, as shown by Table 1, can only
+be due to the failure of the boilers to supply the necessary steam.
+While the higher percentage shown for the shorter grades may be ascribed
+largely to momentum present when the foot of the grade is reached, the
+energy due to stored heat is responsible for a large portion of it.
+
+When a locomotive has been standing still, or running with the steam
+consumption materially below the production, the pressure accumulates
+until it reaches the point at which the safety valve is "set." This
+means that the entire machine is heated to a temperature sufficient to
+maintain this pressure in the boiler. When the steam consumption begins
+to exceed the production, this temperature is reduced to a point where
+the consumption and production balance.
+
+The heat represented by this difference in temperature has passed into
+the steam used, thus adding to the energy supplied by the combustion
+going on in the furnace. The engines, therefore, are able to do
+considerably more work during the time the pressure is falling than they
+can do after the fall has ceased.
+
+The curve in Fig. 1 would indicate that the energy derived from the two
+sources just discussed is practically dissipated at 15 miles, though the
+position of the points representing Items 16, 18, 19, 20, and 21 would
+indicate that this takes place more frequently between 10 and 12 miles.
+From this point onward the performance depends on the efficiency of the
+steam production, which does not appear to be able to utilize more than
+16% of the weight on the drivers. The diagrams presented by Mr. Dennis
+in his paper on virtual grades, and by John A. Fulton, M. Am. Soc.
+C. E., in his discussion of that paper, indicate that similar results
+would be shown were they extended to include the distance named.
+
+From this it would appear that a locomotive is capable of hauling a
+larger train on grades less than 10 miles in length than on longer
+grades, and that, even when unexpectedly stopped, it is capable of
+starting again as soon as the steam pressure is sufficiently built up.
+Conversely, it should be practicable to use a higher rate of ascent on
+shorter grades on any given line without decreasing the load which can
+be hauled over it. In other words, what is known as the "ruling grade"
+is a function, strictly speaking, of the length as well as the rate of
+grade.
+
+In any discussions of the practicability of using a higher rate on the
+short grades, which the writer has seen, the most valid objection has
+appeared to be the danger of stalling and consequent delay. As far as
+momentum is relied on, this objection is valid. Within the limits of the
+load which can be handled by the steam, it has small value, as it is
+only a question of waiting a few minutes until the pressure can be built
+up to the point at which the load can be handled. As this need only be
+an occasional occurrence, it is not to be balanced against any material
+saving in cost of construction.
+
+The writer does not know of any experiments which will throw much light
+on the value of heat storage as separated from momentum, though the
+following discussion may prove suggestive:
+
+A train moving at a rate of 60 ft. per sec., and reaching the foot of a
+grade, will have acquired a "velocity head" of 56.7 ft., equivalent to
+stored energy of 56.7 x 2,000 = 113,400 ft-lb. per ton. On a 0.002
+grade (as in Item 15 of Table 1) the resistance would be, gravity
+4 lb. + train 4.7 lb. = 8.7 lb., against which the energy above given
+would carry the train through 113,400 / 8.7 = 13,034 ft., say, 2.5
+miles, leaving 5 miles to be provided for by the steam production.
+Examining the items in the table having grades in excess of 10 miles, it
+will be noted that 16% is about all the weight on drivers which can be
+utilized by the current supply of steam. In Item 15 the energy derived
+from all sources is equivalent to 24.3%; hence the stored heat may be
+considered as responsible for an equivalent of 24.3% - 16% = 8.3% for a
+distance of 5 miles.
+
+
+TABLE 1.
+
+===========================================================================
+Item No.
+  |Length of grade, in miles.
+  |     |Rate of grade.
+  |     |      |Maximum curvature.
+  |     |      |      |Compensation.
+  |     |      |      |    |Gross weight of load, in tons.
+  |     |      |      |    |     |Weight of tender, in tons.
+  |     |      |      |    |     |  |Weight of locomotive, in tons.
+  |     |      |      |    |     |  |     |Weight on drivers, in tons.
+  |     |      |      |    |     |  |     |     |Percentage of weight on
+  |     |      |      |    |     |  |     |     |drivers utilized in draft.
+  |     |      |      |    |     |  |     |     |     |Class.
+  |     |      |      |    |     |  |     |     |     |
+  |     |      |      |    |     |  |     |     |     |
+--+-----+------+------+----+-----+--+-----+-----+-----+--------------------
+ 1| 0.06|0.066 |      |    |  115|  | 37.5| 29  |0.358| 8-28-1/3 C
+ 2| 0.33|0.0203|25 deg.20'|    |  242|25| 35  | 23  |0.285| 8-28     C
+ 3| 1.0 |0.06  |16 deg.   |0.05|  192|22| 57.5| 50  |0.310|10-36     E
+ 4| 1.3 |0.0127|      |    |  600|16| 40  | 32.5|0.300|Mogul.
+ 5| 1.4 |0.0128| 3 deg.12'|    |  750|15| 51  | 44  |0.270|10-34     E
+ 6| 2.0 |0.01  |      |    |1,000|15| 51  | 44  |0.291|10-34     E
+ 7| 2.2 |0.013 | 3 deg.   |    |  725|15| 51  | 44  |0.245|10-34     E
+ 8| 2.5 |0.0144| 6 deg.   |    |  400|27| 42  | 32  |0.237|10-32     E
+ 9| 2.5 |0.004 |      |    |2,700|70| 96.7| 85.8|0.207| H 6 - A
+10| 3.5 |0.033 |14 deg.   |    |  100|25| 35  | 35  |0.160|
+11| 3.6 |0.035 |10 deg.   |0.05|  236|22| 57.5| 50  |0.245|10-36     E
+12| 4.0 |0.0085| 4 deg.   |    |1,020|30| 51  | 44  |0.256|10-34     E
+13| 6.0 |0.0145|      |    |  308|25| 38  | 28  |0.207|10-28     D
+14| 6.0 |0.020 |10 deg.   |0.05|  460|32| 57.5| 50  |0.242|10-34     E
+15| 7.5 |0.002 |      |  C |6,152|86|134.5|109.5|0.243|Mallet.
+16| 9.75|0.018 |      |    |  200|18| 29  | 29  |0.170|
+17|10.0 |0.006 |      |  C |6,173|86|299  |265  |0.203|Mallet.
+18|12.0 |0.018 |10 deg.   |    |  280|30| 51  | 44  |0.160|10-34     E
+19|12.0 |0.022 |      |    |  850|74|175  |156  |0.166|D-D 16
+20|13.0 |0.022 |      |    |  800|74|177  |158  |0.153|D-D  1
+21|13.0 |0.022 |14 deg.   |    |  415|50| 91  | 83  |0.154|Consol.
+22|16.0 |0.0044|      |    |  950|30| 51  | 44  |0.164|10-34     E
+23|20.0 |0.022 |      |    |  500|62| 97.5| 90  |0.170|F 8, Consol.
+24|20.0 |0.022 |      |    |  800|74|177  |158  |0.159|L-1, Mallet.
+===========================================================================
+
+
+============================================================================
+  |Maker.  |Railroad.                   |Reporting Officer.           |Year.
+--+--------+----------------------------+-----------------------------+-----
+ 1|Baldwin.|Morgan's Louisiana & Texas  |Newell Tilton, Asst. Supt.   |1880
+ 2|   "    |Long Island                 |S. Spencer, Gen. Supt.       |1878
+ 3|   "    |Atchison, Topeka & Santa Fe |J. D. Burr,  Asst. Engr.     |1879
+ 4|   "    |Chillan & Talcahuana        |J. E. Martin, Local Supt.    |1879
+ 5|   "    |Chicago, Burlington & Quincy|H. B. Stone                  |1880
+ 6|   "    |Chicago, Burlington & Quincy|      "                      |1880
+ 7|   "    |Chicago, Burlington & Quincy|      "                      |1880
+ 8|   "    |St. Louis & San Francisco   |C. W. Rogers, Gen. Mgr.      |1879
+ 9|Pa. R.R |Cumberland Valley.          |                             |1910
+10|        |                            |                             |1910
+11|Baldwin.|Atchison, Topeka & Santa Fe |J. D. Burr,  Asst. Engr.     |1879
+12|   "    |Missouri Pacific            |John Hewitt, Supt. M. P.     |1880
+13|   "    |Western Maryland            |D. Holtz, M. of Mach'y.      |1878
+14|   "    |Atchison, Topeka & Santa Fe |J. D. Burr,  Asst. Engr.     |1879
+15|   "    |Virginian Ry.               |                             |1910
+16|        |Pennsylvania                |                             |1910
+17|Baldwin.|Virginian Ry.               |                             |1910
+18|   "    |Lehigh Valley, Wyoming Div. |A. Mitchell, Div. Supt.      |1871
+19|   "    |Great Northern              |Grafton Greenough.           |1908
+20|   "    |Great Northern              |Grafton Greenough.           |1908
+21|   "    |Baltimore & Ohio            |F. E. Blaser, Div. Supt.     |1910
+22|   "    |Central of N. J.            |W. W. Stearns, Asst.Gen.Supt.|1880
+23|   "    |Great Northern              |Grafton Greenough.           |1908
+24|   "    |Great Northern              |Grafton Greenough.           |1906
+============================================================================
+
+
+==============================================================================
+  |Source of Data.                          |Remarks.
+--+-----------------------------------------+---------------------------------
+ 1|Baldwin Catalogue, 1881, p. 134          |
+ 2|   "        "      1881, "   72          |10 miles per hour.
+ 3|   "        "      1881, "  115          | 8   "    "   "
+  |                                         |    Stops and starts on grade.
+ 4|   "        "      1881, "  100          |
+ 5|   "        "      1881, "  116          |Stops and starts at any point
+  |                                         |    on grade.
+ 6|   "        "      1881, "  116          |
+ 7|   "        "      1881, "  116          |
+ 8|   "        "      1881, "   87          |
+ 9|                                         |
+10|Trautwine's Pocket Book, Ed. 1882, p. 412|Empty cars; many curves and
+  |                                         |    reversions.
+11|Baldwin Catalogue, 1881, p. 114          |
+12|   "        "      1881, "  112          |
+13|   "        "      1881, "   86          |12 miles per hour.
+14|   "        "      1881, "  114          | 8   "    "   "
+15|_Engineering News_, Jan. 13, 1910.       |
+16|Trautwine's Pocket Book, Ed. 1882, p. 412|
+17|_Engineering News_, Jan. 13, 1910.       |Road locomotive and helper.
+18|Baldwin Catalogue, 1881, p. 112          |
+19|Baldwin Loco. Wks. Record, No. 65, p.  29|
+20|Baldwin Loco. Wks. Record, No. 65, p.  29|
+21|                                         |Very crooked line. Uncompensated.
+22|Baldwin Catalogue, 1881, p. 113          |
+23|Baldwin Loco. Wks. Record, No. 65, p.  29|
+24|Baldwin Loco. Wks. Record, No. 65, p.  29|
+==============================================================================
+
+In proportioning grade resistance for any line, therefore, a locomotive
+may be counted on to utilize 24.3% of the weight on the drivers for a
+distance of 5 miles on a 0.002 grade without any assistance from
+momentum, and, in the event of an unexpected stop, should be able, as
+soon as a full head of steam is built up, to start the train and carry
+it over the grade. This is probably a maximum, considering the condition
+of the equipment of this Virginian Railway, as previously mentioned.
+
+Treating Item 14 in the same way, a distance of 2,310 ft. is accounted
+for by momentum, leaving, say, 5.5 miles for the steam, or the length of
+a 0.02 grade on which a locomotive may be loaded on a basis of tractive
+power equal to 24.2% of the weight on the drivers.
+
+From these figures it may be concluded that on lines having grades from
+12 to 15 or more miles in length, grades of 3 to 5 miles in length may
+be inserted having rates 50% in excess of that of the long grades,
+without decreasing the capacity of the line. This statement, of course,
+is general in its bearings, each case being subject to its especial
+limitations, and subject to detailed calculations.
+
+It may be noted that the velocity of 60 ft. per sec., assumed at the
+foot of the grade, is probably higher than should be expected in
+practice; it insures, on the other hand, that quite enough has been
+allowed for momentum, and that the results are conservative.
+
+Arguments like the foregoing are always more or less treacherous; being
+based on statistics, they are naturally subject to material
+modifications in the presence of a larger array of data, therefore,
+material assistance in reaching practical conclusions can be given by
+the presentation of additional data.
+
+
+
+
+DISCUSSION
+
+
+C. D. PURDON, M. AM. SOC. C. E. (by letter).--Some years ago the writer,
+in making studies for grade revision, found that the tractive power of a
+locomotive up grade becomes less as the length of the grade increases,
+and in some unknown proportion. This was a practical confirmation of the
+saying of locomotive engineers, that the engine "got tired" on long
+grades. On a well-known Western railroad, with which the writer is
+familiar, experiments were made for the purpose of rating its
+locomotives. The locomotives were first divided into classes according
+to their tractive power, this being calculated by the usual rule, with
+factors of size of cylinders, boiler pressure, and diameter of drivers,
+also by taking one-fourth of the weight on the drivers, and using the
+lesser of the two results as the tractive power.
+
+Locomotives of different classes, and hauling known loads, were run over
+a freight division, the cars being weighed for the purpose; thus the
+maximum load which could be handled over a division, or different parts
+of a division, was ascertained, and this proportion of tonnage to
+tractive power was used in rating all classes.
+
+Of course, this method was not mathematically accurate, as the condition
+of track, the weather, and the personal equation of the locomotive
+engineers all had an effect, but, later, when correcting the rating by
+tests with dynamometers, it was found that the results were fairly
+practical.
+
+There were three hills where the rate of grade was the same as the rest
+of the division, but where the length was much in excess of other grades
+of the same rate.
+
+Designating these hills as _A_, _B_, and _C_, the lengths are,
+respectively, 2.44, 3.57, and 4.41 miles. There were no other grades of
+the same rate exceeding 1 mile.
+
+In one class of freight engines, 10-wheel Brooks, the weight of the
+engine was 197,900 lb.; tender, 132,800 lb.; weight on drivers, 142,600
+lb.; boiler pressure, 200 lb.; and tractive power of cylinders, 33,300
+lb.
+
+On Hill _A_ these engines are rated at 865 tons, as compared with 945 on
+other parts of the division. As the engine weighs 165 tons and the
+caboose 15 tons, 180 tons should be added, making the figures, 1,045 and
+1,125 tons. Thus the length of the grade, 2.44 miles, makes the tractive
+power on it 92% of that on shorter grades.
+
+On Hill _B_, the rating, adding 180 tons as above, is 1,160 and 1,230
+tons, respectively, giving 94% for 3.57 miles.
+
+On Hill _C_, the rating, with 180 tons added, is 1,130 and 1,230 tons,
+making 92% for 4.41 miles.
+
+Taking the same basis as the author, namely, 4.7 lb. per ton, rate of
+grade x 20, and weight on drivers, gives:
+
+Hill _A_,  18.078%, remainder of division, 19.462%
+Hill _B_,  20.068%,     "     "      "     21.279%
+Hill _C_,  19.549%,     "     "      "     21.279%
+
+It will be noted that the author uses the weight on the drivers as the
+criterion, but the tractive power is not directly as the weight on the
+drivers, some engines being over-cylindered, or under-cylindered; in the
+class of engines above mentioned the tractive power is 23.35% of the
+weight on the drivers.
+
+The writer made a study of several dynamometer tests on Hill _C_. There
+is a grade of the same rate, about 1 mile long, near this hill, and a
+station near its foot, but there is sufficient level grade between this
+station and the foot of the hill to get a good start.
+
+All the engines of the above class, loaded for Hill _C_, gained speed on
+the 1-mile grade, but began to fall below the theoretical speed at a
+point about 2-1/4 miles from the foot of the hill. This condition
+occurred when the trains stopped at the station and also when they
+passed it at a rate of some 16 or 18 miles per hour, the speed becoming
+less and less as the top of the hill was approached.
+
+The writer concludes that the author might stretch his opinion as to
+using heavier rates of grade on shorter hills than 10 miles, and indeed
+his diagram seems to intimate as much, and that, for economical
+operation, the maximum rate of grade should be reduced after a length of
+about 2 miles has been reached, and more and more in proportion to the
+length of the hill, in order that the same rating could be applied all
+over a division.
+
+This conclusion might be modified by local conditions, such as an
+important town where cars might be added to or taken from the train.
+
+While it does not seem practicable to the writer to calculate what the
+reduction of rate of grade should be, a consensus of results of
+operation on different lengths of grade might give sufficient data to
+reach some conclusion on the matter.
+
+The American Railway Engineering and Maintenance of Way Association has
+a Committee on "Railway Economics," which is studying such matters, but
+so far as the writer knows it has not given this question any
+consideration.
+
+The writer hopes that the author will follow up this subject, and that
+other members will join, as a full discussion will no doubt bring some
+results on a question which seems to be highly important.
+
+
+JOHN C. TRAUTWINE, JR., ASSOC. AM. SOC. C. E. (by letter).--In his
+collection of data, Mr. Randolph includes two ancient cases taken from
+the earliest editions (1872-1883) of Trautwine's "Civil Engineer's
+Pocket-Book," referring to performances on the Mahanoy and Broad
+Mountain Railroad (now the Frackville Branch of the Reading) and on the
+Pennsylvania Railroad, respectively.
+
+In the private notes of John C. Trautwine, Sr., these two cases are
+recorded as follows:
+
+     "On the Mahanoy & Broad Mtn. R. R., _tank_ Engines of 35 tons, _all
+     on 8 drivers_, draw 40 _empty_ coal cars weighing 100 tons, _up_ a
+     continuous grade of 175 ft. per mile for 3-1/2 miles; & around
+     curves of 450, 500, 600 ft. &c. rad., at 8 miles an hour. (1864)
+     This is equal to 77-14/100 tons for a 27-ton engine." (Vol. III, p.
+     176.)
+
+     "On the Penn Central 95 ft. grades for 9-3/4 miles, a 29-ton engine
+     all on 8 drivers takes 125 tons of freight and 112 tons of engine,
+     tender, & cars, in all 237 tons,[C] and a passenger engine takes up
+     3 cars at 24 miles an hour (large 8 wheels). When more than 3, an
+     auxiliary engine."
+
+It will be seen that Mr. Randolph is well within bounds in ascribing to
+the Mahanoy and Broad Mountain case (his No. 10) a date "certainly prior
+to 1882," the date being given, in the notes, as 1864; while another
+entry just below it, for the Pennsylvania Railroad case, is dated 1860.
+
+It also seems, as stated by Mr. Randolph, quite probable that the
+frictional resistance (6 lb. per 2,000 lb.) assumed by him in the
+calculation is far below the actual for this Case 10. The small, empty,
+four-wheel cars weighed only 4,400 lb. each. Furthermore, the "tons," in
+the Trautwine reports of these experiments, were tons of 2,240 lb. On
+the other hand, the maximum curvature was 12 deg. 45' (not 14 deg., as given by
+the author), and the engine was a tank locomotive, whereas the author
+has credited it with a 25-ton tender.
+
+After making all corrections, it will be found that, in order to bring
+the point, for this Case 10, up to the author's curve, instead of his 6
+lb. per 2,000 lb., a frictional resistance of 66 lb. per 2,000 lb. would
+be required, a resistance just equal to the gravity resistance on the
+3.3% grade, making a total resistance of 132 lb. per 2,000 lb.
+
+While this 66 lb. per ton is very high, it is perhaps not too high for
+the known conditions, as above described. For modern rolling stock, Mr.
+A. K. Shurtleff gives the formula:[D]
+
+Frictional resistance, on tangent, }
+in pounds per 2,000 pounds         } = 1 + 90 / C,
+
+where _C_ = weight of car and load, in tons of 2,000 lb. This would
+give, for 4,400-lb. (2.2-ton) cars, a frictional resistance of 42 lb.
+per 2,000 lb.; and, on the usual assumption of 0.8 lb. per 2,000 lb. for
+each degree of curvature, the 12.75 deg. curves of this line would give 10
+lb. per ton additional, making a total of 52 lb. per 2,000 lb. over and
+above grade resistance, under modern conditions.
+
+In the 9th to 17th editions of Trautwine (1885-1900), these early
+accounts were superseded by numerous later instances, including some of
+those quoted by the author.
+
+In the 18th and 19th editions (1902-1909) are given data respecting
+performances on the Catawissa Branch of the Reading (Shamokin Division)
+in 1898-1901. These give the maximum and minimum loads hauled up a
+nearly continuous grade of 31.47 ft. per mile (0.59%) from Catawissa to
+Lofty (34.03 miles) by engines of different classes, with different
+helpers and without helpers.
+
+Table 2 (in which the writer follows the author in assuming frictional
+resistance at 4.7 lb. per 2,000 lb.) shows the cases giving the maximum
+and minimum values of the quantity represented by the ordinates in the
+author's diagram, namely, "Traction, in percentage of weight on
+drivers."
+
+It will be seen that the maximum percentage (16.1) is practically
+identical with that found by the author (16) for grade lengths exceeding
+17 miles.
+
+Near the middle of the 34-mile distance there is a stretch of 1.51
+miles, on which the average grade is only 5.93 ft. per mile (0.112%),
+and this stretch divides the remaining distance into two practically
+continuous grades, 19.39 and 13.13 miles long, respectively; but, as the
+same loads are hauled over these two portions by the same engines, the
+results are virtually identical, the maxima furnishing two more points
+closely coinciding with the author's diagram.
+
+
+TABLE 2.--TRACTIVE FORCE, CATAWISSA TO LOFTY.
+
+========================================================================
+Length of grade, in miles                           |    |    34.03
+                                                    |    |
+Grade {in feet per mile                             |    |    31.47
+      {percentage                                   |_A_ |     0.597
+                                                    |    |
+Resistances, in pounds per 2,000 lb.,               |    |
+    Gravity (=20 _A_) = 11.94. Friction = 4.70      |_B_ |    16.64
+                                                    |    |
+  Load:      | Cars.  | Locomotive.| Tender.        |    |
+  Maximum[E] | 1,561  |   44.60    |  25.25         |_C_ | 1,631
+  Minimum[F] | 1,031  |   60.50    |  34.50         |_C_ | 1,126
+                                                    |    |
+Traction (= _B_ _C_ / 2,000 ) Maximum[E]            |_D_ |    13.60
+                              Minimum[F]            |_D_ |     9.38
+ Weight on Drivers:   | Locomotive.|  Helper.       |    |
+    Maximum[E]        |    21.60   |    63.00       |_E_ |    84.60
+    Minimum[F]        |    47.00   |    72.00       |_E_ |   119.00
+                                                    |    |
+Percentage ( = _D_ / _E_ ).                         |    |
+  Maximum                                           |_F_ |    16.1
+  Minimum                                           |_F_ |     7.9
+========================================================================
+
+    FOOTNOTES:
+
+    [Footnote E: Giving maximum values of percentage, _F_.]
+
+    [Footnote F: Giving minimum values of percentage, _F_.]
+
+
+
+BEVERLY S. RANDOLPH, M. AM. SOC. C. E. (by letter).--The percentages
+given by Mr. Purdon would seem to indicate that the length of the grades
+did not affect the loads in the cases cited, but these percentages are
+so much below those shown in the table, for similar distances, as to
+indicate some special conditions which the writer has been unable to
+find in the text.
+
+The use of the percentage of weight on drivers which is utilized in
+traction as a measure of the efficiency of the locomotive, while,
+probably, not applicable to individual machines, is sound for the
+purposes of comparison of results to be obtained on various portions of
+a line as far as affected by conditions of grade and alignment. It has
+the advantage of disregarding questions of temperature, condition of
+track, character of fuel, etc., which, being the same on all portions of
+the line, naturally balance and do not affect the comparison. It is, of
+course, simply a method of expressing the final efficiency of the
+various parts of the locomotive, and, since it depends entirely on
+actual results already accomplished, leaves no room for difference of
+opinion or theoretical error.
+
+The writer has always considered an "under-cylindered" locomotive as a
+defective machine. All weight is a distinct debit, in the shape of wear
+and tear of track and running gear, resistance due to gravity on grades,
+interest on cost, etc. When this weight fails to earn a credit in the
+way of tractive efficiency, it should not be present.
+
+The statement relative to the performance of locomotives on "Hill _C_"
+is interesting, especially in that it appears to have been immaterial
+whether they made a dead start after stopping at the station or
+approached the foot of the hill at 16 to 18 miles per hour. The momentum
+would appear to be an insignificant factor.
+
+It is gratifying to note that Mr. Trautwine has been able to brace up
+the weak member of Table 1 so completely with his detailed data; also
+that his other results strengthen the conclusions reached in the
+paper.
+
+
+    FOOTNOTES:
+
+    [Footnote A: "The Economic Theory of Railway Location," 1887 edition,
+    p. 502.]
+
+    [Footnote B: _Transactions_, Am. Soc. C. E., Vol. L, p. 1.]
+
+    [Footnote C: "Nearly 200 tons _exclusive_ of eng. & ten." (Vol. III,
+    p. 176-1/10.)]
+
+    [Footnote D: American Railway Engineering and Maintenance of Way
+    Association, Bulletin 84, February, 1907, p. 99.]
+
+
+
+
+
+End of the Project Gutenberg EBook of Transactions of the American Society
+of Civil Engineers, Vol. LXX, Dec. 1910, by Beverly S.  Randolph
+
+*** END OF THIS PROJECT GUTENBERG EBOOK AMERICAN SOCIETY OF CIVIL ENGINEERS ***
+
+***** This file should be named 18747.txt or 18747.zip *****
+This and all associated files of various formats will be found in:
+        http://www.gutenberg.org/1/8/7/4/18747/
+
+Produced by Juliet Sutherland, Sigal Alon and the Online
+Distributed Proofreading Team at http://www.pgdp.net
+
+
+Updated editions will replace the previous one--the old editions
+will be renamed.
+
+Creating the works from public domain print editions means that no
+one owns a United States copyright in these works, so the Foundation
+(and you!) can copy and distribute it in the United States without
+permission and without paying copyright royalties.  Special rules,
+set forth in the General Terms of Use part of this license, apply to
+copying and distributing Project Gutenberg-tm electronic works to
+protect the PROJECT GUTENBERG-tm concept and trademark.  Project
+Gutenberg is a registered trademark, and may not be used if you
+charge for the eBooks, unless you receive specific permission.  If you
+do not charge anything for copies of this eBook, complying with the
+rules is very easy.  You may use this eBook for nearly any purpose
+such as creation of derivative works, reports, performances and
+research.  They may be modified and printed and given away--you may do
+practically ANYTHING with public domain eBooks.  Redistribution is
+subject to the trademark license, especially commercial
+redistribution.
+
+
+
+*** START: FULL LICENSE ***
+
+THE FULL PROJECT GUTENBERG LICENSE
+PLEASE READ THIS BEFORE YOU DISTRIBUTE OR USE THIS WORK
+
+To protect the Project Gutenberg-tm mission of promoting the free
+distribution of electronic works, by using or distributing this work
+(or any other work associated in any way with the phrase "Project
+Gutenberg"), you agree to comply with all the terms of the Full Project
+Gutenberg-tm License (available with this file or online at
+http://gutenberg.org/license).
+
+
+Section 1.  General Terms of Use and Redistributing Project Gutenberg-tm
+electronic works
+
+1.A.  By reading or using any part of this Project Gutenberg-tm
+electronic work, you indicate that you have read, understand, agree to
+and accept all the terms of this license and intellectual property
+(trademark/copyright) agreement.  If you do not agree to abide by all
+the terms of this agreement, you must cease using and return or destroy
+all copies of Project Gutenberg-tm electronic works in your possession.
+If you paid a fee for obtaining a copy of or access to a Project
+Gutenberg-tm electronic work and you do not agree to be bound by the
+terms of this agreement, you may obtain a refund from the person or
+entity to whom you paid the fee as set forth in paragraph 1.E.8.
+
+1.B.  "Project Gutenberg" is a registered trademark.  It may only be
+used on or associated in any way with an electronic work by people who
+agree to be bound by the terms of this agreement.  There are a few
+things that you can do with most Project Gutenberg-tm electronic works
+even without complying with the full terms of this agreement.  See
+paragraph 1.C below.  There are a lot of things you can do with Project
+Gutenberg-tm electronic works if you follow the terms of this agreement
+and help preserve free future access to Project Gutenberg-tm electronic
+works.  See paragraph 1.E below.
+
+1.C.  The Project Gutenberg Literary Archive Foundation ("the Foundation"
+or PGLAF), owns a compilation copyright in the collection of Project
+Gutenberg-tm electronic works.  Nearly all the individual works in the
+collection are in the public domain in the United States.  If an
+individual work is in the public domain in the United States and you are
+located in the United States, we do not claim a right to prevent you from
+copying, distributing, performing, displaying or creating derivative
+works based on the work as long as all references to Project Gutenberg
+are removed.  Of course, we hope that you will support the Project
+Gutenberg-tm mission of promoting free access to electronic works by
+freely sharing Project Gutenberg-tm works in compliance with the terms of
+this agreement for keeping the Project Gutenberg-tm name associated with
+the work.  You can easily comply with the terms of this agreement by
+keeping this work in the same format with its attached full Project
+Gutenberg-tm License when you share it without charge with others.
+
+1.D.  The copyright laws of the place where you are located also govern
+what you can do with this work.  Copyright laws in most countries are in
+a constant state of change.  If you are outside the United States, check
+the laws of your country in addition to the terms of this agreement
+before downloading, copying, displaying, performing, distributing or
+creating derivative works based on this work or any other Project
+Gutenberg-tm work.  The Foundation makes no representations concerning
+the copyright status of any work in any country outside the United
+States.
+
+1.E.  Unless you have removed all references to Project Gutenberg:
+
+1.E.1.  The following sentence, with active links to, or other immediate
+access to, the full Project Gutenberg-tm License must appear prominently
+whenever any copy of a Project Gutenberg-tm work (any work on which the
+phrase "Project Gutenberg" appears, or with which the phrase "Project
+Gutenberg" is associated) is accessed, displayed, performed, viewed,
+copied or distributed:
+
+This eBook is for the use of anyone anywhere at no cost and with
+almost no restrictions whatsoever.  You may copy it, give it away or
+re-use it under the terms of the Project Gutenberg License included
+with this eBook or online at www.gutenberg.org
+
+1.E.2.  If an individual Project Gutenberg-tm electronic work is derived
+from the public domain (does not contain a notice indicating that it is
+posted with permission of the copyright holder), the work can be copied
+and distributed to anyone in the United States without paying any fees
+or charges.  If you are redistributing or providing access to a work
+with the phrase "Project Gutenberg" associated with or appearing on the
+work, you must comply either with the requirements of paragraphs 1.E.1
+through 1.E.7 or obtain permission for the use of the work and the
+Project Gutenberg-tm trademark as set forth in paragraphs 1.E.8 or
+1.E.9.
+
+1.E.3.  If an individual Project Gutenberg-tm electronic work is posted
+with the permission of the copyright holder, your use and distribution
+must comply with both paragraphs 1.E.1 through 1.E.7 and any additional
+terms imposed by the copyright holder.  Additional terms will be linked
+to the Project Gutenberg-tm License for all works posted with the
+permission of the copyright holder found at the beginning of this work.
+
+1.E.4.  Do not unlink or detach or remove the full Project Gutenberg-tm
+License terms from this work, or any files containing a part of this
+work or any other work associated with Project Gutenberg-tm.
+
+1.E.5.  Do not copy, display, perform, distribute or redistribute this
+electronic work, or any part of this electronic work, without
+prominently displaying the sentence set forth in paragraph 1.E.1 with
+active links or immediate access to the full terms of the Project
+Gutenberg-tm License.
+
+1.E.6.  You may convert to and distribute this work in any binary,
+compressed, marked up, nonproprietary or proprietary form, including any
+word processing or hypertext form.  However, if you provide access to or
+distribute copies of a Project Gutenberg-tm work in a format other than
+"Plain Vanilla ASCII" or other format used in the official version
+posted on the official Project Gutenberg-tm web site (www.gutenberg.org),
+you must, at no additional cost, fee or expense to the user, provide a
+copy, a means of exporting a copy, or a means of obtaining a copy upon
+request, of the work in its original "Plain Vanilla ASCII" or other
+form.  Any alternate format must include the full Project Gutenberg-tm
+License as specified in paragraph 1.E.1.
+
+1.E.7.  Do not charge a fee for access to, viewing, displaying,
+performing, copying or distributing any Project Gutenberg-tm works
+unless you comply with paragraph 1.E.8 or 1.E.9.
+
+1.E.8.  You may charge a reasonable fee for copies of or providing
+access to or distributing Project Gutenberg-tm electronic works provided
+that
+
+- You pay a royalty fee of 20% of the gross profits you derive from
+     the use of Project Gutenberg-tm works calculated using the method
+     you already use to calculate your applicable taxes.  The fee is
+     owed to the owner of the Project Gutenberg-tm trademark, but he
+     has agreed to donate royalties under this paragraph to the
+     Project Gutenberg Literary Archive Foundation.  Royalty payments
+     must be paid within 60 days following each date on which you
+     prepare (or are legally required to prepare) your periodic tax
+     returns.  Royalty payments should be clearly marked as such and
+     sent to the Project Gutenberg Literary Archive Foundation at the
+     address specified in Section 4, "Information about donations to
+     the Project Gutenberg Literary Archive Foundation."
+
+- You provide a full refund of any money paid by a user who notifies
+     you in writing (or by e-mail) within 30 days of receipt that s/he
+     does not agree to the terms of the full Project Gutenberg-tm
+     License.  You must require such a user to return or
+     destroy all copies of the works possessed in a physical medium
+     and discontinue all use of and all access to other copies of
+     Project Gutenberg-tm works.
+
+- You provide, in accordance with paragraph 1.F.3, a full refund of any
+     money paid for a work or a replacement copy, if a defect in the
+     electronic work is discovered and reported to you within 90 days
+     of receipt of the work.
+
+- You comply with all other terms of this agreement for free
+     distribution of Project Gutenberg-tm works.
+
+1.E.9.  If you wish to charge a fee or distribute a Project Gutenberg-tm
+electronic work or group of works on different terms than are set
+forth in this agreement, you must obtain permission in writing from
+both the Project Gutenberg Literary Archive Foundation and Michael
+Hart, the owner of the Project Gutenberg-tm trademark.  Contact the
+Foundation as set forth in Section 3 below.
+
+1.F.
+
+1.F.1.  Project Gutenberg volunteers and employees expend considerable
+effort to identify, do copyright research on, transcribe and proofread
+public domain works in creating the Project Gutenberg-tm
+collection.  Despite these efforts, Project Gutenberg-tm electronic
+works, and the medium on which they may be stored, may contain
+"Defects," such as, but not limited to, incomplete, inaccurate or
+corrupt data, transcription errors, a copyright or other intellectual
+property infringement, a defective or damaged disk or other medium, a
+computer virus, or computer codes that damage or cannot be read by
+your equipment.
+
+1.F.2.  LIMITED WARRANTY, DISCLAIMER OF DAMAGES - Except for the "Right
+of Replacement or Refund" described in paragraph 1.F.3, the Project
+Gutenberg Literary Archive Foundation, the owner of the Project
+Gutenberg-tm trademark, and any other party distributing a Project
+Gutenberg-tm electronic work under this agreement, disclaim all
+liability to you for damages, costs and expenses, including legal
+fees.  YOU AGREE THAT YOU HAVE NO REMEDIES FOR NEGLIGENCE, STRICT
+LIABILITY, BREACH OF WARRANTY OR BREACH OF CONTRACT EXCEPT THOSE
+PROVIDED IN PARAGRAPH F3.  YOU AGREE THAT THE FOUNDATION, THE
+TRADEMARK OWNER, AND ANY DISTRIBUTOR UNDER THIS AGREEMENT WILL NOT BE
+LIABLE TO YOU FOR ACTUAL, DIRECT, INDIRECT, CONSEQUENTIAL, PUNITIVE OR
+INCIDENTAL DAMAGES EVEN IF YOU GIVE NOTICE OF THE POSSIBILITY OF SUCH
+DAMAGE.
+
+1.F.3.  LIMITED RIGHT OF REPLACEMENT OR REFUND - If you discover a
+defect in this electronic work within 90 days of receiving it, you can
+receive a refund of the money (if any) you paid for it by sending a
+written explanation to the person you received the work from.  If you
+received the work on a physical medium, you must return the medium with
+your written explanation.  The person or entity that provided you with
+the defective work may elect to provide a replacement copy in lieu of a
+refund.  If you received the work electronically, the person or entity
+providing it to you may choose to give you a second opportunity to
+receive the work electronically in lieu of a refund.  If the second copy
+is also defective, you may demand a refund in writing without further
+opportunities to fix the problem.
+
+1.F.4.  Except for the limited right of replacement or refund set forth
+in paragraph 1.F.3, this work is provided to you 'AS-IS' WITH NO OTHER
+WARRANTIES OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO
+WARRANTIES OF MERCHANTIBILITY OR FITNESS FOR ANY PURPOSE.
+
+1.F.5.  Some states do not allow disclaimers of certain implied
+warranties or the exclusion or limitation of certain types of damages.
+If any disclaimer or limitation set forth in this agreement violates the
+law of the state applicable to this agreement, the agreement shall be
+interpreted to make the maximum disclaimer or limitation permitted by
+the applicable state law.  The invalidity or unenforceability of any
+provision of this agreement shall not void the remaining provisions.
+
+1.F.6.  INDEMNITY - You agree to indemnify and hold the Foundation, the
+trademark owner, any agent or employee of the Foundation, anyone
+providing copies of Project Gutenberg-tm electronic works in accordance
+with this agreement, and any volunteers associated with the production,
+promotion and distribution of Project Gutenberg-tm electronic works,
+harmless from all liability, costs and expenses, including legal fees,
+that arise directly or indirectly from any of the following which you do
+or cause to occur: (a) distribution of this or any Project Gutenberg-tm
+work, (b) alteration, modification, or additions or deletions to any
+Project Gutenberg-tm work, and (c) any Defect you cause.
+
+
+Section  2.  Information about the Mission of Project Gutenberg-tm
+
+Project Gutenberg-tm is synonymous with the free distribution of
+electronic works in formats readable by the widest variety of computers
+including obsolete, old, middle-aged and new computers.  It exists
+because of the efforts of hundreds of volunteers and donations from
+people in all walks of life.
+
+Volunteers and financial support to provide volunteers with the
+assistance they need, is critical to reaching Project Gutenberg-tm's
+goals and ensuring that the Project Gutenberg-tm collection will
+remain freely available for generations to come.  In 2001, the Project
+Gutenberg Literary Archive Foundation was created to provide a secure
+and permanent future for Project Gutenberg-tm and future generations.
+To learn more about the Project Gutenberg Literary Archive Foundation
+and how your efforts and donations can help, see Sections 3 and 4
+and the Foundation web page at http://www.pglaf.org.
+
+
+Section 3.  Information about the Project Gutenberg Literary Archive
+Foundation
+
+The Project Gutenberg Literary Archive Foundation is a non profit
+501(c)(3) educational corporation organized under the laws of the
+state of Mississippi and granted tax exempt status by the Internal
+Revenue Service.  The Foundation's EIN or federal tax identification
+number is 64-6221541.  Its 501(c)(3) letter is posted at
+http://pglaf.org/fundraising.  Contributions to the Project Gutenberg
+Literary Archive Foundation are tax deductible to the full extent
+permitted by U.S. federal laws and your state's laws.
+
+The Foundation's principal office is located at 4557 Melan Dr. S.
+Fairbanks, AK, 99712., but its volunteers and employees are scattered
+throughout numerous locations.  Its business office is located at
+809 North 1500 West, Salt Lake City, UT 84116, (801) 596-1887, email
+business@pglaf.org.  Email contact links and up to date contact
+information can be found at the Foundation's web site and official
+page at http://pglaf.org
+
+For additional contact information:
+     Dr. Gregory B. Newby
+     Chief Executive and Director
+     gbnewby@pglaf.org
+
+
+Section 4.  Information about Donations to the Project Gutenberg
+Literary Archive Foundation
+
+Project Gutenberg-tm depends upon and cannot survive without wide
+spread public support and donations to carry out its mission of
+increasing the number of public domain and licensed works that can be
+freely distributed in machine readable form accessible by the widest
+array of equipment including outdated equipment.  Many small donations
+($1 to $5,000) are particularly important to maintaining tax exempt
+status with the IRS.
+
+The Foundation is committed to complying with the laws regulating
+charities and charitable donations in all 50 states of the United
+States.  Compliance requirements are not uniform and it takes a
+considerable effort, much paperwork and many fees to meet and keep up
+with these requirements.  We do not solicit donations in locations
+where we have not received written confirmation of compliance.  To
+SEND DONATIONS or determine the status of compliance for any
+particular state visit http://pglaf.org
+
+While we cannot and do not solicit contributions from states where we
+have not met the solicitation requirements, we know of no prohibition
+against accepting unsolicited donations from donors in such states who
+approach us with offers to donate.
+
+International donations are gratefully accepted, but we cannot make
+any statements concerning tax treatment of donations received from
+outside the United States.  U.S. laws alone swamp our small staff.
+
+Please check the Project Gutenberg Web pages for current donation
+methods and addresses.  Donations are accepted in a number of other
+ways including checks, online payments and credit card donations.
+To donate, please visit: http://pglaf.org/donate
+
+
+Section 5.  General Information About Project Gutenberg-tm electronic
+works.
+
+Professor Michael S. Hart is the originator of the Project Gutenberg-tm
+concept of a library of electronic works that could be freely shared
+with anyone.  For thirty years, he produced and distributed Project
+Gutenberg-tm eBooks with only a loose network of volunteer support.
+
+
+Project Gutenberg-tm eBooks are often created from several printed
+editions, all of which are confirmed as Public Domain in the U.S.
+unless a copyright notice is included.  Thus, we do not necessarily
+keep eBooks in compliance with any particular paper edition.
+
+
+Most people start at our Web site which has the main PG search facility:
+
+     http://www.gutenberg.org
+
+This Web site includes information about Project Gutenberg-tm,
+including how to make donations to the Project Gutenberg Literary
+Archive Foundation, how to help produce our new eBooks, and how to
+subscribe to our email newsletter to hear about new eBooks.

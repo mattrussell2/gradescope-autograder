@@ -1,0 +1,1075 @@
+The Project Gutenberg EBook of Transactions of the American Society of
+Civil Engineers, Vol. LXX, Dec. 1910, by A. Kempkey
+
+This eBook is for the use of anyone anywhere at no cost and with
+almost no restrictions whatsoever.  You may copy it, give it away or
+re-use it under the terms of the Project Gutenberg License included
+with this eBook or online at www.gutenberg.org
+
+
+Title: Transactions of the American Society of Civil Engineers, Vol. LXX, Dec. 1910
+       A Concrete Water Tower, Paper No. 1173
+
+Author: A. Kempkey
+
+Release Date: July 3, 2006 [EBook #18748]
+
+Language: English
+
+Character set encoding: ASCII
+
+*** START OF THIS PROJECT GUTENBERG EBOOK AMERICAN SOCIETY OF CIVIL ENGINEERS ***
+
+
+
+
+Produced by Juliet Sutherland, Sigal Alon and the Online
+Distributed Proofreading Team at http://www.pgdp.net
+
+
+
+
+
+
+
+
+
+AMERICAN SOCIETY OF CIVIL ENGINEERS
+
+INSTITUTED 1852
+
+
+TRANSACTIONS
+
+Paper No. 1173
+
+
+A CONCRETE WATER TOWER.[A]
+
+BY A. KEMPKEY, JR., JUN. AM. SOC. C. E.[B]
+
+WITH DISCUSSION BY MESSRS. MAURICE C. COUCHOT, L. J. MENSCH,
+A. H. MARKWART, AND A. KEMPKEY, JR.
+
+
+
+
+The City of Victoria is situated on the southern end of Vancouver
+Island, in the Province of British Columbia, Canada, and is the capital
+of the Province.
+
+In common with all cities of the extreme West, its growth has been very
+rapid within the last few years. The population of the city proper,
+together with that of the municipality of Oak Bay, immediately adjacent,
+is now about 35,000.
+
+The Victoria water-works are owned by the city and operated under the
+direction of a Water Commissioner appointed by the City Council. By
+special agreement, water is supplied to Oak Bay in bulk, this
+municipality having its own distributing system.
+
+The rapid increase in population, together with the fact that in recent
+years very little had been done toward increasing the water supply,
+resulted in the necessity for remodeling the entire system, and there
+are very few cities where this would involve as many complex problems or
+a greater variety of work.
+
+Water is drawn from Elk Lake, situated about five miles north of the
+city; thence it flows by gravity to the pumping station about four miles
+distant, and from there is pumped directly to the consumers.
+
+The remodeling of the system, as recently completed, provided for:
+
+1.--Increasing the capacity of Elk Lake by a system of levees.
+
+2.--Increasing the capacity of the main to the pumping station by
+replacing about two miles of the old 16-in., wrought-iron, riveted pipe
+with 24-in. riveted steel pipe.
+
+3.--Increasing the capacity of the pumping station by the installation
+of a 4,500,000-gal. pumping engine of the close-connected,
+cross-compound, Corliss, crank-and-fly-wheel type.
+
+4.--The construction of a 20,000,000-gal. concrete-lined distributing
+reservoir in the city.
+
+5.--The entire remodeling of the distributing system, necessitating the
+laying of about 1/2 mile each of 18-in. and 27-in. pipe, and about 1
+mile of 24-in. riveted steel pipe; also about 3,000 tons of cast-iron
+pipe, varying in size from 4 to 12 in.
+
+6.--The provision for a high-level service by means of an elevated tank
+of approximately 100,000 gal. capacity, water being supplied to the tank
+by two electrically-driven triplex pumps, each having a capacity of
+100,000 gal. per 24 hours, against a dynamic head of 150 ft., and
+arranged to start and stop automatically with a variation of 3 ft. in
+the elevation of the water in the tank. These pumps are located about
+one mile from the tower, and are controlled by a float-operated
+auto-start, in the base of the tower.
+
+A description of the elevated tank, which is novel in design, with the
+reasons for adopting the type of structure used, the method of
+construction, and the detailed cost, form the basis of this paper.
+
+The tower is on the top of the highest hill in the city, in the heart of
+the most exclusive residential district, beautiful homes clustering
+about its base. The necessity for architectural treatment of the
+structure is thus seen to be of prime importance. In fact, the
+opposition of the local residents to the ordinary type of elevated tank,
+that is, latticed columns supporting a tank with a hemispherical bottom
+and a conical roof, rendered its use impossible, although tenders were
+invited on such a structure.
+
+It is believed that under the conditions of location, three types of
+structure should be considered: First, an all-steel structure, the
+ornamentation being produced by casing in with brick or concrete;
+second, a brick-and-steel, or a concrete-and-steel, structure, such as
+the one actually erected; third, a typical reinforced concrete
+structure.
+
+Considering only that portion below the tank, the amount of material
+required to case in a structure of the first type would be substantially
+the same as that used to support the tank in a structure of the second
+type. Consequently, the steel substructure, for all practical purposes,
+would represent a dead loss, and, therefore, the economy of this type is
+open to serious question.
+
+A tender was received for a reinforced concrete structure identical in
+outward appearance with the one built, but, owing to the natural
+conservatism of the local residents regarding this type of construction,
+it was not acceptable.
+
+The tower, as built, consists of a hollow cylinder of plain concrete,
+109 ft. high, and having an inside diameter of 22 ft. The walls are 10
+in. thick for the first 70 ft. and 6 in. thick for the remaining 39 ft.,
+and are ornamented with six pilasters (70 ft. high, 3 ft. wide, and 7
+in. thick), a 4-ft. belt, then twelve pilasters (12 ft. high, 18 in.
+wide, and 7 in. thick), a cornice, and a parapet wall.
+
+A steel tank of the ordinary type is embedded in the upper 40 ft. of
+this cylinder. To form the bottom of this tank, a plain concrete dome is
+thrown across the cylinder at a point about 70 ft. from the base, the
+thrust of this dome being taken up by two steel rings, 1/2 in. by 14 in.
+and 3/8 in. by 18 in., bedded into the walls of the tower, the latter
+ring being riveted to the lower course of the tank.
+
+The tank is covered with a roof of reinforced concrete, 4 in. thick,
+conical in shape, and reinforced with 1/2-in. twisted steel bars. The
+design of the structure is clearly shown in Fig. 1.
+
+The tower is built on out-cropping, solid rock. This rock was roughly
+stepped, and a concrete sub-base built. This sub-base consists of a
+hollow ring, with an inside diameter of 20 ft., the walls being 5 ft.
+thick. It is about 2 ft. high on one side and 7 ft. high on the other,
+and forms a level base on which the tower is built. The forms for this
+sub-base consist of vertical lagging and circumferential ribs. The
+lagging is of double-dressed, 2 by 3-in. segments, and the ribs are of 2
+by 12-in. segments, 6 ft. long, lapping past one another and securely
+spiked together to form complete or partial circles. These ribs are 2
+ft. from center to center.
+
+[Illustration: FIG. 1.--(Full page image)
+
+WATER TOWER VICTORIA, B.C. WATER-WORKS]
+
+Similar construction was used to form the taper base of the tower
+proper, except, of course, that the radii of the segments forming the
+successive ribs decreased with the height of the rib. Tapered lagging
+was used, being made by double dressing 2 by 6-in. pieces to 1-3/4 by
+5-13/16 in., and ripping on a diagonal, thus making two staves, 3 in.
+wide at one end and 2-3/4 in. wide at the other. This tapered lagging
+was used again on the 4-ft. belt and cornice forms, the taper being
+turned alternately up and down.
+
+[Illustration: FIG. 2.--FORMS FOR WATER TOWER VICTORIA, B.C.]
+
+The interior diameter being uniform up to the bottom of the dome,
+collapsible forms were used from the beginning. These forms were
+constructed in six large sections, 6 ft. high, with one small key
+section with wedge piece to facilitate stripping, as shown in Fig. 2.
+There were three tiers of these, bolted end to end horizontally and to
+each other vertically.
+
+Above the taper base and except in the 4-ft. belt and cornice,
+collapsible forms were used on the outside also. There were six sections
+extending from column to column and six column sections, all bolted
+together circumferentially and constructed as shown in Fig. 2. Three
+tiers of these were also bolted together both vertically and
+horizontally.
+
+Having filled the top tier, the mode of operation was as follows:
+
+All horizontal bolts in the lower inside and outside forms were removed,
+as was also the small key section on the inside; this left each section
+suspended to the corresponding one immediately above it by the vertical
+bolts before mentioned. It is thus seen that in each case the center
+tier performed the double duty of holding the upper tier, which was full
+of green concrete, and the sections of the lower tier, until they were
+hoisted up and again placed in position to be filled.
+
+These lower forms were then hoisted by hand--four-part tackles being
+used--and placed in position on the top forms, their bottom edges being
+carefully set flush with the top edge of the form already in position,
+and then bolted to it. On the outside, the column forms, and on the
+inside, the wedge and key sections were set last. A 3-lb. plumb-bob on a
+fine line was suspended from the inner scaffold and carefully centered
+over a point set in the rock at the base. This line was in the exact
+center of the tower, and the tops of all the forms, after each shift,
+were carefully set from it by measurement, thus keeping the structure
+plumb.
+
+The first 23 in. of the barrel of the tower was moulded with special
+outside forms, constructed so as to form the bases of the large
+pilasters. After eleven applications of the 6-ft. forms, these 23-in.
+sections were reversed to form the capitals, thus making these
+pilasters, 69 ft. 10 in. over all.
+
+The forms of the 4-ft. belt and beading were made in twelve sections of
+simple segments and vertical lagging, as shown in Fig. 2.
+
+Two sets of the outside forms were split longitudinally, as shown in
+Fig. 2, and used to form the small pilasters. The first set was put in
+place, filled, and the concrete allowed to harden. The bolts were
+loosened and the forms raised 5-1/2 in. vertically, again bolted up, and
+the second set was placed in position, bringing the top of the second
+set up to the bottom of the cornice. The bases and capitals of the small
+pilasters were moulded on afterward.
+
+The cornice forms are clearly shown in Fig. 2. The small boxes
+separating the dentils are made of light stuff, and tacked into the
+cornice forms so that, in stripping, they would remain in place and
+could be taken out separately, in order to prevent breaking off the
+corners of the dentils. A number of outside and inside sections were
+sawed in half horizontally in order to provide forms for the parapet
+wall.
+
+The inside diameter of the tank is 8 in. greater than the inside
+diameter of the base. Two sets of inside forms were split longitudinally
+and opened out, as shown in Fig. 2, and another small section was added
+to complete the circle. The remaining set was left in place to support
+the dome forms.
+
+The dome forms were made in twelve sections, bolted together to
+facilitate stripping. All ribs and segments were cut to size on the
+ground, put together in place, and then covered with lagging and two-ply
+tar paper. The lagging on the lower sharp curve was formed of a double
+thickness of 3/8-in. spruce, the remainder being 1 by 4-in. pine, sized
+to a uniform thickness of 7/8 in. Fig. 3 shows the construction of these
+forms and the method of putting on the lagging.
+
+The roof forms were made in eight sections and bolted together to
+facilitate stripping. All ribs and segments were cut to size on the
+ground, put together in place, and covered with 1 by 4-in. lagging,
+dressed to a uniform thickness of 7/8 in., and two-ply tar paper. Fig. 3
+shows the construction of these forms. The segments being put in
+horizontally instead of square with the lagging, gave circles instead of
+parabolas, making them much easier to lay out, and giving a form which
+was amply stiff.
+
+The question of using an inside scaffold only was carefully considered,
+but owing to the considerable amount of ornamentation on the outside,
+necessitating a large number of individual forms, it was not thought
+that any economy would result.
+
+Fig. 4 and Figs. 1 and 2, Plate XXIII, show clearly the construction of
+the scaffolding.
+
+[Illustration: PLATE XXIII, FIG. 1.--SCAFFOLDING FOR WATER TOWER.]
+
+[Illustration: PLATE XXIII, FIG. 2.--COMPLETED WATER TOWER.]
+
+All concrete was mixed wet, in a motor-driven, Smith mixer, and handled
+off the outside scaffold, being sent up in wheel-barrows on the ordinary
+contractor's hoist and placed in the forms through an iron chute having
+a hopper mouth. This chute was built in three sections bolted together,
+either one, two, or three sections being used, depending on the distance
+of the forms below the deck. When the top of the forms reached the
+elevation of any deck, the concrete was put in through the chute from
+the deck above. The chute was light and easily shifted by the
+wheel-barrow men, assisted by the man placing the concrete, during the
+interval between successive wheel-barrows.
+
+[Illustration: FIG. 3.--FORMS FOR WATER TOWER VICTORIA, B.C.]
+
+The concrete, except that for the roof and parapet, was composed of sand
+and broken rock, the run of the crusher being used. That for the roof
+and parapet was composed of sand and gravel. The only reason for using
+gravel for the concrete of the roof was the ease with which it could be
+obtained in small quantities, the supply of broken rock having been used
+up, and this being the last concrete work to be done.
+
+The concrete used was as follows: 1:3:6 for the sub-base and taper base;
+1:3:5 for the barrel of the tower and tank casing; and 1:2:4 for the
+dome and roof. The dome was put in at one time, there being no joint,
+the same being true of the roof. Vancouver Portland cement,
+manufactured on the island about 15 miles from the city, was used
+throughout the work.
+
+Before filling, the inside of the tank was given a plaster coat,
+consisting of 1 part cement to 1-3/4 parts of fine sand. This proved to
+be insufficient to prevent leakage, the water seeping through the dome
+and appearing on the outside of the structure along the line of the
+bottom of the rings. Three more coats were then applied over the entire
+tank, and two additional ones over the dome and about 8 ft. up on the
+sides, and, except for one or two small spots which show just a sign of
+moisture, the tank is perfectly tight.
+
+The barrel of the tower was carried up to a height of 66 ft. A special
+set of inside forms, about 2 ft. high, extending to the springing line
+of the dome, was then put in, and the dome forms were set up on it. The
+idea was that this 2-ft. form could be knocked out piece by piece and
+the weight of the dome form taken on wedges to the last 6-ft. form,
+these wedges being gradually slackened down in order to allow the dome
+form to settle clear of the dome. As a matter of fact, this was done,
+but the dome forms, being very tight, did not settle, and had to be
+pried off a section at a time. A similar method was used for slacking
+down the roof forms, with similar results.
+
+After the dome forms had been put in, the concrete was carried up
+approximately to the elevation of the bottom of the rings. Small neat
+cement pads were then put in and accurately leveled, and on these the
+steel rings were placed, and the steel tank was erected.
+
+In order to insure a perfectly round tank, each course was erected
+against wooden templates accurately centered and fastened to the inside
+scaffold. The tank is the ordinary type of light steel, the lower course
+being 3/16-in., the next, No. 8 B. w. gauge, the next, No. 10 B. w.
+gauge, and the remaining four, No. 12 B. w. gauge.
+
+Work on the foundation was started on August 15th, 1908, and the tower
+was not completed until April 1st, 1909. Much time was lost waiting for
+the delivery of the steel, and also owing to a period of very cold
+weather which caused entire cessation of work for about one month.
+
+The tower as completed presents a striking appearance. In order to
+obliterate rings due to the successive application of the forms and to
+cover the efflorescence so common to concrete structures, the outside
+was given two coats of neat cement wash applied with ordinary
+calcimining brushes, and, up to the present time, this seems to have
+been very effective in accomplishing the desired result.
+
+[Illustration: FIG. 4.--(Full page image)
+
+SCAFFOLD FOR WATER TOWER]
+
+Irregularities due to forms are unnoticeable at a distance of 200 or 300
+ft., and the grouting gave a very uniform color.
+
+The application of two coats of cement wash cost, for labor, $97.68, and
+for material, $15.18, or $1.32 per 100 sq. ft., labor being at the rate
+of $2.25 per 8 hours and cement costing $2.53 per bbl. delivered on the
+work.
+
+The tower was designed by Arthur L. Adams, M. Am. Soc. C. E., under
+whose direction the plans for all the work of remodeling the water-works
+system were prepared and executed. The forms, scaffolding, etc., were
+designed by the writer, who was also in immediate charge of the
+erection.
+
+Tenders received for the construction of the tower covered an extremely
+wide range, and indicated at once the utter lack of knowledge on the
+part of the bidders of the cost of a structure of this kind. Inasmuch as
+none of them had had previous experience in this class of construction,
+the engineer deemed it the part of wisdom and economy to retain the
+construction under his immediate supervision, and, therefore, the work
+was done by days' labor.
+
+Table 1 gives the cost of the structure. The total herein given will not
+coincide with the total cost as shown by the city's books, for the
+reason that various items not properly chargeable to the structure
+itself have been omitted, the principal ones of which are the cost of
+the site, the laying of about 600 ft. of sewer pipe to connect with the
+overflow, and considerable expense incident to the construction of a
+wagon road to the tower.
+
+The rates of wages paid, all being on a basis of an 8-hour day, were as
+follows:
+
+Common labor                         $2.25 and $2.50
+Carpenter                             4.00
+Carpenter's helper                    2.75
+Boiler-maker                          3.50
+Holders on                            2.50
+Boiler-maker foreman                  5.00
+Plasterers                            6.00
+Plasterers' helpers                   3.00
+
+The cost of material was as follows:
+
+Cement, per barrel                   $2.53
+Sand, per yard                        1.47
+Rock, per yard                        0.80
+Lumber, per 1,000 ft. b. m.          14.00 and 16.00
+
+All these prices are for material delivered on the work.
+
+An examination of the cost data, as given, will show that for the most
+part the unit costs are very high. This is due chiefly to the continued
+interruption of the work, during its later stages, owing to bad weather,
+particularly in the case of the erection of the steel tank. The material
+cost in this case was also exceedingly high.
+
+In the case of the concreting, inability to purchase a hoist and motor
+and the high cost of renting the same, together with the delays
+mentioned, added greatly to the unit cost.
+
+When it is considered that the cost of plastering covers that of four
+coats over the entire inside of the tank and three more over about
+one-third of it, it does not appear so high, especially in view of the
+high rate of wages paid.
+
+The cost per yard for concrete alone was $25.126, and this is probably
+about 25% in excess of the cost of the same class of work executed under
+more favorable conditions as to location, weather conditions, etc.
+
+TABLE 1.--COST OF HIGH-LEVEL TOWER, VICTORIA WATER-WORKS. (412 cu. yd.)
+
+=============================================================================
+                     |    TOTAL COST.              |   UNIT COST.
+---------------------+---------+--------+----------+---------------+---------
+                     |  Rate   |        |          |               |
+                     |   per   | Amount.| Complete.|     Labor.    |Material.
+                     |  hour.  |        |          |               |
+---------------------+---------+--------+----------+---------------+---------
+Preliminary Work:    |         |        |          |               |
+ Labor, Carpenter    |$0.50    |$11.00  |          |               |
+   Labor             | 0.344   | 64.94  |          |               |
+     "               | 0.281   | 249.67 |   $325.61| $0.790        |
+ Material            |         | 133.62 |    133.62|               | $0.324
+                     |         |        |          |               |
+Forms:               |         |        |          |               |
+ Buildings, shifting |         |        |          |               |
+  and stripping:     |         |        |          |               |
+   Labor, Carpenter  | 0.50    |1,832.99|          |               |
+    Labor            | 0.344   |   80.85|          |               |
+      "              | 0.281   |  563.84|  2,477.68| 6.014         |
+                     |         |        |          |               |
+ Material:           |         |        |          |               |
+   Lumber            |         |  583.49|          |               |
+   Hardware          |         |  325.51|          |               |
+   Miscellaneous     |         |   13.90|    922.90|               |  2.240
+                     |         |        |          |               |
+Scaffold:            |         |        |          |               |
+ Erecting and        |         |        |          |               |
+  tearing down:      |         |        |          |               |
+   Labor, Carpenter  | 0.50    |  693.00|          |               |
+    Labor            | 0.344   |  350.59|          |               |
+      "              | 0.281   |  117.27|  1,160.86| 2.818         |
+                     |         |        |          |               |
+ Material:           |         |        |          |               |
+   Lumber            |         |  487.77|          |               |
+   Hardware          |         |  202.79|    690.56|               |  1.676
+                     |         |        |          |               |
+Concreting:          |         |        |          |               |
+ Labor               | 0.50    |  142.00|          |               |
+   "                 | 0.344   |   11.00|          |               |
+   "                 | 0.281   |  947.81|  1,100.81| 2.672         |
+ Material:           |         |        |          |               |
+   Rock              |         |  317.30|          |               |
+   Sand              |         |  385.72|          |               |
+   Cement            |         |1,581.97|          |               |
+ Motor and Hoist:    |         |        |          |               |
+   Rental            |         |  406.56|          |               |
+   Power             |         |   83.53|  2,735.08|               |  6.638
+                     |         |        |          |               |
+Plastering           |         |        |          |               |
+ (3,000 sq. ft.):    |         |        |          |               |
+ Labor, Plasterers   | 0.75    |  116.50|          |               |
+   Labor             | 0.46-7/8|   15.00|          |               |
+     "               | 0.37-1/2|  198.52|          |               |
+     "               | 0.281   |  105.66|    435.68| 14.52         |
+                     |         |        |          |   per sq. ft. |
+ Material:           |         |        |          |               |
+   Sand              |         |    8.64|          |               |
+   Cement            |         |   66.10|          |               |
+   Alum and Potash   |         |   16.00|     90.74|  3.25         |
+                     |         |        |          |   per sq. ft. |
+                     |         |        |          |               |
+Cement Wash          |         |        |          |               |
+ (8,560 sq. ft.):    |         |        |          |               |
+   Labor             | 0.48-3/4|   50.00|          |               |
+     "               | 0.281   |   47.68|     97.68|1.14 per       |
+                     |         |        |          |   100 sq ft.  |
+ Material:           |         |        |          |               |
+   Cement            |         |   15.18|     15.18| 0.18  " " " " |
+                     |         |        |          |               |
+Windows, doors,      |         |        |          |               |
+ and scuttle:        |         |        |          |               |
+   Labor             | 0.50    |   49.00|     49.00|               |
+ Material:           |         |        |          |               |
+   1 door,           |         |        |          |               |
+    7 windows, etc.  |         |   47.26|    47.26 |               |
+                     |         |        |          |               |
+Equipment:           |         |        |          |               |
+ 40% of $461.46      |         |  184.58|    184.58| 0.448         |
+                     |         |        |          |               |
+Superintendence      |         |        |  1,241.45| 1.506         |
+                     |         |        |          |               |
+Steel Tank:          |         |        |          |               |
+ Labor, Carpenter    |$0.50    | $124.24|          |               |
+   Helper            | 0.344   |    2.75|          |               |
+   Boiler-makers     |         |  382.57|          |               |
+   Holders on        |         |  147.33|          |               |
+   Labor             |         |   40.61|          |               |
+   Foreman           | 0.625   |  186.25|   $883.75|$0.0441 per lb.|
+                     |         |        |          |               |
+ Material:           |         |        |          |               |
+   Tank, rivets, etc.|         |        |          |               |
+    (20,000 lb.)     |         |        |  1,740.69|               | $0.0875
+                     |         |        |          |               |
+Iron-work:           |         |        |          |               |
+ Spiral stairway,    |         |        |          |               |
+  inlet, and overflow|         |        |          |               |
+  pipes, ventilator, |         |        |          |               |
+  reinforcing steel, |         |        |          |               |
+  etc.:              |         |        |          |               |
+   Labor, Machinists |  0.50   |   89.50|          |               |
+    Helper           |  0.344  |  240.16|          |               |
+    Labor            |  0.281  |  100.79|    430.45|               |
+                     |         |        |          |               |
+   Material          |         |1,814.71|  1,814.71|               |
+---------------------+---------+--------+----------+---------------+---------
+   Total             |         |        |$16,578.29|               |
+=============================================================================
+
+
+
+
+DISCUSSION
+
+
+MAURICE C. COUCHOT, M. AM. SOC. C. E. (by letter).--It appears to the
+writer that in the design of this structure two features are open to
+criticism. The first is that such a high structure was built of plain
+concrete without any reinforcement. Even if the computation of stresses
+did not show the necessity for steel reinforcement, some should have
+been embedded in the work. As a matter of fact, the writer believes
+that, with the present knowledge of the benefit of reinforced concrete,
+a structure such as this should not be built without it. This applies
+mainly to the tower below the tank.
+
+The second feature, which is still more important, refers to the
+insertion of a shell of smooth steel plate to take the stresses due to
+the hydrostatic pressure, and also to insure against leakage in the
+walls of the tank. The 6-in. shell of plain concrete outside the steel
+shell, and the 3-in. shell inside, do not work together, and are
+practically of no value as walls, but are simply outside and inside
+linings. Although the designer provided lugs to insure the adhesion of
+the concrete to the plate, such precaution, in the writer's opinion,
+will not prevent the separation of the concrete from the smooth steel
+plate, and, at some future time, the water will reach and corrode the
+steel. It would have been better to have reinforced the wall of the tank
+with rods, as is generally done. The full thickness would have been
+available, and less plastering would have been required. Furthermore,
+the adhesion of concrete to a smooth steel plate is of doubtful value,
+for, in reinforced concrete, it is not the adhesion which does the work,
+but the gripping of the steel by the concrete in the process of setting.
+
+
+L. J. MENSCH, M. AM. SOC. C. E. (by letter).--This water-tower is
+probably the sightliest structure of its kind in North America; still,
+it does not look like a water-tower, and, from an architectural point of
+view, the crown portion is faulty, because it makes the tank appear to
+be much less in depth than it really is.
+
+The cost of this structure far exceeds that of similar tanks in the
+United States. The stand-pipe at Attleboro, 50 ft. in diameter and 100
+ft. high, cost about $25,000. Several years ago the writer proposed to
+build an elevated tank, 60 ft. in diameter and 40 ft. deep, the bottom
+of which was to be 50 ft. above the ground, for $21,000.
+
+Among other elevated tanks known to the writer is one having a capacity
+of 100,000 gal., the bottom being 60 ft. above the ground.[C] The total
+quantities of material required for this tank are given as 4,480 cu. ft.
+of concrete, 23,200 lb. of reinforcing steel, and 27,600 ft., b. m., of
+form lumber and staging. Calculating at the abnormally high unit prices
+of 40 cents per cu. ft. for concrete, 4 cents per lb. for steel, and $50
+per 1,000 ft., b. m., for lumber, the cost of the concrete would be
+$1,792, the steel, $928, and the form lumber and staging, $1,380. Adding
+to this the cost of a spiral staircase, at the high figure of $7 per
+linear foot in height, the total cost of this structure would be $4,598.
+The factor of safety used in this structure was four, but some engineers
+who are not familiar with concrete construction may require a higher
+factor. By doubling the quantities of concrete and steel, which would
+mean a tensile stress in the steel of only 8,000 lb. per sq. in., and a
+compressive stress in the concrete of only 225 lb. per sq. in., the cost
+of the tank would be only $7,318, as compared with the $16,578 mentioned
+in the paper. This enormous discrepancy between a good design and an
+amateur design, and between day-labor work and contract work should be a
+lesson which consulting engineers and managers of large corporations,
+who prefer their own designs and day-labor work, should take to heart.
+
+
+A. H. MARKWART, ASSOC. M. AM. SOC. C. E. (by letter).--It is the
+writer's opinion that the steel tank enclosed within the concrete of the
+upper cylinder, to take up the hoop tension and presumably to provide a
+water-tight tower, will not fulfill this latter requirement. If a
+plastered surface on the dome-shaped bottom provided the necessary
+imperviousness, it would seem that plastered walls would have proved
+satisfactory.
+
+Apparently, the sheet-metal tank is intended to exclude the possibility
+of exterior leakage, but it occurs to the writer that it will fail to be
+efficient in this particular, because, under pressure, the water will
+force itself under the steel tank and the dome thrust rings and out to
+the exterior of the tower just below the tank, thus showing that
+insurance against leakage is actually provided by the plastered interior
+surfaces and not by the sheet-metal tank, and, for this reason, ordinary
+deformed rod reinforcement, in the writer's opinion, would have proved
+cheaper and better, and more in line with other parts of the
+reinforcement.
+
+Mr. Kempkey states:
+
+     "Before filling, the inside of the tank was given a plaster coat,
+     consisting of 1 part cement to 1-3/4 parts of fine sand. This
+     proved to be insufficient to prevent leakage, the water seeping
+     through the dome and appearing on the outside of the structure
+     along the line of the bottom of the rings. Three more coats were
+     then applied over the entire tank, and two additional ones over the
+     dome and about 8 ft. up on the sides, and, except for one or two
+     small spots which show just a sign of moisture, the tank is
+     perfectly tight."
+
+This substantiates the writer's contention that water-tightness was
+actually obtained by a liberal use of cement plaster, which would also
+have been true had the reinforcement been rods.
+
+As a further comment, it might be stated that a water-tight concrete for
+the tank could have been obtained by adding from 8 to 10% of hydrated
+lime to the 1:2:4 mixture. This seems advisable in all cases where a
+water-tight concrete is necessary. The interior plastering could then
+have been done as a further precaution.
+
+
+A. KEMPKEY, JR., JUN. AM. SOC. C. E. (by letter).--Mr. Couchot's
+statement, that the 3-in. inside and outside sheets forming the tank
+casing do not act together, is quite true, and it was not expected that
+they would, other than to protect the steel and form an ornamental
+covering for it.
+
+There is certainly adhesion between concrete and steel, even though the
+steel be in the form of a thin shell, and in a structure of this kind
+where the steel is designed, with a low unit stress, to take all the
+strain, and where the load is at all times quiescent, it is difficult to
+see how this bond can be destroyed; the writer feels no concern on this
+score.
+
+Mr. Markwart's statement, that the steel tank enclosed within the
+concrete of the upper cylinder, presumably to provide a water-tight
+tower, will not fulfill this latter requirement, is not true, as shown
+by the statement in the paper that the only leakage which occurred was
+that which passed under the tank, the entire remaining portion being
+absolutely tight. The amount of leakage, while insignificant, was, until
+remedied, sufficient to spot the outside of the tower, making it
+unsightly; and this, in the writer's opinion, is just what would have
+happened had the tank been constructed in the ordinary manner, with
+deformed bars, except that it would have extended over more or less of
+the entire surface, instead of being localized, as was actually the
+case, and would have required more instead of less plastering. It is
+also doubtful whether the addition of hydrated lime would have produced
+a tight tank, in the sense that this structure was required to be tight.
+
+In the paper the writer endeavored to bring out the fact that this is
+one of the few instances where the aesthetic design of a structure of
+this sort is of prime importance, and cost a secondary consideration.
+There is, therefore, no use in comparing its cost with that of a
+structure in no way its equal in this respect and the use of which would
+not have been permitted any more than the use of the ordinary type of
+steel structure, even though the estimated cost were 75% less.
+
+Mr. Mensch has been pleased to term this design amateurish, presumably
+because of the conservative character of the stresses used and because
+of its cost; at the same time, he sets up the design to which he makes
+reference as a good one simply because of its cheapness. He will find
+the "enormous discrepancy," to which he calls attention, accounted for
+by the fact that the "good design" would not have been tolerated because
+of its appearance and because of the fact that the excessively high
+unit stresses, of which Mr. Mensch is an exponent, did not commend
+themselves either to the designer, in common with most engineers, or to
+Victorian taste; while the design used has proven eminently satisfactory
+to a more than usually conservative and discriminating community.
+
+Mr. Mensch's statement of unit costs, even though applied to a much
+plainer structure, is not calculated to inspire confidence in the
+soundness of his deductions in any one familiar with Victoria
+conditions.
+
+
+    FOOTNOTES:
+
+    [Footnote A: Presented at the meeting of March 16th, 1910.]
+
+    [Footnote B: Now Assoc. M. Am. Soc. C. E.]
+
+    [Footnote C: "The Reinforced Concrete Pocket Book," p. 124.]
+
+
+
+
+
+
+End of the Project Gutenberg EBook of Transactions of the American Society
+of Civil Engineers, Vol. LXX, Dec. 1910, by A. Kempkey
+
+*** END OF THIS PROJECT GUTENBERG EBOOK AMERICAN SOCIETY OF CIVIL ENGINEERS ***
+
+***** This file should be named 18748.txt or 18748.zip *****
+This and all associated files of various formats will be found in:
+        http://www.gutenberg.org/1/8/7/4/18748/
+
+Produced by Juliet Sutherland, Sigal Alon and the Online
+Distributed Proofreading Team at http://www.pgdp.net
+
+
+Updated editions will replace the previous one--the old editions
+will be renamed.
+
+Creating the works from public domain print editions means that no
+one owns a United States copyright in these works, so the Foundation
+(and you!) can copy and distribute it in the United States without
+permission and without paying copyright royalties.  Special rules,
+set forth in the General Terms of Use part of this license, apply to
+copying and distributing Project Gutenberg-tm electronic works to
+protect the PROJECT GUTENBERG-tm concept and trademark.  Project
+Gutenberg is a registered trademark, and may not be used if you
+charge for the eBooks, unless you receive specific permission.  If you
+do not charge anything for copies of this eBook, complying with the
+rules is very easy.  You may use this eBook for nearly any purpose
+such as creation of derivative works, reports, performances and
+research.  They may be modified and printed and given away--you may do
+practically ANYTHING with public domain eBooks.  Redistribution is
+subject to the trademark license, especially commercial
+redistribution.
+
+
+
+*** START: FULL LICENSE ***
+
+THE FULL PROJECT GUTENBERG LICENSE
+PLEASE READ THIS BEFORE YOU DISTRIBUTE OR USE THIS WORK
+
+To protect the Project Gutenberg-tm mission of promoting the free
+distribution of electronic works, by using or distributing this work
+(or any other work associated in any way with the phrase "Project
+Gutenberg"), you agree to comply with all the terms of the Full Project
+Gutenberg-tm License (available with this file or online at
+http://gutenberg.org/license).
+
+
+Section 1.  General Terms of Use and Redistributing Project Gutenberg-tm
+electronic works
+
+1.A.  By reading or using any part of this Project Gutenberg-tm
+electronic work, you indicate that you have read, understand, agree to
+and accept all the terms of this license and intellectual property
+(trademark/copyright) agreement.  If you do not agree to abide by all
+the terms of this agreement, you must cease using and return or destroy
+all copies of Project Gutenberg-tm electronic works in your possession.
+If you paid a fee for obtaining a copy of or access to a Project
+Gutenberg-tm electronic work and you do not agree to be bound by the
+terms of this agreement, you may obtain a refund from the person or
+entity to whom you paid the fee as set forth in paragraph 1.E.8.
+
+1.B.  "Project Gutenberg" is a registered trademark.  It may only be
+used on or associated in any way with an electronic work by people who
+agree to be bound by the terms of this agreement.  There are a few
+things that you can do with most Project Gutenberg-tm electronic works
+even without complying with the full terms of this agreement.  See
+paragraph 1.C below.  There are a lot of things you can do with Project
+Gutenberg-tm electronic works if you follow the terms of this agreement
+and help preserve free future access to Project Gutenberg-tm electronic
+works.  See paragraph 1.E below.
+
+1.C.  The Project Gutenberg Literary Archive Foundation ("the Foundation"
+or PGLAF), owns a compilation copyright in the collection of Project
+Gutenberg-tm electronic works.  Nearly all the individual works in the
+collection are in the public domain in the United States.  If an
+individual work is in the public domain in the United States and you are
+located in the United States, we do not claim a right to prevent you from
+copying, distributing, performing, displaying or creating derivative
+works based on the work as long as all references to Project Gutenberg
+are removed.  Of course, we hope that you will support the Project
+Gutenberg-tm mission of promoting free access to electronic works by
+freely sharing Project Gutenberg-tm works in compliance with the terms of
+this agreement for keeping the Project Gutenberg-tm name associated with
+the work.  You can easily comply with the terms of this agreement by
+keeping this work in the same format with its attached full Project
+Gutenberg-tm License when you share it without charge with others.
+
+1.D.  The copyright laws of the place where you are located also govern
+what you can do with this work.  Copyright laws in most countries are in
+a constant state of change.  If you are outside the United States, check
+the laws of your country in addition to the terms of this agreement
+before downloading, copying, displaying, performing, distributing or
+creating derivative works based on this work or any other Project
+Gutenberg-tm work.  The Foundation makes no representations concerning
+the copyright status of any work in any country outside the United
+States.
+
+1.E.  Unless you have removed all references to Project Gutenberg:
+
+1.E.1.  The following sentence, with active links to, or other immediate
+access to, the full Project Gutenberg-tm License must appear prominently
+whenever any copy of a Project Gutenberg-tm work (any work on which the
+phrase "Project Gutenberg" appears, or with which the phrase "Project
+Gutenberg" is associated) is accessed, displayed, performed, viewed,
+copied or distributed:
+
+This eBook is for the use of anyone anywhere at no cost and with
+almost no restrictions whatsoever.  You may copy it, give it away or
+re-use it under the terms of the Project Gutenberg License included
+with this eBook or online at www.gutenberg.org
+
+1.E.2.  If an individual Project Gutenberg-tm electronic work is derived
+from the public domain (does not contain a notice indicating that it is
+posted with permission of the copyright holder), the work can be copied
+and distributed to anyone in the United States without paying any fees
+or charges.  If you are redistributing or providing access to a work
+with the phrase "Project Gutenberg" associated with or appearing on the
+work, you must comply either with the requirements of paragraphs 1.E.1
+through 1.E.7 or obtain permission for the use of the work and the
+Project Gutenberg-tm trademark as set forth in paragraphs 1.E.8 or
+1.E.9.
+
+1.E.3.  If an individual Project Gutenberg-tm electronic work is posted
+with the permission of the copyright holder, your use and distribution
+must comply with both paragraphs 1.E.1 through 1.E.7 and any additional
+terms imposed by the copyright holder.  Additional terms will be linked
+to the Project Gutenberg-tm License for all works posted with the
+permission of the copyright holder found at the beginning of this work.
+
+1.E.4.  Do not unlink or detach or remove the full Project Gutenberg-tm
+License terms from this work, or any files containing a part of this
+work or any other work associated with Project Gutenberg-tm.
+
+1.E.5.  Do not copy, display, perform, distribute or redistribute this
+electronic work, or any part of this electronic work, without
+prominently displaying the sentence set forth in paragraph 1.E.1 with
+active links or immediate access to the full terms of the Project
+Gutenberg-tm License.
+
+1.E.6.  You may convert to and distribute this work in any binary,
+compressed, marked up, nonproprietary or proprietary form, including any
+word processing or hypertext form.  However, if you provide access to or
+distribute copies of a Project Gutenberg-tm work in a format other than
+"Plain Vanilla ASCII" or other format used in the official version
+posted on the official Project Gutenberg-tm web site (www.gutenberg.org),
+you must, at no additional cost, fee or expense to the user, provide a
+copy, a means of exporting a copy, or a means of obtaining a copy upon
+request, of the work in its original "Plain Vanilla ASCII" or other
+form.  Any alternate format must include the full Project Gutenberg-tm
+License as specified in paragraph 1.E.1.
+
+1.E.7.  Do not charge a fee for access to, viewing, displaying,
+performing, copying or distributing any Project Gutenberg-tm works
+unless you comply with paragraph 1.E.8 or 1.E.9.
+
+1.E.8.  You may charge a reasonable fee for copies of or providing
+access to or distributing Project Gutenberg-tm electronic works provided
+that
+
+- You pay a royalty fee of 20% of the gross profits you derive from
+     the use of Project Gutenberg-tm works calculated using the method
+     you already use to calculate your applicable taxes.  The fee is
+     owed to the owner of the Project Gutenberg-tm trademark, but he
+     has agreed to donate royalties under this paragraph to the
+     Project Gutenberg Literary Archive Foundation.  Royalty payments
+     must be paid within 60 days following each date on which you
+     prepare (or are legally required to prepare) your periodic tax
+     returns.  Royalty payments should be clearly marked as such and
+     sent to the Project Gutenberg Literary Archive Foundation at the
+     address specified in Section 4, "Information about donations to
+     the Project Gutenberg Literary Archive Foundation."
+
+- You provide a full refund of any money paid by a user who notifies
+     you in writing (or by e-mail) within 30 days of receipt that s/he
+     does not agree to the terms of the full Project Gutenberg-tm
+     License.  You must require such a user to return or
+     destroy all copies of the works possessed in a physical medium
+     and discontinue all use of and all access to other copies of
+     Project Gutenberg-tm works.
+
+- You provide, in accordance with paragraph 1.F.3, a full refund of any
+     money paid for a work or a replacement copy, if a defect in the
+     electronic work is discovered and reported to you within 90 days
+     of receipt of the work.
+
+- You comply with all other terms of this agreement for free
+     distribution of Project Gutenberg-tm works.
+
+1.E.9.  If you wish to charge a fee or distribute a Project Gutenberg-tm
+electronic work or group of works on different terms than are set
+forth in this agreement, you must obtain permission in writing from
+both the Project Gutenberg Literary Archive Foundation and Michael
+Hart, the owner of the Project Gutenberg-tm trademark.  Contact the
+Foundation as set forth in Section 3 below.
+
+1.F.
+
+1.F.1.  Project Gutenberg volunteers and employees expend considerable
+effort to identify, do copyright research on, transcribe and proofread
+public domain works in creating the Project Gutenberg-tm
+collection.  Despite these efforts, Project Gutenberg-tm electronic
+works, and the medium on which they may be stored, may contain
+"Defects," such as, but not limited to, incomplete, inaccurate or
+corrupt data, transcription errors, a copyright or other intellectual
+property infringement, a defective or damaged disk or other medium, a
+computer virus, or computer codes that damage or cannot be read by
+your equipment.
+
+1.F.2.  LIMITED WARRANTY, DISCLAIMER OF DAMAGES - Except for the "Right
+of Replacement or Refund" described in paragraph 1.F.3, the Project
+Gutenberg Literary Archive Foundation, the owner of the Project
+Gutenberg-tm trademark, and any other party distributing a Project
+Gutenberg-tm electronic work under this agreement, disclaim all
+liability to you for damages, costs and expenses, including legal
+fees.  YOU AGREE THAT YOU HAVE NO REMEDIES FOR NEGLIGENCE, STRICT
+LIABILITY, BREACH OF WARRANTY OR BREACH OF CONTRACT EXCEPT THOSE
+PROVIDED IN PARAGRAPH F3.  YOU AGREE THAT THE FOUNDATION, THE
+TRADEMARK OWNER, AND ANY DISTRIBUTOR UNDER THIS AGREEMENT WILL NOT BE
+LIABLE TO YOU FOR ACTUAL, DIRECT, INDIRECT, CONSEQUENTIAL, PUNITIVE OR
+INCIDENTAL DAMAGES EVEN IF YOU GIVE NOTICE OF THE POSSIBILITY OF SUCH
+DAMAGE.
+
+1.F.3.  LIMITED RIGHT OF REPLACEMENT OR REFUND - If you discover a
+defect in this electronic work within 90 days of receiving it, you can
+receive a refund of the money (if any) you paid for it by sending a
+written explanation to the person you received the work from.  If you
+received the work on a physical medium, you must return the medium with
+your written explanation.  The person or entity that provided you with
+the defective work may elect to provide a replacement copy in lieu of a
+refund.  If you received the work electronically, the person or entity
+providing it to you may choose to give you a second opportunity to
+receive the work electronically in lieu of a refund.  If the second copy
+is also defective, you may demand a refund in writing without further
+opportunities to fix the problem.
+
+1.F.4.  Except for the limited right of replacement or refund set forth
+in paragraph 1.F.3, this work is provided to you 'AS-IS' WITH NO OTHER
+WARRANTIES OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO
+WARRANTIES OF MERCHANTIBILITY OR FITNESS FOR ANY PURPOSE.
+
+1.F.5.  Some states do not allow disclaimers of certain implied
+warranties or the exclusion or limitation of certain types of damages.
+If any disclaimer or limitation set forth in this agreement violates the
+law of the state applicable to this agreement, the agreement shall be
+interpreted to make the maximum disclaimer or limitation permitted by
+the applicable state law.  The invalidity or unenforceability of any
+provision of this agreement shall not void the remaining provisions.
+
+1.F.6.  INDEMNITY - You agree to indemnify and hold the Foundation, the
+trademark owner, any agent or employee of the Foundation, anyone
+providing copies of Project Gutenberg-tm electronic works in accordance
+with this agreement, and any volunteers associated with the production,
+promotion and distribution of Project Gutenberg-tm electronic works,
+harmless from all liability, costs and expenses, including legal fees,
+that arise directly or indirectly from any of the following which you do
+or cause to occur: (a) distribution of this or any Project Gutenberg-tm
+work, (b) alteration, modification, or additions or deletions to any
+Project Gutenberg-tm work, and (c) any Defect you cause.
+
+
+Section  2.  Information about the Mission of Project Gutenberg-tm
+
+Project Gutenberg-tm is synonymous with the free distribution of
+electronic works in formats readable by the widest variety of computers
+including obsolete, old, middle-aged and new computers.  It exists
+because of the efforts of hundreds of volunteers and donations from
+people in all walks of life.
+
+Volunteers and financial support to provide volunteers with the
+assistance they need, is critical to reaching Project Gutenberg-tm's
+goals and ensuring that the Project Gutenberg-tm collection will
+remain freely available for generations to come.  In 2001, the Project
+Gutenberg Literary Archive Foundation was created to provide a secure
+and permanent future for Project Gutenberg-tm and future generations.
+To learn more about the Project Gutenberg Literary Archive Foundation
+and how your efforts and donations can help, see Sections 3 and 4
+and the Foundation web page at http://www.pglaf.org.
+
+
+Section 3.  Information about the Project Gutenberg Literary Archive
+Foundation
+
+The Project Gutenberg Literary Archive Foundation is a non profit
+501(c)(3) educational corporation organized under the laws of the
+state of Mississippi and granted tax exempt status by the Internal
+Revenue Service.  The Foundation's EIN or federal tax identification
+number is 64-6221541.  Its 501(c)(3) letter is posted at
+http://pglaf.org/fundraising.  Contributions to the Project Gutenberg
+Literary Archive Foundation are tax deductible to the full extent
+permitted by U.S. federal laws and your state's laws.
+
+The Foundation's principal office is located at 4557 Melan Dr. S.
+Fairbanks, AK, 99712., but its volunteers and employees are scattered
+throughout numerous locations.  Its business office is located at
+809 North 1500 West, Salt Lake City, UT 84116, (801) 596-1887, email
+business@pglaf.org.  Email contact links and up to date contact
+information can be found at the Foundation's web site and official
+page at http://pglaf.org
+
+For additional contact information:
+     Dr. Gregory B. Newby
+     Chief Executive and Director
+     gbnewby@pglaf.org
+
+
+Section 4.  Information about Donations to the Project Gutenberg
+Literary Archive Foundation
+
+Project Gutenberg-tm depends upon and cannot survive without wide
+spread public support and donations to carry out its mission of
+increasing the number of public domain and licensed works that can be
+freely distributed in machine readable form accessible by the widest
+array of equipment including outdated equipment.  Many small donations
+($1 to $5,000) are particularly important to maintaining tax exempt
+status with the IRS.
+
+The Foundation is committed to complying with the laws regulating
+charities and charitable donations in all 50 states of the United
+States.  Compliance requirements are not uniform and it takes a
+considerable effort, much paperwork and many fees to meet and keep up
+with these requirements.  We do not solicit donations in locations
+where we have not received written confirmation of compliance.  To
+SEND DONATIONS or determine the status of compliance for any
+particular state visit http://pglaf.org
+
+While we cannot and do not solicit contributions from states where we
+have not met the solicitation requirements, we know of no prohibition
+against accepting unsolicited donations from donors in such states who
+approach us with offers to donate.
+
+International donations are gratefully accepted, but we cannot make
+any statements concerning tax treatment of donations received from
+outside the United States.  U.S. laws alone swamp our small staff.
+
+Please check the Project Gutenberg Web pages for current donation
+methods and addresses.  Donations are accepted in a number of other
+ways including checks, online payments and credit card donations.
+To donate, please visit: http://pglaf.org/donate
+
+
+Section 5.  General Information About Project Gutenberg-tm electronic
+works.
+
+Professor Michael S. Hart is the originator of the Project Gutenberg-tm
+concept of a library of electronic works that could be freely shared
+with anyone.  For thirty years, he produced and distributed Project
+Gutenberg-tm eBooks with only a loose network of volunteer support.
+
+
+Project Gutenberg-tm eBooks are often created from several printed
+editions, all of which are confirmed as Public Domain in the U.S.
+unless a copyright notice is included.  Thus, we do not necessarily
+keep eBooks in compliance with any particular paper edition.
+
+
+Most people start at our Web site which has the main PG search facility:
+
+     http://www.gutenberg.org
+
+This Web site includes information about Project Gutenberg-tm,
+including how to make donations to the Project Gutenberg Literary
+Archive Foundation, how to help produce our new eBooks, and how to
+subscribe to our email newsletter to hear about new eBooks.

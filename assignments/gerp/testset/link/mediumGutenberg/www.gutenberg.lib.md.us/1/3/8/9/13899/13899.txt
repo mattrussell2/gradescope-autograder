@@ -1,0 +1,1570 @@
+The Project Gutenberg EBook of The Mirror of Literature, Amusement, and
+Instruction, by Various
+
+This eBook is for the use of anyone anywhere at no cost and with
+almost no restrictions whatsoever.  You may copy it, give it away or
+re-use it under the terms of the Project Gutenberg License included
+with this eBook or online at www.gutenberg.net
+
+
+Title: The Mirror of Literature, Amusement, and Instruction
+       No. 291 - Supplement to Vol 10
+
+Author: Various
+
+Release Date: October 31, 2004 [EBook #13899]
+
+Language: English
+
+Character set encoding: ASCII
+
+*** START OF THIS PROJECT GUTENBERG EBOOK THE MIRROR OF LITERATURE ***
+
+
+
+
+Produced by Jonathan Ingram, William Flis, and the Online Distributed
+Proofreading Team.
+
+
+
+
+
+[Illustration: HIS ROYAL HIGHNESS
+
+THE LORD HIGH ADMIRAL.
+
+K.G.G.C.B. &C. &C.]
+
+J. Limbird, Publisher. 148. Strand.
+
+       *       *       *       *       *
+
+THE
+
+MIRROR
+
+OF
+
+LITERATURE, AMUSEMENT,
+
+AND
+
+INSTRUCTION:
+
+CONTAINING
+
+ORIGINAL ESSAYS;
+
+HISTORICAL NARRATIVES; BIOGRAPHICAL MEMOIRS; SKETCHES OF SOCIETY;
+TOPOGRAPHICAL DESCRIPTIONS; NOVELS AND TALES; ANECDOTES;
+
+SELECT EXTRACTS
+
+FROM
+
+NEW AND EXPENSIVE WORKS;
+
+_POETRY, ORIGINAL AND SELECTED_;
+
+THE SPIRIT OF THE PUBLIC JOURNALS;
+
+DISCOVERIES IN THE ARTS AND SCIENCES;
+
+USEFUL DOMESTIC HINTS;
+
+&C. &C. &C.
+
+       *       *       *       *       *
+
+VOL. X.
+
+       *       *       *       *       *
+
+LONDON:
+
+PRINTED AND PUBLISHED BY J. LIMBIRD, 143, STRAND,
+(_NEAR SOMERSET HOUSE._)
+
+1828.
+
+       *       *       *       *       *
+
+
+
+PREFACE.
+
+
+Each volume of a successful periodical miscellany resembles Seneca's
+"one good turn--a shoeing-horn to another;" and the Editor of THE
+MIRROR, in prefacing his _tenth volume_ with this comparison, hopes
+that he does not over-rate what the present patronage of the public
+encourages him to expect. Indeed, he would fear the suspicion
+of ingratitude on his part, were he not thus to acknowledge the
+long-extended success which has attended his labours, from their
+commencement to the present moment. At the same time, lest vanity
+should be thought to have mastered his better judgment, he assures
+his patrons that he does not claim the undivided merit of his good
+fortune; since, beyond his own taste of adaptation and selection,
+he "misses nothing he can fairly lay his hands on;" so that, the
+multiplicity of his resources being considered, his success is,
+perhaps, more complimentary to the discernment of the public, than it
+is laudatory of his individual exertions.
+
+As many readers would yawn over a long preface like so much Latin,
+the Editor will not, in the present instance, subject them to so
+extraordinary a stretch of _ennui_, by any lengthy comment on the
+character of his last volume. He hopes that its contents will be
+found equal to either of its predecessors; and, if any superiority be
+observed, he begs that it may be attributed to the "march of mind," in
+whose rank and file he may be allowed his proper order.
+
+Like the well-graced actor, who, at the conclusion of a play, bows
+to the performers before he addresses the audience, the Editor first
+returns his acknowledgments to his several Correspondents, who _have
+contributed_ to the public entertainment in his last volume: perhaps
+this class may be very small, although in the usual proportion of
+good and evil which is scattered up and down all paths of life. To the
+other and more numerous class, _viz._ those whose Communications (from
+various motives, generally explained) have not been inserted, the
+Editor is equally indebted,--for intention, if not accomplishment; and
+he hopes that the performance of his critical duty has been such as
+to conciliate their respect and good-will. As a pleasantry, he would
+remind a fair proportion of his readers, that,
+
+        As the young and forward bud
+  Is eaten by the canker ere it blow,
+  Even so by love the young and tender wit
+  Is turned to folly; blasting in the bud,
+  Losing his verdure even in the prime,
+  And all the fair effects of future hopes--
+
+for he would not affect the fickle guide on so extended a scale.
+For graver matters, or such as are beyond the surface of the heart,
+the Editor thanks his Correspondents on subjects of _Art_, in its
+antiquarian and modern departments, of whose researches he has
+frequently availed himself. With a view to keep pace with the Spirit
+of Philosophical Discovery which characterizes the present day, the
+Editor has been his own Prometheus in introducing his readers to the
+"_Arcana of Science_," the object of which has already been fully
+explained, and he hopes, to a certain extent, realized.
+
+The Editor is not disposed to indulge too freely in anticipation, lest
+he should lose sight of his object: accordingly, he must be brief in
+his professions for the future. Improvement is contemplated in the
+general execution of the Embellishments, as far as the Proprietor
+and Editor have control; but, anon, they will be at the bar of public
+taste. To use a parliamentary phrase, other new "features" will be
+introduced from time to time, so as to continue to reflect in THE
+MIRROR the characteristics and curiosity of the present day, aided by
+some of the bright lights of past ages.
+
+    LONDON,
+  _December_ 24, 1827.
+
+       *       *       *       *       *
+
+
+
+
+LIST OF ENGRAVINGS.
+
+
+  _PORTRAIT of His Royal Highness the DUKE of CLARENCE._
+  1. Pony Phaeton of his Majesty.
+  2. Emblematical Design for July.
+  3. New Church, Regent's Park.
+  4. Archers.
+  5. Royal Archer of Scotland.
+  6. Ashby-de-la-Zouch Castle.
+  7. Garrick's Mulberry Cup.
+  8. Croydon Palace.
+  9. Hadley Church.
+  10. Emblematical Design for August.
+  11. St. Thomas's Hospital, Canterbury.
+  12. Duke of Devonshire's Villa.
+  13. Ancient Powder-Flask.
+  14. Town-Hall, Liverpool.
+  15. New Prison, Norwich.
+  16. Emblem of September.
+  17. Dublin Post-Office.
+  18. Hammersmith Bridge.
+  19. Monge's Mausoleum.
+  20. Ancient Grecian Sepulchre.
+  21. New Palace, St. James's Park.
+  22. Plan of Improvements in the Park.
+  23. Triumphal Arch, Hyde Park.
+  24. Temple Church.
+  25. Kew Palace.
+  26. Kanemboo Market Woman.
+  27. Shouaa Woman.
+  28. Bristol Cathedral.
+  29. Emblem for October.
+  30. Central Market, Leeds.
+  31. Palace at Stockholm.
+  32. Brambletye House.
+  33. Moated House, Brambletye.
+  34. Elsineur from Hamlet's Garden.
+  35. The Camelopard.
+  36. Body Guard of the Sheikh of Bornou.
+  37. Lancer of the Sultan of Begharmi.
+  38. St. Martin's, near Canterbury.
+  39. Hanover Terrace, Regent's Park.
+  40. Emblem of November.
+  41. Haddon Hall.
+  42. Autographs of the Conspirators in the Gunpowder Plot.
+  43. Navarino and the Island of Sphagia.
+  44. Plan of the Attack at Navarino.
+  45. Castle of the Seven Towers, Constantinople.
+  46. Fisherman of Bornou.
+  47. Musician of Mandara.
+  48. Caxton's House.
+  49. Bushy Park, the Seat of the Lord High Admiral.
+  50. Design for December.
+  51. Greek Armament.
+  52. City of Old Sarum.
+  53. The Clarence Cup.
+  54. New Steam Carriage.
+
+       *       *       *       *       *
+
+
+MEMOIR
+
+OF
+
+HIS ROYAL HIGHNESS THE DUKE OF CLARENCE,
+
+_LORD HIGH ADMIRAL OF ENGLAND._
+
+       *       *       *       *       *
+
+  Ye sacred arks of Liberty! that float
+  Where Tamar's waters spread their bosom wide,
+  That seem, with towering stern and rampart stride,
+  Like antique castles girt with shining moat:
+  Should War the signal give with brazen throat,
+  No more recumbent here in idle pride,
+  Your rapid prows would cleave the foaming tide,
+  And to the nations speak in thundering note.
+  Thus in the firmament serene and deep,
+  When summer clouds the earth are hanging o'er,
+  And all their mighty masses seem asleep,
+  To execute Heaven's wrath, and judgment sore,
+  From their dark wombs the sudden lightnings leap,
+  And vengeful thunders peal along the shore.
+
+            _Forget Me Not_--for 1828.
+
+The recent appointment of the above illustrious individual to the
+head of our naval administration is a gratulatory topic for every
+Englishman; and we doubt not the measure will contribute as largely
+to individual honour, as it will to the national welfare. In the
+abstract, nations resemble large families, of which kings are fathers
+or guardians; and the subdivision of this guardianship or paternal
+government, among the sons or younger brothers of the sovereign is
+calculated to promote unanimity among the governors, and to engraft
+with affectionate loyalty the hearts of the governed. Indeed, the
+tutelar presence of princes seldom fails to inspire courage, and to
+support the patriotic sons of arms even in the extremes of danger;
+and, although the princes of our times have seldom been distinguished
+in the camp of war,--we should recollect that
+
+  Nihil sunt foris arma nisi est consilium domi.
+
+The DUKE of CLARENCE, who is next brother to his present Majesty, was
+born at St. James's Palace, August 21, 1765, at a quarter before four
+in the morning, and in the following month was baptized by the name of
+WILLIAM HENRY. It is said that in his childhood and youth, it was the
+frankness of his countenance and behaviour induced the king to devote
+him to the naval service: added to this, he surpassed his brothers
+in corporeal strength and constitutional hardihood; although he was
+exceeded by them in the more refined acquirements of study, to which
+he manifested comparative indifference. With a mind naturally framed
+for peril and enterprise, and aware of the subordinate rank and
+laborious stations through which he must pass to distinction, he
+appears to have been enthusiastic and impatient for the service
+long before he entered the lists, notwithstanding he commenced his
+career at the age of fourteen, by joining the Prince George, a
+ninety-eight-gun ship, recently built, and named after his present
+majesty. In this ship, under the command of Admiral Digby, his royal
+highness bore a part in the great naval engagement between the English
+and Spanish fleets, commanded by Admiral Rodney and Don Juan de
+Langara. Previous to his leaving the Prince George, he was also
+present at the capture of a French man-of-war and three smaller
+vessels, forming part of a considerable convoy; but in neither of
+these instances was an opportunity offered for any distinguishing
+effort of bravery. On this occasion, the Spanish admiral, Don Juan
+de Langara, on visiting Admiral Digby, was introduced to his royal
+highness. During the conference between the two admirals the prince
+retired, and when it was intimated that Don Juan wished to return,
+his royal highness appeared in the uniform of a midshipman, and
+respectfully informed the admiral that the boat was ready. The
+Spaniard was surprised to see the son of his Britannic majesty acting
+in the capacity of an inferior officer, and emphatically observed to
+Admiral Digby, "Well does Great Britain merit the empire of the seas,
+when humble stations in her navy are filled by princes of the blood."
+
+We have next the pleasing duty of adverting to two signal exertions of
+his royal highness in the cause of humanity--conduct which
+
+            is twice bless'd:
+  It blesseth him that gives, and him that takes:
+  'Tis mightiest in the mightiest: it becomes
+  The throned monarch better than his crown.
+
+The first is thus narrated by a midshipman of the Torbay, in a letter
+to his friends:--
+
+    "_Port Royal Harbour, April_, 1783.
+
+    "The last time Lord Hood's fleet was here, a court-martial
+    was held on Mr. Benjamin Lee, midshipman, for disrespect to
+    a superior officer, at which Lord Hood sat as president. The
+    determination of the court was fatal to the prisoner, and he
+    was condemned to death. Deeply affected as the whole body of
+    the midshipmen were at the dreadful sentence, they knew not
+    how to obtain a mitigation of it, since Mr. Lee was ordered
+    for execution; while they had not time to make their appeal
+    to the Admiralty, and despaired of success in a petition to
+    Admiral Rowley. However, His Royal Highness generously stepped
+    forth, drew up a petition, to which he was the first to set
+    his name, and solicited the rest of the midshipmen in port to
+    follow his example. He then himself carried the petition to
+    Admiral Rowley, and in the most pressing and urgent manner,
+    begged the life of our unhappy brother; in which he succeeded,
+    and Mr. Lee is reprieved. We all acknowledge our warmest and
+    grateful thanks to our humane, our brave, and worthy prince,
+    who has so nobly exerted himself in preserving the life of his
+    brother sailor."
+
+In the same year, 1783, the prince, then a fine midshipman, visited
+Cape Francois, and the Havannah, where the second instance of his
+generous humanity occurred. It should be premised, that some of
+his countrymen having broken their oath of fidelity to the Spanish
+government, were in danger of suffering under sentence of death. The
+governor of Louisiana, Don Galvez, offered, at the intercession of the
+prince, to pardon them; and the enthusiasm which he manifested in this
+"labour of love" cannot be better illustrated than by the following
+letter addressed by his royal highness to the governor:--
+
+    "Sir,--I want words to express to your Excellency my just
+    sense of your polite letter, of the delicate manner in which
+    you caused it to be delivered, and your generous conduct
+    towards the unfortunate in your power. Their pardon, which
+    you have been pleased to grant on my account, is the most
+    agreeable present you could have offered me, and is strongly
+    characteristic of the bravery and gallantry of the Spanish
+    nation. This instance increases, if possible, my opinion of
+    your Excellency's humanity, which has appeared on so many
+    occasions, in the course of the late war.
+
+    "Admiral Rowley is to dispatch a vessel to Louisiana for
+    the prisoners. I am convinced they will ever think of your
+    Excellency's clemency with gratitude; and I have sent a
+    copy of your letter to the king my father, who will be fully
+    sensible of your Excellency's attention to me.
+
+    "I request my compliments to Madame Galvez, and that you will
+    be assured that actions so noble as those of your Excellency
+    will ever be remembered by
+
+"Yours, sincerely, WILLIAM P."
+
+On June 17, 1785, after a service afloat of six years and three
+months, his royal highness was promoted lieutenant of the Hebe. In ten
+months after this we find him serving as captain of the Pegasus; next
+in the Andromeda and the Valiant; and on December 3, 1790, his royal
+highness received a commission as rear-admiral of the blue, having
+then been about eighteen months a peer of England, Scotland, and
+Ireland, by the titles of duke of Clarence and St. Andrews, and earl
+of Munster. From this period till the year 1814 his royal highness
+remained on shore. On April 19, in that year, he hoisted his flag on
+board the Jason, as admiral of the fleet; and on the 23rd of the same
+month he sailed from Dover, with several other ships, to escort Louis
+XVIII. to the coast of France; and having seen him to Calais, returned
+to the Downs on the night of the 24th, and struck his flag a few days
+after.[1]
+
+During the period between the 25th of May and June 28th, 1814, (when
+his royal highness finally took leave of the sea,) his flag was
+hoisted, successively, in the Impregnable and Jason, and again in the
+Impregnable, and from her transferred to the Magicienne; in which last
+ship he sailed on the 26th of June, and having escorted the allied
+sovereigns to the continent, struck his flag, and came on shore.[2]
+
+His royal highness' service at sea may, therefore, be stated as
+follows:--6 years as midshipman; 11 months as lieutenant; 3 years and
+10 months as post captain; and 7 weeks as admiral of the fleet: making
+a total service at sea of about 10 years and 9 months.[3]
+
+The intimacy of the prince with the gallant Nelson is well known as
+one of the most interesting incidents of the duke's life. They first
+met at Quebec in 1782, when Nelson was in the Albemarle off that
+station, and whence he was ordered to convoy a fleet of transports
+to New York. From this time they became much attached, and their
+separation was the cause of mutual regret. At the close of the war
+they met again, both being appointed to the Leeward island station.
+Nelson soon had an opportunity of witnessing the prince's resolute
+obedience to orders, amidst great personal danger, and strong
+temptations to avarice, the circumstances of which are briefly
+as follow:--The law excluded all foreign vessels from trade and
+intercourse with our West India islands; and America, being now
+independent, and as much a foreign nation as any other, Nelson,
+the senior captain on the station, ordered all American vessels to
+quit the islands within forty-eight hours, on pain of seizure, and
+prosecution of their owners. Four vessels at Nevis remained, which
+he ordered to be searched, and on being found American, they were
+adjudged legal prizes. This proceeding placed Nelson in considerable
+difficulty, but he ultimately triumphed; and though the thanks of
+government for protecting its commerce were given to the admiral of
+the station, who had in fact opposed the measure, Nelson was conscious
+of having done his duty, and enjoyed the approbation of such as were
+disinterested witnesses of it. Among these was Prince William, who
+thus notices Nelson's conduct on this occasion in a letter to a
+friend: "It was at this era," says the prince, "that I particularly
+observed the greatness of Nelson's superior mind. The manner in which
+he enforced the spirit of the Navigation Act first drew my attention
+to the commercial interests of my country. We visited different
+islands together; and as much as the manoeuvres of fleets can be
+described off the headlands of islands, we fought over again the
+principal naval actions in the American war. Excepting the naval
+tuition which I had received on board the Prince George, when the
+present Rear Admiral Keats was lieutenant of her, and for whom we both
+entertained a sincere regard, my mind took its first decided naval
+turn from this familiar intercourse with Nelson."
+
+It is also worthy of remark, that while the prince spoke thus highly
+of Nelson, the latter estimated his royal highness in correspondent
+terms. In a letter to Captain Locker, about the same period, Nelson
+says, "You must have heard, long before this reaches you, that Prince
+William is under my command. I shall endeavour to take care that he
+is not a loser by that circumstance. He has his foibles as well as
+private men, but they are far overbalanced by his virtues. In his
+professional line he is superior to near two-thirds I am sure of
+the list; and in attention to orders, and respect to his superior
+officers, I hardly know his equal. His royal highness keeps up strict
+discipline in his ship, and without paying him any compliment, she
+is one of the finest ordered vessels I have seen." These opinions,
+it should be recollected, are quoted from private correspondence--a
+circumstance which adds materially to their value.
+
+On July 11, 1818, his royal highness was married at Kew to her serene
+highness Adelaide Amelia Louisa Theresa Caroline, princess of Saxe
+Meinengen, eldest daughter of his serene highness the late reigning
+duke of Saxe Meinengen. The ceremony, as is usual on these occasions,
+was performed by the Archbishop of Canterbury, in the presence of
+all the royal family. By this marriage his royal highness had one
+daughter, who was born March 27, 1819, and died after a few hours. In
+1823, his royal highness was made a general of marines; and within the
+past year the duke has been appointed lord high admiral of England.
+
+It is not our intention here to enter into the supposed causes of
+the duke's long seclusion from public service, viz. from 1790 to the
+present time, except a short interval in 1814. At the commencement of
+the war with France, the late Duke of York took an early and active
+part by land; hence the question arises as to the non-appointment of
+the Duke of Clarence to a similar position by sea. The consequence has
+been, that the most vigorous portion of the duke's life has been lost
+to his country, whilst his royal highness has remained in comparative
+obscurity, amidst one of the most brilliant periods of our naval
+history. It is, however, gratifying to know that the duke's inactivity
+cannot be attributed to apathy on his part. On the contrary, he was
+anxious to be employed, and even sought appointment, as appears by the
+following letter, written by his royal highness to Commodore Owen in
+1812:--
+
+"_Bath House, Saturday night._
+
+    "DEAR SIR--This evening I received your letter from Deal,
+    and in answer to it, I beg to observe, that I have made both
+    a public and private application to the king, that I may be
+    permitted to hoist my flag, and relieve Lord Collingwood in
+    the command of his majesty's fleet in the Mediterranean. There
+    cannot be any secrecy in this thing; because, before more
+    than fifty brother officers, I declared my resolution at
+    Portsmouth. Until I have the order to hoist my flag, I cannot
+    be certain; but I am very much inclined to think eventually
+    that I shall have the honour and the happiness of commanding
+    those fine fellows whom I saw in the spring in the Downs, and
+    lately at Portsmouth. My short stay at Admiral Campbell's had
+    impressed me with very favourable ideas of the improved state
+    of the navy; but my residence at Portsmouth has afforded me
+    ample opportunity of examining, and consequently of having
+    a perfect judgment of the high and correct discipline now
+    established in the king's service. * * * I could not resist
+    what I felt; and reasons, both public and private, urged me to
+    make the offer I have already mentioned, and I hope I shall be
+    gratified.--I remain, dear sir, yours, &c.
+
+"WILLIAM."
+
+These zealous sentiments are, however, further corroborated by a
+recent declaration of the duke to the Goldsmiths' Company, on their
+presenting him with the freedom of their society.
+
+Having sketched the principal circumstances which appertain to what
+may be termed the _public career_ of his royal highness, it is our
+less pleasant, though equally important, duty, to notice his _domestic
+life_; for obvious reasons our details will be less perfect. It is
+a portion of the duke's life which cannot be entirely passed over in
+silence, since it must be conceded, that much of his unpopularity may
+be traced to this source. Neither the court nor the people of England
+are so ascetic as not to extenuate the indiscretions of royalty; but
+this charitable estimate of misgivings does not extend to approbation
+of any culpable dereliction of social and moral duties. The fact of
+his royal highness having a large family, by a lady now no more, is
+too well known to be concealed; but the odium attached to his royal
+highness for his participation in a certain scene of license and
+poverty, has doubtless been over-rated; but his proportion must be
+left for the biographer of a future age to settle; and we sincerely
+hope that, to quote a contemporary, "when the time arrives that the
+historian shall feel himself at liberty to enter into details, and
+sift matters to the bottom, his royal highness will come out of the
+investigation, (not without some blame, for which of us is faultless,
+but) with a character unsullied _even in this respect_, and in
+all other respects irreproachable." Mankind are, more or less, the
+children of error; but their propensity to exaggerate human frailty
+deserves to be reprobated for its cruelty and wickedness.
+
+The happy marriage of his royal highness, to which event we have
+already alluded, has, we trust, been the means of clearing away the
+prejudices which the duke's former conduct may have engendered.
+
+  There is a tide in the affairs of man,
+  Which taken at the flood leads on to fortune.
+
+This period of his royal highness' life has probably arrived, and
+his appointment to the important office of Lord High Admiral will
+doubtless accelerate the beneficial effect. The public are perhaps
+sanguine in their expectations; but from early and subsequent proofs
+of the duke's devotion and attachment to the service over which he now
+presides, we have reason to think they will not be disappointed. It
+has been shown that his royal highness neither wanted zeal nor ability
+at any stage of his life, and the ardent assurances which have been
+quoted from one of his most recent declarations, bespeak that he still
+possesses the vigour of manhood, tempered with experience; and it must
+be truly gratifying to his royal highness to know that the honour and
+authority of the office of Lord High Admiral, have been revived, after
+the sleep of a century, as if to compensate him for past neglect, with
+their investiture.[4] In truth, the alacrity with which the duke has
+already entered into the duties of his office, and the lively sense of
+justice he has manifested in dispensing its honorary rewards, must be
+gladly hailed by the service, and the country at large.
+
+His royal highness's present emoluments may be stated as follow:--
+
+  Income on the Consolidated Fund, previous            £.     s.  d.
+    to the death of the Duke of York:                 26,500   0   0
+  By the death of the Duke of York                     3,000   0   0
+  Additional grant, February, 1827                     3,000   0   0
+  And to the Duchess                                   6,000   0   0
+  As Ranger of Bushy Park                                187   9   8
+  Halfpay as Admiral of the Fleet                      1,095   0   0
+  Pay as General of the Marines                        1,728  15   0
+  Salary as Lord High Admiral                          5,000   0   0
+                                                      --------------
+                            [5]Total Annual Income    46,511   4   8
+
+The Duke of York is acknowledged by Mr. Peel, in his speech, Feb. 17,
+1827, to have had £50,000. a-year.
+
+We subjoin the following characteristic anecdote from the New Sailor's
+Magazine for December, 1827, sketched with fidelity and in that
+rich vein of humour by which stories of the service are usually
+distinguished. It exhibits the character of his royal highness in all
+the glowing generosity of buoyant youth, and proves him to possess a
+warm-hearted sympathy for the sufferings of his fellow-creatures--
+
+THE ROYAL REEFER AND BOB CLEWLINES.
+
+It was on one of those December days, when the wind, blowing from
+the northward, acts almost like a razor on the surface of the skin,
+and when, accompanied by small sharp rain, a mixture of damp and
+cold produce a chilling effect upon the frame and spirits, that a
+_ci-devant_ midshipman, his hands in his pockets, and
+
+  "Whistling as he went for want of thought,"
+
+crossed London-bridge, which at that time was an asylum to the
+footsore, the pauper, and the weary of heart. The day had fallen, and
+every thing looked dull and dreary; the foot-path was encumbered by
+mud, and porters carrying weights, as well as other busy passengers,
+were jostling each other to obtain a footing on the dirty pavement:
+a fellow heavy laden came in contact with the _royal reefer_[6] so
+powerfully, that he took a lee-lurch, and got foul of one of the seats
+in the arches. "Avast there; luff up, you lubberly rigged son of a
+gun," cried middy; "couldn't you hail ship before you were aboard of
+us?" The fellow, however, waddled on; but the middy had to turn about
+in order to regain his course, when suddenly he beheld a middle-aged
+figure, perishing with cold, a red night-cap on, an old jacket and
+trousers, a pair of shoes in rags attached to his legs with a rope's
+end, no shirt, no stockings, nor any other attire; the face was
+climate-struck, it had braved the equator and the pole, the battle
+and the breeze, the scorching heat and the petrifying cold,--it was,
+as might be expected, thin, and moreover almost lost in a profusion
+of hair on each cheek, so that it would be difficult for the oldest
+acquaintance to recognise the features after long absence; nature had
+made the lips to smile, the eyes to beam in kindness, the fine high
+forehead to command respect; but time and hardships, disease and
+disappointment, had quenched the fire of the organ of sight and
+intelligence, the mirror of the soul,--had prematurely furrowed that
+front of honest English high spirit and candour, and had taught the
+lips to fall in dejection and the treasured silence of woe: upon the
+whole, the figure had something fierce in it, but it was truly manly;
+the warrior's arms were folded together, and his face, bent towards
+the ground, was still half up-turned, and seemed to say to rich
+merchants and venders passing by on foot and in carriages, "There ye
+are, ye liers upon beds of down, ye feeders upon the poor man's toil;
+often have you slept secure, and safely enjoyed your wealth, whilst
+poor Jack rode out the gale, hung on the rigging betwixt life and
+death, and endured the storm which held him every moment betwixt
+the chance of clinging to a fragment of the wreck and sinking into
+eternity: but, now the war is over, smart-money paid for a sharp
+wound, and neglect and oblivion, are the seaman's portion." The
+expression of his face and eyes seemed to speak thus; indeed, it spoke
+volumes; but its mute appeal was lost on the worldlings, who brushed
+by him, and who, bent on love of gain, scarcely were aware that their
+fellow-man was starving by their side, too feeble and too much an
+outcast to work, yet too proud to beg; the middy's heart, however, was
+of that texture that it leant towards a brother-sailor, meet him where
+it might, and he naturally looked round at poor Jack on his beam-ends:
+he had but one penny in his pocket, and that the plaintive voice of
+a blind woman had drawn, as if by magic, from its deep recess. What
+was to be done?--for he should have liked to have taken this wreck of
+_a man of war into tow_. The reflection caused him to examine more
+closely the shivering seaman, when a small scar, occasioned by a
+splinter, on the _bridge of the nose_, brought to his remembrance Bob
+_Clewlines_, who had served in the same ship: the tar recognised him
+also; but, so far from making himself known to him, he hid his face
+in his hand: the reefer, however, was resolved to bring him to. "What,
+Bob Clewlines!" cried he, "do I not hail an old shipmate in you, a
+quarter-master on board the ----, the bravest heart of oak, the best
+reefer, and the merriest steersman of the whole ship's crew; and,"
+said he audibly, that every one passing might hear and value fallen
+courage and fidelity, "and _as prime a seaman as ever trimmed a sail,
+or served a gun_; why, what has broke up your old hulk this way?" The
+man could not find utterance; remembrance of _unrequited services_
+and other associations checked him. The middy stretched out his hand,
+which the _broken-hearted sailor_ ventured not to take. "Come, Bob,"
+cried the other, "no subordination now: we are all equals on life's
+_quarter-deck_, and when my _fellow-man_ suffers, he _rises_ a peg in
+my estimation. Why?--because _unfeeling lubbers_ slight him. Come tip
+us your _fin_. Your hand may be dirty, but your soul is as kind as a
+new sail in a sunny day. I'll show it against any lord's in the land.
+Come, heave a head; follow me, old tarry breeches; I'll soon set your
+_timbers_ and _rigging_ to rights; you shall have an entire refit.
+Come, bear a hand; _set_ all your _canvass_; it's all in _ribbons_, I
+see, and _shivers_ in the wind; but I'll keep out wind and weather for
+you."
+
+Thus saying, he walked proudly with the poor tar, astern of him, until
+he came to a slop-shop, near Wellclose square: it was a Jew's. "Here,
+Moses," quoth the middy, who detected the Israelite bending looks
+of disdain and mistrust on the poor man, as if he considered the
+contents of his shop in danger: "come, Moses, a regular built _outrig_
+for this _gentleman_," laying great stress on the word gentleman.
+This was _pitching_ it strong, but his heart was carrying _royals,
+sky-scrapers, moon-rakers_, and his _pulse_ was _sailing_ at the rate
+of _ten knots_ an hour at least; so elate was he to serve a brave man
+in distress, and above all, a son of the ocean: "come, let us have
+every thing good, and spic and span new."--"Pray, _Shair_, who's to
+pay?"--"_Myshelf._"--"O, your honour, that's right." The poor man
+retired to a back-room, and stepped forward clad from head to foot,
+and with two changes of linen and a pair of shoes (by the midshipman's
+order) tied up in a pocket-handkerchief under his arm. BOB CLEWLINES
+looked with a blush on his old clothes, and at this moment an almost
+naked boy passed by: the midshipman duly appreciated and truly
+interpreted one look of the tar. "Bob, I say, heave that overboard,
+and let the poor boy pick it up: one good turn deserves another."
+The payment was the next. "Three pounds fifteen.--Is that the
+lowest?"--"O, yesh: I don't gain five shillings by the whole
+deal."--"Well, then, do you take the case of my gold watch, and weigh
+it, and give me the produce of it."--"Let ush see: it's vary pretty,
+but not vary heavy; it's all fashion you see: indeed, it's a great
+pity to part, the vatch and the caish; watches are a drug now, or else
+I'd buy it; but just to oblige you, I'll see what I can give."--"Don't
+trouble yourself, Mosey; just do as you are bid: you take the outside
+case, and I'll keep the watch."--"I shall lend you four pounds upon
+it," resumed the Israelite; "and you may depend upon my honour to
+return it to you, when you bringsh me de monish."--"No, you
+won't, Mosey; you'll do just what I bid you."--"It will spoil the
+watch"--"Not a bit; she must work without her _jacket_, as my friend
+has often done in all weathers. I shall sell the outside case to serve
+a shipmate in distress; but the watch was left me by a dear friend,
+so I shall keep her: a metal case will do as well for a little
+time, and when fortune's breeze springs up again, _the case will
+be altered_."--"Vel, shair, you shall be obeyed: five pounds, five
+shillings is just the price of the weight; there's the money."--"Good
+morning, Master Moses; but do you, _Clewlines_, set sail again; I
+want to get you into port: it is only what I owe you. Were you not the
+kindest creature to me in the world _when I was confined to my berth
+with the yellow fever, and not expected to live a day?_ Come, come,
+you must take your cargo in; you must be _victualled_ as well as
+_refitted_. I have got a chalk at a house near this,--another shipmate
+who is set up in business in a public line: call for what you want,
+and here's the loose change to keep your pocket until something turns
+up." Poor Bob got a _good dinner_, a _good bed_, and a _snug hammock_,
+that night; and shortly afterwards he obtained a birth in an Indiaman,
+and is now doing well. The royal reefer's heart bounded with joy at
+performing this noble action to recover which he put himself for a
+month on short allowance. But this is only one of many such traits
+in the character of this heart of oak whose name the writer could
+scarcely venture to state, but who will here remember this scene.
+
+HARRY HATCHWAY.
+
+_H.M.S. Perseus, off the Tower, Nov._ 1827.
+
+[Footnote 1: "Naval and Military Magazine," No. 3.]
+
+[Footnote 2: Ibid.]
+
+[Footnote 3: Ibid.]
+
+[Footnote 4: Beatson, in his _Political Index_, designates the Lord
+High Admiral as the _ninth_ great officer of the state; but in ancient
+times this office was usually given to some of the king's sons, and
+which, in twelve different instances, has been filled by the king in
+person.--The present patent to his royal highness the Duke of Clarence
+was stated by the Lord Chancellor, in parliament, June 15, 1827, to
+be "similar to that of Prince George of Denmark, with this difference,
+that the _Droits_ of the Admiralty were reserved from Prince George
+by an express covenant, while in the present circumstances they are
+excepted in the commission."]
+
+[Footnote 5: Naval and Military Magazine.]
+
+[Footnote 6: Prince William Henry, the present Duke of Clarence, when
+a midshipman.]
+
+       *       *       *       *       *
+
+By way of a _tail-piece_ to this already extended memoir, we present
+our readers with an accurate engraving of
+
+THE ROYAL CLARENCE CUP,
+
+[Illustration]
+
+given by the gentlemen of the Thames Yacht Club, in honour of his
+royal highness the Lord High Admiral having condescended to become the
+patron of the club, on Thursday September 27, 1827. A steam packet was
+engaged, to accompany the match, by the Club for the accommodation of
+their friends, among whom we had the good fortune to be numbered. It
+was altogether a most grateful relaxation from our land labours. The
+distance sailed was from off Blackwall to Gravesend and back, and
+the muster of the fleet almost unprecedentedly fine. The whole of the
+vessels were admirably managed throughout, the match, which towards
+the close, became intensely interesting. At length it was decided
+by the _Lady Louisa_, (Mr. Thomas Smith, owner) arriving first at
+Blackwall, distancing eight others, but gaining the victory with only
+a few minutes to spare. If we recollect "right well," the day was
+fine for the advanced period of the season, and on board the several
+vessels packets, and on the banks of the river, there were the usual
+humours of an aquatic spectacle without any of its vulgarisms. The
+cup, weighing 85 oz. and standing nearly two feet high, is of silver,
+elegantly chased, and as our engraving imports, of classical design;
+and its exhibition, with the customary ceremony of presentation,
+toasting, &c. appeared to afford much satisfaction to the assembled
+company, and the victorious claimant of the prize, and equal credit to
+the taste of the artist, Mr. Hyams.
+
+       *       *       *       *       *
+
+
+
+INDEX.
+
+       *       *       *       *       *
+
+VOL. X.
+
+       *       *       *       *       *
+
+  ABERNETHY's lectures, 207.
+  Accomplishments, value of, 199.
+  Actors, reminiscences of, 106, 166, 296.
+  African Eloquence, 124.
+  Ali Pacha, palace of, 92.
+  American Travelling, 108.
+  Amulet, the, for 1828, 420.
+  Annuals, Spirit of the, 409.
+  ANECDOTES AND RECOLLECTIONS, 68, 87, 139, 168, 183, 397.
+  Appetites, royal, 458.
+  ARCANA OF SCIENCE, 253, 262, 272, 289, 318, 349, 384, 398, 432, 449.
+  Archery, 41.
+  ARCHITECTURAL ILLUSTRATIONS, 193, 313.
+  Ark of Noah, 48.
+  ARTS AND SCIENCES, 40, 78, 111, 127.
+  Ashby-de-la-Zouch Castle, 49.
+  Assassination, singular, 290.
+  ASTRONOMICAL OCCURRENCES for the Months, 11, 84, 154, 233, 310, 362.
+  Auberge, the, 337.
+  Aurora Borealis, 282.
+  Australian Importunity, 189.
+  Australian Patriotism, 175.
+  Author and his Coat, 12.
+  Authors and Editors, 360.
+
+  Bachelor's Portrait of a Maid, 397.
+  Ballad Singer, 374.
+  Bathing, Hints on, 35, 126.
+  Battle Hymn, by Korner, 267
+  Bernard Barton, 146.
+  Bijou, the, for 1828, 423.
+  Bilderdyk, the poet, 87.
+  BIOGRAPHY, SELECT, 70, 199, 388, 432.
+  Birds, age and incubation of, 64.
+  Black Beard, story of, 101.
+  Blue-bottle, the, 115.
+  Books, ancient, materials of, 61, 123.
+  Books and Bookworms, 380.
+  Books, new, 90.
+  Brain, the, 98.
+  Brambletye House, the editor's visit to, 265.
+  Breakfast in Newgate, 131, 150.
+  Bridget Trot and Tim. Green, 194.
+  Bristol Cathedral, 225.
+  Bristol Institution, 111.
+  Buckingham, duke of, 381.
+  Bull-fights in Spain, 170.
+  Burmese Boats, 205.
+  Burmese Execution, 181.
+  Burmese Thieves, 216.
+  Burns, Gilbert, biography of, 70.
+  Bushy Park, 425.
+  Butcher, the, 82.
+  Byron and other Poets compared, 2.
+
+  Calais, account of, 339.
+  Calais, living at, 357.
+  Cambrian Conviviality, 155.
+  Cameleon Sketches, 226, 243.
+  Camelopard, the, 289.
+  Canning, Mr., Death of, 100.
+  Canning, lines to the memory of, 131.
+  Canterbury, St. Thomas's Hospital, at, 97.
+  Canterbury, St. Martin's, at, 304.
+  Carlisle, Sir Anthony, 88.
+  Carriage, grace of, 110.
+  Carrier Pigeons, 119.
+  Cartoons of Raphael, 184.
+  Cavalry School in France, 110.
+  Caucasian Tribes, 190.
+  Caxton's House in Westminster, 377.
+  Celebrated Persons, 83.
+  Charles I. Execution of, 189.
+   Charles I. Trial of, 247.
+  Chinese Almanack, 77.
+  Chiswick, 113.
+  Christmas Customs, 427, 443.
+  Chronicles of the Canongate, 282, 324, 341, 364.
+  Churchyard Scene, 67.
+  Circassian Women, 188.
+  Cleveland, Marquess of, 245.
+  Climates, contrast of, 203.
+  Cloughna Cuddy, 135.
+  Club-houses, London, 370.
+  Coalheavers, 293.
+  Colton, Mr., Anecdotes of, 50.
+  COMMON-PLACE BOOK, 118, 138, 180, 198.
+  Confidence and Credit, 82.
+  Constantinople described, 278, 361.
+  Cooke, the actor, 105.
+  Coral Islands, 102, 279, 389.
+  Craniology, 160.
+  Cromwell, 95.
+  Cross Fell, Westmoreland, 242.
+  Cross Roads, the, 180.
+  Croydon Palace, 65, 100.
+  Curral, the, in Madeira, 93.
+  Cuvier, Mademoiselle, 323.
+
+  Damp Beds, 216.
+  Dead Trumpeter, 51.
+  Debtor and Creditor, 226, 243.
+  Devil, buying and selling the, 268.
+  Devonshire, duke of, his villa, 113.
+  Diet, 99.
+  Dirty People, 246.
+  DOMESTIC HINTS, 126, 159, 223, 254.
+  Drama, the, 292.
+  Drinker, Edward, 95.
+  Dublin Post-office, 161.
+  Dumb, hospital for, 159.
+  Dust Cart, the, 405.
+  Dutch Painters, present state of, 134.
+
+  Early Rising, 331.
+  Edinburgh, ride through, 387.
+  Elise, by L.E.L., 228.
+  Elizabeth, queen, letter of, 211.
+  England, on leaving, 102.
+  England, past, present, and to come, 267, 395.
+  English Character, 69.
+  English Dress, 309.
+  Englishman's Prayer, 227.
+  Epicurean, the, by T. Moore, 5.
+  Etna, Mount, 56.
+  Expeditions of Parry and Franklin, 263, 272.
+
+  Faculty, anecdotes of the, 204.
+  Fancy, 195.
+  Festival of the Moon at Memphis, 60.
+  FINE ARTS, 15, 66, 111, 134, 167, 184, 195, 210, 233, 372, 439.
+  Fire of London, 146.
+  Fireside Engagements, 140.
+  Forget-Me-Not, extracts from, 414.
+  Fortune-telling, 191.
+  Foy, General, 434.
+  France, painting in, 195.
+  French Millennium, 315.
+  French and English compared, 77, 371.
+  Friendship's Offering for 1828, 418.
+  Fruits, English, 231, 295, 300.
+  Fruit-eaters, caution to, 36.
+  Fugitive, a Scotch tale, 426.
+  Funerals, African, 218.
+  Funerals, Roman, 358.
+
+  Gallantry, 250.
+  Gaming-houses in France, 305.
+  Garrick's Mulberry Cup, 57.
+  Gas-lighting, history of, 449.
+  GATHERER, the, in each number.
+  Gems of Genius, 181.
+  Geneva, living at, 298.
+  George the Fourth's Phaeton, 1.
+  George the Fourth, letter of, 2.
+  Ghibellines, the, 43.
+  Giddiness, causes of, 126.
+  Glasgow, great bell of, 195.
+  Gloaming, 90.
+  Grecian Sepulchre, 185.
+  Greek City, 409.
+  Greek Song of Victory, 410.
+  Greeks, the, 57.
+  Guillotine, the, 7.
+  Gunpowder Plot, 333.
+
+  Haddon Hall, 329.
+  Hadley Church described, 81.
+  Helen, Memoir of, 348.
+  Hamlet's Garden, 281.
+  Hamlet, story of, 299.
+  Hammersmith Suspension Bridge, 169.
+  Hampton Court, 373.
+  Hanger, Colonel George, 228.
+  Hans Holbein, 233.
+  Harvest-home, the, 99.
+  Heir-Presumptive, the, 8.
+  High Cross, Leicestershire, 162.
+  Hop-harvest, 130.
+  Horse Chestnuts, use of, 291, 348.
+  Horse-launching in America, 121.
+  Houses, to warm and ventilate, 173.
+  Household Servants in 1566, 103.
+  Howard, John, 95.
+  Human Credulity, 79.
+  Hydrophobia, the, 98.
+
+  IDLER'S ALBUM, 179.
+  India, landing in, 64.
+  Indian Maiden's Song, 427.
+  Insects, 35.
+  Irish Grandees, 355, 374.
+  Irishmen, United, 437.
+  Italian Women, 198.
+  Italy, 228.
+
+  Jeu d'esprit in verse, 152.
+  Jew's Harp, the, 123.
+  Jewish Customs, 197.
+  John, King, death of, 379.
+  Journey, preparations for, 186.
+  Judges' Salaries, 3.
+
+  Kanemboo Woman, 217.
+  Kangaroo Waggery, 109.
+  Karpians, character of, 197.
+  Kean, Mr., his first appearance, 239.
+  Kew Palace, account of, 209.
+  King's Feet-bearer, 139.
+  Korner, the German poet, 199.
+
+  Lady-bird, lines to, 142.
+  Languages, Latin and Greek, 139.
+  Law and Lawyers, 115, 456.
+  Leaves and Flowers, 78.
+
+  LECTURER, The, 98, 126, 175, 207.
+  Lee, Capt., Letter of, 366.
+  Letter from Newgate, 366.
+  Leeds Central Market, 236.
+  Leland, the Antiquary, 388.
+  Leopard-hunting, 90.
+  Letter-writer, the, 53.
+  Liberty, picture of, 304.
+  Lilliard Edge, 380.
+  Lilly Bells are wet with dew, 84.
+  Liston, French and English, 435.
+  Literary Pocket-Book for 1828, 424.
+  Literary Souvenir, extracts from, 410.
+  Liverpool Town-hall, 129.
+  Living Authors, No. 1., 146.
+  London Improvements, 236.
+  Love-letter, poetical, 330.
+  Love, origin of, 448, 456.
+  Love's Victim, 15.
+
+  Malaria and Fevers, 252, 392.
+  Malt Liquors, 254.
+  Man-eating Society, 277.
+  MANNERS AND CUSTOMS OF ALL NATIONS, 57, 70, 181, 197, 217, 297, 357, 368, 430.
+  Maria-Louisa, 31.
+  Marikina, or Silken Monkey, 143.
+  Markets, London, 236.
+  Marvellous, Anecdotes of the, 302, 372, 435.
+  Matches in Teens, 221.
+  Melancholy, 144.
+  Melrose Abbey, 445.
+  Mental Derangement, 175, 240.
+  Midnight Adventure, 190.
+  Mississippi, sailing up, 374.
+  Monge's Mausoleum at Paris, 177.
+  Monsoon in India, 109.
+  Montpellier, 139.
+  MONTHS, THE, 9, 34, 89, 99, 130, 153, 169, 232, 320, 400.
+  Moon, address to, 138.
+  Mosaic, art of, 439.
+  Mountain Story, 269.
+  Mutiny, the, a tale, 212.
+
+  Nancy Lewis, 268
+  Napoleon, Scott's Life of, 4, 17, 47.
+  Napoleon, attempt at suicide, 47.
+  Napoleon's birth, 19.
+  Napoleon's death, 32.
+  Napoleon's divorce, 29, 407.
+  Napoleon's early life, 19.
+  Napoleon's first exploit, 22.
+  Napoleon's first marriage, 23, 30.
+  Napoleon's funeral, 32.
+  Napoleon, personal character of, 59.
+  Napoleon's proposed invasion of England, 24, 25.
+  Napoleon's voyage to St. Helena, 31.
+    Foy's account of, 237.
+  Navarino, Port of, 345.
+  Nautical Phrases, 364.
+  Negro Wit, 224, 255, 328, 343, 344, 456.
+  New South Wales, 156.
+  Newspapers, London, 322.
+  Niagara, Falls of, 6, 391.
+  Night-attack, 37.
+  Nightingale, the, 37.
+  Noche Serena, 14.
+  Norwich New Prison, 145.
+  NOVELIST, THE, 12, 43, 72, 85, 103, 135, 163, 201, 212, 269.
+  Novel writers and novel readers, 118, 202, 277, 437.
+  Nuptial Charm, 210.
+
+  Oaths, on, 381.
+  Old Manor House, novel of, 142.
+  ORIGINS AND INVENTIONS, 14, 51, 163.
+
+  Painting in England, 66.
+  Palace, the New, in St. James' Park, 257.
+  Parting for the Pole, 367.
+  Peacock, the, 36.
+  Peasant's Lament, 367.
+  Peter's Pence, origin of, 317.
+  Phantom Hand, the, 382.
+  Philosophical Kitchen, 303.
+  Phillips, Sir Richard, his boyhood, 114.
+  Pitt, character of, 125.
+  Plantaganet, Richard, 438.
+  Plants, habits of, 79.
+  Police Reports, 92.
+  Political Economy, advantages of, 251.
+  Porson and Sheridan, 454.
+  Portuguese Ball, 94.
+  Powder-flask, antient, 120.
+
+  Quackery, 247.
+  Questions and Answers, 94.
+
+  Radiant Boy, the, 179.
+  Rafts and Rhine Scenery, 415.
+  Ramsden, the Optician, 80.
+  Raphael, 210.
+  Reaping in Devonshire, 169.
+  Regent's Park, New Church in, 33.
+  Regent's Hanover Terrace, 313.
+  Review, the, 201.
+  Retrospect, 308.
+  RETROSPECTIVE GLEANINGS, 103, 148, 182, 211, 247, 310, 333.
+  Robinson Crusoes, 238.
+  Running a Muck, 122.
+  Robespierre and Marat, 17.
+  Robin, stanzas to, 267.
+  Roman's, economy of, 310.
+  Rome, Protestant burial-ground at, 371.
+  Romeo Coates, 338.
+  Rosalie Berton, 72, 85.
+
+  "Saddled and Bridled," 276.
+  Sailor's Song, 41n.
+  Salmon Kippering, 243.
+  Sarum, Old, 441.
+  Scots, Mary, Queen of, 184, 206.
+  Scott, Sir W., his Life of Napoleon, 4.
+  Scott, Sir W. Chronicles of Canongate, 282.
+  Sea-sickness, 111.
+  Sea-sickness tale of, 183.
+  Season, "good night to," 121.
+  Seasonable Relics, 348.
+  Sepoys, character of, 120.
+  Sergeants Wife, drama of, 182.
+  Seven Towers, Castle of the, 362.
+  Sheep, names of, 119.
+  Sheppey, Isle of, 314.
+  Sheridan, 68.
+  Signs of the Times, 327.
+  Skeffington, Sir Lumley, 245.
+  SKETCH-BOOK, THE, 51, 115, 131, 150, 166, 221, 274, 337, 383, 402.
+  Snewberg, 158.
+  Song for Music, 143, 162, 221.
+  Sour Cakes in Lanarkshire, 316.
+  Spatolino, the robber, 321.
+  Spectre's Voyage, the, 352.
+  Sphynx, 51.
+  SPIRIT OF THE PUBLIC JOURNALS, 15, 37, 53, 74, 90, 105, 120, 140, 154, 170,
+    186, 202, 218, 228, 245, 293, 321, 405, 434, 452.
+  Stanzas, 69, 413.
+  Stanzas to poverty, 166.
+  St. James's Park, improvement of, 261.
+  Stockholm, Palace at, 241.
+  Stay-at-home, the, 454.
+  Steam Carriage, Gurney's New, 393.
+  Stephens, Miss, her first appearance, 239.
+  Storm in the Indian Seas, 213.
+  Stratford-upon-Avon, 455.
+  Suett, the actor, 107.
+  Superstition, 95, 274.
+  Syrian Looking-glasses, 175.
+
+  Taverns and Club-houses, 87.
+  Tea, 291, 378.
+  Temple Church, 193.
+  Theatre, English, described by a Persian, 63.
+  Tiger-taming, 122.
+  Time, to Kill, 323.
+  Tobacco-pipe controversy, 276.
+  TOPOGRAPHER, THE, 162.
+  Tottenham Cross, 448.
+  Translations, original, 349.
+  Transport, arrival of, 143.
+  Travelling, 96, 216, 294.
+  Turcamese Schoolmaster, 172.
+  Turks, the, 430.
+
+  Ugo Foscolo, anecdotes of, 229.
+  Unknown Region, the, 402.
+
+  Van Halen, adventures of, 190.
+  Veil, ceremony of taking the, 138.
+  Voice of Nature, 339.
+  Volcanoes, phenomena of, 67.
+
+  Waits at Christmas, 447.
+  Waterfall, African, 109.
+  Waterhouse, Rev. Mr., 256.
+  Waverley Novels, portraits from, 341.
+  Weather, signs of, 96.
+  Wee Man, the, 356.
+  Welsh, the modern, 197, 208.
+  Westmoreland, tar-barrels in, 316.
+  Whitsun Eve, 51.
+  Widowed Mother to her Child, 3.
+  Willy M'Gee's Monkey, 218.
+  Wines, receipts for, 223, 454.
+  Winter is Coming, 363.
+  Wit, theological, 79.
+  Wolfe, Gen. death of, 174.
+  Women, conversation of, 87.
+  Wood King, the, 103.
+  Women of Kanem and Shouaa, 217.
+  Woodman, the, 154.
+
+
+
+
+
+
+
+
+End of the Project Gutenberg EBook of The Mirror of Literature, Amusement,
+and Instruction, by Various
+
+*** END OF THIS PROJECT GUTENBERG EBOOK THE MIRROR OF LITERATURE ***
+
+***** This file should be named 13899.txt or 13899.zip *****
+This and all associated files of various formats will be found in:
+        http://www.gutenberg.net/1/3/8/9/13899/
+
+Produced by Jonathan Ingram, William Flis, and the Online Distributed
+Proofreading Team.
+
+
+Updated editions will replace the previous one--the old editions
+will be renamed.
+
+Creating the works from public domain print editions means that no
+one owns a United States copyright in these works, so the Foundation
+(and you!) can copy and distribute it in the United States without
+permission and without paying copyright royalties.  Special rules,
+set forth in the General Terms of Use part of this license, apply to
+copying and distributing Project Gutenberg-tm electronic works to
+protect the PROJECT GUTENBERG-tm concept and trademark.  Project
+Gutenberg is a registered trademark, and may not be used if you
+charge for the eBooks, unless you receive specific permission.  If you
+do not charge anything for copies of this eBook, complying with the
+rules is very easy.  You may use this eBook for nearly any purpose
+such as creation of derivative works, reports, performances and
+research.  They may be modified and printed and given away--you may do
+practically ANYTHING with public domain eBooks.  Redistribution is
+subject to the trademark license, especially commercial
+redistribution.
+
+
+
+*** START: FULL LICENSE ***
+
+THE FULL PROJECT GUTENBERG LICENSE
+PLEASE READ THIS BEFORE YOU DISTRIBUTE OR USE THIS WORK
+
+To protect the Project Gutenberg-tm mission of promoting the free
+distribution of electronic works, by using or distributing this work
+(or any other work associated in any way with the phrase "Project
+Gutenberg"), you agree to comply with all the terms of the Full Project
+Gutenberg-tm License (available with this file or online at
+http://gutenberg.net/license).
+
+
+Section 1.  General Terms of Use and Redistributing Project Gutenberg-tm
+electronic works
+
+1.A.  By reading or using any part of this Project Gutenberg-tm
+electronic work, you indicate that you have read, understand, agree to
+and accept all the terms of this license and intellectual property
+(trademark/copyright) agreement.  If you do not agree to abide by all
+the terms of this agreement, you must cease using and return or destroy
+all copies of Project Gutenberg-tm electronic works in your possession.
+If you paid a fee for obtaining a copy of or access to a Project
+Gutenberg-tm electronic work and you do not agree to be bound by the
+terms of this agreement, you may obtain a refund from the person or
+entity to whom you paid the fee as set forth in paragraph 1.E.8.
+
+1.B.  "Project Gutenberg" is a registered trademark.  It may only be
+used on or associated in any way with an electronic work by people who
+agree to be bound by the terms of this agreement.  There are a few
+things that you can do with most Project Gutenberg-tm electronic works
+even without complying with the full terms of this agreement.  See
+paragraph 1.C below.  There are a lot of things you can do with Project
+Gutenberg-tm electronic works if you follow the terms of this agreement
+and help preserve free future access to Project Gutenberg-tm electronic
+works.  See paragraph 1.E below.
+
+1.C.  The Project Gutenberg Literary Archive Foundation ("the Foundation"
+or PGLAF), owns a compilation copyright in the collection of Project
+Gutenberg-tm electronic works.  Nearly all the individual works in the
+collection are in the public domain in the United States.  If an
+individual work is in the public domain in the United States and you are
+located in the United States, we do not claim a right to prevent you from
+copying, distributing, performing, displaying or creating derivative
+works based on the work as long as all references to Project Gutenberg
+are removed.  Of course, we hope that you will support the Project
+Gutenberg-tm mission of promoting free access to electronic works by
+freely sharing Project Gutenberg-tm works in compliance with the terms of
+this agreement for keeping the Project Gutenberg-tm name associated with
+the work.  You can easily comply with the terms of this agreement by
+keeping this work in the same format with its attached full Project
+Gutenberg-tm License when you share it without charge with others.
+
+1.D.  The copyright laws of the place where you are located also govern
+what you can do with this work.  Copyright laws in most countries are in
+a constant state of change.  If you are outside the United States, check
+the laws of your country in addition to the terms of this agreement
+before downloading, copying, displaying, performing, distributing or
+creating derivative works based on this work or any other Project
+Gutenberg-tm work.  The Foundation makes no representations concerning
+the copyright status of any work in any country outside the United
+States.
+
+1.E.  Unless you have removed all references to Project Gutenberg:
+
+1.E.1.  The following sentence, with active links to, or other immediate
+access to, the full Project Gutenberg-tm License must appear prominently
+whenever any copy of a Project Gutenberg-tm work (any work on which the
+phrase "Project Gutenberg" appears, or with which the phrase "Project
+Gutenberg" is associated) is accessed, displayed, performed, viewed,
+copied or distributed:
+
+This eBook is for the use of anyone anywhere at no cost and with
+almost no restrictions whatsoever.  You may copy it, give it away or
+re-use it under the terms of the Project Gutenberg License included
+with this eBook or online at www.gutenberg.net
+
+1.E.2.  If an individual Project Gutenberg-tm electronic work is derived
+from the public domain (does not contain a notice indicating that it is
+posted with permission of the copyright holder), the work can be copied
+and distributed to anyone in the United States without paying any fees
+or charges.  If you are redistributing or providing access to a work
+with the phrase "Project Gutenberg" associated with or appearing on the
+work, you must comply either with the requirements of paragraphs 1.E.1
+through 1.E.7 or obtain permission for the use of the work and the
+Project Gutenberg-tm trademark as set forth in paragraphs 1.E.8 or
+1.E.9.
+
+1.E.3.  If an individual Project Gutenberg-tm electronic work is posted
+with the permission of the copyright holder, your use and distribution
+must comply with both paragraphs 1.E.1 through 1.E.7 and any additional
+terms imposed by the copyright holder.  Additional terms will be linked
+to the Project Gutenberg-tm License for all works posted with the
+permission of the copyright holder found at the beginning of this work.
+
+1.E.4.  Do not unlink or detach or remove the full Project Gutenberg-tm
+License terms from this work, or any files containing a part of this
+work or any other work associated with Project Gutenberg-tm.
+
+1.E.5.  Do not copy, display, perform, distribute or redistribute this
+electronic work, or any part of this electronic work, without
+prominently displaying the sentence set forth in paragraph 1.E.1 with
+active links or immediate access to the full terms of the Project
+Gutenberg-tm License.
+
+1.E.6.  You may convert to and distribute this work in any binary,
+compressed, marked up, nonproprietary or proprietary form, including any
+word processing or hypertext form.  However, if you provide access to or
+distribute copies of a Project Gutenberg-tm work in a format other than
+"Plain Vanilla ASCII" or other format used in the official version
+posted on the official Project Gutenberg-tm web site (www.gutenberg.net),
+you must, at no additional cost, fee or expense to the user, provide a
+copy, a means of exporting a copy, or a means of obtaining a copy upon
+request, of the work in its original "Plain Vanilla ASCII" or other
+form.  Any alternate format must include the full Project Gutenberg-tm
+License as specified in paragraph 1.E.1.
+
+1.E.7.  Do not charge a fee for access to, viewing, displaying,
+performing, copying or distributing any Project Gutenberg-tm works
+unless you comply with paragraph 1.E.8 or 1.E.9.
+
+1.E.8.  You may charge a reasonable fee for copies of or providing
+access to or distributing Project Gutenberg-tm electronic works provided
+that
+
+- You pay a royalty fee of 20% of the gross profits you derive from
+     the use of Project Gutenberg-tm works calculated using the method
+     you already use to calculate your applicable taxes.  The fee is
+     owed to the owner of the Project Gutenberg-tm trademark, but he
+     has agreed to donate royalties under this paragraph to the
+     Project Gutenberg Literary Archive Foundation.  Royalty payments
+     must be paid within 60 days following each date on which you
+     prepare (or are legally required to prepare) your periodic tax
+     returns.  Royalty payments should be clearly marked as such and
+     sent to the Project Gutenberg Literary Archive Foundation at the
+     address specified in Section 4, "Information about donations to
+     the Project Gutenberg Literary Archive Foundation."
+
+- You provide a full refund of any money paid by a user who notifies
+     you in writing (or by e-mail) within 30 days of receipt that s/he
+     does not agree to the terms of the full Project Gutenberg-tm
+     License.  You must require such a user to return or
+     destroy all copies of the works possessed in a physical medium
+     and discontinue all use of and all access to other copies of
+     Project Gutenberg-tm works.
+
+- You provide, in accordance with paragraph 1.F.3, a full refund of any
+     money paid for a work or a replacement copy, if a defect in the
+     electronic work is discovered and reported to you within 90 days
+     of receipt of the work.
+
+- You comply with all other terms of this agreement for free
+     distribution of Project Gutenberg-tm works.
+
+1.E.9.  If you wish to charge a fee or distribute a Project Gutenberg-tm
+electronic work or group of works on different terms than are set
+forth in this agreement, you must obtain permission in writing from
+both the Project Gutenberg Literary Archive Foundation and Michael
+Hart, the owner of the Project Gutenberg-tm trademark.  Contact the
+Foundation as set forth in Section 3 below.
+
+1.F.
+
+1.F.1.  Project Gutenberg volunteers and employees expend considerable
+effort to identify, do copyright research on, transcribe and proofread
+public domain works in creating the Project Gutenberg-tm
+collection.  Despite these efforts, Project Gutenberg-tm electronic
+works, and the medium on which they may be stored, may contain
+"Defects," such as, but not limited to, incomplete, inaccurate or
+corrupt data, transcription errors, a copyright or other intellectual
+property infringement, a defective or damaged disk or other medium, a
+computer virus, or computer codes that damage or cannot be read by
+your equipment.
+
+1.F.2.  LIMITED WARRANTY, DISCLAIMER OF DAMAGES - Except for the "Right
+of Replacement or Refund" described in paragraph 1.F.3, the Project
+Gutenberg Literary Archive Foundation, the owner of the Project
+Gutenberg-tm trademark, and any other party distributing a Project
+Gutenberg-tm electronic work under this agreement, disclaim all
+liability to you for damages, costs and expenses, including legal
+fees.  YOU AGREE THAT YOU HAVE NO REMEDIES FOR NEGLIGENCE, STRICT
+LIABILITY, BREACH OF WARRANTY OR BREACH OF CONTRACT EXCEPT THOSE
+PROVIDED IN PARAGRAPH F3.  YOU AGREE THAT THE FOUNDATION, THE
+TRADEMARK OWNER, AND ANY DISTRIBUTOR UNDER THIS AGREEMENT WILL NOT BE
+LIABLE TO YOU FOR ACTUAL, DIRECT, INDIRECT, CONSEQUENTIAL, PUNITIVE OR
+INCIDENTAL DAMAGES EVEN IF YOU GIVE NOTICE OF THE POSSIBILITY OF SUCH
+DAMAGE.
+
+1.F.3.  LIMITED RIGHT OF REPLACEMENT OR REFUND - If you discover a
+defect in this electronic work within 90 days of receiving it, you can
+receive a refund of the money (if any) you paid for it by sending a
+written explanation to the person you received the work from.  If you
+received the work on a physical medium, you must return the medium with
+your written explanation.  The person or entity that provided you with
+the defective work may elect to provide a replacement copy in lieu of a
+refund.  If you received the work electronically, the person or entity
+providing it to you may choose to give you a second opportunity to
+receive the work electronically in lieu of a refund.  If the second copy
+is also defective, you may demand a refund in writing without further
+opportunities to fix the problem.
+
+1.F.4.  Except for the limited right of replacement or refund set forth
+in paragraph 1.F.3, this work is provided to you 'AS-IS', WITH NO OTHER
+WARRANTIES OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO
+WARRANTIES OF MERCHANTIBILITY OR FITNESS FOR ANY PURPOSE.
+
+1.F.5.  Some states do not allow disclaimers of certain implied
+warranties or the exclusion or limitation of certain types of damages.
+If any disclaimer or limitation set forth in this agreement violates the
+law of the state applicable to this agreement, the agreement shall be
+interpreted to make the maximum disclaimer or limitation permitted by
+the applicable state law.  The invalidity or unenforceability of any
+provision of this agreement shall not void the remaining provisions.
+
+1.F.6.  INDEMNITY - You agree to indemnify and hold the Foundation, the
+trademark owner, any agent or employee of the Foundation, anyone
+providing copies of Project Gutenberg-tm electronic works in accordance
+with this agreement, and any volunteers associated with the production,
+promotion and distribution of Project Gutenberg-tm electronic works,
+harmless from all liability, costs and expenses, including legal fees,
+that arise directly or indirectly from any of the following which you do
+or cause to occur: (a) distribution of this or any Project Gutenberg-tm
+work, (b) alteration, modification, or additions or deletions to any
+Project Gutenberg-tm work, and (c) any Defect you cause.
+
+
+Section  2.  Information about the Mission of Project Gutenberg-tm
+
+Project Gutenberg-tm is synonymous with the free distribution of
+electronic works in formats readable by the widest variety of computers
+including obsolete, old, middle-aged and new computers.  It exists
+because of the efforts of hundreds of volunteers and donations from
+people in all walks of life.
+
+Volunteers and financial support to provide volunteers with the
+assistance they need, is critical to reaching Project Gutenberg-tm's
+goals and ensuring that the Project Gutenberg-tm collection will
+remain freely available for generations to come.  In 2001, the Project
+Gutenberg Literary Archive Foundation was created to provide a secure
+and permanent future for Project Gutenberg-tm and future generations.
+To learn more about the Project Gutenberg Literary Archive Foundation
+and how your efforts and donations can help, see Sections 3 and 4
+and the Foundation web page at http://www.pglaf.org.
+
+
+Section 3.  Information about the Project Gutenberg Literary Archive
+Foundation
+
+The Project Gutenberg Literary Archive Foundation is a non profit
+501(c)(3) educational corporation organized under the laws of the
+state of Mississippi and granted tax exempt status by the Internal
+Revenue Service.  The Foundation's EIN or federal tax identification
+number is 64-6221541.  Its 501(c)(3) letter is posted at
+http://pglaf.org/fundraising.  Contributions to the Project Gutenberg
+Literary Archive Foundation are tax deductible to the full extent
+permitted by U.S. federal laws and your state's laws.
+
+The Foundation's principal office is located at 4557 Melan Dr. S.
+Fairbanks, AK, 99712., but its volunteers and employees are scattered
+throughout numerous locations.  Its business office is located at
+809 North 1500 West, Salt Lake City, UT 84116, (801) 596-1887, email
+business@pglaf.org.  Email contact links and up to date contact
+information can be found at the Foundation's web site and official
+page at http://pglaf.org
+
+For additional contact information:
+     Dr. Gregory B. Newby
+     Chief Executive and Director
+     gbnewby@pglaf.org
+
+Section 4.  Information about Donations to the Project Gutenberg
+Literary Archive Foundation
+
+Project Gutenberg-tm depends upon and cannot survive without wide
+spread public support and donations to carry out its mission of
+increasing the number of public domain and licensed works that can be
+freely distributed in machine readable form accessible by the widest
+array of equipment including outdated equipment.  Many small donations
+($1 to $5,000) are particularly important to maintaining tax exempt
+status with the IRS.
+
+The Foundation is committed to complying with the laws regulating
+charities and charitable donations in all 50 states of the United
+States.  Compliance requirements are not uniform and it takes a
+considerable effort, much paperwork and many fees to meet and keep up
+with these requirements.  We do not solicit donations in locations
+where we have not received written confirmation of compliance.  To
+SEND DONATIONS or determine the status of compliance for any
+particular state visit http://pglaf.org
+
+While we cannot and do not solicit contributions from states where we
+have not met the solicitation requirements, we know of no prohibition
+against accepting unsolicited donations from donors in such states who
+approach us with offers to donate.
+
+International donations are gratefully accepted, but we cannot make
+any statements concerning tax treatment of donations received from
+outside the United States.  U.S. laws alone swamp our small staff.
+
+Please check the Project Gutenberg Web pages for current donation
+methods and addresses.  Donations are accepted in a number of other
+ways including including checks, online payments and credit card
+donations.  To donate, please visit: http://pglaf.org/donate
+
+
+Section 5.  General Information About Project Gutenberg-tm electronic
+works.
+
+Professor Michael S. Hart is the originator of the Project Gutenberg-tm
+concept of a library of electronic works that could be freely shared
+with anyone.  For thirty years, he produced and distributed Project
+Gutenberg-tm eBooks with only a loose network of volunteer support.
+
+Project Gutenberg-tm eBooks are often created from several printed
+editions, all of which are confirmed as Public Domain in the U.S.
+unless a copyright notice is included.  Thus, we do not necessarily
+keep eBooks in compliance with any particular paper edition.
+
+Most people start at our Web site which has the main PG search facility:
+
+     http://www.gutenberg.net
+
+This Web site includes information about Project Gutenberg-tm,
+including how to make donations to the Project Gutenberg Literary
+Archive Foundation, how to help produce our new eBooks, and how to
+subscribe to our email newsletter to hear about new eBooks.
+
+*** END: FULL LICENSE ***
+

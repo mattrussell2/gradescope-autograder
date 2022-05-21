@@ -1,0 +1,1124 @@
+The Project Gutenberg eBook, Practical Rules for the Management of a
+Locomotive Engine, by Charles Hutton Gregory
+
+
+This eBook is for the use of anyone anywhere at no cost and with
+almost no restrictions whatsoever.  You may copy it, give it away or
+re-use it under the terms of the Project Gutenberg License included
+with this eBook or online at www.gutenberg.org
+
+
+
+
+
+Title: Practical Rules for the Management of a Locomotive Engine
+       in the Station, on the Road, and in cases of Accident
+
+
+Author: Charles Hutton Gregory
+
+
+
+Release Date: August 28, 2006  [eBook #19133]
+
+Language: English
+
+Character set encoding: ISO-646-US (US-ASCII)
+
+
+***START OF THE PROJECT GUTENBERG EBOOK PRACTICAL RULES FOR THE MANAGEMENT
+OF A LOCOMOTIVE ENGINE***
+
+
+
+
+
+Transcribed from the 1841 edition by David Price, ccx074@pglaf.org
+
+
+
+
+
+PRACTICAL RULES FOR THE MANAGEMENT OF A LOCOMOTIVE ENGINE:
+IN THE STATION, ON THE ROAD, AND IN CASES OF ACCIDENT.
+
+
+                                    BY
+                         CHARLES HUTTON GREGORY,
+                             CIVIL ENGINEER.
+
+
+
+
+PREFACE.
+
+
+The substance of the following pages was written several months since,
+and subsequently sent to the Institution of Civil Engineers, where it was
+read in abstract on the 16th of February in the present session.
+
+While our Engineering Literature contains several valuable Treatises on
+the Theory and Construction of the Locomotive Engine, it has, as yet,
+produced no work illustrating its Use.  This circumstance, added to the
+recommendation of several competent authorities, has induced the writer
+to apply to the Council of the Institution of Civil Engineers for
+permission to lay before the public these Practical Rules for the
+Management of a Locomotive Engine, drawn up from individual experience,
+in the hope that they may be acceptable, at a period when any subject
+connected with the efficiency and safety of Railway travelling is
+deservedly engaging attention.
+
+At the end of the Paper will be found some Regulations for the first
+appointment of Engine-men, adopted by the Directors of the London and
+Croydon Railway, and framed by the writer in his official capacity as
+their Resident Engineer.  Also, a Table of Railway Velocities, indicated
+by the time occupied in passing over given distances, which he has
+frequently found to save him the trouble of calculation, and which he
+hopes may be similarly useful to others.
+
+                                                   CHARLES HUTTON GREGORY.
+
+London, March, 1841.
+
+
+
+
+PRACTICAL RULES, &c.
+
+
+THE MANAGEMENT OF A LOCOMOTIVE ENGINE IN THE STATION.
+
+
+The careful examination of a Locomotive Engine when in the Station, and
+its judicious management while running, are essential to the full
+performance of its duty, and to ensure the safety of the passengers by
+the train.
+
+While an Engine is stopping at the Station before a trip, the fire should
+be properly kept up,--the tubes clear at both ends,--and the fire-bars
+picked free from clinkers: the regulator should be closed and
+locked,--the tender-break screwed down tight,--the reversing-lever fixed
+in the middle position, so that the slides may be out of gear,--the cocks
+of the oil-vessels and feed-pipes turned off,--and the steam blowing off
+from the safety-valve at a pressure of 35 lbs. per square inch; if
+blowing off in any excess, the waste steam may be turned into the
+Tender-cistern to heat the water, and the door of the smoke-box may be
+opened to check the fire, but it should be fastened up again 10 or 15
+minutes before the time of starting.
+
+Before an Engine starts with a train, the attention of the Engine-man
+should first be directed to its being in complete working order; with
+this view he should go beneath the Engine, and carefully examine the
+working gear in detail.
+
+The connecting-rod is a very important part, and more liable perhaps than
+any other to fail for want of proper examination.  The cotters must be
+secure, and in case the brasses have too much play they must be tightened
+up; observing, however, that brasses should never be set so hard as to
+cause friction.  If there are set-screws at the side of the cotters, they
+should be tight, and all cotters should have a split-pin at the bottom
+for greater security.  The cotters which fasten the piston-rods to the
+cross-heads should be firm in their place, as well as the set-screws,
+keys, or other connections, by which the feed-pump pistons are secured to
+the piston-rod.
+
+The brasses of the inner framing which carry the inside bearings of the
+cranked axle must be examined, and any considerable play prevented by
+screwing them up if necessary.  The wheels ought to be accurately square
+and firm on their axles, and the keys driven up tight.  All the pins,
+bolts, &c., by which the slide-valve gear is connected, the
+lifting-links, and the slings of the slide-spindles, must be secure in
+their proper places; the spanners ought to be fast on the lifting and
+weigh-bars, and the studs on the spanners of the weigh-bars should be
+particularly noticed, as, if loose, they may be shaken off on the road
+and cause the stoppage of the Engine.  A similar examination must be
+extended to the hand-gear, if there be any; and the bolts which fasten
+the plummer-blocks of the weigh-bars, &c., must be screwed up if they are
+loose.
+
+The straps of the eccentrics should work with sufficient freedom, and the
+eccentrics must be firm in their right position on the axle, or the
+Engine will beat unevenly: if any escape of steam has been observed in
+the stuffing-boxes of the piston-rod and slide-valve spindle, or of water
+from the joints of the feed-pumps and suction-pipes, they must be screwed
+up; and any dirt that may have collected near any of the bearings or
+connections must be carefully wiped off with cotton waste.
+
+The inspection beneath the Engine being complete, the Engine-man should
+examine the ends of the tubes of the boiler, and if there should be
+leakage to any serious extent, it would be prudent to drive in a plug at
+each end of the defective tube.  A small quantity of Russian tallow
+should occasionally be introduced into the steam-chests and cylinders, to
+grease the slides and pistons.  This is done, either by cocks on the
+outside of the smoke-box or in the cylinder covers, or through holes
+secured by plugs, in the steam-chest covers.  The ashes should be emptied
+out of the smoke-box, and the small ash-door carefully secured.
+
+Occasionally the gauge should be applied to the wheels, and the Engine
+should never be allowed to run when they are found to be at all incorrect
+or out of the square.
+
+If there are oil-vessels at the side of the Engine with pipes to the
+pistons, bearings, &c., the Engine-man must see that they are filled, and
+the cotton wicks in the top of the pipes, and hanging over into the oil;
+that the grease-boxes of the axle-bearings are filled; and the pins,
+links, &c., of the springs right and sound.  The draw-bar connecting the
+Engine and Tender must be secure, and the safety-chains attached.
+
+The Tender must be replenished with coke and water.  An Engine-man should
+never run with an Engine without knowing what stock of both the Tender
+will carry.  It is impossible to lay down any general rule for the
+quantity of water evaporated and the coke consumed per mile with the same
+Engine, as the amount depends entirely on the extent of duty performed.
+The stock of coke is usually nearly twice as much as that of water,--the
+water which most Tenders contain is ordinarily sufficient for running 30
+miles with certainty; but when the gradients are steep, the load heavy,
+and stoppages frequent, additional water may be oftener required; and on
+the other hand, with light duty, an Engine may sometimes run further
+without any stoppage.  The inconvenience attached to the necessity of
+frequent stoppages, and the expense of maintaining a large number of coke
+and water stations, have lately induced the manufacture of a larger class
+of Tender on six wheels, which, from superior capacity, will admit of a
+much longer run.
+
+After a little practice, the examination described above occupies a very
+short time: it ought to be completed, and the Engine in its position at
+the head of the train, at least five minutes before the hour of starting,
+when oil must be copiously supplied by the small oiling-can, to the
+oil-cups of the guides, connecting-rods, &c., and to all rubbing parts
+not fed by the oiling-pipes; the cocks of the large oil-vessels must be
+opened, and the safety-valve screwed down to the working pressure, say 45
+lbs. per square inch.
+
+It would ensure a careful inspection, if, before any train starts, the
+Engine-man were required to deliver to the Superintendent of the Station
+a certificate that he has examined his Engine, and finds it in good
+working order.
+
+Several articles should be constantly carried on the Tender, as either
+being frequently required in the working of the Engine, or occasionally
+in cases of derangement or accident.  The following may be taken as a
+list:
+
+One large can of oil, and one or two small oiling-cans and an
+oiling-tube, a box of Russian tallow, a quantity of cotton waste, hemp,
+and gasken, a hand-brush, keys fitted to all the principal bolts, one
+large and one small monkey-wrench, rods for clearing the tubes and fire,
+an arrow-headed poker, a shovel, and a rake.
+
+A number of iron or wooden plugs, an iron plug-holder, and a 7 lb. maul,
+two cold chisels, a hammer and a file, spare washers, and duplicates of
+the principal bolts, nuts, pins, cotters, &c., a quantity of thick and
+thin cord, and some tarred line, a fire-bucket, two long crow-bars, a
+spare coupling-chain, with shackle and hook complete, several wooden
+wedges, about 2 feet long, 4 or 5 inches wide and 3 inches thick, and, if
+running long journeys, two spare ball-clacks, and a screw-jack.
+
+
+
+THE MANAGEMENT OF A LOCOMOTIVE ENGINE ON THE ROAD.
+
+
+In the management of a Locomotive Engine, many unforeseen circumstances
+may occur, requiring the use of that discretion which experience alone
+can confer, and which it would be almost impossible to comprise in the
+particular instructions contained in the following pages, which, however,
+the writer believes to contain all the leading principles of
+Engine-driving.
+
+On receiving the signal to start, the Engine-man should only slightly
+open the regulator, and let the train run for several yards, before he
+opens it, by slow degrees, to the full extent.  The object of thus giving
+a slight aperture to the regulator in starting, is to avoid any jerk to
+the carriages, by which passengers might be annoyed, or even the
+coupling-irons broken; to prevent the slipping of the driving-wheels,
+from their adhesion being unequal to the inertia of the train, when the
+full power of the Engine is suddenly used; and because fully opening the
+regulator at starting generally causes the Engine to _prime_
+considerably, from the quantity of water condensed in the cylinders and
+steam-passages while the Engine was standing.  When _priming_ occurs at
+starting, the discharge-cocks of the cylinders should be opened to remove
+the water.  On leaving the station, and frequently on the road, the
+Engine-man should watch the train behind him, to see that it is all right
+and its motion regular.
+
+The Engine-man should now be standing on the foot-board of the Engine,
+which he ought never to leave, unless the machinery is out of order, when
+he may leave the Stoker in his place; he should as much as possible be in
+such a position as to command, without moving from his place, the
+reversing-lever, the whistle, and the regulator, these being the parts
+which he is most frequently obliged to use at the shortest notice; his
+hand should be upon the regulator, which, when he has arrived at a good
+speed, he will gradually ease off, so as to economise steam without
+retarding the train: his eye should be constantly directed to the rails
+in front of him, that he may be immediately aware of any obstruction, and
+at the same time his full attention must be given to the maintaining a
+sufficiency of steam at an equable pressure; this is to be done by using
+the requisite care in the manner and time of supplying _water_ and
+_fuel_.
+
+Water is supplied by opening the cocks in the feed-pipes, which allow the
+pumps to act; and the height of water in the boiler is commonly shown by
+a glass gauge-tube, and by three gauge-cocks at the side, which should be
+opened from time to time, (especially when stopping,) as they afford a
+more correct indication of the quantity of water and steam than the
+gauge-tube.
+
+One pump, if constantly at work, would, in most Engines, supply as much,
+or rather more water than is required by the Engine as equivalent to the
+steam consumed; so that by turning on or off either or both pumps, the
+Engine-man has the power of regulating the height of the water in the
+boiler at discretion.
+
+It may be laid down as an invariable rule, that water alone should always
+blow off from the bottom cock (which is from 1 inch to 1.5 inch above the
+top of the fire-box), in order that there may be enough water over the
+fire-box and tubes to prevent their burning; and few Engines will carry
+their water much above the top cock without _priming_, so that the height
+of the water may be made to range between these two points, according as
+more or less steam is required.
+
+The water is higher when the Engine is running than when stopping: a good
+working height for it in most Engines is when _water_ blows off from the
+middle cock while running, and _water and steam_ when stopping: an
+Engine-man is sometimes obliged to run the water rather lower, if he has
+heavy work; but it is always better to keep the level of the water as
+high as possible.
+
+It is observed that when any variation takes place in the pressure of the
+steam, a corresponding change occurs in the level of the water,--that
+when the pressure of the steam rises or falls, the height of the water
+rises or falls simultaneously.  Partly for this reason, and partly to
+allow the more rapid generation of steam, the feed-pumps are not
+generally allowed to act when the Engine starts: a knowledge of this fact
+also shows the necessity of the water being above the ordinary level,
+before a decrease is allowed in the pressure of the steam.
+
+When the Engine is highest on an inclined plane, rather a greater height
+of water must be kept over the fire-box than on a level, in order that
+the chimney ends of the tubes may be well covered.
+
+The most favourable time for allowing the feed-pumps to act, is when the
+steam is blowing off with force from the safety-valve, and the fire
+strong; and the least favourable time is when the steam and fire are low:
+indeed the Engine-man should manage that it may never be necessary in the
+latter case, as the addition of water rapidly lowers the steam.
+
+In order to know the force of the steam, one hand may occasionally lift
+or depress for a moment the lever of the safety-valve, according as the
+steam is under or over the working pressure; and a little practice will
+soon enable a person to judge the extent of excess or deficiency.
+
+Both feed-pumps should not commence working at the same time.
+
+The water should never be allowed to run low before arriving at any part
+of the road where considerable power is required, as steam is produced
+more rapidly when both pumps are turned off,--a measure which is
+imprudent unless the water is high.
+
+When "the feed" is turned on, the Engine-man should try the pet-cock to
+see whether the pump is acting freely: the water thrown from it should be
+in forcible intermittent jets; warm water with a little steam will
+frequently escape from it at first; if this should continue, it may be
+concluded that the upper clack does not act; and if the water is in a
+continuous stream without pulsations, the lower clack is out of order.
+In either case it will not be prudent to trust too much to the faulty
+pump, but the evil may frequently be remedied by working the pump a short
+time with the pet-cock open, or alternately turned on and off.
+
+Coke is put on the fire by the Stoker, at the order of the Engine-man,
+who should hold the chain of the fire-door in his hand, and open it for
+as short a time as possible, while the Stoker throws on each shovelful of
+coke: the shovel should be well filled, and the coke distributed equally
+over the fire.
+
+In most Engines, the fuel need not be higher than the bottom of the
+fire-door; and if allowed to fall more than 6 or 8 inches below it, it
+must not be expected that the pressure of the steam will be maintained,
+if the Engine has a load.
+
+The supply of fuel should be regular, and so arranged that the fire may
+have burned up well by the time the steam is most required.  As the
+addition of fuel causes a temporary reduction of the force of the fire,
+coke should not be laid on immediately before arriving at an inclined
+plane or any part of the road where much power is required; but when
+ascending an incline, coke should be gradually added when the Engine
+begins to _beat heavily_,--the draught is then powerful, and a regular
+supply of fuel required to keep up the fire.
+
+In other circumstances, provided the fire is low enough to require fuel,
+the best time to put on coke is when the water is sufficiently high to
+turn off the feed-pumps, the steam slightly blowing off, and the Engine
+travelling at a good speed.
+
+No definite instructions can be given for the frequency with which coke
+must be laid on the fire, as it varies according to the duty to be done,
+and the water consequently to be evaporated: in cases of heavy duty and
+bad gradients, it may at times be necessary even at as short an interval
+as 2 miles; under contrary circumstances an Engine may sometimes run as
+much as 15 miles without adding fresh coke.
+
+The fire should be allowed to run rather low before arriving at the top
+of an inclined plane down which the steam will not be used: on beginning
+to descend the plane, fuel should be put on the fire, which will burn up
+by the time the train reaches the bottom of the plane.
+
+If it is wished to keep up the steam, it is better not to supply water
+and fuel at the same time.
+
+While running, the Stoker should occasionally pick the ashes from the
+tubes to clear the draught.
+
+By observing the above rules for the supply of water and coke, an
+efficient pressure and quantity of steam will be produced, which it must
+be the study of the Engine-man to economise.  With this view the
+regulator should never be kept too far open;--as soon as the train has
+acquired the velocity wished, the aperture may be considerably reduced
+without diminishing the speed.  As any diminution in the amount of steam
+used causes a corresponding diminution in the quantity of coke consumed,
+the skill of the Engine-man should be unceasingly directed to the
+reduction of so heavy an item of Railway expenditure.
+
+If there should be, at any time, an unnecessary quantity and force of
+steam, it is readily reduced by opening the fire-door, and by turning on
+the feed-pumps; if there should be too little, the Engine-man must be
+content to run slowly for a short time, keep the regulator only partially
+open, and put on a gradual supply of coke.
+
+When the water in the boiler is high, many Engines begin to prime,
+especially after running for several days.  When this occurs, the
+aperture of the regulator should be diminished, and the fire-door and the
+discharge cocks of the cylinders opened: if the height of the water will
+allow it, the blow-off cock of the boiler may be opened for a short time
+to carry off the sediment, which will be found advantageous.
+
+The Engine-man should frequently look to the working gear, to see that it
+is in proper order, and to rectify any deficiency at the next Station.
+
+On nearing a Station where it is intended to stop, the regulator should
+be gradually eased off at about five-eighths of a mile from the Station,
+so that the train may be more under control, and when from a quarter to
+half a mile distant, according to the velocity and weight of the train,
+the steam should be completely shut off, and the train brought to rest by
+the breaks.  In approaching terminal Stations the steam should be shut
+off at a greater distance than at the intermediate Stations, to prevent
+the possibility of overrunning the mark from the failure of breaks.  It
+must be borne in mind that the breaks act much less efficiently in wet or
+frosty weather, when it becomes necessary to shut off the steam further
+from the Stations.  The use of the reversing-lever ought, as much as
+possible, to be avoided: it may sometimes be placed in the middle
+position (in which the valves do not act), but it should never be
+completely reversed unless absolutely necessary for the stoppage of the
+train.
+
+At the intermediate Stations, the Stoker should frequently oil all the
+bearings not supplied by the large oil-vessels, and fill the oil-cups of
+the connecting-rods, slides, &c., and if any of the bearings, brasses,
+&c., are hot, they should be more copiously oiled, and eased if
+necessary.  He should also examine all the working gear cursorily to see
+if it is in a complete state; particular attention should be given to the
+axle-bearings, and especially those of the cranked axle, which sometimes
+become so hot by running as to require cooling by throwing on water.
+
+In case of the driving wheels slipping much in starting from a Station,
+the opening of the regulator should be reduced, and only gradually opened
+as the wheel bites; the Stoker is sometimes obliged to scatter ashes,
+sand, &c., before the wheels: some Engines are now furnished with hoppers
+in front, opened by a handle from the foot-board, by means of which sand
+may be dropped on the rails in front of the driving wheels.
+
+If slipping is observed to an unusual extent, it may be inferred that
+there is not sufficient weight on the driving wheels, and the springs
+ought to be tightened by screwing up the nuts of the bearing bolts: or
+where the framing is hung to the springs by plain links, the spring pins
+must be lengthened the next time the Engine is in the repairing shops.  A
+deficiency of weight on the front or hind wheels is indicated by the
+pitching of the Engine, and should be remedied in a similar manner.
+
+The regulator should be gradually and completely closed, when the Engine
+or train pitches or rocks violently,--in passing a series of points and
+crossings,--in very sharp curves, especially if double,--in rough parts
+of the permanent way,--and in descending planes whose inclination is
+sufficient to carry the train down, without steam, at a velocity of 30
+miles per hour.  In descending such an inclined plane, if it should be
+found that the velocity is greater than 30 miles per hour, it should be
+reduced by gently applying the break.
+
+On every Railway there is a prescribed limit to the pressure of the
+steam, and no circumstance should induce the Engine-man to use steam at a
+higher pressure, or in any case to weight the lever, or hold it down for
+more than a moment.  When there are two safety-valves, that which is out
+of reach may be set at the limit of pressure, and the valve next the
+foot-board some pounds lower.  It is an advantage to have a stop placed
+below the lever of the safety-valve on the screw of the spring balance,
+to prevent its being inadvertently screwed down to more than the working
+pressure.
+
+The steam whistle is obviously intended to give notice of danger: on this
+account its use is forbidden on some Railways, excepting on occasions of
+extreme emergency; but the variety of modulation of which it is
+susceptible has in others induced its adoption as a frequent warning.
+When the latter is the case, it has been found a safe measure to sound
+the whistle directly the steam has been shut off previously to stopping
+at a Station, and to give two short whistles the moment before starting,
+to warn parties of the approach and departure of the train.  When this
+system is practised, the Engine-man should not turn on the full power of
+the whistle, but reserve it exclusively for cases of danger.
+
+When near the end of the trip very little fire is wanted, and both
+feed-pumps should be turned on for a short distance before arriving at
+the Station, unless the Engine is to start again immediately.  If it is
+intended to remain at the Station about an hour, the water should be
+considerably above the middle cock (when the Engine is standing), which
+will be effected by keeping on both feed-pumps from a half to
+three-quarters of a mile.  The safety-valve should, at the same time, be
+eased off to 35 lbs.
+
+If the train is brought into the Station by a tow-rope, great care must
+be taken to stretch the rope gradually by a gentle advance of the Engine,
+which must be stopped at a signal from the tow-rope man.
+
+It would be prudent to conduct the examination described at the
+commencement, directly the Engine arrives at the Station, in order to
+leave time for any repair which may be required.
+
+When an Engine is running the last trip for the day, no fuel need be put
+on for the last 10, 15, or 20 miles, according as the duty is heavy or
+light; indeed, the fire may be nearly run out by the time the Engine
+stops, if the gradients, &c., are favourable.  For a considerable
+distance before stopping both pumps should be at work, so that the water
+in the boiler may be at or above the top cock when the Engine stops, and
+the safety-valve should be eased off to 25 lbs. per square inch.
+
+On stopping over the pit, the fire is drawn by opening the fire-door,
+introducing the arrow-headed poker through the fire-bars, and pulling up
+two or three of them from the bottom of the furnace, by which room will
+be allowed for the rest to be separated, and the fire fall through into
+the ash-pan, from which it is raked out by the Stoker.  The practice of
+blowing off all the water from a boiler by the pressure of the steam
+should never be allowed, without an express order from the Superintendent
+of Locomotives, when the boiler is unusually full of mud; as, if
+frequently practised, it will seriously injure the fire-box and tubes.
+
+
+
+THE MANAGEMENT OF A LOCOMOTIVE ENGINE IN CASES OF ACCIDENT.
+
+
+An Engine is liable to several accidents while running, and it is
+important that the Engine-man should know how to act promptly under the
+circumstances.  In the following list several cases are enumerated, with
+the particular steps to be taken in each.
+
+1.  _The bursting of a tube_.--The Engine-man should stop the Engine, and
+drive a plug into each end of the tube.  It frequently happens that the
+water and steam blow out with so much force, that it is impossible even
+to discover the defective tube: by running the Engine for a short
+distance with both pumps acting, the pressure of the steam will perhaps
+be sufficiently reduced to enable the Engine-man to work with safety; but
+if the escape of water and steam is still too great to do so, he must run
+his Engine and train, if possible, off the main line into a siding, and
+draw the fire, to prevent its injuring the fire-box and tubes: when the
+water has run out down to the level of the defective tube, it may be
+easily plugged, and a fresh fire laid and lighted.  A tube will
+frequently leak to a considerable extent without absolutely requiring the
+stoppage of the train; but in this case great care is necessary not to
+use much steam, or urge the fire too far.
+
+The bursting of a tube or other causes will sometimes lead to the lagging
+or casing of the boiler catching fire, which should be extinguished by
+throwing on water from the Tender-cistern in a fire-bucket, or from the
+water crane at a Station.
+
+2.  _The failing of one of the feed pumps_.--In this case the adequate
+supply of water may, with care, be maintained by one pump only.  The
+supply of coke must be regular, and not in large quantities; and the
+steam must be economised, or the water may run low.  The pump should be
+repaired as soon as possible; this may frequently be done in the interval
+between two trips.
+
+3.  _The breaking of a spring_.--This is an accident which does not
+necessarily involve the stoppage of the train; but as working the Engine
+in such a state causes an unequal strain, it should run very gently over
+rough parts of the road; and if the derangement is considerable, and
+cannot be repaired at the Stations, the Engine should cease running as
+soon as possible.
+
+4.  _The breaking of a connecting-rod_, _or its disconnection_ by the
+loss of cotters, fracture of the straps, &c.  This accident, or any
+disconnection which allows the piston to be driven from end to end of the
+cylinder without restraint, causes expensive damage to the cylinders and
+covers; and the connecting-rod, if loose, will seriously injure the
+smaller gear, or may even throw the Engine off the road.  The Engine
+should therefore be instantly stopped, and if possible the connection
+restored; if that cannot be done, the connecting-rod must be taken off,
+and if on a level or a descending gradient, the train may sometimes be
+drawn by a single cylinder: to do so, the slide-valve spindle of the
+defective cylinder must be detached from the valve gear, by unscrewing
+the nuts, and setting the slide at the middle of its stroke so as to
+cover both ports.
+
+If it should be found impracticable to move the train, the Engine might
+run on alone for assistance; but in any case where the Engine is obliged
+to remain stationary, the fire must be drawn directly the water is down
+to the bottom cock.
+
+5.  _The fracture or disconnection of the eccentrics, or any of the
+slide-valve gear_.--In Engines without hand-gear, if the connection
+cannot be restored, the attempt may be made, as in the previous instance,
+to work with one cylinder.  When the slide-valve gear is disabled,
+Engines with hand-gear possess an advantage which others want, in being
+able to be worked by hand, when a single cylinder would be unequal to the
+duty, from not being able to move the crank over the centres at starting.
+
+6.  _The fracture of the strap which holds the slide-valve_, renders
+unavailable the cylinder on that side where it occurs, without affecting
+the other side.  The slide should be detached and placed in the middle of
+its stroke, and the attempt made to work with one cylinder.
+
+7.  _The disconnection of a piston_, by the fracture of either cotter, is
+sometimes caused by shutting off the steam too suddenly when the Engine
+is travelling fast with a heavy load.  In this case also the slide should
+be detached and set in the middle position, and the piston-rod uncoupled
+from the connecting-rod, which should be removed to prevent its damaging
+the small gear.
+
+8.  _The breaking of an axle_, in a four-wheeled Engine is an accident
+which is almost of necessity attended with the overturn of the Engine.
+In a six-wheeled Engine it requires the stoppage of the train until
+assistance arrives.
+
+9.  _The Engine running off the rails_.  With an Engine-man who drives
+carefully, watching well the position of the switches, and the signals
+given him, and stopping when he sees any danger attending his further
+course, this is an accident of very rare occurrence.  If the Engine
+should run off on hard ground and near the rails, it may sometimes be
+lifted on again at once, by screw-jacks, crow-bars, and long sways; but
+if on soft ground or far from the rails, the fire must be drawn, and
+instant attention given to prevent its sinking deep into the ground.
+
+The Engine should first be separated from the Tender, which, being a
+lighter weight, may be pushed out of the way, and leave more room for
+operating on the Engine; this, if it has fallen over on its side, should
+be lifted as quickly as may be into a vertical position; to do so, a
+purchase should be obtained under the framing on the lowest side, in two
+places if possible; two long and tough sways should be brought to bear on
+these points, and several men placed to weigh upon each; and as the
+Engine is gradually lifted by the sways, every movement should be
+followed up and supported by screw-jacks bedded on timber blocking.  When
+the Engine has been lifted upright, it should be firmly supported by
+timbers placed as stanchions under the framing; the earth may then be
+cautiously removed from under the wheels, and a length of rail
+introduced, taking care to bed it as securely as possible on the
+blockings previously laid down, without disturbing them: the same process
+should be repeated on the other side, and cross sleepers driven in under
+both rails to secure the foundation.  As soon as the Engine is in a
+vertical position and rails inserted under the wheels, a temporary
+railway may be laid down in continuation, and the Engine again drawn on
+the main line.  It will much facilitate the raising of the Engine if the
+water is drawn away out of the boiler as soon as it is sufficiently cool.
+
+                                * * * * *
+
+In all cases of accident involving stoppage on the main line, it is of
+the highest importance that some person should immediately be sent back
+about three-quarters of a mile along the road, to give the proper signal
+of obstruction, and prevent any following train from running in
+unexpectedly.
+
+                                * * * * *
+
+The most essential personal qualifications of an Engine-man are, sobriety
+and steadiness, activity, presence of mind, and unceasing watchfulness;
+and wherever these are combined with an accurate knowledge of the
+construction of a Locomotive Engine and the principles of its management,
+they tend in no small degree towards rendering Railways, what they
+properly are, the safest as well as the most agreeable mode of
+travelling.
+
+
+
+REGULATIONS FOR THE FIRST APPOINTMENT OF AN ENGINE-MAN, ADOPTED BY THE
+DIRECTORS OF THE LONDON AND CROYDON RAILWAY.
+
+
+1840.
+
+1.  The candidate must not be under twenty-one years of age, and must
+produce a certificate of a sound constitution and steady habits.
+
+2.  He must be able to read and write, and, if possible, understand the
+rudimental principles of mechanics.
+
+3.  It will be a great recommendation if he has served his time to any
+mechanical art, especially as a Fitter of Locomotive Engines; and, if
+possible, he should produce testimonials stating his qualifications as
+such.
+
+4.  If the candidate has been a Fitter or a stationary Engine-man, he
+must, for several months at least, have been a Stoker on a Locomotive
+Engine, under the direction of a steady and competent Engine-man; and
+before his appointment, he should produce a testimonial from the
+Superintendent of Locomotives, or at least from the Engine-man under whom
+he has served, stating full confidence in his acquaintance with the
+construction of an Engine and the principles of its management.
+
+5.  If the candidate has not been a Fitter or a stationary Engine-man, he
+must have served as a Stoker for at least two years, and produce the
+testimonials named in the preceding rules.
+
+6.  If required by the Board of Directors, for greater security, the
+candidate must undergo an examination from their Engineer, Superintendent
+of Locomotives, or other competent person, as to his knowledge of an
+Engine and its management, and the general result of this examination
+must be committed to paper, signed by the examiner, and presented to the
+Board.
+
+7.  The Engineer or Superintendent of Locomotives of the Railway to which
+the candidate is desirous of being appointed, shall sign a certificate
+stating that he has conversed with him, has seen him drive, and has
+confidence in his steadiness and ability.
+
+8.  Before being allowed to take the entire charge of an Engine and
+train, the candidate must drive for several days under the direction of
+an experienced Engine-man, who must be on his Engine, and certify to his
+ability.
+
+9.  All certificates and testimonials must be deposited with the
+Secretary of the Company, who will restore them to the owner on his
+leaving their service.
+
+
+
+
+A TABLE OF VELOCITIES.
+
+
+
+
+   Time occupied in        Time occupied in              Velocity
+ Travelling one eight   Travelling quarter of
+      of a mile                 a mile
+         7.5                      15                       60.0
+          8                       16                       56.2
+         8.5                      17                       52.9
+          9                       18                       50.0
+         9.5                      19                       47.4
+          10                      20                       45.0
+         10.5                     21                       42.9
+          11                      22                       40.9
+         11.5                     23                       39.1
+          12                      24                       37.5
+         12.5                     25                       36.0
+          13                      26                       34.6
+         13.5                     27                       33.3
+          14                      28                       32.1
+         14.5                     29                       31.0
+          15                      30                       30.0
+         15.5                     31                       29.0
+          16                      32                       28.1
+         16.5                     33                       27.3
+          17                      34                       26.5
+         17.5                     35                       25.7
+          18                      36                       25.0
+         18.5                     37                       24.3
+          19                      38                       23.7
+         19.5                     39                       23.1
+          20                      40                       22.5
+         20.5                     41                       21.9
+          21                      42                       21.4
+         21.5                     43                       20.9
+          22                      44                       20.4
+         22.5                     45                       20.0
+          23                      46                       19.6
+         23.5                     47                       19.1
+          24                      48                       18.7
+         24.5                     49                       18.4
+          25                      50                       18.0
+         25.5                     51                       17.7
+          26                      52                       17.3
+         26.5                     53                       17.0
+          27                      54                       16.7
+          28                      56                       16.0
+          29                      58                       15.5
+          30                      60                       15.0
+          31                      62                       14.5
+          32                      64                       14.1
+          33                      66                       13.6
+          34                      68                       13.2
+          35                      70                       12.8
+          36                      72                       12.5
+          37                      74                       12.2
+          38                      76                       11.8
+          39                      78                       11.5
+          40                      80                      11.25
+          41                      82                       11.0
+          42                      84                       10.7
+          43                      86                       10.5
+          44                      88                       10.2
+          45                      90                       10.0
+
+
+
+
+***END OF THE PROJECT GUTENBERG EBOOK PRACTICAL RULES FOR THE MANAGEMENT
+OF A LOCOMOTIVE ENGINE***
+
+
+******* This file should be named 19133.txt or 19133.zip *******
+
+
+This and all associated files of various formats will be found in:
+http://www.gutenberg.org/dirs/1/9/1/3/19133
+
+
+
+Updated editions will replace the previous one--the old editions
+will be renamed.
+
+Creating the works from public domain print editions means that no
+one owns a United States copyright in these works, so the Foundation
+(and you!) can copy and distribute it in the United States without
+permission and without paying copyright royalties.  Special rules,
+set forth in the General Terms of Use part of this license, apply to
+copying and distributing Project Gutenberg-tm electronic works to
+protect the PROJECT GUTENBERG-tm concept and trademark.  Project
+Gutenberg is a registered trademark, and may not be used if you
+charge for the eBooks, unless you receive specific permission.  If you
+do not charge anything for copies of this eBook, complying with the
+rules is very easy.  You may use this eBook for nearly any purpose
+such as creation of derivative works, reports, performances and
+research.  They may be modified and printed and given away--you may do
+practically ANYTHING with public domain eBooks.  Redistribution is
+subject to the trademark license, especially commercial
+redistribution.
+
+
+
+*** START: FULL LICENSE ***
+
+THE FULL PROJECT GUTENBERG LICENSE
+PLEASE READ THIS BEFORE YOU DISTRIBUTE OR USE THIS WORK
+
+To protect the Project Gutenberg-tm mission of promoting the free
+distribution of electronic works, by using or distributing this work
+(or any other work associated in any way with the phrase "Project
+Gutenberg"), you agree to comply with all the terms of the Full Project
+Gutenberg-tm License (available with this file or online at
+http://www.gutenberg.org/license).
+
+
+Section 1.  General Terms of Use and Redistributing Project Gutenberg-tm
+electronic works
+
+1.A.  By reading or using any part of this Project Gutenberg-tm
+electronic work, you indicate that you have read, understand, agree to
+and accept all the terms of this license and intellectual property
+(trademark/copyright) agreement.  If you do not agree to abide by all
+the terms of this agreement, you must cease using and return or destroy
+all copies of Project Gutenberg-tm electronic works in your possession.
+If you paid a fee for obtaining a copy of or access to a Project
+Gutenberg-tm electronic work and you do not agree to be bound by the
+terms of this agreement, you may obtain a refund from the person or
+entity to whom you paid the fee as set forth in paragraph 1.E.8.
+
+1.B.  "Project Gutenberg" is a registered trademark.  It may only be
+used on or associated in any way with an electronic work by people who
+agree to be bound by the terms of this agreement.  There are a few
+things that you can do with most Project Gutenberg-tm electronic works
+even without complying with the full terms of this agreement.  See
+paragraph 1.C below.  There are a lot of things you can do with Project
+Gutenberg-tm electronic works if you follow the terms of this agreement
+and help preserve free future access to Project Gutenberg-tm electronic
+works.  See paragraph 1.E below.
+
+1.C.  The Project Gutenberg Literary Archive Foundation ("the Foundation"
+or PGLAF), owns a compilation copyright in the collection of Project
+Gutenberg-tm electronic works.  Nearly all the individual works in the
+collection are in the public domain in the United States.  If an
+individual work is in the public domain in the United States and you are
+located in the United States, we do not claim a right to prevent you from
+copying, distributing, performing, displaying or creating derivative
+works based on the work as long as all references to Project Gutenberg
+are removed.  Of course, we hope that you will support the Project
+Gutenberg-tm mission of promoting free access to electronic works by
+freely sharing Project Gutenberg-tm works in compliance with the terms of
+this agreement for keeping the Project Gutenberg-tm name associated with
+the work.  You can easily comply with the terms of this agreement by
+keeping this work in the same format with its attached full Project
+Gutenberg-tm License when you share it without charge with others.
+
+1.D.  The copyright laws of the place where you are located also govern
+what you can do with this work.  Copyright laws in most countries are in
+a constant state of change.  If you are outside the United States, check
+the laws of your country in addition to the terms of this agreement
+before downloading, copying, displaying, performing, distributing or
+creating derivative works based on this work or any other Project
+Gutenberg-tm work.  The Foundation makes no representations concerning
+the copyright status of any work in any country outside the United
+States.
+
+1.E.  Unless you have removed all references to Project Gutenberg:
+
+1.E.1.  The following sentence, with active links to, or other immediate
+access to, the full Project Gutenberg-tm License must appear prominently
+whenever any copy of a Project Gutenberg-tm work (any work on which the
+phrase "Project Gutenberg" appears, or with which the phrase "Project
+Gutenberg" is associated) is accessed, displayed, performed, viewed,
+copied or distributed:
+
+This eBook is for the use of anyone anywhere at no cost and with
+almost no restrictions whatsoever.  You may copy it, give it away or
+re-use it under the terms of the Project Gutenberg License included
+with this eBook or online at www.gutenberg.org
+
+1.E.2.  If an individual Project Gutenberg-tm electronic work is derived
+from the public domain (does not contain a notice indicating that it is
+posted with permission of the copyright holder), the work can be copied
+and distributed to anyone in the United States without paying any fees
+or charges.  If you are redistributing or providing access to a work
+with the phrase "Project Gutenberg" associated with or appearing on the
+work, you must comply either with the requirements of paragraphs 1.E.1
+through 1.E.7 or obtain permission for the use of the work and the
+Project Gutenberg-tm trademark as set forth in paragraphs 1.E.8 or
+1.E.9.
+
+1.E.3.  If an individual Project Gutenberg-tm electronic work is posted
+with the permission of the copyright holder, your use and distribution
+must comply with both paragraphs 1.E.1 through 1.E.7 and any additional
+terms imposed by the copyright holder.  Additional terms will be linked
+to the Project Gutenberg-tm License for all works posted with the
+permission of the copyright holder found at the beginning of this work.
+
+1.E.4.  Do not unlink or detach or remove the full Project Gutenberg-tm
+License terms from this work, or any files containing a part of this
+work or any other work associated with Project Gutenberg-tm.
+
+1.E.5.  Do not copy, display, perform, distribute or redistribute this
+electronic work, or any part of this electronic work, without
+prominently displaying the sentence set forth in paragraph 1.E.1 with
+active links or immediate access to the full terms of the Project
+Gutenberg-tm License.
+
+1.E.6.  You may convert to and distribute this work in any binary,
+compressed, marked up, nonproprietary or proprietary form, including any
+word processing or hypertext form.  However, if you provide access to or
+distribute copies of a Project Gutenberg-tm work in a format other than
+"Plain Vanilla ASCII" or other format used in the official version
+posted on the official Project Gutenberg-tm web site (www.gutenberg.org),
+you must, at no additional cost, fee or expense to the user, provide a
+copy, a means of exporting a copy, or a means of obtaining a copy upon
+request, of the work in its original "Plain Vanilla ASCII" or other
+form.  Any alternate format must include the full Project Gutenberg-tm
+License as specified in paragraph 1.E.1.
+
+1.E.7.  Do not charge a fee for access to, viewing, displaying,
+performing, copying or distributing any Project Gutenberg-tm works
+unless you comply with paragraph 1.E.8 or 1.E.9.
+
+1.E.8.  You may charge a reasonable fee for copies of or providing
+access to or distributing Project Gutenberg-tm electronic works provided
+that
+
+- You pay a royalty fee of 20% of the gross profits you derive from
+     the use of Project Gutenberg-tm works calculated using the method
+     you already use to calculate your applicable taxes.  The fee is
+     owed to the owner of the Project Gutenberg-tm trademark, but he
+     has agreed to donate royalties under this paragraph to the
+     Project Gutenberg Literary Archive Foundation.  Royalty payments
+     must be paid within 60 days following each date on which you
+     prepare (or are legally required to prepare) your periodic tax
+     returns.  Royalty payments should be clearly marked as such and
+     sent to the Project Gutenberg Literary Archive Foundation at the
+     address specified in Section 4, "Information about donations to
+     the Project Gutenberg Literary Archive Foundation."
+
+- You provide a full refund of any money paid by a user who notifies
+     you in writing (or by e-mail) within 30 days of receipt that s/he
+     does not agree to the terms of the full Project Gutenberg-tm
+     License.  You must require such a user to return or
+     destroy all copies of the works possessed in a physical medium
+     and discontinue all use of and all access to other copies of
+     Project Gutenberg-tm works.
+
+- You provide, in accordance with paragraph 1.F.3, a full refund of any
+     money paid for a work or a replacement copy, if a defect in the
+     electronic work is discovered and reported to you within 90 days
+     of receipt of the work.
+
+- You comply with all other terms of this agreement for free
+     distribution of Project Gutenberg-tm works.
+
+1.E.9.  If you wish to charge a fee or distribute a Project Gutenberg-tm
+electronic work or group of works on different terms than are set
+forth in this agreement, you must obtain permission in writing from
+both the Project Gutenberg Literary Archive Foundation and Michael
+Hart, the owner of the Project Gutenberg-tm trademark.  Contact the
+Foundation as set forth in Section 3 below.
+
+1.F.
+
+1.F.1.  Project Gutenberg volunteers and employees expend considerable
+effort to identify, do copyright research on, transcribe and proofread
+public domain works in creating the Project Gutenberg-tm
+collection.  Despite these efforts, Project Gutenberg-tm electronic
+works, and the medium on which they may be stored, may contain
+"Defects," such as, but not limited to, incomplete, inaccurate or
+corrupt data, transcription errors, a copyright or other intellectual
+property infringement, a defective or damaged disk or other medium, a
+computer virus, or computer codes that damage or cannot be read by
+your equipment.
+
+1.F.2.  LIMITED WARRANTY, DISCLAIMER OF DAMAGES - Except for the "Right
+of Replacement or Refund" described in paragraph 1.F.3, the Project
+Gutenberg Literary Archive Foundation, the owner of the Project
+Gutenberg-tm trademark, and any other party distributing a Project
+Gutenberg-tm electronic work under this agreement, disclaim all
+liability to you for damages, costs and expenses, including legal
+fees.  YOU AGREE THAT YOU HAVE NO REMEDIES FOR NEGLIGENCE, STRICT
+LIABILITY, BREACH OF WARRANTY OR BREACH OF CONTRACT EXCEPT THOSE
+PROVIDED IN PARAGRAPH F3.  YOU AGREE THAT THE FOUNDATION, THE
+TRADEMARK OWNER, AND ANY DISTRIBUTOR UNDER THIS AGREEMENT WILL NOT BE
+LIABLE TO YOU FOR ACTUAL, DIRECT, INDIRECT, CONSEQUENTIAL, PUNITIVE OR
+INCIDENTAL DAMAGES EVEN IF YOU GIVE NOTICE OF THE POSSIBILITY OF SUCH
+DAMAGE.
+
+1.F.3.  LIMITED RIGHT OF REPLACEMENT OR REFUND - If you discover a
+defect in this electronic work within 90 days of receiving it, you can
+receive a refund of the money (if any) you paid for it by sending a
+written explanation to the person you received the work from.  If you
+received the work on a physical medium, you must return the medium with
+your written explanation.  The person or entity that provided you with
+the defective work may elect to provide a replacement copy in lieu of a
+refund.  If you received the work electronically, the person or entity
+providing it to you may choose to give you a second opportunity to
+receive the work electronically in lieu of a refund.  If the second copy
+is also defective, you may demand a refund in writing without further
+opportunities to fix the problem.
+
+1.F.4.  Except for the limited right of replacement or refund set forth
+in paragraph 1.F.3, this work is provided to you 'AS-IS', WITH NO OTHER
+WARRANTIES OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO
+WARRANTIES OF MERCHANTIBILITY OR FITNESS FOR ANY PURPOSE.
+
+1.F.5.  Some states do not allow disclaimers of certain implied
+warranties or the exclusion or limitation of certain types of damages.
+If any disclaimer or limitation set forth in this agreement violates the
+law of the state applicable to this agreement, the agreement shall be
+interpreted to make the maximum disclaimer or limitation permitted by
+the applicable state law.  The invalidity or unenforceability of any
+provision of this agreement shall not void the remaining provisions.
+
+1.F.6.  INDEMNITY - You agree to indemnify and hold the Foundation, the
+trademark owner, any agent or employee of the Foundation, anyone
+providing copies of Project Gutenberg-tm electronic works in accordance
+with this agreement, and any volunteers associated with the production,
+promotion and distribution of Project Gutenberg-tm electronic works,
+harmless from all liability, costs and expenses, including legal fees,
+that arise directly or indirectly from any of the following which you do
+or cause to occur: (a) distribution of this or any Project Gutenberg-tm
+work, (b) alteration, modification, or additions or deletions to any
+Project Gutenberg-tm work, and (c) any Defect you cause.
+
+
+Section  2.  Information about the Mission of Project Gutenberg-tm
+
+Project Gutenberg-tm is synonymous with the free distribution of
+electronic works in formats readable by the widest variety of computers
+including obsolete, old, middle-aged and new computers.  It exists
+because of the efforts of hundreds of volunteers and donations from
+people in all walks of life.
+
+Volunteers and financial support to provide volunteers with the
+assistance they need, is critical to reaching Project Gutenberg-tm's
+goals and ensuring that the Project Gutenberg-tm collection will
+remain freely available for generations to come.  In 2001, the Project
+Gutenberg Literary Archive Foundation was created to provide a secure
+and permanent future for Project Gutenberg-tm and future generations.
+To learn more about the Project Gutenberg Literary Archive Foundation
+and how your efforts and donations can help, see Sections 3 and 4
+and the Foundation web page at http://www.gutenberg.org/fundraising/pglaf.
+
+
+Section 3.  Information about the Project Gutenberg Literary Archive
+Foundation
+
+The Project Gutenberg Literary Archive Foundation is a non profit
+501(c)(3) educational corporation organized under the laws of the
+state of Mississippi and granted tax exempt status by the Internal
+Revenue Service.  The Foundation's EIN or federal tax identification
+number is 64-6221541.  Contributions to the Project Gutenberg
+Literary Archive Foundation are tax deductible to the full extent
+permitted by U.S. federal laws and your state's laws.
+
+The Foundation's principal office is located at 4557 Melan Dr. S.
+Fairbanks, AK, 99712., but its volunteers and employees are scattered
+throughout numerous locations.  Its business office is located at
+809 North 1500 West, Salt Lake City, UT 84116, (801) 596-1887, email
+business@pglaf.org.  Email contact links and up to date contact
+information can be found at the Foundation's web site and official
+page at http://www.gutenberg.org/about/contact
+
+For additional contact information:
+     Dr. Gregory B. Newby
+     Chief Executive and Director
+     gbnewby@pglaf.org
+
+Section 4.  Information about Donations to the Project Gutenberg
+Literary Archive Foundation
+
+Project Gutenberg-tm depends upon and cannot survive without wide
+spread public support and donations to carry out its mission of
+increasing the number of public domain and licensed works that can be
+freely distributed in machine readable form accessible by the widest
+array of equipment including outdated equipment.  Many small donations
+($1 to $5,000) are particularly important to maintaining tax exempt
+status with the IRS.
+
+The Foundation is committed to complying with the laws regulating
+charities and charitable donations in all 50 states of the United
+States.  Compliance requirements are not uniform and it takes a
+considerable effort, much paperwork and many fees to meet and keep up
+with these requirements.  We do not solicit donations in locations
+where we have not received written confirmation of compliance.  To
+SEND DONATIONS or determine the status of compliance for any
+particular state visit http://www.gutenberg.org/fundraising/donate
+
+While we cannot and do not solicit contributions from states where we
+have not met the solicitation requirements, we know of no prohibition
+against accepting unsolicited donations from donors in such states who
+approach us with offers to donate.
+
+International donations are gratefully accepted, but we cannot make
+any statements concerning tax treatment of donations received from
+outside the United States.  U.S. laws alone swamp our small staff.
+
+Please check the Project Gutenberg Web pages for current donation
+methods and addresses.  Donations are accepted in a number of other
+ways including checks, online payments and credit card donations.
+To donate, please visit:
+http://www.gutenberg.org/fundraising/donate
+
+
+Section 5.  General Information About Project Gutenberg-tm electronic
+works.
+
+Professor Michael S. Hart is the originator of the Project Gutenberg-tm
+concept of a library of electronic works that could be freely shared
+with anyone.  For thirty years, he produced and distributed Project
+Gutenberg-tm eBooks with only a loose network of volunteer support.
+
+Project Gutenberg-tm eBooks are often created from several printed
+editions, all of which are confirmed as Public Domain in the U.S.
+unless a copyright notice is included.  Thus, we do not necessarily
+keep eBooks in compliance with any particular paper edition.
+
+Most people start at our Web site which has the main PG search facility:
+
+     http://www.gutenberg.org
+
+This Web site includes information about Project Gutenberg-tm,
+including how to make donations to the Project Gutenberg Literary
+Archive Foundation, how to help produce our new eBooks, and how to
+subscribe to our email newsletter to hear about new eBooks.
+

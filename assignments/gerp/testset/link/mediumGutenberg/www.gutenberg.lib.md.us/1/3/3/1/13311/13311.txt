@@ -1,0 +1,1252 @@
+Project Gutenberg's Three Articles on Metaphor, by Society for Pure English
+
+This eBook is for the use of anyone anywhere at no cost and with
+almost no restrictions whatsoever.  You may copy it, give it away or
+re-use it under the terms of the Project Gutenberg License included
+with this eBook or online at www.gutenberg.net
+
+
+Title: Tract XI: Three Articles on Metaphor
+
+Author: Society for Pure English
+
+Release Date: August 28, 2004 [EBook #13311]
+
+Language: English
+
+Character set encoding: ASCII
+
+*** START OF THIS PROJECT GUTENBERG EBOOK THREE ARTICLES ON METAPHOR ***
+
+
+
+
+Produced by David Starner, Project Manager, Keith M. Eckrich,
+Post-Processor, and the Project Gutenberg Online Distributed
+Proofreaders Team
+
+
+
+
+
+_SOCIETY FOR PURE ENGLISH_
+
+_TRACT No. XI_
+
+
+
+
+THREE ARTICLES ON METAPHOR
+
+
+By E.B., H.W. Fowler & A. Clutton-Brock
+
+
+MISCELLANEOUS NOTES & CORRESPONDENCE
+
+
+_At the Clarendon Press_
+
+
+1922
+
+
+
+
+THREE ARTICLES ON METAPHOR
+
+
+
+I. NOTES ON THE FUNCTION OF METAPHOR
+
+The business of the writer is to arouse in the mind of his reader the
+fullest possible consciousness of the ideas or emotion that he is
+expressing.
+
+To this end he suggests a comparison between it and something else
+which is similar to it in respect of those qualities to which he
+desires to draw attention. The reader's mind at once gets to work
+unconsciously on this comparison, rejecting the unlike qualities and
+recognizing with an enhanced and satisfied consciousness the like
+ones. The functions of simile and metaphor are the same in this
+respect.
+
+Both simile and metaphor are best when not too close to the idea they
+express, that is, when they have not many qualities in common with it
+which are not cogent to the aspect under consideration.
+
+The test of a well-used metaphor is that it should completely fulfil
+this function: there should be no by-products of imagery which
+distract from the poet's aim, and vitiate and weaken the desired
+consciousness.
+
+A simile, in general, need not be so close as a metaphor, because the
+point of resemblance is indicated, whereas in a metaphor this is left
+to the reader to discover.
+
+When a simile or metaphor is from the material to the immaterial, or
+vice versa, the analogy should be more complete than when it is
+between two things on the same plane: when they are on different
+planes there is less dullness (that is, less failure to produce
+consciousness), and the greater mental effort required of the reader
+warrants some assistance.
+
+The degree of effort required in applying any given metaphor should be
+in relation to the degree of emotion proper to the passage in which it
+is used. Only those metaphors which require little or no mental
+exertion should be used in very emotional passages, or the emotional
+effect will be much weakened: a far-fetched, abstruse metaphor or
+simile implies that the writer is at leisure from his emotion, and
+suggests this attitude in the reader.--[E.B.]
+
+
+
+
+II. SOME NOTES ON METAPHOR IN JOURNALISM
+
+Live and dead metaphor; some pitfalls; self-consciousness and mixed
+metaphor.
+
+1. Live and Dead Metaphor.
+
+In all discussion of metaphor it must be borne in mind that some
+metaphors are living, i.e. are offered and accepted with a
+consciousness of their nature as substitutes for their literal
+equivalents, while others are dead, i.e. have been so often used that
+speaker and hearer have ceased to be aware that the words are not
+literal: but the line of distinction between the live and the dead is
+a shifting one, the dead being sometimes liable, under the stimulus of
+an affinity or a repulsion, to galvanic stirrings indistinguishable
+from life. Thus, in _The men were sifting meal_ we have a literal use
+of _sift_; in _Satan hath desired to have you, that he may sift you as
+wheat_, 'sift' is a live metaphor; in _the sifting of evidence_, the
+metaphor is so familiar that it is about equal chances whether
+_sifting_ or _examination_ will be used, and a sieve is not present to
+the thought--unless, indeed, some one conjures it up by saying _All
+the evidence must first be sifted with acid tests_, or _with the
+microscope_; under such a stimulus our metaphor turns out to have been
+not dead, but dormant. The other word, _examine_, will do well enough
+as an example of the real stone-dead metaphor; the Latin _examino_,
+being from _examen_ the tongue of a balance, meant originally to
+weigh; but, though weighing is not done with acid tests or microscopes
+any more than sifting, _examine_ gives no convulsive twitchings, like
+_sift_, at finding itself in their company; _examine_, then, is dead
+metaphor, and _sift_ only half dead, or three-quarters.
+
+2. Some pitfalls. A, Unsustained Metaphor; B, Overdone Metaphor; C,
+Spoilt Metaphor; D, Battles of the Dead; E, Mixed Metaphor.
+
+A. Unsustained Metaphor
+
+_He was still in the middle of those twenty years of neglect which
+only began to lift in 1868_. The plunge into metaphor at _lift_, which
+presupposes a mist, is too sudden after the literal _twenty years of
+neglect_; years, even gloomy years, do not lift.
+
+_The means of education at the disposal of the Protestants and
+Presbyterians of the North were stunted and sterilized._ 'The means at
+disposal' names something too little vegetable or animal to consort
+with the metaphorical verbs. Education (personified) may be stunted,
+but means may not.
+
+_The measure of Mr. Asquith's shame does not consist in the mere fact
+that he has announced his intention to ..._ Metaphorical measuring,
+like literal, requires a more accommodating instrument than a stubborn
+fact.
+
+B. Overdone Metaphor
+
+The days are perhaps past when a figure was deliberately chosen that
+could be worked out with line upon line of relentless detail, and the
+following well-known specimen is from Richardson:--
+
+     _Tost to and fro by the high winds of passionate control, I
+     behold the desired port, the single state, into which I
+     would fain steer; but am kept off by the foaming billows of
+     a brother's and sister's envy, and by the raging winds of a
+     supposed invaded authority; while I see in Lovelace, the
+     rocks on one hand, and in Solmes, the sands on the other;
+     and tremble, lest I should split upon the former or strike
+     upon the latter_.
+
+The present fashion is rather to develop a metaphor only by way of
+burlesque. All that need be asked of those who tend to this form of
+satire is to remember that, while some metaphors do seem to deserve
+such treatment, the number of times that the same joke can safely be
+made, even with variations, is limited; the limit has surely been
+exceeded, for instance, with 'the long arm of coincidence'; what
+proportion may this triplet of quotations bear to the number of times
+the thing has been done?--_The long arm of coincidence throws the
+Slifers into Mercedes's Cornish garden a little too heavily. The
+author does not strain the muscles of coincidence's arm to bring them
+into relation. Then the long arm of coincidence rolled up its sleeves
+and set to work with a rapidity and vigour which defy description_.
+
+Modern overdoing, apart from burlesque, is chiefly accidental, and
+results not from too much care, but from too little. _The most
+irreconcilable of Irish landlords are beginning to recognize that we
+are on the eve of the dawn of a new day in Ireland_. 'On the eve of'
+is a dead metaphor for 'about to experience', and to complete it with
+'the dawn of a day' is as bad as to say, _It cost one pound sterling,
+ten_ instead of _one pound ten_.
+
+C. Spoilt Metaphor
+
+The essential merit of real or live metaphor being to add vividness to
+what is being conveyed, it need hardly be said that accuracy of detail
+is even more necessary in metaphorical than in literal expressions;
+the habit of metaphor, however, and the habit of accuracy do not
+always go together.
+
+_Yet Taurès was the Samson who upheld the pillars of the Bloc._
+
+_Yet what more distinguished names does the Anglican Church of the
+last reign boast than those of F.D. Maurice, Kingsley, Stanley,
+Robertson of Brighton, and even, if we will draw our net a little
+wider, the great Arnold?_
+
+_He was the very essence of cunning, the incarnation of a book-thief._
+
+Samson's way with pillars was not to uphold them; we draw nets closer,
+but cast them wider; and what is the incarnation of a thief? too, too
+solid flesh indeed!
+
+D. Battles of Dead Metaphors
+
+In _The Covenanters took up arms_ there is no metaphor; in _The
+Covenanters flew to arms_ there is one only--_flew to_ for _quickly
+took up_; in _She flew to arms in defence of her darling_ there are
+two, the arms being now metaphorical as well as the flying; moreover,
+the two metaphors are separate ones; but, being dead, and also not
+inconsistent with each other, they lie together quietly enough. But
+dead metaphors will not lie quietly together if there was repugnance
+between them in life; e'en in their ashes live their wonted fires, and
+they get up and fight.
+
+_It is impossible to crush the Government's aim to restore the means
+of living and working freely_. 'Crush' for baffle, 'aim' for purpose,
+are both dead metaphors so long as they are kept apart, but the
+juxtaposition forces on us the thought that you cannot crush an aim.
+
+_National military training is the bedrock on which alone we can hope
+to carry through the great struggles which the future may have in
+store for us_. 'Bedrock' and 'carry through' are both moribund or
+dormant, but not stone-dead.
+
+_The vogue of the motor-car seems destined to help forward the
+provision of good road-communication, a feature which is sadly in
+arrear_. Good road-communication may be a feature, and it may be in
+arrear, and yet a feature cannot be in arrear; things that are equal
+to the same thing may be equal to each other in geometry, but language
+is not geometry.
+
+They are cyphers living under the _shadow_ of a great man.
+
+He stood, his feet _glued_ to the spot, his eyes _riveted_ on the
+heavens.
+
+The Geddes report is to be _emasculated_ a little in the Cabinet, and
+then _thrown_ at the heads of the Electorate.
+
+Viscount Grey's suggestion may, in spite of everything, prove the
+_nucleus_ of _solution_.
+
+The superior stamina of the Oxonian told in no _half-hearted measure_.
+[Even careful writers are sometimes unaware of the comical effect of
+some chance juxtaposition of words and ideas, whereby a dormant
+metaphor is set on its legs. Thus Leslie Stephen in his life of Swift
+wrote: _Sir William Temple, though he seems to have been vigorous and
+in spite of gout a brisk walker, was approaching his grave_. And again
+when he was triumphantly recording the progress of agnosticism he has:
+_Even the high-churchmen have thrown the Flood overboard_. [ED.]]
+
+
+
+E. Mixed Metaphors
+
+For the examples given in D, tasteless word-selection is a fitter
+description than mixed metaphor, since each of the words that conflict
+with others is not intended, as a metaphor at all. 'Mixed metaphor' is
+more appropriate when one or both of the terms can only be consciously
+metaphorical. Little warning is needed against it; it is so
+conspicuous as seldom to get into speech or print undetected.
+
+_This is not the time to throw up the sponge, when the enemy, already
+weakened and divided, are on the run to a new defensive position_. A
+mixture of prize-ring and battlefield.
+
+In the following extract from a speech it is difficult to be sure how
+many times metaphors are mixed; readers versed in the mysteries of
+oscillation may be able to decide:
+
+     _No society, no community, can place its house in_ _such a
+     condition that it is always on a rock, oscillating between
+     solvency and insolvency. What I have to do is to see that
+     our house is built upon a solid foundation, never allowing
+     the possibility of the Society's life-blood being sapped.
+     Just in proportion as you are careful in looking after the
+     condition of your income, just in proportion as you deal
+     with them carefully, will the solidarity of the Society's
+     financial condition remain intact. Immediately you begin to
+     play fast and loose with your income the first blow at your
+     financial stability will have been struck._
+
+A real poet losing himself in the _meshes_ of a foolish _obsession_.
+
+Johnson tore the _hearts_ out of books ruthlessly in order to extract
+the _honey_ out of them expeditiously. Are we to let the _pendulum_
+swing back to the old _rut_? Those little houses at the top of the
+street, _dwarfed_ by the _grandiloquence_ on the opposite side, are
+too small, too.
+
+3. Self-consciousness and Mixed Metaphor.
+
+The gentlemen of the Press regularly devote a small percentage of
+their time to accusing each other of mixing metaphors or announcing
+that they are themselves about to do so (What a mixture of metaphors!
+If we may mix our metaphors. To change the metaphor), the offence
+apparently being not to mix them, but to be unaware that you have done
+it. The odd thing is that, whether he is on the offensive or the
+defensive, the writer who ventures to talk of mixing metaphors often
+shows that he does not know what mixed metaphor is. Two typical
+examples of the offensive follow:
+
+_The _Scotsman_ says: 'The crowded benches of the Ministerialists
+contain the germs of disintegration. A more ill-assorted majority
+could hardly be conceived, and presently the Opposition must realize
+of what small account is the manoeuvring of the Free-Fooders or of any
+other section of the party. If the sling be only properly handled, the
+new Parliamentary Goliath will be overthrown easily enough. The stone
+for the sling must, however, be found on the Ministerial side of the
+House, and not on the Opposition side.' Apparently the stone for the
+sling will be a germ. But doubtless mixed feelings lead to mixed
+metaphors._ In this passage, we are well rid of the germs before we
+hear of the sling, and the mixture of metaphors is quite imaginary.
+
+Since literal benches often contain literal germs, but 'crowded
+benches' and 'germs of disintegration' are here separate metaphors for
+a numerous party and tendencies to disunion, our critic had ready to
+his hand in the first sentence, if he had but known it, something much
+more like a mixture of metaphors than what he mistakes for one.
+
+_'When the Chairman of Committees--a politician of their own
+hue--allowed Mr. Maddison to move his amendment in favour of secular
+education, a decision which was not quite in accordance with
+precedent, the floodgates of sectarian controversy were opened, and
+the apple of discord--the endowment of the gospel of
+Cowper-Temple--was thrown into the midst of the House of Commons.'
+What a mixture of metaphor! One pictures this gospel-apple battling
+with the stream released by the opened floodgates._ In point of fact,
+the floodgates and the apple are successive metaphors, unmixed; the
+mixing of them is done by the critic himself, not by the criticized;
+and as to _gospel-apple,_ by which it is hinted that the mixture is
+triple, the original writer had merely mentioned in the _gospel_
+phrase the thing compared by the side of what it is compared to, as
+when one explains _the Athens of the North_ by adding _Edinburgh._
+
+Writers who are on the defensive apologize for _change_ and _mixture_
+of metaphors as though one was as bad as the other; the two sins are
+in fact entirely different; a man may change his metaphors as often as
+he likes; it is for him to judge whether the result will or will not
+be unpleasantly florid; but he should not ask our leave to do it; if
+the result is bad, his apology will not mend matters, and if it is not
+bad no apology was called for. On the other hand, to mix metaphors, if
+the mixture is real, is an offence that should have been not
+apologized for, but avoided. Whichever the phrase, the motive is the
+same--mortal fear of being accused of mixed metaphor.
+
+_...showed that Free Trade could provide the jam without recourse
+being had to Protective food-taxes: next came a period in which (to
+mix our metaphors) the jam was a nice slice of tariff pie for
+everybody, but then came the Edinburgh Compromise, by which the jam
+for the towns was that there were to be..._ When _jam_ is used in
+three successive sentences in its hackneyed sense of consolation, it
+need hardly be considered in the middle one of them a live metaphor at
+all; however, the as-good-as-dead metaphor of jam _is_ capable of
+being stimulated into life if any one is so foolish as to bring into
+contact with it another half-dead metaphor of its own (i.e. of the
+foodstuff) kind, and it _was_, after all, mixing metaphors to say the
+jam was a slice of pie; but then the way of escape was to withdraw
+either the jam or the pie, instead of forcing them together down our
+throats with a ramrod of apology.
+
+_Time sifts the richest granary, and posterity is a dainty feeder. But
+Lyall's words, at any rate--to mix the metaphor--will escape the blue
+pencil even of such drastic editors as they_. Since all three
+metaphors are live ones, and _they_ are the sifter and the feeder, the
+working of these into grammatical connexion with the blue pencil does
+undoubtedly mix metaphors. But then our author gives us to understand
+that he knows he is doing it, and surely that is enough. Even so some
+liars reckon that a lie is no disgrace provided that they wink at a
+bystander as they tell it, even so those who are addicted to the
+phrase 'to use a vulgarism' expect to achieve the feat of being at
+once vulgar and superior to vulgarity.
+
+_Certainly we cannot detect the suggested lack of warmth in the speech
+as it is printed, for in his speech, as in the Prime Minister's, it
+seems to us that (if we may change the metaphor) exactly the right
+note was struck_.
+
+_We may, on the one hand, receive into our gill its precise content of
+the complex mixture that fills the puncheon of the whole world's
+literature, on the other--to change the metaphor--our few small
+strings may thrill in sympathetic harmony to some lyrical zephyrs and
+remain practically unresponsive to the deep-sea gale of Aeschylus or
+Dante_.
+
+Why, yes, gentlemen, you may change your metaphors, if it seems good
+to you, but you may also be pretty sure that, if you feel the
+necessity of proclaiming the change, you had better have abstained
+from it.
+
+_Two of the trump cards played against the Bill are (1) that 'it makes
+every woman who pays a tax-collector in her own house', and (2) that
+'it will destroy happy domestic relations in hundreds of thousands of
+homes'; if we may at once change our metaphor, these are the notes
+which are most consistently struck in the stream of letters, now
+printed day by day for our edification in the_ Mail. This writer need
+not have asked our leave to change from cards to music; he is within
+his rights, anyhow, and the odds are, indeed, that if he had not
+reminded us of the cards we should have forgotten them in the
+intervening lines, but how did a person so sensitive to change of
+metaphor fail to reflect that it is ill playing the piano in the
+water? 'A stream of letters', it is true, is only a picturesque way of
+saying 'many letters', and ordinarily a dead metaphor; but once put
+your seemingly dead yet picturesque metaphor close to a piano that is
+being played, and its notes wake the dead--at any rate for readers who
+have just had the word _metaphor_ called to their memory.--H.W.
+FOWLER.
+
+
+
+
+III. DEAD METAPHORS
+
+Metaphor becomes a habit with writers who wish to express more emotion
+than they feel, and who employ it as an ornament to statements that
+should be made plainly or not at all. Used thus, it is a false
+emphasis, like architectural ornaments in the wrong place. It demands
+of the reader an imaginative effort where there has been no such
+effort in the writer, an answering emotion where there is none to be
+answered. And the reader gets the habit of refusing such effort and
+such emotion; he ceases even to be aware of metaphors that are used
+habitually. He may not consciously resent them; but unconsciously his
+mind is wearied by them as the eye by advertisements often repeated.
+By their sameness they destroy expectation so that, even if the writer
+says anything in particular, it seems to be all generalities.
+
+Here is an instance of habitual metaphor, not manufactured for this
+tract, but taken from an article by a well-known writer. He is
+speaking of the career of Mr. Lloyd George:
+
+     There was nothing like it in the histories of the ancient
+     European monarchies, hide-bound by caste and now lying on
+     the scrap-heaps of Switzerland and Holland. In the more
+     forward nations, the new republics, men have indeed risen
+     from humble beginnings to high station, but not generally by
+     constitutional means and usually only (as now in Russia) by
+     wading to their places through blood. The dizzy height to
+     which Lloyd George has attained, not as a British statesman
+     only but also as a world celebrity, seems to leave the
+     foreign nations breathless. It is a spectacle that has of
+     itself some of the thrill and fascination of romance.
+
+Here are metaphors that might be used, or have been used, so as to
+surprise the reader; but in this case they are stock-ornaments to a
+passage that needs no ornament. If the metaphors in the first sentence
+were alive to us they would be mixed; at least the transition from
+monarchies hide-bound by caste to monarchies lying on scrap-heaps
+would be too sudden; but we hardly notice it because we hardly notice
+the metaphors. And there is an inconsistency in the notion of rising
+by wading which, again, we do not notice only because we are so used
+to rising and wading as metaphors that both have lost their power as
+images. Mr. Lloyd George has waded to such a dizzy height that he
+seems to leave foreign nations breathless; and we should be breathless
+at the thought of such an impossibility if the metaphors were not
+dead.
+
+It is indeed the mark of a dead metaphor that it escapes absurdity
+only by being dead. The term has been used for metaphors that have
+lost all metaphorical significance; but these, perhaps, are better
+called buried metaphors. I prefer to use the word _dead_ of metaphors
+not yet buried but demanding burial. 'Risen from humble beginnings' is
+perhaps a buried metaphor; 'wading to their places through blood' is a
+dead one. It has been used so often that it jades instead of
+horrifying us; it is a corpse that fails to make us think of corpses.
+But in the next sentence the writer returns to the metaphor of rising
+and elaborates it so that it is no longer buried, though certainly
+dead. We are vaguely aware of the sense of this passage, but the
+metaphors are a hindrance, not a help, to our understanding of it.
+
+Writers fall into habitual metaphor when they fear that their thought
+will seem too commonplace without ornament; and, because the motive is
+unconscious, they choose metaphors familiar to themselves and their
+readers. The article from which I have quoted contains many such
+metaphors. Mr. Lloyd George is 'like other men only cast in bigger
+mould'. He is 'clearly no plaster saint'. 'You cannot think of him in
+relation to the knock-out blow except as the man who gives, not
+receives, it.' 'He has never lost his head on the dizzy height to
+which he has so suddenly attained. He is clearly in no danger of the
+intoxicating impulse of the people who find themselves for the first
+time on great eminences, to leap over. In a word, he is not spoiled.'
+Here the writer, as he would put it, gives himself away. All that
+metaphor means only that Mr. George is not spoiled, and the fact that
+he is not spoiled would be established better by instances than by
+metaphors.
+
+Then we are told that some of Mr. George's feats 'seem to partake of
+the nature of legerdemain'. 'He sways a popular assembly by waves of
+almost Hebraic emotion.' 'No man has ever had his ear closer to the
+ground and listened more attentively to the tramp of the oncoming
+multitudes.' He 'held Great Britain's end up' at the International
+conference. A 'magnificent tribute was paid to him by Earl Balfour'
+but it 'did not put him alone on a pinnacle'. And then we read of the
+whirligig of time, of 'clouds of misunderstanding which point to the
+coming of a storm'; of how 'foreign nations suddenly became aware that
+a new star had swum into the world's ken'; of how 'the situation of
+this country is perilous with so much Bolshevik gunpowder moving
+about', and how 'it has required a strong heart and a clear head to
+keep the nation from falling either into the sloughs of despond or the
+fires of revolution'.
+
+Some of these are metaphors that were excellent in their first use and
+original context; but they lose their excellence if repeated in any
+context where they have not been discovered by the emotion of the
+writer but are used by him to make a commonplace appear passionate.
+Then they seem an unfortunate legacy from poetry to prose; and it is a
+fact, I think, that our prose now suffers from the richness of our
+past poetry. Even the prose writers of the Romantic movement regarded
+prose as the poor relation of poetry; they did not see that prose has
+its own reasons for existing, its own state of being and its own
+beauties. They had the habit of writing about Shakespeare in
+Shakespeare's own manner, which, in later plays such as _Antony and
+Cleopatra_, is often a fading of one metaphor into another so fast
+that the reader's or listener's mind cannot keep pace with it:
+
+     O sovereign mistress of true melancholy,
+     The poisonous damp of night disponge upon me,
+     That life, a very rebel to my will,
+     May hang no longer on me: throw my heart
+     Against the flint and hardness of my fault;
+     Which, being dried with grief, will break to powder.
+     And finish all foul thoughts.
+
+The metaphors here, though instinctive rather than habitual, are
+excessive even for the dying speech of Enobarbus. The style is the
+worst model for prose, yet it has persisted as a mere habit in the
+prose of writers who fear to be prosaic and who are prevented by that
+habit from saying even what they have to say.
+
+The principles of composition, whether verse or prose, are based on
+the fact that the unit of language is not the word, or even the
+phrase, but the sentence. From this it follows that every word and
+every phrase gets its meaning from the sentence in which it occurs;
+and so that words and phrases should be used freshly on each occasion
+and, as it were, recharged with meaning by the aptness of their use.
+Every sentence should, like a piece of music, establish its own
+relation between the words that compose it; and in the best sentences,
+whether of prose or verse, the words seem new-born; like notes in
+music, they seem to be, not mere labels, but facts, because of the
+manner in which the writer's thought or emotion has related them to
+each other. But habitual metaphor prevents this process of relation;
+it is the intrusion of ready-made matter, with its own stale
+associations, into matter that should be new-made for its own
+particular purpose of expression. Phrases like--The lap of luxury,
+Part and parcel, A sea of troubles, Passing through the furnace,
+Beyond the pale, The battle of life, The death-warrant of, Parrot
+cries, The sex-war, Tottering thrones, A trail of glory, Bull-dog
+tenacity, Hats off to, The narrow way, A load of sorrow, A
+charnel-house, The proud prerogative, Smiling through your tears, A
+straight fight, A profit and loss account, The fires of martyrdom, The
+school of life--are all ready-made matter; and, if a writer yields to
+the temptation of using them, he impedes his own process of
+expression, saying something which is not exactly what he has to say.
+He may, of course, attain to a familiar metaphor in his own process of
+expression; but if he does, if it is exactly what he has to say, then
+it will not seem stale to the reader. Context may give life to a
+metaphor that has long seemed dead, as it gives life to the commonest
+words. If an image forces itself upon a writer because it and it alone
+will express his meaning, then it is his image, no matter how often it
+has been used before; and in that case it will arrest the attention of
+the reader. But the effect of habitual and dead metaphor is to dull
+attention. When a phrase like 'the lap of luxury' catches the eye, the
+mind relaxes but is not rested; for we are wearied, without exercise,
+by commonplace.
+
+Further, the use of dead metaphor weakens a writer's sense of the
+connexion between mood and manner. All the metaphors which I have
+quoted are fit for the expression of some kind of emotion rather than
+for plain statement of fact or for lucid argument; yet they are used
+commonly in statements of fact and in what passes for argument. Indeed
+one of their evils is that they make a writer and his readers believe
+that he is exercising his reason when he is only moving from trite
+image to image. If eloquence is reason fused with emotion, writing, or
+speaking, full of dead metaphors is unreason fused with sham emotion.
+I add in illustration a further list of dead metaphors lately noticed:
+'Branches of the same deadly Upas Tree. Turning a deaf ear to. The
+flower of our manhood. Taking off the gloves. Written in letters of
+fire. Stemming the tide. Big with possibilities. The end is in sight.
+A place in the sun. A spark of manhood. To dry up the founts of pity.
+Hunger stalking through the land. A death grip. Round pegs (or men) in
+square holes. The lamp of sacrifice. The silver lining. Troubling the
+waters, and poisoning the wells. The promised land. Flowing with milk
+and honey. Winning all along the line. Casting in her lot with. The
+fruits of victory. Backs to the wall. Bubbling over with confidence.
+Bled white. The writing on the wall. The sickle of death. A ring fence
+round. The crucible of. Answering the call. Grinding the faces of the
+poor. The scroll of fame.'--A. CLUTTON-BROCK.
+
+
+
+
+IRRELEVANT ALLUSION
+
+We all know the people--for they are the majority, and probably
+include our particular selves--who cannot carry on the ordinary
+business of everyday talk without the use of phrases containing a part
+that is appropriate, and another that is pointless or worse; the two
+parts have associated themselves together in their minds as making up
+what somebody has said, and what others as well as they will find
+familiar, and they have the sort of pleasure in producing the
+combination that a child has in airing a newly acquired word. There
+is, indeed, a certain charm in the grown man's boyish ebullience, not
+to be restrained by thoughts of relevance from letting the exuberant
+phrase jet forth. And for that charm we put up with it when a speaker
+draws our attention to the methodical by telling us there is a method
+in the madness, though method and not madness is all there is to see,
+when another's every winter is the winter of his discontent, when a
+third cannot complain of the light without calling it religious as
+well as dim, when for a fourth nothing can be rotten outside the State
+of Denmark, or when a fifth, asked whether he does not owe you 1s. 6d.
+for that cab fare, owns the soft impeachment.
+
+A slightly fuller examination of a single example may be useful. The
+phrase to _leave severely alone_ has two reasonable uses--one in the
+original sense of to leave alone as a method of severe treatment, i.e.
+to send to Coventry or show contempt for, and the other in contexts
+where _severely_ is to be interpreted by contraries--to leave alone by
+way not of punishing the object, but of avoiding consequences for the
+subject. The straightforward meaning, and the ironical, are both good;
+anything between them, in which the real meaning is merely to leave
+alone, and _severely_ is no more than an echo, is pointless and vapid
+and in print intolerable. Examples follow: (1, straightforward) _You
+must show him, by leaving him severely alone, by putting him into a
+moral Coventry, your detestation of the crime_; (2, ironical) _Fish of
+prey do not appear to relish the sharp spines of the stickleback, and
+usually seem to leave them severely alone_; (3, pointless) _Austria
+forbids children to_ _smoke in public places; and in German schools
+and military colleges there are laws upon the subject; France, Spain,
+Greece, and Portugal leave the matter severely alone_. It is obvious
+at once how horrible the faded jocularity of No. 3 is in print; and,
+though things like it come crowding upon one another in most
+conversation, they are not very easy to find in newspapers and books
+of any merit; a small gleaning of them follows:
+
+_The moral_, as Alice would say, _appeared to be that, despite its
+difference in degree, an obvious essential in the right kind of
+education had been equally lacking to both these girls_ (as Alice, or
+indeed as you or I, might say).
+
+_Resignation_ became a virtue of necessity _for Sweden_ (If you do
+what you must with a good grace, you make a virtue of necessity;
+without _make_, a virtue of necessity loses its meaning).
+
+_I strongly advise the single working-man who would become a
+successful backyard poultry-keeper_ to ignore the advice of Punch,
+_and to secure a useful helpmate_.
+
+_The beloved lustige Wien_ [merry Vienna] _of his youth had_ suffered
+a sea-change. _The green glacis ... was blocked by ranges of grand new
+buildings_ (Ariel must chuckle at the odd places in which his
+sea-change turns up).
+
+_Many of the celebrities who in that most frivolous of
+watering-places_ do congregate.
+
+_When about to quote Sir Oliver Lodge's tribute to the late leader,
+Mr. Law_ drew, not a dial, _but what was obviously a penny memorandum
+book_ from his pocket (You want to mention that Mr. Bonar Law took a
+notebook out of his pocket. But pockets are humdrum things. How give a
+literary touch? Call it a poke? No, we can better that; who was it
+drew what from his poke? Why, Touchstone, a dial, to be sure! and
+there you are).--H.W.F.
+
+
+
+
+CORRESPONDENCE
+
+We have a constant flow of correspondence, and we are afraid the
+writers must think us unpractical, incompetent, or neglectful, because
+we give their inquiries no place in our tracts; they may naturally
+think that it is our business to pass judgement on any linguistic
+question that troubles them; but most of these queries would be
+satisfactorily answered by reference to the _O. E. D._, which we do
+not undertake to reprint; in other cases, where we are urged to
+protest against the common abuse of some word or phrase, we do not
+think (as we have before explained) that it is worth while to treat
+any such detail without full illustration, and this our correspondents
+do not supply. We propose now to demonstrate the situation by dealing
+with a small selection of these abused words, which may serve as
+examples.
+
+       *       *       *       *       *
+
+
+
+
+IMPLICIT
+
+The human mind likes a good clear black-and-white contrast; when two
+words so definitely promise one of these contrasts as _explicit_ and
+_implicit_, and then dash our hopes by figuring in phrases where
+contrast ceases to be visible--say in 'explicit support' and 'implicit
+obedience', with _absolute_ or _complete_ or _full_ as a substitute
+that might replace either or both--, we ask with some indignation
+whether after all black is white, and perhaps decide that _implicit_
+is a shifty word with which we will have no further dealings. It is
+noteworthy in more than one respect.
+
+First, it means for the most part the same as _implied_, and, as it is
+certainly not so instantly intelligible to the average man, it might
+have been expected to be so good as to die. That it has nevertheless
+survived by the side of _implied_ is perhaps due to two causes: one is
+that _explicit_ and _implicit_ make a neater antithesis than even
+_expressed_ and _implied_ (we should write _all the conditions,
+whether explicit or implicit_; but _all the implied conditions;
+implied_ being much commoner than _implicit_ when the antithesis is
+not given in full); and the other is that the adverb, whether of
+_implicit_ or of _implied_, is more often wanted than the adjective,
+and that _impliedly_ is felt to be a bad form; _implicitly_, preferred
+to _impliedly_, helps to keep _implicit_ alive.
+
+Secondly, there is the historical accident by which _implicit_, with
+_faith, obedience, confidence_, and such words, has come to mean
+absolute or full, whereas it originally meant undeveloped or potential
+or in the germ. The starting-point of this usage is the ecclesiastical
+phrase _implicit faith_, i.e. a person's acceptance of any article of
+belief not on its own merits, but as a part of, as 'wrapped up in',
+his general acceptance of the Church's authority; the steps from this
+sense to unquestioning, and thence to complete or absolute or exact,
+are easy; but not every one who says that implicit obedience is the
+first duty of the soldier realizes that the obedience he is describing
+is not properly an exact one, but one that is involved in acceptance
+of the soldier's status.--[H.W.F.]
+
+It seems to us (by virtue of this 'historical accident') that in such
+a phrase as the _implied_ or _implicit conditions_ of a contract,
+there is a recognized difference of meaning in the two words.
+_Implied_ conditions, though unexpressed, need not be hidden, they are
+rather such as any one who agreed to the main stipulation would
+recognize as involved; and the word _implied_ might even carry the
+plea that they were unspecified because openly apparent. On the other
+hand _implicit_ conditions are rather such as are unsuspected and in a
+manner hidden.--[ED.]
+
+
+
+
+PRACTICALLY
+
+A correspondent complains that the adverb 'almost' is being supplanted
+by 'practically'. 'The true meaning of "practically" (he writes) is
+"in practice" as opposed to "in theory" or "in thought"; for instance,
+_Questions which are theoretically interesting to thoughtful people
+and practically to every one_, or again, _He loves himself
+contemplatively by knowing as he is known and practically by loving as
+he is loved._' And he finds fault with the _O.E.D._, whence he takes
+his quotations, for not condemning such phrases as these, _The
+application was supported by practically all the creditors_, and, _He
+has been very ill but is now practically well again_.
+
+The word is no doubt abused and intrudes everywhere. _The Times_
+writes of a recent gale, _Considerable damage was done by the gale in
+practically every parish in Jersey_, and again of a bridge on the
+Seine that _The structure has practically been swept away_; but it
+seems that in the sense of 'for practical purposes' it can be defended
+as a useful word. For instance, a friend, leaving your house at night
+to walk home, says, _It is full moon, isn't it?_ and you reply
+_Practically_, meaning that it is full enough for his purpose. You
+might say _nearabouts_ or _thereabouts_ or _sufficiently_, but you
+cannot say _almost_ or _nearly_ without implying that you know the
+full moon to be nearly due and not past. In such cases it might be
+argued that 'practically' is truly opposed to 'theoretically', but
+'actually' is rather its opposite. 'Practically' implies an undefined
+margin of error which does not affect the situation.
+
+
+
+
+LITERALLY
+
+A correspondent quotes: _For the last three years I literally coined
+money_, and, _My hair literally stood on end_. The common misuse of
+this word is so absurd that it would not be worth while to protest
+against it, if its daily appearance in every newspaper did not show
+that it was tolerated by educated people. Mr. Fowler writes:
+
+'We have come to such a pass with this emphasizer that where the truth
+would require us to acknowledge our exaggeration with, "not literally,
+of course, but in a manner of speaking", we do not hesitate to insert
+the very word that we ought to be at pains to repudiate; such false
+coin makes honest traffic in words impossible. _If the Home Rule Bill
+is passed, the 300,000 Unionists of the South and West of Ireland will
+be_ literally thrown to the wolves. _The strong "tête-de-pont"
+fortifications were rushed by our troops, and a battalion crossed the
+bridge_ literally on the enemy's shoulders. In both, _practically_ or
+_virtually_, opposites of _literally_, would have stood.'
+
+
+
+
+INFINITELY
+
+This word, like _infiniment_ in French, is commonly used for
+'extremely', and it is pedantic to object to it by insisting always on
+its full logical meaning; but it should be avoided where measurable
+quantities are spoken of; for instance, one may say _to indoctrinate
+the mob with philosophical notions does infinite harm_, but to say
+that _England is infinitely more populous than Australia_ is absurd.
+That one can rightly call atoms infinitely small means that they are
+to our senses immeasurable, and the word, as it here carries wonder,
+may, like other conversational expletives, have an emotional force,
+and can therefore be sometimes well used even where its exaggeration
+is apparent. As when a man heightens some assertion with a 'damnable,'
+he intends by the colour of his speech to warn you that his conviction
+is profound, and that he is in no mood to listen to reason, so the
+exaggeration of 'infinite' may have special value by giving emotional
+colour to a sentence.
+
+On the above principles there will be doubtful cases. For instance,
+was Mr. Lloyd George justified the other day in saying, _If you cut
+down expenditure to the lowest possible limit, the war debt would
+still be so enormous that ... the expenditure for this country is
+bound to be infinitely greater than before the war?--The Times_, Oct.
+23.
+
+
+
+
+THE AMERICAN INVITATION
+
+The English reply to the American Invitation was despatched last
+October. The text of it is as follows:
+
+'To Professor Fred Newton Scott.
+
+DEAR SIR,
+
+We thank you heartily for the letter addressed to us by Professors
+James Wilson Bright, Albert Stanburrough Cook, Charles Hall Grandgent,
+Robert Underwood Johnson, John Livingston Lowes, John Matthews Manly,
+Charles Grosvenor Osgood, and yourself.
+
+We regret that so long a time should have passed before our joint
+reply could be despatched: but our intentions have in the meanwhile
+been privately made known to you. We now write to give you formal
+assurance of the interest and sympathy with which your proposal has
+been received, and to thank you for your generous suggestion that we
+in the mother country of our language should take the lead in
+furthering the project.
+
+Since then we, both Americans and British, are in complete agreement
+as to our aims, we have only to decide on the best means and devise
+the best machinery that we can to attain them.
+
+We feel that this practical question needs very careful consideration
+and consultation: and we have therefore appointed a small committee of
+five persons on our side to confer and draw up a table of suggestions
+which can be submitted to you. We would invite you on your side to
+take a similar step: we could then compare our respective proposals
+and agree upon a basis on which to work. There are two dangers which
+we feel it especially desirable to avoid: one is the establishment of
+an authoritative academy, tending inevitably to divorce the literary
+from the spoken language; the other is the creation of a body so large
+as to be unmanageable. We have also to cope with the difficulty of
+co-ordinating the activities of members representing many branches in
+widely scattered territories. Our committee for consultation on these
+matters consists of Henry Bradley, Robert Bridges, A.T.Q. Couch, Henry
+Newbolt, and J. Dover Wilson: and we shall be glad if you can tell us
+that you approve of our preliminary step and will be willing to
+consider our suggestions when they are ready.
+
+                       (Signed)        BALFOUR.
+                                       ROBERT BRIDGES.
+                                       HENRY NEWBOLT.'
+
+A first meeting of the consulting committee mentioned in the above
+reply was held in Corpus Christi College, Oxford, on Nov. 1st ult.
+
+Present: Henry Bradley, Robert Bridges, Sir Henry Newbolt, and J.
+Dover Wilson.
+
+Discussion was confined to practical questions of organization, and
+Sir Henry Newbolt undertook to draft a letter in which the sense of
+
+
+
+
+
+End of the Project Gutenberg EBook of Three Articles on Metaphor
+by Society for Pure English
+
+*** END OF THIS PROJECT GUTENBERG EBOOK THREE ARTICLES ON METAPHOR ***
+
+***** This file should be named 13311.txt or 13311.zip *****
+This and all associated files of various formats will be found in:
+        http://www.gutenberg.net/1/3/3/1/13311/
+
+Produced by David Starner, Project Manager, Keith M. Eckrich,
+Post-Processor, and the Project Gutenberg Online Distributed
+Proofreaders Team
+
+
+Updated editions will replace the previous one--the old editions
+will be renamed.
+
+Creating the works from public domain print editions means that no
+one owns a United States copyright in these works, so the Foundation
+(and you!) can copy and distribute it in the United States without
+permission and without paying copyright royalties.  Special rules,
+set forth in the General Terms of Use part of this license, apply to
+copying and distributing Project Gutenberg-tm electronic works to
+protect the PROJECT GUTENBERG-tm concept and trademark.  Project
+Gutenberg is a registered trademark, and may not be used if you
+charge for the eBooks, unless you receive specific permission.  If you
+do not charge anything for copies of this eBook, complying with the
+rules is very easy.  You may use this eBook for nearly any purpose
+such as creation of derivative works, reports, performances and
+research.  They may be modified and printed and given away--you may do
+practically ANYTHING with public domain eBooks.  Redistribution is
+subject to the trademark license, especially commercial
+redistribution.
+
+
+
+*** START: FULL LICENSE ***
+
+THE FULL PROJECT GUTENBERG LICENSE
+PLEASE READ THIS BEFORE YOU DISTRIBUTE OR USE THIS WORK
+
+To protect the Project Gutenberg-tm mission of promoting the free
+distribution of electronic works, by using or distributing this work
+(or any other work associated in any way with the phrase "Project
+Gutenberg"), you agree to comply with all the terms of the Full Project
+Gutenberg-tm License (available with this file or online at
+http://gutenberg.net/license).
+
+
+Section 1.  General Terms of Use and Redistributing Project Gutenberg-tm
+electronic works
+
+1.A.  By reading or using any part of this Project Gutenberg-tm
+electronic work, you indicate that you have read, understand, agree to
+and accept all the terms of this license and intellectual property
+(trademark/copyright) agreement.  If you do not agree to abide by all
+the terms of this agreement, you must cease using and return or destroy
+all copies of Project Gutenberg-tm electronic works in your possession.
+If you paid a fee for obtaining a copy of or access to a Project
+Gutenberg-tm electronic work and you do not agree to be bound by the
+terms of this agreement, you may obtain a refund from the person or
+entity to whom you paid the fee as set forth in paragraph 1.E.8.
+
+1.B.  "Project Gutenberg" is a registered trademark.  It may only be
+used on or associated in any way with an electronic work by people who
+agree to be bound by the terms of this agreement.  There are a few
+things that you can do with most Project Gutenberg-tm electronic works
+even without complying with the full terms of this agreement.  See
+paragraph 1.C below.  There are a lot of things you can do with Project
+Gutenberg-tm electronic works if you follow the terms of this agreement
+and help preserve free future access to Project Gutenberg-tm electronic
+works.  See paragraph 1.E below.
+
+1.C.  The Project Gutenberg Literary Archive Foundation ("the Foundation"
+or PGLAF), owns a compilation copyright in the collection of Project
+Gutenberg-tm electronic works.  Nearly all the individual works in the
+collection are in the public domain in the United States.  If an
+individual work is in the public domain in the United States and you are
+located in the United States, we do not claim a right to prevent you from
+copying, distributing, performing, displaying or creating derivative
+works based on the work as long as all references to Project Gutenberg
+are removed.  Of course, we hope that you will support the Project
+Gutenberg-tm mission of promoting free access to electronic works by
+freely sharing Project Gutenberg-tm works in compliance with the terms of
+this agreement for keeping the Project Gutenberg-tm name associated with
+the work.  You can easily comply with the terms of this agreement by
+keeping this work in the same format with its attached full Project
+Gutenberg-tm License when you share it without charge with others.
+
+1.D.  The copyright laws of the place where you are located also govern
+what you can do with this work.  Copyright laws in most countries are in
+a constant state of change.  If you are outside the United States, check
+the laws of your country in addition to the terms of this agreement
+before downloading, copying, displaying, performing, distributing or
+creating derivative works based on this work or any other Project
+Gutenberg-tm work.  The Foundation makes no representations concerning
+the copyright status of any work in any country outside the United
+States.
+
+1.E.  Unless you have removed all references to Project Gutenberg:
+
+1.E.1.  The following sentence, with active links to, or other immediate
+access to, the full Project Gutenberg-tm License must appear prominently
+whenever any copy of a Project Gutenberg-tm work (any work on which the
+phrase "Project Gutenberg" appears, or with which the phrase "Project
+Gutenberg" is associated) is accessed, displayed, performed, viewed,
+copied or distributed:
+
+This eBook is for the use of anyone anywhere at no cost and with
+almost no restrictions whatsoever.  You may copy it, give it away or
+re-use it under the terms of the Project Gutenberg License included
+with this eBook or online at www.gutenberg.net
+
+1.E.2.  If an individual Project Gutenberg-tm electronic work is derived
+from the public domain (does not contain a notice indicating that it is
+posted with permission of the copyright holder), the work can be copied
+and distributed to anyone in the United States without paying any fees
+or charges.  If you are redistributing or providing access to a work
+with the phrase "Project Gutenberg" associated with or appearing on the
+work, you must comply either with the requirements of paragraphs 1.E.1
+through 1.E.7 or obtain permission for the use of the work and the
+Project Gutenberg-tm trademark as set forth in paragraphs 1.E.8 or
+1.E.9.
+
+1.E.3.  If an individual Project Gutenberg-tm electronic work is posted
+with the permission of the copyright holder, your use and distribution
+must comply with both paragraphs 1.E.1 through 1.E.7 and any additional
+terms imposed by the copyright holder.  Additional terms will be linked
+to the Project Gutenberg-tm License for all works posted with the
+permission of the copyright holder found at the beginning of this work.
+
+1.E.4.  Do not unlink or detach or remove the full Project Gutenberg-tm
+License terms from this work, or any files containing a part of this
+work or any other work associated with Project Gutenberg-tm.
+
+1.E.5.  Do not copy, display, perform, distribute or redistribute this
+electronic work, or any part of this electronic work, without
+prominently displaying the sentence set forth in paragraph 1.E.1 with
+active links or immediate access to the full terms of the Project
+Gutenberg-tm License.
+
+1.E.6.  You may convert to and distribute this work in any binary,
+compressed, marked up, nonproprietary or proprietary form, including any
+word processing or hypertext form.  However, if you provide access to or
+distribute copies of a Project Gutenberg-tm work in a format other than
+"Plain Vanilla ASCII" or other format used in the official version
+posted on the official Project Gutenberg-tm web site (www.gutenberg.net),
+you must, at no additional cost, fee or expense to the user, provide a
+copy, a means of exporting a copy, or a means of obtaining a copy upon
+request, of the work in its original "Plain Vanilla ASCII" or other
+form.  Any alternate format must include the full Project Gutenberg-tm
+License as specified in paragraph 1.E.1.
+
+1.E.7.  Do not charge a fee for access to, viewing, displaying,
+performing, copying or distributing any Project Gutenberg-tm works
+unless you comply with paragraph 1.E.8 or 1.E.9.
+
+1.E.8.  You may charge a reasonable fee for copies of or providing
+access to or distributing Project Gutenberg-tm electronic works provided
+that
+
+- You pay a royalty fee of 20% of the gross profits you derive from
+     the use of Project Gutenberg-tm works calculated using the method
+     you already use to calculate your applicable taxes.  The fee is
+     owed to the owner of the Project Gutenberg-tm trademark, but he
+     has agreed to donate royalties under this paragraph to the
+     Project Gutenberg Literary Archive Foundation.  Royalty payments
+     must be paid within 60 days following each date on which you
+     prepare (or are legally required to prepare) your periodic tax
+     returns.  Royalty payments should be clearly marked as such and
+     sent to the Project Gutenberg Literary Archive Foundation at the
+     address specified in Section 4, "Information about donations to
+     the Project Gutenberg Literary Archive Foundation."
+
+- You provide a full refund of any money paid by a user who notifies
+     you in writing (or by e-mail) within 30 days of receipt that s/he
+     does not agree to the terms of the full Project Gutenberg-tm
+     License.  You must require such a user to return or
+     destroy all copies of the works possessed in a physical medium
+     and discontinue all use of and all access to other copies of
+     Project Gutenberg-tm works.
+
+- You provide, in accordance with paragraph 1.F.3, a full refund of any
+     money paid for a work or a replacement copy, if a defect in the
+     electronic work is discovered and reported to you within 90 days
+     of receipt of the work.
+
+- You comply with all other terms of this agreement for free
+     distribution of Project Gutenberg-tm works.
+
+1.E.9.  If you wish to charge a fee or distribute a Project Gutenberg-tm
+electronic work or group of works on different terms than are set
+forth in this agreement, you must obtain permission in writing from
+both the Project Gutenberg Literary Archive Foundation and Michael
+Hart, the owner of the Project Gutenberg-tm trademark.  Contact the
+Foundation as set forth in Section 3 below.
+
+1.F.
+
+1.F.1.  Project Gutenberg volunteers and employees expend considerable
+effort to identify, do copyright research on, transcribe and proofread
+public domain works in creating the Project Gutenberg-tm
+collection.  Despite these efforts, Project Gutenberg-tm electronic
+works, and the medium on which they may be stored, may contain
+"Defects," such as, but not limited to, incomplete, inaccurate or
+corrupt data, transcription errors, a copyright or other intellectual
+property infringement, a defective or damaged disk or other medium, a
+computer virus, or computer codes that damage or cannot be read by
+your equipment.
+
+1.F.2.  LIMITED WARRANTY, DISCLAIMER OF DAMAGES - Except for the "Right
+of Replacement or Refund" described in paragraph 1.F.3, the Project
+Gutenberg Literary Archive Foundation, the owner of the Project
+Gutenberg-tm trademark, and any other party distributing a Project
+Gutenberg-tm electronic work under this agreement, disclaim all
+liability to you for damages, costs and expenses, including legal
+fees.  YOU AGREE THAT YOU HAVE NO REMEDIES FOR NEGLIGENCE, STRICT
+LIABILITY, BREACH OF WARRANTY OR BREACH OF CONTRACT EXCEPT THOSE
+PROVIDED IN PARAGRAPH F3.  YOU AGREE THAT THE FOUNDATION, THE
+TRADEMARK OWNER, AND ANY DISTRIBUTOR UNDER THIS AGREEMENT WILL NOT BE
+LIABLE TO YOU FOR ACTUAL, DIRECT, INDIRECT, CONSEQUENTIAL, PUNITIVE OR
+INCIDENTAL DAMAGES EVEN IF YOU GIVE NOTICE OF THE POSSIBILITY OF SUCH
+DAMAGE.
+
+1.F.3.  LIMITED RIGHT OF REPLACEMENT OR REFUND - If you discover a
+defect in this electronic work within 90 days of receiving it, you can
+receive a refund of the money (if any) you paid for it by sending a
+written explanation to the person you received the work from.  If you
+received the work on a physical medium, you must return the medium with
+your written explanation.  The person or entity that provided you with
+the defective work may elect to provide a replacement copy in lieu of a
+refund.  If you received the work electronically, the person or entity
+providing it to you may choose to give you a second opportunity to
+receive the work electronically in lieu of a refund.  If the second copy
+is also defective, you may demand a refund in writing without further
+opportunities to fix the problem.
+
+1.F.4.  Except for the limited right of replacement or refund set forth
+in paragraph 1.F.3, this work is provided to you 'AS-IS', WITH NO OTHER
+WARRANTIES OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO
+WARRANTIES OF MERCHANTIBILITY OR FITNESS FOR ANY PURPOSE.
+
+1.F.5.  Some states do not allow disclaimers of certain implied
+warranties or the exclusion or limitation of certain types of damages.
+If any disclaimer or limitation set forth in this agreement violates the
+law of the state applicable to this agreement, the agreement shall be
+interpreted to make the maximum disclaimer or limitation permitted by
+the applicable state law.  The invalidity or unenforceability of any
+provision of this agreement shall not void the remaining provisions.
+
+1.F.6.  INDEMNITY - You agree to indemnify and hold the Foundation, the
+trademark owner, any agent or employee of the Foundation, anyone
+providing copies of Project Gutenberg-tm electronic works in accordance
+with this agreement, and any volunteers associated with the production,
+promotion and distribution of Project Gutenberg-tm electronic works,
+harmless from all liability, costs and expenses, including legal fees,
+that arise directly or indirectly from any of the following which you do
+or cause to occur: (a) distribution of this or any Project Gutenberg-tm
+work, (b) alteration, modification, or additions or deletions to any
+Project Gutenberg-tm work, and (c) any Defect you cause.
+
+
+Section  2.  Information about the Mission of Project Gutenberg-tm
+
+Project Gutenberg-tm is synonymous with the free distribution of
+electronic works in formats readable by the widest variety of computers
+including obsolete, old, middle-aged and new computers.  It exists
+because of the efforts of hundreds of volunteers and donations from
+people in all walks of life.
+
+Volunteers and financial support to provide volunteers with the
+assistance they need, is critical to reaching Project Gutenberg-tm's
+goals and ensuring that the Project Gutenberg-tm collection will
+remain freely available for generations to come.  In 2001, the Project
+Gutenberg Literary Archive Foundation was created to provide a secure
+and permanent future for Project Gutenberg-tm and future generations.
+To learn more about the Project Gutenberg Literary Archive Foundation
+and how your efforts and donations can help, see Sections 3 and 4
+and the Foundation web page at http://www.pglaf.org.
+
+
+Section 3.  Information about the Project Gutenberg Literary Archive
+Foundation
+
+The Project Gutenberg Literary Archive Foundation is a non profit
+501(c)(3) educational corporation organized under the laws of the
+state of Mississippi and granted tax exempt status by the Internal
+Revenue Service.  The Foundation's EIN or federal tax identification
+number is 64-6221541.  Its 501(c)(3) letter is posted at
+http://pglaf.org/fundraising.  Contributions to the Project Gutenberg
+Literary Archive Foundation are tax deductible to the full extent
+permitted by U.S. federal laws and your state's laws.
+
+The Foundation's principal office is located at 4557 Melan Dr. S.
+Fairbanks, AK, 99712., but its volunteers and employees are scattered
+throughout numerous locations.  Its business office is located at
+809 North 1500 West, Salt Lake City, UT 84116, (801) 596-1887, email
+business@pglaf.org.  Email contact links and up to date contact
+information can be found at the Foundation's web site and official
+page at http://pglaf.org
+
+For additional contact information:
+     Dr. Gregory B. Newby
+     Chief Executive and Director
+     gbnewby@pglaf.org
+
+Section 4.  Information about Donations to the Project Gutenberg
+Literary Archive Foundation
+
+Project Gutenberg-tm depends upon and cannot survive without wide
+spread public support and donations to carry out its mission of
+increasing the number of public domain and licensed works that can be
+freely distributed in machine readable form accessible by the widest
+array of equipment including outdated equipment.  Many small donations
+($1 to $5,000) are particularly important to maintaining tax exempt
+status with the IRS.
+
+The Foundation is committed to complying with the laws regulating
+charities and charitable donations in all 50 states of the United
+States.  Compliance requirements are not uniform and it takes a
+considerable effort, much paperwork and many fees to meet and keep up
+with these requirements.  We do not solicit donations in locations
+where we have not received written confirmation of compliance.  To
+SEND DONATIONS or determine the status of compliance for any
+particular state visit http://pglaf.org
+
+While we cannot and do not solicit contributions from states where we
+have not met the solicitation requirements, we know of no prohibition
+against accepting unsolicited donations from donors in such states who
+approach us with offers to donate.
+
+International donations are gratefully accepted, but we cannot make
+any statements concerning tax treatment of donations received from
+outside the United States.  U.S. laws alone swamp our small staff.
+
+Please check the Project Gutenberg Web pages for current donation
+methods and addresses.  Donations are accepted in a number of other
+ways including including checks, online payments and credit card
+donations.  To donate, please visit: http://pglaf.org/donate
+
+
+Section 5.  General Information About Project Gutenberg-tm electronic
+works.
+
+Professor Michael S. Hart is the originator of the Project Gutenberg-tm
+concept of a library of electronic works that could be freely shared
+with anyone.  For thirty years, he produced and distributed Project
+Gutenberg-tm eBooks with only a loose network of volunteer support.
+
+Project Gutenberg-tm eBooks are often created from several printed
+editions, all of which are confirmed as Public Domain in the U.S.
+unless a copyright notice is included.  Thus, we do not necessarily
+keep eBooks in compliance with any particular paper edition.
+
+Most people start at our Web site which has the main PG search facility:
+
+     http://www.gutenberg.net
+
+This Web site includes information about Project Gutenberg-tm,
+including how to make donations to the Project Gutenberg Literary
+Archive Foundation, how to help produce our new eBooks, and how to
+subscribe to our email newsletter to hear about new eBooks.
+

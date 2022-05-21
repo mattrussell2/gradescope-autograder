@@ -1,0 +1,898 @@
+The Project Gutenberg EBook of Transactions of the American Society of
+Civil Engineers, Vol. LXVIII, Sept. 1910, by Alfred Noble
+
+This eBook is for the use of anyone anywhere at no cost and with
+almost no restrictions whatsoever.  You may copy it, give it away or
+re-use it under the terms of the Project Gutenberg License included
+with this eBook or online at www.gutenberg.org
+
+
+Title: Transactions of the American Society of Civil Engineers, Vol. LXVIII, Sept. 1910
+       The New York Tunnel Extension of the Pennsylvania Railroad.
+       The East River Division. Paper No. 1152
+
+Author: Alfred Noble
+
+Release Date: March 28, 2006 [EBook #18065]
+
+Language: English
+
+Character set encoding: ASCII
+
+*** START OF THIS PROJECT GUTENBERG EBOOK TRANSACTIONS OF THE AMERICAN ***
+
+
+
+
+Produced by Juliet Sutherland, Sigal Alon and the Online
+Distributed Proofreading Team at http://www.pgdp.net
+
+
+
+
+
+
+
+
+
+AMERICAN SOCIETY OF CIVIL ENGINEERS
+
+INSTITUTED 1852
+
+
+TRANSACTIONS
+
+Paper No. 1152
+
+
+THE NEW YORK TUNNEL EXTENSION OF
+THE PENNSYLVANIA RAILROAD.
+
+THE EAST RIVER DIVISION.
+
+BY ALFRED NOBLE, PAST-PRESIDENT, AM. SOC. C. E.
+
+
+
+
+A general outline of the work included in this Division has been given
+by General C. W. Raymond, M. Am. Soc. C. E., in the first paper of the
+series. The few pages following are intended only as a note to connect
+his paper with the more detailed descriptions of the execution of the
+work, which will be supplied by the Resident Engineers in immediate
+charge.
+
+Soon after the Company's project was made public, in the latter part of
+1901, borings were begun in the East River, and a few weeks later in
+Manhattan and Long Island City. A preliminary base line was measured on
+the Manhattan side, and temporary transit stations were established on
+buildings from which all borings in the river were located. The river
+borings were all wash-borings made from a pile-driver boat. After the
+results were plotted on the map, contour lines were drawn to indicate
+the rock surface, and profiles along the tunnel lines were plotted from
+the contours; as the borings were preliminary to the final location of
+the tunnels, and in many cases at some distance from the tunnel lines,
+considerable divergence from the actual rock surface was expected, and
+realized in a few places, yet on the whole the agreement was very good.
+The borings revealed two depressions or channels where the rock surface
+passed below the grade of the projected tunnels, these depressions being
+separated by a rock reef which extends down stream from Blackwell's
+Island. In 32d and 33d Streets in Manhattan, borings were made from the
+river to the station site at intervals of about 100 ft., wash-borings
+and core-borings alternating. In Long Island City, where the tunnel
+lines were to pass diagonally under the passenger station building and
+passenger yard of the Long Island Railroad and under streets and private
+property, the arrangement of borings was less regular, although the
+alternation of wash-borings and core-borings was carried out as far as
+practicable. After the final location of the work, additional borings
+were made, particularly on shaft sites and also along the approaches and
+in the Sunnyside Yard, Long Island City.
+
+A triangulation was carried across the river with a measured base on
+each side. It was impossible to measure directly between the extremities
+of either base. The bases were measured with 100-ft. steel tapes,
+supported every 20 ft., stretched with a uniform pull, and frequently
+compared with standardized tapes. On account of the crowded condition of
+the streets during the hours of daylight and evening, most of the work
+was done between 10 P. M. and 5 A. M. Similar measurements were made in
+the streets along the tunnel lines. Angle readings were repeated many
+times, as is usual in such work. Fig. 1 shows the triangulation, the
+street measurements being omitted.
+
+Levels were first transmitted across the river by simultaneous
+observations of the river surface; then by several repetitions, across
+Blackwell's Island and the narrow channels on each side, where the
+longest sights were about 1100 ft.; and, finally, by several lines
+through the tunnel of the East River Gas Company at 71st Street.
+
+The franchise granted by the City of New York provided for the sale to
+the Railroad Company of the portions of 32d Street between Seventh and
+Eighth Avenues, and between Eighth and Ninth Avenues. Later, the Company
+acquired by purchase the portion of 32d Street between Ninth and Tenth
+Avenues. The franchise granted sub-surface rights under streets around
+the station site to within 19 ft. of the street surface under Seventh,
+Eighth, and Ninth Avenues; to within 30 in. of the street surface under
+31st and 33d Streets, except that, under the sidewalks opposite the
+station, that is to say, the south sidewalk in 31st Street and the north
+sidewalk in 33d Street, the construction must be at least 5 ft. below
+the street surface. In carrying out the work, full use of these rights
+was made under Eighth Avenue, but only under such portions of Seventh
+and Ninth Avenues as were indispensable for access by trains to the
+station area. It was not practicable to make full use of the rights
+granted under 31st and 33d Streets without incurring great expense for
+supporting adjacent buildings or for injuries to them, and, after
+careful consideration, the arrangement shown in the plans was decided
+on, making about 45% of the sub-surface area under these streets
+available at track level.
+
+[Illustration: FIG. 1.--Triangulation System East River Tunnel]
+
+The work of the East River Division at this site embraced the excavation
+to the depth necessary for railroad tracks, and the building of a
+retaining wall extending in 31st Street from the east side of Ninth
+Avenue to the west side of Seventh Avenue, thence northward along
+Seventh Avenue for a distance of 155.5 ft.; also a retaining wall in 33d
+Street from the west side of Seventh Avenue to the east side of Ninth
+Avenue, and thence southward along Ninth Avenue for a distance of 136.3
+ft. This work was placed under contract June 21st, 1904, with the New
+York Contracting and Trucking Company, and later assigned by that
+company to the New York Contracting Company-Pennsylvania Terminal, and
+was carried out under the direction of George C. Clarke, M. Am. Soc.
+C. E., as Resident Engineer, by whom it will be described in detail.
+
+[Illustration: PLATE IX.--Map of Portion of Manhattan Island from 23d to
+40th Streets, Showing Former Topography From Map Made by Gen. Egbert L.
+Viele in 1865]
+
+The station tracks leading eastward from the station will converge under
+Seventh Avenue and for some distance farther east, and pass into two
+three-track tunnels, one under 32d Street and the other under 33d
+Street, at the respective distances of 192 and 402 ft. from Seventh
+Avenue. A typical cross-section of the three-track tunnel is shown on
+Plate XII. The converging sections were considered as easterly
+extensions of the station, and were not included in the East River
+Division. Within a few hundred feet (Plate XIV), the tracks are reduced
+to two, each passing into a single tube, the two tunnels under each
+street being formed in one excavation, the distance between center lines
+of tunnels being 20 ft. 4 in. This construction has been termed a twin
+tunnel, and a typical cross-section is shown on Plate XII. The tunnels
+continue on tangents under the streets to Second Avenue where they curve
+to the left by 1 deg. 30' curves, passing under private property, gradually
+diverging and passing through shafts just east of First Avenue. About
+350 ft. west of the shaft, the divergence of the two lines from each
+street becomes sufficient to leave a rock dividing wall between them,
+and thence eastward each tunnel is formed in a separate excavation. A
+typical cross-section of the two separated tunnels is shown on Plate
+XII.
+
+It thus appears that eastward from the station the lines constitute a
+four-track railroad, each track being in a separate tunnel; for
+convenience of the work these lines were designated _A_, _B_, _C_, and
+_D_, from north to south.
+
+[Illustration: PLATE X.--Manhattan Shaft, Lines _A_ and _B_]
+
+At an early date, when the organization of the engineering staff was
+taken up, Charles L. Harrison, M. Am. Soc. C. E., was appointed
+Principal Assistant Engineer. He was directly in charge of all parts of
+the work, and all Resident Engineers reported to him. George Leighton,
+M. Am. Soc. C. E., was placed in charge as Resident Engineer of the 33d
+Street lines from the west end of the three-track tunnel to the shaft
+and also eastward from the shaft under East River. As he was not then
+able to endure the effects of compressed air, the work under the river
+was transferred to James H. Brace, M. Am. Soc. C. E., as Resident
+Engineer. Before the completion of the land tunnels under 33d Street,
+Mr. Leighton accepted more responsible employment elsewhere, and Mr.
+Brace assumed charge of them also. Francis Mason, M. Am. Soc. C. E., was
+in charge as Resident Engineer of the 32d Street lines during their
+entire construction, and also of the tunnels extending these lines
+eastward from the First Avenue shaft under the river.
+
+The work just described as the 32d and 33d Street lines, terminating at
+the easterly end at the First Avenue shafts, was placed under contract
+on May 29th, 1905, with the United Engineering and Contracting Company.
+The plans then provided for three-track tunnels from the west end of the
+work under the contract eastward 1,628 ft. in 32d Street and 1,418 ft.
+in 33d Street to the west line of Fifth Avenue, with a descending grade
+of 0.4%; this was to constitute, in a degree, an extension of the
+station, where trains could stand without brakes while awaiting signals
+to proceed to or from the station. From Fifth Avenue eastward to the
+lowest point under the river, the grade was to be 1.5% on all lines.
+Later, during construction, when excavating westward under 33d Street
+from Fifth Avenue, the surface of the rock was broken through,
+disclosing quicksand; within the next few days trial drill holes through
+the tunnel roof at 32d Street and Fifth Avenue showed a thin cover with
+quicksand above it. The conditions had been indicated in a general way
+by borings made before construction was begun, but they proved to be
+rather worse than anticipated. On the topographical map of Manhattan
+Island, made by General Egbert L. Viele in 1865, is shown a watercourse
+which had its source near what is now Broadway and 44th Street, flowing
+thence along the west side and south end of Murray Hill, passing under
+the present site of the Waldorf-Astoria Hotel, crossing 33d Street at
+the point where the rock surface was broken through in the tunnel
+excavation, as above stated, crossing 32d Street at its intersection
+with Fifth Avenue, where trial drilling showed thin rock cover over the
+tunnel excavation, passing thence eastward a short distance south of 32d
+Street, which it recrossed near Third Avenue, and finally discharging
+into the East River near 34th Street, and a little west of the present
+First Avenue. The ancient creek apparently followed the course of a
+valley in the rock, the valley having become filled to a considerable
+depth with very fine quicksand. This concurrence of depressions in the
+rock surface with the watercourse shown on Viele's map was noted in so
+many places and the difficulties of construction were so serious at
+these places, that a section of the map showing the old topography along
+and adjacent to the station and tunnel lines is reproduced in Plate IX.
+
+[Illustration: PLATE XI.--Long Island Shaft. Lines _A_ and _B_]
+
+The unfavorable conditions developed at Fifth Avenue affected both the
+construction of the tunnels and the maintenance of adjacent buildings.
+It would be necessary to construct the tunnels in open cut for a large
+part of the way westward, causing serious inconvenience to the public;
+the buildings were mostly of the older class, founded in earth, but
+there were several modern high buildings with foundations in the same
+material; some of these had been built since the tunnels were planned.
+In view of these added risks and the increased cost of construction, the
+value of the three-track construction was reconsidered, and two
+important changes were made in the plans. The first of these was to
+continue the twin tunnel westward to Sixth Avenue in 32d Street, and to
+a point 180 ft. west of Sixth Avenue in 33d Street; the twin tunnel
+being 9-1/2 ft. less in height than the three-track tunnel and 9 ft.
+narrower, the change reduced the difficulties considerably. Where the
+three-track tunnel was thus eliminated, there was no longer objection to
+a steeper grade, so that, going eastward from the station, a grade of
+0.8% in 33d Street and 0.9% in 32d Street was substituted for the
+original 0.4% grade. From the west line of Fifth Avenue eastward short
+sections with descending grades of 0.3% connect with the original 1.5%
+grade near Madison Avenue. The effect of these two changes--type of
+tunnel and grade--was to lower the roof of the tunnels at Fifth Avenue
+about 15 ft., which made it practicable to avoid open cutting east of
+Sixth Avenue.
+
+A full account of the construction of the cross-town tunnels will be
+given by the Resident Engineers.
+
+Permanent shafts were made on both sides of the East River, those in
+Manhattan being located a few feet east of First Avenue, and those in
+Long Island City being located, one in the so-called Annex Slip, the
+other in the pier just south of it. The two railroad lines coming from
+32d Street in Manhattan, and curving to the left at Second Avenue, are
+about 34 ft. apart between centers at First Avenue, and it was
+convenient to make the shaft large enough to cover both lines. Borings
+had shown that the excavation for the tunnels would break out of the
+rock about 200 ft. east of First Avenue. It was desirable to carry the
+tunnel excavation eastward from the shaft in normal air far enough to
+permit of building at least 50 ft. of tunnel and installing air-locks,
+so that compressed air might be available when the rock surface was
+broken through. The location adopted, and shown on Plate XIII, had the
+further advantages that the rock surface was several feet above the
+level of the top of the tunnels, and access to the river for receiving
+and discharging materials could be had without crossing any street.
+Similar reasons governed the location of the north shaft for the lines
+from 33d Street. On the Long Island side of the river there were only
+two feasible locations meeting these conditions, particularly in respect
+to a safe thickness of rock above the tunnels, one near the pierhead
+line, the other just outside the bulkhead line, and for many minor
+reasons the latter was preferable. The center lines of each pair of
+tunnels were 37 ft. apart, and each shaft, therefore, was made to cross
+both lines of a pair, the same as on Manhattan side of the river. It was
+not expected, however, that the Long Island shafts could be built
+conveniently or the tunnels begun from them in normal air.
+
+The decision to make the shafts of permanent construction was based not
+only on the desirability of having access to and egress from the tunnels
+near the banks of the river for convenience of the workmen or exit for
+passengers in case of accident, but to facilitate ventilation; these
+locations divide the entire lengths of tunnels east of the station into
+three parts, two of which were approximately 4,000 ft. each, and the
+other about 5,500 ft. The accident risk was believed to be very small,
+while much weight was given to the feature of facilitating ventilation.
+Further studies have enhanced the importance attached to ventilation,
+and it is now intended to provide appliances for mechanical ventilation
+at all shafts. The plans of the shafts are shown on Plates X and XI. The
+caissons for the shafts are of structural steel, with double walls,
+filled between with concrete, including a cross-wall between and
+parallel to the tunnels. All these structures were fitted for sinking
+with compressed air, if that should prove necessary.
+
+Although borings had shown that rock would be found at all the shaft
+sites several feet above the tunnel level, it could not be determined in
+advance of excavation whether the caissons would have to be sunk to full
+depth; if sound, unfissured rock were found, the sinking could be
+stopped above the tunnel level; but, if not, the caissons, in any case,
+would have to be sunk far enough to permit placing a water-tight floor
+below the tunnels, and the tunnels themselves begun through openings in
+the side-walls of the caisson; such openings, therefore, closed by
+removable bulkheads, were provided in all caissons.
+
+[Illustration: PLATE XII.--Typical Tunnel Sections]
+
+As already stated, the grade of 1.5% from Fifth Avenue eastward was
+fixed with reference to the lowest point of the river bed in order to
+give the requisite cover over the tunnels at the deepest point of the
+channel on the west side of the reef, where the river bottom was about
+60 ft. below mean high tide for a short distance. On the other hand, as
+the use of compressed air in building the tunnels was anticipated, an
+excessive depth below the water surface was to be avoided as far as
+possible; it was necessary, however, to continue the descending grade
+some further distance until the tunnels were mostly in rock, so that
+drainage sumps under the tunnels could be made readily. Eastward from
+the sumps the tunnels had a rising grade of 0.7% to the established
+bulkhead line on the Long Island side, giving a cover at the points
+where the tunnels enter rock, a short distance westward, of about 10 ft.
+(if the dredging plane should be fixed at some future time at 40 ft.
+below mean low tide, as may be reasonably anticipated). Eastward from
+the bulkhead line, Tunnels _A_, _B_, and _D_ have ascending grades of
+about 1.25%, while Tunnel _C_ rises at the rate of 1.9% in order to
+effect a crossing over Tunnel _B_ west of the portals. This feature was
+introduced in order to place the two west-bound tracks together through
+the Sunnyside Yard, and the heavier grade, being downward with the
+traffic, was not objectionable.
+
+The arrangement of grades and tracks in the approaches and in Sunnyside
+Yard would require the introduction of too much detail to be taken up
+here, but will be dealt with in the paper on the Sunnyside Yard.
+
+It was recognized from the inception of the project that the tunnels
+under the East River would be the most difficult and expensive section
+of the East River Division. The borings had shown a great variety of
+materials to be passed through, embracing quicksand, coarse sand,
+gravel, boulders, and bed-rock, as well as some clayey materials. (See
+Plate XIII.) The rock was usually covered by a few feet of sand, gravel,
+and boulders intermixed, but, in some places, where the rock surface was
+at some distance below the tunnel grade, the material met in tunneling
+was all quicksand; the nearest parallels in work previously done were
+some of the tunnels under the Thames, particularly the Blackwall tunnel,
+where open gravel was passed through. Before the plans for the East
+River tunnels were completed, work had been resumed, after many years'
+interruption, in the old Hudson River tunnels between 15th Street,
+Jersey City, and Morton Street, Manhattan, and sand materials were
+passed through for a short distance. These experiences satisfied nearly
+all the engineers in any way connected with the work that the shield
+method was the most suitable for the East River tunnels, and the plans
+for the work were based on its adoption. (See Plate XII for
+cross-sections, etc.) Other methods, as stated by General Raymond in the
+introductory paper, were advocated, particularly caisson constructions
+and the freezing process, the latter being urged very strongly, and,
+when proposals were invited, in October, 1903, bidders were informed
+that alternative methods would be taken into consideration.
+
+Bids were received and opened on December 15th, 1903. Only one bidder
+proposed to carry out the work on the basis of unit prices, but the
+prices were so low that the acceptance of the proposal was deemed
+inadmissible; no bid based on caisson methods was received; several
+offers were made to perform the work by the shield method, in accordance
+with the plans, for a percentage of its cost, and one was submitted, on
+a similar basis, covering the use of the freezing method. The firm of S.
+Pearson and Son, Limited, of London, England, submitted a proposal for
+building the tunnels by the shield method, on a modification of the
+percentage basis, and as this firm had built the Blackwall tunnel within
+the estimates of cost and was the only bidder having such an experience
+and record in work in any way similar to the East River tunnels,
+negotiations were continued between that firm and the railroad company.
+
+The original plans and specifications contemplated that all tunnels
+between the First Avenue shafts in Manhattan and East Avenue in Long
+Island City would be shield-driven, and that work would proceed
+simultaneously eastward from the First Avenue shafts and both eastward
+and westward from the Long Island City shafts located west of Front
+Street at the river, requiring twelve shields. When making their
+proposal, S. Pearson and Son, Limited, suggested that shields might be
+started from the east end of the work and arrive at the Front Street
+shafts as soon as these shafts could be completed, and proposed sinking
+a temporary shaft transversely across all four lines near the east end
+of the work just west of East Avenue, from which, within a short time,
+to drive toward Front Street by the use of shields. The railroad company
+accepted the suggestion for the additional shaft, although the greater
+part of the tunnels east of Front Street was built without shields.
+After several months of negotiation, a contract was entered into on July
+7th, 1904, with S. Pearson and Son, Incorporated, a corporation of the
+State of New York organized by the English firm for the purpose of
+entering into and carrying out this contract. The main features had been
+agreed upon, and work had begun about two months before. The contract
+embraced the permanent shafts in Manhattan and Long Island City, the
+tunnels between these shafts, and their extension eastward in Long
+Island City to East Avenue, including in all about 23,600 ft. of
+single-track tunnels. The contract had novel features, and seemed to be
+peculiarly suitable for the unknown risks and the unusual magnitude of
+the work. A fixed amount was named as contractor's profit. If the actual
+cost of the work when completed, including this sum named as
+contractor's profit, should be less than a certain estimated amount
+named in the contract, the contractor should have one-half of the
+saving. If, on the other hand, the actual cost of the completed work,
+including the fixed sum for contractor's profit, should exceed the
+estimated cost named in the contract, the contractor should pay one-half
+the excess and the railroad company the other half; the contractor's
+liability was limited, however, to the amount named for profit plus
+$1,000,000; or, in other words, his maximum money loss would be
+$1,000,000. Any further excess of cost was to be borne wholly by the
+railroad company. The management of the work, with some unimportant
+restrictions, was placed with the contractor; the relations of the
+engineer, as to plans, inspection, etc., were the same as in ordinary
+work, and the interest of the contractor to reduce cost was the same in
+kind as in ordinary work.
+
+[Illustration: PLATE XIII.--Plan and Profile. East River Tunnels]
+
+On account of the extent of the work embraced in this contract, and the
+dangerous exposure to compressed air required in most of it, it was
+divided into three residencies; two of these, including also the
+cross-town tunnels, have been described; the third, with S. H. Woodard,
+M. Am. Soc. C. E., as Resident Engineer, embraced all tunnels from the
+easterly end of the work near East Avenue in Long Island City to the
+meeting points under the river and also the permanent shafts in Long
+Island City. A few months after the execution of the principal contract,
+the work to be done was extended eastward 107.5 ft., across East Avenue.
+The extensions of the tunnels were built without cast-iron linings and
+with an interior cross-section of the same height as the tube tunnels,
+but somewhat narrower. The work was also extended westward from the
+First Avenue shafts to include the excavation of top headings in each
+tunnel for a distance of 100 ft. and an enlargement to full size for 50
+ft. The borings having shown that soft earth existed below the grade of
+the tops of the tunnel under the passenger station building of the Long
+Island Railroad on the east side of Front Street, and that earth of
+varying character would be met in places beyond the station building
+under the railroad tracks in the passenger yard and the street car
+tracks in Borden Avenue, it had been decided, before proposals were
+invited, to extend the metal lining eastward to East Avenue, at the east
+end of the work embraced in the original contract, where the rising
+tunnel grades approached the surface of the ground so closely that their
+further extension would be in open cut. In places where the tunnels were
+wholly in rock, the weight of the cast-iron tunnel lining was reduced
+43%; where the surface of the rock was below the top of the tunnel, but
+above the axis, the reduction of weight was somewhat less, about 25%;
+notwithstanding these savings, the cost of the tunnels was probably
+increased by the use of the cast-iron lining; on the other hand, when
+passing through bad ground, a section of tunnel could be made absolutely
+safe more quickly by erecting the lining as soon as a length of a few
+feet of tunnel was ready; under a crowded passenger yard, this feature
+had great value.
+
+The execution of the work under this contract will be described fully by
+the Resident Engineers.
+
+The plant assembled by the contractors is believed to be the most
+extensive ever placed on a single piece of work, and will be described
+in detail by their Managing Engineer, Henry Japp, M. Am. Soc. C. E.
+
+For convenience in receiving materials to be used in construction, and
+to facilitate the disposal of excavated materials, one pier was leased
+on the east side of the Hudson River, two on the west side of the East
+River and three on the east side. Excavated materials from the station,
+the cross-town tunnels, and the river tunnels, were placed on barges
+furnished by Mr. Henry Steers under several contracts embracing also
+the disposal of the materials. In the earlier part of the work, they
+were used as fill in the freight terminal of the Pennsylvania Railroad
+at Greenville on the west side of the Upper Bay; when the fill at this
+place was completed, the materials were sent to the tunnel company's
+yard on the Passaic, at Harrison, N. J., and a small part to the
+embankment in the Meadows Division. On account of the occasional closing
+of the Passaic by ice, this involved the possibility of, and to some
+extent resulted in, interruptions to the work of excavation. The
+contract for the cross-town tunnels carried an option in favor of the
+company to require the contractor for those tunnels to dispose of
+materials at a stated price, and in the latter part of 1907, when the
+excavation in these tunnels was being pushed rapidly, the railroad
+company, unwilling to incur the responsibility for delays during the
+winter, availed itself of this option. The disposal of materials was an
+important part of the work, and will be dealt with more fully by the
+Resident Engineers.
+
+[Illustration: PLATE XIV.--Map and Profile, Cross-Town Tunnels]
+
+At the time the contract was made with S. Pearson and Son, Incorporated,
+it had not been determined whether mechanical ventilation would be
+provided for the tunnels, and therefore the contract with that firm did
+not include the final concrete lining at the shafts, above the inverts
+of the tunnels. After the adoption of plans for mechanical ventilation,
+in the latter part of 1908, the plans for lining the shafts with
+concrete, including flues for conducting air to the tunnels, and
+stairways for ingress and egress, were completed, and the work was
+placed under contract; it will be described in detail by F. M. Green,
+Assoc. M. Am. Soc. C. E.
+
+At the east end of the work under the Pearson contract, the rising grade
+of the tunnels brought them so near the surface of the ground that their
+extension eastward could be carried out more readily in open cut than by
+tunneling. The locations of the portals could be varied somewhat, and
+they were built on rock which was found in rather narrow ridges at
+convenient places. Tunnels _B_ and _D_ have a common portal; Tunnels _A_
+and _C_ have separate ones, the portal for Tunnel _C_ being located
+about 800 ft, west of the others as a result of its crossing over Tunnel
+_B_, as already explained. Eastward from the portals, the track system
+expands, in order to provide connections with the tracks of the Long
+Island Railroad to and from Long Island City, with the New York
+Connecting Railroad and New England lines, and with the storage and
+cleaning yard known as the Sunnyside Yard extending to the west side of
+Woodside Avenue, 2-3/4 miles east of the East River. (Plate XV.) The
+yard and approaches are designed to avoid grade crossings by opposing
+trains. The various general features of the yard and tunnel approaches,
+bridge crossings, and street closings, have been described in sufficient
+detail by General Raymond in the introductory paper.
+
+[Illustration: PLATE XV.--Plan and Profile of Lines _A_ and _B_, and
+Sunnyside Yards]
+
+For convenience in placing the work under contract, a line was drawn 10
+ft. west of Thomson Avenue, dividing the work east of that embraced in
+the Pearson contract into two parts. The work west of the line was
+placed under the immediate direction of George C. Clarke, M. Am. Soc.
+C. E., as Resident Engineer, with Naughton Company and Arthur McMullen,
+Contractors; Mr. Louis H. Barker was Resident Engineer of the part east
+of the dividing line, with the Degnon Realty and Terminal Improvement
+Company as the principal contractors. The substructures of the several
+bridges in or across the yard were included in these contracts, but the
+superstructures were carried out by various bridge companies, and other
+minor features were executed by other contractors. More complete
+descriptions of the plans and of the execution of the work will be given
+by the Resident Engineers.
+
+
+
+
+
+
+End of the Project Gutenberg EBook of Transactions of the American Society
+of Civil Engineers, Vol. LXVIII, Sept. 1910, by Alfred Noble
+
+*** END OF THIS PROJECT GUTENBERG EBOOK TRANSACTIONS OF THE AMERICAN ***
+
+***** This file should be named 18065.txt or 18065.zip *****
+This and all associated files of various formats will be found in:
+        http://www.gutenberg.org/1/8/0/6/18065/
+
+Produced by Juliet Sutherland, Sigal Alon and the Online
+Distributed Proofreading Team at http://www.pgdp.net
+
+
+Updated editions will replace the previous one--the old editions
+will be renamed.
+
+Creating the works from public domain print editions means that no
+one owns a United States copyright in these works, so the Foundation
+(and you!) can copy and distribute it in the United States without
+permission and without paying copyright royalties.  Special rules,
+set forth in the General Terms of Use part of this license, apply to
+copying and distributing Project Gutenberg-tm electronic works to
+protect the PROJECT GUTENBERG-tm concept and trademark.  Project
+Gutenberg is a registered trademark, and may not be used if you
+charge for the eBooks, unless you receive specific permission.  If you
+do not charge anything for copies of this eBook, complying with the
+rules is very easy.  You may use this eBook for nearly any purpose
+such as creation of derivative works, reports, performances and
+research.  They may be modified and printed and given away--you may do
+practically ANYTHING with public domain eBooks.  Redistribution is
+subject to the trademark license, especially commercial
+redistribution.
+
+
+
+*** START: FULL LICENSE ***
+
+THE FULL PROJECT GUTENBERG LICENSE
+PLEASE READ THIS BEFORE YOU DISTRIBUTE OR USE THIS WORK
+
+To protect the Project Gutenberg-tm mission of promoting the free
+distribution of electronic works, by using or distributing this work
+(or any other work associated in any way with the phrase "Project
+Gutenberg"), you agree to comply with all the terms of the Full Project
+Gutenberg-tm License (available with this file or online at
+http://gutenberg.org/license).
+
+
+Section 1.  General Terms of Use and Redistributing Project Gutenberg-tm
+electronic works
+
+1.A.  By reading or using any part of this Project Gutenberg-tm
+electronic work, you indicate that you have read, understand, agree to
+and accept all the terms of this license and intellectual property
+(trademark/copyright) agreement.  If you do not agree to abide by all
+the terms of this agreement, you must cease using and return or destroy
+all copies of Project Gutenberg-tm electronic works in your possession.
+If you paid a fee for obtaining a copy of or access to a Project
+Gutenberg-tm electronic work and you do not agree to be bound by the
+terms of this agreement, you may obtain a refund from the person or
+entity to whom you paid the fee as set forth in paragraph 1.E.8.
+
+1.B.  "Project Gutenberg" is a registered trademark.  It may only be
+used on or associated in any way with an electronic work by people who
+agree to be bound by the terms of this agreement.  There are a few
+things that you can do with most Project Gutenberg-tm electronic works
+even without complying with the full terms of this agreement.  See
+paragraph 1.C below.  There are a lot of things you can do with Project
+Gutenberg-tm electronic works if you follow the terms of this agreement
+and help preserve free future access to Project Gutenberg-tm electronic
+works.  See paragraph 1.E below.
+
+1.C.  The Project Gutenberg Literary Archive Foundation ("the Foundation"
+or PGLAF), owns a compilation copyright in the collection of Project
+Gutenberg-tm electronic works.  Nearly all the individual works in the
+collection are in the public domain in the United States.  If an
+individual work is in the public domain in the United States and you are
+located in the United States, we do not claim a right to prevent you from
+copying, distributing, performing, displaying or creating derivative
+works based on the work as long as all references to Project Gutenberg
+are removed.  Of course, we hope that you will support the Project
+Gutenberg-tm mission of promoting free access to electronic works by
+freely sharing Project Gutenberg-tm works in compliance with the terms of
+this agreement for keeping the Project Gutenberg-tm name associated with
+the work.  You can easily comply with the terms of this agreement by
+keeping this work in the same format with its attached full Project
+Gutenberg-tm License when you share it without charge with others.
+
+1.D.  The copyright laws of the place where you are located also govern
+what you can do with this work.  Copyright laws in most countries are in
+a constant state of change.  If you are outside the United States, check
+the laws of your country in addition to the terms of this agreement
+before downloading, copying, displaying, performing, distributing or
+creating derivative works based on this work or any other Project
+Gutenberg-tm work.  The Foundation makes no representations concerning
+the copyright status of any work in any country outside the United
+States.
+
+1.E.  Unless you have removed all references to Project Gutenberg:
+
+1.E.1.  The following sentence, with active links to, or other immediate
+access to, the full Project Gutenberg-tm License must appear prominently
+whenever any copy of a Project Gutenberg-tm work (any work on which the
+phrase "Project Gutenberg" appears, or with which the phrase "Project
+Gutenberg" is associated) is accessed, displayed, performed, viewed,
+copied or distributed:
+
+This eBook is for the use of anyone anywhere at no cost and with
+almost no restrictions whatsoever.  You may copy it, give it away or
+re-use it under the terms of the Project Gutenberg License included
+with this eBook or online at www.gutenberg.org
+
+1.E.2.  If an individual Project Gutenberg-tm electronic work is derived
+from the public domain (does not contain a notice indicating that it is
+posted with permission of the copyright holder), the work can be copied
+and distributed to anyone in the United States without paying any fees
+or charges.  If you are redistributing or providing access to a work
+with the phrase "Project Gutenberg" associated with or appearing on the
+work, you must comply either with the requirements of paragraphs 1.E.1
+through 1.E.7 or obtain permission for the use of the work and the
+Project Gutenberg-tm trademark as set forth in paragraphs 1.E.8 or
+1.E.9.
+
+1.E.3.  If an individual Project Gutenberg-tm electronic work is posted
+with the permission of the copyright holder, your use and distribution
+must comply with both paragraphs 1.E.1 through 1.E.7 and any additional
+terms imposed by the copyright holder.  Additional terms will be linked
+to the Project Gutenberg-tm License for all works posted with the
+permission of the copyright holder found at the beginning of this work.
+
+1.E.4.  Do not unlink or detach or remove the full Project Gutenberg-tm
+License terms from this work, or any files containing a part of this
+work or any other work associated with Project Gutenberg-tm.
+
+1.E.5.  Do not copy, display, perform, distribute or redistribute this
+electronic work, or any part of this electronic work, without
+prominently displaying the sentence set forth in paragraph 1.E.1 with
+active links or immediate access to the full terms of the Project
+Gutenberg-tm License.
+
+1.E.6.  You may convert to and distribute this work in any binary,
+compressed, marked up, nonproprietary or proprietary form, including any
+word processing or hypertext form.  However, if you provide access to or
+distribute copies of a Project Gutenberg-tm work in a format other than
+"Plain Vanilla ASCII" or other format used in the official version
+posted on the official Project Gutenberg-tm web site (www.gutenberg.org),
+you must, at no additional cost, fee or expense to the user, provide a
+copy, a means of exporting a copy, or a means of obtaining a copy upon
+request, of the work in its original "Plain Vanilla ASCII" or other
+form.  Any alternate format must include the full Project Gutenberg-tm
+License as specified in paragraph 1.E.1.
+
+1.E.7.  Do not charge a fee for access to, viewing, displaying,
+performing, copying or distributing any Project Gutenberg-tm works
+unless you comply with paragraph 1.E.8 or 1.E.9.
+
+1.E.8.  You may charge a reasonable fee for copies of or providing
+access to or distributing Project Gutenberg-tm electronic works provided
+that
+
+- You pay a royalty fee of 20% of the gross profits you derive from
+     the use of Project Gutenberg-tm works calculated using the method
+     you already use to calculate your applicable taxes.  The fee is
+     owed to the owner of the Project Gutenberg-tm trademark, but he
+     has agreed to donate royalties under this paragraph to the
+     Project Gutenberg Literary Archive Foundation.  Royalty payments
+     must be paid within 60 days following each date on which you
+     prepare (or are legally required to prepare) your periodic tax
+     returns.  Royalty payments should be clearly marked as such and
+     sent to the Project Gutenberg Literary Archive Foundation at the
+     address specified in Section 4, "Information about donations to
+     the Project Gutenberg Literary Archive Foundation."
+
+- You provide a full refund of any money paid by a user who notifies
+     you in writing (or by e-mail) within 30 days of receipt that s/he
+     does not agree to the terms of the full Project Gutenberg-tm
+     License.  You must require such a user to return or
+     destroy all copies of the works possessed in a physical medium
+     and discontinue all use of and all access to other copies of
+     Project Gutenberg-tm works.
+
+- You provide, in accordance with paragraph 1.F.3, a full refund of any
+     money paid for a work or a replacement copy, if a defect in the
+     electronic work is discovered and reported to you within 90 days
+     of receipt of the work.
+
+- You comply with all other terms of this agreement for free
+     distribution of Project Gutenberg-tm works.
+
+1.E.9.  If you wish to charge a fee or distribute a Project Gutenberg-tm
+electronic work or group of works on different terms than are set
+forth in this agreement, you must obtain permission in writing from
+both the Project Gutenberg Literary Archive Foundation and Michael
+Hart, the owner of the Project Gutenberg-tm trademark.  Contact the
+Foundation as set forth in Section 3 below.
+
+1.F.
+
+1.F.1.  Project Gutenberg volunteers and employees expend considerable
+effort to identify, do copyright research on, transcribe and proofread
+public domain works in creating the Project Gutenberg-tm
+collection.  Despite these efforts, Project Gutenberg-tm electronic
+works, and the medium on which they may be stored, may contain
+"Defects," such as, but not limited to, incomplete, inaccurate or
+corrupt data, transcription errors, a copyright or other intellectual
+property infringement, a defective or damaged disk or other medium, a
+computer virus, or computer codes that damage or cannot be read by
+your equipment.
+
+1.F.2.  LIMITED WARRANTY, DISCLAIMER OF DAMAGES - Except for the "Right
+of Replacement or Refund" described in paragraph 1.F.3, the Project
+Gutenberg Literary Archive Foundation, the owner of the Project
+Gutenberg-tm trademark, and any other party distributing a Project
+Gutenberg-tm electronic work under this agreement, disclaim all
+liability to you for damages, costs and expenses, including legal
+fees.  YOU AGREE THAT YOU HAVE NO REMEDIES FOR NEGLIGENCE, STRICT
+LIABILITY, BREACH OF WARRANTY OR BREACH OF CONTRACT EXCEPT THOSE
+PROVIDED IN PARAGRAPH F3.  YOU AGREE THAT THE FOUNDATION, THE
+TRADEMARK OWNER, AND ANY DISTRIBUTOR UNDER THIS AGREEMENT WILL NOT BE
+LIABLE TO YOU FOR ACTUAL, DIRECT, INDIRECT, CONSEQUENTIAL, PUNITIVE OR
+INCIDENTAL DAMAGES EVEN IF YOU GIVE NOTICE OF THE POSSIBILITY OF SUCH
+DAMAGE.
+
+1.F.3.  LIMITED RIGHT OF REPLACEMENT OR REFUND - If you discover a
+defect in this electronic work within 90 days of receiving it, you can
+receive a refund of the money (if any) you paid for it by sending a
+written explanation to the person you received the work from.  If you
+received the work on a physical medium, you must return the medium with
+your written explanation.  The person or entity that provided you with
+the defective work may elect to provide a replacement copy in lieu of a
+refund.  If you received the work electronically, the person or entity
+providing it to you may choose to give you a second opportunity to
+receive the work electronically in lieu of a refund.  If the second copy
+is also defective, you may demand a refund in writing without further
+opportunities to fix the problem.
+
+1.F.4.  Except for the limited right of replacement or refund set forth
+in paragraph 1.F.3, this work is provided to you 'AS-IS', WITH NO OTHER
+WARRANTIES OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO
+WARRANTIES OF MERCHANTIBILITY OR FITNESS FOR ANY PURPOSE.
+
+1.F.5.  Some states do not allow disclaimers of certain implied
+warranties or the exclusion or limitation of certain types of damages.
+If any disclaimer or limitation set forth in this agreement violates the
+law of the state applicable to this agreement, the agreement shall be
+interpreted to make the maximum disclaimer or limitation permitted by
+the applicable state law.  The invalidity or unenforceability of any
+provision of this agreement shall not void the remaining provisions.
+
+1.F.6.  INDEMNITY - You agree to indemnify and hold the Foundation, the
+trademark owner, any agent or employee of the Foundation, anyone
+providing copies of Project Gutenberg-tm electronic works in accordance
+with this agreement, and any volunteers associated with the production,
+promotion and distribution of Project Gutenberg-tm electronic works,
+harmless from all liability, costs and expenses, including legal fees,
+that arise directly or indirectly from any of the following which you do
+or cause to occur: (a) distribution of this or any Project Gutenberg-tm
+work, (b) alteration, modification, or additions or deletions to any
+Project Gutenberg-tm work, and (c) any Defect you cause.
+
+
+Section  2.  Information about the Mission of Project Gutenberg-tm
+
+Project Gutenberg-tm is synonymous with the free distribution of
+electronic works in formats readable by the widest variety of computers
+including obsolete, old, middle-aged and new computers.  It exists
+because of the efforts of hundreds of volunteers and donations from
+people in all walks of life.
+
+Volunteers and financial support to provide volunteers with the
+assistance they need, is critical to reaching Project Gutenberg-tm's
+goals and ensuring that the Project Gutenberg-tm collection will
+remain freely available for generations to come.  In 2001, the Project
+Gutenberg Literary Archive Foundation was created to provide a secure
+and permanent future for Project Gutenberg-tm and future generations.
+To learn more about the Project Gutenberg Literary Archive Foundation
+and how your efforts and donations can help, see Sections 3 and 4
+and the Foundation web page at http://www.pglaf.org.
+
+
+Section 3.  Information about the Project Gutenberg Literary Archive
+Foundation
+
+The Project Gutenberg Literary Archive Foundation is a non profit
+501(c)(3) educational corporation organized under the laws of the
+state of Mississippi and granted tax exempt status by the Internal
+Revenue Service.  The Foundation's EIN or federal tax identification
+number is 64-6221541.  Its 501(c)(3) letter is posted at
+http://pglaf.org/fundraising.  Contributions to the Project Gutenberg
+Literary Archive Foundation are tax deductible to the full extent
+permitted by U.S. federal laws and your state's laws.
+
+The Foundation's principal office is located at 4557 Melan Dr. S.
+Fairbanks, AK, 99712., but its volunteers and employees are scattered
+throughout numerous locations.  Its business office is located at
+809 North 1500 West, Salt Lake City, UT 84116, (801) 596-1887, email
+business@pglaf.org.  Email contact links and up to date contact
+information can be found at the Foundation's web site and official
+page at http://pglaf.org
+
+For additional contact information:
+     Dr. Gregory B. Newby
+     Chief Executive and Director
+     gbnewby@pglaf.org
+
+Section 4.  Information about Donations to the Project Gutenberg
+Literary Archive Foundation
+
+Project Gutenberg-tm depends upon and cannot survive without wide
+spread public support and donations to carry out its mission of
+increasing the number of public domain and licensed works that can be
+freely distributed in machine readable form accessible by the widest
+array of equipment including outdated equipment.  Many small donations
+($1 to $5,000) are particularly important to maintaining tax exempt
+status with the IRS.
+
+The Foundation is committed to complying with the laws regulating
+charities and charitable donations in all 50 states of the United
+States.  Compliance requirements are not uniform and it takes a
+considerable effort, much paperwork and many fees to meet and keep up
+with these requirements.  We do not solicit donations in locations
+where we have not received written confirmation of compliance.  To
+SEND DONATIONS or determine the status of compliance for any
+particular state visit http://pglaf.org
+
+While we cannot and do not solicit contributions from states where we
+have not met the solicitation requirements, we know of no prohibition
+against accepting unsolicited donations from donors in such states who
+approach us with offers to donate.
+
+International donations are gratefully accepted, but we cannot make
+any statements concerning tax treatment of donations received from
+outside the United States.  U.S. laws alone swamp our small staff.
+
+Please check the Project Gutenberg Web pages for current donation
+methods and addresses.  Donations are accepted in a number of other
+ways including checks, online payments and credit card
+donations.  To donate, please visit: http://pglaf.org/donate
+
+
+Section 5.  General Information About Project Gutenberg-tm electronic
+works.
+
+Professor Michael S. Hart is the originator of the Project Gutenberg-tm
+concept of a library of electronic works that could be freely shared
+with anyone.  For thirty years, he produced and distributed Project
+Gutenberg-tm eBooks with only a loose network of volunteer support.
+
+Project Gutenberg-tm eBooks are often created from several printed
+editions, all of which are confirmed as Public Domain in the U.S.
+unless a copyright notice is included.  Thus, we do not necessarily
+keep eBooks in compliance with any particular paper edition.
+
+Most people start at our Web site which has the main PG search facility:
+
+     http://www.gutenberg.org
+
+This Web site includes information about Project Gutenberg-tm,
+including how to make donations to the Project Gutenberg Literary
+Archive Foundation, how to help produce our new eBooks, and how to
+subscribe to our email newsletter to hear about new eBooks.
+
+*** END: FULL LICENSE ***
+

@@ -31,13 +31,11 @@ python3.9 -m pip install toml dataclasses tqdm filelock python_dateutil
 # pretty bash terminal header
 printf 'export PS1=\"\\u@gs:\\W\\$ \"\n' >> ~/.bashrc
 
-#ln -s /usr/bin/clang++-12 /usr/bin/clang++
-
 # update message of the day
 /autograder/source/update_motd.sh
 
-cp /autograder/source/run_autograder  /autograder/run_autograder
-#chmod +x /autograder/run_autograder 
+cp /autograder/source/run_autograder    /autograder/
+cp /autograder/source/update_results.py /autograder/
 
 mkdir /build && cd /build
 git clone $REPOPATH course-repo 

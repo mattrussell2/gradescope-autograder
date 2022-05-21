@@ -109,6 +109,7 @@ import traceback
 from functools import reduce, partial
 from collections.abc import Iterable
 if 'canonicalizers.py' in os.listdir():
+    print("IMPORT CANONCIALISERS")
     import canonicalizers
 
 # colors for printing to terminal
@@ -121,9 +122,11 @@ LGRAY          = "37m"
 START_COLOR    = "\033[1;"
 RESET_COLOR    = "\033[0m"
 
-SUBMISSION_DIR = "submission"
-RESULTS_DIR    = "results" 
-TESTSET_DIR    = "testset"
+CWD            = os.path.abspath(".")
+
+SUBMISSION_DIR = f"{CWD}/submission"
+RESULTS_DIR    = f"{CWD}/results" 
+TESTSET_DIR    = f"{CWD}/testset"
 
 REF_OUTPUT_DIR = f"{TESTSET_DIR}/ref_output"
 TEST_CPP_DIR   = f"{TESTSET_DIR}/cpp"
@@ -172,10 +175,11 @@ def RUN(cmd_ary, timeout=30, stdin=None, input=None, cwd=".",
     return subprocess.run(["timeout", str(timeout)] + cmd_ary, 
                           stdin=stdin, 
                           capture_output=capture_output,
+                          #shell=True,
                           universal_newlines=universal_newlines,
-                          cwd=cwd, 
+                          cwd=cwd, #cwd=cwd,   #cwd=cwd, 
                           input=input)
-
+    
 def FAIL(s):
     INFORM(s, color=RED)
     exit(1)
@@ -274,6 +278,9 @@ class Test:
        
         if self.executable == None:
             self.executable = self.testname
+      
+        if self.executable[0] != '/':
+            self.executable = './' + self.executable
 
         self.replace_placeholders_in_self()
 
@@ -373,15 +380,15 @@ class Test:
             Note:  
                 If there is a testname.stdin file then it is used as stdin.                
         """                
-        exec_cmds = [os.path.join(BUILD_DIR, self.executable)] + self.argv
+        exec_cmds = [self.executable] + self.argv
         if exec_prepend:
             exec_cmds = exec_prepend + exec_cmds
 
         if os.path.exists(self.fpaths['stdin']):            
             with open(self.fpaths['stdin'], "r") as stdin:
-                result = RUN(exec_cmds, timeout=self.max_time, stdin=stdin)
+                result = RUN(exec_cmds, timeout=self.max_time, stdin=stdin, cwd=BUILD_DIR)
         else:
-            result = RUN(exec_cmds, timeout=self.max_time)
+            result = RUN(exec_cmds, timeout=self.max_time, cwd=BUILD_DIR)
                 
         if STDOUTPATH: Path(STDOUTPATH).write_text(result.stdout)
         if STDERRPATH: Path(STDERRPATH).write_text(result.stderr)
@@ -392,9 +399,11 @@ class Test:
         """
             Purpose: 
                 Runs the 'standard' test and sets variables associated with pass / failure
+            Notes:
+                add ../../ to memory file because we'll be running from the build directory
         """      
         if self.max_ram != -1:
-            prepend  = ['/usr/bin/time', '-o', self.fpaths['memory'], '-f', '%M']
+            prepend  = ['/usr/bin/time', '-o', os.path.join('..','..',self.fpaths['memory']), '-f', '%M']
         else:
             prepend  = []
 
@@ -422,7 +431,7 @@ class Test:
             "--show-leak-kinds=all",                  # gimme all the leaks
             "--leak-check=full",                      # leaks -> errors
             "--error-exitcode=1",                     # errors return 1
-            f"--log-file={self.fpaths['valgrind']}",  # send valgrind to log 
+            f"--log-file={self.fpaths['valgrind']}"
         ]
         if self.valgrind:
             self.valgrind_passed = self.run_exec(valgrind_command) == 0
@@ -599,6 +608,7 @@ def compile_exec(target):
         Returns:    
             whether or not the compilation was successful
     """    
+    target = target[2:] # remove the './' prefix
     with open(f"{LOG_DIR}/{target}.compile.log", "w") as f:
         INFORMF(f"== running make {target} ==\n", f, color=CYAN)
         compilation_proc    = RUN(["make", target], cwd=BUILD_DIR)
@@ -682,7 +692,7 @@ def build_testing_directories():
         shutil.copytree(COPY_DIR, BUILD_DIR, dirs_exist_ok=True)
     if os.path.exists(LINK_DIR):
         for f in os.listdir(LINK_DIR):
-            os.symlink(os.path.join(LINK_DIR, f), os.path.join(BUILD_DIR, f))
+            os.symlink(os.path.join('..','..',LINK_DIR, f), os.path.join(BUILD_DIR, f))
 
     Path(f'{LOG_DIR}/status.lock').write_text("Lockfile for status reporting")
     Path(f'{LOG_DIR}/status').write_text("")

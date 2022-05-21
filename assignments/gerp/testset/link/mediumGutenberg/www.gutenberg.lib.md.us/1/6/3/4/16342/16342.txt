@@ -1,0 +1,2324 @@
+The Project Gutenberg EBook of A Treatise on Simple Counterpoint in Forty
+Lessons, by Friedrich J. Lehmann
+
+This eBook is for the use of anyone anywhere at no cost and with
+almost no restrictions whatsoever.  You may copy it, give it away or
+re-use it under the terms of the Project Gutenberg License included
+with this eBook or online at www.gutenberg.net
+
+
+Title: A Treatise on Simple Counterpoint in Forty Lessons
+
+Author: Friedrich J. Lehmann
+
+Release Date: July 21, 2005 [EBook #16342]
+
+Language: English
+
+Character set encoding: ASCII
+
+*** START OF THIS PROJECT GUTENBERG EBOOK A TREATISE ON SIMPLE ***
+
+
+
+
+Produced by David Newman, Dainis Millers and the Online
+Distributed Proofreading Team at http://www.pgdp.net
+
+
+
+
+
+
+_SEVENTH EDITION_
+
+
+
+
+A Treatise on
+Simple Counterpoint
+in
+Forty Lessons
+
+By
+
+Friedrich J. Lehmann
+
+_Instructor of Theory in the Oberlin Conservatory of Music Author of
+"Lessons in Harmony"_
+
+G. SCHIRMER, INC.
+
+NEW YORK
+
+
+
+
+PREFACE
+
+
+The purpose of this work is to supply the need in the Oberlin Conservatory
+of Music of a text-book on Simple Counterpoint containing a definite
+assignment of lessons, and affording more practice than usual in combining
+species.
+
+It is a treatise on strict counterpoint, but strict in a limited sense
+only. In two-part counterpoint with other than the first species in both
+parts, dissonances are permitted under certain conditions, and in three-
+and four-part writing the unprepared seventh and ninth, and the six-four
+chord, are allowed in certain ways.
+
+While the illustrations have been written in close score, it is
+nevertheless urged that all exercises be written out in open score, as the
+movement of the different parts is thus more clearly seen.
+
+The use of the C-clefs is left optional with the teacher.
+
+A knowledge of harmony is presupposed, hence nothing is said pertaining to
+it.
+
+The author wishes to express his indebtedness to Professor A.E. Heacox for
+his help and advice.
+
+                                            F.J. LEHMANN.
+
+OBERLIN, OHIO, _Jan. 6, 1907._
+
+
+
+
+TABLE OF CONTENTS
+
+
+    SIMPLE COUNTERPOINT
+
+    LESSON I. Definitions and Illustrations.
+
+
+    SIMPLE COUNTERPOINT IN TWO PARTS
+
+    First Species: Note against Note. Examples and Exercises.
+
+    LESSON II. Second Species: Two Notes against One. Examples and
+    Exercises.
+
+    LESSON III. Second Species in Both Parts. Examples. Second
+    Species Mixed in Both Parts. Examples and Exercises.
+
+    LESSON IV. Third Species: Four Notes against One. First Species
+    against Six Notes. Second Species Continuously in Both Parts.
+    Examples and Exercises.
+
+    LESSON V. Third Species in Both Parts; Mixed. Third Species
+    Continuously in Both Parts. Two Notes against Four; Two against
+    Six; Three against Six. Examples and Exercises.
+
+    LESSON VI. Fourth Species: Two Notes Syncopated against One.
+    Three Notes Syncopated against One. Two Notes against Four; Two
+    against Six; Three against Six. Examples and Exercises.
+
+    LESSON VII. Fourth Species (continued). Mixed, in Both Parts.
+    Three Notes Syncopated against One. Examples and Exercises.
+
+    LESSON VIII. Fourth Species (continued). Two Notes Syncopated
+    against Two; Two against Four; Two against Six; Three against
+    Six. Examples and Exercises.
+
+    LESSON IX. Fifth Species: Florid Counterpoint. Examples and
+    Exercises.
+
+    LESSON X. Florid Counterpoint (continued). Combining Fifth
+    Species with Second; with Third; with Fourth; with Fifth.
+    Examples and Exercises.
+
+
+    SIMPLE COUNTERPOINT IN THREE PARTS
+
+    LESSON XI. First Species in All Parts. Examples and Exercises.
+
+    LESSON XII. Second Species in One Part. Examples and Exercises.
+
+    LESSON XIII. Second Species in Two or More Parts. First and
+    Second Species Mixed in All Parts. Second Species in All Parts.
+    Examples and Exercises.
+
+    LESSON XIV. Third Species in One Part. Second Species in All
+    Parts. Examples and Exercises.
+
+    LESSON XV. Third Species in Two or More Parts. First and Third
+    Species Mixed in All Parts. Examples and Exercises.
+
+    LESSON XVI. Third Species (continued). Mixing First, Second, and
+    Third Species in All Parts. Third Species in All Parts. Examples
+    and Exercises.
+
+    LESSON XVII. Fourth Species in One Part. Three Notes Syncopated
+    in One Part. Combining First, Second, and Third Species.
+    Examples, and Exercises.
+
+    LESSON XVIII. Fourth Species (continued). Mixed in All Parts.
+    Combining First, Second, and Fourth Species, and First, Third,
+    and Fourth. Examples and Exercises.
+
+    LESSON XIX. Fifth Species in One Part. Examples and Exercises.
+
+    LESSON XX. Fifth Species (continued). Combining First, Second,
+    and Fifth; First, Third, and Fifth; First, Fourth, and Fifth;
+    Fifth in Two Parts. Example and Exercises.
+
+    LESSON XXI. Combining the Various Species: Second, Third, and
+    Fourth; Second, Third, and Fifth; Second, Fourth, and Fifth;
+    Third, Fifth, and Fifth; Fourth, Fifth, and Fifth. Examples and
+    Exercises.
+
+    LESSON XXII. Fifth Species in All Parts. Examples and Exercises.
+
+
+    SIMPLE COUNTERPOINT IN FOUR PARTS
+
+    LESSON XXIII. First Species in All Parts. Examples and Exercises.
+
+    LESSON XXIV. Second Species in One Part. Examples and Exercises.
+
+    LESSON XXV. Third Species in One Part. Second Species Mixed in
+    Three Parts. Examples and Exercises.
+
+    LESSON XXVI. Third Species (continued). Mixed in Three Parts.
+    Second Species Continuously in Two Parts. Examples and Exercises.
+
+    LESSON XXVII. Fourth Species in One Part. A Cantus Firmus with
+    First, Second, and Third Species in the Other Three Parts.
+    Examples and Exercises.
+
+    LESSON XXVIII. Fourth Species (continued). A given Cantus Firmus,
+    with First, Second, and Fourth Species; with First, Third, and
+    Fourth; with Fourth Species Mixed. Examples and Exercises.
+
+    LESSON XXIX. Fifth Species in One Part. Examples and Exercises.
+
+    LESSON XXX. Fifth Species in Two Parts. Mixing Second, Third, and
+    Fourth Species in All Parts. Combining First, Second, Third, and
+    Fourth Species. Examples and Exercises.
+
+    LESSON XXXI. Fifth Species in Three or Four Parts. Examples and
+    Exercises.
+
+    LESSON XXXII. Fifth Species in All Parts, with Imitation.
+    Examples and Exercises.
+
+
+    FLORID MELODIES AS CANTI FIRMI
+
+    LESSON XXXIII. Two-part Florid Counterpoint. Free Harmonization.
+    Examples and Exercises.
+
+    LESSONS XXXIV and XXXV. Three-part Florid Counterpoint. Free
+    Harmonization. Examples and Exercises.
+
+    LESSON XXXVI. Three-part Florid Counterpoint (continued).
+    Exercise in Original Writing.
+
+    LESSONS XXXVII to XL. Four-part Florid Counterpoint, Example and
+    Exercises.
+
+
+
+
+SIMPLE COUNTERPOINT
+
+LESSON I
+
+
+Counterpoint is the art of combining two or more melodies of equal melodic
+individuality.
+
+In simple counterpoint all parts must remain in the same relative position
+to one another.
+
+The Cantus Firmus is a given melodic phrase that is to receive contrapuntal
+treatment, that is, one or more parts are to be added above or below it.
+
+The Counterpoint is any part other than the Cantus Firmus.
+
+Intervals are harmonic or melodic.
+
+An Harmonic interval is the difference in pitch between two tones sounding
+at the same time.
+
+A Melodic interval is the difference in pitch between two tones sounded in
+succession by the same voice. [Fig. 1.]
+
+[Illustration: Fig. 1.]
+
+Harmonic intervals are divided into Consonances and Dissonances.
+
+Consonances are classed as perfect or imperfect.
+
+The Perfect consonances are the Unison, Fifth, and Octave. [Fig. 2_a_.]
+
+The Imperfect consonances are the Major and Minor Thirds and Sixths. [Fig.
+2_b_.]
+
+All other intervals are dissonances.
+
+[Illustration: Fig. 2.]
+
+A Diatonic progression is one in which both name and pitch are changed.
+[Fig. 3_a_.]
+
+A Chromatic progression is one in which the pitch is changed a semitone,
+while the name remains the same. [Fig. 3_b_.]
+
+[Illustration: Fig. 3.]
+
+Progression from one chord to another is called Harmonic progression; from
+one tone to another, Melodic progression.
+
+In melodic progression all major, minor, perfect and diminished intervals
+are allowed except the major and minor seventh. The minor seventh may,
+however, be used when harmony does not change (_a_). [Fig. 4.]
+
+[Illustration: Fig. 4.]
+
+In counterpoint there are Five Species, or orders. When the counterpoint
+has one note for each note of the cantus firmus, it is of the First Species
+(_a_); if it has two notes for each note of the cantus firmus, it is the
+Second Species (_b_); if four notes, the Third Species (_c_); if two notes
+syncopated, the Fourth Species (_d_); and a mixture of these species is the
+Fifth Species, or Florid Counterpoint (_e_). [Fig. 5.]
+
+[Illustration: Fig. 5.]
+
+
+
+
+SIMPLE COUNTERPOINT IN TWO PARTS
+
+FIRST SPECIES
+
+
+Two-part counterpoint comprises a cantus firmus and a counterpoint. [Fig.
+6.]
+
+[Illustration: Fig. 6.]
+
+Although in two-part counterpoint we have to deal with intervals, rather
+than harmonies, still the harmonic progressions represented by these
+intervals should be regarded.
+
+The exercises should begin and close with tonic harmony. At the beginning
+the unison, fifth or octave, and at the close the unison or octave, are
+permitted. [Fig. 7.]
+
+[Illustration: Fig. 7.]
+
+After the first measure it is better to use imperfect consonances only. The
+perfect consonances, however, may be used sparingly when a more melodious
+counterpoint is thereby obtained.
+
+The unison may be used in the first and last measures only. [Fig. 7.]
+
+All progressions must be diatonic, and parts should not cross.
+
+The repetition of a note in a lower part should be avoided wherever
+possible. In a higher part, repetition to the extent of three notes in
+succession is allowed.
+
+Do not use more than three thirds or sixths in succession. [Fig. 8.]
+
+[Illustration: Fig. 8.]
+
+Successive similar skips, except the minor third (_a_), in one direction,
+are to be avoided. Successive skips of a fourth are good when the tones are
+the fifths of the triads on I, IV and vii deg.. The last tone should return one
+degree (_b_). [Fig. 9.]
+
+Do not move more than an octave in one direction in two skips. [Fig. 9_c_.]
+
+[Illustration: Fig. 9.]
+
+Covered fifths and octaves, except from I to V, or V to I, are forbidden.
+[Fig. 10.]
+
+[Illustration: Fig. 10.]
+
+Both parts skipping in contrary motion to a fifth or octave should be
+avoided in two-part writing. [Fig. 11.]
+
+[Illustration: Fig. 11.]
+
+Avoid consecutive perfect intervals. [Fig. 12.]
+
+[Illustration: Fig. 12.]
+
+The augmented fourth (Tritone) is not only considered bad as a melodic
+interval by some authorities, but its appearance between different parts in
+successive intervals is also prohibited. This prohibition, however, holds
+good only when the chords in which it appears are in fundamental position,
+as in Fig. 13_a_. This is shown by the fact, that if one part skips as at
+_b_, there is no unpleasant effect.
+
+[Illustration: Fig. 13.]
+
+Avoid consecutive major thirds in major keys. In minor keys they are good.
+[Fig. 14.]
+
+[Illustration: Fig. 14.]
+
+Use adjacent voices in writing, and do not exceed the vocal compass of a
+voice.
+
+Modulation may be resorted to within the exercises, but only to nearly
+related keys; for example, in C, to G, F, a, e, or d.
+
+At the close parts should proceed stepwise to the unison, or octave. [Fig.
+15_a_.]
+
+[Illustration: Fig. 15.]
+
+A close as in Fig. 15_b_ may be used occasionally. In this case the
+leading-tone is better in the higher part.
+
+
+EXERCISES
+
+To each of the following canti firmi write two counterpoints above, and two
+below.
+
+
+CANTI FIRMI
+
+[Illustration: Fig. 16.]
+
+
+
+
+LESSON II
+
+SECOND SPECIES
+
+
+[Illustration: Fig. 17.]
+
+All rules for the first species must be observed.
+
+Two notes are written in the counterpoint to one of the cantus firmus,
+except in the last measure. [Fig. 18_a_.] In the last measure but one the
+first species may sometimes be used. [Fig. 18_b_.]
+
+[Illustration: Fig. 18.]
+
+Repetition of a note in any but the first species is forbidden. [Fig. 19.]
+
+[Illustration: Fig. 19.]
+
+The counterpoint may begin on the first or the second half of the measure,
+preference being given to the second half. When it begins on the first half
+it must be a unison, fifth, or octave; when on the second half, it may be
+any consonance. [Fig. 20.]
+
+[Illustration: Fig. 20.]
+
+After the first measure the interval on the first beat should be an
+imperfect consonance, as in the first species, but the fifth, or octave,
+may be used occasionally.
+
+In this and succeeding lessons, all notes in the measure not belonging to
+the harmony implied on the first beat, must be treated as dissonances,
+e.g., those belonging to the implied harmony may be left by a skip (_a_) or
+stepwise progression (_b_) unless dissonant with the cantus firmus; then
+avoid their use; if foreign to it, whether consonant (_c_) with the C.F.
+or not (_d_), they must be treated as embellishments or passing-tones.
+[Fig. 21.]
+
+[Illustration: Fig. 21.]
+
+The embellishment may be used as follows: when above the principal tone, it
+may be a semitone (_a_) or a whole tone (_b_) distant from it; and when
+below, a semitone (_c_). [Fig. 22.]
+
+[Illustration: Fig. 22.]
+
+When the counterpoint is below the cantus firmus, the fifth of the chord
+needs special treatment. It is permitted on the weak beat when the lower is
+treated as an harmonic passing-tone.
+
+An harmonic passing-tone is the second of three tones belonging to the same
+chord. [Fig. 23_a_.] While the third tone should be a member of the chord
+containing the fifth as an harmonic passing-tone, the chord above it may
+change as in Fig. 23_b_.
+
+The fifth is permitted on the strong beat when it is only an implied fifth
+(six-four chord); that is, the third and fifth appear on the strong beat,
+and the root does not come in until the second half of the measure. [Fig.
+23_c_.]
+
+[Illustration: Fig. 23.]
+
+The unison is permitted on the weak beat. [Fig. 24.]
+
+[Illustration: Fig. 24.]
+
+Avoid broken-chord effects, that is, do not use more than three tones
+belonging to the same chord in succession. [Fig. 25.]
+
+[Illustration: Fig. 25.]
+
+Avoid frequent skipping of parts. [Fig. 26.]
+
+[Illustration: Fig. 26.]
+
+Parts may cross occasionally, but should return immediately [Fig. 27.]
+
+[Illustration: Fig. 27.]
+
+Consecutive fifths or octaves on consecutive strong beats are bad; but they
+are good on the weak beats _if the second fifth or octave is approached in
+the opposite direction from the first_. [Fig. 28.]
+
+[Illustration: Fig. 28.]
+
+In minor the sixth degree may occasionally be raised on the strong beat, if
+it is desired to proceed upward to the raised seventh degree. [Fig. 29.]
+
+[Illustration: Fig. 29.]
+
+In the last measure but one, both the supertonic and leading tone should
+appear. [Fig. 30.]
+
+[Illustration: Fig. 30.]
+
+_Three_ notes may be written to one of the cantus firmus, as in Fig. 31.
+For this no new rules are required.
+
+[Illustration: Fig. 31.]
+
+The cadences in Fig. 32 are good. It will be seen that the cadences of the
+first species may also be used.
+
+[Illustration: Fig. 32.]
+
+
+EXERCISES
+
+To cantus firmus _a_ write two counterpoints above and two below in the
+first species.
+
+To cantus firmus _b_ write two above and two below in the second species.
+
+
+CANTI FIRMI
+
+[Illustration: Fig. 33.]
+
+
+
+
+LESSON III
+
+SECOND SPECIES IN BOTH PARTS[1]
+
+
+[Illustration: Fig. 34.]
+
+    [1] In this and similar cases the term "species" will be
+    understood as referring simply to the number of notes, or to the
+    note-combinations, of the contrapuntal part or parts in question.
+    "Second species in both parts" means, therefore, that both parts
+    progress in half-notes.
+
+When writing second species in both parts no cantus firmus is used, both
+parts being original. One part begins on the first beat, the other may
+begin on either the first or second beat. [Fig. 35.]
+
+[Illustration: Fig. 35.]
+
+The interval formed by the two notes appearing on the second beat should be
+a consonance, or one of the following dissonances: The augmented fourth,
+the diminished fifth, the minor or diminished seventh when properly
+resolved, and the perfect fourth when approached in contrary motion.
+
+All tones not belonging to the harmony implied on the first beat, must be
+treated as dissonances. [Fig. 36.]
+
+[Illustration: Fig. 36.]
+
+The seventh or ninth of the implied harmony of a measure, when approached
+in an upward direction, may be used in either part, provided it is
+consonant with the other part, or comes within the requirements of the
+exceptions. [Fig. 37.]
+
+The passing major seventh and its root may appear on the weak beat, even
+when approached in similar motion as in Fig. 37_a_. The seventh must then be
+treated as a passing-tone.
+
+[Illustration: Fig. 37.]
+
+The cadences in Fig. 38 are good when writing second species in both parts.
+Those having the second species in one part only, may also be used.
+
+[Illustration: Fig. 38.]
+
+Writing the second species in both parts will, in this lesson, be confined
+to a mixture of the first and second species, as in Fig. 39.
+
+In this do not use the second species more than four measures continuously
+in one part. It will be noticed that the second species may occasionally be
+used in both parts. In later lessons opportunity will be given to write it
+continuously in both parts.
+
+[Illustration: Fig. 39.]
+
+
+EXERCISES
+
+Write two eight-measure phrases mixing the first and second species. [Fig.
+39.]
+
+To cantus firmus _a_ write one counterpoint above and one below, three
+notes to the measure. [Fig. 31.]
+
+To cantus firmus _b_ write one above and one below, in the second species.
+
+
+CANTI FIRMI
+
+[Illustration: Fig. 40.]
+
+
+
+
+LESSON IV
+
+THIRD SPECIES
+
+
+[Illustration: Fig. 41.]
+
+In this species, four notes are written in the counterpoint to each note
+of the cantus firmus. The counterpoint may begin on the first, second, or
+fourth quarter. The second quarter is, however, the most usual. [Fig. 42.]
+
+[Illustration: Fig. 42.]
+
+The exercises should begin and end with tonic harmony.
+
+When the counterpoint begins on the first quarter it must form a perfect
+consonance with the cantus firmus. When on the second or fourth quarter,
+any consonance may be used.
+
+All previous rules are to be regarded, unless exceptions are made.
+
+At least one of the first three quarter-notes of a measure should be left
+degreewise. [Fig. 43.]
+
+[Illustration: Fig. 43.]
+
+The last quarter of a measure is usually left degreewise. If approached by
+a skip or by a degreewise progression of at least two quarter-notes, it may
+be left by a skip in the opposite direction from which it was approached. A
+skip of a third in the same direction is also good when this skip is
+preceded by a skip of a third (_d_). [Fig. 44.]
+
+[Illustration: Fig. 44.]
+
+Parts may cross occasionally.
+
+The use of non-harmonic tones, as in Fig. 45, is good in either part. At
+_a_ the passing-tone, instead of progressing directly to the adjacent
+chord-tone, skips a third to the other side of it and then returns. The
+embellishment is treated in the same way, but is most effective when the
+principal tone is the leading-tone, as at _b_. In both cases the
+counterpoint should continue degreewise through the chord-tone. [Fig. 45.]
+
+[Illustration: Fig. 45.]
+
+The fifth, when in the lower part, may be used on any but the first
+quarter, provided it is treated as a passing-tone, e.g., approached and
+left by stepwise progression in one direction.
+
+[Illustration: Fig. 46.]
+
+Consecutive fifths and octaves are forbidden when appearing on the accented
+beats of successive measures; between prominent notes of successive
+measures not more than four quarters apart; and between a prominent note of
+one measure and the first quarter of the next. [Fig. 47.]
+
+[Illustration: Fig. 47.]
+
+Oblique motion to the unison is bad. It is permitted if it continues in the
+same direction through the unison. [Fig. 48.]
+
+[Illustration: Fig. 48.]
+
+The unison may be used on any but the first quarter of a measure.
+
+Frequent repetition of a figure as in Fig. 49 is not good.
+
+[Illustration: Fig. 49.]
+
+The embellishment may be used either above or below, whether a semitone or
+a whole tone; but when it is a whole tone below, it is most satisfactory as
+the ninth of the implied chord. [Fig. 50.]
+
+[Illustration: Fig. 50.]
+
+In minor the sixth and seventh degrees of the scale are raised both
+ascending and descending, when used in harmonies containing the
+leading-tone as a chord-tone. They are unaltered both ascending and
+descending in harmonies containing the sixth degree of the scale as a
+chord-tone. In other harmonies they are raised in ascending only.
+
+The sixth or seventh degrees may be chromatically altered with only one
+note intervening. [Fig. 51.]
+
+[Illustration: Fig. 51.]
+
+Six notes may be written to one of the cantus firmus, as in Fig. 52.
+
+[Illustration: Fig. 52.]
+
+The cadences in Fig. 53 are good.
+
+[Illustration: Fig. 53.]
+
+
+EXERCISES
+
+To cantus firmus _a_ write three counterpoints above and three below, in
+the third species.
+
+Write two eight-measure phrases, using second species continuously in both
+parts. [Fig. 34.]
+
+
+CANTUS FIRMUS
+
+[Illustration: Fig. 54.]
+
+
+
+
+LESSON V
+
+THIRD SPECIES IN BOTH PARTS
+
+
+[Illustration: Fig. 55.]
+
+The suggestions given for writing second species in both parts apply here,
+except that when both parts move degreewise, any interval may come on the
+second and fourth quarters, preferably a consonance. The third quarter is
+treated the same as the second half when writing the second species in both
+parts.
+
+The augmented fourth, and diminished fifth and seventh, may be approached
+in similar motion. [Fig. 56.]
+
+[Illustration: Fig. 56.]
+
+The augmented fourth following the perfect fourth, as in Fig. 56_a_, is good.
+
+The minor seventh, and the major and minor ninth of a chord, may be used
+freely on any but the first quarter, but must be consonant with the other
+part. [Fig. 57.]
+
+[Illustration: Fig. 57.]
+
+The first and third species may be mixed, as in Fig. 58.
+
+[Illustration: Fig. 58.]
+
+The second species may be used in one part and the third in the other, also
+six notes in one part and two in the other, and six in one and three in the
+other. All tones appearing simultaneously, must comply with the suggestions
+for tones appearing on the weak beat given in previous lessons, where both
+parts have other than the first species. [Fig. 59.]
+
+[Illustration: Fig. 59.]
+
+The cadences in Fig. 60 are good, and will suggest others.
+
+[Illustration: Fig. 60.]
+
+
+EXERCISES
+
+To cantus firmus _a_ write one counterpoint above and one below, in the
+third species.
+
+To cantus firmus _b_ write counterpoints in six notes, one above and one
+below. [Fig. 52.]
+
+Write one eight-measure phrase, mixing the first and third species. [Fig.
+58.]
+
+Write two eight-measure phrases, using third species in both parts. [Fig.
+55.]
+
+
+CANTI FIRMI
+
+[Illustration: Fig. 61.]
+
+
+
+
+LESSON VI
+
+FOURTH SPECIES
+
+
+[Illustration: Fig. 62.]
+
+This species is the same as the second, except that the last note of the
+measure is tied to the first note of the next, forming a syncopation. As in
+the second species, the first note of the counterpoint should form a
+unison, octave or fifth, and when the counterpoint begins on the second
+half it may also be an imperfect consonance.
+
+When the counterpoint begins on the first half, the second half is treated
+the same as the second half of succeeding measures, described in the next
+paragraph.
+
+After the first measure, the second half of the measure should contain a
+consonance (Fig. 63_a_), the first half a consonance (_b_), or dissonance
+(_c_), preferably the latter, in which case a suspension is formed. This is
+the most desirable form of syncopation. When the first half contains a
+dissonance, the counterpoint must descend--or ascend in retardation
+(_d_)--one degree to an imperfect consonance (_c_). When the first half is
+a consonance, it may be left by a skip to some other chord-tone (_e_), or
+by degreewise progression (_f_). In the latter case the second note is
+non-harmonic, and therefore should not be used to prepare a syncopation
+except as in Fig. 63_d_ (Retardation of the root in I_6).
+
+[Illustration: Fig. 63.]
+
+When writing three notes to one in the fourth species, the suspension may
+resolve on the second beat (_a_), or the third (_b_). In the latter case,
+the suspension skips (_c_) to some other chord-tone, before resolving. The
+resolution to the leading-tone (_d_) forms an important exception to this
+rule. [Fig. 64.]
+
+[Illustration: Fig. 64.]
+
+The fifth may be used in the lower part if it becomes the preparation of a
+suspension (Fig. 65_a_). It may also be used in the lower part, as in Fig.
+65_b_, provided it resolves by skipping to the third of the chord.
+
+In skipping from the fifth to the root, or the reverse, in the lower part,
+do so in an upward direction. The fifth, when treated as an harmonic
+passing-tone, may, however, be approached either ascending or descending.
+
+[Illustration: Fig. 65.]
+
+The retardation should be used only when prepared by the leading-tone. It
+rises a semitone in resolving. [Fig. 66.]
+
+[Illustration: Fig. 66.]
+
+The following dissonant intervals may be used on the first half of the
+measure:--When the counterpoint is above, the fourth and seventh in
+suspension, and second and fifth in retardation; and when below, the second
+in suspension, and the fourth and seventh in retardation. [Fig. 67.]
+
+[Illustration: Fig. 67.]
+
+Consecutive fifths on consecutive strong beats of the measure are good when
+one of the tones of the second fifth is prepared, as in Fig. 68.
+
+[Illustration: Fig. 68.]
+
+The following cadences are good:
+
+[Illustration: Fig. 69.]
+
+
+EXERCISES
+
+Write one eight-measure phrase with two notes to the measure in one part
+and six in the other; one with three notes in one and six in the other; and
+one with two notes in one part and four in the other. (Fig. 59.) In
+combining the species in this and succeeding lessons the student may place
+any species in any part.
+
+To the cantus firmus write two counterpoints above and two below, in the
+fourth species.
+
+
+CANTUS FIRMUS
+
+[Illustration: Fig. 70.]
+
+
+
+
+LESSON VII
+
+FOURTH SPECIES (Continued)
+
+
+The first and fourth species may be mixed as in Fig. 71. Rules for writing
+other than the first species in both parts are to be regarded.
+
+[Illustration: Fig. 71.]
+
+
+EXERCISES
+
+To cantus firmus _a_ write two counterpoints above and two below, in the
+fourth species.
+
+To cantus firmus _b_ write two above and two below, three half-notes to the
+measure, with syncopations.
+
+Write two eight-measure phrases, mixing the first and fourth species.
+
+
+CANTI FIRMI
+
+[Illustration: Fig. 72.]
+
+
+
+
+LESSON VIII
+
+COMBINING THE FOURTH SPECIES WITH THE OTHERS
+
+
+All previous rules for combining species still apply.
+
+In combining the fourth species with other than the first, the following
+intervals may be used on the first half of the measure, in addition to
+those mentioned in Lesson VI: When the counterpoint is below, the fourth,
+fifth and seventh in suspension, and the ninth in retardation; and when
+above, the fifth in suspension, and the seventh in retardation; but in
+every such case the part having other than the fourth species must skip to
+some other chord-tone before resolving the suspension. [Fig. 73.]
+
+[Illustration: Fig. 73.]
+
+The leading-tone may be doubled as in Fig. 74. Here the leading-tone that
+is prepared skips to some other chord-tone, while the new leading-tone
+remains stationary.
+
+[Illustration: Fig. 74.]
+
+The minor or diminished seventh, major or minor ninth, may be used as
+preparation of a suspension in either part, provided it is approached by a
+skip in an upward direction, and is consonant with the other part, or is
+one of the permitted dissonances. [Fig. 75.]
+
+[Illustration: Fig. 75.]
+
+The fourth species may be combined with the second or third species, and
+two or three notes syncopated may be written in one part with six in the
+other. [Fig. 76.]
+
+[Illustration: Fig. 76.]
+
+
+EXERCISES
+
+To the cantus firmus write one counterpoint above and one below, in the
+fourth species.
+
+Write one eight-measure phrase each, of the following combinations: The
+fourth species with the second; the fourth with the third; two notes
+syncopated against six notes; and three notes syncopated against six notes.
+Write some in major and some in minor. [Fig. 76.]
+
+
+CANTUS FIRMUS
+
+[Illustration: Fig. 77.]
+
+
+
+
+LESSON IX
+
+FIFTH SPECIES: FLORID COUNTERPOINT
+
+
+[Illustration: Fig. 78.]
+
+Florid counterpoint is a mixture of the second, third and fourth species.
+
+In addition to these species eighth-notes may be used in groups of two on
+the second and fourth quarters of the measure. Both notes should be
+approached and left stepwise, with the exception that the first may be
+taken by a skip. [Fig. 79.]
+
+[Illustration: Fig. 79.]
+
+Not more than one and one-half measures of any one species should be used
+continuously in one part. [Fig. 80.]
+
+[Illustration: Fig. 80.]
+
+In the use of quarter-notes it is necessary to exercise care. They may be
+used on the first half when preceded by quarter-notes, when the entire
+measure is filled, or when they precede a half-note which is the
+preparation of a suspension. On the second half they are always good. [Fig.
+81.]
+
+[Illustration: Fig. 81.]
+
+For the present the suspension should not be less than a half-note or its
+rhythmic equivalent in the ornamental resolution.
+
+In this species the suspension may resolve ornamentally, that is, it may
+have some note or notes interpolated between the suspension and its
+resolution. The relative position of the suspension and its resolution must
+remain the same as in the regular resolution. [Fig. 82.]
+
+When the suspension is left by a leap, the note skipped to should be
+consonant with the other part (_b_). When eighth-notes are used, as at _a_,
+they must be approached and left stepwise.
+
+The suspension, instead of being sustained as a half-note, may be repeated
+on the second quarter, as at _c_. In this case it is best to continue
+stepwise through the tone of resolution.
+
+At _d_ the resolution, instead of coming on the second half, appears on the
+quarters on either side. This is good.
+
+[Illustration: Fig. 82.]
+
+The ornamental resolution may be used in either part.
+
+Use the suspension freely.
+
+The solutions should be musical, and are to be written over and over again
+until such are secured.
+
+All cadences of the second, third and fourth species, or any combination of
+these, may be used.
+
+
+EXERCISES
+
+To canti firmi _a_ and _b_ write two counterpoints above and two below, in
+the fifth species
+
+
+CANTI FIRMI
+
+[Illustration: Fig. 83.]
+
+
+
+
+LESSON X
+
+FLORID COUNTERPOINT (Continued)
+
+
+When florid counterpoint is combined with other than first species, the
+dotted half followed by a quarter-note (_a_), or two eighth-notes (_b_),
+is good. Also, a rhythmic figure, as at _c_, where a half-note occupies the
+second and third quarters, may be used. [Fig. 84.]
+
+[Illustration: Fig. 84.]
+
+
+EXERCISES
+
+Write one eight-measure phrase, each, of the following combinations: The
+fifth species with the second; the fifth with the third; and the fifth with
+the fourth. Write also two eight-measure phrases with fifth species in both
+parts. [Fig. 85.]
+
+[Illustration: Fig. 85.]
+
+
+
+
+SIMPLE COUNTERPOINT IN THREE PARTS
+
+LESSON XI
+
+FIRST SPECIES
+
+
+[Illustration: Fig. 86.]
+
+Regard all rules for two-part counterpoint, unless otherwise mentioned.
+
+If possible, each measure should contain a complete chord. When in the
+first species it becomes necessary to double an interval, let it be
+preferably the root. The third should be doubled only when a decidedly
+smoother melodic progression is thereby obtained; and when both thirds are
+in outer parts, each should be approached and left stepwise in one
+direction (Fig. 87). The doubling of the fifth is, of course, impossible,
+since it necessitates the omission of the third.
+
+[Illustration: Fig. 87.]
+
+All triads may be used in their first inversion.
+
+Diminished and augmented triads, however, are best used in their first
+inversion.
+
+The six-four chord may be used at the close as the cadencing tonic six-four
+chord. Do not approach the root and fifth in similar motion, as at _b_.
+[Fig. 88.]
+
+[Illustration: Fig. 88.]
+
+The dominant seventh may be used in any but its second inversion, the
+fifth being omitted.[2] The seventh requires no preparation. Other chords
+of the seventh are better not used until second species and later.
+
+If possible, let the chord in the first measure appear complete. The last
+chord but one should be complete, unless some form of V or V_7 is used.
+[Fig. 89.]
+
+    [2] In severely strict counterpoint all parts above the lowest must be
+    consonant with it. Dissonances, when entering simultaneously with it,
+    must be treated as suspensions, and when used in the progression of a
+    part from one chord to another, should be treated as passing-tones or
+    embellishments. This excludes the use of the unprepared seventh and
+    ninth; all diminished and augmented triads except in their first
+    inversion; and all six-four chords, except when the lowest part is
+    treated as a passing-tone.
+
+[Illustration: Fig. 89.]
+
+Consecutive major thirds may be used when three or more parts are employed.
+[Fig. 90.]
+
+[Illustration: Fig. 90.]
+
+A note may now be repeated in the lowest part when it becomes the seventh
+of a dominant seventh-chord. [Fig. 91.]
+
+[Illustration: Fig. 91.]
+
+In writing, use soprano, alto and tenor, or alto, tenor and bass; and do
+not separate upper parts more than an octave. For a chord or two they may
+(for the sake of better voice-leading) separate a tenth.
+
+All hidden fifths and octaves are bad, except between I and V and V and I.
+[Fig. 92_a, b_.]
+
+The perfect fifth following the diminished fifth is good when taken in an
+upward direction stepwise in the higher parts. [Fig. 92_c_.]
+
+[Illustration: Fig. 92.]
+
+All cadences used in harmony are good.
+
+Unless otherwise mentioned, put the cantus firmus in any part, but avoid
+its continued use in the same part.
+
+
+EXERCISES
+
+To canti firmi _a_ and _b_ write the first species in all parts. Write each
+three times, setting the cantus firmus in a different part in each
+solution. This necessitates transposing the cantus firmus, when setting it
+in the other parts.
+
+
+CANTI FIRMI
+
+[Illustration: Fig. 93.]
+
+
+
+
+LESSON XII
+
+THE SECOND SPECIES
+
+
+[Illustration: Fig. 94.]
+
+The second species is written in one part and the first in the other two.
+
+All suggestions made for the second species in two-part counterpoint are
+to be observed, unless otherwise mentioned. Those regarding consecutive
+perfect intervals are especially to be observed.
+
+The fifth, when in the lowest voice, should be used as in two-part
+counterpoint, except when used in V4/3 or the cadencing tonic six-four
+chord.
+
+The V4/3 chord may be used on the weak beat, necessitating the omission of
+the third. [Fig. 95_a_.]
+
+The third may be omitted (_b_), or doubled (_c_), on the weak beat in this
+and succeeding species. [Fig. 95.]
+
+[Illustration: Fig. 95.]
+
+The minor or diminished seventh may be approached by a skip in an upward
+direction on the weak beat in any part. This usually necessitates the
+omission of some other chord-member on the weak beat.
+
+The major or minor ninth may also be used in the same way, except in the
+lowest part, provided it is at least a ninth above the root. [Fig. 96.]
+
+[Illustration: Fig. 96.]
+
+The progression from vii_6 deg. to V in root-position or any inversion in the
+same measure, is good. [Fig. 97.] Use _b_ and _c_ only when using other
+than first species in two or more parts.
+
+[Illustration: Fig. 97.]
+
+Each measure should usually contain a complete chord. If not complete on
+the first beat, bring the missing interval in on the second. [Fig. 98.]
+
+[Illustration: Fig. 98.]
+
+The cadences in Fig. 99 are good, and will suggest others. The use of the
+fourth species is permitted as at _a_. A note may be repeated in the final
+cadence in all species as at _b_.
+
+[Illustration: Fig. 99.]
+
+
+EXERCISES
+
+To cantus firmus _a_ write the first species in all parts, as previously
+directed.
+
+To cantus firmus _b_ write second species in one part. Write three times,
+changing cantus firmus and counterpoint about so that they will appear in
+each part in turn.
+
+
+CANTI FIRMI
+
+[Illustration: Fig. 100.]
+
+
+
+
+LESSON XIII
+
+SECOND SPECIES IN TWO PARTS
+
+
+[Illustration: Fig. 101.]
+
+The suggestions for second species in both parts, in two-part counterpoint,
+apply for the two parts having the second species in three-part
+counterpoint.
+
+Accidental harmonies sometimes appear on the weak beat. All tones in this
+accidental harmony foreign to the chord on the strong beat must be treated
+as dissonances. This must be regarded whenever two or more parts have other
+than the first species. [Fig. 102.]
+
+[Illustration: Fig. 102.]
+
+At Fig. 102_a_, the accidental harmony _f-a-c_ is on the weak beat. The _f_
+and _a_, being foreign to the chord _c-e-g_ on the strong beat, are
+correctly treated as dissonances. At _b_, the _f_ and _a_ are left by skip,
+which is not permitted.
+
+The second species may be written continuously in all parts; the tones
+appearing on the weak beat must be harmonically related to one another, and
+those foreign to the chord on the strong beat must be treated as
+dissonances. [Fig. 103.]
+
+[Illustration: Fig. 103.]
+
+The first and second species may be mixed, as in Fig. 104.
+
+[Illustration: Fig. 104.]
+
+The cadences in Fig. 105 are good, and will suggest others. Those with
+first species in all parts may also be used.
+
+[Illustration: Fig. 105.]
+
+
+EXERCISES
+
+To cantus firmus _a_ write a counterpoint in the second species in one
+part. Write three settings, as directed in the previous lesson.
+
+Write two eight-measure phrases mixing the first and second species in all
+parts.
+
+To cantus firmus _b_ write counterpoints in the second species in the other
+two parts. Write two settings, with the cantus firmus in different parts.
+
+
+CANTI FIRMI
+
+[Illustration: Fig. 106.]
+
+
+
+
+LESSON XIV
+
+THIRD SPECIES
+
+
+[Illustration: Fig. 107.]
+
+The suggestions for third species in two-part counterpoint, as well as
+those for writing the second species in three-part counterpoint, apply when
+writing third species in three-part counterpoint.
+
+The cadences at Fig. 108 are good, and will suggest others.
+
+[Illustration: Fig. 108.]
+
+
+EXERCISES
+
+To cantus firmus _a_ write third species in one part. Write three settings
+as previously directed.
+
+To cantus firmus _b_ write second species in two parts, as previously
+directed.
+
+Write one eight-measure phrase, using second species in all parts.
+
+
+CANTI FIRMI
+
+[Illustration: Fig. 109.]
+
+
+
+
+LESSON XV
+
+THIRD SPECIES IN TWO OR MORE PARTS
+
+
+[Illustration: Fig. 110.]
+
+Previous suggestions when two or more parts have other than first species,
+apply here.
+
+In using the ninth of a chord it is well to keep it at least a seventh
+distant from the third, as well as a ninth above the root, except in the
+case of the dominant ninth in minor keys, where it may be separated by only
+an augmented second ([b]). [Fig. 111.]
+
+[Illustration: Fig. 111.]
+
+In writing the third species in all parts, notes appearing simultaneously
+should be harmonically related. Treat all tones foreign to the chord on the
+first quarter as dissonances.
+
+The cadences in Fig. 112 are good.
+
+[Illustration: Fig. 112.]
+
+
+EXERCISES
+
+To cantus firmus _a_ write third species in one part, as previously
+directed.
+
+To cantus firmus _b_ write third species in two parts, as in Fig. 110_b_.
+Write twice, changing the cantus firmus about.
+
+Write one eight-measure phrase, mixing first and third species as in Fig.
+110_a_.
+
+
+CANTI FIRMI
+
+[Illustration: Fig. 113.]
+
+
+
+
+LESSON XVI
+
+THIRD SPECIES (Continued)
+
+EXERCISES
+
+
+To the cantus firmus write third species in one part, as previously
+directed.
+
+Write one eight-measure phrase, mixing first and third species; also one
+mixing first, second and third. [Fig. 114.]
+
+Write one eight-measure phrase, using third species in all parts. [Fig.
+110_c_.]
+
+[Illustration: Fig. 114.]
+
+
+CANTUS FIRMUS
+
+[Illustration: Fig. 115.]
+
+
+
+
+LESSON XVII
+
+FOURTH SPECIES
+
+
+[Illustration: Fig. 116.]
+
+When the syncopation is a suspension or retardation, it is treated the same
+as in harmony.
+
+The retardation should always be prepared by the leading-tone.
+
+When the syncopated note belongs to the harmony of the measure, it may be
+left by a skip or stepwise progression. [Fig. 117.]
+
+[Illustration: Fig. 117.]
+
+The third may be omitted on the strong beat in this species, provided the
+part having fourth species skips to the missing third, as at Fig. 117_a_.
+
+Consecutive fifths, but not octaves, are saved by the suspension. Whenever
+they occur, do not use the note of resolution as preparation of a
+suspension, or tie it into the next measure (_a_), since it is really the
+passing seventh, and that does not lend itself well to either of the above,
+except in sequence as at _b_. [Fig. 118.]
+
+[Illustration: Fig. 118.]
+
+The seventh or ninth of a chord, except the major seventh, may be used as
+preparation of a suspension when approached by a skip in an upward
+direction, as in Fig. 119.
+
+[Illustration: Fig. 119.]
+
+This species may also be written in triple rhythm. [Fig. 120.]
+
+[Illustration: Fig. 120.]
+
+The cadences in Fig. 121 are good, as well as those of the second species.
+
+[Illustration: Fig. 121.]
+
+
+EXERCISES
+
+To cantus firmus _a_ write fourth species in one part. Write three
+settings, as usual.
+
+To cantus firmus _b_ write fourth species in one part in triple rhythm.
+Write three settings, as above.
+
+To cantus firmus _b_ write second species in one part and third in the
+other. [Fig. 122.]
+
+[Illustration: Fig. 122.]
+
+
+CANTI FIRMI
+
+[Illustration: Fig. 123.]
+
+
+
+
+LESSON XVIII
+
+FOURTH SPECIES (Continued)
+
+EXERCISES
+
+
+Write two eight-measure phrases, using the fourth species mixed in all
+parts. [Fig. 124_a_.]
+
+To cantus firmus _a_ write second species in one part and fourth in the
+other. [Fig. 124_b_.]
+
+To cantus firmus _b_ write third species in one part and fourth in the
+other. [Fig. 124_c_.]
+
+[Illustration: Fig. 124.]
+
+
+CANTI FIRMI
+
+[Illustration: Fig. 125.]
+
+
+
+
+LESSON XIX
+
+FIFTH SPECIES
+
+
+[Illustration: Fig. 126.]
+
+No suggestions other than have already been given for two- and three-part
+counterpoint are necessary for this species.
+
+
+EXERCISES
+
+To canti firmi _a_ and _b_ write fifth species in one part. Write each
+three times, as usual.
+
+
+CANTI FIRMI
+
+[Illustration: Fig. 127.]
+
+
+
+
+LESSON XX
+
+FIFTH SPECIES (Continued)
+
+EXERCISES
+
+
+To cantus firmus _a_ write second species in one part and fifth in the
+other. [Fig. 128_a_.]
+
+To cantus firmus _b_ write third species in one part and fifth in the
+other. [_b_.]
+
+To cantus firmus _c_ write fourth species in one part and fifth in the
+other. [_c_.]
+
+To cantus firmus _d_ write fifth species in two parts. [_d_.]
+
+[Illustration: Fig. 128.]
+
+
+CANTI FIRMI
+
+[Illustration: Fig. 129.]
+
+
+
+
+LESSON XXI
+
+COMBINING THE VARIOUS SPECIES
+
+EXERCISES
+
+
+Write one eight-measure phrase each, of the following combinations: (1)
+2nd, 3rd and 4th species (Fig. 130a); (2) 2nd, 3rd and fifth species (_b_)
+(3) 3rd, 5th and 5th species (_c_); (4) 2nd, 4th and 5th species (_d_); (5)
+4th, 5th and 5th species (_e_).
+
+[Illustration: Fig. 130.]
+
+
+
+
+LESSON XXII
+
+FIFTH SPECIES IN ALL PARTS
+
+EXERCISES
+
+
+Write five eight-measure phrases with fifth species in all parts, making
+use of imitation at the beginning as in Fig. 131. The imitation need only
+be relative and continue for three or four notes. It is also well, when a
+part uses a striking melodic figure, to have some other part imitate it
+immediately after.
+
+[Illustration: Fig. 131.]
+
+
+
+
+SIMPLE COUNTERPOINT IN FOUR PARTS
+
+LESSON XXIII
+
+
+[Illustration: Fig. 132.]
+
+No new suggestions are needed, except as follows: All covered fifths and
+octaves permitted in harmony are allowed here. When the cantus firmus is in
+the lowest part and the choice of the last chord but one is V4/3 or vii_6 deg.,
+use the latter, as in Fig. 133.
+
+[Illustration: Fig. 133.]
+
+
+EXERCISES
+
+To canti firmi _a_ and _b_ write the first species in the other parts.
+Write each four times, setting the cantus firmus in each part in turn.
+
+
+CANTI FIRMI
+
+[Illustration: Fig. 134.]
+
+
+
+
+LESSON XXIV
+
+
+[Illustration: Fig. 135.]
+
+
+EXERCISES
+
+To cantus firmus _a_ write the first species in all parts, as in the
+previous lesson.
+
+To cantus firmus _b_ write the second species in one part. Write four
+times, and change with each solution, so that both the cantus firmus and
+the second species will appear in each part. [Fig. 135.]
+
+
+CANTI FIRMI
+
+[Illustration: Fig. 136.]
+
+
+
+
+LESSON XXV
+
+
+[Illustration: Fig. 137.]
+
+
+EXERCISES
+
+To cantus firmus _a_ write second species in one part as previously
+directed.
+
+To cantus firmus _b_ write the first and second species mixed in the other
+three parts. [Fig. 137_a_.]
+
+To cantus firmus _c_ write third species in one part, as directed for the
+second species (_b_).
+
+
+CANTI FIRMI
+
+[Illustration: Fig. 138.]
+
+
+
+
+LESSON XXVI
+
+
+[Illustration: Fig. 139.]
+
+
+EXERCISES
+
+To cantus firmus _a_ write the second species in two parts and the first in
+the others. Write twice, changing the parts about. [Fig. 139_a_.]
+
+To cantus firmus _b_ write third species in one part as previously
+directed.
+
+To cantus firmus _c_ write third species mixed in the other three parts, as
+at Fig. 139_b_.
+
+
+CANTI FIRMI
+
+[Illustration: Fig. 140.]
+
+
+
+
+LESSON XXVII
+
+
+[Illustration: Fig. 141.]
+
+
+EXERCISES
+
+To cantus firmus _a_ write the first, second and third species in the other
+three parts. Write twice, changing the parts about [Fig. 141_a_.]
+
+To cantus firmus _b_ write fourth species in one part, as directed in
+previous lessons. [Fig. 141_b_.]
+
+To cantus firmus _c_ write third species mixed in the other three parts.
+[Fig. 139_b_.]
+
+
+CANTI FIRMI
+
+[Illustration: Fig. 142.]
+
+
+
+
+LESSON XXVIII
+
+
+[Illustration: Fig. 143.]
+
+
+EXERCISES
+
+To cantus firmus _a_ write the fourth species in one part, as usual.
+
+To cantus firmus _b_ write first, second and fourth species in the other
+three parts. [Fig. 143_a_.]
+
+To cantus firmus _c_ write the first, third and fourth species in the other
+three parts. [Fig. 143_b_.]
+
+To cantus firmus _c_ write fourth species mixed in the other parts. [Fig.
+143_c_.]
+
+
+CANTI FIRMI
+
+[Illustration: Fig. 144.]
+
+
+
+
+LESSON XXIX
+
+
+[Illustration: Fig. 145.]
+
+
+EXERCISES
+
+To canti firmi _a_ and _b_ write fifth species in one part, as before.
+
+
+CANTI FIRMI
+
+[Illustration: Fig. 146.]
+
+
+
+
+LESSON XXX
+
+
+[Illustration: Fig. 147.]
+
+
+EXERCISES
+
+To the cantus firmus write the fifth species in two parts. Write four
+times, changing the cantus firmus into every part. [Fig. 147_a_.]
+
+Write one eight-measure phrase mixing the second, third and fourth species
+(_b_). Also write one exercise combining the first, second, third and
+fourth species (_c_).
+
+
+CANTUS FIRMUS
+
+[Illustration: Fig. 148.]
+
+
+
+
+LESSON XXXI
+
+
+[Illustration: Fig. 149.]
+
+
+EXERCISES
+
+To the cantus firmus write the fifth species in all of the other parts.
+[Fig. 149_a_.]
+
+Write four eight-measure phrases with the fifth species in all parts. [Fig.
+149_b_.]
+
+
+CANTUS FIRMUS
+
+[Illustration: Fig. 150.]
+
+
+LESSON XXXII
+
+[Illustration: Fig. 151.]
+
+
+EXERCISES
+
+Write six eight-measure phrases, using the fifth species in all the parts.
+Let the parts begin one after the other in imitation. [Fig. 151.]
+
+
+
+
+LESSON XXXIII
+
+FLORID MELODIES AS CANTI FIRMI FREE HARMONIZATION IN TWO-PART
+COUNTERPOINT
+
+
+[Illustration: Fig. 152.]
+
+Thus far, all notes in the measure foreign to the harmony on the first
+beat were treated as dissonances. Now, the cantus firmus may be harmonized
+at pleasure, the only restriction being that any tone foreign to the chord
+with which it enters must be treated as a dissonance. [Fig. 152.]
+
+It is not necessary that each part be strictly florid, but that the effect
+of the parts as a whole should be so. This applies from this point to the
+end of these lessons.
+
+The suspension may now be a quarter-note, or its rhythmic equivalent. It
+then comes on the first (_a_) or third (_b_) quarter of the measure, and
+the resolution on the quarter following. The preparation should be as long
+as, or longer than, the suspension. [Fig. 153.]
+
+[Illustration: Fig. 153.]
+
+The eighth-note as in Fig. 154_a_ is good. It should be used only on the
+second half of a weak beat, and be preceded by a dotted quarter-note.
+Sixteenth-notes may be used in place of the eighth-note, but should be
+approached and left step-wise. [Fig. 154_b_.]
+
+[Illustration: Fig. 154.]
+
+The first species may be employed occasionally in the course of an
+exercise.
+
+Make plentiful use of imitation.
+
+When more than one line of a choral is used, it may be treated by having
+the other parts continue through the holds, as at _a_, or letting them
+rest, as at _b_. [Fig. 155.]
+
+When, in place of the hold, the movement continues, it is necessary to
+interpolate a full measure in place of the hold. [Fig. 155 and Fig. 159.]
+
+[Illustration: Fig. 155.]
+
+The note under the hold may be continued the extra measure, or the part may
+rest and then reenter. All that is required is that it begin after the
+lapse of one measure, i.e., when the line ends on the accent the next line
+begins on the weak beat of the measure following, and if it ends on the
+weak beat then on the accent of the next measure.
+
+The interval at any hold except the last of a choral may be either a
+perfect (_a_) or imperfect consonance (_b_). [Fig. 156.]
+
+[Illustration: Fig. 156.]
+
+Modulation often occurs at the holds. If so, make it clear.
+
+In this and in succeeding lessons set the cantus firmus in any part, and
+transpose if necessary.
+
+
+EXERCISES
+
+To cantus firmus _b_ write two counterpoints above and two below.
+
+To cantus firmus _a_ write one above and one below, with both parts resting
+at the hold. Also do the same _with the counterpoint continuing at the
+hold_. [Fig. 155_a, b._]
+
+
+CANTI FIRMI
+
+[Illustration: Fig. 157.]
+
+
+
+
+LESSON XXXIV
+
+FREE HARMONIZATION IN THREE-PART COUNTERPOINT
+
+
+When writing in three or more parts, it is well to let a part rest
+occasionally, and, when it reenters, have it imitate one of the other
+parts. [Fig. 158.]
+
+[Illustration: Fig. 158.]
+
+
+EXERCISES
+
+To cantus firmus _a_ write two counterpoints above and two below in
+two-part counterpoint.
+
+Write two original eight-measure phrases in two-part counterpoint.
+
+To cantus firmus _b_ write one example in three-part counterpoint with
+continuous movement at the hold. [Fig. 159.]
+
+[Illustration: Fig. 159.]
+
+
+CANTI FIRMI
+
+[Illustration: Fig. 160.]
+
+
+
+
+LESSON XXXV
+
+
+To canti firmi _a_ and _b_ write two parts. Write each three times, setting
+the cantus firmus in all parts in turn. Write one of the solutions of the
+choral with continuous movement at the hold.
+
+
+CANTI FIRMI
+
+[Illustration: Fig. 161.]
+
+
+
+
+LESSON XXXVI
+
+
+Write two eight-measure phrases, and one sixteen-measure phrase, of
+original counterpoint in three parts.
+
+
+
+
+LESSON XXXVII
+
+FREE HARMONIZATION IN FOUR-PART COUNTERPOINT
+
+
+[Illustration: Fig. 162.]
+
+
+EXERCISES
+
+To the cantus firmus write three parts.
+
+Write two sixteen-measure phrases of original four-part counterpoint, one
+major and one minor.
+
+
+CANTUS FIRMUS
+
+[Illustration: Fig. 163.]
+
+
+
+
+LESSON XXXVIII
+
+
+In this and the following lessons have the parts in some of the exercises
+begin one after the other in imitation. [Fig. 151.]
+
+
+EXERCISES
+
+Write two eight-measure phrases, and one sixteen-measure phrase, of
+original four-part counterpoint.
+
+
+
+
+LESSON XXXIX
+
+
+Write two sixteen-measure phrases of original four-part counterpoint.
+
+
+
+
+LESSON XL
+
+
+Write an original exercise in four-part counterpoint, extended to
+thirty-two measures.
+
+
+
+
+
+
+End of the Project Gutenberg EBook of A Treatise on Simple Counterpoint in
+Forty Lessons, by Friedrich J. Lehmann
+
+*** END OF THIS PROJECT GUTENBERG EBOOK A TREATISE ON SIMPLE ***
+
+***** This file should be named 16342.txt or 16342.zip *****
+This and all associated files of various formats will be found in:
+        http://www.gutenberg.org/1/6/3/4/16342/
+
+Produced by David Newman, Dainis Millers and the Online
+Distributed Proofreading Team at http://www.pgdp.net
+
+
+Updated editions will replace the previous one--the old editions
+will be renamed.
+
+Creating the works from public domain print editions means that no
+one owns a United States copyright in these works, so the Foundation
+(and you!) can copy and distribute it in the United States without
+permission and without paying copyright royalties.  Special rules,
+set forth in the General Terms of Use part of this license, apply to
+copying and distributing Project Gutenberg-tm electronic works to
+protect the PROJECT GUTENBERG-tm concept and trademark.  Project
+Gutenberg is a registered trademark, and may not be used if you
+charge for the eBooks, unless you receive specific permission.  If you
+do not charge anything for copies of this eBook, complying with the
+rules is very easy.  You may use this eBook for nearly any purpose
+such as creation of derivative works, reports, performances and
+research.  They may be modified and printed and given away--you may do
+practically ANYTHING with public domain eBooks.  Redistribution is
+subject to the trademark license, especially commercial
+redistribution.
+
+
+
+*** START: FULL LICENSE ***
+
+THE FULL PROJECT GUTENBERG LICENSE
+PLEASE READ THIS BEFORE YOU DISTRIBUTE OR USE THIS WORK
+
+To protect the Project Gutenberg-tm mission of promoting the free
+distribution of electronic works, by using or distributing this work
+(or any other work associated in any way with the phrase "Project
+Gutenberg"), you agree to comply with all the terms of the Full Project
+Gutenberg-tm License (available with this file or online at
+http://gutenberg.net/license).
+
+
+Section 1.  General Terms of Use and Redistributing Project Gutenberg-tm
+electronic works
+
+1.A.  By reading or using any part of this Project Gutenberg-tm
+electronic work, you indicate that you have read, understand, agree to
+and accept all the terms of this license and intellectual property
+(trademark/copyright) agreement.  If you do not agree to abide by all
+the terms of this agreement, you must cease using and return or destroy
+all copies of Project Gutenberg-tm electronic works in your possession.
+If you paid a fee for obtaining a copy of or access to a Project
+Gutenberg-tm electronic work and you do not agree to be bound by the
+terms of this agreement, you may obtain a refund from the person or
+entity to whom you paid the fee as set forth in paragraph 1.E.8.
+
+1.B.  "Project Gutenberg" is a registered trademark.  It may only be
+used on or associated in any way with an electronic work by people who
+agree to be bound by the terms of this agreement.  There are a few
+things that you can do with most Project Gutenberg-tm electronic works
+even without complying with the full terms of this agreement.  See
+paragraph 1.C below.  There are a lot of things you can do with Project
+Gutenberg-tm electronic works if you follow the terms of this agreement
+and help preserve free future access to Project Gutenberg-tm electronic
+works.  See paragraph 1.E below.
+
+1.C.  The Project Gutenberg Literary Archive Foundation ("the Foundation"
+or PGLAF), owns a compilation copyright in the collection of Project
+Gutenberg-tm electronic works.  Nearly all the individual works in the
+collection are in the public domain in the United States.  If an
+individual work is in the public domain in the United States and you are
+located in the United States, we do not claim a right to prevent you from
+copying, distributing, performing, displaying or creating derivative
+works based on the work as long as all references to Project Gutenberg
+are removed.  Of course, we hope that you will support the Project
+Gutenberg-tm mission of promoting free access to electronic works by
+freely sharing Project Gutenberg-tm works in compliance with the terms of
+this agreement for keeping the Project Gutenberg-tm name associated with
+the work.  You can easily comply with the terms of this agreement by
+keeping this work in the same format with its attached full Project
+Gutenberg-tm License when you share it without charge with others.
+
+1.D.  The copyright laws of the place where you are located also govern
+what you can do with this work.  Copyright laws in most countries are in
+a constant state of change.  If you are outside the United States, check
+the laws of your country in addition to the terms of this agreement
+before downloading, copying, displaying, performing, distributing or
+creating derivative works based on this work or any other Project
+Gutenberg-tm work.  The Foundation makes no representations concerning
+the copyright status of any work in any country outside the United
+States.
+
+1.E.  Unless you have removed all references to Project Gutenberg:
+
+1.E.1.  The following sentence, with active links to, or other immediate
+access to, the full Project Gutenberg-tm License must appear prominently
+whenever any copy of a Project Gutenberg-tm work (any work on which the
+phrase "Project Gutenberg" appears, or with which the phrase "Project
+Gutenberg" is associated) is accessed, displayed, performed, viewed,
+copied or distributed:
+
+This eBook is for the use of anyone anywhere at no cost and with
+almost no restrictions whatsoever.  You may copy it, give it away or
+re-use it under the terms of the Project Gutenberg License included
+with this eBook or online at www.gutenberg.net
+
+1.E.2.  If an individual Project Gutenberg-tm electronic work is derived
+from the public domain (does not contain a notice indicating that it is
+posted with permission of the copyright holder), the work can be copied
+and distributed to anyone in the United States without paying any fees
+or charges.  If you are redistributing or providing access to a work
+with the phrase "Project Gutenberg" associated with or appearing on the
+work, you must comply either with the requirements of paragraphs 1.E.1
+through 1.E.7 or obtain permission for the use of the work and the
+Project Gutenberg-tm trademark as set forth in paragraphs 1.E.8 or
+1.E.9.
+
+1.E.3.  If an individual Project Gutenberg-tm electronic work is posted
+with the permission of the copyright holder, your use and distribution
+must comply with both paragraphs 1.E.1 through 1.E.7 and any additional
+terms imposed by the copyright holder.  Additional terms will be linked
+to the Project Gutenberg-tm License for all works posted with the
+permission of the copyright holder found at the beginning of this work.
+
+1.E.4.  Do not unlink or detach or remove the full Project Gutenberg-tm
+License terms from this work, or any files containing a part of this
+work or any other work associated with Project Gutenberg-tm.
+
+1.E.5.  Do not copy, display, perform, distribute or redistribute this
+electronic work, or any part of this electronic work, without
+prominently displaying the sentence set forth in paragraph 1.E.1 with
+active links or immediate access to the full terms of the Project
+Gutenberg-tm License.
+
+1.E.6.  You may convert to and distribute this work in any binary,
+compressed, marked up, nonproprietary or proprietary form, including any
+word processing or hypertext form.  However, if you provide access to or
+distribute copies of a Project Gutenberg-tm work in a format other than
+"Plain Vanilla ASCII" or other format used in the official version
+posted on the official Project Gutenberg-tm web site (www.gutenberg.net),
+you must, at no additional cost, fee or expense to the user, provide a
+copy, a means of exporting a copy, or a means of obtaining a copy upon
+request, of the work in its original "Plain Vanilla ASCII" or other
+form.  Any alternate format must include the full Project Gutenberg-tm
+License as specified in paragraph 1.E.1.
+
+1.E.7.  Do not charge a fee for access to, viewing, displaying,
+performing, copying or distributing any Project Gutenberg-tm works
+unless you comply with paragraph 1.E.8 or 1.E.9.
+
+1.E.8.  You may charge a reasonable fee for copies of or providing
+access to or distributing Project Gutenberg-tm electronic works provided
+that
+
+- You pay a royalty fee of 20% of the gross profits you derive from
+     the use of Project Gutenberg-tm works calculated using the method
+     you already use to calculate your applicable taxes.  The fee is
+     owed to the owner of the Project Gutenberg-tm trademark, but he
+     has agreed to donate royalties under this paragraph to the
+     Project Gutenberg Literary Archive Foundation.  Royalty payments
+     must be paid within 60 days following each date on which you
+     prepare (or are legally required to prepare) your periodic tax
+     returns.  Royalty payments should be clearly marked as such and
+     sent to the Project Gutenberg Literary Archive Foundation at the
+     address specified in Section 4, "Information about donations to
+     the Project Gutenberg Literary Archive Foundation."
+
+- You provide a full refund of any money paid by a user who notifies
+     you in writing (or by e-mail) within 30 days of receipt that s/he
+     does not agree to the terms of the full Project Gutenberg-tm
+     License.  You must require such a user to return or
+     destroy all copies of the works possessed in a physical medium
+     and discontinue all use of and all access to other copies of
+     Project Gutenberg-tm works.
+
+- You provide, in accordance with paragraph 1.F.3, a full refund of any
+     money paid for a work or a replacement copy, if a defect in the
+     electronic work is discovered and reported to you within 90 days
+     of receipt of the work.
+
+- You comply with all other terms of this agreement for free
+     distribution of Project Gutenberg-tm works.
+
+1.E.9.  If you wish to charge a fee or distribute a Project Gutenberg-tm
+electronic work or group of works on different terms than are set
+forth in this agreement, you must obtain permission in writing from
+both the Project Gutenberg Literary Archive Foundation and Michael
+Hart, the owner of the Project Gutenberg-tm trademark.  Contact the
+Foundation as set forth in Section 3 below.
+
+1.F.
+
+1.F.1.  Project Gutenberg volunteers and employees expend considerable
+effort to identify, do copyright research on, transcribe and proofread
+public domain works in creating the Project Gutenberg-tm
+collection.  Despite these efforts, Project Gutenberg-tm electronic
+works, and the medium on which they may be stored, may contain
+"Defects," such as, but not limited to, incomplete, inaccurate or
+corrupt data, transcription errors, a copyright or other intellectual
+property infringement, a defective or damaged disk or other medium, a
+computer virus, or computer codes that damage or cannot be read by
+your equipment.
+
+1.F.2.  LIMITED WARRANTY, DISCLAIMER OF DAMAGES - Except for the "Right
+of Replacement or Refund" described in paragraph 1.F.3, the Project
+Gutenberg Literary Archive Foundation, the owner of the Project
+Gutenberg-tm trademark, and any other party distributing a Project
+Gutenberg-tm electronic work under this agreement, disclaim all
+liability to you for damages, costs and expenses, including legal
+fees.  YOU AGREE THAT YOU HAVE NO REMEDIES FOR NEGLIGENCE, STRICT
+LIABILITY, BREACH OF WARRANTY OR BREACH OF CONTRACT EXCEPT THOSE
+PROVIDED IN PARAGRAPH F3.  YOU AGREE THAT THE FOUNDATION, THE
+TRADEMARK OWNER, AND ANY DISTRIBUTOR UNDER THIS AGREEMENT WILL NOT BE
+LIABLE TO YOU FOR ACTUAL, DIRECT, INDIRECT, CONSEQUENTIAL, PUNITIVE OR
+INCIDENTAL DAMAGES EVEN IF YOU GIVE NOTICE OF THE POSSIBILITY OF SUCH
+DAMAGE.
+
+1.F.3.  LIMITED RIGHT OF REPLACEMENT OR REFUND - If you discover a
+defect in this electronic work within 90 days of receiving it, you can
+receive a refund of the money (if any) you paid for it by sending a
+written explanation to the person you received the work from.  If you
+received the work on a physical medium, you must return the medium with
+your written explanation.  The person or entity that provided you with
+the defective work may elect to provide a replacement copy in lieu of a
+refund.  If you received the work electronically, the person or entity
+providing it to you may choose to give you a second opportunity to
+receive the work electronically in lieu of a refund.  If the second copy
+is also defective, you may demand a refund in writing without further
+opportunities to fix the problem.
+
+1.F.4.  Except for the limited right of replacement or refund set forth
+in paragraph 1.F.3, this work is provided to you 'AS-IS', WITH NO OTHER
+WARRANTIES OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO
+WARRANTIES OF MERCHANTIBILITY OR FITNESS FOR ANY PURPOSE.
+
+1.F.5.  Some states do not allow disclaimers of certain implied
+warranties or the exclusion or limitation of certain types of damages.
+If any disclaimer or limitation set forth in this agreement violates the
+law of the state applicable to this agreement, the agreement shall be
+interpreted to make the maximum disclaimer or limitation permitted by
+the applicable state law.  The invalidity or unenforceability of any
+provision of this agreement shall not void the remaining provisions.
+
+1.F.6.  INDEMNITY - You agree to indemnify and hold the Foundation, the
+trademark owner, any agent or employee of the Foundation, anyone
+providing copies of Project Gutenberg-tm electronic works in accordance
+with this agreement, and any volunteers associated with the production,
+promotion and distribution of Project Gutenberg-tm electronic works,
+harmless from all liability, costs and expenses, including legal fees,
+that arise directly or indirectly from any of the following which you do
+or cause to occur: (a) distribution of this or any Project Gutenberg-tm
+work, (b) alteration, modification, or additions or deletions to any
+Project Gutenberg-tm work, and (c) any Defect you cause.
+
+
+Section  2.  Information about the Mission of Project Gutenberg-tm
+
+Project Gutenberg-tm is synonymous with the free distribution of
+electronic works in formats readable by the widest variety of computers
+including obsolete, old, middle-aged and new computers.  It exists
+because of the efforts of hundreds of volunteers and donations from
+people in all walks of life.
+
+Volunteers and financial support to provide volunteers with the
+assistance they need, is critical to reaching Project Gutenberg-tm's
+goals and ensuring that the Project Gutenberg-tm collection will
+remain freely available for generations to come.  In 2001, the Project
+Gutenberg Literary Archive Foundation was created to provide a secure
+and permanent future for Project Gutenberg-tm and future generations.
+To learn more about the Project Gutenberg Literary Archive Foundation
+and how your efforts and donations can help, see Sections 3 and 4
+and the Foundation web page at http://www.pglaf.org.
+
+
+Section 3.  Information about the Project Gutenberg Literary Archive
+Foundation
+
+The Project Gutenberg Literary Archive Foundation is a non profit
+501(c)(3) educational corporation organized under the laws of the
+state of Mississippi and granted tax exempt status by the Internal
+Revenue Service.  The Foundation's EIN or federal tax identification
+number is 64-6221541.  Its 501(c)(3) letter is posted at
+http://pglaf.org/fundraising.  Contributions to the Project Gutenberg
+Literary Archive Foundation are tax deductible to the full extent
+permitted by U.S. federal laws and your state's laws.
+
+The Foundation's principal office is located at 4557 Melan Dr. S.
+Fairbanks, AK, 99712., but its volunteers and employees are scattered
+throughout numerous locations.  Its business office is located at
+809 North 1500 West, Salt Lake City, UT 84116, (801) 596-1887, email
+business@pglaf.org.  Email contact links and up to date contact
+information can be found at the Foundation's web site and official
+page at http://pglaf.org
+
+For additional contact information:
+     Dr. Gregory B. Newby
+     Chief Executive and Director
+     gbnewby@pglaf.org
+
+Section 4.  Information about Donations to the Project Gutenberg
+Literary Archive Foundation
+
+Project Gutenberg-tm depends upon and cannot survive without wide
+spread public support and donations to carry out its mission of
+increasing the number of public domain and licensed works that can be
+freely distributed in machine readable form accessible by the widest
+array of equipment including outdated equipment.  Many small donations
+($1 to $5,000) are particularly important to maintaining tax exempt
+status with the IRS.
+
+The Foundation is committed to complying with the laws regulating
+charities and charitable donations in all 50 states of the United
+States.  Compliance requirements are not uniform and it takes a
+considerable effort, much paperwork and many fees to meet and keep up
+with these requirements.  We do not solicit donations in locations
+where we have not received written confirmation of compliance.  To
+SEND DONATIONS or determine the status of compliance for any
+particular state visit http://pglaf.org
+
+While we cannot and do not solicit contributions from states where we
+have not met the solicitation requirements, we know of no prohibition
+against accepting unsolicited donations from donors in such states who
+approach us with offers to donate.
+
+International donations are gratefully accepted, but we cannot make
+any statements concerning tax treatment of donations received from
+outside the United States.  U.S. laws alone swamp our small staff.
+
+Please check the Project Gutenberg Web pages for current donation
+methods and addresses.  Donations are accepted in a number of other
+ways including including checks, online payments and credit card
+donations.  To donate, please visit: http://pglaf.org/donate
+
+
+Section 5.  General Information About Project Gutenberg-tm electronic
+works.
+
+Professor Michael S. Hart is the originator of the Project Gutenberg-tm
+concept of a library of electronic works that could be freely shared
+with anyone.  For thirty years, he produced and distributed Project
+Gutenberg-tm eBooks with only a loose network of volunteer support.
+
+Project Gutenberg-tm eBooks are often created from several printed
+editions, all of which are confirmed as Public Domain in the U.S.
+unless a copyright notice is included.  Thus, we do not necessarily
+keep eBooks in compliance with any particular paper edition.
+
+Most people start at our Web site which has the main PG search facility:
+
+     http://www.gutenberg.net
+
+This Web site includes information about Project Gutenberg-tm,
+including how to make donations to the Project Gutenberg Literary
+Archive Foundation, how to help produce our new eBooks, and how to
+subscribe to our email newsletter to hear about new eBooks.
+
+*** END: FULL LICENSE ***
+

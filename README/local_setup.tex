@@ -19,49 +19,50 @@
 \chapter*{Introduction}
 Gradescope is great tool for autograding assignments. However, there is still a substantial amount
 of infrastructure required to deploy and run an autograder on gradescope. This document provides 
-instructions for both setting up autograders on Gradescope, and for an autograding framework for
-\code{C/C++} code. Setup from start to finish is intended to take roughly 30 minutes. If you have 
-any questions, please reach out to me at \code{mrussell@cs.tufts.edu}. Thanks!
-
-\section*{Notes}
-This setup requires the use of Docker Desktop. In most cases, you will be able to uninstall it after 
-the initial setup. However, it is suggested that you start the Docker installation while reading the 
-document, as it may take a few minutes. 
+instructions for both setting up autograders on Gradescope, and for using our in-house autograding
+framework for \code{C/C++} code. Setup from start to finish is intended to take roughly 30 minutes.
+If you have any questions, please reach out to me at \code{mrussell@cs.tufts.edu}. Thanks!
 
 \section*{Infrastructure Background}
-Gradescope's autograders rely on Docker containers which are spun up each time 
+Gradescope's autograders rely on \code{Docker} containers which are spun up each time 
 a submission is graded. The default container runs a variant of \code{Ubuntu 18.04},
-coupled with the bare-bones scripts to make the autograding framework function. The usual 
-workflow is to manually upload a \code{.zip} file containing two scripts: 
-\code{setup.sh}, which installs dependencies (e.g. \code{Python}, \code{clang}, etc.), and a shell script 
-named \code{run_autograder}, which runs the autograder. The main issue here is that each time you 
-upload the \code{.zip} file, the Docker container must be built from scratch, which can take quite
-a bit of time; this can compound quickly during the development of an autograder. This document 
-provides an optional solution to the problem. 
+coupled with the bare-bones scripts to make the autograding framework function. There are two 
+supported workflows in this document to integrate with this system. 
+\begin{enumerate}
+      \item The \code{.zip} method - this workflow is to manually upload a \code{.zip} file 
+      containing two scripts \code{setup.sh}, which installs dependencies (e.g. \code{Python}, 
+      \code{clang}, etc.), and a shell script named \code{run_autograder}, which runs the autograder.
+      \item The \code{Docker} method - this workflow is to build the \code{Docker} container from
+      scratch and upload it to \code{Dockerhub}.
+\end{enumerate}
+Pros and cons of these approaches:
+\begin{itemize}
+      \item The \code{.zip} method requires more manual work. You have to upload
+      a new \code{.zip} file each time you want to update the autograder; the \code{Docker} container 
+      will then be built from scratch on Gradescope, which takes time. However, you don't need 
+      \code{Docker} on your system. If you don't use \code{Docker}, this workflow is suggested. 
+      \item The \code{Docker} method is more streamlined once it's setup. After uploading the container, 
+      for every assignment, you can point Gradescope to the container on \code{Dockerhub} - no 
+      \code{.zip} file uploading required. And, if you make minor changes to the setup script, 
+      usually rebuilding the container is very fast. All of the steps to do the building and deploying 
+      of the container are done in a script for you. One drawback of this approach is that you need 
+      the \code{.dockercreds} file - this file contains a deploy key for the \code{tuftscs} 
+      account on \code{Dockerhub}. The key is not in this repository as it's public; it should be 
+      in Tufts Box - if not, email me at \code{mrussell@cs.tufts.edu}.
+\end{itemize}
 
 \section*{Autograding Background}
 Once the container is built, there is of course the issue of how to run and test student's code. 
-This is no easy task! This document provides documentation on an autograding framework we have 
+This is no easy task! However, this document includes documentation on an autograding framework we have 
 developed which makes writing tests for student code as easy as possible. 
 
 \chapter*{Infrastructure Setup}
-The solution for streamlining the infrastructure setup with Gradescope is twofold:
-\begin{enumerate}
-      \item Build and upload our own Docker container to Dockerhub, which Gradescope will use.
-      \item Put the autograding code in a \code{git} repository which the Docker container can access at autograding time. 
-\end{enumerate}
-Note that these two elements are distinct from one another; if using Docker is something you really don't want to do, that's fine. The container building 
-will just take more time in the aggregegate. In that case, follow the instructions on Gradescope's website regarding 
-setup:\\ \textcolor{blue}{\href{https://gradescope-autograders.readthedocs.io/en/latest/specs/}{https://gradescope-autograders.readthedocs.io/en/latest/specs/}}.
-Note that you can still use the \code{.git} integration;  However, if you wouldn't like to do that either, okay! Just skip ahead to the \code{Autograding Framework} section below. 
-
-\section*{Install Docker}
-Install Docker Desktop: \textcolor{blue}{\href{https://www.docker.com/products/docker-desktop/}{https://www.docker.com/products/docker-desktop/}}
-Note that you don't need to have it start on boot; you can start it before uploading the setup. 
-
-\section*{Setting up the Autograding Repo}
-If you don't currently have a repository related to course material, please make one. We suggest using
-\code{gitlab} for this: go to \textcolor{blue}{\href{https://gitlab.cs.tufts.edu}{https://gitlab.cs.tufts.edu}}, and 
+\section*{Autograding .git Repo}
+Regardless of whether you use the \code{.zip} method or the \code{Docker} method, you will need to
+create a \code{git} repository for your autograder. This repository will be used by the autograder; 
+each time an autograder instance runs, the code from the repository will be pulled, so the latest version
+of the grader can run. To that end, if you don't currently have a repository related to course material, please make one. 
+We suggest using \code{gitlab} for this: go to \textcolor{blue}{\href{https://gitlab.cs.tufts.edu}{https://gitlab.cs.tufts.edu}}, and 
 login with \code{LDAP}, using your Tufts eecs \code{utln} and password. You do not need a \code{README}.
 The example below will be for \code{cs 15}, but please follow the instructions for whichever course you're running.
 Now, in your terminal:
@@ -72,36 +73,30 @@ git init
 git remote add origin git@gitlab.cs.tufts.edu:your_utln/path_to_your_repo.git
 git switch -c main 
 \end{bashcodeblock}
-We have a sample repo for you to get starter code from. Copy the files as follows:
+We have a sample repo for you to start with. This repository contains:
+\begin{itemize}
+      \item Files both the \code{.zip} and \code{Docker} methods 
+      \item A sample autograder for the first cs-15 assignment. 
+      \item The autograding framework.
+\end{itemize}
+Copy the files as follows:
 \begin{bashcodeblock}
 git clone git@gitlab.cs.tufts.edu:mrussell/gradescope-autograding
 rm -rf gradescope-autograding/.git
 mv gradescope-autograding/* .
 rm -rf gradescope-autograding
 \end{bashcodeblock}
-\section*{Configuring the Docker build}
-Great! Now you have both the grading framework, as well as the elements necessary to build the 
-Docker container for gradescope. We will need to do a few configuration steps to make this work.
-First, \code{cd Dockerbuild}.
-We will need to add three files here (more details for each are below):
-\begin{itemize}
-      \item \code{.repopath}    - the remote path of the repository, including an Access Token.
-      \item \code{.dockertag}   - the tag of the Docker container to build
-      \item \code{.dockercreds} - the credentials to login to Dockerhub.
-\end{itemize}
 
-\subsection*{.repopath}
-
-\begin{wrapfigure}[9]{l}{0.25\textwidth}
-\includegraphics[scale=0.75]{access_token.png}
+\begin{wrapfigure}[15]{l}{0.25\textwidth}
+      \includegraphics[scale=0.7]{access_token.png}
 \end{wrapfigure}
-First, go to \code{gitlab} in your browser, and navigate to the course repository you just created.
+Great! Now, you will need an Access Token so your autograder can pull from the repo. To create one, 
+go to \code{gitlab} in your browser, and navigate to the course repository you just created.
 Next, hover over the settings cog on the lower left, and select `Access Tokens'.
 Create an access token; this will be used by the Gradescope autograder to pull the most recent version 
 of the autograding files for an assignment. We suggest only providing `read repository' access to the token. Feel free 
 to select whatever you'd like for the name, expiration date, and role (Maintainer is fine). Once the 
-token is created, copy the key. Now, open a file named \code{.repopath} [in the \code{Dockerbuild} directory].
-You will want to format the repository path as follows: 
+token is created, copy the key. Now, open a file and type the following (we will need it later):
 \\
 \begin{bashcodeblock}
 https://REPOSITORY-NAME:ACCESS-TOKEN@gitlab.cs.tufts.edu/path/to/repository.git
@@ -110,7 +105,28 @@ For example:
 \begin{bashcodeblock}
 https://cs-15-2022uc:glpat-Blah8173Blah8023Blah@gitlab.cs.tufts.edu/mrussell/cs-15-2022uc.git
 \end{bashcodeblock}
-Great! Now the autograder will be able to pull the most recent version of the autograding files.
+Okay! Now, continue with one of either the \code{.zip} or \code{Docker} methods below.
+
+\section*{.zip Method}
+As mentioned above, with the \code{.zip} method, you'll need to upload a \code{.zip} file for each 
+assignment. To get this working, you'll need to open the file \code{zipbuild/setup.sh}, and replace 
+the \code{REPOPATH} string at the top of the file with the path you just build above. 
+
+\subsection*{to-dos per assignment with the .zip method} 
+\begin{itemize}
+      \item Zip all of the files in \code{zipbuild/} - note: don't zip the folder, but the files - i.e. \code{cd zipbuild && zip Autograder.zip *}
+      \item On gradescope, after creating the programming assignment, upload the \code{.zip} file in 
+            the `configure autograder' section.
+      \item It should build and be tagged with no errors - if not, check the output of the autograder. 
+            Contact me if you run into trouble!
+\end{itemize}
+
+\section*{Docker method}
+If you don't have Docker Desktop, install it:\\ \textcolor{blue}{\href{https://www.docker.com/products/docker-desktop/}{https://www.docker.com/products/docker-desktop/}}
+Then, navigate to your autograding repo, and \code{cd Dockerbuild}.
+You will need to add three files here.
+\subsection*{.repopath}
+This file will contain (only) the path you created above.
 
 \subsection*{.dockertag}
 This will be the tag you'd like to use for your Docker container. Open a file named \code{.dockertag}
@@ -118,14 +134,33 @@ and write:
 \begin{bashcodeblock}
 tuftscs/gradescope-docker:YOURTAGNAMEHERE      
 \end{bashcodeblock}
-Feel free to use anything in place of YOURTAGNAMEHERE. Note that the first section is required. 
+Please choose something related to your course for the tag name (e.g. \\\code{tuftscs/gradescope-docker:cs-11-2022summer}).
+Note that \\\code{tuftscs/gradescope-docker:} is required. 
 
 \subsection*{.dockercreds}
 We are using a single Dockerhub account for all of the autograding courses. The file
 \code{.dockercreds} should be available in the course's Tufts Box folder. If not, reach out to 
-me at \code{mrussell@cs.tufts.edu} from your Tufts email address, and I'll send it to you ASAP. 
-Note that this access token must be kept private; to that end, please keep your course autograding
-repository private (this is the default on \code{gitlab}).
+me at \code{mrussell@cs.tufts.edu} from your Tufts email address; let me know which course you're 
+working on, and I'll send you the file ASAP. 
+Note!! This access token must be kept private; to that end, please keep your course autograding
+repository private.
+
+\subsection*{Build and upload the container to Dockerhub}
+Once you've placed the three files in the \code{dockerbuild} folder, run the commands:
+\begin{bashcodeblock}
+cd dockerbuild
+./deploy_container
+\end{bashcodeblock}
+The container will be built and uploaded to Dockerhub with the tag you specified. For the future,
+if you make changes to any of the files in the \code{dockerbuild} folder, make sure to re-run this 
+script. If you make `breaking' changes to your autograder, change the tag name in the .dockertag file.
+
+\subsection*{to-dos per assignment with the Docker method} 
+\begin{itemize}
+      \item On gradescope, after creating the programming assignment, select the `Manual Docker 
+      Configuration' option in the `configure autograder' section; place the contents of the 
+      .dockertag file in the box (e.g. \\\code{tuftscs/gradescope-docker:cs-11-2022summer})
+\end{itemize}
 
 \section*{Conclusion}
 Okay, you are ready to begin developing an autograder! Continue to the next section to learn 
@@ -135,55 +170,36 @@ about the autograder, and for a walkthrough to setup an assignment.
 \section*{Introduction}
 The autograding framework is designed to have you writing and deploying tests as quickly as possible. 
 It supports a variety of options related to test types, etc, however, in general tests will be a 
-set of \code{.cpp} files. Each one will be compiled and run, and the output of the test will be \code{diff}'d
-against a reference implementation that you provide. \code{Valgrind} can be run on tests, \code{stderr} can be
-\code{diff}'d. The framework depends on a \code{.toml} file for the configuration. 
-\section*{.toml configutation}
-The \code{.toml} file will be configured as follows:
+set of \code{.cpp} files. Each one will be compiled and run with the student's submission code,
+and the output of the test will be \code{diff}'d against a reference implementation that you provide.
+\code{Valgrind} can be run on tests, \code{stderr} can be \code{diff}'d. The framework depends on a
+\code{testset.toml} file for the configuration. 
+\section*{testset.toml configuration file}
+\code{testset.toml} will be configured as follows:
 \begin{bashcodeblock}
 [common]
 !\#! common test options will go here
-!\#! this section is mandatory - it must be named `common' 
+!\#! this section can be empty, but is mandatory
+!\#! this section must be named `common' 
 
 [set_of_tests] 
 !\#! subsequent sections will each contain a group of tests to run
 !\#! configuration options placed here will override [common]
-!\#! test groups names (e.g. [set_of_tests]) can be anything
+!\#! test group names (e.g. [set_of_tests]) can be anything
 !\#! tests in a section must be placed in a list named `tests'
 !\#! tests = [
-      {testname="test_0", description="my first test"},
-      {testname="test_1", description="my second test"},
+      {testname="test0", description="my first test"},
+      {testname="test1", description="my second test"},
       ..., 
-      {testname="test_n", description="my nth test"},
+      {testname="testn", description="my nth test"},
 ]
 !\#! each test must have testname and description fields
 !\#! you may add any other option to a given test
 !\#! test-specific options override any `parent' options
 \end{bashcodeblock}
+See the section \code{test .toml configuration options} for details. 
 
-\section*{Test .toml Configuration Options}
-\begin{tabular}{ | l | c | l | }
-\hline			
-\textbf{option} & \textbf{default} & \textbf{purpose} \\ \hline\hline
-max\_time & 30 & maximum time (in seconds) for a test \\\hline
-max\_ram & -1 (unlimited) & maximum ram (in kb) for a test \\\hline
-valgrind & true & run an additional test with valgrind \\\hline
-diff\_stdout & true & test diff of student vs. reference stdout \\\hline
-diff\_stderr & true & test diff of student vs. reference stderr \\\hline
-diff\_ofiles & true & test diff of student vs. reference output files \\\hline
-ccize\_stdout & false & diff canonicalized stdout instead of stdout \\\hline
-ccize\_stderr & false & diff canonicalized stderr instead of stderr \\\hline
-ccize\_ofiles & false & diff canonicalized ofiles instead of ofiles \\\hline
-ccizer\_name & ``" & name of a canonicalizer function to use \\\hline
-our\_makefile & true & use testset/makefile/Makefile to build tests \\\hline
-pretty\_diff & true & use diff-so-pretty for easy-to-ready diffs \\\hline
-max\_score & 1 & maximum points (on gradescope) for this test \\\hline
-visibility &``after-due-date" & gradescope visibility setting \\\hline
-argv & [ ] & argv input to the program \\\hline
-\end{tabular}
-
-\section*{Autograder Files and Directories}
-\subsection*{Files/Directories Required to Run Autograder}
+\section*{Setup Files and Directories}
 These are all of the possible options, but you may not need many of them 
 depending on your test configuration.
 [TODO] - ensure that the autograder is 'flexible' - not sure if missing some directories/files will
@@ -204,8 +220,8 @@ cause an unexpected crash.
 |---testst.toml       [testing configuration file]
 |-
 \end{bashcodeblock}
-\newpage
-\subsection*{Files/Directories Created After Running Autograder}
+
+\section*{Files/Directories Created by the Autograder}
 \begin{bashcodeblock}
 .
 |--- results
@@ -238,7 +254,101 @@ cause an unexpected crash.
 |       |--- test21.valgrind
 |-
 \end{bashcodeblock}
-The \code{.diff}, \code{.ccized}, and \code{.valgrind} output files for each test 
-will only be created if your configuation requires them; \code{.stdout} and \code{.stderr}
-files will be created for each test.
+\section*{Important Notes}
+\begin{itemize}
+      \item Files in \code{stdin/} named \code{<testname>.stdin} (\code{test01.stdin})  
+            will be sent via \code{stdin} for that test. 
+      \item Files in \code{.cpp/} named \code{<testname>.cpp} (\code{test01.cpp})
+            will each contain \\\code{main()}, and will be compiled and linked with the 
+            student's code.
+      \item If you plan to use files in \code{.cpp}, you must use a custom \code{Makefile} - see the 
+            example: \\\code{assignments/hw1_ArrayLists/testset/makefile/Makefile}.
+      \item If the students are writing programs which have their own \code{main()}, then you do not 
+            need files in \code{.cpp} - you may still choose to have your own custom \code{Makefile}
+            if you wish (otherwise, be sure to set \code{our_makefile = false} in \code{testset.toml}). 
+      \item The target to build (e.g. \code{make target}) must be named the same as the program to
+            run (e.g. \code{./target}).
+      \item Canonicalization functions which are used by the autograder in canonicalizers.py must:
+            \begin{enumerate}
+                  \item take a single parameter, which is the filename of the student's output 
+                  \item return a string, which contains the canonicalized output 
+                  \item TODO - refactor this to be string input???
+            \end{enumerate}
+      \item The \code{.diff}, \code{.ccized}, and \code{.valgrind} output files for each test 
+      will only be created if your configuation requires them.
+      \item This framework supports \code{diff}ing against any number of output files written 
+      to by the program. Such files must be named \\\code{<testname>.ANYTHING_HERE.ofile}. The
+      expectation is that the program will receive the name of the file to produce as an 
+      input argument. Then, in the \code{testset.toml} file, you will add \code{argv} variable includes
+      \#\{testname\}.ANYTHING\_HERE.ofile in the \code{argv} list. See the \code{gerp} example. See 
+      the \code{assignments/gerp/testset.toml} file for an example. 
+                        
+      \item The \code{summary} files are a 
+      `snapshot' of all of the variables of a test - a summary is created upon initialization of the test, 
+      and is overwritten after a test completes with all the information about the test. This is very useful
+      for debugging!
+\end{itemize}
+
+
+\subsection*{ofiles}
+
+\section*{How to Build Reference Output}
+Once you've configured your tests, you can build the reference output as follows:
+\begin{bashcodeblock}
+cd ../../framework
+python3 build_ref_output.py -p ../../assignments/hwname
+\end{bashcodeblock}
+The reference code will be run as a submission, and the output of the reference will be placed in 
+the \code{REPO_ROOT/hwname/testset/ref_output/} directory.
+
+\section*{Testing an Autograder Locally}
+After you've produced the reference output, copy a potential submission code to a directory named 
+\code{submission} in the autograder folder \\(\code{REPO_ROOT/hwname/submission/}). Then run 
+\begin{bashcodeblock}
+python3 ../../framework/autograde.py
+\end{bashcodeblock}
+
+\section*{Parallel Compilation and Parallel Execution}
+If you would like to enable parallel compilation and parallel execution of tests, instead run 
+\begin{bashcodeblock}
+python3 ../../framework/autograde.py -j NUMCORES
+\end{bashcodeblock}
+where \code{NUMCORES} is the number of cores 
+you would like to utilize (\code{-1} will use all available cores). Note that multiple tests may be 
+run on each core concurrently. The default setting is for one core to be used with no tests running 
+concurrently; that is, only one test will be run at a time (no concurrent tests are run). You can
+also build the reference output with parallelization by running 
+\begin{bashcodeblock}
+python3 build_ref_output.py -p REPO_ROOT/hwname -a ../../framework -j NUMCORES
+\end{bashcodeblock}
+Note that on gradescope the file \code{testrunner.sh} is what actually runs the autograder. You can 
+change the command in that file to include \\\code{-j NUMCORES} if you'd like, although on 
+gradescope there isn't likely much to be gained from this.  
+
+\section*{Test .toml Configuration Options}
+These are the configuration options for a test. You may set any of these in \code{[common]},
+under a test group, or within a specific test. 
+
+\begin{tabular}{ | l | c | l | }
+\hline			
+\textbf{option} & \textbf{default} & \textbf{purpose} \\ \hline\hline
+max\_time & 30 & maximum time (in seconds) for a test \\\hline
+max\_ram & -1 (unlimited) & maximum ram (in kb) for a test \\\hline
+valgrind & true & run an additional test with valgrind \\\hline
+diff\_stdout & true & test diff of student vs. reference stdout \\\hline
+diff\_stderr & true & test diff of student vs. reference stderr \\\hline
+diff\_ofiles & true & test diff of student vs. reference output files \\\hline
+ccize\_stdout & false & diff canonicalized stdout instead of stdout \\\hline
+ccize\_stderr & false & diff canonicalized stderr instead of stderr \\\hline
+ccize\_ofiles & false & diff canonicalized ofiles instead of ofiles \\\hline
+ccizer\_name & ``" & name of canonicalization function to use \\\hline
+our\_makefile & true & use testset/makefile/Makefile to build tests \\\hline
+pretty\_diff & true & use diff-so-pretty for easy-to-ready diffs \\\hline
+max\_score & 1 & maximum points (on gradescope) for this test \\\hline
+visibility &``after-due-date" & gradescope visibility setting \\\hline
+argv & [ ] & argv input to the program \\\hline
+executable & None & executable to build and run \\\hline
+\end{tabular}
+\newpage
+
 \end{document}

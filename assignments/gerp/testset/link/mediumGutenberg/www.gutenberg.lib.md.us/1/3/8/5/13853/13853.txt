@@ -1,0 +1,3377 @@
+Project Gutenberg's New National First Reader, by Charles J. Barnes, et al.
+
+This eBook is for the use of anyone anywhere at no cost and with
+almost no restrictions whatsoever.  You may copy it, give it away or
+re-use it under the terms of the Project Gutenberg License included
+with this eBook or online at www.gutenberg.net
+
+
+Title: New National First Reader
+
+Author: Charles J. Barnes, et al.
+
+Release Date: October 25, 2004 [EBook #13853]
+
+Language: English
+
+Character set encoding: ASCII
+
+*** START OF THIS PROJECT GUTENBERG EBOOK NEW NATIONAL FIRST READER ***
+
+
+
+
+Produced by Susan Skinner, the PG Online Distributed Proofreading
+Team, and The Internet Archive Children's Library,
+
+
+
+
+
+[Transcriber's Note:
+The original text used accented characters to indicate pronunciation. This 7 bit version has been produced using the following markup scheme.
+
+The accented character and the symbol representing the accent are surrounded with square brackets. If the symbol is placed in front of the character, the accent goes above the character. If the symbol is placed after the character, the accent goes below the character. If there is more than one character inside the brackets, the accent applies to all of them.
+
+Accent      Symbol
+acute         /
+macron        =
+breve         )
+diaresis      :
+tilde         ~
+dot           .
+cedilla       5
+circumflex    ^
+up tack       ±
+backslash     \
+th ligature   [t-h]
+horizontal strikethrough -
+]
+
+       *       *       *       *       *
+
+BARNES'S NEW NATIONAL READERS
+
+       *       *       *       *       *
+
+NEW NATIONAL FIRST READER
+
+BY
+CHARLES J. BARNES
+HARLAN H. BALLARD
+S. PROCTOR THAYER
+
+NEW YORK--CINCINNATI--CHICAGO
+AMERICAN BOOK COMPANY
+
+1888, by A.S. BARNES & CO.
+
+       *       *       *       *       *
+
+[Illustration: PREFACE]
+
+The authors of this book believe,--
+
+1st.--_That the Word Method is the most natural and practicable,_
+because words are representatives of objects, actions, etc., while
+letters, or sounds, in the abstract, convey no meaning to the pupil, and
+are devoid of interest.
+
+2d.--_That words of ordinary length are as easily learned as short ones,
+provided they are familiar to the pupil_. No teacher will doubt the
+statement that a pupil will learn the word "mamma'" as easily as "says"
+or "eyes."
+
+3d.--_That frequent "Reviews" are essential to the rapid and thorough
+advancement of pupils_. By this means the words imperfectly learned
+are again brought to their attention and thoroughly memorized. That
+these "Reviews" ought to take up the new words in a different order and
+arrangement, in order to test the ability of the pupil to recognize them
+in any situation. That as soon as the vocabulary is large enough they
+should be written in the form of a new exercise, as on pp. 36, 44, 52,
+60, and 68 of this book.  4th.--_That thorough and systematic drill in
+Spelling is absolutely necessary_. That the "Reading Reviews" should
+be so constructed as to contain all the new words used in the lessons
+they were intended to review, and no others, so that they can be used
+for "Written or Dictation Spelling." That the pronunciation of the words
+in the "Spelling Reviews" should be indicated by the diacritical marks
+of Webster, so that they can be used for either "Oral Spelling" or
+"Phonic Drill."
+
+5th.--_That the "Script" from which the pupil gets his first and most
+lasting impressions should be of large size and accurate form_, and
+not of the nondescript character usually found in books of this class.
+That it should be free from superfluous line and flourish, and yet have
+grace and beauty. That it should be adapted for both copying and
+reading.
+
+6th.--_That the lessons should be largely "conversational in style,"_
+to cultivate flexibility of voice and to break up the dreary monotone so
+frequently heard among children.
+
+7th.--_That the lessons of a book of this grade should not average more
+than seven "new words."_ That all such words should appear at the
+commencement of lessons, and be familiar to the pupil. That this method
+secures careful gradation, and is in marked contrast with the old custom
+of having from fifteen to twenty-five.
+
+8th.--_That "Outline Drawings" of the objects first presented to pupils
+should be made in the presence of the class_, as it stimulates them to
+draw, and thus makes easy and profitable the copying of the "Script
+Exercises."
+
+9th.--_That the schoolbook of to-day must be beautifully and copiously
+illustrated_. That there must be variety as well as excellence, both in
+drawing and engraving. That well-known and famous artists must be
+secured, such as Harper, Fredericks, Church, Lippincott, Eytinge, White,
+Beard, Weldon, Thulstrup, Cary, Moser, Weaver, and Share; and such
+engravers as Karst, Wigand, French, Held, Davis, Hellawell, etc.
+
+10th.--_That the exercises must be instructive as well as interesting,_
+and that no artificial system of vowel classification ought to interfere
+with the free and natural use of words.
+
+11th.--_That a book of this kind should be suited to the wants of graded
+and ungraded schools_, there evidently being nothing in the one not
+readily adaptable to the other.
+
+12th.--_That every book of this class should contain a collection of
+brief extracts from standard literature_ to be committed to memory.
+
+13th.--_That this book is constructed on the above principles_.
+
+
+
+
+ALPHABETS.
+
+[Script: A a]
+A a
+
+[Script: B b]
+B b
+
+[Script: C c]
+C c
+
+[Script: D d]
+D d
+
+[Script: E e]
+E e
+
+[Script: F f]
+F f
+
+[Script: G g]
+G g
+
+[Script: H h]
+H h
+
+[Script: I i]
+I i
+
+[Script: J j]
+J j 
+
+[Script: K k]
+K k
+
+[Script: L l]
+L l
+
+[Script: M m]
+M m
+
+[Script: N n]
+N n
+
+[Script: O o]
+O o
+
+[Script: P p]
+P p
+
+[Script: Q q]
+Q q
+
+[Script: R r]
+R r
+
+[Script: S s]
+S s
+
+[Script: T t]
+T t
+
+[Script: U u]
+U u
+
+[Script: V v]
+V v
+
+[Script: W w]
+W w
+
+[Script: X x]
+X x
+
+[Script: Y y]
+Y y
+
+[Script: Z z]
+Z z
+
+[Script: &]
+&
+
+FIGURES.
+[Script: 1 2 3 4 5 6 7 8 9 0]
+
+
+
+
+FIRST READER
+
+
+
+
+
+PART I
+
+
+
+LESSON I.
+
+
+[Illustration: ]
+
+dog it is a dog
+
+It is a dog.
+
+SCRIPT EXERCISE.
+
+[Script: dog] [Illustration] [Script: dog]
+
+
+
+
+LESSON II.
+
+
+NEW WORDS.
+
+boy
+the
+and
+run
+see
+
+[Illustration]
+
+
+See the boy and the dog.
+
+The boy and the dog run.
+
+SCRIPT EXERCISE.
+
+[Script: boy] [Illustration] [Script: boy]
+
+
+
+
+LESSON III.
+
+
+NEW WORDS.
+
+rat
+big
+can
+get
+this
+
+[Illustration]
+
+
+This is a big rat.
+
+Can the dog get the rat?
+
+The dog can get the rat.
+
+
+SCRIPT EXERCISE.
+
+[Script: rat] [Illustration] [Script: rat]
+
+
+
+
+LESSON IV.
+
+
+NEW  WORDS.
+
+hen
+nest
+box
+on
+in
+
+[Illustration]
+
+See the hen and the nest.
+The hen is on the nest.
+The nest is in a box.
+
+SCRIPT EXERCISE.
+
+[Script: hen] [Illustration] [Script: box]
+
+
+
+
+LESSON V.
+
+
+NEW WORDS.
+
+cat
+egg
+will
+an
+at
+
+[Illustration]
+
+The big cat is at the nest.
+Will the cat get an egg?
+See the hen run at the cat!
+Run, hen, run!
+
+SCRIPT EXERCISE.
+
+[Script: Run] [Illustration] [Script: hen]
+
+
+
+
+LESSON VI.
+
+
+READING REVIEW.[A]
+
+
+I.
+See the boy and the dog.
+Is it a big dog?
+
+II.
+The dog can get the big rat.
+Is this hen on the nest?
+
+III.
+Is the nest in a box?
+The big cat is at the nest.
+
+IV.
+Will the cat get an egg?
+The hen will run at the cat.
+
+
+
+
+SPELLING REVIEW.
+
+[)i]t  
+[)a]t 
+b[)i][=g]  
+[t-h][=e]  
+s[=e][e\]
+r[)a]t
+[)i][s±]
+[)a]n 
+d[)o][=g]  
+[)a]nd  
+[-c][)a]n  
+h[)e]n
+[)i]n  
+[)o]n 
+boy  
+r[)u]n  
+[=g][)e]t  
+b[)o]x
+[-c][)a]t 
+[)e][=g][g\] 
+w[)i]l[l\] 
+[t-h][)i]s  
+n[)e]st
+
+[Footnote A: See p. 3, § 4.]
+
+
+
+
+
+LESSON VII.
+
+
+SCRIPT EXERCISE
+
+[Script: See the dog run.
+
+The boy can run.
+
+See the big nest.
+
+Run, hen, run!]
+
+
+OBJECT EXERCISE.
+
+See the [Illustration: boy] and the [Illustration: dog]
+The [Illustration: dog] ran at the [Illustration: cat]
+The [Illustration: hen] ran at the [Illustration: cat]
+Can the [Illustration: cat] get the [Illustration: rat]
+The [Illustration: egg] is in the [Illustration: nest]
+The [Illustration: nest] is in the [Illustration: box]
+ 
+
+
+LESSON VIII.
+
+
+NEW WORDS.
+
+his 
+fast
+yes
+not
+as
+them
+
+[Illustration]
+
+This is a boy and his dog.
+Can the boy and his dog run fast?
+Yes. See them run.
+The boy can not run as fast as the dog. Run, boy, run!
+
+SCRIPT EXERCISE.
+
+[Script:  Run fast, dog!]
+
+
+
+
+LESSON IX.
+
+
+NEW WORDS
+
+white
+little
+bird
+eggs
+you
+are
+do
+I
+
+[Illustration]
+
+Do you see this little bird?
+Yes, I see the little bird.
+Do you see this little nest?
+Yes, and I see the eggs in it.
+The eggs in the nest are white.
+
+
+SCRIPT EXERCISE.
+
+[Script: See the little bird.]
+
+
+
+
+LESSON X
+
+
+NEW WORDS.
+
+Ann
+play
+her
+ran
+girl
+was
+likes
+
+[Illustration]
+
+Do you see the little girl and her cat? See them play.
+This little girl is Ann.
+Ann likes her cat.
+This cat was in a nest.
+A hen ran at her.
+
+SCRIPT EXERCISE.
+
+[Script:  This girl is Ann.]
+
+
+
+
+LESSON XI.
+
+
+NEW  WORDS.
+
+top
+has
+spin
+how
+he
+makes
+
+[Illustration]
+
+The boy has a big top.
+Spin! Spin! Spin!
+See how he makes it spin!
+Can you spin a top?
+Yes, I can spin a top.
+A boy likes a big top.
+
+
+
+
+LESSON XII.
+
+
+READING  REVIEW.
+
+
+I.
+The boy and his dog can run fast. Do you see them run? Can the dog run
+as fast as the boy? Yes, he can.
+
+
+II.
+I do not see the little bird. I see the eggs in the nest. Are the eggs
+white? Yes, the eggs are white.
+
+
+III.
+Was the girl Ann? Yes. Her cat likes play. Was the cat at the nest? Yes,
+and the hen ran at her.
+
+
+IV.
+The boy has a top. See how fast he makes it spin! Can you spin a top?
+Yes, I can spin a top.
+
+SCRIPT EXERCISE.
+
+[Script: Spin] [Illustration] [Script: Spin]
+
+
+
+
+LESSON XIII.
+
+
+SPELLING REVIEW.
+
+[=I]
+[)a][s±] 
+d[o:]
+h[=e]
+[y\][o\][=u]
+w[a.][s±] (w[)o]z)
+h[)a][s±]
+h[)i][s±]
+y[)e]s
+n[)o]t
+[:a]r[e\]
+[)A]n[n\]
+h[~e]r
+r[)a]n
+[)e][=g][g\][s±]
+b[~i]rd
+[=g][~i]rl
+sp[)i]n
+how
+t[)o]p
+[t-h][)e]m
+f[.a]st
+wh[=i]t[e\]
+pl[=a][y\]
+l[=i]k[e\]s
+m[=a]k[e\]s
+l[)i]t'tl[e\]
+
+
+SCRIPT  EXERCISE.
+
+[Script: The little girl likes her cat.
+
+The dog and hen run at the cat.
+
+Can a boy spin a top?
+
+The eggs are white.
+
+The nest is little.]
+
+
+
+
+LESSON XIV.
+
+
+NEW WORDS.
+
+tree
+birds
+floor
+cats
+rats
+one
+two
+three
+four
+
+[Illustration]
+
+One, one, one,
+Little dog, run.
+
+Two, two, two.
+Cats see you.
+
+Three, three, three,
+Birds in a tree.
+
+Four, four, four,
+Rats on the floor.
+
+
+
+
+LESSON  XV.
+
+
+NEW  WORDS.
+
+good
+gave
+to
+doll
+hat
+new 
+like
+mam ma'
+
+[Illustration]
+
+Ann has a new doll.
+Her mamma' gave it to her.
+Ann likes the doll, and will get it a new hat.
+Are you a good girl?
+Do you like a doll?
+
+
+
+
+LESSON XVI.
+
+
+NEW WORDS.
+
+O
+me
+may
+put
+ride
+take
+too
+my
+with
+
+[Illustration]
+
+Ann, will you take a ride with me?
+O yes! I will. May I take my doll too?
+Yes, you may take the doll.
+Ann will put on her hat, and take her doll to ride.
+
+
+SCRIPT EXERCISE.
+
+[Script:  Ann likes her doll.]
+
+
+
+
+LESSON XVII.
+
+
+NEW WORDS.
+
+we
+that
+five
+they
+ver'y
+those
+snow
+pret'ty
+
+[Illustration]
+
+How fast we ride! I like to ride, and my doll likes it too.
+
+Ann, do you see those five little birds on that tree?
+
+O yes! I see them. Are they not very pretty birds?
+
+Yes. They are snowbirds.
+
+
+
+
+LESSON XVIII.
+
+
+READING REVIEW.
+
+
+I.
+I see one dog and two cats. Do you see the three birds in the tree, and
+the four rats on the floor?
+
+
+II.
+Yes, and I see the new doll my good mammá gave to Ann. I like the doll.
+It is a very pretty one. May I take it to ride?
+
+
+III.
+O yes! and I will put on my hat and take a ride too. Do you see me with
+my doll?
+
+
+IV.
+Do we not ride fast? See those five snowbirds in that tree. Are they not
+pretty birds?
+
+
+SCRIPT EXERCISE.
+
+[Script:  How fast we ride!]
+
+
+
+
+LESSON XIX.
+
+
+SPELLING REVIEW.
+
+[=O]
+t[o:]
+m[=e]
+m[=y] (m[=i])
+w[=e]
+t[=oo]
+h[)a]t
+tr[=e][e\]
+[-c][)a]ts
+one (w[)u]n)
+t[w\][o:] (t[=oo])
+new (n[=u])
+p[u.]t
+m[=a][y\]
+r[)a]ts
+thr[=e][e\]
+f[=o][u\]r
+sn[=o][w\]
+d[)o]l[l\]
+l[=i]k[e\]
+t[=a]k[e\]
+r[=i]d[e\]
+w[)i][t-h]
+fl[=o][o\]r (fl[=o]r)
+[=g][)oo]d
+[=g][=a]v[e\]
+f[=i]v[e\]
+[t-h][=o][s±][e\]
+[t-h][)a]t
+[t-h][e=][y\]
+v[)e]r'[)y]
+b[~i]rd[s±]
+pret't[)y] (pr[)i]t't[)y])
+m[.a]m m[:a]'
+
+
+SCRIPT EXERCISE.
+
+[Script: The new doll is very pretty. It will ride with Ann.
+
+It has a new hat.
+
+A good girl likes her doll.]
+
+
+
+
+LESSON XX.
+
+
+NEW WORDS.
+
+go
+off
+did
+bad
+why
+here
+have
+Rov'er
+
+[Illustration]
+
+Here, Rover, here! That is my hat! Do not run off with it!
+
+You are a bad dog to run off with my hat. I will not have you with me.
+You are not a good dog.
+
+You bad dog! Why did you go off with my hat?
+
+
+
+
+LESSON XXI.
+
+
+NEW WORDS.
+
+kit'ty
+saw
+soft
+catch
+fur
+its
+she
+small
+
+[Illustration]
+
+This is my little kitty.
+
+How soft and white its fur is!
+
+Is it not pretty? The cat is on the box. She saw a big rat and ran to
+catch it.
+
+The kitty was too small to catch the rat.
+
+
+SCRIPT EXERCISE.
+
+[Script:  This is my kitty.]
+
+
+
+
+LESSON XXII.
+
+
+NEW WORDS.
+
+up
+ho
+down
+boys
+mer'ry
+back
+hill
+o'ver
+
+[Illustration]
+
+Ho, ho!
+How we go
+
+Down the hill,
+Over the snow.
+
+Ho, ho! Back we go,
+Up the hill, over the snow.
+
+Down the hill, and over the snow,
+We merry boys, how fast we go!
+
+
+SCRIPT EXERCISE.
+
+[Script:  How fast we go!]
+
+
+
+
+LESSON XXIII.
+
+
+NEW WORDS.
+
+if
+race
+girls
+out
+look
+sled
+hurt
+now
+give
+
+[Illustration]
+
+The boys and girls are out at play.
+
+Look out, boy! Do not get hurt!
+
+Will you give me a ride, little boy?
+
+O yes! you may ride on my new sled.
+
+Now, Rover, we will have a race.
+
+Run fast, Rover! If you do not run fast, I will catch you!
+
+
+
+
+LESSON XXIV.
+
+
+READING REVIEW.
+
+
+I.
+Ann likes her small kitty. Its fur is soft and white. It saw the cat
+catch the big rat.
+
+
+II.
+Ann likes Rover too. She saw Rover run off with the hat. Here, Rover,
+here! You are a bad dog! Why did you run off with the hat?
+
+
+III.
+Ho, ho! Look at the boys and girls. See them go down the hill, over the
+snow. Now they go back, up the hill.
+
+
+IV.
+They are out at play. They will not get hurt. How merry they are! Ann, I
+will give you a ride on my sled. We will have a race with Rover and see
+how fast we can run.
+
+
+
+
+LESSON XXV
+
+
+SPELLING REVIEW.
+
+[)i]f
+[)i]ts
+b[)a][c\]k
+sl[)e]d
+h[=o]
+f[^u]r
+[=o]'v[~e]r
+[=g][~i]rl[s±]
+[=g][=o]
+sh[=e]
+s[)o]ft
+h[^u]rt
+[)u]p
+out
+boy[s±]
+h[)a]v[e\]
+[)o]f[f\]
+now
+l[)oo]k
+[-c][)a][t\]ch
+d[)i]d
+wh[=y]
+[=g][)i]v[e\]
+sm[a:]l[l\]
+b[)a]d
+h[)i]l[l\]
+r[=a][c5][e\]
+(r[=a]s)
+k[)i]t't[)y]
+s[a:][w\]
+down
+R[=o]v'[~e]r
+h[=e]r[e\]
+m[)e]r'r[)y]
+
+
+SCRIPT EXERCISE.
+
+[Script: Will Rover ride on the sled?
+
+No, he will run a race with the boy. Rover is a bad, bad dog. He ran off
+with the hat.]
+
+
+
+
+LESSON XXVI.
+
+
+NEW WORDS.
+
+from
+come
+be
+a way' 
+there 
+of
+what 
+soon
+
+[Illustration]
+
+Bad boy! bad boy! Come down from that tree. Do not take the eggs from
+the nest. What a bad boy, to take the eggs of a bird!
+
+Go away, bad boy; do not take the eggs, and soon there will be three
+pretty birds in the nest.
+
+
+
+
+LESSON XXVII.
+
+
+NEW WORDS.
+
+Roy
+drum
+march
+rub'-a-dub
+
+[Illustration]
+
+fun
+gun
+beat
+
+Now, Roy, you beat the drum, and we will march. I have my new hat and
+gun. Now go on. Rub-a-dub, rub-a-dub! Here we go! March, march, march!
+Do you like to march, Roy?
+
+Yes. What fun it is to beat a drum, and march with a gun!
+
+
+
+
+LESSON XXVIII.
+
+
+NEW WORDS.
+
+Ned
+no
+us
+let
+hand
+ap'ple
+your 
+some
+
+[Illustration]
+
+Here, Ned, catch this apple in your hand.
+
+No, I will catch it in my hat.
+
+Now I have it. What a big apple it is!
+
+Let us take some to mamma'.
+
+O yes! she likes them. I will get her some.
+
+We will take them to her in my hat.
+
+O here is a very big apple! We will give her this one too.
+
+
+
+
+LESSON XXIX.
+
+
+NEW WORDS.
+
+ap'ples
+ma'ny
+more
+glad
+where
+near
+pond
+am
+
+[Illustration]
+
+Look, mamma'! See the big apples we have!
+
+O where did you get them?
+
+From the big apple tree, near the pond. Do you like apples, mamma'?
+
+O yes! I am glad to get them. How many have you?
+
+Five, and there are more on the tree. May we give some to Ann?
+
+Yes. She likes apples too.
+
+
+
+
+LESSON XXX.
+
+
+READING REVIEW.
+
+Boy, come down from that tree! Come away, and soon there will be little
+birds in the nest.
+
+What a bad boy, to take the eggs of a bird!
+
+Did you see the boys with the drum and gun, Ned?
+
+Yes. I saw Roy beat his drum, rub-a-dub, rub-a-dub! I am glad the boys
+have a drum. It is fun to march, march, march.
+
+Will you give me the apple you have in your hand, Ned?
+
+No. I will give this one to mamma'. I have some more apples in my hat,
+and will give you one.
+
+Let us see how many you have. One, two, three, four, five. Where did you
+get them, Ned?
+
+From the big apple tree down near the pond.
+
+
+
+
+LESSON XXXI.
+
+
+SPELLING REVIEW.
+
+[)u]s
+b[=e]
+n[=o]
+l[)e]t
+[)a]m
+f[)u]n
+of
+([)o]v)
+[.a]w[=a][y\]'
+[=g][)u]n
+[=g]l[)a]d
+b[=e][a\]t
+Roy
+N[)e]d
+n[=e][a\]r
+p[)o]nd
+m[=o]r[e\]
+m[:a]rch
+s[=oo]n
+[y\][o\][=u]r
+fr[)o]m
+wh[a.]t
+[-c][.o]m[e\]
+(k[)u]m)
+ma'n[)y]
+(m[)e]n'[)y])
+r[)u]b'-a-d[)u]b
+h[)a]nd
+[t-h][^e]r[e\]
+s[.o]m[e\]
+(s[)u]m)
+dr[)u]m
+[)a]p'pl[e\]
+wh[^e]r[e\]
+[)a]p'pl[e\]s[±]
+
+
+SCRIPT EXERCISE.
+
+[Script: Did Roy take the eggs of a bird?
+
+O no, it was a bad, bad boy. Roy beat the drum.
+
+Mamma do you like apples?]
+
+
+
+
+LESSON XXXII.
+
+
+NEW WORDS.
+
+ship
+nice
+but
+sail
+by
+for
+
+[Illustration]
+
+Here we are by the pond. Ned, your ship is a very nice one. May I take
+it?
+
+Yes, you may; but do not hurt it.
+
+Will it sail fast, Ned?
+
+Yes, it will sail very fast.
+
+Mamma', may I have a ship too?
+
+Yes, if you are a good girl, I will get a nice one for you.
+
+
+
+
+LESSON XXXIII.
+
+
+NEW WORDS.
+
+man
+toys
+book
+came
+dish'es
+old
+left
+ask
+know
+fun'ny
+
+[Illustration]
+
+O Roy, do look here! What pretty toys!
+
+Where did they come from?
+
+Here is a drum, a ship, and a top for you; and a doll, a book, and some
+little dishes for me.
+
+Did mamma' give them to us, Roy?
+
+O no! a funny old man came and left them for us.
+
+What old man was it, Roy?
+
+I do not know what old man it was, but we will go and ask mamma'.
+
+Little girls and boys, do you know who left the toys for Roy and Ann?
+
+
+SCRIPT EXERCISE
+
+[Script: Roy has a drum, a ship, and a top.
+
+Ann has a doll and some dishes.
+
+Who left the toys?]
+
+
+
+
+LESSON XXXIV.
+
+
+NEW WORDS.
+
+Ma'ry
+in'to
+hold
+made
+chicks
+well
+hay
+un'der
+
+[Illustration]
+
+Look, Ned, here is a nest! It is made in this hay, and the old hen is in
+it.
+
+Put your hand into the, nest, Mary.
+
+O no, the hen will not let me!
+
+But, Mary, I will hold her.
+
+Well, Ned, if you can hold her, I will put my hand into the nest.
+
+O Ned, there are some little chicks under the hen!
+
+Are there?
+
+Do take her off from the nest and let us see them.
+
+
+SCRIPT EXERCISE
+
+[Script: Ned, here is a nest.]
+
+
+
+
+LESSON XXXV.
+
+
+NEW  WORDS.
+
+care
+dear
+feed
+six
+food
+hide
+wings
+wa'ter
+chick
+
+Now, Ned, the hen is off the nest, and we can see the chicks. There are
+six of them.
+
+O the dear little chicks! How pretty they are!
+
+We will feed them, Mary.
+
+Yes, I will run and get some food and give them some water.
+
+[Illustration]
+
+Here, chick, chick, chick! Here is some water for you.
+
+Will the old hen take care of them, Ned?
+
+O yes! She will hide them under her wings.
+
+
+
+
+LESSON XXXVI.
+
+
+READING REVIEW.
+
+See, mamma'! What a nice ship Ned has!
+
+Yes, it is a very nice ship. You and Ned may go down by the pond and
+sail it, but do not get into the water.
+
+Come, Ned, let us go. Did you see Roy?
+
+Yes, and I saw the pretty toys the funny old man left for Mary.
+
+What old man, Ned?
+
+I do not know, but he came and left a ship, drum, book, and some little
+dishes.
+
+O how good! Look, here is Mary. I will ask her to let me see them.
+
+Now let us go and see the nest the hen made in the hay.
+
+Well, come on. Mary will go too.
+
+Here is the hen, Ned. Let us see if there are some little chicks under
+her.
+
+Ned, you hold the hen, and Mary will put her hand into the nest.
+
+Is there a chick under her, Mary?
+
+O yes! Take the hen off the nest.
+
+Well! well! Do look at the dear little chicks. One, two, three, four,
+five, six, of them.
+
+Run, Ned, get some food, and we will feed them.
+
+Will the hen take care of them?
+
+Yes, she will hide them under her wings.
+
+
+
+
+LESSON XXXVII.
+
+
+SPELLING REVIEW.
+
+b[=y]
+sh[)i]p
+b[)oo]k
+w[)i]ng[s±]
+b[)u]t
+s[=a][i\]l
+[-c][=a]m[e\]
+M[=a]'r[)y]
+[=o]ld
+w[)e]l[l\]
+[)i]n't[o:]
+d[)i]sh'[)e][s±]
+m[)a]n
+n[=i][c5][e\]
+d[=e][a\]r
+[)u]n'd[~e]r
+[.a]sk
+l[)e]ft
+h[=i]d[e\]
+w[a:]'t[~e]r
+h[)a][y\]
+h[=o]ld
+m[=a]d[e\]
+f[)u]n'n[)y]
+s[)i]x
+f[=oo]d
+ch[)i][c\]k
+[-c][^a]r[e\]
+f[^o]r
+f[=e][e\]d
+ch[)i][c\]ks
+[k\]n[=o][w\]
+toy[s±]
+
+
+SCRIPT EXERCISE.
+
+[Script: What did Mary find with the hen?
+
+How many chicks did the hen have in the nest?]
+
+
+
+
+LESSON XXXVIII.
+
+
+NEW WORDS.
+
+Fi'do
+full
+each
+seem
+oth'er
+think
+say
+pup'pies
+
+Here are my three little puppies. Are they not pretty?  Old Fido has a
+rat. See how the puppies look at it.
+
+They think it will hurt them if they go too near it.
+
+[Illustration]
+
+They seem to say, "Take it away, mamma', we do not like it."
+
+The puppies are full of fun. I like to see them play with each other.
+
+Will you have one of my puppies?
+
+
+
+
+LESSON XXXIX.
+
+
+NEW WORDS.
+
+red
+side
+steer
+fear
+
+[Illustration]
+
+See my sled.
+It is red.
+
+Will you ride
+By my side?
+
+Can you steer?
+Do not fear.
+
+How we go
+On the snow!
+
+
+NEW WORDS.
+
+Jack
+Jill
+clear
+track
+all
+fall
+
+[Illustration]
+
+Clear the track!
+Hold me, Jack!
+
+Let you fall?
+Not at all.
+
+O what fun!
+Back they run,
+
+Up the hill,
+Jack and Jill.
+
+
+
+
+LESSON XL.
+
+
+NEW WORDS.
+
+start 
+string 
+strong 
+hur rah'
+fly
+try
+high
+kite
+kites
+
+Come on, boys. Let us fly our kites.
+
+Hurrah! that will be fun. I will try my new kite. Have you a strong
+string with your new kite, Ned?
+
+Yes, it is very strong.
+
+[Illustration]
+
+Roy has a kite. How high it is!
+
+Yes, Ned, but my kite will fly as high as his. Now you hold it, and I
+will run to give it a start.
+
+
+
+
+LESSON XLI.
+
+
+NEW WORDS.
+
+him
+held
+warm
+make
+cold
+does
+nose
+eyes
+froze
+
+[Illustration]
+
+Roy, did you make that snow man?
+
+Yes. Does he not look funny?  He is a funny man, Roy. What a big nose
+he has, and big eyes too!
+
+Will he not fall down?
+
+No, I put some water on him. The water froze, and that held the snow.
+
+Are you not very cold, Roy?
+
+Yes, come, let us have a good run, and that will make us warm.
+
+
+
+
+LESSON XLII.
+
+
+READING REVIEW.
+
+Hurrah, boys! Clear the track! Here come Jack and Jill on a red sled.
+Look, Roy! See Jack steer the sled down the hill. Jill is by his side.
+
+Does Jill fear the fast ride?
+
+No, Ned, not at all. Jack will not let her fall. Roy, did you say you
+made that snow man?
+
+Yes, I made him. 
+
+What a funny nose he has! What big eyes! Will he fall down, Roy?
+
+No, he will not fall. I put some water on him. The water froze, and that
+held the snow.
+
+Let me make one, Roy.
+
+O no! it is too cold. Let us go in and get warm.
+
+Well, we will start now. Come in and see my little puppies. Here they
+are, and here is Fido too. Do you think they are pretty?
+
+Yes, I do. See them play with each other. They seem to be full of fun.
+Is this your kite, Roy?
+
+Yes, I have two kites. See what a strong string this one has.
+
+Do you like to fly kites?
+
+Yes, and pretty soon I will try my new one. It will fly very high.
+
+
+
+
+LESSON XLIII.
+
+
+SPELLING REVIEW.
+
+fl[=y]
+tr[=y]
+s[=a][y\]
+r[)e]d
+[a:]l[l\]
+h[)i]m
+d[.o][e\][s±] (d[)u]z)
+n[=o][s±][e\]
+m[=a]k[e\]
+h[)e]ld
+[-c][=o]ld
+[e\][=y][e\][s±] ([=i]z)
+h[=i][g\][h\] (h[=i])
+k[=i]t[e\]
+f[u.]l[l\]
+[=e][a\]ch
+f[=e][a\]r
+tr[)a][c\]k
+s[=i]d[e\]
+J[)i]l[l\]
+J[)a][c\]k
+st[=e][e\]r
+f[a:]l[l\]
+[-c]l[=e][a\]r
+F[=i]'d[=o]
+w[a:]rm
+p[)u]p'p[)i][e\][s±]
+fr[=o]z[e\]
+str[)i]ng
+k[=i]t[e\]s
+st[:a]rt
+str[)o]ng
+s[=e][e\]m
+[.o][t-h]'[~e]r ([)u][t-h]'[~e]r)
+th[)i]nk
+h[u.]r r[:a][h\]'
+
+
+SCRIPT EXERCISE.
+
+[Script: I have two kites. One will fly very high. Will you fly your
+kite with me? O, yes, let us go.]
+
+
+
+
+LESSON XLIV.
+
+
+NEW WORDS.
+
+seek
+then
+stand
+said
+shut
+shall
+hid
+while
+who
+
+[Illustration]
+
+Come, boys, what shall we do? Let us play hide and seek.
+
+O yes! that will be fun for all of us. Who will shut his eyes? Ned, will
+you?
+
+Yes, I will shut my eyes while you all go and hide.
+
+Well, Ned, you stand by that tree.
+
+Then Ned shut his eyes and the boys ran off to hide. Pretty soon Ned
+said, "Boys, are you all hid? Yes? Well, here I go. One, two, three,
+look out for me."
+
+
+
+
+LESSON XLV.
+
+
+NEW WORDS.
+
+Frank
+Fred
+must
+black
+find
+barn
+cap
+ha
+spy
+
+[Illustration]
+
+The boys are all hid. Now I must try to find them. Ha! I spy you, Fred.
+You are in that box.
+
+I spy you, Roy. You are under the hay.
+
+I can not find Frank.
+
+O there he is! I spy you, Frank.
+
+Come out of that barn. I see your black cap.
+
+Fred, you must shut your eyes now, and stand by the tree while we hide.
+
+I will, boys. You go and hide.
+
+
+
+
+LESSON XLVI
+
+
+NEW WORDS.
+
+so
+bath
+sick 
+please
+tub 
+wrap
+shawl
+sis'ter
+
+Now, Ned, please do not put my kitty into the bath tub.
+
+Yes, sister, I must give her a bath.  Here is the bath tub with some
+nice warm water.
+
+But, Ned, kitty will get sick if you put her into the water. She will
+take cold.
+
+[Illustration]
+
+No, I will wrap her well in the big shawl, and then she can not take
+cold.
+
+So Ned gave kitty a bath, and then put her into the nice warm shawl.
+
+
+
+
+LESSON XLVII.
+
+
+NEW WORDS.
+
+pass
+po'ny
+whip
+keep
+fast'er
+use
+go'ing
+than
+yours
+
+[Illustration]
+
+Hold on, Frank, you are going too fast. I can not keep up with you.
+
+Use your whip, Fred, and make your pony go faster. Come up to me and we
+will have a race.
+
+Well, here we go. Hurrah, hurrah! Go on, pony, as fast as you can, and
+we will catch Frank.
+
+We are going faster now, Frank, and will pass you in the race.  No,
+Fred, you can not pass me, for my pony can run faster than yours.
+
+Well, we will see if he can.
+
+
+
+
+LESSON XLVIII.
+
+
+READING REVIEW.
+
+Who said play hide and seek?
+
+I did, Frank.
+
+Well, shut your eyes, Ned, while we go and hide.
+
+Shall I stand by this tree, boys?
+
+Yes, we will hide, and then you must try to find us.
+
+Well, go and hide.
+
+One, two, three, four, five, six--look out for me, hoys.
+
+Here I come. Ha! I see your black cap, Frank. Come out of that barn.
+
+I spy you, Roy. You are hid under the hay; and there is Fred in the
+box.
+
+Now, Frank, you shut your eyes.
+
+No, Fred, there is my pony, and I am going to take a ride.
+
+Well, I will get my pony, and ride too. Shall we have a race?
+
+Yes, but my pony can run faster than yours.
+
+If I use my whip, I can keep up with you, and I may pass you.
+
+But there is my sister. I must go and see her. What is it, sister?
+
+Please put this shawl over me, Fred. Wrap me up well, for it is pretty
+cold.
+
+So kitty did not get sick, did she, sister?
+
+O no! kitty is well, but she does not like the bath tub, Fred.
+
+
+
+
+LESSON XLIX.
+
+
+SPELLING REVIEW.
+
+s[=o]
+h[:a]
+h[)i]d
+[=u][s±][e\]
+t[)u]b
+sp[=y]
+[-c][)a]p
+said (s[)e]d)
+s[)i][c\]k
+f[=i]nd
+p[.a]s[s\]
+[w\]h[o:]
+s[=e][e\]k
+[t-h][)e]n
+sh[)u]t
+[t-h][)a]n
+b[.a]th
+b[:a]rn
+k[=e][e\]p
+sh[)a]l[l\]
+Fr[)e]d
+wh[)i]p
+[w\]r[)a]p
+m[)u]st
+st[)a]nd
+bl[)a][c\]k
+[y\][o\][=u]r[s±]
+p[=o]'n[)y]
+wh[=i]l[e\]
+sh[a:][w\]l
+s[)i]s't[~e]r
+pl[=e][a\][s±][e\]
+[=g][=o]'[)i]ng
+f[.a]st'[~e]r
+Fr[)a][n=]k
+
+
+SCRIPT EXERCISE.
+
+[Script: Where did Roy hide?
+
+Frank hid in the ____.
+
+Frank had a ____ cap.
+
+Now, Fred, you must shut your ____.]
+
+
+
+
+LESSON L.
+
+
+NEW WORDS.
+
+bear
+legs
+paws
+a fraid'
+stick
+hind
+holds
+stands
+
+[Illustration]
+
+O Frank, look at that big dog!
+
+It is not a dog, Fred. It is a black bear.
+
+Are you not afraid of him, Frank?
+
+No, he will not hurt us. Do you not see the man feed him from his hand?
+What a funny bear!  See, Frank, how he stands up on his hind legs, and
+holds the stick in his paws! Is he strong, Frank?
+
+Yes, he is very strong, and his fur coat is warm.
+
+Where did the man get him, Frank?
+
+I do not know. We will go and ask him.
+
+
+
+
+LESSON LI.
+
+
+NEW WORDS.
+
+were
+things
+caught
+hunt'ing
+sir
+dance
+fell
+dogs
+cut
+
+How do you do, sir?
+
+How do you do, boys?
+
+You have a nice bear there, sir. We like to see him play. Where did you
+get him?
+
+I was hunting with my dogs, and saw a little bear up in a tree.
+
+I cut the tree down, and as soon as it fell, the dogs and I caught him.
+
+[Illustration]
+
+Were you not afraid of him?
+
+O no! he was too small to hurt me then.
+
+You like to see him play, do you?
+
+Yes, sir. What can he do?
+
+He can hold a stick in his paws, dance very well on his hind legs, and
+do many other funny things.
+
+
+
+
+LESSON LII.
+
+
+NEW WORDS.
+
+fro
+long
+mous'ie
+run'ning
+a go'
+silk
+al'ways
+com'ing
+time
+glow
+spied
+
+[Illustration]
+
+
+1.
+  I have a little kitty,
+    Her fur is white as snow.
+  In the barn she likes to play,
+    Running to and fro.
+
+2.
+  In the barn a little mousie,
+    A long time ago,
+  Saw my little kitty coming,
+    Running to and fro.
+
+3.
+  Two black eyes has little kitty,
+    Eyes that always glow,
+  And she spied the little mousie,
+    Running to and fro.
+
+4.
+  Four soft paws has little kitty,
+    Soft as silk, I know,
+  And they caught the little mousie,
+    Running to and fro.
+
+
+SCRIPT  EXERCISE.
+
+[Script: Ann is a good girl.]
+
+ 
+
+
+LESSON LIII.
+
+
+READING  REVIEW.
+
+Mamma', did you see the kitty catch the little mousie in the barn?
+
+Yes, kitty spied the mousie running to and fro.
+
+I saw her pretty black eyes glow, and soon she caught the mousie in her
+paws.
+
+What a pretty kitty she is! Her fur is like silk.
+
+But look, mamma'! There is the man coming with his bear. May I go out to
+see him?
+
+Yes, Fred, but Frank must go with you.
+
+How well the bear stands up on his hind legs!
+
+Yes, and see how he holds the stick in his paws.
+
+O see him dance! What funny things he does!  Where did the man get him,
+Frank? Did you ask him?
+
+Yes, and he said that one time, a long while ago, he and his dogs were
+out hunting, and saw the bear up in a tree.
+
+The bear was small then, so he was not afraid of him.
+
+He cut the tree down, and as soon as it fell, the dogs caught the bear.
+
+Did they hurt him, Frank?
+
+No, the man did not let them hurt him.
+
+See, Frank, the man is coming here.
+
+How do you do, boys?
+
+How do you do, sir?
+
+We like to see your bear play. We think he likes you.
+
+O yes! he likes me, for I always take good care of him.
+
+
+
+
+LESSON LIV.
+
+
+SPELLING REVIEW.
+
+fr[=o]
+[=g]l[=o][w\]
+h[=i]nd
+[-c][a:][u\][g\][h\]t
+[.a] [=g][=o]'
+t[=i]m[e\]
+w[~e]r[e\]
+[.a] fr[=a][i\]d'
+s[~i]r
+l[)o]ng
+sp[=i][e\]d
+[a:]l'wa[y\][s±]
+[-c][)u]t
+s[)i]lk
+h[=o]ld[s±]
+mous'[)i][e\]
+l[)e][=g][s±]
+b[e\]âr
+d[.a]n[c5][e\]
+[-c][.o]m'[)i]ng
+d[)o][=g][s±]
+p[a:][w\][s±]
+th[)i]ng[s±]
+r[)u]n'n[)i]ng
+f[)e]l[l\]
+st[)i][c\]k
+st[)a]nd[s±]
+h[)u]nt'[)i]ng
+
+
+SCRIPT EXERCISE.
+
+[Script: What did the man see in a tree? How did the man get the bear
+down?]
+
+
+       *       *       *       *       *
+
+
+PART II
+
+
+SHORT STORIES.
+
+
+       *       *       *       *       *
+
+
+
+
+LESSON I.
+
+
+NEW WORDS. 
+
+J[)o][h\]n
+s[)e]t
+j[)u]st
+w[)e]nt
+D[)i][c\]k
+h[=o]l[e\]
+tr[)a]p
+qu[)i][c\]k
+
+[Illustration]
+
+
+VOWEL  EXERCISE.
+
+[)a]
+[)a]n
+[)a]nd
+h[)a]nd
+st[)a]nd
+[)a]t
+r[)a]t
+[-c][)a]t
+[-c][)a]tch
+h[)a]t
+
+John and his cat Dick do not like rats. They catch all they can.  One
+time, John set a trap to catch some, and then went away and hid with
+Dick.
+
+Pretty soon a big rat came out of its hole and went to the trap.
+
+Dick saw the rat, and made a start to get away from John. But John said,
+"Hold on, Dick, let us see if it will go into the trap."
+
+But the rat did not go in, and as it was going to run away, John let
+Dick go, and said, "Catch it, Dick. Run quick, quick!" and they ran very
+fast to catch the rat.
+
+But the rat was too quick for them. It went into its hole just as Dick
+was very near it.
+
+
+SCRIPT EXERCISE.
+
+[Script: 
+J[)o][h\]n
+l[=i]k[e\]
+[-c][=a]m[e\]
+D[)i][c\]k
+h[=o]l[e\]
+m[=a]d[e\]
+]
+
+
+
+
+LESSON II.
+
+
+NEW  WORDS.
+
+p[)e]ts
+s[)e]nd
+l[)oo]ks
+[-c][=a][.g][e\]
+y[)e]t
+s[)e]nt
+[-c]r[)e]st
+wh[)e]n
+t[=a]m[e\]
+s[)i]ng
+
+
+VOWEL EXERCISE.
+
+[)e]
+[)e]nd
+s[)e]nd
+s[)e]nt
+n[)e]st
+l[)e]t
+s[)e]t
+g[)e]t
+y[)e]t
+r[)e]d
+
+[Illustration]
+
+Mary, where did you get your pretty redbirds?
+
+Fred sent them to me.
+
+Did he send the cage too?
+
+No, mamma' gave me the cage.
+
+What nice pets the birds will be! Are they tame, Mary?
+
+Not yet, but I think they soon will be. They let me set food near them
+now.
+
+When they are tame, you can let them out of the cage.
+
+What a funny cap one of them has!
+
+It looks like a cap, Mary, but it is not. It is a crest.
+
+Many redbirds have no crest, and I am glad that one of your birds has
+one.
+
+Will these birds sing well?
+
+They sing very little. Redbirds are pretty, but they do not sing so well
+as some other birds.
+
+
+SCRIPT  EXERCISE.
+
+[Script: [:a]r[e\] 
+[a:]l[l\] 
+h[)a]v[e\] 
+w[)i]l[l\]
+[-c][=a][.g][e\] 
+[=g][=a]v[e\]]
+ 
+
+
+
+LESSON III.
+
+
+NEW  WORDS.
+
+d[)i]p  
+f[)i]sh
+trout  
+br[)oo]k
+n[)e]t  
+l[)i]v[e\] 
+d[)i]sh  
+w[)i]sh  
+[-c][o.][u\][l\]d
+
+
+VOWEL  EXERCISE.
+
+[)i]
+[)i]n
+[)i]n't[o:]
+[)i][s±]
+h[)i][s±]
+[)i]sh
+d[)i]sh
+f[)i]sh
+w[)i]sh
+
+[Illustration]
+
+Look, mamma'! See what a pretty fish! It is a little trout.
+
+Where did you get it, John?
+
+Frank caught it in the brook.
+
+I went to dip a dish into the brook to get some water, and saw this
+little fish.
+
+Then I said, "O Frank, look, look quick! See the little fish!"
+
+Frank saw it, and ran to get his fish net. He put the net into the
+water, and caught the fish, and I put it into this dish.
+
+"Well, what will you do with it?
+
+I will keep it, mamma'.
+
+But, my boy, it will not live in that dish. Put it back into the brook.
+
+I wish I could keep it. It is so pretty! May I put it into the pond?
+
+No, John. You must put it into the brook. A trout will not live in warm
+water.
+
+
+SCRIPT EXERCISE.
+
+[Script: s[a:][w\]
+l[)i]v[e\]
+b[)a][c\]k
+wh[^e]r[e\]
+[-c][o.][u\][l\]d
+[-c][a:][u\][g\][h\]t]
+ 
+
+
+
+LESSON IV.
+
+
+NEW  WORDS
+
+[=g][)o]t
+j[)o]l'l[)y]
+r[)o]mp
+br[)e][a\]d
+f[)o]x
+[=e][a\]t
+f[)o]nd
+[.a]ft'[~e]r
+m[=e][a\]t
+
+
+VOWEL  EXERCISE.
+
+[)o]
+[)o]x
+b[)o]x
+f[)o]x
+d[)o][=g]
+n[)o]t
+t[)o]p
+
+[Illustration]
+
+John, where did you get your fox?
+
+I caught him in a trap, when he was small.
+
+Is he tame now?
+
+O yes! and he is very fond of me. We romp, and play, and have a jolly
+time with each other.
+
+What do you give him to eat?
+
+I give him meat and bread.
+
+Can a fox run fast, John?
+
+Yes. My fox can run very fast.  A little while ago, Frank was here with
+his dog Rover. The fox was afraid of Rover, and ran away.
+
+[Illustration]
+
+When Rover saw the fox start, he ran after him. O how they did go! They
+ran and ran, up hill, and down hill, but the fox ran faster than Rover,
+and got away.
+
+How did you get him back?
+
+O when Rover went away, he soon came back to me. I do not let dogs run
+after him now.
+
+
+SCRIPT EXERCISE.
+
+[Script:
+m[=e][a\]t
+sm[a:]l[l\]
+wh[=i]t[e\]
+br[)e][a\]d
+hid[e\]
+j[)o]ll[)y]
+]
+
+
+
+LESSON V.
+
+
+NEW  WORDS.
+
+J[=a]n[e\]
+[-c][)u]p
+j[)u]mp
+r[=o]p[e\]
+t[=a]'bl[e\]
+m[)i]lk
+m[)u]ch
+l[)u]nch
+ch[^a][i\]r
+b[)u]t't[~e]r
+
+[Illustration]
+
+
+VOWEL  EXERCISE.
+
+[)u]
+[)u]t
+[)u]p
+b[)u]t
+[-c][)u]p
+[-c][)u]t
+p[)u]p
+sh[)u]t
+[=g][)u]n
+t[)u]b
+f[)u]n
+r[)u]b
+
+O Jane! I am glad you have your doll with you. How pretty it is!
+
+Yes, Mary, I think it is a pretty doll. I like it very much.  You are
+just in time for lunch. We will have it here on my little table.
+
+O that will be jolly fun, Mary! I will set the table, and put on your
+little dishes.
+
+Yes, Jane, you set the table, and I will run and ask mamma' for some
+bread and butter and cold meat.
+
+Get a cup of milk, too, Mary.
+
+Yes, here they are--bread, butter, cold meat, and a cup of nice milk.
+
+Well, here is a chair for you, one for me, and one for my doll.
+
+What shall we do after lunch?
+
+We will jump rope, Mary. I have a nice new rope.
+
+O so have I! Mamma' just gave me one.
+
+But, Mary, we must not jump rope too much. It is not good for us.
+
+Well, we will jump but a little while, and then I must go home.
+
+
+SCRIPT EXERCISE.
+
+[Script:
+n[=i][c5]e
+d[)o]l[l\]
+n[=e][a\]r
+r[=o]p[e\]
+ch[^a][i\]r
+th[^e]r[e\]
+]
+
+
+
+
+LESSON VI.
+
+
+NEW WORDS.
+
+d[=a][y\]
+l[=a]k[e\]
+st[=a][y\]
+h[=o]m[e\]
+w[=a][y\]
+l[=a]t[e\]
+sw[)i]m
+spl[)a]sh
+mouth
+r[)a]b'b[)i]t
+
+
+VOWEL EXERCISE.
+
+[=a]
+d[=a][y\]
+s[=a][y\]
+m[=a][y\]
+h[=a][y\]
+t[=a]k[e\]
+m[=a]k[e\]
+m[=a]k[e\]s
+t[=a]m[e\]
+[-c][=a]m[e\]
+
+One day Ann and Frank went to the lake with Rover.
+
+Rover can swim well, so Frank made him go into the water after a stick.
+
+"Jump, Rover! Jump in and get the stick," said Frank; and into the water
+he went with a big splash.
+
+[Illustration]
+
+Pretty soon he came out with the stick in his mouth.
+
+He did not like the fun so well as Frank, for the water was a little
+cold.
+
+They had a fine time for a while with Rover, and then set out for home,
+as it was late in the day, and they could not stay long.
+
+On the way home, Rover saw a rabbit, and away he went after it, as fast
+as he could go.
+
+Ann and Frank ran too, but could not keep up with Rover and the rabbit.
+
+When they got home, Rover was there, and Frank said--
+
+"Where is the rabbit, Rover?"
+
+Rover gave Frank a funny look and went away.
+
+"O I know!" said Frank, "the rabbit ran so fast you could not catch it."
+
+
+SCRIPT EXERCISE.
+
+[Script:
+d[=a][y\]
+l[=a]k[e\]
+h[=o]m[e\]
+st[)i][c\]k
+[k\]n[=o][w\]
+k[=e][e\]p]
+
+
+
+
+LESSON VII.
+
+[Illustration]
+
+
+NEW WORDS.
+
+s[=e][a\]
+[=e][a\]'[=g]l[e\]
+b[=e][a\]k
+b[=e][a\]ch
+l[:a]r[.g][e\]
+w[o.][u\][l\]d
+w[a:]nt
+l[:a]r'[.g][~e]r
+
+
+VOWEL  EXERCISE.
+
+[=e]
+m[=e]
+w[=e]
+b[=e]
+h[=e]
+sh[=e]
+[=e][a\]t
+b[=e][a\]t
+m[=e][a\]t
+s[=e][e\]
+s[=e][e\]k
+s[=e][e\]m
+
+Look, sister! See that eagle!
+
+Yes, Frank, I see two eagles. What large wings they have!
+
+Yes, they fly over the beach to find fish.
+
+Do they eat fish, Frank?
+
+Yes, they are very fond of fish. The eagle is a large and strong bird.
+Mamma' saw one take up a rabbit and fly off with it.
+
+I wish we could catch one, Frank. How funny it would look in a cage!
+
+Yes, sister, but you would have to get a much larger cage than the one
+your redbirds have.
+
+O I am afraid it would hurt me. If it got out of the cage, it would fly
+away with me.
+
+No, it could not do that, but it could hurt you with its strong beak.
+
+What is its beak, Frank?
+
+The beak is its mouth. All birds have a beak, but not many have one so
+strong as that of the eagle.
+
+
+SCRIPT EXERCISE.
+
+[Script:
+[=e][a\]t
+[y\][o\][=u]
+wo[u\][l\]d
+t[w\][o:]
+t[=a]k[e\]
+[=e][a\][=g]l[e\]
+]
+
+ 
+
+
+LESSON VIII.
+
+
+NEW WORDS.
+
+[=i][c5][e\]
+k[=i]nd
+t[=i]r[e\]d
+dr[=i]v[e\]
+f[:a]r
+f[=i]r[e\]
+sk[=a]t[e\]
+m[=i]l[e\][s±]
+s[)e]v'[e\]n
+
+[Illustration]
+
+
+VOWEL  EXERCISE.
+
+[=i]
+[=i][c5][e\]
+n[=i][c5][e\]
+f[=i]nd
+k[=i]nd
+r[=i]d[e\]
+s[=i]d[e\]
+
+You are very kind, Mary, to have a nice fire for me. I am cold after my
+long drive.
+
+Yes, Fred, you look cold and tired, but you will soon get warm by this
+fire. How far did you drive?
+
+Seven miles, and the snow and ice made it a cold ride.
+
+Can we skate on the lake now, Fred?
+
+Yes, the ice is strong. We can have a good skate. Do you want to go and
+try it?
+
+O yes, Fred! I like to skate. Will you go with me?
+
+Yes, as soon as I get warm. But John and Ann are coming over to see us.
+
+Well, Fred, we will ask them to go with us. Ann likes to skate.
+
+O yes! if they go, we shall have a merry time.
+
+What fun it will be, Fred! I will run now and find my hat. We will go as
+soon as they come.
+
+
+SCRIPT EXERCISE.
+
+[Script:
+[y\][o\][=u]r
+m[=i]l[e\][s=]
+sk[=a]t[e\]
+d[r.][=i]v[e\]
+sh[a:][w\]l
+s[)e][=v][e\]n
+]
+
+
+
+
+LESSON IX.
+
+
+NEW WORDS.
+
+r[=o]ll
+[-c][=o][a\]t
+b[=o][a\]t
+bl[=o][w\][s±]
+t[)e]l[l\]
+p[.a] p[:a]'
+w[)i]nd
+w[=a]v[e\][s±]
+[-c][)a]p't[a\][)i]n
+d[)a]sh[e\]d
+l[~e][a\]rn[e\]d
+
+[Illustration]
+
+
+VOWEL EXERCISE.
+
+[=o]
+[=o]ld
+[-c][=o]ld
+h[=o]ld
+n[=o]
+sn[=o][w\]
+s[=o]
+[=g][=o]
+[k\]n[=o][w\]
+
+Papa', I want to sail in the new boat. Will you take me out?
+
+It is pretty cold, Frank. See how the wind blows, and how the waves roll
+on the beach. I know it is cold, papa', but I have on a warm coat.
+
+Well, come on. I will hold the boat while you get in.
+
+So Frank and his papa' got into the boat and put up the sail.
+
+The waves were very high, but Frank was not afraid. The boat was strong,
+and his papa' could sail it well.
+
+The waves dashed over the side of the boat, but the more they dashed,
+the more fun it was for Frank.
+
+When Frank got to be a man, he was so fond of the water that he went to
+sea in a large ship.
+
+He learned how to sail the ship, and after a while, he was made captain
+of it.
+
+He is an old man now, and likes to tell little boys and girls all he
+learned and saw while he was captain of a ship.
+
+
+SCRIPT EXERCISE.
+
+[Script:
+s[=a][i\]l
+b[=o][a\]t
+[-c][=o][a\]t
+bl[=o][w\]s
+w[=a]v[e\][s±]
+l[~e][a\]rn[e\]d
+]
+
+
+
+
+LESSON X.
+
+
+NEW  WORDS.
+
+t[=u]n[e\]
+fl[=u]t[e\]
+[=u][s±][e\]d
+m[=i]n[e\]
+m[=u]'[s±][)i][-c]
+pl[=a][y\][e\]d
+s[-c][h\][=oo]l
+[.a] [=g]ain'
+([=g][)e]n')
+
+
+VOWEL EXERCISE.
+
+[=u]
+[=u][s±][e\]
+[=u][s±][e\]d
+[=u][s±]'[)i]ng
+
+One day, when Frank and John were going to school, they saw an old man
+with a flute.
+
+"Will you please play a tune for us, sir?" said Frank.
+
+"Yes, boys, I will play for you. Are you fond of music?" "Yes, sir, we
+like music. You used to play your flute when I went with mamma' to see
+you."
+
+"O you are the little boy who had your flute with you, are you?"
+
+[Illustration]
+
+"Yes, sir, and I have learned to play a little on it."
+
+"Well, I am glad to see you again, my boy.
+
+"I will play you a tune, and then you must play for me."
+
+"But my flute is at home, sir."
+
+"O well, you can use mine. It is a good one."
+
+The old man played a tune for the boys, and then gave the flute to Frank
+to play.
+
+Frank played a tune, and did it very well.
+
+"How well you play!" said the old man.
+
+"You are very kind to say that, but I wish I could play as well as you
+do," said Frank.
+
+"O you will soon do that. All you will have to do is to try."
+
+
+SCRIPT EXERCISE.
+
+[Script:
+s[=e][e\]
+[=u][s=][e\]d
+t[=u]n[e\]
+fl[=u]t[e\]
+pl[=e][a\]s[e\]
+pl[=a][y\][e\]d
+]
+
+ 
+
+
+PEARLS IN VERSE.[A]
+
+  Be the matter what it may,
+    Always speak the truth.
+  If at work, or if at play,
+    Always speak the truth.
+
+       *       *       *       *       *
+
+  Do your best, your very best,
+    And do it every day.
+  Little boys and little girls,
+    That is the wisest way.
+
+       *       *       *       *       *
+
+  Little children, love each other,
+    Never give another pain,
+  If your brother speak in anger,
+    Answer not in wrath again.
+
+       *       *       *       *       *
+
+  Early to bed and early to rise,
+  Make men healthy, wealthy, and wise.
+
+[Footnote A: It is intended that these selections shall be memorized by
+pupils, but as they do not form any part of the reading lessons, the
+words not heretofore used are not regarded as "new words."]
+
+  Suppose your task, my little man,
+    Is very hard to get?
+  Will it make it any easier
+    For you to sit and fret?
+  
+  Then wouldn't it he wiser
+    Than waiting like a dunce,
+  To go to work in earnest,
+    And learn the thing at once?
+
+       *       *       *       *       *
+
+  Speak the truth, and speak it ever,
+    Cost it what it will;
+  He who hides the wrong he did,
+    Does the wrong thing still.
+
+       *       *       *       *       * 
+
+  To do to others as I would
+    That they should do to me,
+  Will make me honest, kind, and good,
+    As children ought to be.
+
+       *       *       *       *       * 
+
+  When mother says, "Do this," or "that,"
+    Don't say, "What for?" and "Why?"
+  But let her hear your gentle voice
+    Say, "Mother dear, I'll try."
+
+
+
+
+PHONIC CHART.
+
+VOWELS.
+
+[=a] as in l[=a]ke   | [=e] as in b[=e]     | [)o]  as in b[)o]x
+[)a] "  "  [)a]t     | [)e] "  "  l[)e]t    | [=u]  "  "  [=u][s±]e
+[:a] "  "  f[:a]r    | [~e] "  "  h[~e]r    | [)u]  "  "  [)u]p
+[a:] "  "  [a:]ll    | [=i] "  "  [=i][c5]e | [^u]  "  "  f[^u]r
+[^a] "  "  [-c][^a]re| [)i] "  "  [)i]n     | [=oo] "  "  t[=oo]
+[.a] "  "  [.a]sk    | [=o] "  "  s[=o]     | [)oo] "  "  l[)oo]k
+
+
+DIPHTHONGS.
+
+oi, oy (unmarked), as in oil, boy
+ou, ow      "      "  "  out, now
+
+
+CONSONANTS.
+
+b    as in b[)a]d     | m as in m[=e]        | y     as in y[)e]s
+d    "  "  d[o:]      | n "  "  n[=o]        | z     "  "  fr[=o]ze
+f    "  "  f[)o]x     | p "  "  p[u.]t       | ng    "  "  s[)i]ng
+[=g] "  "  [=g][=o]   | r "  "  r[)a]t       | ch    "  "  ch[)i][-c]k
+h    "  "  h[=e]      | s "  "  s[=o]        | sh    "  "  sh[=e]
+j    "  "  j[)u]st    | t "  "  t[=oo]       | th    "  "  th[)i][n=]k
+k    "  "  k[=i]te    | v "  "  v[)e]r[)y]   | th    "  "  [t-h][=e]
+l    "  "  l[)e]t     | w "  "  w[=e]        | wh (hw), "  wh[a.]t
+
+
+EQUIVALENTS.
+
+
+VOWELS.
+
+[a.]       like [)o]  as in wh[a.]t        | [.o]      like [)u]  as in [-c][.o]me 
+[^e]        "   [^a]  "  "  wh[^e]re       | [^o]       "   [a:]  "  "  f[^o]r
+[e=]        "   [=a]  "  "  th[e=]y        | [~o]       "   [^u]  "  "  w[~o]rk
+[~i]        "   [~e]  "  "  g[~i]rl        | [u.], [o.] "   [)oo] "  "  p[u.]t, [-c][o.]uld
+[:i]        "   [=e]  "  "  pol[:i][c5]e   | [=y]       "   [=i]  "  "  b[=y]
+[o:], [u:], "   [=oo] "  "  t[o:], r[u:]le | [)y]       "   [)i]  "  "  k[)i]t't[)y]
+
+
+CONSONANTS.
+
+[c5]  like s  as in r[=a][c5]e | [.g] like j  as in [-c][=a][.g]e
+[-c]   "   k  "  "  [-c][)a]t  | [n=]  "   ng "  "  thi[n=]k
+[-c]h  "   k  "  "  s[-c]hool  | [s±]  "   z  "  "  h[)a][s±]
+[c5]h  "   sh "  "  ma[c5]hine | x     "   ks "  "  b[)o]x
+                 [x±]  like gz as in e[x±]ist
+
+
+
+
+
+
+
+End of the Project Gutenberg EBook of New National First Reader
+by Charles J. Barnes, et al.
+
+*** END OF THIS PROJECT GUTENBERG EBOOK NEW NATIONAL FIRST READER ***
+
+***** This file should be named 13853.txt or 13853.zip *****
+This and all associated files of various formats will be found in:
+        http://www.gutenberg.net/1/3/8/5/13853/
+
+Produced by Susan Skinner, the PG Online Distributed Proofreading
+Team, and The Internet Archive Children's Library,
+
+
+Updated editions will replace the previous one--the old editions
+will be renamed.
+
+Creating the works from public domain print editions means that no
+one owns a United States copyright in these works, so the Foundation
+(and you!) can copy and distribute it in the United States without
+permission and without paying copyright royalties.  Special rules,
+set forth in the General Terms of Use part of this license, apply to
+copying and distributing Project Gutenberg-tm electronic works to
+protect the PROJECT GUTENBERG-tm concept and trademark.  Project
+Gutenberg is a registered trademark, and may not be used if you
+charge for the eBooks, unless you receive specific permission.  If you
+do not charge anything for copies of this eBook, complying with the
+rules is very easy.  You may use this eBook for nearly any purpose
+such as creation of derivative works, reports, performances and
+research.  They may be modified and printed and given away--you may do
+practically ANYTHING with public domain eBooks.  Redistribution is
+subject to the trademark license, especially commercial
+redistribution.
+
+
+
+*** START: FULL LICENSE ***
+
+THE FULL PROJECT GUTENBERG LICENSE
+PLEASE READ THIS BEFORE YOU DISTRIBUTE OR USE THIS WORK
+
+To protect the Project Gutenberg-tm mission of promoting the free
+distribution of electronic works, by using or distributing this work
+(or any other work associated in any way with the phrase "Project
+Gutenberg"), you agree to comply with all the terms of the Full Project
+Gutenberg-tm License (available with this file or online at
+http://gutenberg.net/license).
+
+
+Section 1.  General Terms of Use and Redistributing Project Gutenberg-tm
+electronic works
+
+1.A.  By reading or using any part of this Project Gutenberg-tm
+electronic work, you indicate that you have read, understand, agree to
+and accept all the terms of this license and intellectual property
+(trademark/copyright) agreement.  If you do not agree to abide by all
+the terms of this agreement, you must cease using and return or destroy
+all copies of Project Gutenberg-tm electronic works in your possession.
+If you paid a fee for obtaining a copy of or access to a Project
+Gutenberg-tm electronic work and you do not agree to be bound by the
+terms of this agreement, you may obtain a refund from the person or
+entity to whom you paid the fee as set forth in paragraph 1.E.8.
+
+1.B.  "Project Gutenberg" is a registered trademark.  It may only be
+used on or associated in any way with an electronic work by people who
+agree to be bound by the terms of this agreement.  There are a few
+things that you can do with most Project Gutenberg-tm electronic works
+even without complying with the full terms of this agreement.  See
+paragraph 1.C below.  There are a lot of things you can do with Project
+Gutenberg-tm electronic works if you follow the terms of this agreement
+and help preserve free future access to Project Gutenberg-tm electronic
+works.  See paragraph 1.E below.
+
+1.C.  The Project Gutenberg Literary Archive Foundation ("the Foundation"
+or PGLAF), owns a compilation copyright in the collection of Project
+Gutenberg-tm electronic works.  Nearly all the individual works in the
+collection are in the public domain in the United States.  If an
+individual work is in the public domain in the United States and you are
+located in the United States, we do not claim a right to prevent you from
+copying, distributing, performing, displaying or creating derivative
+works based on the work as long as all references to Project Gutenberg
+are removed.  Of course, we hope that you will support the Project
+Gutenberg-tm mission of promoting free access to electronic works by
+freely sharing Project Gutenberg-tm works in compliance with the terms of
+this agreement for keeping the Project Gutenberg-tm name associated with
+the work.  You can easily comply with the terms of this agreement by
+keeping this work in the same format with its attached full Project
+Gutenberg-tm License when you share it without charge with others.
+
+1.D.  The copyright laws of the place where you are located also govern
+what you can do with this work.  Copyright laws in most countries are in
+a constant state of change.  If you are outside the United States, check
+the laws of your country in addition to the terms of this agreement
+before downloading, copying, displaying, performing, distributing or
+creating derivative works based on this work or any other Project
+Gutenberg-tm work.  The Foundation makes no representations concerning
+the copyright status of any work in any country outside the United
+States.
+
+1.E.  Unless you have removed all references to Project Gutenberg:
+
+1.E.1.  The following sentence, with active links to, or other immediate
+access to, the full Project Gutenberg-tm License must appear prominently
+whenever any copy of a Project Gutenberg-tm work (any work on which the
+phrase "Project Gutenberg" appears, or with which the phrase "Project
+Gutenberg" is associated) is accessed, displayed, performed, viewed,
+copied or distributed:
+
+This eBook is for the use of anyone anywhere at no cost and with
+almost no restrictions whatsoever.  You may copy it, give it away or
+re-use it under the terms of the Project Gutenberg License included
+with this eBook or online at www.gutenberg.net
+
+1.E.2.  If an individual Project Gutenberg-tm electronic work is derived
+from the public domain (does not contain a notice indicating that it is
+posted with permission of the copyright holder), the work can be copied
+and distributed to anyone in the United States without paying any fees
+or charges.  If you are redistributing or providing access to a work
+with the phrase "Project Gutenberg" associated with or appearing on the
+work, you must comply either with the requirements of paragraphs 1.E.1
+through 1.E.7 or obtain permission for the use of the work and the
+Project Gutenberg-tm trademark as set forth in paragraphs 1.E.8 or
+1.E.9.
+
+1.E.3.  If an individual Project Gutenberg-tm electronic work is posted
+with the permission of the copyright holder, your use and distribution
+must comply with both paragraphs 1.E.1 through 1.E.7 and any additional
+terms imposed by the copyright holder.  Additional terms will be linked
+to the Project Gutenberg-tm License for all works posted with the
+permission of the copyright holder found at the beginning of this work.
+
+1.E.4.  Do not unlink or detach or remove the full Project Gutenberg-tm
+License terms from this work, or any files containing a part of this
+work or any other work associated with Project Gutenberg-tm.
+
+1.E.5.  Do not copy, display, perform, distribute or redistribute this
+electronic work, or any part of this electronic work, without
+prominently displaying the sentence set forth in paragraph 1.E.1 with
+active links or immediate access to the full terms of the Project
+Gutenberg-tm License.
+
+1.E.6.  You may convert to and distribute this work in any binary,
+compressed, marked up, nonproprietary or proprietary form, including any
+word processing or hypertext form.  However, if you provide access to or
+distribute copies of a Project Gutenberg-tm work in a format other than
+"Plain Vanilla ASCII" or other format used in the official version
+posted on the official Project Gutenberg-tm web site (www.gutenberg.net),
+you must, at no additional cost, fee or expense to the user, provide a
+copy, a means of exporting a copy, or a means of obtaining a copy upon
+request, of the work in its original "Plain Vanilla ASCII" or other
+form.  Any alternate format must include the full Project Gutenberg-tm
+License as specified in paragraph 1.E.1.
+
+1.E.7.  Do not charge a fee for access to, viewing, displaying,
+performing, copying or distributing any Project Gutenberg-tm works
+unless you comply with paragraph 1.E.8 or 1.E.9.
+
+1.E.8.  You may charge a reasonable fee for copies of or providing
+access to or distributing Project Gutenberg-tm electronic works provided
+that
+
+- You pay a royalty fee of 20% of the gross profits you derive from
+     the use of Project Gutenberg-tm works calculated using the method
+     you already use to calculate your applicable taxes.  The fee is
+     owed to the owner of the Project Gutenberg-tm trademark, but he
+     has agreed to donate royalties under this paragraph to the
+     Project Gutenberg Literary Archive Foundation.  Royalty payments
+     must be paid within 60 days following each date on which you
+     prepare (or are legally required to prepare) your periodic tax
+     returns.  Royalty payments should be clearly marked as such and
+     sent to the Project Gutenberg Literary Archive Foundation at the
+     address specified in Section 4, "Information about donations to
+     the Project Gutenberg Literary Archive Foundation."
+
+- You provide a full refund of any money paid by a user who notifies
+     you in writing (or by e-mail) within 30 days of receipt that s/he
+     does not agree to the terms of the full Project Gutenberg-tm
+     License.  You must require such a user to return or
+     destroy all copies of the works possessed in a physical medium
+     and discontinue all use of and all access to other copies of
+     Project Gutenberg-tm works.
+
+- You provide, in accordance with paragraph 1.F.3, a full refund of any
+     money paid for a work or a replacement copy, if a defect in the
+     electronic work is discovered and reported to you within 90 days
+     of receipt of the work.
+
+- You comply with all other terms of this agreement for free
+     distribution of Project Gutenberg-tm works.
+
+1.E.9.  If you wish to charge a fee or distribute a Project Gutenberg-tm
+electronic work or group of works on different terms than are set
+forth in this agreement, you must obtain permission in writing from
+both the Project Gutenberg Literary Archive Foundation and Michael
+Hart, the owner of the Project Gutenberg-tm trademark.  Contact the
+Foundation as set forth in Section 3 below.
+
+1.F.
+
+1.F.1.  Project Gutenberg volunteers and employees expend considerable
+effort to identify, do copyright research on, transcribe and proofread
+public domain works in creating the Project Gutenberg-tm
+collection.  Despite these efforts, Project Gutenberg-tm electronic
+works, and the medium on which they may be stored, may contain
+"Defects," such as, but not limited to, incomplete, inaccurate or
+corrupt data, transcription errors, a copyright or other intellectual
+property infringement, a defective or damaged disk or other medium, a
+computer virus, or computer codes that damage or cannot be read by
+your equipment.
+
+1.F.2.  LIMITED WARRANTY, DISCLAIMER OF DAMAGES - Except for the "Right
+of Replacement or Refund" described in paragraph 1.F.3, the Project
+Gutenberg Literary Archive Foundation, the owner of the Project
+Gutenberg-tm trademark, and any other party distributing a Project
+Gutenberg-tm electronic work under this agreement, disclaim all
+liability to you for damages, costs and expenses, including legal
+fees.  YOU AGREE THAT YOU HAVE NO REMEDIES FOR NEGLIGENCE, STRICT
+LIABILITY, BREACH OF WARRANTY OR BREACH OF CONTRACT EXCEPT THOSE
+PROVIDED IN PARAGRAPH F3.  YOU AGREE THAT THE FOUNDATION, THE
+TRADEMARK OWNER, AND ANY DISTRIBUTOR UNDER THIS AGREEMENT WILL NOT BE
+LIABLE TO YOU FOR ACTUAL, DIRECT, INDIRECT, CONSEQUENTIAL, PUNITIVE OR
+INCIDENTAL DAMAGES EVEN IF YOU GIVE NOTICE OF THE POSSIBILITY OF SUCH
+DAMAGE.
+
+1.F.3.  LIMITED RIGHT OF REPLACEMENT OR REFUND - If you discover a
+defect in this electronic work within 90 days of receiving it, you can
+receive a refund of the money (if any) you paid for it by sending a
+written explanation to the person you received the work from.  If you
+received the work on a physical medium, you must return the medium with
+your written explanation.  The person or entity that provided you with
+the defective work may elect to provide a replacement copy in lieu of a
+refund.  If you received the work electronically, the person or entity
+providing it to you may choose to give you a second opportunity to
+receive the work electronically in lieu of a refund.  If the second copy
+is also defective, you may demand a refund in writing without further
+opportunities to fix the problem.
+
+1.F.4.  Except for the limited right of replacement or refund set forth
+in paragraph 1.F.3, this work is provided to you 'AS-IS' WITH NO OTHER
+WARRANTIES OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO
+WARRANTIES OF MERCHANTIBILITY OR FITNESS FOR ANY PURPOSE.
+
+1.F.5.  Some states do not allow disclaimers of certain implied
+warranties or the exclusion or limitation of certain types of damages.
+If any disclaimer or limitation set forth in this agreement violates the
+law of the state applicable to this agreement, the agreement shall be
+interpreted to make the maximum disclaimer or limitation permitted by
+the applicable state law.  The invalidity or unenforceability of any
+provision of this agreement shall not void the remaining provisions.
+
+1.F.6.  INDEMNITY - You agree to indemnify and hold the Foundation, the
+trademark owner, any agent or employee of the Foundation, anyone
+providing copies of Project Gutenberg-tm electronic works in accordance
+with this agreement, and any volunteers associated with the production,
+promotion and distribution of Project Gutenberg-tm electronic works,
+harmless from all liability, costs and expenses, including legal fees,
+that arise directly or indirectly from any of the following which you do
+or cause to occur: (a) distribution of this or any Project Gutenberg-tm
+work, (b) alteration, modification, or additions or deletions to any
+Project Gutenberg-tm work, and (c) any Defect you cause.
+
+
+Section  2.  Information about the Mission of Project Gutenberg-tm
+
+Project Gutenberg-tm is synonymous with the free distribution of
+electronic works in formats readable by the widest variety of computers
+including obsolete, old, middle-aged and new computers.  It exists
+because of the efforts of hundreds of volunteers and donations from
+people in all walks of life.
+
+Volunteers and financial support to provide volunteers with the
+assistance they need, is critical to reaching Project Gutenberg-tm's
+goals and ensuring that the Project Gutenberg-tm collection will
+remain freely available for generations to come.  In 2001, the Project
+Gutenberg Literary Archive Foundation was created to provide a secure
+and permanent future for Project Gutenberg-tm and future generations.
+To learn more about the Project Gutenberg Literary Archive Foundation
+and how your efforts and donations can help, see Sections 3 and 4
+and the Foundation web page at http://www.pglaf.org.
+
+
+Section 3.  Information about the Project Gutenberg Literary Archive
+Foundation
+
+The Project Gutenberg Literary Archive Foundation is a non profit
+501(c)(3) educational corporation organized under the laws of the
+state of Mississippi and granted tax exempt status by the Internal
+Revenue Service.  The Foundation's EIN or federal tax identification
+number is 64-6221541.  Its 501(c)(3) letter is posted at
+http://pglaf.org/fundraising.  Contributions to the Project Gutenberg
+Literary Archive Foundation are tax deductible to the full extent
+permitted by U.S. federal laws and your state's laws.
+
+The Foundation's principal office is located at 4557 Melan Dr. S.
+Fairbanks, AK, 99712., but its volunteers and employees are scattered
+throughout numerous locations.  Its business office is located at
+809 North 1500 West, Salt Lake City, UT 84116, (801) 596-1887, email
+business@pglaf.org.  Email contact links and up to date contact
+information can be found at the Foundation's web site and official
+page at http://pglaf.org
+
+For additional contact information:
+     Dr. Gregory B. Newby
+     Chief Executive and Director
+     gbnewby@pglaf.org
+
+
+Section 4.  Information about Donations to the Project Gutenberg
+Literary Archive Foundation
+
+Project Gutenberg-tm depends upon and cannot survive without wide
+spread public support and donations to carry out its mission of
+increasing the number of public domain and licensed works that can be
+freely distributed in machine readable form accessible by the widest
+array of equipment including outdated equipment.  Many small donations
+($1 to $5,000) are particularly important to maintaining tax exempt
+status with the IRS.
+
+The Foundation is committed to complying with the laws regulating
+charities and charitable donations in all 50 states of the United
+States.  Compliance requirements are not uniform and it takes a
+considerable effort, much paperwork and many fees to meet and keep up
+with these requirements.  We do not solicit donations in locations
+where we have not received written confirmation of compliance.  To
+SEND DONATIONS or determine the status of compliance for any
+particular state visit http://pglaf.org
+
+While we cannot and do not solicit contributions from states where we
+have not met the solicitation requirements, we know of no prohibition
+against accepting unsolicited donations from donors in such states who
+approach us with offers to donate.
+
+International donations are gratefully accepted, but we cannot make
+any statements concerning tax treatment of donations received from
+outside the United States.  U.S. laws alone swamp our small staff.
+
+Please check the Project Gutenberg Web pages for current donation
+methods and addresses.  Donations are accepted in a number of other
+ways including including checks, online payments and credit card
+donations.  To donate, please visit: http://pglaf.org/donate
+
+
+Section 5.  General Information About Project Gutenberg-tm electronic
+works.
+
+Professor Michael S. Hart is the originator of the Project Gutenberg-tm
+concept of a library of electronic works that could be freely shared
+with anyone.  For thirty years, he produced and distributed Project
+Gutenberg-tm eBooks with only a loose network of volunteer support.
+
+
+Project Gutenberg-tm eBooks are often created from several printed
+editions, all of which are confirmed as Public Domain in the U.S.
+unless a copyright notice is included.  Thus, we do not necessarily
+keep eBooks in compliance with any particular paper edition.
+
+
+Most people start at our Web site which has the main PG search facility:
+
+     http://www.gutenberg.net
+
+This Web site includes information about Project Gutenberg-tm,
+including how to make donations to the Project Gutenberg Literary
+Archive Foundation, how to help produce our new eBooks, and how to
+subscribe to our email newsletter to hear about new eBooks.

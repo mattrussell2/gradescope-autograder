@@ -1,0 +1,696 @@
+The Project Gutenberg EBook of Transactions of the American Society of
+Civil Engineers, vol. LXX, Dec. 1910, by Eugene Klapp
+
+This eBook is for the use of anyone anywhere at no cost and with
+almost no restrictions whatsoever.  You may copy it, give it away or
+re-use it under the terms of the Project Gutenberg License included
+with this eBook or online at www.gutenberg.org
+
+
+Title: Transactions of the American Society of Civil Engineers, vol. LXX, Dec. 1910
+       Reinforced Concrete Pier Construction
+
+Author: Eugene Klapp
+
+Release Date: February 16, 2006 [EBook #17777]
+
+Language: English
+
+Character set encoding: ASCII
+
+*** START OF THIS PROJECT GUTENBERG EBOOK CIVIL ENGINEERS ***
+
+
+
+
+Produced by Juliet Sutherland, Sigal Alon and the Online
+Distributed Proofreading Team at http://www.pgdp.net
+
+
+
+
+
+
+
+
+
+AMERICAN SOCIETY OF CIVIL ENGINEERS
+
+INSTITUTED 1852
+
+
+TRANSACTIONS
+
+Paper No. 1176
+
+
+REINFORCED CONCRETE PIER CONSTRUCTION.
+
+BY EUGENE KLAPP, M. AM. SOC. C. E.
+
+WITH DISCUSSION BY MESSRS. WILLIAM ARTHUR PAYNE, AND EUGENE KLAPP.
+
+
+
+
+A private yacht pier, built near Glen Cove, Long Island, has brought out
+a few points which may be of interest. It is an example of a small
+engineering structure, which, though of no great moment in itself,
+illustrates the adoption of means to an end that may be capable of very
+great extension.
+
+The problem, as submitted to the writer, was to construct a yacht
+landing at East Island, on the exposed south shore of Long Island Sound,
+in connection with the construction at that point of an elaborate
+country residence. The slope of the beach at this point is very gradual,
+and it was specified that there should be a depth of at least 4 ft. of
+water at low tide. Soundings indicated that this necessitated a pier 300
+ft. long. It was further specified that the pier should be to some
+extent in keeping with the scale of the place being created there, and
+that a wooden pile structure would not be acceptable. Besides these
+esthetic conditions, wooden piles were rejected because the teredo, in
+this part of the Sound, is very active. At the same time, the owner did
+not care to incur the expense of a masonry pier of the size involved.
+Also, it was desired to unload on the pier all material for the house
+and grounds during construction, and coal and other supplies thereafter,
+thus necessitating a pier wide enough to allow access for a cart and
+horse and to provide room for turning at the pier head.
+
+[Illustration: PLATE XXX.--YACHT PIER NEAR GLEN COVE, N. Y.]
+
+Comparative designs and estimates were prepared for (_a_) a pier of
+ordinary construction, but with creosoted piles; (_b_) a concrete pier
+on concrete piles; and (_c_) for a series of concrete piers with wooden
+bridge connections. The latter plan was very much the best in
+appearance, and the calculated cost was less than that of the pier of
+concrete piles, and only slightly more than that of creosoted piles, the
+latter being only of a temporary nature in any case, as it has been
+found that the protection afforded by creosote against the teredo is not
+permanent.
+
+At this point on the Sound the mean range of the tide is about 8 ft.,
+and it was determined that at least 5 ft. above mean high water would be
+required to make the underside of the dock safe from wave action. There
+is a northeast exposure, with a long reach across the Sound, and the
+seas at times become quite heavy. These considerations, together with 4
+ft. of water at low tide and from 2 to 3 ft. of toe-hold in the beach,
+required the outer caissons to be at least 20 ft. high.
+
+To construct such piers in the ordinary manner behind coffer-dams, and
+in such an exposed location, was to involve expenditure far beyond that
+which the owner cared to incur. The writer's attention had shortly
+before been called to the successful use of reinforced concrete caissons
+on the Great Lakes for breakwater construction, by Major W. V. Judson,
+M. Am. Soc. C. E., and under patents held by that officer. It seemed
+that here was a solution of the problem. These caissons are constructed
+on the shore, preferably immediately adjoining the work. After thorough
+inspection and seasoning, they are usually launched in a manner somewhat
+similar to a boat, are towed into position, sunk in place, and then
+filled with rip-rap.
+
+In this case what was needed was a structure that could be constructed
+safely and cheaply in the air, could then be allowed to harden
+thoroughly, and could finally be placed in accurate position. The
+weights to be supported were not great, the beach was good gravel and
+sand, fairly level, and, under favorable circumstances of good weather,
+the placing of the caissons promised to be a simple matter. Therefore,
+detailed plans were prepared for this structure.
+
+An effort was made to preserve some element of the yachting idea in the
+design, and bow-string trusses, being merely enlarged gang planks, were
+used to connect the caissons.
+
+The pier was originally laid out as a letter "L," with a main leg of
+300 ft. and a short leg of 36 ft. The pier head consisted of eight
+caissons in close contact, and was intended to form a breakwater, in the
+angle of which, and protected from the wave action, was to be moored the
+float and boat landing. After the first bids were received, the owner
+wished to reduce the cost, and every other caisson in the pier head was
+omitted, so that, as built, the pier contains eight caissons and five
+53-ft. trusses. The caissons supporting the trusses are 8 ft. wide and
+12 ft. long, and those in the pier head are 12 by 12 ft. On account of
+the shoal water and the great height of the outer caissons in comparison
+with their cross-section, it seemed advisable to mould them in two
+sections. The reinforcement in the side walls consisted of round 1/2-in.
+rods horizontally, and 3/8-in. rods vertically, spaced as shown on Fig.
+1, together with cross-diaphragms as indicated.
+
+The caissons were reinforced for exterior pressures, which were to be
+expected during the launching and towing into position, and also for
+interior pressures, which were to be expected at low tide, when the
+water pressure would be nothing, but the filling of the caissons would
+be effective. The corners were reinforced and enlarged. In order to
+secure a proper bedding into the sand foundation, a 12-in. lip was
+allowed to project all around the caisson below the bottom. In the
+bottom there was cast a 3-in. hole, and this was closed by a plug while
+the lower section was being towed into place.
+
+The question of the effect of sea water on the concrete was given much
+thought. The writer is unable to find any authoritative opinions on this
+subject which are not directly controverted by equally authoritative
+opinions of a diametrically opposite nature. He thinks it is a question
+that this Society might well undertake to investigate promptly and
+thoroughly. There can be no question that there are many distressing
+instances of failures due to the action of sea water and frost on
+concrete, and that many able and experienced engineers in charge of the
+engineering departments of the great transportation companies have
+simply crossed concrete off their list of available materials when it
+comes to marine construction. It is a subject too large in itself to be
+discussed as subsidiary to a minor structure like the one herein
+described, and though many have rejected concrete under these
+conditions, other engineers equally conservative are using it freely and
+without fear.
+
+The writer consulted with his partner and others at some length, and,
+considering all the advantages to accrue by the use of these concrete
+caissons, decided to do so after taking all known precautions.
+
+[Illustration: FIG. 1.]
+
+These precautions consisted in:
+
+First, the use of cement in which the chemical constituents were limited
+as follows:
+
+It was specified that the cement should not contain more than 1.75% of
+anhydrous sulphuric acid (SO_{3}) nor more than 3% of magnesia (MgO);
+also that no addition greater than 3% should have been made to the
+ingredients making up the cement subsequent to calcination.
+
+Secondly, to secure by careful inspection the most completely
+homogeneous mixture possible, with especial care in the density of the
+outer skin of the caissons.
+
+Thirdly, a prolonged seasoning process before the new concrete should be
+immersed in the sea water.
+
+In addition to these well-known precautions, it was decided to try the
+addition to the cement of a chemical element that should make with the
+free lime in the cement a more stable and indissoluble chemical
+combination than is offered by the ordinary form of Portland cement.
+This was furnished by the patent compound known as "Toxement," which is
+claimed by the inventor to be a resinate of calcium and silicate of
+alumina, which generates a resinate of lime and a silicate of alumina in
+crystalline form. It is further claimed that each of these materials is
+insoluble in sodium chloride and sodium sulphate, 3% solution. It was
+used in all the caissons, excepting Nos. 1 and 2, in the proportions of
+2 lb. of Toxement to each 100 lb. of cement. The first two caissons were
+not thus treated, and will be held under close observation and
+comparison with the others, which were treated with this compound.
+
+The mixture used was one of cement (Pennsylvania brand), two of sand,
+and four of gravel. The sand and gravel were from the nearby Cow Bay
+supply, and screened and washed. None of the gravel was larger than 1/2
+in., grading down from that to very coarse sand. The sand was also
+run-of-bank, and very well graded.
+
+The caissons, after being placed, were filled with sand and gravel from
+the adjoining beach up to about mean high-water mark, and the edges
+outside all around were protected from tidal and wave scour by rip-rap
+of "one man" stone.
+
+The trusses were constructed on a radius of 34 ft., with 8 by 8-in.
+chords, 6 by 6-in. posts, and 1-in. rods. The loading was figured as a
+loaded coal cart plus 100 lb. per ft. All lumber was clear yellow pine,
+except the floor, which was clear white oak. The pipe rail and all bolts
+below the roadway level, and thus subject to frequent wettings by salt
+water, were of galvanized iron. The trusses were set 9 ft. 9 in. apart
+on centers, giving a clear opening of 8 ft. between the wheel guards
+under the hand-rails. The fender piles were creosoted. The float was 18
+ft. long and 12 ft. wide.
+
+A contract was let to the Snare and Triest Company, and work was
+commenced early in August, 1909. The first caisson was poured early in
+September, and the last about the beginning of October.
+
+The caissons were all cast standing on parallel skids at about mean high
+water. It was first intended to construct a small marine railroad and
+launch the caissons in that manner, rolling them along the skids to the
+head of the marine railway. This plan was abandoned, however, and by
+sending in at high tide a powerful derrick scow, many of the caissons
+were lifted bodily from their position and set down in the water, towed
+to place and sunk in position, while the others, mostly the upper
+sections, were lifted to the deck of the scow and placed directly from
+there in their final position. There was not much difficulty in getting
+them to settle down to a proper bearing. Provision had been made for
+jetting, if necessary, but it was not used. In setting Caisson No. 2 a
+nest of boulders was encountered, and a diver was employed to clear away
+and level up the foundation. The spacing was accomplished by a float
+consisting of two 12 by 12-in. timbers, latticed apart, and of just
+sufficient length to cover the clear distance between the caissons. The
+first caissons being properly set inshore, the float was sent out, guyed
+back to the shore, and brought up against the outer edge of the set
+caisson. The next caisson was then towed out, set against the floating
+spacer, and sunk in position. There was some little trouble in plumbing
+the caissons, but, by excavating with an orange-peel bucket close to the
+high side and depositing the material against the low side, they were
+all readily brought to a sufficiently vertical and level position to be
+unnoticed by sighting along the edge from the shore.
+
+The trusses were all constructed in the contractor's yard at Bridgeport,
+and were towed across the Sound on a scow. They were set up and braced
+temporarily by the derrick boat, and then the floor and deck were
+constructed in place.
+
+On December 26th, 1909, a storm of unusual violence--unequaled in fact
+for many years--swept over the Sound from the northeast; the waves beat
+over the pier and broke loose some floor planks which had been only
+tacked in position, but otherwise did no damage, and did not shift the
+caissons in the least. The same storm partly destroyed a pier of
+substantial construction less than a mile from the one in question.
+
+Unfortunately, the work was let so late in the summer, and the
+restrictions as to seasoning the concrete were enforced so rigidly, that
+the work of setting the caissons could not be commenced until November
+11th, thus the entire construction was forced into the very bad weather
+of the late fall and early winter. As this involved very rough water and
+much snow and wind, the work was greatly delayed, and was not completed
+until the middle of January. The cost of the entire dock was about
+$14,000.
+
+The writer believes that the cost was much less than for masonry piers
+by any other method of construction, under the existing circumstances of
+wind, tide, and exposure.
+
+It would seem that for many highway bridges of short span, causeways,
+and similar structures, the use of similar caissons would prove
+economical and permanent, and that they might be used very largely to
+the exclusion of cribwork, which, after a decade or so, becomes a source
+of constant maintenance charges, besides never presenting an attractive
+appearance. Finally, in bridges requiring the most rigid foundations,
+these caissons might readily be used as substitutes for open wooden
+caissons, sunk on a prepared foundation of whatever nature, and still be
+capable of incorporation into the finished structure.
+
+
+
+
+DISCUSSION
+
+
+WILLIAM ARTHUR PAYNE, M. AM. SOC. C. E. (by letter).--On the arrival of
+the first barge load of brick, to be used in building a residence on the
+estate to which this pier belongs, a severe northwest wind blew for two
+days, after the boat was moored alongside, directly against the head of
+the pier and the side of the boat. The effect on the pier was to crush
+the fender piles and cause a settlement of one of the caissons at the
+pier head on the west end. The caisson was knocked slightly out of
+alignment, and a settlement toward the west was observable.
+
+The writer believes that this was caused by the pounding of the brick
+barge on the sand bottom on which the caissons rest, during half tide,
+the boat being raised from the bottom on a roller, and striking when the
+roller had passed. In order to protect the pier and avoid the bumping of
+barges against it, three groups of piles were driven about 8 ft. beyond
+the end, a secondary platform was built between these and the stringer
+of the pier, and arranged so that it would slide on the stringer in case
+of movement of the piles. This secondary platform is particularly
+advantageous in the handling of material, as the height of the dock was
+found to be excessive for passing up brick and cement. For handling
+material after it is deposited on the dock, an industrial railroad has
+been built. At the shore end of this railroad, brick and cement are
+dumped into wagons, in which they are carried up the hill to the house.
+
+
+EUGENE KLAPP, M. AM. SOC. C. E. (by letter).--The injury done to the
+piers, as reported by Mr. Payne, is not to be wondered at. The pier was
+primarily built for a yacht landing, and, on account of the shoal water
+conditions, excepting at extreme high tide, it was mostly to be used by
+tenders and launches from larger yachts. It was thought that at high
+water the large steam yachts might be able to come alongside.
+
+Provision was not made for tying up to the dock a heavily loaded brick
+scow and allowing it to remain there through rough weather.
+
+The building of the secondary fender piles, during the temporary use of
+the dock for unloading building material, will doubtless prevent further
+damage.
+
+
+
+
+
+End of the Project Gutenberg EBook of Transactions of the American Society
+of Civil Engineers, vol. LXX, Dec. 1910, by Eugene Klapp
+
+*** END OF THIS PROJECT GUTENBERG EBOOK CIVIL ENGINEERS ***
+
+***** This file should be named 17777.txt or 17777.zip *****
+This and all associated files of various formats will be found in:
+        http://www.gutenberg.org/1/7/7/7/17777/
+
+Produced by Juliet Sutherland, Sigal Alon and the Online
+Distributed Proofreading Team at http://www.pgdp.net
+
+
+Updated editions will replace the previous one--the old editions
+will be renamed.
+
+Creating the works from public domain print editions means that no
+one owns a United States copyright in these works, so the Foundation
+(and you!) can copy and distribute it in the United States without
+permission and without paying copyright royalties.  Special rules,
+set forth in the General Terms of Use part of this license, apply to
+copying and distributing Project Gutenberg-tm electronic works to
+protect the PROJECT GUTENBERG-tm concept and trademark.  Project
+Gutenberg is a registered trademark, and may not be used if you
+charge for the eBooks, unless you receive specific permission.  If you
+do not charge anything for copies of this eBook, complying with the
+rules is very easy.  You may use this eBook for nearly any purpose
+such as creation of derivative works, reports, performances and
+research.  They may be modified and printed and given away--you may do
+practically ANYTHING with public domain eBooks.  Redistribution is
+subject to the trademark license, especially commercial
+redistribution.
+
+
+
+*** START: FULL LICENSE ***
+
+THE FULL PROJECT GUTENBERG LICENSE
+PLEASE READ THIS BEFORE YOU DISTRIBUTE OR USE THIS WORK
+
+To protect the Project Gutenberg-tm mission of promoting the free
+distribution of electronic works, by using or distributing this work
+(or any other work associated in any way with the phrase "Project
+Gutenberg"), you agree to comply with all the terms of the Full Project
+Gutenberg-tm License (available with this file or online at
+http://gutenberg.org/license).
+
+
+Section 1.  General Terms of Use and Redistributing Project Gutenberg-tm
+electronic works
+
+1.A.  By reading or using any part of this Project Gutenberg-tm
+electronic work, you indicate that you have read, understand, agree to
+and accept all the terms of this license and intellectual property
+(trademark/copyright) agreement.  If you do not agree to abide by all
+the terms of this agreement, you must cease using and return or destroy
+all copies of Project Gutenberg-tm electronic works in your possession.
+If you paid a fee for obtaining a copy of or access to a Project
+Gutenberg-tm electronic work and you do not agree to be bound by the
+terms of this agreement, you may obtain a refund from the person or
+entity to whom you paid the fee as set forth in paragraph 1.E.8.
+
+1.B.  "Project Gutenberg" is a registered trademark.  It may only be
+used on or associated in any way with an electronic work by people who
+agree to be bound by the terms of this agreement.  There are a few
+things that you can do with most Project Gutenberg-tm electronic works
+even without complying with the full terms of this agreement.  See
+paragraph 1.C below.  There are a lot of things you can do with Project
+Gutenberg-tm electronic works if you follow the terms of this agreement
+and help preserve free future access to Project Gutenberg-tm electronic
+works.  See paragraph 1.E below.
+
+1.C.  The Project Gutenberg Literary Archive Foundation ("the Foundation"
+or PGLAF), owns a compilation copyright in the collection of Project
+Gutenberg-tm electronic works.  Nearly all the individual works in the
+collection are in the public domain in the United States.  If an
+individual work is in the public domain in the United States and you are
+located in the United States, we do not claim a right to prevent you from
+copying, distributing, performing, displaying or creating derivative
+works based on the work as long as all references to Project Gutenberg
+are removed.  Of course, we hope that you will support the Project
+Gutenberg-tm mission of promoting free access to electronic works by
+freely sharing Project Gutenberg-tm works in compliance with the terms of
+this agreement for keeping the Project Gutenberg-tm name associated with
+the work.  You can easily comply with the terms of this agreement by
+keeping this work in the same format with its attached full Project
+Gutenberg-tm License when you share it without charge with others.
+
+1.D.  The copyright laws of the place where you are located also govern
+what you can do with this work.  Copyright laws in most countries are in
+a constant state of change.  If you are outside the United States, check
+the laws of your country in addition to the terms of this agreement
+before downloading, copying, displaying, performing, distributing or
+creating derivative works based on this work or any other Project
+Gutenberg-tm work.  The Foundation makes no representations concerning
+the copyright status of any work in any country outside the United
+States.
+
+1.E.  Unless you have removed all references to Project Gutenberg:
+
+1.E.1.  The following sentence, with active links to, or other immediate
+access to, the full Project Gutenberg-tm License must appear prominently
+whenever any copy of a Project Gutenberg-tm work (any work on which the
+phrase "Project Gutenberg" appears, or with which the phrase "Project
+Gutenberg" is associated) is accessed, displayed, performed, viewed,
+copied or distributed:
+
+This eBook is for the use of anyone anywhere at no cost and with
+almost no restrictions whatsoever.  You may copy it, give it away or
+re-use it under the terms of the Project Gutenberg License included
+with this eBook or online at www.gutenberg.org
+
+1.E.2.  If an individual Project Gutenberg-tm electronic work is derived
+from the public domain (does not contain a notice indicating that it is
+posted with permission of the copyright holder), the work can be copied
+and distributed to anyone in the United States without paying any fees
+or charges.  If you are redistributing or providing access to a work
+with the phrase "Project Gutenberg" associated with or appearing on the
+work, you must comply either with the requirements of paragraphs 1.E.1
+through 1.E.7 or obtain permission for the use of the work and the
+Project Gutenberg-tm trademark as set forth in paragraphs 1.E.8 or
+1.E.9.
+
+1.E.3.  If an individual Project Gutenberg-tm electronic work is posted
+with the permission of the copyright holder, your use and distribution
+must comply with both paragraphs 1.E.1 through 1.E.7 and any additional
+terms imposed by the copyright holder.  Additional terms will be linked
+to the Project Gutenberg-tm License for all works posted with the
+permission of the copyright holder found at the beginning of this work.
+
+1.E.4.  Do not unlink or detach or remove the full Project Gutenberg-tm
+License terms from this work, or any files containing a part of this
+work or any other work associated with Project Gutenberg-tm.
+
+1.E.5.  Do not copy, display, perform, distribute or redistribute this
+electronic work, or any part of this electronic work, without
+prominently displaying the sentence set forth in paragraph 1.E.1 with
+active links or immediate access to the full terms of the Project
+Gutenberg-tm License.
+
+1.E.6.  You may convert to and distribute this work in any binary,
+compressed, marked up, nonproprietary or proprietary form, including any
+word processing or hypertext form.  However, if you provide access to or
+distribute copies of a Project Gutenberg-tm work in a format other than
+"Plain Vanilla ASCII" or other format used in the official version
+posted on the official Project Gutenberg-tm web site (www.gutenberg.org),
+you must, at no additional cost, fee or expense to the user, provide a
+copy, a means of exporting a copy, or a means of obtaining a copy upon
+request, of the work in its original "Plain Vanilla ASCII" or other
+form.  Any alternate format must include the full Project Gutenberg-tm
+License as specified in paragraph 1.E.1.
+
+1.E.7.  Do not charge a fee for access to, viewing, displaying,
+performing, copying or distributing any Project Gutenberg-tm works
+unless you comply with paragraph 1.E.8 or 1.E.9.
+
+1.E.8.  You may charge a reasonable fee for copies of or providing
+access to or distributing Project Gutenberg-tm electronic works provided
+that
+
+- You pay a royalty fee of 20% of the gross profits you derive from
+     the use of Project Gutenberg-tm works calculated using the method
+     you already use to calculate your applicable taxes.  The fee is
+     owed to the owner of the Project Gutenberg-tm trademark, but he
+     has agreed to donate royalties under this paragraph to the
+     Project Gutenberg Literary Archive Foundation.  Royalty payments
+     must be paid within 60 days following each date on which you
+     prepare (or are legally required to prepare) your periodic tax
+     returns.  Royalty payments should be clearly marked as such and
+     sent to the Project Gutenberg Literary Archive Foundation at the
+     address specified in Section 4, "Information about donations to
+     the Project Gutenberg Literary Archive Foundation."
+
+- You provide a full refund of any money paid by a user who notifies
+     you in writing (or by e-mail) within 30 days of receipt that s/he
+     does not agree to the terms of the full Project Gutenberg-tm
+     License.  You must require such a user to return or
+     destroy all copies of the works possessed in a physical medium
+     and discontinue all use of and all access to other copies of
+     Project Gutenberg-tm works.
+
+- You provide, in accordance with paragraph 1.F.3, a full refund of any
+     money paid for a work or a replacement copy, if a defect in the
+     electronic work is discovered and reported to you within 90 days
+     of receipt of the work.
+
+- You comply with all other terms of this agreement for free
+     distribution of Project Gutenberg-tm works.
+
+1.E.9.  If you wish to charge a fee or distribute a Project Gutenberg-tm
+electronic work or group of works on different terms than are set
+forth in this agreement, you must obtain permission in writing from
+both the Project Gutenberg Literary Archive Foundation and Michael
+Hart, the owner of the Project Gutenberg-tm trademark.  Contact the
+Foundation as set forth in Section 3 below.
+
+1.F.
+
+1.F.1.  Project Gutenberg volunteers and employees expend considerable
+effort to identify, do copyright research on, transcribe and proofread
+public domain works in creating the Project Gutenberg-tm
+collection.  Despite these efforts, Project Gutenberg-tm electronic
+works, and the medium on which they may be stored, may contain
+"Defects," such as, but not limited to, incomplete, inaccurate or
+corrupt data, transcription errors, a copyright or other intellectual
+property infringement, a defective or damaged disk or other medium, a
+computer virus, or computer codes that damage or cannot be read by
+your equipment.
+
+1.F.2.  LIMITED WARRANTY, DISCLAIMER OF DAMAGES - Except for the "Right
+of Replacement or Refund" described in paragraph 1.F.3, the Project
+Gutenberg Literary Archive Foundation, the owner of the Project
+Gutenberg-tm trademark, and any other party distributing a Project
+Gutenberg-tm electronic work under this agreement, disclaim all
+liability to you for damages, costs and expenses, including legal
+fees.  YOU AGREE THAT YOU HAVE NO REMEDIES FOR NEGLIGENCE, STRICT
+LIABILITY, BREACH OF WARRANTY OR BREACH OF CONTRACT EXCEPT THOSE
+PROVIDED IN PARAGRAPH F3.  YOU AGREE THAT THE FOUNDATION, THE
+TRADEMARK OWNER, AND ANY DISTRIBUTOR UNDER THIS AGREEMENT WILL NOT BE
+LIABLE TO YOU FOR ACTUAL, DIRECT, INDIRECT, CONSEQUENTIAL, PUNITIVE OR
+INCIDENTAL DAMAGES EVEN IF YOU GIVE NOTICE OF THE POSSIBILITY OF SUCH
+DAMAGE.
+
+1.F.3.  LIMITED RIGHT OF REPLACEMENT OR REFUND - If you discover a
+defect in this electronic work within 90 days of receiving it, you can
+receive a refund of the money (if any) you paid for it by sending a
+written explanation to the person you received the work from.  If you
+received the work on a physical medium, you must return the medium with
+your written explanation.  The person or entity that provided you with
+the defective work may elect to provide a replacement copy in lieu of a
+refund.  If you received the work electronically, the person or entity
+providing it to you may choose to give you a second opportunity to
+receive the work electronically in lieu of a refund.  If the second copy
+is also defective, you may demand a refund in writing without further
+opportunities to fix the problem.
+
+1.F.4.  Except for the limited right of replacement or refund set forth
+in paragraph 1.F.3, this work is provided to you 'AS-IS' WITH NO OTHER
+WARRANTIES OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO
+WARRANTIES OF MERCHANTIBILITY OR FITNESS FOR ANY PURPOSE.
+
+1.F.5.  Some states do not allow disclaimers of certain implied
+warranties or the exclusion or limitation of certain types of damages.
+If any disclaimer or limitation set forth in this agreement violates the
+law of the state applicable to this agreement, the agreement shall be
+interpreted to make the maximum disclaimer or limitation permitted by
+the applicable state law.  The invalidity or unenforceability of any
+provision of this agreement shall not void the remaining provisions.
+
+1.F.6.  INDEMNITY - You agree to indemnify and hold the Foundation, the
+trademark owner, any agent or employee of the Foundation, anyone
+providing copies of Project Gutenberg-tm electronic works in accordance
+with this agreement, and any volunteers associated with the production,
+promotion and distribution of Project Gutenberg-tm electronic works,
+harmless from all liability, costs and expenses, including legal fees,
+that arise directly or indirectly from any of the following which you do
+or cause to occur: (a) distribution of this or any Project Gutenberg-tm
+work, (b) alteration, modification, or additions or deletions to any
+Project Gutenberg-tm work, and (c) any Defect you cause.
+
+
+Section  2.  Information about the Mission of Project Gutenberg-tm
+
+Project Gutenberg-tm is synonymous with the free distribution of
+electronic works in formats readable by the widest variety of computers
+including obsolete, old, middle-aged and new computers.  It exists
+because of the efforts of hundreds of volunteers and donations from
+people in all walks of life.
+
+Volunteers and financial support to provide volunteers with the
+assistance they need, is critical to reaching Project Gutenberg-tm's
+goals and ensuring that the Project Gutenberg-tm collection will
+remain freely available for generations to come.  In 2001, the Project
+Gutenberg Literary Archive Foundation was created to provide a secure
+and permanent future for Project Gutenberg-tm and future generations.
+To learn more about the Project Gutenberg Literary Archive Foundation
+and how your efforts and donations can help, see Sections 3 and 4
+and the Foundation web page at http://www.pglaf.org.
+
+
+Section 3.  Information about the Project Gutenberg Literary Archive
+Foundation
+
+The Project Gutenberg Literary Archive Foundation is a non profit
+501(c)(3) educational corporation organized under the laws of the
+state of Mississippi and granted tax exempt status by the Internal
+Revenue Service.  The Foundation's EIN or federal tax identification
+number is 64-6221541.  Its 501(c)(3) letter is posted at
+http://pglaf.org/fundraising.  Contributions to the Project Gutenberg
+Literary Archive Foundation are tax deductible to the full extent
+permitted by U.S. federal laws and your state's laws.
+
+The Foundation's principal office is located at 4557 Melan Dr. S.
+Fairbanks, AK, 99712., but its volunteers and employees are scattered
+throughout numerous locations.  Its business office is located at
+809 North 1500 West, Salt Lake City, UT 84116, (801) 596-1887, email
+business@pglaf.org.  Email contact links and up to date contact
+information can be found at the Foundation's web site and official
+page at http://pglaf.org
+
+For additional contact information:
+     Dr. Gregory B. Newby
+     Chief Executive and Director
+     gbnewby@pglaf.org
+
+
+Section 4.  Information about Donations to the Project Gutenberg
+Literary Archive Foundation
+
+Project Gutenberg-tm depends upon and cannot survive without wide
+spread public support and donations to carry out its mission of
+increasing the number of public domain and licensed works that can be
+freely distributed in machine readable form accessible by the widest
+array of equipment including outdated equipment.  Many small donations
+($1 to $5,000) are particularly important to maintaining tax exempt
+status with the IRS.
+
+The Foundation is committed to complying with the laws regulating
+charities and charitable donations in all 50 states of the United
+States.  Compliance requirements are not uniform and it takes a
+considerable effort, much paperwork and many fees to meet and keep up
+with these requirements.  We do not solicit donations in locations
+where we have not received written confirmation of compliance.  To
+SEND DONATIONS or determine the status of compliance for any
+particular state visit http://pglaf.org
+
+While we cannot and do not solicit contributions from states where we
+have not met the solicitation requirements, we know of no prohibition
+against accepting unsolicited donations from donors in such states who
+approach us with offers to donate.
+
+International donations are gratefully accepted, but we cannot make
+any statements concerning tax treatment of donations received from
+outside the United States.  U.S. laws alone swamp our small staff.
+
+Please check the Project Gutenberg Web pages for current donation
+methods and addresses.  Donations are accepted in a number of other
+ways including checks, online payments and credit card donations.
+To donate, please visit: http://pglaf.org/donate
+
+
+Section 5.  General Information About Project Gutenberg-tm electronic
+works.
+
+Professor Michael S. Hart is the originator of the Project Gutenberg-tm
+concept of a library of electronic works that could be freely shared
+with anyone.  For thirty years, he produced and distributed Project
+Gutenberg-tm eBooks with only a loose network of volunteer support.
+
+
+Project Gutenberg-tm eBooks are often created from several printed
+editions, all of which are confirmed as Public Domain in the U.S.
+unless a copyright notice is included.  Thus, we do not necessarily
+keep eBooks in compliance with any particular paper edition.
+
+
+Most people start at our Web site which has the main PG search facility:
+
+     http://www.gutenberg.org
+
+This Web site includes information about Project Gutenberg-tm,
+including how to make donations to the Project Gutenberg Literary
+Archive Foundation, how to help produce our new eBooks, and how to
+subscribe to our email newsletter to hear about new eBooks.

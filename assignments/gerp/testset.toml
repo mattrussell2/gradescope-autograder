@@ -1,0 +1,63 @@
+# output files created by the program to-be-diff'd MUST be named '#{testname}.ofile'
+[common]
+max_time     = 600 
+max_ram      = 8000000 
+diff_ofiles  = true
+ccize_ofiles = true
+ccizer_name  = "sort_lines"
+valgrind     = false
+our_makefile = false    # use the student's Makefile
+executable   = "gerp"
+
+# NOTE: TOML files with " ... " can't have double-quotes. So use \u0022 (") and \u0027 instead
+# NOTE: visiblity settings are for gradescope
+[tiny]
+argv       = ["tinyData", "#{testname}.ofile"]
+valgrind   = true
+tests = [
+    { testname = "test01", description = "Tiny Sensitive - we", visibility = "visible"},
+    { testname = "test02", description = "Tiny Sensitive - COMP15" },
+    { testname = "test03", description = "Tiny Insensitive - @i remember", visibility = "visible" },
+    { testname = "test04", description = "Tiny Insensitive - @i i" },          
+    { testname = "test05", description = "Tiny Insensitive - @i pretty" }, 
+    { testname = "test06", description = "Tiny Insensitive - @i gibberish" },
+    { testname = "test07", description = "Tiny Tricky - grep!", visibility = "visible" },
+    { testname = "test08", description = "Tiny Tricky - 40?" },
+    { testname = "test09", description = """Tiny Tricky - \u0022Tree-Mendous""" },
+    { testname = "test10", description = """Tiny Tricky - @i don\u0027t""" }
+]
+
+# these would be used with larger directories
+[small] 
+argv  = ["smallGutenberg", "#{testname}.ofile"]
+tests = [
+    { testname = "test11", description = "Small Gutenberg Sensitive - student", valgrind = true }, 
+    { testname = "test12", description = "Small Gutenberg Sensitive - Jumbo", visibility = "visible"},
+    { testname = "test13", description = "Small Gutenberg Sensitive - Easier" },    
+    { testname = "test14", description = "Small Gutenberg Sensitive - texts" },
+    { testname = "test15", description = "Small Gutenberg Sensitive - Civilization" },
+    { testname = "test16", description = "Small Gutenberg Sensitive - bachelor" },
+    { testname = "test17", description = "Small Gutenberg Insensitive - @i zoological" },
+    { testname = "test18", description = "Small Gutenberg Insensitive - @i intelligent" },
+    { testname = "test19", description = "Small Gutenberg Insensitive - @i parents" },
+    { testname = "test20", description = "Small Gutenberg Insensitive - @i insensitive diana" },
+    { testname = "test21", description = "Small Gutenberg Tricky - [*]" },
+    { testname = "test22", description = "Small Gutenberg Tricky - computer\u0027s" },
+    { testname = "test23", description = """Small Gutenberg Tricky - \u0022\u0027Joke!\u0027""" }, 
+    { testname = "test24", description = "Small Gutenberg Tricky - A--little-bit--wild?" },
+    { testname = "test25", description = "Small Gutenberg Tricky - @i {....." },
+    { testname = "test26", description = "Small Gutenberg Tricky - @i www.gutenberg.org" },
+    { testname = "test27", description = "Small Gutenberg Tricky - @i cometh?" },
+    { testname = "test28", description = "Small Gutenberg Tricky - @i deal!" },
+    { testname = "test29", description = """Small Gutenberg Tricky - @i \u0022\u0027""" },
+    { testname = "test30", description = """Small Gutenberg Tricky - @i \"yours?\u0022""" }
+]
+
+[med_and_large]
+max_score   = 2.5
+diff_ofiles = false
+argv = ["mediumGutenberg", "#{testname}.ofile"]
+tests = [
+     { testname = "test31", description = "Medium Gutenberg - Time and Memory Complexity" },
+    { testname = "test33", description = "Medium Gutenberg with Queries" },
+ ]

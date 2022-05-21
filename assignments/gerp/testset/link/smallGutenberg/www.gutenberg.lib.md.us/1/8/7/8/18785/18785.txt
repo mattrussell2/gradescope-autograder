@@ -1,0 +1,909 @@
+The Project Gutenberg EBook of Transactions of the American Society of
+Civil Engineers, Vol. LXX, Dec. 1910, by Various
+
+This eBook is for the use of anyone anywhere at no cost and with
+almost no restrictions whatsoever.  You may copy it, give it away or
+re-use it under the terms of the Project Gutenberg License included
+with this eBook or online at www.gutenberg.org
+
+
+Title: Transactions of the American Society of Civil Engineers, Vol. LXX, Dec. 1910
+       Final Report of Special Committee on Rail Sections, Paper No. 1177
+
+Author: Various
+
+Release Date: July 8, 2006 [EBook #18785]
+
+Language: English
+
+Character set encoding: ASCII
+
+*** START OF THIS PROJECT GUTENBERG EBOOK SOCIETY OF CIVIL ENGINEERS ***
+
+
+
+
+Produced by Juliet Sutherland, Sigal Alon and the Online
+Distributed Proofreading Team at http://www.pgdp.net
+
+
+
+
+
+
+
+
+
+AMERICAN SOCIETY OF CIVIL ENGINEERS
+
+INSTITUTED 1852
+
+
+TRANSACTIONS
+
+Paper No. 1177
+
+
+FINAL REPORT
+OF SPECIAL COMMITTEE ON RAIL SECTIONS.[A]
+
+
+
+
+Your Special Committee on Steel Rails, since their appointment in 1902,
+have held numerous meetings, not only of their own body, but also in
+conference with Committees representing other Societies and the steel
+rail makers. The results of their deliberations have been presented to
+the Society in their reports presented on--
+
+    January  21st, 1903[B]
+       "     18th, 1905
+       "     17th, 1906
+       "     16th, 1907
+    July      9th, 1907
+    December  6th, 1907
+       "     18th, 1908
+    November 30th, 1909
+
+As previously reported to you, the Rail Committee of the American
+Railway Engineering and Maintenance of Way Association is also acting
+for the American Railway Association; and the latter organization has
+guaranteed to it the necessary funds to make exhaustive tests and
+observations as to the wear, breakage, etc., etc., of steel rails. This
+work is being prosecuted, and will of necessity require several years.
+
+Your Committee feels that it has nothing to add to the several reports
+which it has presented to the Society, particularly as, so far, the
+several cardinal principles outlined in them are being practically
+followed in the several used and proposed specifications and rail
+sections.
+
+In view of the foregoing, your Committee would respectfully ask to be
+discharged so that the field may be clear if at any future time the
+Society should desire to again place the subject in the hands of a
+Committee.
+
+                                                JOSEPH T. RICHARDS,
+                                                C. W. BUCHHOLZ,
+                                                E. C. CARTER,
+                                                S. M. FELTON,
+                                                ROBERT W. HUNT,
+                                                JOHN D. ISAACS,
+                                                RICHARD MONTFORT,
+                                                H. G. PROUT,
+                                                PERCIVAL ROBERTS, JR.,
+                                                GEORGE E. THACKRAY,
+                                                EDMUND K. TURNER,
+Approved in connection with the attached report:
+                                                WILLIAM R. WEBSTER.
+
+JUNE, 1910.
+
+                                         PHILADELPHIA, JUNE 1ST, 1910.
+
+I have signed the Report of the A. S. C. E. Rail Committee,--"Approved
+in connection with the attached report," as I feel that the report is
+too condensed, and assumes that all are familiar with the Rail
+situation, especially what has been done by the other Societies.
+
+The work undertaken by this Committee has been delegated by The American
+Railway Association to the Rail Committee of The American Railway
+Engineering and Maintenance of Way Association, and it therefore seems
+appropriate to give the results of their work, up to date, to our
+members in convenient form for reference, especially as our rail
+specifications have not been worked to, and they have offered a better
+specification that will be worked to, and no doubt largely used by the
+members of this Society. The specification is attached to this report.
+
+In presenting this specification to the Annual Meeting at Chicago in
+March last, the Committee said:[C]
+
+     "A new specification should not be proposed at this time without
+     careful consideration. So far as we know, no railroad company has
+     purchased rails under the specifications approved by the American
+     Railway Association and referred to us; nor do we know of any
+     railway company that has succeeded in buying rails during the past
+     two years according to a specification entirely satisfactory to the
+     railroad company. We believe that all of the specifications under
+     which rails have been rolled have been compromises on the part of
+     both parties, with the general result that neither party is
+     entirely satisfied. Our experience during the year has brought to
+     our attention some defects in all of the specifications now before
+     us, and acting under the impression that there is a distinct
+     feeling that we should revise our specifications, we offer the
+     attached specifications for your consideration. Our Association has
+     no specification for Open-Hearth Steel Rails, and in order to
+     comply with the instructions, a specification for Open-Hearth Steel
+     Rails is included.
+
+     "We believe it necessary to submit a sliding scale for the
+     percentages of carbon and phosphorus, which provides for increasing
+     the carbon as the phosphorus decreases. The fixing of this scale
+     properly is a matter requiring care, and we admit that our
+     knowledge on the subject is limited. The American Railway
+     Association specification calls attention to this matter in the
+     following words: 'When lower phosphorus can be secured, a proper
+     proportionate increase in carbon should be made.' The amount of
+     increase is not provided for in the specifications, and this
+     appears to us to be necessary in order to secure uniformity of
+     practice; otherwise, the fixing of these percentages becomes a
+     matter of special arrangement. Bessemer rails are being furnished
+     regularly with phosphorus under the maximum allowed, and where this
+     is done, the carbon should be raised above the higher limit now
+     fixed in our specifications, or a soft and poor wearing rail will
+     result; yet this condition has not been fully guarded against in
+     rails furnished under existing specifications. The lower and upper
+     limits for carbon have heretofore been fixed with the intention
+     that the mills furnish rails with a composition as near between the
+     two limits as possible. The mills, however, in order to meet the
+     prescribed drop tests with the least difficulty, keep both the
+     carbon and manganese as nearly as possible to the lower limits,
+     with the corresponding result that a generally poor-wearing rail is
+     furnished.
+
+     "Some roads have prescribed the limits of deflection to be allowed
+     under the drop test. With our present knowledge, we believe that we
+     should fix a minimum deflection to eliminate brittle rails and to
+     secure greater uniformity of product; also maximum deflection to
+     eliminate soft rails. We are not able at the present time to fix
+     these limits, but our ultimate object will be to determine and fix
+     such limits for the specifications.
+
+     "With reference to the amount of discard, time of holding in ladle,
+     size of nozzles, and other such details of manufacture or
+     machinery, we are of the opinion that the physical and chemical
+     tests required should be prescribed, and that we should see that
+     the material submitted for acceptance meets the prescribed tests.
+     We should not dictate to the manufacturers the amount of crop which
+     shall be removed from the top of the ingot, as this should vary
+     with the care and time consumed at the various mills. The railroads
+     should not be asked to take anything but sound material in their
+     rails. The mills can furnish such sound material if the proper care
+     and sufficient time are taken in the making of the ingots.
+     Information derived from the tests being made at the Watertown
+     Arsenal shows definitely that sound rails cannot be made from
+     unsound ingots, and that, therefore, the prime requisite in
+     securing a sound rail is to first secure the sound ingot.
+
+     "We recommend that the present Specifications for Steel Rails be
+     withdrawn from the Manual of Recommended Practice of the
+     Association, as no longer representing the current state of the
+     art.
+
+     "We submit herewith, as Appendix 'A,' a form for specifications. It
+     will have to be amended from time to time as we receive further
+     information on the subject."
+
+The specifications referred to above were modified and presented at the
+Meeting in _Supplement to Bulletin No. 121_, of March, 1910, and in this
+final form are attached hereto.
+
+These specifications do not represent the work of any one Society or the
+work of any one Committee, but are the result of all the work of the
+different Societies, as the members of all are so interwoven that
+whatever work is done in any one Society, or by the Committee of a
+Society, has very naturally and fortunately been carried into the
+others.
+
+At the Chicago Meeting these specifications were accepted without a
+single change, and this is very unusual and shows how generally
+acceptable they were, as the members of all Rail Committees were present
+at the Meeting. The main points in this specification were discussed and
+agreed upon by the members of the Committee and the Rail Committee of
+the manufacturers who have co-operated with them in this work.
+
+In the matter of Rail Sections, the Rail Committee of The American
+Railway Engineering and Maintenance of Way Association has not arrived
+at any definite conclusions. The new sections "A" and "B" of The
+American Railway Association have not given as good results as was
+expected of them, and the whole matter is yet under consideration. The
+Committee reported as follows:[D]
+
+     "The instructions of the American Railway Association require us to
+     study the A. R. A. sections 'A' and 'B' in use and submit a single
+     type for standard. Owing to the conditions existing in 1908, very
+     little rail was laid, and practically none of the A. R. A.
+     sections, in such manner as to give the needed information. This
+     year, several roads have laid A. R. A. sections of rail, with a
+     view of determining the relative merits of the respective sections.
+     These rails have been in the track so short a time that we are not
+     justified in drawing any conclusions as to which of the A. R. A.
+     types, 'A' or 'B,' or if either, is better than the A. S. C. E.
+     sections.
+
+     "_Bulletin No. 116_, issued October, 1909, gives the statistics for
+     rail failures for six months from October 31, 1908, to April 30,
+     1909, as reported to the Committee. These statistics do show that
+     the difference in section can be entirely annihilated by difference
+     in chemical composition and by the treatment in furnace and mill.
+
+     "The results so far obtained from the heavy base A. R. A. sections
+     are disappointing, as we have received some rail from the mills of
+     the new section which was as bad as we did with the old
+     A. S. C. E. section, showing that the quality of the rail does not
+     depend entirely upon the section.
+
+     "The tests to be inaugurated by the Committee, combined with the
+     results of the tests at Watertown and the performance of the rail
+     in the track, will give us valuable data to aid us in coming to a
+     final conclusion."
+
+A careful study of the results already obtained, on both Bessemer and
+open-hearth steel rails, indicates that the next necessary step will be
+the use of a much heavier rail, and I think the sooner this is admitted
+and trial lots of say 1,000 tons each of 110-lb., 120-lb. and 130-lb.
+rails rolled, of Bessemer and open-hearth steel, and put in service
+under the most severe conditions, the sooner we will get rid of the
+present difficulties with our rails.
+
+WM. R. WEBSTER.
+
+
+    "SPECIFICATIONS FOR STEEL RAILS.[E]
+
+[Sidenote: Process of manufacture.]
+
+    "1. The entire process of manufacture shall be in accordance with
+    the best current state of the art.
+
+    "(_a_) Ingots shall be kept in a vertical position until ready to be
+    rolled, or until the metal in the interior has had time to solidify.
+
+    "(_b_) Bled ingots shall not be used.
+
+[Sidenote: Chemical composition.]
+
+    "2. The chemical composition of the steel from which the rails are
+    rolled shall be within the following limits:
+
+=================+============================+============================
+                 |      BESSEMER.    |   OPEN-HEARTH.
+                 +-------------+--------------+-------------+--------------
+                 |70 lbs. and  |              |70 lbs. and  |
+                 | over, but   |85 to 100 lbs.| over, but   |85 to 100 lbs.
+                 |under 85 lbs.|  inclusive.  |under 85 lbs.| inclusive.
+-----------------+-------------+--------------+-------------+--------------
+Carbon           |0.40 to 0.50 |0.45 to 0.55  |0.53 to 0.66 |0.63 to 0.76
+Manganese        |0.80 to 1.10 |0.80 to 1.10  |0.70 to 1.00 |0.70 to 1.00
+Silicon          |0.07 to 0.20 |0.07 to 0.20  |0.07 to 0.20 |0.07 to 0.20
+Phosphorus,      |             |              |             |
+   not to exceed |        0.10 |        0.10  |        0.04 |        0.04
+Sulphur,         |             |              |             |
+   not to exceed |        0.075|        0.075 |        0.06 |        0.06
+=================+=============+==============+=============+==============
+
+    "3. When the average phosphorus content of the ingot metal used in
+    the Bessemer Process at any mill is below 0.08 and in the
+    Open-Hearth Process is below 0.03, the carbon shall be increased at
+    the rate of 0.035 for each 0.01 that the phosphorus content of the
+    ingot metal used averages below 0.08 for Bessemer steel, or 0.03 for
+    Open-Hearth steel.
+
+    "The percentage of carbon in an entire order of rails shall average
+    as high as the mean percentage between the upper and lower limits.
+
+[Sidenote: Shearing.]
+
+    "4. The end of the bloom formed from the top of the ingot shall be
+    sheared until the entire face shows sound metal.
+
+    "All metal from the top of the ingot, whether made from the bloom or
+    the rail, is the top discard.
+
+[Sidenote: Shrink]
+
+    "5. The number of passes and speed of train shall be so regulated
+    that, on leaving the rolls at the final pass, the temperature of the
+    rails will not exceed that which requires a shrinkage allowance at
+    the hot saws, for a 33-ft. rail of 100 lb. section, of 6-1/2 in. for
+    thick base sections and 6-3/4 in. for A. S. CC. E. sections, and 1/8
+    in. less for each ten pounds decrease of section, these allowances
+    to be decreased at the rate of 1-100 in. for each second of time
+    elapsed between the rail leaving the finishing rolls and being
+    sawed.
+
+    "The bars shall not be held for the purpose of reducing their
+    temperature, nor shall any artificial means of cooling them be used
+    between the leading and finishing passes, nor after they leave the
+    finishing pass.
+
+[Sidenote: Section]
+
+    "6. The section of rail shall conform as accurately as possible to
+    the templet furnished by the Railroad Company. A variation in height
+    of 1-64 in. less or 1-32 in. greater than the specified height, and
+    1-16 in. in width of flange, will be permitted; but no variations
+    shall be allowed in the dimensions affecting the fit of splice bars.
+
+[Sidenote: Weight]
+
+    "7. The weight of the rail shall be maintained as nearly as
+    possible, after complying with the preceding paragraph, to that
+    specified in the contract.
+
+    "A variation of one-half of one per cent. from the calculated weight
+    of section, as applied to an entire order, will be allowed.
+
+    "Rails will be accepted and paid for according to actual weight.
+
+[Sidenote: Length]
+
+    "8. The standard length of rail shall be 33 ft.
+
+    "Ten per cent. of the entire order will be accepted in shorter
+    lengths varying by 1 ft. from 32 ft. to 25 ft.
+
+    "A variation of 1/4 in. from the specified lengths will be allowed.
+
+    "All No. 1 rails less than 33 ft. shall be painted green on both
+    ends.
+
+[Sidenote: Finishing]
+
+    "9. Care shall be taken in hot-straightening rails, and it shall
+    result in their being left in such condition that they will not vary
+    throughout their entire length more than four (4) in. from a
+    straight line in any direction for thick base sections, and 5 in.
+    for A. S. C. E. sections when delivered to the cold-straightening
+    presses. Those which vary beyond that amount, or have short kinks,
+    shall be classed as second quality rails and be so marked.
+
+    "The distance between supports of rails in the straightening press
+    shall not be less than forty-two (42) in.; supports to have flat
+    surfaces and out of wind. Rails shall be straight in line and
+    surface and smooth on head when finished, final straightening being
+    done while cold.
+
+    "They shall be sawed square at ends, variations to be not more than
+    1-32 in., and prior to shipment shall have the burr caused by the
+    saw cutting removed and the ends made clean.
+
+[Sidenote: Drilling]
+
+    "10. Circular holes for joint bolts shall be drilled in accordance
+    with specifications of the purchaser. They shall in every respect
+    conform accurately to drawing and dimensions furnished and shall be
+    free from burrs.
+
+[Sidenote: Branding]
+
+    "11. The name of the manufacturer, the weight of the rail, and the
+    month and year of manufacture shall be rolled in raised letters and
+    figures on the side of the web. The number of the heat and a letter
+    indicating the portion of the ingot from which the rail was made
+    shall be plainly stamped on the web of each rail, where it will not
+    be covered by the splice bars. Rails to be lettered consecutively A,
+    B, C, etc., the rail from the top of the ingot being A. In case of a
+    top discard of twenty or more per cent. the letter A will be
+    omitted. Open-Hearth rails to be branded or stamped O. H. All
+    marking of rails shall be done so effectively that the marks may be
+    read as long as the rails are in service.
+
+[Sidenote: Drop testing.]
+
+    "12. (_a_) Drop tests shall be made on pieces of rail rolled from
+    the top of the ingot, not less than four (4) ft. and not more than
+    six (6) ft. long, from each heat of steel. These test pieces shall
+    be cut from the rail bar next to either end of the top rail, as
+    selected by the Inspector.
+
+    "The temperature of the test pieces shall be between forty (40) and
+    one hundred (100) degrees Fahrenheit.
+
+    "The test pieces shall be placed head upward on solid supports, five
+    (5) in. top radius, three (3) ft. between centers, and subjected to
+    impact tests, the tup falling free from the following heights:
+
+    70 lb. rail                16 ft.
+    80, 85 and 90 lb. rail     18 ft.
+    100 lb. rail               20 ft.
+
+    "The test pieces which do not break under the first drop shall be
+    nicked and tested to destruction.
+
+    "(_b_) (It is proposed to prescribe, under this paragraph, the
+    requirements in regard to deflection, fixing maximum and minimum
+    limits, as soon as proper deflection limits have been decided upon.)
+
+[Sidenote: Tests.]
+
+    "13. (A) Two pieces shall be tested from each heat of steel. If
+    either of these test pieces breaks, a third piece shall be tested.
+    If two of the test pieces break without showing physical defect, all
+    rails of the heat will be rejected absolutely. If two of the test
+    pieces do not break, all rails of the heat will be accepted as No. 1
+    or No. 2 classification (according as the deflection is less or
+    more, respectively, than the prescribed limit[A]).
+
+    "(B) If, however, any test piece broken under test A shows physical
+    defect, the top rail from each ingot of that heat shall be rejected.
+
+    "(C) Additional tests shall then be made of test pieces selected by
+    the Inspector from the top end of any second rails of the same heat.
+    If two out of three of these second test pieces break, the remainder
+    of the rails of the heat will also be rejected. If two out of three
+    of these second test pieces do not break, the remainder of the rails
+    of the heat will be accepted, provided they conform to the other
+    requirements of these specifications, as No. 1 or No. 2
+    classification (according as the deflection is less or more,
+    respectively, than the prescribed limit[F]).
+
+    "(D) If any test piece, test A, does not break, but when nicked and
+    tested to destruction shows interior defect, the top rails from each
+    ingot of that heat shall be rejected.
+
+[Sidenote: Drop testing machine.]
+
+    "14. The drop-testing machine shall be the standard of the American
+    Railway Engineering and Maintenance of Way Association, and have a
+    tup of 2,000 lbs. weight, the striking face of which shall have a
+    radius of five (5) in.
+
+    "The anvil block shall be adequately supported and shall weigh
+    20,000 lbs.
+
+    "The supports shall be a part of or firmly secured to the anvil.
+
+[Sidenote: No. 1 Rails.]
+
+    "15. No. 1 rails shall be free from injurious defects and flaws of
+    all kinds.
+
+[Sidenote: No. 2 Rails.]
+
+    "16. Rails which, by reason of surface imperfections, are not
+    accepted as No. 1 rails, will be classed as No. 2 rails, but rails
+    containing physical defects which impair their strength, shall be
+    rejected.
+
+    "No. 2 rails to the extent of five (5) per cent. of the whole order
+    will be received. All rails accepted as No. 2 rails shall have the
+    ends painted white, and shall have two prick punch marks on the side
+    of the web near the heat number near the end of the rail, so placed
+    as not to be covered by the splice bars.
+
+    "Rails improperly drilled, straightened, or from which the burrs
+    have not been properly removed, shall be rejected, but may be
+    accepted after being properly finished.
+
+    "Different classes of rails shall be kept separate in shipment.
+
+    "All rails shall be loaded in the presence of the inspector.
+
+[Sidenote: Inspection.]
+
+    "17. (_a_) Inspectors representing the purchaser shall have free
+    entry to the works of the Manufacturer at all times while the
+    contract is being executed, and shall have all reasonable facilities
+    afforded them by the Manufacturer to satisfy them that the rails
+    have been made in accordance with the terms of the specifications.
+
+    "(_b_) For Bessemer Steel the Manufacturer shall, before the rails
+    are shipped, furnish the Inspector daily with carbon determinations
+    for each heat, and two complete chemical analyses every twenty-four
+    hours representing the average of the other elements specified in
+    section 2 hereof contained in the steel, for each day and night turn
+    respectively. These analyses shall be made on drillings taken from
+    the ladle test ingot not less than 1/4 in. beneath the surface.
+
+    "For Open-Hearth Steel, the makers shall furnish the Inspectors with
+    a complete chemical analysis of the elements specified in section 2
+    hereof for each melt.
+
+    "(_c_) On request of the Inspector, the Manufacturer shall furnish
+    drillings from the test ingot for check analysis.
+
+    "(_d_) All tests and inspections shall be made at the place of
+    manufacture, prior to shipment, and shall be so conducted as not to
+    unnecessarily interfere with the operation of the mill."
+
+
+FOOTNOTES:
+
+[Footnote A: Presented to the Annual Convention, June 21st, 1910.]
+
+[Footnote B: These reports were published in _Proceedings_, Am. Soc.
+C. E., as follows: February, 1903, p. 43; February, 1905, p. 60:
+February, 1906, p. 50; February, 1907, p. 69; August, 1907, p. 290;
+February, 1908, p. 85; February, 1909, p. 61; February, 1910, p. 62.]
+
+[Footnote C: Bulletin No. 118, December, 1909.]
+
+[Footnote D: Bulletin No. 118. December, 1909.]
+
+[Footnote E: Reprinted from _Supplement to Bulletin No. 121_ of the
+American Railway Engineering and Maintenance of Way Association (March,
+1910).]
+
+[Footnote F: Note: The clause in brackets in Sections A and C to be
+added to the specifications when the deflection limits are specified.]
+
+
+
+
+
+
+End of the Project Gutenberg EBook of Transactions of the American Society
+of Civil Engineers, Vol. LXX, Dec. 1910, by Various
+
+*** END OF THIS PROJECT GUTENBERG EBOOK SOCIETY OF CIVIL ENGINEERS ***
+
+***** This file should be named 18785.txt or 18785.zip *****
+This and all associated files of various formats will be found in:
+        http://www.gutenberg.org/1/8/7/8/18785/
+
+Produced by Juliet Sutherland, Sigal Alon and the Online
+Distributed Proofreading Team at http://www.pgdp.net
+
+
+Updated editions will replace the previous one--the old editions
+will be renamed.
+
+Creating the works from public domain print editions means that no
+one owns a United States copyright in these works, so the Foundation
+(and you!) can copy and distribute it in the United States without
+permission and without paying copyright royalties.  Special rules,
+set forth in the General Terms of Use part of this license, apply to
+copying and distributing Project Gutenberg-tm electronic works to
+protect the PROJECT GUTENBERG-tm concept and trademark.  Project
+Gutenberg is a registered trademark, and may not be used if you
+charge for the eBooks, unless you receive specific permission.  If you
+do not charge anything for copies of this eBook, complying with the
+rules is very easy.  You may use this eBook for nearly any purpose
+such as creation of derivative works, reports, performances and
+research.  They may be modified and printed and given away--you may do
+practically ANYTHING with public domain eBooks.  Redistribution is
+subject to the trademark license, especially commercial
+redistribution.
+
+
+
+*** START: FULL LICENSE ***
+
+THE FULL PROJECT GUTENBERG LICENSE
+PLEASE READ THIS BEFORE YOU DISTRIBUTE OR USE THIS WORK
+
+To protect the Project Gutenberg-tm mission of promoting the free
+distribution of electronic works, by using or distributing this work
+(or any other work associated in any way with the phrase "Project
+Gutenberg"), you agree to comply with all the terms of the Full Project
+Gutenberg-tm License (available with this file or online at
+http://gutenberg.org/license).
+
+
+Section 1.  General Terms of Use and Redistributing Project Gutenberg-tm
+electronic works
+
+1.A.  By reading or using any part of this Project Gutenberg-tm
+electronic work, you indicate that you have read, understand, agree to
+and accept all the terms of this license and intellectual property
+(trademark/copyright) agreement.  If you do not agree to abide by all
+the terms of this agreement, you must cease using and return or destroy
+all copies of Project Gutenberg-tm electronic works in your possession.
+If you paid a fee for obtaining a copy of or access to a Project
+Gutenberg-tm electronic work and you do not agree to be bound by the
+terms of this agreement, you may obtain a refund from the person or
+entity to whom you paid the fee as set forth in paragraph 1.E.8.
+
+1.B.  "Project Gutenberg" is a registered trademark.  It may only be
+used on or associated in any way with an electronic work by people who
+agree to be bound by the terms of this agreement.  There are a few
+things that you can do with most Project Gutenberg-tm electronic works
+even without complying with the full terms of this agreement.  See
+paragraph 1.C below.  There are a lot of things you can do with Project
+Gutenberg-tm electronic works if you follow the terms of this agreement
+and help preserve free future access to Project Gutenberg-tm electronic
+works.  See paragraph 1.E below.
+
+1.C.  The Project Gutenberg Literary Archive Foundation ("the Foundation"
+or PGLAF), owns a compilation copyright in the collection of Project
+Gutenberg-tm electronic works.  Nearly all the individual works in the
+collection are in the public domain in the United States.  If an
+individual work is in the public domain in the United States and you are
+located in the United States, we do not claim a right to prevent you from
+copying, distributing, performing, displaying or creating derivative
+works based on the work as long as all references to Project Gutenberg
+are removed.  Of course, we hope that you will support the Project
+Gutenberg-tm mission of promoting free access to electronic works by
+freely sharing Project Gutenberg-tm works in compliance with the terms of
+this agreement for keeping the Project Gutenberg-tm name associated with
+the work.  You can easily comply with the terms of this agreement by
+keeping this work in the same format with its attached full Project
+Gutenberg-tm License when you share it without charge with others.
+
+1.D.  The copyright laws of the place where you are located also govern
+what you can do with this work.  Copyright laws in most countries are in
+a constant state of change.  If you are outside the United States, check
+the laws of your country in addition to the terms of this agreement
+before downloading, copying, displaying, performing, distributing or
+creating derivative works based on this work or any other Project
+Gutenberg-tm work.  The Foundation makes no representations concerning
+the copyright status of any work in any country outside the United
+States.
+
+1.E.  Unless you have removed all references to Project Gutenberg:
+
+1.E.1.  The following sentence, with active links to, or other immediate
+access to, the full Project Gutenberg-tm License must appear prominently
+whenever any copy of a Project Gutenberg-tm work (any work on which the
+phrase "Project Gutenberg" appears, or with which the phrase "Project
+Gutenberg" is associated) is accessed, displayed, performed, viewed,
+copied or distributed:
+
+This eBook is for the use of anyone anywhere at no cost and with
+almost no restrictions whatsoever.  You may copy it, give it away or
+re-use it under the terms of the Project Gutenberg License included
+with this eBook or online at www.gutenberg.org
+
+1.E.2.  If an individual Project Gutenberg-tm electronic work is derived
+from the public domain (does not contain a notice indicating that it is
+posted with permission of the copyright holder), the work can be copied
+and distributed to anyone in the United States without paying any fees
+or charges.  If you are redistributing or providing access to a work
+with the phrase "Project Gutenberg" associated with or appearing on the
+work, you must comply either with the requirements of paragraphs 1.E.1
+through 1.E.7 or obtain permission for the use of the work and the
+Project Gutenberg-tm trademark as set forth in paragraphs 1.E.8 or
+1.E.9.
+
+1.E.3.  If an individual Project Gutenberg-tm electronic work is posted
+with the permission of the copyright holder, your use and distribution
+must comply with both paragraphs 1.E.1 through 1.E.7 and any additional
+terms imposed by the copyright holder.  Additional terms will be linked
+to the Project Gutenberg-tm License for all works posted with the
+permission of the copyright holder found at the beginning of this work.
+
+1.E.4.  Do not unlink or detach or remove the full Project Gutenberg-tm
+License terms from this work, or any files containing a part of this
+work or any other work associated with Project Gutenberg-tm.
+
+1.E.5.  Do not copy, display, perform, distribute or redistribute this
+electronic work, or any part of this electronic work, without
+prominently displaying the sentence set forth in paragraph 1.E.1 with
+active links or immediate access to the full terms of the Project
+Gutenberg-tm License.
+
+1.E.6.  You may convert to and distribute this work in any binary,
+compressed, marked up, nonproprietary or proprietary form, including any
+word processing or hypertext form.  However, if you provide access to or
+distribute copies of a Project Gutenberg-tm work in a format other than
+"Plain Vanilla ASCII" or other format used in the official version
+posted on the official Project Gutenberg-tm web site (www.gutenberg.org),
+you must, at no additional cost, fee or expense to the user, provide a
+copy, a means of exporting a copy, or a means of obtaining a copy upon
+request, of the work in its original "Plain Vanilla ASCII" or other
+form.  Any alternate format must include the full Project Gutenberg-tm
+License as specified in paragraph 1.E.1.
+
+1.E.7.  Do not charge a fee for access to, viewing, displaying,
+performing, copying or distributing any Project Gutenberg-tm works
+unless you comply with paragraph 1.E.8 or 1.E.9.
+
+1.E.8.  You may charge a reasonable fee for copies of or providing
+access to or distributing Project Gutenberg-tm electronic works provided
+that
+
+- You pay a royalty fee of 20% of the gross profits you derive from
+     the use of Project Gutenberg-tm works calculated using the method
+     you already use to calculate your applicable taxes.  The fee is
+     owed to the owner of the Project Gutenberg-tm trademark, but he
+     has agreed to donate royalties under this paragraph to the
+     Project Gutenberg Literary Archive Foundation.  Royalty payments
+     must be paid within 60 days following each date on which you
+     prepare (or are legally required to prepare) your periodic tax
+     returns.  Royalty payments should be clearly marked as such and
+     sent to the Project Gutenberg Literary Archive Foundation at the
+     address specified in Section 4, "Information about donations to
+     the Project Gutenberg Literary Archive Foundation."
+
+- You provide a full refund of any money paid by a user who notifies
+     you in writing (or by e-mail) within 30 days of receipt that s/he
+     does not agree to the terms of the full Project Gutenberg-tm
+     License.  You must require such a user to return or
+     destroy all copies of the works possessed in a physical medium
+     and discontinue all use of and all access to other copies of
+     Project Gutenberg-tm works.
+
+- You provide, in accordance with paragraph 1.F.3, a full refund of any
+     money paid for a work or a replacement copy, if a defect in the
+     electronic work is discovered and reported to you within 90 days
+     of receipt of the work.
+
+- You comply with all other terms of this agreement for free
+     distribution of Project Gutenberg-tm works.
+
+1.E.9.  If you wish to charge a fee or distribute a Project Gutenberg-tm
+electronic work or group of works on different terms than are set
+forth in this agreement, you must obtain permission in writing from
+both the Project Gutenberg Literary Archive Foundation and Michael
+Hart, the owner of the Project Gutenberg-tm trademark.  Contact the
+Foundation as set forth in Section 3 below.
+
+1.F.
+
+1.F.1.  Project Gutenberg volunteers and employees expend considerable
+effort to identify, do copyright research on, transcribe and proofread
+public domain works in creating the Project Gutenberg-tm
+collection.  Despite these efforts, Project Gutenberg-tm electronic
+works, and the medium on which they may be stored, may contain
+"Defects," such as, but not limited to, incomplete, inaccurate or
+corrupt data, transcription errors, a copyright or other intellectual
+property infringement, a defective or damaged disk or other medium, a
+computer virus, or computer codes that damage or cannot be read by
+your equipment.
+
+1.F.2.  LIMITED WARRANTY, DISCLAIMER OF DAMAGES - Except for the "Right
+of Replacement or Refund" described in paragraph 1.F.3, the Project
+Gutenberg Literary Archive Foundation, the owner of the Project
+Gutenberg-tm trademark, and any other party distributing a Project
+Gutenberg-tm electronic work under this agreement, disclaim all
+liability to you for damages, costs and expenses, including legal
+fees.  YOU AGREE THAT YOU HAVE NO REMEDIES FOR NEGLIGENCE, STRICT
+LIABILITY, BREACH OF WARRANTY OR BREACH OF CONTRACT EXCEPT THOSE
+PROVIDED IN PARAGRAPH F3.  YOU AGREE THAT THE FOUNDATION, THE
+TRADEMARK OWNER, AND ANY DISTRIBUTOR UNDER THIS AGREEMENT WILL NOT BE
+LIABLE TO YOU FOR ACTUAL, DIRECT, INDIRECT, CONSEQUENTIAL, PUNITIVE OR
+INCIDENTAL DAMAGES EVEN IF YOU GIVE NOTICE OF THE POSSIBILITY OF SUCH
+DAMAGE.
+
+1.F.3.  LIMITED RIGHT OF REPLACEMENT OR REFUND - If you discover a
+defect in this electronic work within 90 days of receiving it, you can
+receive a refund of the money (if any) you paid for it by sending a
+written explanation to the person you received the work from.  If you
+received the work on a physical medium, you must return the medium with
+your written explanation.  The person or entity that provided you with
+the defective work may elect to provide a replacement copy in lieu of a
+refund.  If you received the work electronically, the person or entity
+providing it to you may choose to give you a second opportunity to
+receive the work electronically in lieu of a refund.  If the second copy
+is also defective, you may demand a refund in writing without further
+opportunities to fix the problem.
+
+1.F.4.  Except for the limited right of replacement or refund set forth
+in paragraph 1.F.3, this work is provided to you 'AS-IS' WITH NO OTHER
+WARRANTIES OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO
+WARRANTIES OF MERCHANTIBILITY OR FITNESS FOR ANY PURPOSE.
+
+1.F.5.  Some states do not allow disclaimers of certain implied
+warranties or the exclusion or limitation of certain types of damages.
+If any disclaimer or limitation set forth in this agreement violates the
+law of the state applicable to this agreement, the agreement shall be
+interpreted to make the maximum disclaimer or limitation permitted by
+the applicable state law.  The invalidity or unenforceability of any
+provision of this agreement shall not void the remaining provisions.
+
+1.F.6.  INDEMNITY - You agree to indemnify and hold the Foundation, the
+trademark owner, any agent or employee of the Foundation, anyone
+providing copies of Project Gutenberg-tm electronic works in accordance
+with this agreement, and any volunteers associated with the production,
+promotion and distribution of Project Gutenberg-tm electronic works,
+harmless from all liability, costs and expenses, including legal fees,
+that arise directly or indirectly from any of the following which you do
+or cause to occur: (a) distribution of this or any Project Gutenberg-tm
+work, (b) alteration, modification, or additions or deletions to any
+Project Gutenberg-tm work, and (c) any Defect you cause.
+
+
+Section  2.  Information about the Mission of Project Gutenberg-tm
+
+Project Gutenberg-tm is synonymous with the free distribution of
+electronic works in formats readable by the widest variety of computers
+including obsolete, old, middle-aged and new computers.  It exists
+because of the efforts of hundreds of volunteers and donations from
+people in all walks of life.
+
+Volunteers and financial support to provide volunteers with the
+assistance they need, is critical to reaching Project Gutenberg-tm's
+goals and ensuring that the Project Gutenberg-tm collection will
+remain freely available for generations to come.  In 2001, the Project
+Gutenberg Literary Archive Foundation was created to provide a secure
+and permanent future for Project Gutenberg-tm and future generations.
+To learn more about the Project Gutenberg Literary Archive Foundation
+and how your efforts and donations can help, see Sections 3 and 4
+and the Foundation web page at http://www.pglaf.org.
+
+
+Section 3.  Information about the Project Gutenberg Literary Archive
+Foundation
+
+The Project Gutenberg Literary Archive Foundation is a non profit
+501(c)(3) educational corporation organized under the laws of the
+state of Mississippi and granted tax exempt status by the Internal
+Revenue Service.  The Foundation's EIN or federal tax identification
+number is 64-6221541.  Its 501(c)(3) letter is posted at
+http://pglaf.org/fundraising.  Contributions to the Project Gutenberg
+Literary Archive Foundation are tax deductible to the full extent
+permitted by U.S. federal laws and your state's laws.
+
+The Foundation's principal office is located at 4557 Melan Dr. S.
+Fairbanks, AK, 99712., but its volunteers and employees are scattered
+throughout numerous locations.  Its business office is located at
+809 North 1500 West, Salt Lake City, UT 84116, (801) 596-1887, email
+business@pglaf.org.  Email contact links and up to date contact
+information can be found at the Foundation's web site and official
+page at http://pglaf.org
+
+For additional contact information:
+     Dr. Gregory B. Newby
+     Chief Executive and Director
+     gbnewby@pglaf.org
+
+
+Section 4.  Information about Donations to the Project Gutenberg
+Literary Archive Foundation
+
+Project Gutenberg-tm depends upon and cannot survive without wide
+spread public support and donations to carry out its mission of
+increasing the number of public domain and licensed works that can be
+freely distributed in machine readable form accessible by the widest
+array of equipment including outdated equipment.  Many small donations
+($1 to $5,000) are particularly important to maintaining tax exempt
+status with the IRS.
+
+The Foundation is committed to complying with the laws regulating
+charities and charitable donations in all 50 states of the United
+States.  Compliance requirements are not uniform and it takes a
+considerable effort, much paperwork and many fees to meet and keep up
+with these requirements.  We do not solicit donations in locations
+where we have not received written confirmation of compliance.  To
+SEND DONATIONS or determine the status of compliance for any
+particular state visit http://pglaf.org
+
+While we cannot and do not solicit contributions from states where we
+have not met the solicitation requirements, we know of no prohibition
+against accepting unsolicited donations from donors in such states who
+approach us with offers to donate.
+
+International donations are gratefully accepted, but we cannot make
+any statements concerning tax treatment of donations received from
+outside the United States.  U.S. laws alone swamp our small staff.
+
+Please check the Project Gutenberg Web pages for current donation
+methods and addresses.  Donations are accepted in a number of other
+ways including checks, online payments and credit card donations.
+To donate, please visit: http://pglaf.org/donate
+
+
+Section 5.  General Information About Project Gutenberg-tm electronic
+works.
+
+Professor Michael S. Hart is the originator of the Project Gutenberg-tm
+concept of a library of electronic works that could be freely shared
+with anyone.  For thirty years, he produced and distributed Project
+Gutenberg-tm eBooks with only a loose network of volunteer support.
+
+
+Project Gutenberg-tm eBooks are often created from several printed
+editions, all of which are confirmed as Public Domain in the U.S.
+unless a copyright notice is included.  Thus, we do not necessarily
+keep eBooks in compliance with any particular paper edition.
+
+
+Most people start at our Web site which has the main PG search facility:
+
+     http://www.gutenberg.org
+
+This Web site includes information about Project Gutenberg-tm,
+including how to make donations to the Project Gutenberg Literary
+Archive Foundation, how to help produce our new eBooks, and how to
+subscribe to our email newsletter to hear about new eBooks.

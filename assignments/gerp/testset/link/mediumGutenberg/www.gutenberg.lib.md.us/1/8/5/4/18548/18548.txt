@@ -1,0 +1,1416 @@
+The Project Gutenberg EBook of Transactions of the American Society of
+Civil Engineers, vol. LXVIII, Sept. 1910, by Charles M. Jacobs
+
+This eBook is for the use of anyone anywhere at no cost and with
+almost no restrictions whatsoever.  You may copy it, give it away or
+re-use it under the terms of the Project Gutenberg License included
+with this eBook or online at www.gutenberg.org
+
+
+Title: Transactions of the American Society of Civil Engineers, vol. LXVIII, Sept. 1910
+       The New York Tunnel Extension of the Pennsylvania Railroad,
+       The North River Division. Paper No. 1151
+
+Author: Charles M. Jacobs
+
+Release Date: June 10, 2006 [EBook #18548]
+
+Language: English
+
+Character set encoding: ASCII
+
+*** START OF THIS PROJECT GUTENBERG EBOOK SOCIETY OF CIVIL ENGINEERS ***
+
+
+
+
+Produced by Juliet Sutherland, Sigal Alon and the Online
+Distributed Proofreading Team at http://www.pgdp.net
+
+
+
+
+
+
+
+
+
+
+AMERICAN SOCIETY OF CIVIL ENGINEERS
+
+INSTITUTED 1852
+
+
+TRANSACTIONS
+
+Paper No. 1151
+
+
+THE NEW YORK TUNNEL EXTENSION OF THE
+PENNSYLVANIA RAILROAD.
+
+THE NORTH RIVER DIVISION.
+
+BY CHARLES M. JACOBS, M. AM. SOC. C. E.
+
+
+
+
+These observations are written with the purpose of outlining briefly, as
+far as the writer was concerned, the evolution of the scheme of bringing
+the Pennsylvania Railroad and the Long Island Railroad into New York
+City, and also, as Chief Engineer of the North River Division of the New
+York Tunnel Extension of the Pennsylvania Railroad, to record in a
+general way some of the leading features of the work on this division,
+which is that portion of the work extending from the east line of Ninth
+Avenue, New York City, to the Hackensack Portal on the westerly side of
+the Palisades, as an introduction to the papers by the Chief Assistant
+Engineer and the Resident Engineers describing in detail the work as
+constructed.
+
+It may be stated that, since shortly after the year 1871, when the
+Pennsylvania Railroad system was extended to New York Harbor through the
+lease of the New Jersey Lines, the officers of that company have been
+desirous of reaching New York City by direct rail connection.
+
+The writer's first connection with the tunneling of the North River was
+early in 1890, when he was consulted by the late Austin Corbin,
+President of the Long Island Railroad Company and the Philadelphia and
+Reading Railroad Company, as to the feasibility of connecting the Long
+Island Railroad with the Philadelphia and Reading Railroad (or with the
+Central Railroad of New Jersey, which was the New York connection of the
+Reading) by a tunnel from the foot of Atlantic Avenue, Brooklyn, under
+the Battery and New York City, and directly across the North River to
+the terminal of the Central Railroad of New Jersey. Surveys, borings,
+and thorough investigations were made, and the Metropolitan Underground
+Railroad Company was incorporated in the State of New York to construct
+this railroad. Mr. Corbin, however, was aware that, in the
+transportation problem he had in hand, the Central Railroad of New
+Jersey and the Philadelphia and Reading Railroad were not as important
+factors as the Pennsylvania Railroad, and, in consequence, he abandoned
+the scheme for a tunnel to the Central Railroad of New Jersey for a line
+direct to the Pennsylvania Railroad terminal in Jersey City.
+
+Meantime, the Pennsylvania Railroad Company, as a result of its
+investigation of the matter, in June, 1891, thought that the most
+feasible project seemed to be to build tunnels for rapid transit
+passenger service from its Jersey City Station to the lower part of New
+York, connecting there with the rapid transit systems of that city, and
+also extending under New York on the line of Cortlandt Street, with
+stations and passenger lifts at the main streets and elevated railroads.
+
+The late A. J. Cassatt, then a Director of the Pennsylvania Railroad
+Company, and previous thereto as General Manager and Vice-President (and
+later as President) of that company, was deeply interested in obtaining
+an entrance into New York City, but was not satisfied with the proposed
+rapid transit passenger tunnels which required the termination of the
+Pennsylvania Railroad trains at its Jersey City Station. Therefore, upon
+his request, in September of the same year, another study and report was
+made by Joseph T. Richards, M. Am. Soc. C. E., then Engineer of
+Maintenance of Way of the Pennsylvania Railroad, on a route beginning in
+New York City at 38th Street and Park Avenue on the high ground of
+Murray Hill, thence crossing the East River on a bridge, and passing
+around Brooklyn to Bay Ridge, thence under the Lower Bay or Narrows to
+Staten Island and across to the mainland, reaching the New York Division
+of the Pennsylvania Railroad at some point between Rahway and Metuchen.
+Mr. Cassatt also had in mind at that time a connection with the New
+England Railroad, then independent, but now part of the New York, New
+Haven, and Hartford Railroad system, by means of the Long Island
+Railroad, and a tunnel under the East River, which in later years, as
+the result of further consideration of the situation, has been covered
+by the proposed New York Connecting Railroad with a bridge across the
+East River and over Ward's and Randall's Islands.
+
+As a result of these investigations, the late George D. Roberts, who was
+then President of the Pennsylvania Railroad Company, authorized an
+expenditure of about $25,000 for soundings to determine the nature of
+the strata for tunneling under water. These soundings were carefully
+made by Mr. Richards with a diamond drill, bringing up the actual core
+of all rock found in crossing the waters of New York Bay from the west
+to the east side and extending from the Narrows to the Jersey City
+Station of the Pennsylvania Railroad.
+
+After these investigations had been made, early in 1892, Mr. Roberts
+expressed himself as being favorable to the undertaking, with the
+definite limitation that the tunnels must be for small cars doing local
+suburban business, and for the transfer of Pennsylvania Railroad
+passengers to and from New York, Brooklyn, and Jersey City, and not in
+any way to be tunnels for standard steam equipment, the expense for
+terminals and the prohibited use of coal for fuel in such tunnels not
+warranting any broader consideration. Under such instructions, the
+interests of the Pennsylvania Railroad Company for effecting a physical
+entrance into New York City in that year were turned over to Samuel Rea,
+M. Am. Soc. C. E., then Assistant to the President of that Company, who
+has been identified with the investigations, and the progress and
+construction of this work since that time, Mr. Cassatt also working in
+conjunction with him on the plans then and since considered by the
+Pennsylvania Railroad Management.
+
+On October 5th, 1892, Mr. Rea, under special direction of President
+Roberts, made an extended investigation of the various routes which had
+then been projected for extending the system into New York City by rail
+or transport, and reported to Mr. Roberts that, in his opinion, because
+of the limitation of the tunnel scheme to rapid transit trains and the
+consequent transfer of passengers and traffic carried in passenger
+trains, and because of the drawbacks caused by the use of steam
+locomotives in full-sized tunnels, and the objection to cable traction
+or any system of transportation which had not then stood the test of
+years of practical service, the plan of the North River Bridge for
+reaching New York City and establishing a terminus therein was the best
+that had been evolved up to that time. The plan provided a direct rail
+entrance into New York City for all railroads reaching the west side of
+the Hudson River, and also for the New York Central and Hudson River
+Railroad, as well as adequate station facilities in that city. This
+bridge would have had one clear span of 3,100 ft. between pier heads,
+landing on the New York side at the foot of West 23d Street, and thence
+the line would have passed diagonally to the terminus at Sixth Avenue
+and 25th Street. The location of the terminus was subsequently changed
+to the vicinity of Seventh Avenue and 36th Street. The bridge was
+designed with three decks: The first or lower deck was to accommodate
+eight steam railroad tracks; the second was to have six tracks, four of
+which could be assigned for rapid transit trains operating with electric
+power, and the other two for steam railroad trains; the third deck,
+reached by elevators, was to be a promenade extending from anchorage to
+anchorage. A connection with the Eleventh Avenue tracks of the New York
+Central and Hudson River Railroad was to bring the trains of that road
+into the Union Station. The Bridge Company had a Federal
+charter--granted in 1888--with broad powers. Gustav Lindenthal, M. Am.
+Soc. C. E., was Chief Engineer, and he and Mr. Rea were corporators and
+among its early promoters. The Pennsylvania Railroad Management looked
+with favor on its construction at that time, as subaqueous tunnels, with
+standard railroad equipment with steam traction, were not regarded as a
+final or attractive solution of the problem, from the standpoint of the
+Management, and at a subsequent period the Pennsylvania Railroad Company
+agreed to use the North River Bridge provided the other roads reaching
+the west bank of the Hudson River would join. These roads, however, did
+not avail themselves of the opportunity which in its broadest scope was
+laid before them in 1900, after the Board of Directors of the
+Pennsylvania Railroad Company had approved the scheme at the instance of
+Mr. Cassatt.
+
+The scheme of Mr. Corbin for a subway connection, between Flatbush
+Avenue and the Jersey City Station of the Pennsylvania Railroad, for
+local transit, took form in 1892, and, jointly with the Pennsylvania
+interests, railroad companies were incorporated in the respective States
+to build a tunnel from under the Jersey City Station, under the Hudson
+River to Cortlandt Street, New York City, thence under Maiden Lane, the
+East River, and Pineapple and Fulton Streets, Brooklyn, to a location at
+or near Flatbush and Atlantic Avenues. On May 9th, 1893, these companies
+were merged into the Brooklyn, New York and Jersey City Terminal
+Railroad Company, and estimates and reports on the construction were
+made ready by the writer in association with Mr. Rea, pending
+application for the franchises. The panic of 1893, occurring about that
+time, checked further progress on this scheme, and, before it could be
+revived again, other important projects for reaching New York City were
+given consideration.
+
+That part of Mr. Corbin's plan contemplating a subway under Atlantic
+Avenue in Brooklyn to the present Flatbush Avenue Terminal was not a new
+idea, as a tunnel had been built in 1845 and operated under a portion of
+Atlantic Avenue, but later it was filled up. Plate IV, reproduced from a
+crayon sketch which was the property of the late William H. Baldwin,
+Jr., is a view of this tunnel.
+
+In conjunction with schemes for river tunnels, complete plans for rapid
+transit subways for New York City, very much on the line of the present
+rapid transit subways, were also prepared for Mr. Corbin by the writer.
+These plans provided a system of deep tunnels in rock, entirely below
+the plane of quicksand, and at the Battery the lines were to connect
+directly into the tunnels to Long Island and New Jersey, respectively,
+and the stations throughout, where the rock was at a deep level, were to
+be fitted with elevators, grouped as suggested in Plate V, using private
+property on each side of the street at station locations--one side for
+north-bound and the other side for south-bound traffic. These plans were
+submitted to the first Rapid Transit Commission, and, after long
+consideration, were rejected by that Commission because they provided
+for the construction of the tunnels by a private company,
+notwithstanding Mr. Corbin gave the Commission assurances of ample
+financial means to carry the work to completion.
+
+During the years 1892-93 Mr. Corbin was convinced that it was necessary
+to get better facilities for handling the baggage and express matter of
+the Long Island Railroad and the Long Island Express Company across the
+East River between Long Island City and New York City, and he
+instructed the writer to investigate and report on the feasibility of
+building a tunnel, along the lines of the East River Gas Tunnels, then
+nearly completed, between the foot of East 34th Street, New York City,
+and the Long Island City Station of the Long Island Railroad. In 1893 an
+investigation was made for such a tunnel, to be of similar size to the
+East River Gas Tunnel (8 by 10 ft.), solely for the purpose of handling
+baggage and express matter. Investigation was made and estimates
+prepared, but the cost was considered to be prohibitive in view of the
+possible earnings solely from the handling of baggage and express, and
+the matter was not considered further.
+
+[Illustration: PLATE IV.--TUNNEL UNDER PART OF ATLANTIC AVENUE,
+BROOKLYN.
+
+(From a Crayon Sketch.)]
+
+While Mr. Corbin was deeply interested in the down-town river tunnels,
+the up-town situation was of great importance to the Long Island
+Railroad, and, having allied himself with Mr. Charles Pratt, they took
+up generally the franchise owned by Dr. Thomas Rainey for a bridge over
+Blackwell's Island. Mr. Corbin became interested with Dr. Rainey in
+1894, and the actual construction proceeded on this bridge. The design
+provided for four railroad tracks, besides highways for tracks,
+pedestrians, etc., with a terminal station at Third Avenue and 64th
+Street, New York City, which, under the franchise, was the limit to
+which the railroad could proceed.
+
+At this period there were two projects for bridging the Hudson or North
+River: the New York and New Jersey Bridge Company at about 59th Street,
+and the North River Bridge Company at 23d Street, as hereinbefore
+described. Several studies were made by the writer, with the idea of
+making a rail connection between the Long Island "Rainey" bridge and a
+bridge over the North River. An overhead structure connection was
+prohibitory, as no franchise could be obtained to cross Fifth Avenue
+with an overhead structure. Sketches were prepared for a subway
+construction to connect with the bridges, but a final plan was not
+worked out.
+
+The failure to carry out the joint undertaking with the Pennsylvania
+Railroad Company in 1893 led Mr. Corbin to revive the scheme of
+extending the Long Island Railroad from Flatbush Avenue, Brooklyn, to
+New York City, therefore consideration was given to a relocation of the
+route for Mr. Corbin during the early months of 1896, the idea being
+that the entire up-town outlet for the Long Island Railroad would be by
+Blackwell's Island Bridge, and the tunnel project would give the
+down-town outlet.
+
+At this time a commission had been appointed by the Legislature to
+investigate the conditions on Atlantic Avenue, Brooklyn, and evolve some
+scheme for the elimination of grade crossings on that avenue. Early in
+1896 plans were prepared and presented to this Commission; first, for a
+subway from Flatbush Avenue Terminal for the entire distance to the
+limits of the City of Brooklyn at Eldert's Lane; second, for a subway
+from the Flatbush Avenue Terminal to East New York, Manhattan Crossing,
+the railroad to remain as it previously existed at grade through the
+26th Ward of Brooklyn. Each of these schemes contemplated an extension
+through Brooklyn to New York City at Cortlandt Street and Broadway, and
+surveys and borings for this work were made across the East River. In
+the summer of 1896, on the decease of Mr. Corbin, all projects and work
+were immediately stopped; but, after some months, Mr. W. H. Baldwin,
+Jr., when elected President of the Long Island Railroad Company, took up
+actively the reconsideration of the means whereby the Long Island
+Railroad could reach New York City. After the fullest consideration, he
+decided that the Blackwell's Island Bridge was by no means a suitable,
+adequate, or convenient entry for the Long Island Railroad into New York
+City, as it involved too great a cost and altogether too rigid a
+connection; it was also a very inconvenient location, inasmuch as it was
+cut off from convenient access to the west side of New York City by
+Central Park.
+
+For the down-town connection, Mr. Baldwin became enthusiastic, but he
+had in mind, throughout, the all-important necessity for the Long Island
+Railroad to reach the Pennsylvania Railroad across the North River. At
+the same time Mr. Baldwin took up energetically the Atlantic Avenue
+Improvement with the Atlantic Avenue Commission, and, on consideration,
+decided it was essential that it should extend through the 26th Ward
+above or below grade. The better plan, of course, was obviously to make
+it a subway throughout, but, further, the residents of this ward
+objected to the subway through that section, and that construction would
+have made any change of the Manhattan Beach Division at Manhattan
+Crossing very difficult for the future; besides this, the controlling
+factor was the absolute limitation by the City of Brooklyn of the amount
+of expenditure therefor in which they would participate, therefore a
+composite scheme, which is the plan as carried out, was agreed upon,
+being in part subway and part elevated. This scheme reached a focus
+early in 1897, and the law constituting the Board for the Atlantic
+Avenue Improvement was passed, with a provision in the last paragraph of
+the Act, for the construction of a tunnel from Flatbush Avenue Terminal
+under Flatbush Avenue and Fulton Street to Pineapple Street, crossing
+the river to Broadway and Maiden Lane (Cortlandt Street), New York City,
+and with the understanding that it would be extended beyond the New York
+State Line to the Pennsylvania Railroad Station in New Jersey. This gave
+the legal right for the construction of this tunnel, and, on June 20th,
+1899, the New York and Long Island Terminal Railroad Company was
+incorporated for the purpose, Mr. Baldwin being President and J. V.
+Davies, M. Am. Soc. C. E., Chief Engineer. Application was immediately
+made to the Boards of Aldermen of Brooklyn and of New York City. The
+latter acted favorably on the application, but the Board of Aldermen of
+Brooklyn held the matter up, while the Rapid Transit Commission laid out
+and promulgated the plan for Contract No. 2 of the Rapid Transit Subway.
+With the understanding that the Rapid Transit Brooklyn extension would
+be constructed to the Flatbush Avenue Terminal, Mr. Baldwin withdrew the
+application for the independent franchise, and agreed to proceed with
+the Atlantic Avenue Improvement, on the basis of the City proceeding
+with the Brooklyn extension of the Rapid Transit Subway. This provided
+for the Long Island Railroad entry down town.
+
+[Illustration: PLATE V.--NEW YORK UNDERGROUND RAILWAY COMPANY Section
+Through Surface and Underground Stations]
+
+Subsequently, however, it was proved that Mr. Baldwin had not been fully
+satisfied that this was the proper solution of the matter, for on April
+12th, 1901, and upon his recommendation, the Board of Directors of the
+Long Island Railroad Company took over from the Pennsylvania Railroad
+Company its entire interests in the old Brooklyn, New York, and Jersey
+City Terminal Railway Company, thus giving him control of the route from
+Flatbush Avenue _via_ Maiden Lane and Cortlandt Street to underneath the
+Jersey City station.
+
+In the early part of 1900 active consideration was being given by the
+Pennsylvania Railroad and other railroads terminating in New Jersey to
+the proposed North River Bridge, as hereinbefore stated, and, for the
+Long Island Railroad, Mr. Baldwin organized a new company to construct a
+tunnel from the Long Island Railroad at Sunnyside Yard, diving under the
+streets of Long Island City by two tracks under the East River to the
+foot of 33d Street and then proceeding under 33d Street as far as
+Seventh Avenue. A station was to be located at Fourth Avenue below the
+Rapid Transit Subway Station and also a large Terminal Station at
+Broadway. For this purpose an option was obtained on the property of the
+Newbold Lawrence Estate, at Broadway, Sixth Avenue, 33d and 34th
+Streets, now occupied by Saks' Store. Mr. Baldwin, however, considered
+that the amount of the investment ($1,600,000) for that property was too
+great for this purpose, and allowed the option to expire. The property
+was sold within a week thereafter to the Morganthau Syndicate for
+$2,000,000. At this time (May, 1900), the Pennsylvania Railroad obtained
+a controlling interest in the Long Island Railroad, and thereafter the
+two schemes became one. Mr. Baldwin and Mr. Rea purchased two 25-ft.
+lots on 33d Street just east of Broadway for an entrance to the
+underground station. Plans were also prepared for extending this line
+from Seventh Avenue northward under Seventh Avenue to 45th Street. The
+investigation and preliminary work in connection with this project were
+carried out in the early part of 1900.
+
+Reconsideration was given by Mr. Baldwin to the proposed location of the
+up-town tunnels, with the idea of connecting the New York Central and
+Hudson River Railroad by a tunnel between Long Island City (Long Island
+Railroad Station) and the foot of 42d Street and extending to the Grand
+Central Station, but nothing further than investigation and the
+preparation of estimates was done on this.
+
+In the summer of 1901 Mr. Cassatt was in Paris and was advised by Mr.
+Rea of the opening of the extension of the Orleans Railway to the Quai
+d'Orsay Station and its successful operation by electric power, also of
+the possibility of the Pennsylvania Railroad reaching New York City in a
+similar way (the other trunk lines not having joined in the promotion of
+the North River Bridge project). He at once examined the new line, and
+then consulted the writer in London in relation to the possibility of
+building tunnels under the North River. The writer returned to New York
+with Mr. Cassatt, and soon thereafter a conference of Mr. Cassatt, Mr.
+Rea, and Mr. Baldwin with the writer and Mr. Davies was held in the
+Pennsylvania Railroad Company Office in New York, when Mr. Cassatt
+outlined the scheme practically as it is now carried out, the only
+difference being that he also proposed a station on property of the New
+York and Harlem Railroad Company at 33d Street, which was soon abandoned
+on account of the grade from the East River, and particularly because
+of the superior location of the adopted site at Seventh Avenue and 33d
+Street, this being central between the down-town commercial and
+financial district and Central Park, which divides New York City. On Mr.
+Cassatt's instructions, surveys and investigations were begun in
+November, 1901, and estimates, drawings, etc., were made. Preliminary
+estimates were presented to him on November 8th, 1901. Following this,
+borings were continued, and a plan was presented to Mr. Cassatt for
+assisting the support of the North River tunnels on piles, if necessary.
+At the time of the appointment of the Board of Engineers and the general
+organization of the work, the preliminary investigations and work had
+been carried to an advanced state.
+
+One result of the determination of the Pennsylvania Railroad Company to
+extend its lines into New York City and thus move its principal station
+from Jersey City, was that the down-town local and suburban as well as
+through business was not provided for properly. Mr. William G. McAdoo,
+appreciating this opportunity, revived the scheme of an electric subway
+from Jersey City to New York, originally promoted by Mr. Corbin and
+associates, but not including the extension _via_ Maiden Lane to
+Brooklyn, and entered into negotiations with the Pennsylvania Railroad
+Company to provide for this down-town business by extensions of the
+tunnel lines of the New York and New Jersey Railroads to Exchange Place,
+Jersey City, under the Pennsylvania Railroad Station, and thence across
+the Hudson River to Cortlandt and Church Streets. As a result, the
+Hudson and Manhattan Railroad Company was organized in 1902, and
+contracts were made with the Pennsylvania Railroad Company for the
+sub-surface use of its station in Jersey City, and for the interchange
+of passenger business at that point between the trains of the
+Pennsylvania Railroad Company and the tunnel of the Hudson and Manhattan
+Railroad Company. Later, a further contract was made with the
+Pennsylvania Railroad Company providing for the construction of the
+tunnel of the Hudson and Manhattan Railroad Company westward under the
+tracks of the Pennsylvania Railroad in Jersey City to a junction with
+the latter at Summit Avenue, at which point can be installed a joint
+station, and the operation effected of a joint electric train service
+between Church Street, New York City, and Newark, N. J., the
+Pennsylvania Railroad tracks between Summit Avenue and Newark to be
+electrified for that purpose, with a transfer station established east
+of Newark, at Harrison, at which point the steam and electric
+locomotives will exchange. By means of this, all down-town passengers
+will transfer to the electric service at Harrison Station, and thus the
+Pennsylvania Railroad Company is expected to be relieved of maintaining
+a separate steam service for passenger traffic to Jersey City and a
+large down-town station with extensive contingent facilities at that
+point.
+
+From the foregoing it will be seen that the final decision to extend the
+Pennsylvania Railroad into and through New York City by a system of
+tunnels, and erect a large station in that city on a most eligible site,
+was not reached in a hurried or off-hand manner, but after years of
+painstaking study and a full and extended investigation of all routes,
+projects, and schemes, whether originating with the company or suggested
+by others.
+
+[Illustration: Plate VI.--Pennsylvania Railroad Extension:
+Map Showing Proposed Lines Leading to Those Finally Adopted]
+
+Plate VI is a map of New York City and vicinity on which are shown the
+various lines contemplated in the evolution of the New York Tunnel
+Extension of the Pennsylvania Railroad hereinbefore outlined.
+
+The question of tunnels under the North River was an uncertain factor in
+the larger Pennsylvania Railroad scheme, owing to the nature of the
+ground composing the river bed in which the tunnels would be
+constructed.
+
+It is well known that about 35 years ago an attempt was made to
+construct a tunnel under the North River by using a "Pilot" system under
+compressed air and forming the tunnels in brick masonry. Owing to the
+very soft nature of the materials through which it passed, several
+serious accidents occurred, and the work was abandoned after about 2,000
+ft. of tunnel had been constructed. Later, this work was taken up again,
+when a shield was installed and an additional 1,800 ft. was built with
+cast-iron segmental lining, but the work was again abandoned, owing
+principally to financial difficulties while coincidentally before
+entering a rock reef which presented another serious difficulty in
+construction. The experience then in the construction of this tunnel led
+capitalists and engineers to believe that, owing to the very soft nature
+of the ground, a tunnel could not be built that would be sufficiently
+stable to withstand the vibration due to heavy traffic, and for this
+reason tunnels under the North River were not looked upon as
+practicable. The writer devised a scheme to carry within the tunnel the
+rolling loads on bridging supported on piers or piles extending from
+the tunnel invert down to hard material. These would be attached to the
+tunnel itself or would pass into it independently through sliding joints
+in the tunnel shell. This scheme gained the confidence of the
+management, as it was believed that, by adopting such a plan, tunnels
+could be built in the soft material underlying the Hudson River and
+remain stable under all conditions of traffic. After thus feeling
+assured that by this method the tunnels could be made safe beyond
+question, orders were given to proceed with the great work of the
+extension into New York of the Pennsylvania and Long Island Railroad
+systems.
+
+[Illustration: FIG. 1.--(Full page image)
+
+ENGINEERING STAFF ORGANIZATION
+
+
+CHIEF ENGINEER
+      |
+CHIEF ASSISTANT
+   ENGINEER
+      |
+      |
+      +--(CHIEF OFFICE)
+      |         |
+      |         +--OFFICE ENGINEER
+      |         |        |
+      |         |        +--Chief Draftsman.
+      |         |           Draftsmen.
+      |         |           Messenger.
+      |         |
+      |         +--MECHANICAL ENGINEER
+      |         |        |
+      |         |        +--Mechanical Draftsmen.
+      |         |
+      |         +--ASSISTANT ENGINEER
+      |                  |
+      |                  +--Accountant.
+      |                     Clerks.
+      |                     Telephone Operators.
+      |                     Messenger.
+      |
+      |
+      +--(TERMINAL STATION WEST)
+      |         |
+      |  RESIDENT ENGINEER
+      |         |
+      |         +--Assistant Engineer.
+      |         |  Chief of Party.
+      |         |  Instrumentmen.
+      |         |  Rodmen.
+      |         |  Chainmen.
+      |         |
+      |         +--Inspectors.
+      |         |
+      |         +--Clerk.
+      |            Janitors.
+      |
+      |
+      +--(SUBAQUEOUS, 32ND STREET AND WEEHAWKEN TUNNELS)
+      |         |
+      |  GENERAL RESIDENT ENGINEER
+      |         |
+      |         +--Cement Inspectors.
+      |         |  Ass't. Cement Inspectors.
+      |         |
+      |         +--Photographer.
+      |         |
+      |         +--Recording Clerk.
+      |         |  Ass't. Recording Clerks.
+      |         |
+      |         +--DISPATCH BOAT
+      |         |        |
+      |         |        +--Captains.
+      |         |           Engineers.
+      |         |           Deckhands.
+      |         |           Messenger.
+      |         |
+      |         +--RESIDENT ENGINEERS
+      |                  |
+      |                  +--(CONSTRUCTION)
+      |                  |        |
+      |                  |        +--Ass't. Engineers.
+      |                  |           Chief Tunnel Inspectors.
+      |                  |           Tunnel Inspectors.
+      |                  |           Surface Inspectors.
+      |                  |           Clerks.
+      |                  |
+      |                  +--(ALIGNMENT)
+      |                  |        |
+      |                  |        +--Ass't. Engineers.
+      |                  |           Chiefs of Parties.
+      |                  |           Instrumentmen.
+      |                  |           Rodmen.
+      |                  |           Chainmen.
+      |                  |           Rear Chainmen.
+      |                  |           Laborers.
+      |                  |
+      |                  +--(OFFICE STAFF)
+      |                            |
+      |                            +--Draftsmen.
+      |                               Field Office Clerks.
+      |                               Cement Warehousemen.
+      |                               Janitors.
+      |                               Messengers.
+      |
+      +--(MEDICAL DEPARTMENT)
+      |         |
+      |  CHIEF MEDICAL OFFICER
+      |  Ass't. Medical Officer.
+      |
+      |
+      +--(BERGEN HILL TUNNELS)
+      |         |
+      |  RESIDENT ENGINEER
+      |  Assistant Resident Engineer
+      |         |
+      |         +--Assistant Engineer.
+      |         |  Instrumentmen.
+      |         |  Rodmen.
+      |         |  Chainmen.
+      |         |
+      |         +--Inspectors.
+      |         |  Cement Warehousemen.
+      |         |
+      |         +--Clerk.
+      |            Janitors.
+      |
+      |
+      +--(METAL INSPECTION)
+                |
+         CHIEF METAL INSPECTOR
+         Metal Inspectors.
+         Clerks.
+]
+
+The organization of the engineering staff is shown on the diagram, Fig.
+1. In the beginning of 1902 and during the period of making studies,
+additional borings, and preliminary triangulations, and prior to making
+the contract plans and specifications, James Forgie, M. Am. Soc. C. E.,
+was appointed Chief Assistant Engineer by the writer. To him all the
+Resident Engineers and other heads of the Engineering Departments
+reported.
+
+The work was divided into three Residencies:
+
+1.--The Terminal Station-West, under the charge of B. F. Cresson, Jr.,
+M. Am. Soc. C. E., Resident Engineer, comprising the work from the east
+side of Ninth Avenue to the east side of Tenth Avenue, including
+excavation, retaining and face walls, and the extensive work of
+underpinning Ninth Avenue with its surface and elevated railroads and
+other structures.
+
+2.--The River Tunnels, under the charge of B. H. M. Hewett, M. Am. Soc.
+C. E., General Resident Engineer, and Mr. H. F. D. Burke and William
+Lowe Brown, M. Am. Soc. C. E., Resident Engineers, including the land
+tunnels from the east side of Tenth Avenue, New York City, to the
+commencement of the iron-lined tunnels, and extending westward from
+there to the Weehawken Shaft, New Jersey.
+
+3.--The Bergen Hill Tunnels, under the charge of F. Lavis, M. Am. Soc.
+C. E., Resident Engineer, including the rock tunnels from the Weehawken
+Shaft to the Hackensack Portal on the west side of the Palisades, all in
+New Jersey.
+
+Paul A. Seurot, M. Am. Soc. C. E., acted as Office Engineer in charge of
+the drawing office, and Mr. J. Soderberg as Mechanical Engineer in
+charge of the mechanical drafting. Prior to the construction of the
+above works Mr. C. J. Crowley acted as Resident Engineer on the
+construction of the Weehawken Shaft, and J. F. Rodenbough, Assoc. M. Am.
+Soc. C. E., on that of the Manhattan Shaft.
+
+Table 1 shows the quantities of certain materials and other statistics
+regarding this Division.
+
+
+TABLE 1.
+
+------------------------------------------+---------+-----------+----------
+                                          | Bergen  |   River   |   Term.
+                                          |  Hill.  | Tunnels.  |  Sta.-W.
+                                          +---------+-----------+----------
+                                          |         |           |
+Excavation disposed of (or displaced),    |         |           |
+    in cubic yards                        | 263,000 |   238,995 |   517,000
+Cast metal used in tunnel, including      |         |           |
+    cast iron and cast steel, in tons     |         |    64,265 |
+Steel bolts used, in tons                 |         |     2,606 |
+Cement used (concrete and grout),         |         |           |
+    in barrels                            |  95,000 |   145,500 |    33,000
+Concrete, in cubic yards                  |  95,000 |    75,400 |    18,500
+Dynamite for blasting, in pounds          | 600,000 |   100,400 |   206,000
+Brickwork, in cubic yards                 |         |     4,980 |
+Structural steel (including Pier 72),     |         |           |
+    in pounds                             |  50,000 | 3,141,000 | 1,475,000
+------------------------------------------+---------+-----------+----------
+
+The number of passengers carried on the Elevated Railroad and surface
+lines of Ninth Avenue during the underpinning of these structures was
+about 125,000,000.
+
+The Board of Engineers, organized by the Pennsylvania Railroad Company
+in January, 1902, immediately took up the matter of route and grade. The
+center line, which had been assumed as the center line of 32d Street
+extended westward, was slightly changed.
+
+The grade adopted was approximately 2% descending westward from Ninth
+Avenue, which would place the tunnel well below the Government dredging
+plane of 40 ft. below mean low water at the pier head line; thence
+westward on a lighter grade still descending until the deepest portion
+of the river was reached where the top of the rail would be about 90 ft.
+below mean high water, this location giving sufficient cover over the
+tunnels to insure stability and guard against the possibility of
+shipwrecks settling on the tunnels. From this point to the portal an
+ascending grade of 1.30% was adopted, which gave the lines sufficient
+elevation to cross over the tracks of the New York, Susquehanna and
+Western and the Erie Railroads, which run along the westerly base of the
+Palisades. Owing to the exigencies of construction, these grades in the
+river were very slightly modified. Plate VII is a plan and profile of
+the tunnels as constructed.
+
+[Illustration: Plate VII.--Plan, Profile, and Triangulation, North River
+Tunnels]
+
+The Board of Engineers early in 1902 took up the question of supports
+for the tunnels under the North River, and various plans and schemes
+were considered. It was finally decided to support the tracks on
+screw-piles carried through the lining of the tunnels, as originally
+proposed by the writer.
+
+In order to know something of the capacity of screw-piles in the actual
+material to be passed through, it was resolved to test them. A caisson
+was sunk at the end of one of the Erie Railroad piers on the New Jersey
+side near the line of the tunnels, and, to obtain parallel conditions as
+much as possible, the excavation was carried down to the proposed grade
+of the tunnel. Various types of screw-piles were sunk therein and tests
+were made, not only of the dead load carrying capacity, but also with
+the addition of impact, when it was found that screw-piles could be sunk
+to hard ground and carry the required load. The final part of the test
+was the loading. The screw-pile, having a shaft 30 in. in diameter and a
+blade 5 ft. in diameter, was loaded with 600,000 lb., with the result
+that, for a month--the duration of this loaded test--there was no
+subsidence.
+
+Again, and after the iron tunnel lining had been constructed across the
+river, tests were made of two types of supports: One a screw-pile 29-1/2
+in. in diameter with a blade 4 ft. 8 in. in diameter and the other a
+wrought-iron pipe 16 in. in external diameter. Tests were made, not only
+for their carrying capacity, but also for their value as anchorages, and
+it was found that the screw-pile was more satisfactory in every way; it
+could be put down much more rapidly, it was more easily maintained in a
+vertical position, and it could carry satisfactorily any load which
+could be placed on it as a support for the track. The 16-in. pipe did
+not prove efficient either as a carrier or as an anchorage. These tests
+will be mentioned in the detailed description of the work to follow.
+Figs. 2 and 3 illustrate the general arrangement and details of the
+machine designed by the writer and used for sinking the test piles in
+the tunnels. This machine had been used originally on the New Jersey
+side on the test pile at Pier C, and the adaption was not exactly as
+shown on these drawings, but if the screw-piles had been placed in the
+tunnels, the arrangement shown would have been used.
+
+Surveys, soundings, and borings were commenced in the latter part of
+1901 on an assumed center line of tunnels which was the center line of
+32d Street extended westward.
+
+The soundings were made from a float stage fastened to a tugboat, the
+location being determined by transits on shore and the elevation by
+measuring from the surface of the water, a tide gauge being continually
+observed and the time of soundings and gauge readings kept.
+
+In the river wash-borings were made from a floating pile-driver on which
+was installed a diamond-drill outfit of rods, pump, etc. Fourteen
+borings were completed in the river. Considerable difficulty was found
+in holding the pile-driver against the current, the material in the
+bottom being very soft, and several borings were lost owing to the
+drifting of the pile-driver. Each boring was continued, and the depth of
+several was more than 250 ft. below the surface of the water. The
+borings on land were mostly core borings, and were generally made with
+the chilled shot boring machine.
+
+Base lines, about 2,250 ft. in length, were measured on each side of the
+river, and observation points established. It was necessary to build a
+triangulation tower 60 ft. high on the New Jersey side as an observation
+point. The base lines were measured with 100-ft. steel tapes which were
+tested repeatedly, and the work was done at night in order to obtain the
+benefit of uniform temperature and freedom from traffic interruptions.
+From the base line on the New Jersey side, which passed over the
+Weehawken Shaft, an elevated point on the assumed center line on the
+side of Bergen Hill was triangulated to, and from this point westward a
+closed polygon was measured along the streets to the top of the hill on
+the west side and thence along the assumed center line to the portal.
+The level transfer across the river was made by sighting across in
+opposite directions simultaneously, and also by tide gauges. The outline
+of the final triangulation system is shown on Plate VII.
+
+[Illustration: FIG. 2.--(Full page image)
+
+HYDRAULIC SCREWING MACHINE WITH RATCHET DRIVE AND VERTICAL JACK
+
+GENERAL ARRANGEMENT]
+
+[Illustration: FIG. 3.--(Full page image)
+
+HYDRAULIC SCREWING MACHINE WITH RATCHET DRIVE AND VERTICAL JACK
+
+DETAILS]
+
+The decision as to the locations of the shafts on both sides of the
+river, for construction purposes and finally for permanent use, was a
+comparatively simple matter, and, all circumstances considered, they are
+unquestionably in the most suitable places. On the New York side the
+shaft was as near as practicable to the line dividing the subaqueous
+iron-lined tunnels from the land tunnels, and on the New Jersey side the
+shaft was placed centrally on the line of the tunnels and on the nearest
+available ground to the river, while at the same time beyond the other
+end of the river tunnels, thus necessitating driving the subaqueous
+tunnels only from east and west to meet under the river. A caisson shaft
+on the New York side, on the line of the tunnels near the river
+bulkhead, was at one time considered, but was not adopted as it
+entailed the driving of two shields both east and west, in addition to
+the two from New Jersey, adding to the plant outlay while not affording
+any material saving in the time of construction.
+
+It was thought desirable to construct the shafts on the two sides of the
+river in advance of letting the main contracts for the tunnels. The
+Manhattan Shaft is north of the line of the tunnels, on the north side
+of 32d Street, east of Eleventh Avenue. The Weehawken Shaft is on the
+line of the tunnels in the yards of the Erie Railroad on the New Jersey
+side, and the distance between the shafts is about 6,575 ft. The
+contracts for these shafts were let in June, 1903, to the United
+Engineering and Contracting Company, and they were completed and ready
+for use at the time of letting the main contract for the tunnels, thus
+saving considerable time.
+
+_The Terminal Station-West.--Between Ninth and Tenth Avenues._--In the
+original design it was contemplated to have a four-track tunnel under
+32d Street from Ninth to Eleventh Avenues, but owing to the necessity
+for having additional yard facilities, property was bought for about 100
+ft. north and 100 ft. south of 32d Street, between Ninth and Tenth
+Avenues, and an open excavation, lined with concrete retaining walls and
+face walls, was made. Between Ninth and Tenth Avenues, 32d Street was
+closed, and the property formerly the street was bought by the Tunnel
+Company from the City of New York for a consideration by deed dated
+April 18th, 1906. The Church, Rectory, and School of St. Michael's,
+which was located on the west side of Ninth Avenue between 31st and 32d
+Streets, was acquired by the Tunnel Company after it had acquired
+property for and had built a similar institution on the south side of
+34th Street west of Ninth Avenue.
+
+Probably the most interesting feature of this contract was the support
+and maintenance of Ninth Avenue, which has a three-track elevated
+railway structure and a two-track surface railway structure, on which it
+was necessary to maintain traffic while excavation was made to a depth
+of about 60 ft., and a viaduct was erected to carry Ninth Avenue. The
+length of this viaduct is about 375 ft., and the steelwork and its
+erection was done apart from the North River Division work, but all
+excavation and underpinning was included in this division. The contract
+for this work on the Terminal Station-West was let to the New York
+Contracting Company-Pennsylvania Terminal, on April 28th, 1906, and
+included about 517,000 cu. yd. of excavation, about 87% being rock, the
+construction of about 2,000 lin. ft. of retaining and face walls
+containing about 18,500 cu. yd. of concrete, and a large quantity of
+structural steel (1,475,000 lb.) for temporary use in underpinning Ninth
+Avenue.
+
+Fig. 4 shows cross-sections of the Terminal Station-West yard, and Fig.
+5 shows the general method of underpinning the Ninth Avenue structures.
+
+[Illustration: FIG. 4.--TERMINAL STATION WEST
+
+TYPICAL SECTIONS]
+
+_River Tunnels._--In the original plan a four-track tunnel was
+contemplated from the east side of Tenth Avenue to the east side of
+Eleventh Avenue, but, owing to the extension of the Terminal Yard,
+previously noted, this plan was changed, and a two-track structure was
+built having a central wall between the tracks. This was constructed in
+tunnel, with the exception of 172 ft. about midway between Tenth and
+Eleventh Avenues, where the rock dipped below the roof of the tunnel,
+and there the construction was made in open cut. These tunnels were
+lined with concrete with brick arches, Figs. 6, 7, and 8 being typical
+cross-sections. This work was executed by the O'Rourke Engineering
+Construction Company, under a contract dated November 1st, 1904.
+
+It was possible to excavate in full rock cover about 250 ft. of the
+tunnels eastward from the Weehawken Shaft and 225 ft. westward from the
+Manhattan Shaft. At these points the rock cover was very thin, and there
+shield chambers were made for the erection of two sets of shields, about
+6,100 ft. apart. A typical cross-section of the Weehawken Land Tunnel is
+shown on Plate VIII.
+
+[Illustration: Plate VIII.--Typical Sections Between Manholes, Bergen
+Hill Tunnels]
+
+The Board of Engineers decided, and it was so stated in the contract and
+specifications, that the river tunnels should be constructed by means of
+hydraulic shields, but bidders were permitted to present to the Board
+any scheme on which they might desire to bid, but, of course, the
+decision as to the practicability of such plans rested with the Board.
+
+Inasmuch as the shield method of construction was required, the writer
+designed a shield for use in the North River Tunnels. The shield was
+about 18 ft. long, over all, and was provided with a rigid but removable
+hood extending beyond the normal line of the cutting edge, for use in
+sand, gravel, and ballast, to be removed when the shield reached the
+silt. The shields were thrust forward by twenty-four rams capable of
+exerting a pressure of 3,400 tons at a hydraulic pressure of 5,000 lb.
+per sq. in. Taking into account 30 lb. air pressure, this pressure was
+increased to 4,400 tons. The shield was fitted with a single hydraulic
+erector and hydraulic sliding platforms, and when complete weighed 194
+tons. Fig. 9 is a back elevation and section of the shield.
+
+The contract for the river tunnels was let to the O'Rourke Engineering
+Construction Company on May 2d, 1904.
+
+The shields were built in accordance with the design previously referred
+to, and proved entirely satisfactory. Generally, the materials passed
+through were as follows: Starting out in full face rock, from it into a
+mixed face of rock and sand, thence into sand and gravel, full face of
+sand, piles, rip-rap, and the Hudson silt; and all were fully charged
+with water.
+
+Compressed air, at an average gauge pressure of about 25 lb. and a
+maximum of 40 lb. per sq. in., was used in the tunnels from the time the
+shields emerged from full rock face until the tunnel lining had been
+joined up and all caulking and grummeting had been done.
+
+[Illustration: FIG. 5.--(Full page image)
+
+ARRANGEMENT OF STRUCTURES SUPPORTING NINTH AVE. DURING PROGRESS OF
+EXCAVATION]
+
+Contractor's plants were established at the Weehawken Shaft and at the
+Manhattan Shaft, including at each, low-pressure air compressors of a
+capacity of 13,000 cu. ft. of free air per minute and also high-pressure
+air compressors for drills, hydraulic pumps, electric generators, etc.
+
+The river tunnels passed under Pier 72, North River (old No. 62), which
+was occupied by the New York Central and Hudson River Railroad Company.
+The Tunnel Company leased this pier and withdrew all the piles on the
+lines of the tunnels prior to the commencement of construction, and on
+the remaining piles constructed a trestle for the disposal of the
+excavation from the tunnels and the terminal. At the completion of the
+work this pier had to be restored, and Fig. 10 shows the general
+arrangements of the location of the piles and the pier structure with
+reference to the tunnels.
+
+In the tunnels which were constructed in silt farther down the river, by
+the writer as Chief Engineer for the Hudson Companies, it had been
+possible to shove the shield through the silt with all the doors closed,
+displacing the ground and making great speed in construction owing to
+the absence of all mucking. It was thought that this procedure might be
+pursued in the larger tunnels of the Pennsylvania Railroad, and it was
+tried, but it was almost immediately found to be impossible to maintain
+the required grade without taking a certain quantity of muck into the
+tunnels through the lower doors, the tendency of the shield being to
+rise. By taking in about 33% of the excavation displaced by the tunnel,
+the grade could be maintained. It was considered desirable, owing to
+this rising of the shields, to increase the weight of the cast-iron
+lining, and this was done, making the weight of the completed tunnel
+more nearly equal to the weight of the displaced material. The weight of
+the cast-iron lining (with bolts) was increased from 9,609 to 12,127 lb.
+per lin. ft. of tunnel. The weight of the finished tunnel with this
+heavier iron is 31,469 lb. per lin. ft. The weight of the silt displaced
+per linear foot of tunnel, at 100 lb. per cu. ft., is 41,548 lb. The
+weight of the completed tunnel with the maximum train load is 42,869 lb.
+per lin. ft.
+
+The maximum progress at one face in any one month was 545 ft., working
+three 8-hour shifts, and the average progress in each heading while
+working three shifts was 18 ft. per 24 hours; while working one shift
+with the heavier lining referred to above, the delivery of which was
+slow, the average progress was 11 ft. per 24 hours.
+
+[Illustration: FIG. 6.--15' 4" Span Twin Tunnels. Rock Roof.]
+
+[Illustration: FIG. 7.--19' 6" Span Twin Tunnels.]
+
+[Illustration: FIG. 8.--21' 6" Span Twin Tunnels]
+
+[Illustration: FIG. 9.--PROPOSED SHIELD FOR SUBAQUEOUS TUNNELING GENERAL
+ELEVATION]
+
+[Illustration: FIG. 10.--RESTORATION OF PIER 72 (OLD 62) NORTH RIVER
+TRANSVERSE SECTION AT CENTER OF PIER]
+
+In order to permit the screw-piles to be put in place through the
+lining, cast-steel bore segments were designed, and placed in the invert
+at 15-ft. centers; these are of such a design as to permit the blade and
+shaft of the screw-pile to be inserted without removing any portion of
+the lining. Fig. 11 is a typical cross-section of the river tunnel, as
+originally planned, with these pile supports.
+
+After the shields had met and the iron lining was joined up, various
+experiments and tests were made in the tunnel; screw-piles, and 16-in.
+pipes, previously referred to, were inserted through the bore segments
+in the bottom of the tunnel, thorough tests with these were made, levels
+were observed in the tunnels during the construction and placing of the
+concrete lining, an examination was conducted of the tunnels of the
+Hudson and Manhattan Railroad Company under traffic, and the result of
+these examinations was the decision not to install the screw-piles. The
+tunnels, however, were reinforced longitudinally by twisted steel rods
+in the invert and roof, and by transverse rods where there was a
+superincumbent load on the tunnels; it might also be noted that on the
+New York side, where the tunnels emerge from the rock and pass into the
+soft material, the metal shell is of cast steel instead of cast iron.
+Fig. 12 is a typical cross-section of the river tunnels as actually
+constructed.
+
+[Illustration: FIG. 11.--(Full page image)
+
+CROSS-SECTION OF TUNNEL SHOWING TRACK SYSTEM AND SCREW-PILE.]
+
+[Illustration: FIG. 12.--SUBAQUEOUS TUNNELS CROSS-SECTIONS]
+
+During the investigations in the tunnels, borings were made to determine
+exactly the character of the underlying material, and it was then found
+that the hard material noted in the preliminary wash-borings was a layer
+of gravel and boulders overlying the rock. When the borings in the
+tunnels reached this material it was found to be water-bearing and the
+head was about equivalent to that of the river. Rock cores were taken
+from these borings, and the deepest rock was found at about the center
+of the river at an elevation of 302.6 ft. below mean high water. Rods
+were then inserted in each bore hole and thereby attached to the rock
+and used as bench-marks in the tunnels. From these bench-marks, using
+specially designed instruments, very accurate observations of the
+behavior of the tunnels could be made, and from these the very
+interesting phenomenon of the rise and fall of the tunnels with the tide
+was verified, the tunnels being low at high tide and the average
+variations being about 0.008 ft. in the average tide of about 4.38 ft.:
+the tidal oscillations are entirely independent of the weight of the
+tunnels, since observations show them to have been the same both before
+and after the concrete lining was in position. There was considerable
+subsidence in the tunnels during construction and lining, amounting to
+an average of 0.34 ft. between the bulkhead lines. This settlement has
+been constantly decreasing since construction, and appears to have been
+due almost entirely to the disturbances of the surrounding materials
+during construction. The silt weighs about 100 lb. per cu. ft. (this is
+the average of a number of samples taken through the shield door, and
+varied from 93 to 109 lb. per cu. ft.), and contains about 38% of water.
+It was found that whenever this material was disturbed outside the
+tunnels a displacement of the tunnels followed. The tunnels as above
+noted have been lined with concrete reinforced with steel rods, and
+prior to the placing of the concrete the joints were caulked, the bolts
+grummeted, and the tunnels rendered practically water-tight; the present
+quantity of water to be disposed of does not exceed 300 gal. per 24
+hours in each tunnel 6,100 ft. long.
+
+_Bergen Hill Tunnels._--These are two single-track tunnels, 37 ft. from
+center to center, and extend for a distance of 5,940 ft. from the
+Weehawken Shaft to the Hackensack Portal. They were built almost
+entirely through trap rock. The contract was let on March 6th, 1905, to
+the John Shields Construction Company, but was re-let on January 1st,
+1906, to William Bradley, the Shields Company having gone into the hands
+of a receiver. About 1,369 ft. of the tunnel excavation was done by the
+Shields Company, but no concrete lining. The maximum monthly progress
+for all headings was 622 ft., and the average progress was 338 ft. A
+working shaft 216 ft. deep was sunk from the top of the hill, to
+facilitate construction. The tunnels are lined with concrete throughout.
+Typical cross-sections of these tunnels are shown on Plate VIII.
+
+In conclusion it may be admissible for the writer after having, in
+conjunction with Mr. Samuel Rea, experienced the evolution and
+materialization of this Pennsylvania Railroad scheme, to express his
+great sorrow for the untimely death of the father of the entire scheme,
+the late President Cassatt.
+
+
+
+
+
+End of the Project Gutenberg EBook of Transactions of the American Society
+of Civil Engineers, vol. LXVIII, Sept. 1910, by Charles M. Jacobs
+
+*** END OF THIS PROJECT GUTENBERG EBOOK SOCIETY OF CIVIL ENGINEERS ***
+
+***** This file should be named 18548.txt or 18548.zip *****
+This and all associated files of various formats will be found in:
+        http://www.gutenberg.org/1/8/5/4/18548/
+
+Produced by Juliet Sutherland, Sigal Alon and the Online
+Distributed Proofreading Team at http://www.pgdp.net
+
+
+Updated editions will replace the previous one--the old editions
+will be renamed.
+
+Creating the works from public domain print editions means that no
+one owns a United States copyright in these works, so the Foundation
+(and you!) can copy and distribute it in the United States without
+permission and without paying copyright royalties.  Special rules,
+set forth in the General Terms of Use part of this license, apply to
+copying and distributing Project Gutenberg-tm electronic works to
+protect the PROJECT GUTENBERG-tm concept and trademark.  Project
+Gutenberg is a registered trademark, and may not be used if you
+charge for the eBooks, unless you receive specific permission.  If you
+do not charge anything for copies of this eBook, complying with the
+rules is very easy.  You may use this eBook for nearly any purpose
+such as creation of derivative works, reports, performances and
+research.  They may be modified and printed and given away--you may do
+practically ANYTHING with public domain eBooks.  Redistribution is
+subject to the trademark license, especially commercial
+redistribution.
+
+
+
+*** START: FULL LICENSE ***
+
+THE FULL PROJECT GUTENBERG LICENSE
+PLEASE READ THIS BEFORE YOU DISTRIBUTE OR USE THIS WORK
+
+To protect the Project Gutenberg-tm mission of promoting the free
+distribution of electronic works, by using or distributing this work
+(or any other work associated in any way with the phrase "Project
+Gutenberg"), you agree to comply with all the terms of the Full Project
+Gutenberg-tm License (available with this file or online at
+http://gutenberg.org/license).
+
+
+Section 1.  General Terms of Use and Redistributing Project Gutenberg-tm
+electronic works
+
+1.A.  By reading or using any part of this Project Gutenberg-tm
+electronic work, you indicate that you have read, understand, agree to
+and accept all the terms of this license and intellectual property
+(trademark/copyright) agreement.  If you do not agree to abide by all
+the terms of this agreement, you must cease using and return or destroy
+all copies of Project Gutenberg-tm electronic works in your possession.
+If you paid a fee for obtaining a copy of or access to a Project
+Gutenberg-tm electronic work and you do not agree to be bound by the
+terms of this agreement, you may obtain a refund from the person or
+entity to whom you paid the fee as set forth in paragraph 1.E.8.
+
+1.B.  "Project Gutenberg" is a registered trademark.  It may only be
+used on or associated in any way with an electronic work by people who
+agree to be bound by the terms of this agreement.  There are a few
+things that you can do with most Project Gutenberg-tm electronic works
+even without complying with the full terms of this agreement.  See
+paragraph 1.C below.  There are a lot of things you can do with Project
+Gutenberg-tm electronic works if you follow the terms of this agreement
+and help preserve free future access to Project Gutenberg-tm electronic
+works.  See paragraph 1.E below.
+
+1.C.  The Project Gutenberg Literary Archive Foundation ("the Foundation"
+or PGLAF), owns a compilation copyright in the collection of Project
+Gutenberg-tm electronic works.  Nearly all the individual works in the
+collection are in the public domain in the United States.  If an
+individual work is in the public domain in the United States and you are
+located in the United States, we do not claim a right to prevent you from
+copying, distributing, performing, displaying or creating derivative
+works based on the work as long as all references to Project Gutenberg
+are removed.  Of course, we hope that you will support the Project
+Gutenberg-tm mission of promoting free access to electronic works by
+freely sharing Project Gutenberg-tm works in compliance with the terms of
+this agreement for keeping the Project Gutenberg-tm name associated with
+the work.  You can easily comply with the terms of this agreement by
+keeping this work in the same format with its attached full Project
+Gutenberg-tm License when you share it without charge with others.
+
+1.D.  The copyright laws of the place where you are located also govern
+what you can do with this work.  Copyright laws in most countries are in
+a constant state of change.  If you are outside the United States, check
+the laws of your country in addition to the terms of this agreement
+before downloading, copying, displaying, performing, distributing or
+creating derivative works based on this work or any other Project
+Gutenberg-tm work.  The Foundation makes no representations concerning
+the copyright status of any work in any country outside the United
+States.
+
+1.E.  Unless you have removed all references to Project Gutenberg:
+
+1.E.1.  The following sentence, with active links to, or other immediate
+access to, the full Project Gutenberg-tm License must appear prominently
+whenever any copy of a Project Gutenberg-tm work (any work on which the
+phrase "Project Gutenberg" appears, or with which the phrase "Project
+Gutenberg" is associated) is accessed, displayed, performed, viewed,
+copied or distributed:
+
+This eBook is for the use of anyone anywhere at no cost and with
+almost no restrictions whatsoever.  You may copy it, give it away or
+re-use it under the terms of the Project Gutenberg License included
+with this eBook or online at www.gutenberg.org
+
+1.E.2.  If an individual Project Gutenberg-tm electronic work is derived
+from the public domain (does not contain a notice indicating that it is
+posted with permission of the copyright holder), the work can be copied
+and distributed to anyone in the United States without paying any fees
+or charges.  If you are redistributing or providing access to a work
+with the phrase "Project Gutenberg" associated with or appearing on the
+work, you must comply either with the requirements of paragraphs 1.E.1
+through 1.E.7 or obtain permission for the use of the work and the
+Project Gutenberg-tm trademark as set forth in paragraphs 1.E.8 or
+1.E.9.
+
+1.E.3.  If an individual Project Gutenberg-tm electronic work is posted
+with the permission of the copyright holder, your use and distribution
+must comply with both paragraphs 1.E.1 through 1.E.7 and any additional
+terms imposed by the copyright holder.  Additional terms will be linked
+to the Project Gutenberg-tm License for all works posted with the
+permission of the copyright holder found at the beginning of this work.
+
+1.E.4.  Do not unlink or detach or remove the full Project Gutenberg-tm
+License terms from this work, or any files containing a part of this
+work or any other work associated with Project Gutenberg-tm.
+
+1.E.5.  Do not copy, display, perform, distribute or redistribute this
+electronic work, or any part of this electronic work, without
+prominently displaying the sentence set forth in paragraph 1.E.1 with
+active links or immediate access to the full terms of the Project
+Gutenberg-tm License.
+
+1.E.6.  You may convert to and distribute this work in any binary,
+compressed, marked up, nonproprietary or proprietary form, including any
+word processing or hypertext form.  However, if you provide access to or
+distribute copies of a Project Gutenberg-tm work in a format other than
+"Plain Vanilla ASCII" or other format used in the official version
+posted on the official Project Gutenberg-tm web site (www.gutenberg.org),
+you must, at no additional cost, fee or expense to the user, provide a
+copy, a means of exporting a copy, or a means of obtaining a copy upon
+request, of the work in its original "Plain Vanilla ASCII" or other
+form.  Any alternate format must include the full Project Gutenberg-tm
+License as specified in paragraph 1.E.1.
+
+1.E.7.  Do not charge a fee for access to, viewing, displaying,
+performing, copying or distributing any Project Gutenberg-tm works
+unless you comply with paragraph 1.E.8 or 1.E.9.
+
+1.E.8.  You may charge a reasonable fee for copies of or providing
+access to or distributing Project Gutenberg-tm electronic works provided
+that
+
+- You pay a royalty fee of 20% of the gross profits you derive from
+     the use of Project Gutenberg-tm works calculated using the method
+     you already use to calculate your applicable taxes.  The fee is
+     owed to the owner of the Project Gutenberg-tm trademark, but he
+     has agreed to donate royalties under this paragraph to the
+     Project Gutenberg Literary Archive Foundation.  Royalty payments
+     must be paid within 60 days following each date on which you
+     prepare (or are legally required to prepare) your periodic tax
+     returns.  Royalty payments should be clearly marked as such and
+     sent to the Project Gutenberg Literary Archive Foundation at the
+     address specified in Section 4, "Information about donations to
+     the Project Gutenberg Literary Archive Foundation."
+
+- You provide a full refund of any money paid by a user who notifies
+     you in writing (or by e-mail) within 30 days of receipt that s/he
+     does not agree to the terms of the full Project Gutenberg-tm
+     License.  You must require such a user to return or
+     destroy all copies of the works possessed in a physical medium
+     and discontinue all use of and all access to other copies of
+     Project Gutenberg-tm works.
+
+- You provide, in accordance with paragraph 1.F.3, a full refund of any
+     money paid for a work or a replacement copy, if a defect in the
+     electronic work is discovered and reported to you within 90 days
+     of receipt of the work.
+
+- You comply with all other terms of this agreement for free
+     distribution of Project Gutenberg-tm works.
+
+1.E.9.  If you wish to charge a fee or distribute a Project Gutenberg-tm
+electronic work or group of works on different terms than are set
+forth in this agreement, you must obtain permission in writing from
+both the Project Gutenberg Literary Archive Foundation and Michael
+Hart, the owner of the Project Gutenberg-tm trademark.  Contact the
+Foundation as set forth in Section 3 below.
+
+1.F.
+
+1.F.1.  Project Gutenberg volunteers and employees expend considerable
+effort to identify, do copyright research on, transcribe and proofread
+public domain works in creating the Project Gutenberg-tm
+collection.  Despite these efforts, Project Gutenberg-tm electronic
+works, and the medium on which they may be stored, may contain
+"Defects," such as, but not limited to, incomplete, inaccurate or
+corrupt data, transcription errors, a copyright or other intellectual
+property infringement, a defective or damaged disk or other medium, a
+computer virus, or computer codes that damage or cannot be read by
+your equipment.
+
+1.F.2.  LIMITED WARRANTY, DISCLAIMER OF DAMAGES - Except for the "Right
+of Replacement or Refund" described in paragraph 1.F.3, the Project
+Gutenberg Literary Archive Foundation, the owner of the Project
+Gutenberg-tm trademark, and any other party distributing a Project
+Gutenberg-tm electronic work under this agreement, disclaim all
+liability to you for damages, costs and expenses, including legal
+fees.  YOU AGREE THAT YOU HAVE NO REMEDIES FOR NEGLIGENCE, STRICT
+LIABILITY, BREACH OF WARRANTY OR BREACH OF CONTRACT EXCEPT THOSE
+PROVIDED IN PARAGRAPH F3.  YOU AGREE THAT THE FOUNDATION, THE
+TRADEMARK OWNER, AND ANY DISTRIBUTOR UNDER THIS AGREEMENT WILL NOT BE
+LIABLE TO YOU FOR ACTUAL, DIRECT, INDIRECT, CONSEQUENTIAL, PUNITIVE OR
+INCIDENTAL DAMAGES EVEN IF YOU GIVE NOTICE OF THE POSSIBILITY OF SUCH
+DAMAGE.
+
+1.F.3.  LIMITED RIGHT OF REPLACEMENT OR REFUND - If you discover a
+defect in this electronic work within 90 days of receiving it, you can
+receive a refund of the money (if any) you paid for it by sending a
+written explanation to the person you received the work from.  If you
+received the work on a physical medium, you must return the medium with
+your written explanation.  The person or entity that provided you with
+the defective work may elect to provide a replacement copy in lieu of a
+refund.  If you received the work electronically, the person or entity
+providing it to you may choose to give you a second opportunity to
+receive the work electronically in lieu of a refund.  If the second copy
+is also defective, you may demand a refund in writing without further
+opportunities to fix the problem.
+
+1.F.4.  Except for the limited right of replacement or refund set forth
+in paragraph 1.F.3, this work is provided to you 'AS-IS' WITH NO OTHER
+WARRANTIES OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO
+WARRANTIES OF MERCHANTIBILITY OR FITNESS FOR ANY PURPOSE.
+
+1.F.5.  Some states do not allow disclaimers of certain implied
+warranties or the exclusion or limitation of certain types of damages.
+If any disclaimer or limitation set forth in this agreement violates the
+law of the state applicable to this agreement, the agreement shall be
+interpreted to make the maximum disclaimer or limitation permitted by
+the applicable state law.  The invalidity or unenforceability of any
+provision of this agreement shall not void the remaining provisions.
+
+1.F.6.  INDEMNITY - You agree to indemnify and hold the Foundation, the
+trademark owner, any agent or employee of the Foundation, anyone
+providing copies of Project Gutenberg-tm electronic works in accordance
+with this agreement, and any volunteers associated with the production,
+promotion and distribution of Project Gutenberg-tm electronic works,
+harmless from all liability, costs and expenses, including legal fees,
+that arise directly or indirectly from any of the following which you do
+or cause to occur: (a) distribution of this or any Project Gutenberg-tm
+work, (b) alteration, modification, or additions or deletions to any
+Project Gutenberg-tm work, and (c) any Defect you cause.
+
+
+Section  2.  Information about the Mission of Project Gutenberg-tm
+
+Project Gutenberg-tm is synonymous with the free distribution of
+electronic works in formats readable by the widest variety of computers
+including obsolete, old, middle-aged and new computers.  It exists
+because of the efforts of hundreds of volunteers and donations from
+people in all walks of life.
+
+Volunteers and financial support to provide volunteers with the
+assistance they need, is critical to reaching Project Gutenberg-tm's
+goals and ensuring that the Project Gutenberg-tm collection will
+remain freely available for generations to come.  In 2001, the Project
+Gutenberg Literary Archive Foundation was created to provide a secure
+and permanent future for Project Gutenberg-tm and future generations.
+To learn more about the Project Gutenberg Literary Archive Foundation
+and how your efforts and donations can help, see Sections 3 and 4
+and the Foundation web page at http://www.pglaf.org.
+
+
+Section 3.  Information about the Project Gutenberg Literary Archive
+Foundation
+
+The Project Gutenberg Literary Archive Foundation is a non profit
+501(c)(3) educational corporation organized under the laws of the
+state of Mississippi and granted tax exempt status by the Internal
+Revenue Service.  The Foundation's EIN or federal tax identification
+number is 64-6221541.  Its 501(c)(3) letter is posted at
+http://pglaf.org/fundraising.  Contributions to the Project Gutenberg
+Literary Archive Foundation are tax deductible to the full extent
+permitted by U.S. federal laws and your state's laws.
+
+The Foundation's principal office is located at 4557 Melan Dr. S.
+Fairbanks, AK, 99712., but its volunteers and employees are scattered
+throughout numerous locations.  Its business office is located at
+809 North 1500 West, Salt Lake City, UT 84116, (801) 596-1887, email
+business@pglaf.org.  Email contact links and up to date contact
+information can be found at the Foundation's web site and official
+page at http://pglaf.org
+
+For additional contact information:
+     Dr. Gregory B. Newby
+     Chief Executive and Director
+     gbnewby@pglaf.org
+
+
+Section 4.  Information about Donations to the Project Gutenberg
+Literary Archive Foundation
+
+Project Gutenberg-tm depends upon and cannot survive without wide
+spread public support and donations to carry out its mission of
+increasing the number of public domain and licensed works that can be
+freely distributed in machine readable form accessible by the widest
+array of equipment including outdated equipment.  Many small donations
+($1 to $5,000) are particularly important to maintaining tax exempt
+status with the IRS.
+
+The Foundation is committed to complying with the laws regulating
+charities and charitable donations in all 50 states of the United
+States.  Compliance requirements are not uniform and it takes a
+considerable effort, much paperwork and many fees to meet and keep up
+with these requirements.  We do not solicit donations in locations
+where we have not received written confirmation of compliance.  To
+SEND DONATIONS or determine the status of compliance for any
+particular state visit http://pglaf.org
+
+While we cannot and do not solicit contributions from states where we
+have not met the solicitation requirements, we know of no prohibition
+against accepting unsolicited donations from donors in such states who
+approach us with offers to donate.
+
+International donations are gratefully accepted, but we cannot make
+any statements concerning tax treatment of donations received from
+outside the United States.  U.S. laws alone swamp our small staff.
+
+Please check the Project Gutenberg Web pages for current donation
+methods and addresses.  Donations are accepted in a number of other
+ways including checks, online payments and credit card donations.
+To donate, please visit: http://pglaf.org/donate
+
+
+Section 5.  General Information About Project Gutenberg-tm electronic
+works.
+
+Professor Michael S. Hart is the originator of the Project Gutenberg-tm
+concept of a library of electronic works that could be freely shared
+with anyone.  For thirty years, he produced and distributed Project
+Gutenberg-tm eBooks with only a loose network of volunteer support.
+
+
+Project Gutenberg-tm eBooks are often created from several printed
+editions, all of which are confirmed as Public Domain in the U.S.
+unless a copyright notice is included.  Thus, we do not necessarily
+keep eBooks in compliance with any particular paper edition.
+
+
+Most people start at our Web site which has the main PG search facility:
+
+     http://www.gutenberg.org
+
+This Web site includes information about Project Gutenberg-tm,
+including how to make donations to the Project Gutenberg Literary
+Archive Foundation, how to help produce our new eBooks, and how to
+subscribe to our email newsletter to hear about new eBooks.

@@ -1,0 +1,2253 @@
+The Project Gutenberg EBook of McGuffey's First Eclectic Reader, Revised
+Edition, by William Holmes McGuffey
+
+This eBook is for the use of anyone anywhere at no cost and with
+almost no restrictions whatsoever.  You may copy it, give it away or
+re-use it under the terms of the Project Gutenberg License included
+with this eBook or online at www.gutenberg.net
+
+
+Title: McGuffey's First Eclectic Reader, Revised Edition
+
+Author: William Holmes McGuffey
+
+Release Date: June 29, 2005 [EBook #14640]
+
+Language: English
+
+Character set encoding: ASCII
+
+*** START OF THIS PROJECT GUTENBERG EBOOK MCGUFFEY'S FIRST READER ***
+
+
+
+
+Produced by Don Kostuch
+
+
+
+
+
+[Transcriber's Notes:
+
+Welcome to the schoolroom of 1900. The moral tone is plain. "She is kind
+to the old blind man."
+
+The exercises are still suitable, and perhaps more helpful than some
+contemporary alternatives. Much is left to the teacher. Explanations given
+in the text are enough to get started teaching a child to read and write.
+Counting in Roman numerals is included as a bonus in the form of lesson
+numbers.
+
+Each lesson begins with vocabulary words, followed by the description of a
+picture (if any) related to the lesson's reading exercise. The lesson then
+consists of printed text for reading and sometimes script (handwriting)
+for reading or copying.
+
+Don Kostuch
+]
+
+
+
+ECLECTIC EDUCATIONAL SERIES.
+
+MCGUFFEY'S [Registered]
+
+First
+
+ECLECTIC READER
+
+Revised Edition
+
+
+McGuffey Edition and Colophon are Trademarks of
+
+JOHN WILEY & SONS, INC.
+NEW YORK - CHICHESTER - WEINHEIM - BRISBANE - SINGAPORE - TORONTO
+
+SUGGESTIONS TO TEACHERS.
+
+This First Reader may be used in teaching reading by any of the methods in
+common use; but it is especially adapted to the Phonic Method, the Word
+Method, or a combination of the two.
+
+I. Phonic Method.--First teach the elementary sounds and their
+representative, the letters marked with diacriticals, as they occur in the
+lessons; then, the formation of words by the combination of these sounds.
+For instance, teach the pupil to identify the characters a, o, n, d, g, r,
+and th, in Lesson I, as the representatives of certain elementary sounds;
+then teach him to form the words at the head of the lesson, then other
+words, as nag, on, and, etc. Pursue a similar course in teaching the
+succeeding lessons. Having read a few lessons in this manner, begin to
+teach the names of the letters and the spelling of words, and require the
+groups, "a man," "the man," "a pen," to be read as a good reader would
+pronounce single words.
+
+II.  When one of the letters in the combinations ou or ow, is marked in
+the words at the head of the reading exercises, the other is silent. If
+neither is marked, the two letters represent a diphthong. All other
+unmarked vowels in the vocabularies, when in combination, are silent
+letters. In slate or blackboard work, the silent letters may be canceled.
+
+III. Word Method.--Teach the pupil to identify at sight the words placed
+at the head of the reading exercises, and to read these exercises without
+hesitation. Having read a few lessons, begin to teach the names of the
+letters and the spelling of words.
+
+IV. Word Method and Phonic Method Combined.--Teach the pupil to identify
+words and read sentences, as above. Having read a few lessons in this
+manner, begin to use the Phonic Method, combining it with the Word Method,
+by first teaching the words in each lesson as words; then the elementary
+sounds, the names of the letters, and spelling.
+
+V. Teach the pupil to use script letters in writing, when teaching the
+names of the letters and the spelling of words.
+
+
+Copyright, 1879, by Van Antwerp, Bragg & Co.
+Copyright, 1896, by American Book Company.
+Copyright, 1907 and 1920, by H.H. Vail.
+
+EP486
+
+
+
+Preface
+
+In presenting McGuffey's Revised First Reader to the public, attention is
+invited to the following features:
+
+1. Words of only two or three letters are used in the first lessons.
+Longer and more difficult ones are gradually introduced as the pupil gains
+aptness in the mastery of words.
+
+2. A proper gradation has been carefully preserved. All new words are
+placed at the head of each lesson, to be learned before the lesson is
+read. Their number in the early lessons is very small, thus making the
+first steps easy. All words in these vocabularies are used in the text
+immediately following.
+
+3. Carefully engraved script exercises are introduced for a double
+purpose. These should be used to teach the reading of script; and may also
+serve as copies in slate work.
+
+4. The illustrations have been designed and engraved specially for the
+lessons in which they occur. Many of the engravings will serve admirably
+as the basis for oral lessons in language.
+
+5. The type is large, strong, and distinct.
+
+The credit for this revision is almost wholly due to the  friends of
+McGuffey's Readers,--eminent teachers and scholars, who have contributed
+suggestions and criticisms gained from their daily work in the schoolroom.
+
+Cincinnati, June, 1879.
+
+                                                                     (iii)
+
+
+
+THE ALPHABET.
+
+A    a      N   n
+B    b      O   o
+C    c      P   p
+D    d      Q   q
+E    e      R   r
+F    f      S   s
+G    g      T   t
+H    h      U   u
+I    i      V   v
+J    j      W   w
+K    k      X   x
+L    l      Y   y
+M    m      Z   z
+
+
+
+[Illustration:
+
+Script Alphabet
+
+A  B  C  D  E  F  G
+H  I  J  K  L  M  N
+O  P  Q  R  S  Y  U
+V  W  X  Y  Z
+
+a  b  c  d  e  f  g  h  i
+j  k  l  m  n  o  p  q
+r  s  t  u  v  w  x  y  z
+
+SCRIPT FIGURES
+
+1  2  3  4  5  6  7  8  9  0
+]
+
+
+[Illustration: Dog]
+
+
+
+McGuffey's FIRST READER.
+
+
+
+LESSON I.
+
+dog   the   ran
+
+a   o    n   d   g   r   th
+
+
+[Illustration: Running dog.]
+
+
+The dog.
+
+The dog ran.
+
+
+
+LESSON II.
+
+cat    mat    is    on
+
+c    t    i    m    s
+
+
+[Illustration: Cat]
+
+
+The cat.        The mat.
+
+Is the cat on the mat?
+
+The cat is on the mat.
+
+
+
+LESSON III.
+
+it    his    pen    hand
+
+a     in     has    man
+
+p     h      e
+
+
+[Illustration: Man with glasses writing at a desk.]
+
+
+The man.           A pen.
+
+The man has a pen.
+
+Is the pen in his hand?
+
+It is in his hand.
+
+
+
+LESSON IV.
+
+hen    fat    rat    box    big    run    from    can
+
+f      b      x      u
+
+
+[Illustration: Hen watching a rat.]
+
+
+A fat hen.       A big rat.
+
+The fat hen is on the box.
+
+The rat ran from the box.
+
+Can the hen run?
+
+
+
+LESSON V.
+
+Rab    Ann    hat    catch    see
+
+e      ch     s
+
+
+[Illustration: Girl chasing dog with hat in his mouth.]
+
+
+See Rab!   See Ann!
+
+See!  Rab has the hat.
+
+Can Ann catch Rab?
+
+
+
+LESSON VI.
+
+she    pat    too    now    let    me
+
+sh     oo     ow     l
+
+
+[Illustration: Girl with dog]
+
+
+Ann can catch Rab.
+
+See! She has the hat.
+
+Now Ann can pat Rab.
+
+Let me pat Rab, too.
+
+
+
+LESSON VII.
+
+Ned    eggs    black    left    fed    nest    them    get    will
+
+a black hen             the nest
+
+w   ck
+
+
+[Illustration: Boy feeding a hen.]
+
+
+Ned has fed the hen.
+
+She is a black hen.
+
+She has left the nest.
+
+See the eggs in the nest!
+
+Will the hen let Ned get them?
+
+
+
+LESSON VIII.
+
+head    he    Nat    come    with    and    o
+
+
+[Illustration: Three children, boy seated, boy standing with large top
+hat, followed by girl adjusting the hat.]
+
+
+Let me get the black hat. Now Ned has it on his head, and he is a big man.
+
+Come, Nat, see the big man with his black hat.
+
+
+
+LESSON IX. REVIEW.
+
+pat    catch    has    left    hat    can
+
+black  eggs     Rab    Ann     fed    get
+
+
+Ned is on the box. He has a pen in his hand. A big rat is in the box.
+Can the dog catch the rat?
+
+Come with me, Ann, and see the man with a black hat on his head.
+
+The fat hen has left the nest.  Run, Nat, and get the eggs.
+
+
+SLATE WORK.
+
+[Illustration: Script Exercise:
+
+The cat ran. Ann ran.
+
+The man has a hat.
+]
+
+
+
+LESSON X.
+
+Nell    some    pan    him    yes     do      you    have
+
+I       to      i      y      v       o
+
+
+[Illustration: Girl holding eggs.]
+
+
+Do you see Nell?
+
+Yes; she has a pan with some eggs in it.
+
+Let me have the pan and the eggs, will you, Nell?
+
+Has the black hen left the nest?
+
+I will now run to catch Rab. Will you run, too?
+
+
+
+LESSON XI.
+
+O    whip    Ben    up    still    sit    if    stand    Jip
+
+o    wh      j
+
+
+[Illustration: Girl, boy, goat pulling cart.]
+
+
+O Ben! let me get in, will you?
+
+Yes, if you will sit still.
+
+Stand still, Jip, and let Ann get in.
+
+Now, Ben, hand me the whip.
+
+Get up, Jip!
+
+
+1,2.
+
+
+
+LESSON XII.
+
+Kitty    nice    sweet    sing    just    hang
+
+cage     then    song     pet     put     not
+
+k    g    c    a    y    ng    u
+
+
+[Illustration: Girl sitting at window with bird cage.]
+
+
+Kitty has a nice pet. It can sing a sweet song.
+
+She has just fed it.
+
+She will now put it in the cage, and hang the cage up. Then the cat can
+not catch it.
+
+
+
+LESSON XIII.
+
+Tom    top    Kit'ty's    at      back
+
+look   good   doll       think   spot
+
+th     n      oo
+
+
+[Illustration: Boy and Dog]
+
+
+Look at Tom and his dog. The dog has a black spot on his back. Do you
+think he is a good dog?
+
+Tom has a big top, too. It is on the box with Kitty's doll.
+
+
+
+LESSON XIV.
+
+sun    we     how    pond    stop    for
+
+go     swim   her    us      hot     duck
+
+e      o
+
+
+[Illustration: Man and girl standing by a pond.]
+
+
+The sun is up. The man has fed the black hen and the fat duck.
+
+Now the duck will swim in the pond. The hen has run to her nest.
+
+Let us not stop at the pond now, for it is hot.
+
+See how still it is! We will go to see Tom and his top.
+
+
+
+LESSON XV.
+
+John    rock     set    jump    fun    must
+
+may     un'der   skip   bank    but    touch
+
+
+O John! the sun has just set. It is not hot, now.
+
+Let us run and jump. I think it is fun to run, and skip, and jump.
+
+See the duck on the pond! Her nest is up on the bank, under the rock.
+
+We must not touch the nest, but we may look at it
+
+
+
+LESSON XVI. REVIEW.
+
+The sun has set, and the pond is still.
+
+John, Ned, Ben, Tom, and Nell stand on the bank, and look at the duck.
+
+
+The dog with a black spot on his back, is with Tom. See! Tom has his hat
+in his hand. He has left his big top on the box.
+
+Kitty's doll is on the rock. Nell has put her pet in the cage. It will
+sing a sweet song. The duck has her nest under the rock.
+
+It is not hot now. Let us run, and skip, and jump on the bank. Do you not
+think it is fun?
+
+
+
+LESSON XVII.
+
+are    ink    moss    this    tub    up set'    a
+
+
+SLATE WORK
+
+[Illustration: Script Exercise:
+The pen and the ink are on
+the stand.  Is this a good
+pen?  The moss is on the
+rock.  This duck can swim.
+Ben upset the tub.
+]
+
+
+LESSON XVIII.
+
+nut    did    shut    shall    lost    fox
+
+men    met    step    in'to    hunt    mud
+
+
+SLATE WORK.
+
+[Illustration: Script Exercise:
+
+Will the dog hunt a fox?
+Ben lost his hat. Shall I
+shut the box? I met him
+on the step. Did you jump
+into the mud? I have a
+nut. I met the man.
+]
+
+
+
+LESSON XIX.
+
+Kate    old     no     grass    dear    likes
+
+be      drink   milk   cow      out     gives
+
+a
+
+
+[Illustration: Cow standing in pond.]
+
+
+O Kate! the old cow is in the pond: see her drink! Will she not come out
+to get some grass?
+
+No, John, she likes to be in the pond. See how still she stands!
+
+The dear old cow gives us sweet milk to drink.
+
+
+
+LESSON XX.
+
+mam ma'    large    as      pa pa     arms      ride
+
+far        barn     both    Prince    trot      your
+
+
+[Illustration: Man and girl riding a horse.]
+
+
+Papa, will you let me ride with you on Prince? I will sit still in your
+arms.
+
+See, mamma! We are both on Prince. How large he is!
+
+Get up, Prince! You are not too fat to trot as far as the barn.
+
+
+
+LESSON XXI.
+
+of      that    toss     fall               well      Fan'ny
+
+ball    wall    was      pret'ty(prit-)     done      what
+
+a       a
+
+
+[Illustration: Two girls standing in meadow play with a ball.]
+
+
+O Fanny, what a pretty ball!
+
+Yes; can you catch it, Ann?
+
+Toss it to me, and see. I will not let it fall.
+
+That was well done
+
+Now, Fanny, toss it to the top of the wall, if you can.
+
+
+
+LESSON XXII.
+
+had    went    call    might    flag    near    swam    swing
+
+
+[Illustration: Woman and two girls standing by gate in fence.]
+
+
+Did you call us, mamma?
+
+I went with Tom to the pond. I had my doll, and Tom had his flag.
+
+The fat duck swam to the bank, and we fed her. Did you think we might fall
+into the pond?
+
+We did not go too near, did we, Tom?
+
+May we go to the swing, now, mamma?
+
+
+
+LESSON XXIII.
+
+here    band     hear     horse    play    they
+
+pass    where    front    fine     hope    comes
+
+e       e
+
+
+[Illustration: Two boy standing on porch as band passes in street.]
+
+
+Here comes the band! Shall we call mamma and Fanny to see it?
+
+Let us stand still, and hear the men play as they pass.
+
+I hope they will stop here and play for us.
+
+See the large man in front of the band, with his big hat. What has he in
+his hand? How fine he looks!
+
+Look, too, at the man on that fine horse.
+
+If the men do not stop, let us go with them and see where they go.
+
+
+
+LESSON XXIV.
+
+Bess       hap'py    make    cart       tent    woods
+
+lit'tle    ver'y     bed     Rob'ert    gone    draw
+
+
+[Illustration: Boy and girl with goat-cart in woods; tent in background.]
+
+
+Bess and Robert are very happy; papa and mamma have gone to the woods with
+them.
+
+Robert has a big tent and a flag, and Bess has a little bed for her doll.
+
+Jip is with them. Robert will make him draw Bess and her doll in the cart.
+
+
+
+LESSON XXV.
+
+James    Ma'ry   made    sang    my        lay
+
+sport    spade   lap     dig     doll's    sand
+
+said (sed)       y
+
+
+[Illustration: Boy talking to girl sitting on steps with a doll.]
+
+
+"Kate, will you play with me?" said James. "We will dig in the sand with
+this little spade. That will be fine sport."
+
+"Not now James" said Kate; "for I must make my doll's bed. Get Mary to
+play with you."
+
+James went to get Mary to play with him. Then Kate made the doll's bed.
+
+She sang a song to her doll, and the doll lay very still in her lap.
+
+Did the doll hear Kate sing?
+
+
+
+LESSON XXVI.
+
+its    shade    brook     picks    all
+
+by     help     stones    glad     soft
+
+
+[Illustration: Two girls and boy in the woods.]
+
+
+Kate has left her doll in its little bed, and has gone to play with Mary
+and James. They are all in the shade, now, by the brook.
+
+James digs in the soft sand with his spade, and Mary picks up little
+stones and puts them in her lap.
+
+James and Mary are glad to see Kate. She will help them pick up stones and
+dig, by the little brook.
+
+
+1,3.
+
+
+LESSON XXVII. REVIEW
+
+"What shall we do?" said Fanny to John. "I do not like to sit still. Shall
+we hunt for eggs in the barn?"
+
+"No" said John; "I like to play on the grass. Will not papa let us catch
+Prince, and go to the big woods?"
+
+"We can put the tent in the cart, and go to some nice spot where the grass
+is soft and sweet."
+
+"That will be fine," said Fanny. "I will get my doll, and give her a ride
+with us."
+
+"Yes," said John, "and we will get mamma to go, too. She will hang up a
+swing for us in the shade."
+
+
+
+LESSON XXVIII.
+
+peep    while    take    sleep    tuck    safe
+
+oh      wet      feet    chick    can't   feels    wing
+
+
+[Illustration: Girl kneeling by small chicken coop.]
+
+
+Peep, peep! Where have you gone, little chick? Are you lost? Can't you get
+back to the hen?
+
+Oh, here you are! I will take you back. Here, hen, take this little chick
+under your wing.
+
+Now, chick, tuck your little, wet feet under you, and go to sleep for a
+while.
+
+Peep, peep! How safe the little chick feels now!
+
+
+
+LESSON XXIX.
+
+wind    time      there    fence    kite    high
+
+eyes    bright    flies    why      day     shines
+
+
+[Illustration: Boys playing with kite. A dog stand by the boys.]
+
+
+This is a fine day. The sun shines bright. There is a good wind, and my
+kite flies high. I can just see it.
+
+The sun shines in my eyes; I will stand in the shade of this high fence.
+
+Why, here comes my dog! He was under the cart. Did you see him there?
+
+What a good time we have had! Are you not glad that we did not go to the
+woods with John?
+
+
+SLATE WORK.
+
+[Illustration: Script Exercise:
+
+The pond is still. How it
+shines in the hot sun! Let
+us go into the woods where
+we can sit in the shade.
+]
+
+
+
+LESSON XXX.
+
+wish    float    tie      know
+
+rope    boat     try      shore
+
+give    pole     don't    push
+
+drag    won't    oar      fun'ny
+
+
+[Illustration: Two girls standing by fence, one is pulling
+a small wooden tub with a rope along the path.]
+
+
+"Kate, I wish we had a boat to put the dolls in. Don't you?"
+
+"I know what we can do. We can get the little tub, and tie a rope to it,
+and drag it to the pond. This will float with the dolls in it, and we can
+get a pole to push it from the shore."
+
+"What a funny boat, Kate! A tub for a boat, and a pole for an oar! Won't
+it upset?"
+
+"We can try it, Nell, and see."
+
+"Well you get the tub, and I will get a pole and a rope. We will put both
+dolls in the tub, and give them a ride."
+
+
+SLATE WORK.
+
+[Illustration: Script Exercise:
+
+The dolls had a nice ride
+to the pond. A soft wind
+made the tub float out.
+Nell let the pole fall on
+the tub, and upset it.
+]
+
+
+
+LESSON XXXI.
+
+bound     Rose       called     got       drown      found       brave
+
+came      Pon'to     jumped     mouth     a round'    brought    wa'ter
+
+
+[Illustration: Two girls standing by pond. One girl is using a
+pole to push a small wooden tub containing dolls. ]
+
+
+"Here, Ponto! Here, Ponto!" Kate called to her dog. "Come, and get the
+dolls out of the pond."
+
+Rose went under, but she did not drown. Bess was still on the top of the
+water.
+
+Ponto came with a bound, and jumped into the pond. He swam around, and got
+Bess in his mouth, and brought her to the shore.
+
+Ponto then found Rose, and brought her out, too.
+
+Kate said, "Good, old Ponto! Brave old dog!"
+
+What do you think of Ponto?
+
+
+
+LESSON XXXII.
+
+June    Lu'cy's    air           kind    trees     sing'ing    blue
+
+when    pure       says (sez)    sky     pic'nic   u           a
+
+
+[Illustration: Woman and girl sitting under a tree.]
+
+
+"What a bright June day! The air is pure. The sky is as blue as it can be.
+
+Lucy and her mamma are in the woods. They have found a nice spot, where
+there is some grass.
+
+They sit in the shade of the trees, and Lucy is singing.
+
+The trees are not large, but they make a good shade.
+
+Lucy's kind mamma says that they will have a picnic when her papa can get
+a tent.
+
+
+
+LESSON XXXIII. REVIEW.
+
+James and Robert have gone into the shade of a high wall to play ball.
+
+Mary and Lucy have come up from the pond near by, with brave old Ponto, to
+see them play.
+
+When they toss the ball up in the air, and try to catch it, Ponto runs to
+get it in his mouth.
+
+Now the ball is lost. They all look for it under the trees and in the
+grass; but they can not see it. Where can it be?
+
+See! Ponto has found it. Here he comes with it. He will lay it at little
+Lucy's feet, or put it in her hand.
+
+
+
+LESSON XXXIV.
+
+boy     our       spoil    hur rah'    own      coil
+
+noise   fourth    such     join        thank    a bout'
+
+hoist   pay       Ju ly'   playing     oi
+
+
+[Illustration: Five boys carrying a large American flag. Man in background
+is smoking a pipe.]
+
+
+"Papa, may we have the big flag?" said James.
+
+"What can my little boy do with such a big flag?"
+
+"Hoist it on our tent, papa. We are playing Fourth of July."
+
+"Is that what all this noise is about? Why not hoist your own flags?"
+
+"Oh! they are too little."
+
+"You might spoil my flag."
+
+"Then we will all join to pay for it. But we will not spoil it, papa."
+
+"Take it, then, and take the coil of rope with it."
+
+"Oh! thank you. Hurrah for the flag, boys!"
+
+
+
+LESSON XXXV.
+
+fin'ished    bon'net    les'son    saved        white     a way'
+
+I've         am         work       scam'per     read'y    gar'den
+
+
+[Illustration: White kitten lapping milk from a bowl.]
+
+
+THE WHITE KITTEN.
+
+[Illustration: Script Exercise:
+
+Kitty, my pretty, white kitty.
+   Why do you scamper away?
+I've finished my work and my lesson
+   And now I am ready for play.
+
+Come, kitty, my own little kitty.
+   I've saved you some milk come and see.
+Now drink while I put on my bonnet,
+   And play in the garden with me.
+]
+
+
+
+LESSON XXXVI.
+
+care    al'ways       line     Frank
+
+row     been (bin)    keeps    home
+
+
+[Illustration: Boy untying a white boat from post in pond.]
+
+
+Frank has a pretty boat. It is white, with a black line near the water.
+
+He keeps it in the pond, near his home. He always takes good care of it.
+
+Frank has been at work in the garden, and will now row a while.
+
+
+
+LESSON XXXVII.
+
+much    one (wun)     yet     hun'gry
+
+seen    grand'ma      corn    would    o
+
+
+[Illustration: Two children on porch. Girl is holding a bowl.
+Boy is seated on the step holding a model sailboat.]
+
+
+"What is that?" said Lucy, as she came out on the steps. "Oh, it is a
+little boat! What a pretty one it is!"
+
+"I will give it to you when it is finished," said John, kindly. "Would you
+like to have it?"
+
+"Yes, very much, thank you, John. Has grandma seen it?"
+
+"Not yet; we will take it to her by and by. What have you in your pan,
+Lucy?"
+
+"Some corn for my hens, John; they must be very hungry by this time."
+
+
+
+LESSON XXXVIII.
+
+mar'ket    bread     bas'ket    bought    meat
+
+tea        try'ing   tell       which
+
+
+[Illustration: Woman and boy walking on path next to fence.
+Woman is carrying a basket.]
+
+
+James has been to market with his mamma.
+
+She has bought some bread, some meat, and some tea, which are in the
+basket on her arm.
+
+James is trying to tell his mamma what he has seen in the market.
+
+
+
+LESSON XXXIX.
+
+reads    so      wears    please    could    hair
+
+fast     love    eas'y    gray      chair    who     glass'es
+
+
+[Illustration: Girl standing by old woman in rocking chair.]
+
+
+See my dear, old grandma in her easy-chair! How gray her hair is! She
+wears glasses when she reads.
+
+She is always kind, and takes such good care of me that I like to do what
+she tells me.
+
+When she says, "Robert, will you get me a drink?"  I run as fast as I can
+to get it for her. Then she says, "Thank you, my boy."
+
+Would you not love a dear, good grandma, who is so kind? And would you not
+do all yon could to please her?
+
+
+
+LESSON XL.
+
+does    won'der    moth'er    oth'er    bee    hon'ey    lis'ten    flow'er
+
+
+[Illustration: Girl standing next to woman seated on porch.]
+
+
+"Come here, Lucy, and listen! What is in this flower?"
+
+"O mother! it is a bee. I wonder how it came to be shut up in the flower!"
+
+"It went into the flower for some honey, and it may be it went to sleep.
+Then the flower shut it in.
+
+"The bee likes honey as well as we do, but it does not like to be shut up
+in the flower.
+
+"Shall we let it out, Lucy?"
+
+"Yes; then it can go to other flowers, and get honey."
+
+
+
+LESSON XLI.
+
+best    hitched    their    should     or      rid'ing
+
+live    holds      hay      driv'ing   tight   ear'ly
+
+
+[Illustration: One boy riding a horse, and another boy riding a cart
+pulled by a horse.]
+
+
+Here come Frank and James White. Do you know where they live?
+
+Frank is riding a horse, and James is driving one hitched to a cart. They
+are out very early in the day. How happy they are!
+
+See how well Frank rides, and how tight James holds the lines!
+
+The boys should be kind to their horses. It is not best to whip them.
+
+When they have done riding, they will give the horses some hay or corn.
+
+
+Slate Work
+
+[Illustration: Script Exercise:
+
+Some horses can trot very
+fast. Would you like to ride
+fast? One day I saw a dog
+hitched up a little cart. The
+cart had some corn in it.
+]
+
+
+
+LESSON XLII.
+
+look'ing    thought   pick'ing    heard    chirp    were    told    birds
+
+search     dear'ly    young       girl     loved    chil'dren    be sides'
+
+
+[Illustration: Girl picking flowers.]
+
+
+A little girl went in search of flowers for her mother. It was early in
+the day, and the grass was wet. Sweet little birds were singing all around
+her.
+
+And what do you think she found besides flowers? A nest with young birds
+in it.
+
+While she was looking at them, she heard the mother bird chirp, as if she
+said, "Do not touch my children, little girl, for I love them dearly."
+
+The little girl now thought how dearly her own mother loved her.
+
+So she left the birds. Then picking some flowers, she went home, and told
+her mother what she had seen and heard.
+
+
+
+LESSON XLIII.
+
+eight    ask    aft'er    town    past    ah    tick'et
+
+right    half   two       train   ding    light'ning
+
+
+[Illustration: Boy and girl sitting in wicker clothes basket.
+Woman sitting in chair.]
+
+
+"Mamma, will you go to town?"
+
+"What do you ask for a ticket on your train?"
+
+"Oh! we will give you a ticket, mamma."
+
+"About what time will you get back? "
+
+"At half past eight."
+
+"Ah! that is after bedtime. Is this the fast train?"
+
+"Yes, this is the lightning train."
+
+"Oh! that is too fast for me."
+
+"What shall we get for you in town, mamma?"
+
+"A big basket, with two good little children in it."
+
+"All right! Time is up! Ding, ding!"
+
+
+
+LESSON XLIV.
+
+school    e'ven (e'vn)    three    room    small
+
+book      teach'er        noon     rude    read'ing    poor
+
+
+[Illustration: Several children in woods. Three are holding books,
+others are playing with a ball.]
+
+
+It is noon, and the school is out. Do you see the children at play? Some
+run and jump, some play ball, and three little girls play school under a
+tree.
+
+What a big room for such a small school!
+
+Mary is the teacher. They all have books in their hands, and Fanny is
+reading.
+
+They are all good girls, and would not be rude even in playing school.
+
+Kate and Mary listen to Fanny as she reads from her book.
+
+What do you think she is reading about? I will tell you. It is about a
+poor little boy who was lost in the woods.
+
+When Fanny has finished, the three girls will go home.
+
+In a little while, too, the boys will give up their playing.
+
+
+
+LESSON XLV.
+
+ap'ple    mew    tease    crack'er    down    new    sil'ly    a sleep'
+
+wants     calls  knew     friends     up on'  flew   Poll      Pol'ly
+
+
+[Illustration: Girl sitting at dinner table. Parrot is on a perch
+in the foreground.]
+
+
+Lucy has a new pet. Do you know what kind of bird it is? Lucy calls her
+Polly.
+
+Polly can say, "Poor Poll! Poor Poll! Polly wants a cracker;" and she can
+mew like a cat.
+
+But Polly and the cat are not good friends. One day Polly flew down, and
+lit upon the cat's back when she was asleep.
+
+I think she knew the cat would not like that, and she did it to tease her.
+
+When Lucy pets the cat, Polly flies up into the old apple tree, and will
+not come when she calls her. Then Lucy says, "What a silly bird!"
+
+
+
+LESSON XLVI. REVIEW.
+
+
+"Well, children, did you have a nice time in the woods?"
+
+"Oh yes, mother, such a good time! See what sweet flowers we found, and
+what soft moss. The best flowers are for grandma. Won't they please her?"
+
+"Yes; and it will please grandma to know that you thought of her."
+
+
+[Illustration: Dog sitting by picnic basket in woods. Two dolls are
+lying next to the basket.]
+
+
+"Rab was such a good dog, mother.
+
+We left him under the big tree by the brook, to take care of the dolls and
+the basket.
+
+"When we came back, they were all safe. No one could get them while Rab
+was there. We gave him some of the crackers from the basket.
+
+"O mother, how the birds did sing in the woods!
+
+"Fanny said she would like to be a bird, and have a nest in a tree. But I
+think she would want to come home to sleep."
+
+"If she were a bird, her nest would be her home. But what would mother do,
+I wonder, without her little Fanny?"
+
+
+
+LESSON XLVII.
+
+beach    shells    these    seat        waves     go'ing
+
+ev'er    sea       watch    e'ven ing   la'zy     side
+
+
+[Illustration: Horses pulling family in wagon.]
+
+
+These boys and girls live near the sea. They have been to the beach. It is
+now evening, and they are going home.
+
+John, who sits on the front seat, found some pretty shells. They are in
+the basket by his side.
+
+Ben White is driving. He holds the lines in one hand, and his whip in the
+other.
+
+Robert has his hat in his hand, and is looking at the horses. He thinks
+they are very lazy; they do not trot fast.
+
+The children are not far from home. In a little while the sun will set,
+and it will be bedtime.
+
+Have you ever been at the seaside? Is it not good sport to watch the big
+waves, and to play on the wet sand?
+
+
+
+LESSON XLVIII.
+
+log    qui'et    proud    pulled    fish    stump    riv'er    fa'ther
+
+
+[Illustration: Father and son fishing from under a tree.]
+
+
+One evening Frank's father said to him, "Frank, would you like to go with
+me to catch some fish?"
+
+"Yes; may I go? and with you, father?"
+
+"Yes, Frank, with me."
+
+"Oh, how glad I am!"
+
+Here they are, on the bank of a river. Frank has just pulled a fine fish
+out of the water. How proud he feels!
+
+See what a nice, quiet spot they have found. Frank has the stump of a big
+tree for his seat, and his father sits on a log near by. They like the
+sport.
+
+
+
+LESSON XLIX.
+
+rain     out'side    of'ten    pit'ter       say      win'dow
+
+sound    pat'ter     drops     some'times    on'ly    mu'sic
+
+
+SLATE WORK
+
+[Illustration: Script Exercise:
+
+I wish, Mamma you would
+tell me where the rain comes
+from. Does it come from the
+sky? And when the little
+drops pitter-patter on the window
+do you think they are
+playing with me? I can not
+work or read for I love to listen
+to them. I often think their
+sound is pretty music. But the
+rain keeps children at home
+and sometimes I do not like
+that, then.
+The little raindrops only say,
+"Pit, pitter, patter, pat;
+While we play on the out-side,
+Why can't you play on that?"
+]
+
+
+
+LESSON L.
+
+sled    throw    win'ter    hurt    ice      cov'er    Hen'ry       next
+
+skate   ground   mer'ry     snow    sister   laugh'ing (laf'ing)    pair
+
+
+[Illustration: Children skating and playing in the snow.]
+
+
+I like winter, when snow and ice cover the ground. What fun it is to throw
+snowballs, and to skate on the ice!
+
+See the boys and girls! How merry they are! Henry has his sled, and draws
+his little sister. There they go!
+
+I think Henry is kind, for his sister is too small to skate.
+
+Look! Did you see that boy fall down? But I see he is not hurt, for he is
+laughing.
+
+Some other boys have just come to join in the sport. See them put on their
+skates.
+
+Henry says, that he hopes his father will get a pair of skates for his
+sister next winter.
+
+
+
+LESSON LI.
+
+paw      po lite'    means     isn't    speak   sir    shake    Fi'do
+
+tricks   teach       din'ner   El'len   bow'wow
+
+
+[Illustration: Girl and boy playing with dog. Dog on hind legs,
+seated on chair, with hat on head.]
+
+
+Ellen, do look at Fido! He sits up in a chair, with my hat on. He looks
+like a little boy; but it is only Fido.
+
+Now see him shake hands. Give me your paw, Fido. How do you do, sir? Will
+you take dinner with us. Fido? Speak! Fido says, "Bowwow," which means,
+"Thank you, I will."
+
+Isn't Fido a good dog, Ellen? He is always so polite.
+
+When school is out, I will try to teach him some other tricks.
+
+
+
+LESSON LII.
+
+puss     shed     pain     way          stole    saw     hid    eat
+
+Hat'tie  suf'fer  sor'ry   some'thing   caught   tried   Ne'ro
+
+
+[Illustration: Cat sitting on box.]
+
+
+"O Hattie! I just saw a large rat in the shed; and old Nero tried to catch
+it."
+
+"Did he catch it, Frank?"
+
+"No; Nero did not; but the old cat did."
+
+"My cat?"
+
+"No, it was the other one."
+
+"Do tell me how she got it, Frank. Did she run after it?"
+
+"No, that was not the way. Puss was hid on a big box. The rat stole out,
+and she jumped at it and caught it."
+
+"Poor rat! It must have been very hungry; it came out to get something to
+eat."
+
+"Why, Hattie, you are not sorry puss got the rat, are you?"
+
+"No, I can not say I am sorry she got it; but I do not like to see even a
+rat suffer pain."
+
+
+
+LESSON LIII.
+
+roll       build    grand'pa    hard     foam       ships
+
+hous'es    long     sail        break    wood'en    blow
+
+
+[Illustration: Two girls play in sand. Man with cane and top hat is
+seated on beach.]
+
+
+Mary and Lucy have come down to the beach with their grandpa. They live in
+a town near the sea.
+
+Their grandpa likes to sit on the large rock, and watch the big ships as
+they sail far away on the blue sea. Sometimes he sits there all day long.
+
+The little girls like to dig in the sand, and pick up pretty shells. They
+watch the waves as they roll up on the beach, and break into white foam.
+
+They sometimes make little houses of sand, and build walls around them;
+and they dig wells with their small wooden spades.
+
+They have been picking up shells for their little sister. She is too young
+to come to the beach.
+
+I think all children like to play by the seaside when the sun is bright,
+and the wind does not blow too hard.
+
+
+
+LESSON LIV.
+
+asked    want'ed    four    Wil'lie's    night     rab'bits
+
+lad      car'ried   cents   tell'ing     fif'ty    mas'ter
+
+
+[Illustration: Two boys playing with rabbits.]
+
+
+One day, Willie's father saw a boy at the market with four little white
+rabbits in a basket.
+
+He thought these would be nice pets for Willie; so he asked the lad how
+much he wanted for his rabbits.
+
+The boy said, "Only fifty cents, sir."
+
+Willie's father bought them, and carried them home.
+
+Here you see the rabbits and their little master. He has a pen for them,
+and always shuts them in it at night to keep them safe.
+
+He gives them bread and grass to eat. They like grass, and will take it
+from his hand. He has called in a little friend to see them.
+
+Willie is telling him about their funny ways.
+
+SLATE WORK.
+
+[Illustration: Script Exercise:
+
+Some rabbits are as white as
+snow, some are black, and others
+have white and black spots.
+What soft, kind eyes they have.
+]
+
+
+
+LESSON LV.
+
+bush     cun'ning    place     show    find    bro'ken
+
+o'ver    bring       a'gain (a gen')   fas'ten (fas' n )
+
+
+[Illustration: Boy and girl looking over a fence in woods.]
+
+
+"Come here, Rose. Look down into this bush."
+
+"O Willie! a bird's nest! What cunning, little eggs! May we take it, and
+show it to mother? "
+
+"What would the old bird do, Rose, if she should come back and not find
+her nest?"
+
+"Oh, we would bring it right back, Willie!"
+
+"Yes; but we could not fasten it in its place again. If the wind should
+blow it over, the eggs would get broken."
+
+
+
+LESSON LVI.
+
+strong    round    dry    bill    worked
+
+sends     claws    flit   God     spring
+
+
+"How does the bird make the nest so strong, Willie?"
+
+"The mother bird has her bill and her claws to work with, but she would
+not know how to make the nest if God did not teach her. Do you see what it
+is made of?"
+
+"Yes, Willie, I see some horse-hairs and some dry grass. The old bird must
+have worked hard to find all the hairs, and make them into such a pretty,
+round nest."
+
+"Shall we take the nest, Rose?"
+
+"Oh no, Willie! We must not take it; but we will come and look at it
+again, some time."
+
+
+SLATE WORK.
+
+[Illustration: Script Exercise:
+
+God made the little birds to sing,
+   And flit from tree to tree;
+'Tis He who sends them in the spring
+   To sing for you and me.
+]
+
+
+
+LESSON LVII.
+
+feathers    a go'    fly    worm    crumb    feed'ing
+
+ug'ly        off     feed   brown   guess    things
+
+
+[Illustration: Boy and girl examining bird's nest.]
+
+
+"Willie, when I was feeding the birds just now, a little brown bird flew
+away with a crumb in its bill."
+
+"Where did it go, Rose?"
+
+"I don't know; away off, somewhere."
+
+"I can guess where, Rose. Don't you know the nest we saw some days ago?
+What do you think is in it now?"
+
+"O Willie, I know! Some little brown birds. Let us go and see them."
+
+"All right; but we must not go too near. There! I just saw the old bird
+fly out of the bush. Stand here, Rose. Can you see?"
+
+"Why, Willie, what ugly little things! What big mouths they have, and no
+feathers!"
+
+"Keep still, Rose. Here comes the old bird with a worm in her bill. How
+hard she must work to feed them all!"
+
+
+
+LESSON LVIII.
+
+fallin'g    counts    woes       nigh    be gun'   griefs
+
+stars       tear      morn'ing   Lord    each      joys
+
+
+[Illustration: Script Exercise:
+
+When the stars at set of sun
+  Watch you from on high
+When the morning has begun
+  Think the Lord is nigh.
+
+All you do and all you say,
+  He can see and hear:
+When you work and when you play,
+  Think the Lord is near.
+
+All your joys and griefs He knows
+  Counts each falling tear.
+When to Him you tell your woes,
+  Know the Lord is near.
+]
+
+
+
+LESSON LIX.
+
+whis'tle (whis'l)    poc'ket   wil'low   note    filled     dead    sick
+
+walk    ev'ery       blew      lane      lame    tak'ing    cane    took
+
+
+[Illustration: Girl holding doll and boy with cane standing in woods.]
+
+
+One day, when Mary was taking a walk down the lane, trying to sing her
+doll to sleep, she met Frank, with his basket and cane.
+
+Frank was a poor, little, lame boy. His father and mother were dead. His
+dear, old grandma took care of him, and tried to make him happy.
+
+Every day, Mary's mother filled Frank's basket with bread and meat, and a
+little tea for his grandma.
+
+"How do you do, Frank?" said Mary. "Don't make a noise; my doll is going
+to sleep. It is just a little sick to-day."
+
+"Well, then, let us whistle it to sleep." And Frank, taking a willow
+whistle out of his pocket, blew a long note.
+
+"Oh, how sweet!" cried Mary. "Do let me try."
+
+
+
+LESSON LX.
+
+turned    face    cried    low    al'most    soon    more    cry
+
+once(wuns)        be cause'
+
+
+[Illustration: Boy and Girl sitting on log.]
+
+
+"Yes, Mary, I will give it to you, because you are so good to my grandma."
+
+"Oh! thank you very much." Mary blew and blew a long time. "I can't make
+it whistle," said she, almost ready to cry.
+
+"Sometimes they will whistle, and sometimes they won't," said Frank. "Try
+again, Mary."
+
+She tried once more, and the whistle made a low, sweet sound. "It
+whistles!" she cried.
+
+In her joy, she had turned the doll's face down, and its eyes shut tight,
+as if it had gone to sleep.
+
+"There!" cried Frank, "I told you the way to put a doll to sleep, is to
+whistle to it."
+
+"So it is," said Mary. "Dear, little thing; it must be put in its bed
+now."
+
+So they went into the house. Frank's basket was soon filled, and he went
+home happy.
+
+
+
+LESSON LXI.
+
+stood     him self'    flap'ping    first      twelve
+
+flapped   walked       flap         o bey'     bet'ter
+
+Chip'py   food         stone        be fore'   chick'ens    kept
+
+
+[Illustration: Hen and chicks.]
+
+
+There was once a big, white hen that had twelve little chickens. They were
+very small, and the old hen took good care of them. She found food for
+them in the daytime, and at night kept them under her wings.
+
+One day, this old hen took her chickens down to a small brook. She thought
+the air from the water would do them good.
+
+When they got to the brook, they walked on the bank a little while. It was
+very pretty on the other side of the brook, and the old hen thought she
+would take her children over there.
+
+There was a large stone in the brook: she thought it would be easy for
+them to jump to that stone, and from it to the other side.
+
+So she jumped to the stone, and told the children to come after her. For
+the first time, she found that they would not obey her.
+
+She flapped her wings, and cried, "Come here, all of you! Jump upon this
+stone, as I did. We can then jump to the other side. Come now!"
+
+"O mother! we can't, we can't, we can't!" said all the little chickens.
+
+"Yes you can, if you try," said the old hen. "Just flap your wings, as I
+did, and you can jump over."
+
+"I am flapping my wings," said Chippy, who stood by himself; "but I can't
+jump any better than I could before."
+
+
+
+LESSON LXII.
+
+chirped    nev'er     in deed'    slow'ly    re'ally    brood
+
+be gan'    did n't    use         door       bite       piece
+
+
+[Illustration: Hen with chicks.]
+
+
+"I never saw such children," said the old hen. "You don't try at all."
+
+"We can't jump so far, mother. Indeed we can't, we can't!" chirped the
+little chickens.
+
+"Well," said the old hen, "I must give it up." So she jumped back to the
+bank, and walked slowly home with her brood.
+
+"I think mother asked too much of us," said one little chicken to the
+others.
+
+"Well, I tried," said Chippy.
+
+"We didn't," said the others; "it was of no use to try."
+
+When they got home, the old hen began to look about for something to eat.
+She soon found, near the back door, a piece of bread.
+
+So she called the chickens, and they all ran up to her, each one trying to
+get a bite at the piece of bread.
+
+"No, no!" said the old hen. "This bread is for Chippy. He is the only one
+of my children that really tried to jump to the stone."
+
+
+
+LESSON LXIII.
+
+last    slates    write     waste     neat     taken
+
+clean   learn     read'er   par'ents  sec'ond
+
+
+[Illustration: Teacher with four students in classroom.]
+
+
+We have come to the last lesson in this book. We have finished the First
+Reader.
+
+You can now read all the lessons in it, and can write them on your slates.
+
+Have you taken good care of your book? Children should always keep their
+books neat and clean.
+
+Are you not glad to be ready for a new book?
+
+Your parents are very kind to send you to school. If you are good, and if
+you try to learn, your teacher will love you, and you will please your
+parents.
+
+Be kind to all, and do not waste your time in school. When you go home,
+you may ask your parents to get you a Second Reader.
+
+
+
+PHONIC CHART.
+
+Long Vocals
+
+Sound   as in      Sound   as in
+  a     ate          e      err
+  a     care         i      ice
+  a     arm          o      ode
+  a     last         u      use
+  a     all          u      burn
+  e     eve          oo     fool
+
+Short Vocals
+
+  a     am           o      odd
+  e     end          u      up
+  i     in           oo     look
+
+Diphthongs
+
+  oi    oil          ou     out
+  oy    boy          ow     now
+
+Aspirates
+
+  f     fifi         t      tat
+  h     him          sh     she
+  k     kite         ch     chat
+  p     pipe         th     thick
+  s     same         wh     why
+
+
+Subvocals
+
+Sound   as in      Sound   as in
+  b      bib         v     valve
+  d      did         th    this
+  g      gig         z     zin
+  j      jug         z     azure
+  n      nine        r     rare
+  m      maim        w     we
+  ng     hang        y     yet
+  l      lull
+
+
+Substitutes
+
+Sub   for   as in      Sub   for   as in
+ a     o    what        y     i    myth
+ e     a    there       c     k    can
+ e     a    feint       c     a    cite
+ i     e    police      ch    sh   chaise
+ i     e    sir         ch    k    chaos
+ o     u    son         g     j    gem
+ o     oo   to          n     ng   ink
+ o     oo   wolf        s     z    as
+ o     a    fork        s     sh   sure
+ o     u    work        x     gz   exact
+ u     oo   full        gh    f    laugh
+ u     oo   rude        ph    f    phlox
+ y     i    fly         qu    k    pique
+ qu    kw   quit
+
+
+
+
+
+End of the Project Gutenberg EBook of McGuffey's First Eclectic Reader,
+Revised Edition, by William Holmes McGuffey
+
+*** END OF THIS PROJECT GUTENBERG EBOOK MCGUFFEY'S FIRST READER ***
+
+***** This file should be named 14640.txt or 14640.zip *****
+This and all associated files of various formats will be found in:
+        http://www.gutenberg.org/1/4/6/4/14640/
+
+Produced by Don Kostuch
+
+Updated editions will replace the previous one--the old editions
+will be renamed.
+
+Creating the works from public domain print editions means that no
+one owns a United States copyright in these works, so the Foundation
+(and you!) can copy and distribute it in the United States without
+permission and without paying copyright royalties.  Special rules,
+set forth in the General Terms of Use part of this license, apply to
+copying and distributing Project Gutenberg-tm electronic works to
+protect the PROJECT GUTENBERG-tm concept and trademark.  Project
+Gutenberg is a registered trademark, and may not be used if you
+charge for the eBooks, unless you receive specific permission.  If you
+do not charge anything for copies of this eBook, complying with the
+rules is very easy.  You may use this eBook for nearly any purpose
+such as creation of derivative works, reports, performances and
+research.  They may be modified and printed and given away--you may do
+practically ANYTHING with public domain eBooks.  Redistribution is
+subject to the trademark license, especially commercial
+redistribution.
+
+
+
+*** START: FULL LICENSE ***
+
+THE FULL PROJECT GUTENBERG LICENSE
+PLEASE READ THIS BEFORE YOU DISTRIBUTE OR USE THIS WORK
+
+To protect the Project Gutenberg-tm mission of promoting the free
+distribution of electronic works, by using or distributing this work
+(or any other work associated in any way with the phrase "Project
+Gutenberg"), you agree to comply with all the terms of the Full Project
+Gutenberg-tm License (available with this file or online at
+http://gutenberg.net/license).
+
+
+Section 1.  General Terms of Use and Redistributing Project Gutenberg-tm
+electronic works
+
+1.A.  By reading or using any part of this Project Gutenberg-tm
+electronic work, you indicate that you have read, understand, agree to
+and accept all the terms of this license and intellectual property
+(trademark/copyright) agreement.  If you do not agree to abide by all
+the terms of this agreement, you must cease using and return or destroy
+all copies of Project Gutenberg-tm electronic works in your possession.
+If you paid a fee for obtaining a copy of or access to a Project
+Gutenberg-tm electronic work and you do not agree to be bound by the
+terms of this agreement, you may obtain a refund from the person or
+entity to whom you paid the fee as set forth in paragraph 1.E.8.
+
+1.B.  "Project Gutenberg" is a registered trademark.  It may only be
+used on or associated in any way with an electronic work by people who
+agree to be bound by the terms of this agreement.  There are a few
+things that you can do with most Project Gutenberg-tm electronic works
+even without complying with the full terms of this agreement.  See
+paragraph 1.C below.  There are a lot of things you can do with Project
+Gutenberg-tm electronic works if you follow the terms of this agreement
+and help preserve free future access to Project Gutenberg-tm electronic
+works.  See paragraph 1.E below.
+
+1.C.  The Project Gutenberg Literary Archive Foundation ("the Foundation"
+or PGLAF), owns a compilation copyright in the collection of Project
+Gutenberg-tm electronic works.  Nearly all the individual works in the
+collection are in the public domain in the United States.  If an
+individual work is in the public domain in the United States and you are
+located in the United States, we do not claim a right to prevent you from
+copying, distributing, performing, displaying or creating derivative
+works based on the work as long as all references to Project Gutenberg
+are removed.  Of course, we hope that you will support the Project
+Gutenberg-tm mission of promoting free access to electronic works by
+freely sharing Project Gutenberg-tm works in compliance with the terms of
+this agreement for keeping the Project Gutenberg-tm name associated with
+the work.  You can easily comply with the terms of this agreement by
+keeping this work in the same format with its attached full Project
+Gutenberg-tm License when you share it without charge with others.
+
+1.D.  The copyright laws of the place where you are located also govern
+what you can do with this work.  Copyright laws in most countries are in
+a constant state of change.  If you are outside the United States, check
+the laws of your country in addition to the terms of this agreement
+before downloading, copying, displaying, performing, distributing or
+creating derivative works based on this work or any other Project
+Gutenberg-tm work.  The Foundation makes no representations concerning
+the copyright status of any work in any country outside the United
+States.
+
+1.E.  Unless you have removed all references to Project Gutenberg:
+
+1.E.1.  The following sentence, with active links to, or other immediate
+access to, the full Project Gutenberg-tm License must appear prominently
+whenever any copy of a Project Gutenberg-tm work (any work on which the
+phrase "Project Gutenberg" appears, or with which the phrase "Project
+Gutenberg" is associated) is accessed, displayed, performed, viewed,
+copied or distributed:
+
+This eBook is for the use of anyone anywhere at no cost and with
+almost no restrictions whatsoever.  You may copy it, give it away or
+re-use it under the terms of the Project Gutenberg License included
+with this eBook or online at www.gutenberg.net
+
+1.E.2.  If an individual Project Gutenberg-tm electronic work is derived
+from the public domain (does not contain a notice indicating that it is
+posted with permission of the copyright holder), the work can be copied
+and distributed to anyone in the United States without paying any fees
+or charges.  If you are redistributing or providing access to a work
+with the phrase "Project Gutenberg" associated with or appearing on the
+work, you must comply either with the requirements of paragraphs 1.E.1
+through 1.E.7 or obtain permission for the use of the work and the
+Project Gutenberg-tm trademark as set forth in paragraphs 1.E.8 or
+1.E.9.
+
+1.E.3.  If an individual Project Gutenberg-tm electronic work is posted
+with the permission of the copyright holder, your use and distribution
+must comply with both paragraphs 1.E.1 through 1.E.7 and any additional
+terms imposed by the copyright holder.  Additional terms will be linked
+to the Project Gutenberg-tm License for all works posted with the
+permission of the copyright holder found at the beginning of this work.
+
+1.E.4.  Do not unlink or detach or remove the full Project Gutenberg-tm
+License terms from this work, or any files containing a part of this
+work or any other work associated with Project Gutenberg-tm.
+
+1.E.5.  Do not copy, display, perform, distribute or redistribute this
+electronic work, or any part of this electronic work, without
+prominently displaying the sentence set forth in paragraph 1.E.1 with
+active links or immediate access to the full terms of the Project
+Gutenberg-tm License.
+
+1.E.6.  You may convert to and distribute this work in any binary,
+compressed, marked up, nonproprietary or proprietary form, including any
+word processing or hypertext form.  However, if you provide access to or
+distribute copies of a Project Gutenberg-tm work in a format other than
+"Plain Vanilla ASCII" or other format used in the official version
+posted on the official Project Gutenberg-tm web site (www.gutenberg.net),
+you must, at no additional cost, fee or expense to the user, provide a
+copy, a means of exporting a copy, or a means of obtaining a copy upon
+request, of the work in its original "Plain Vanilla ASCII" or other
+form.  Any alternate format must include the full Project Gutenberg-tm
+License as specified in paragraph 1.E.1.
+
+1.E.7.  Do not charge a fee for access to, viewing, displaying,
+performing, copying or distributing any Project Gutenberg-tm works
+unless you comply with paragraph 1.E.8 or 1.E.9.
+
+1.E.8.  You may charge a reasonable fee for copies of or providing
+access to or distributing Project Gutenberg-tm electronic works provided
+that
+
+- You pay a royalty fee of 20% of the gross profits you derive from
+     the use of Project Gutenberg-tm works calculated using the method
+     you already use to calculate your applicable taxes.  The fee is
+     owed to the owner of the Project Gutenberg-tm trademark, but he
+     has agreed to donate royalties under this paragraph to the
+     Project Gutenberg Literary Archive Foundation.  Royalty payments
+     must be paid within 60 days following each date on which you
+     prepare (or are legally required to prepare) your periodic tax
+     returns.  Royalty payments should be clearly marked as such and
+     sent to the Project Gutenberg Literary Archive Foundation at the
+     address specified in Section 4, "Information about donations to
+     the Project Gutenberg Literary Archive Foundation."
+
+- You provide a full refund of any money paid by a user who notifies
+     you in writing (or by e-mail) within 30 days of receipt that s/he
+     does not agree to the terms of the full Project Gutenberg-tm
+     License.  You must require such a user to return or
+     destroy all copies of the works possessed in a physical medium
+     and discontinue all use of and all access to other copies of
+     Project Gutenberg-tm works.
+
+- You provide, in accordance with paragraph 1.F.3, a full refund of any
+     money paid for a work or a replacement copy, if a defect in the
+     electronic work is discovered and reported to you within 90 days
+     of receipt of the work.
+
+- You comply with all other terms of this agreement for free
+     distribution of Project Gutenberg-tm works.
+
+1.E.9.  If you wish to charge a fee or distribute a Project Gutenberg-tm
+electronic work or group of works on different terms than are set
+forth in this agreement, you must obtain permission in writing from
+both the Project Gutenberg Literary Archive Foundation and Michael
+Hart, the owner of the Project Gutenberg-tm trademark.  Contact the
+Foundation as set forth in Section 3 below.
+
+1.F.
+
+1.F.1.  Project Gutenberg volunteers and employees expend considerable
+effort to identify, do copyright research on, transcribe and proofread
+public domain works in creating the Project Gutenberg-tm
+collection.  Despite these efforts, Project Gutenberg-tm electronic
+works, and the medium on which they may be stored, may contain
+"Defects," such as, but not limited to, incomplete, inaccurate or
+corrupt data, transcription errors, a copyright or other intellectual
+property infringement, a defective or damaged disk or other medium, a
+computer virus, or computer codes that damage or cannot be read by
+your equipment.
+
+1.F.2.  LIMITED WARRANTY, DISCLAIMER OF DAMAGES - Except for the "Right
+of Replacement or Refund" described in paragraph 1.F.3, the Project
+Gutenberg Literary Archive Foundation, the owner of the Project
+Gutenberg-tm trademark, and any other party distributing a Project
+Gutenberg-tm electronic work under this agreement, disclaim all
+liability to you for damages, costs and expenses, including legal
+fees.  YOU AGREE THAT YOU HAVE NO REMEDIES FOR NEGLIGENCE, STRICT
+LIABILITY, BREACH OF WARRANTY OR BREACH OF CONTRACT EXCEPT THOSE
+PROVIDED IN PARAGRAPH F3.  YOU AGREE THAT THE FOUNDATION, THE
+TRADEMARK OWNER, AND ANY DISTRIBUTOR UNDER THIS AGREEMENT WILL NOT BE
+LIABLE TO YOU FOR ACTUAL, DIRECT, INDIRECT, CONSEQUENTIAL, PUNITIVE OR
+INCIDENTAL DAMAGES EVEN IF YOU GIVE NOTICE OF THE POSSIBILITY OF SUCH
+DAMAGE.
+
+1.F.3.  LIMITED RIGHT OF REPLACEMENT OR REFUND - If you discover a
+defect in this electronic work within 90 days of receiving it, you can
+receive a refund of the money (if any) you paid for it by sending a
+written explanation to the person you received the work from.  If you
+received the work on a physical medium, you must return the medium with
+your written explanation.  The person or entity that provided you with
+the defective work may elect to provide a replacement copy in lieu of a
+refund.  If you received the work electronically, the person or entity
+providing it to you may choose to give you a second opportunity to
+receive the work electronically in lieu of a refund.  If the second copy
+is also defective, you may demand a refund in writing without further
+opportunities to fix the problem.
+
+1.F.4.  Except for the limited right of replacement or refund set forth
+in paragraph 1.F.3, this work is provided to you 'AS-IS' WITH NO OTHER
+WARRANTIES OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO
+WARRANTIES OF MERCHANTIBILITY OR FITNESS FOR ANY PURPOSE.
+
+1.F.5.  Some states do not allow disclaimers of certain implied
+warranties or the exclusion or limitation of certain types of damages.
+If any disclaimer or limitation set forth in this agreement violates the
+law of the state applicable to this agreement, the agreement shall be
+interpreted to make the maximum disclaimer or limitation permitted by
+the applicable state law.  The invalidity or unenforceability of any
+provision of this agreement shall not void the remaining provisions.
+
+1.F.6.  INDEMNITY - You agree to indemnify and hold the Foundation, the
+trademark owner, any agent or employee of the Foundation, anyone
+providing copies of Project Gutenberg-tm electronic works in accordance
+with this agreement, and any volunteers associated with the production,
+promotion and distribution of Project Gutenberg-tm electronic works,
+harmless from all liability, costs and expenses, including legal fees,
+that arise directly or indirectly from any of the following which you do
+or cause to occur: (a) distribution of this or any Project Gutenberg-tm
+work, (b) alteration, modification, or additions or deletions to any
+Project Gutenberg-tm work, and (c) any Defect you cause.
+
+
+Section  2.  Information about the Mission of Project Gutenberg-tm
+
+Project Gutenberg-tm is synonymous with the free distribution of
+electronic works in formats readable by the widest variety of computers
+including obsolete, old, middle-aged and new computers.  It exists
+because of the efforts of hundreds of volunteers and donations from
+people in all walks of life.
+
+Volunteers and financial support to provide volunteers with the
+assistance they need, is critical to reaching Project Gutenberg-tm's
+goals and ensuring that the Project Gutenberg-tm collection will
+remain freely available for generations to come.  In 2001, the Project
+Gutenberg Literary Archive Foundation was created to provide a secure
+and permanent future for Project Gutenberg-tm and future generations.
+To learn more about the Project Gutenberg Literary Archive Foundation
+and how your efforts and donations can help, see Sections 3 and 4
+and the Foundation web page at http://www.pglaf.org.
+
+
+Section 3.  Information about the Project Gutenberg Literary Archive
+Foundation
+
+The Project Gutenberg Literary Archive Foundation is a non profit
+501(c)(3) educational corporation organized under the laws of the
+state of Mississippi and granted tax exempt status by the Internal
+Revenue Service.  The Foundation's EIN or federal tax identification
+number is 64-6221541.  Its 501(c)(3) letter is posted at
+http://pglaf.org/fundraising.  Contributions to the Project Gutenberg
+Literary Archive Foundation are tax deductible to the full extent
+permitted by U.S. federal laws and your state's laws.
+
+The Foundation's principal office is located at 4557 Melan Dr. S.
+Fairbanks, AK, 99712., but its volunteers and employees are scattered
+throughout numerous locations.  Its business office is located at
+809 North 1500 West, Salt Lake City, UT 84116, (801) 596-1887, email
+business@pglaf.org.  Email contact links and up to date contact
+information can be found at the Foundation's web site and official
+page at http://pglaf.org
+
+For additional contact information:
+     Dr. Gregory B. Newby
+     Chief Executive and Director
+     gbnewby@pglaf.org
+
+
+Section 4.  Information about Donations to the Project Gutenberg
+Literary Archive Foundation
+
+Project Gutenberg-tm depends upon and cannot survive without wide
+spread public support and donations to carry out its mission of
+increasing the number of public domain and licensed works that can be
+freely distributed in machine readable form accessible by the widest
+array of equipment including outdated equipment.  Many small donations
+($1 to $5,000) are particularly important to maintaining tax exempt
+status with the IRS.
+
+The Foundation is committed to complying with the laws regulating
+charities and charitable donations in all 50 states of the United
+States.  Compliance requirements are not uniform and it takes a
+considerable effort, much paperwork and many fees to meet and keep up
+with these requirements.  We do not solicit donations in locations
+where we have not received written confirmation of compliance.  To
+SEND DONATIONS or determine the status of compliance for any
+particular state visit http://pglaf.org
+
+While we cannot and do not solicit contributions from states where we
+have not met the solicitation requirements, we know of no prohibition
+against accepting unsolicited donations from donors in such states who
+approach us with offers to donate.
+
+International donations are gratefully accepted, but we cannot make
+any statements concerning tax treatment of donations received from
+outside the United States.  U.S. laws alone swamp our small staff.
+
+Please check the Project Gutenberg Web pages for current donation
+methods and addresses.  Donations are accepted in a number of other
+ways including including checks, online payments and credit card
+donations.  To donate, please visit: http://pglaf.org/donate
+
+
+Section 5.  General Information About Project Gutenberg-tm electronic
+works.
+
+Professor Michael S. Hart is the originator of the Project Gutenberg-tm
+concept of a library of electronic works that could be freely shared
+with anyone.  For thirty years, he produced and distributed Project
+Gutenberg-tm eBooks with only a loose network of volunteer support.
+
+
+Project Gutenberg-tm eBooks are often created from several printed
+editions, all of which are confirmed as Public Domain in the U.S.
+unless a copyright notice is included.  Thus, we do not necessarily
+keep eBooks in compliance with any particular paper edition.
+
+
+Most people start at our Web site which has the main PG search facility:
+
+     http://www.gutenberg.net
+
+This Web site includes information about Project Gutenberg-tm,
+including how to make donations to the Project Gutenberg Literary
+Archive Foundation, how to help produce our new eBooks, and how to
+subscribe to our email newsletter to hear about new eBooks.

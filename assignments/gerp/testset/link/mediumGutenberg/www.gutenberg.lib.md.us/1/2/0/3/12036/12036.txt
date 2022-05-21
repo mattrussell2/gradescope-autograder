@@ -1,0 +1,1402 @@
+Project Gutenberg's Hygeia, a City of Health, by Benjamin Ward Richardson
+
+This eBook is for the use of anyone anywhere at no cost and with
+almost no restrictions whatsoever.  You may copy it, give it away or
+re-use it under the terms of the Project Gutenberg License included
+with this eBook or online at www.gutenberg.net
+
+
+Title: Hygeia, a City of Health
+
+Author: Benjamin Ward Richardson
+
+Release Date: April 15, 2004 [EBook #12036]
+
+Language: English
+
+Character set encoding: ASCII
+
+*** START OF THIS PROJECT GUTENBERG EBOOK HYGEIA, A CITY OF HEALTH ***
+
+
+
+
+Produced by Paul Murray, Sam and the Online Distributed Proofreading
+Team.
+
+
+
+
+
+This file was produced from images generously made available by the
+Bibliotheque nationale de France (BnF/Gallica) at http://gallica.bnf.fr
+
+HYGEIA
+A CITY OF HEALTH
+
+BY
+
+BENJAMIN WARD RICHARDSON M.D., F.R.S.
+
+1876
+
+[Illustration]
+
+
+
+
+TO
+EDWIN CHADWICK, C.B.
+
+
+MY DEAR MR. CHADWICK,
+
+_I wrote this Address with the intention of dedicating it to you, as
+a simple but hearty acknowledgment by a sanitary student, himself well
+ripened in the work, of your pre-eminent position as the living leader
+of the sanitary reformation of this century.
+
+The favour the Address has received indicates notably two facts: the
+advance of public opinion on the subject of public health, and the
+remarkable value and influence of your services as the sanitary
+statesman by whom that opinion has been so wisely formed and directed.
+
+In this sense of my respect for you, and of my gratitude, pray accept
+this trifling recognition, and believe me to be,
+
+Ever faithfully yours_,
+
+B.W. RICHARDSON.
+
+
+
+
+PREFATORY NOTE.
+
+The immediate success of this Address caused me to lay it aside for
+some months, to see if the favour with which it was received would
+remain. I am satisfied to find that the good fortune which originally
+attended the effort holds on, and that in publishing it now in a
+separate form I am acting in obedience to a generally expressed
+desire.
+
+Since the delivery of the Address before the Health Department of the
+Social Science Congress, over which I had the honour to preside, at
+Brighton, in October last, every day has brought some new suggestion
+bearing on the subjects discussed, and the temptation has been great
+to add new matter, or even to recast the essay and bring it out as a
+more compendious work. On reflection I prefer to let it take its
+place in literature, in the first instance, in its original and simple
+dress.
+
+12 HINDE STREET, W.:
+_August_ 18, 1876.
+
+
+
+
+HYGEIA, A CITY OF HEALTH
+
+
+We meet in this Assembly, a voluntary Parliament of men and women,
+to study together and to exchange knowledge and thought on works
+of every-day life and usefulness. Our object, to make the present
+existence better and happier; to inquire, in this particular section
+of our Congress:--What are the conditions which lead to the pain and
+penalty of disease; what the means for the removal of those conditions
+when they are discovered? What are the most ready and convincing
+methods of making known to the uninformed the facts: that many of the
+conditions are under our control; that neither mental serenity nor
+mental development can exist with an unhealthy animal organisation;
+that poverty is the shadow of disease, and wealth the shadow of
+health?
+
+These objects relate to ourselves, to our own reliefs from suffering,
+to our own happiness, to our own riches. We have, I trust and believe,
+yet another object, one that relates not to ourselves, but to those
+who have yet to be; those to whom we may become known, but whom we can
+never know, who are the ourselves, unseen to ourselves, continuing our
+mission.
+
+We are privileged more than any who have as yet lived on this planet
+in being able to foresee, and in some measure estimate, the results of
+our wealth of labour as it may be possibly extended over and through
+the unborn. A few scholars of the past, like him who, writing to the
+close of his mortal day, sang himself to his immortal rest with the
+'_Gloria in excelsis_,' a few scholars might foresee, even as that
+Baeda did, that their living actual work was but the beginning of
+their triumphant course through the ages,--the momentum. But the
+masses of the nations, crude and selfish, have had no such prescience,
+no such intent. 'Let us eat and drink, for to-morrow we die!' That has
+been the pass, if not the password, with them and theirs.
+
+We, scholars of modern thought, have the broader, and therefore more
+solemn and obligatory knowledge, that however many to-morrows may
+come, and whatever fate they may bring, we never die; that, strictly
+speaking, no one yet who has lived has ever died; that for good or
+for evil our every change from potentiality into motion is carried on
+beyond our own apparent transitoriness; that we are the waves of the
+ocean of life, communicating motion to the expanse before us, and
+leaving the history we have made on the shore behind.
+
+Thus we are led to feel this greater object: that to whatever extent
+we, by our exertions, confer benefits on those who live, we extend the
+advantage to those who have to live; that one good thought leading to
+practical useful action from one man or woman, may go to the virtue
+of thousands of generations; that one breath of health wafted by our
+breath may, in the aggregate of life saved by it, represent in its
+ultimate effect all the life that now is or has been.
+
+At the close of a Parliamentary session, an uneventful leader of a
+section of Parliament banters his more eventful rival, and enlivening
+his criticism by a sneer at our Congress, challenges the contempt
+of his rival, as if to draw it forth in the same critical direction.
+Alas! it is too true that great congresses, like great men, and even
+like Parliaments, do live sometimes for many years and talk much, and
+seem to miss much and advance little; so that in what relates to the
+mere present it were wrong, possibly, to challenge the sally of
+the statesman who, from his own helpless height, looked down on our
+weakness. But inasmuch as no man knoweth the end of the spoken word,
+as that which is spoken to-day, earnestly and simply, may not reappear
+for years, and may then appear with force and quality of hidden
+virtue, there is reason for our uniting together beyond the proof of
+necessity which is given in the fact of our existence. Perchance some
+day our natural learning, gathered in our varied walks of life, and
+submitted in open council, may survive even Parliamentary strife;
+perchance our resolutions, though no sign-manual immediately grace
+them, are the informal bills which ministers and oppositions shall
+one day discuss, Parliaments pass, royal hands sign, and the fixed
+administrators of the will of the nation duly administer.
+
+These thoughts on the future, rather than on the passing influence
+of our congressional work, have led me to the simple design of the
+address which, as President of this Section, I venture to submit to
+you to-day. It is my object to put forward a theoretical outline of
+a community so circumstanced and so maintained by the exercise of
+its own freewill, guided by scientific knowledge, that in it the
+perfection of sanitary results will be approached, if not actually
+realised, in the co-existence of the lowest possible general mortality
+with the highest possible individual longevity. I shall try to show
+a working community in which death,--if I may apply so common and
+expressive a phrase on so solemn a subject,--is kept as nearly as
+possible in its proper or natural place in the scheme of life.
+
+
+
+HEALTH AND CIVILISATION.
+
+
+Before I proceed to this task, it is right I should ask of the past
+what hope there is of any such advancement of human progress. For, as
+my Lord of Verulam quaintly teaches, 'the past ever deserves that men
+should stand upon it for awhile to see which way they should go, but
+when they have made up their minds they should hesitate no longer, but
+proceed with cheerfulness,' For a moment, then, we will stand on the
+past.
+
+From this vantage-ground we gather the fact, that onward with the
+simple progress of true civilisation the value of life has increased.
+Ere yet the words 'Sanitary Science' had been written; ere yet
+the heralds of that science (some of whom, in the persons of our
+illustrious colleagues, Edwin Chadwick and William Fair, are with us
+in this place at this moment), ere yet these heralds had summoned the
+world to answer for its profligacy of life, the health and strength of
+mankind was undergoing improvement. One or two striking facts must
+be sufficient in the brief space at my disposal to demonstrate this
+truth. In England, from 1790 to 1810, Heberden calculated that the
+general mortality diminished one-fourth. In France, during the same
+period, the same favourable returns were made. The deaths in France,
+Berard calculated, were 1 in 30 in the year 1780, and during the eight
+years, from 1817 to 1828, 1 in 40, or a fourth less. In 1780, out of
+100 new-born infants, in France, 50 died in the two first years; in
+the later period, extending from the time of the census that was taken
+in 1817 to 1827, only 38 of the same age died, an augmentation of
+infant life equal to 25 per cent. In 1780 as many as 55 per cent. died
+before reaching the age of ten years; in the later period 43, or about
+a fifth less. In 1780 only 21 persons per cent. attained the age of 50
+years; in the later period 32, or eleven more, reached that term. In
+1780 but 15 persons per cent, arrived at 60 years; in the later period
+24 arrived at that age.
+
+Side by side with these facts of the statist we detect other facts
+which show that in the progress of civilisation the actual organic
+strength and build of the man and woman increases. As in the highest
+developments of the fine arts the sculptor and painter place before
+us the finest imaginative types of strength, grace, and beauty, so
+the silent artist, civilisation, approaches nearer and nearer to
+perfection, and by evolution of form and mind developes what is
+practically a new order of physical and mental build. Peron,--who
+first used, if he did not invent, the little instrument, the
+dynamometer, or muscular-strength measurer,--subjected persons
+of different stages of civilisation to the test of his gauge, and
+discovered that the strength of the limbs of the natives of Van
+Diemen's Land and New Holland was as 50 degrees of power, while that
+of the Frenchmen was 69, and of the Englishmen 71. The same order
+of facts are maintained in respect to the size of body. The stalwart
+Englishman of to-day can neither get into the armour nor be placed in
+the sarcophagus of those sons of men who were accounted the heroes of
+the infantile life of the human world.
+
+We discover, moreover, from our view of the past, that the
+developments of tenacity of life and of vital power have been
+comparatively rapid in their course when they have once commenced.
+There is nothing discoverable to us that would lead to the conception
+of a human civilisation extending back over two hundred generations;
+and when in these generations we survey the actual effect of
+civilisation, so fragmentary and overshadowed by persistent
+barbarism, in influencing disease and mortality, we are reduced to the
+observation of at most twelve generations, including our own, engaged,
+indirectly or directly, in the work of sanitary progress. During
+this comparatively brief period, the labour of which, until within a
+century, has had no systematic direction, the changes for good that
+have been effected are amongst the most startling of historical facts.
+Pestilences which decimated populations, and which, like the great
+plague of London, destroyed 7,165 people in a single week, have lost
+their virulency; gaol fever has disappeared, and our gaols, once each
+a plague-spot, have become, by a strange perversion of civilisation,
+the health spots of, at least, one kingdom. The term, Black Death, is
+heard no more; and ague, from which the London physician once made a
+fortune, is now a rare tax even on the skill of the hardworked Union
+Medical Officer.
+
+From the study of the past we are warranted, then, in assuming that
+civilisation, unaided by special scientific knowledge, reduces disease
+and lessens mortality, and that the hope of doing still more by
+systematic scientific art is fully justified.
+
+I might hereupon proceed to my project straightway. I perceive,
+however, that it may be urged, that as mere civilising influences can
+of themselves effect so much, they might safely be left to themselves
+to complete, through the necessity of their demands, the whole
+sanitary code. If this were so, a formula for a city of health were
+practically useless. The city would come without the special call for
+it.
+
+I think it probable the city would come in the manner described, but
+how long it would be coming is hard to say, for whatever great results
+have followed civilisation, the most that has occurred has been an
+unexpected, unexplained, and therefore uncertain arrest of the spread
+of the grand physical scourges of mankind. The phenomena have been
+suppressed, but the root of not one of them has been touched. Still
+in our midst are thousands of enfeebled human organisms which only are
+comparable with the savage. Still are left amongst us the bases of all
+the diseases that, up to the present hour, have afflicted humanity.
+
+The existing calendar of diseases, studied in connection with the
+classical history of the diseases written for us by the longest
+unbroken line of authorities in the world of letters, shows, in
+unmistakable language, that the imposition of every known malady of
+man is coeval with every phase of his recorded life on the planet. No
+malady, once originated, has ever actually died out; many remain as
+potent as ever. That wasting fatal scourge, pulmonary consumption, is
+the same in character as when Coelius Aurelianus gave it description.
+The cancer of to-day is the cancer known to Paulus Eginaeta. The Black
+Death, though its name is gone, lingers in malignant typhus. The great
+plague of Athens is the modern great plague of England, scarlet fever.
+The dancing mania of the Middle Ages and the convulsionary epidemic
+of Montmartre, subdued in their violence, are still to be seen in
+some American communities, and even at this hour in the New Forest
+of England. Small-pox, when the blessed protection of vaccination is
+withdrawn, is the same virulent destroyer as it was when the Arabian
+Rhazes defined it. Ague lurks yet in our own island, and, albeit the
+physician is not enriched by it, is in no symptom changed from the
+ague that Celsus knew so well. Cholera, in its modern representation
+is more terrible a malady than its ancient type, in so far as we have
+knowledge of it from ancient learning. And that fearful scourge,
+the great plague of Constantinople, the plague of hallucination and
+convulsion which raged in the Fifth Century of our era, has in
+our time, under the new names of tetanoid fever and cerebro-spinal
+meningitis, been met with here and in France, and in Massachusetts
+has, in the year 1873, laid 747 victims in the dust.
+
+I must cease these illustrations, though I could extend them fairly
+over the whole chapter of disease, past and present. Suffice it if I
+have proved the general propositions, that disease is now as it was in
+the beginning, except that in some examples of it it is less virulent;
+that the science for extinguishing any one disease has yet to
+be learned; that, as the bases of disease exist, untouched by
+civilisation, so the danger of disease is ever imminent, unless we
+specially provide against it; that the development of disease may
+occur with original virulence and fatality, and may at any moment be
+made active under accidental or systematic ignorance.
+
+
+
+A CITY OF HEALTH.
+
+
+I now come to the design I have in hand. Mr. Chadwick has many
+times told us that he could build a city that would give any stated
+mortality, from fifty, or any number more, to five, or perhaps some
+number less, in the thousand annually. I believe Mr. Chadwick to be
+correct to the letter in this statement, and for that reason I have
+projected a city that shall show the lowest mortality. I need not say
+that no such city exists, and you must pardon me for drawing upon your
+imaginations as I describe it. Depicting nothing whatever but what is
+at this present moment easily possible, I shall strive to bring
+into ready and agreeable view a community not abundantly favoured
+by natural resources, which, under the direction of the scientific
+knowledge acquired in the past two generations, has attained a
+vitality not perfectly natural, but approaching to that standard. In
+an artistic sense it would have been better to have chosen a small
+town or large village than a city for my description; but as the great
+mortality of States is resident in cities, it is practically better
+to take the larger and less favoured community. If cities could be
+transformed, the rest would follow.
+
+Our city, which may be named _Hygeia_, has the advantage of being
+a new foundation, but it is so built that existing cities might be
+largely modelled upon it.
+
+The population of the city may be placed at 100,000, living in 20,000
+houses, built on 4,000 acres of land,--an average of 25 persons to
+an acre. This may be considered a large population for the space
+occupied, but, since the effect of density on vitality tells only
+determinately when it reaches a certain extreme degree, as in
+Liverpool and Glasgow, the estimate may be ventured.
+
+The safety of the population of the city is provided for against
+density by the character of the houses, which ensures an equal
+distribution of the population. Tall houses overshadowing the streets,
+and creating necessity for one entrance to several tenements,
+are nowhere permitted. In streets devoted to business, where the
+tradespeople require a place of mart or shop, the houses are four
+stories high, and in some of the western streets where the houses are
+separate, three and four storied buildings are erected; but on the
+whole it is found bad to exceed this range, and as each story is
+limited to 15 feet, no house is higher than 60 feet.
+
+The substratum of the city is of two kinds. At its northern and
+highest part, there is clay; at its southern and south-eastern,
+gravel. Whatever disadvantages might spring in other places from a
+retention of water on a clay soil, is here met by the plan that is
+universally followed, of building every house on arches of solid
+brickwork. So, where in other towns there are areas, and kitchens, and
+servants' offices, there are here subways through which the air flows
+freely, and down the inclines of which all currents of water are
+carried away.
+
+The acreage of our model city allows room for three wide main streets
+or boulevards, which run from east to west, and which are the main
+thoroughfares. Beneath each of these is a railway along which the
+heavy traffic of the city is carried on. The streets from north to
+south which cross the main thoroughfares at right angles, and the
+minor streets which run parallel, are all wide, and, owing to the
+lowness of the houses, are thoroughly ventilated, and in the day are
+filled with sunlight. They are planted on each side of the pathways
+with trees, and in many places with shrubs and evergreens. All the
+interspaces between the backs of houses are gardens. The churches,
+hospitals, theatres, banks, lecture-rooms, and other public buildings,
+as well as some private buildings such as warehouses and stables,
+stand alone, forming parts of streets, and occupying the position of
+several houses. They are surrounded with garden space, and add not
+only to the beauty but to the healthiness of the city. The large
+houses of the wealthy are situated in a similar manner.
+
+The streets of the city are paved throughout with the same material.
+As yet wood pavement set in asphalte has been found the best. It is
+noiseless, cleanly, and durable. Tramways are nowhere permitted, the
+system of underground railways being found amply sufficient for all
+purposes. The side pavements, which are everywhere ten feet wide, are
+of white or light grey stone. They have a slight incline towards the
+streets, and the streets have an incline from their centres towards
+the margins of the pavements.
+
+From the circumstance that the houses of our model city are based on
+subways, there is no difficulty whatever in cleansing the streets,
+no more difficulty than is experienced in Paris. That disgrace to
+our modern civilisation, the mud cart, is not known, and even the
+necessity for Mr. E.H. Bayley's roadway moveable tanks for mud
+sweepings,--so much wanted in London and other towns similarly
+built,--does not exist. The accumulation of mud and dirt in the
+streets is washed away every day through side openings into the
+subways, and is conveyed, with the sewage, to a destination apart from
+the city. Thus the streets everywhere are dry and clean, free alike of
+holes and open drains. Gutter children are an impossibility in a place
+where there are no gutters for their innocent delectation. Instead of
+the gutter, the poorest child has the garden; for the foul sight and
+smell of unwholesome garbage, he has flowers and green sward.
+
+It will be seen, from what has been already told, that in this our
+model city there are no underground cellars, kitchens, or other caves,
+which, worse than those ancient British caves that Nottingham
+still can show the antiquarian as the once fastnesses of her savage
+children, are even now the loathsome residences of many millions of
+our domestic and industrial classes. There is not permitted to be one
+room underground. The living part of every house begins on the level
+of the street. The houses are built of a brick which has the following
+sanitary advantages:--It is glazed, and quite impermeable to water, so
+that during wet seasons the walls of the houses are not saturated with
+tons of water, as is the case with so many of our present residences.
+The bricks are perforated transversely, and at the end of each there
+is a wedge opening, into which no mortar is inserted, and by which all
+the openings are allowed to communicate with each other. The walls are
+in this manner honeycombed, so that there is in them a constant body
+of common air let in by side openings in the outer wall, which air
+can be changed at pleasure, and, if required, can be heated from the
+firegrates of the house. The bricks intended for the inside walls
+of the house, those which form the walls of the rooms, are glazed in
+different colours, according to the taste of the owner, and are
+laid so neatly, that the after adornment of the walls is considered
+unnecessary, and, indeed, objectionable. By this means those most
+unhealthy parts of household accommodation, layers of mouldy paste and
+size, layers of poisonous paper, or layers of absorbing colour stuff
+or distemper, are entirely done away with. The walls of the rooms
+can be made clean at any time by the simple use of water, and the
+ceilings, which are turned in light arches of thinner brick, or tile,
+coloured to match the wall, are open to the same cleansing process.
+The colour selected for the inner brickwork is grey, as a rule,
+that being most agreeable to the sense of sight; but various tastes
+prevail, and art so much ministers to taste, that, in the houses of
+the wealthy, delightful patterns of work of Pompeian elegance are soon
+introduced.
+
+As with the bricks, so with the mortar and the wood employed in
+building, they are rendered, as far as possible, free of moisture. Sea
+sand containing salt, and wood that has been saturated with sea water,
+two common commodities in badly built houses, find no place in our
+modern city.
+
+The most radical changes in the houses of our city are in the
+chimneys, the roofs, the kitchens, and their adjoining offices. The
+chimneys, arranged after the manner proposed by Mr. Spencer Wells, are
+all connected with central shafts, into which the smoke is drawn, and,
+after being passed through a gas furnace to destroy the free carbon,
+is discharged colourless into the open air. The city, therefore, at
+the expense of a small smoke rate, is free of raised chimneys and of
+the intolerable nuisance of smoke. The roofs of the houses are but
+slightly arched, and are indeed all but flat. They are covered either
+with asphalte, which experience, out of our supposed city, has proved
+to last long and to be easily repaired, or with flat tile. The
+roofs, barricaded round with iron palisades, tastefully painted, make
+excellent outdoor grounds for every house. In some instances flowers
+are cultivated on them.
+
+The housewife must not be shocked when she hears that the kitchens of
+our model city, and all the kitchen offices, are immediately beneath
+these garden roofs; are, in fact, in the upper floor of the house
+instead of the lower. In every point of view, sanitary and economical,
+this arrangement succeeds admirably. The kitchen is lighted to
+perfection, so that all uncleanliness is at once detected. The smell
+which arises from cooking is never disseminated through the rooms of
+the house. In conveying the cooked food from the kitchen, in houses
+where there is no lift, the heavy weighted dishes have to be conveyed
+down, the emptied and lighter dishes upstairs. The hot water from
+the kitchen boiler is distributed easily by conducting pipes into the
+lower rooms, so that in every room and bedroom hot and cold water can
+at all times be obtained for washing or cleaning purposes; and as on
+every floor there is a sink for receiving waste water, the carrying of
+heavy pails from floor to floor is not required. The scullery, which
+is by the side of the kitchen, is provided with a copper and all the
+appliances for laundry work; and when the laundry work is done at home
+the open place on the roof above makes an excellent drying ground.
+
+In the wall of the scullery is the upper opening to the dust-bin
+shaft. This shaft, open to the air from the roof, extends to the bin
+under the basement of the house. A sliding door in the wall opens into
+the shaft to receive the dust, and this plan is carried out on every
+floor. The coal-bin is off the scullery, and is ventilated into the
+air through a separate shaft, which also passes through the roof.
+
+On the landing in the second or middle stories of the three-storied
+houses there is a bathroom, supplied with hot and cold water from the
+kitchen above. The floor of the kitchen and of all the upper stories
+is slightly raised in the centre, and is of smooth, grey tile; the
+floor of the bath-room is the same. In the living-rooms, where the
+floors are of wood, a true oak margin of floor extends two feet around
+each room. Over this no carpet is ever laid. It is kept bright and
+clean by the old-fashioned bees'-wax and turpentine, and the air is
+made fresh and is ozonised by the process.
+
+Considering that a third part of the life of man is, or should be,
+spent in sleep, great care is taken with the bed-rooms, so that they
+shall be thoroughly lighted, roomy, and ventilated. Twelve hundred
+cubic feet of space is allowed for each sleeper, and from the sleeping
+apartments all unnecessary articles of furniture and of dress are
+rigorously excluded. Old clothes, old shoes, and other offensive
+articles of the same order, are never permitted to have residence
+there. In most instances the rooms on the first floor are made the
+bed-rooms, and the lower the living-rooms. In the larger houses
+bed-rooms are carried out in the upper floor for the use of the
+domestics.
+
+To facilitate communication between the kitchen and the entrance-hall,
+so that articles of food, fuel, and the like may be carried up, a
+shaft runs in the partition between two houses, and carries a basket
+lift in all houses that are above two stories high. Every heavy thing
+to and from the kitchen is thus carried up and down from floor to
+floor and from the top to the basement, and much unnecessary labour
+is thereby saved. In the two-storied houses the lift is unnecessary. A
+flight of outer steps leads to the upper or kitchen floor.
+
+The warming and ventilation of the houses is carried out by a common
+and simple plan. The cheerfulness of the fireside is not sacrificed;
+there is still the open grate in every room, but at the back of
+the firestove there is an air-box or case which, distinct from the
+chimney, communicates by an opening with the outer air, and by another
+opening with the room. When the fire in the room heats the iron
+receptacle, fresh air is brought in from without, and is diffused
+into the room at the upper part on a plan similar to that devised by
+Captain Galton.
+
+As each house is complete within itself in all its arrangements, those
+disfigurements called back premises are not required. There is a wide
+space consequently between the back fronts of all houses, which space
+is, in every instance, turned into a garden square, kept in neat
+order, ornamented with flowers and trees, and furnished with
+playgrounds for children, young and old.
+
+The houses being built on arched subways, great convenience exists
+for conveying sewage from, and for conducting water and gas into, the
+different domiciles. All pipes are conveyed along the subways, and
+enter each house from beneath. Thus the mains of the water pipe and
+the mains of the gas are within instant control on the first floor of
+the building, and a leakage from either can be immediately prevented.
+The officers who supply the commodities of gas and water have
+admission to the subways, and find it most easy and economical to keep
+all that is under their charge in perfect repair. The sewers of the
+houses run along the floors of the subways, and are built in brick.
+They empty into three cross main sewers. They are trapped for each
+house, and as the water supply is continuous, they are kept well
+flushed. In addition to the house flushings there are special openings
+into the sewers by which, at any time, under the direction of the
+sanitary officer, an independent flushing can be carried out. The
+sewers are ventilated into tall shafts from the mains by means of a
+pneumatic engine.
+
+The water-closets in the houses are situated on the middle and
+basement floors. The continuous water-supply flushes them without
+danger of charging the drinking water with gases emanating from the
+closet; a danger so imminent in the present method of cisterns, which
+supply drinking as well as flushing water.
+
+As we walk the streets of our model city, we notice an absence of
+places for the public sale of spirituous liquors. Whether this be a
+voluntary purgation in goodly imitation of the National Temperance
+League, the effect of Sir Wilfrid Lawson's Permissive Bill and most
+permissive wit and wisdom, or the work of the Good Templars, we need
+not stay to inquire. We look at the fact only. To this city, as to
+the town of St. Johnsbury, in Vermont, which Mr. Hepworth Dixon has
+so graphically described, we may apply the description Mr. Dixon has
+written: 'No bar, no dram shop, no saloon defiles the place. Nor is
+there a single gaming hell or house of ill-repute.' Through all the
+workshops into which we pass, in whatever labour the men or women
+may be occupied,--and the place is noted for its manufacturing
+industry,--at whatever degree of heat or cold, strong drink is
+unknown. Practically, we are in a total abstainers' town, and a man
+seen intoxicated would be so avoided by the whole community, he would
+have no peace to remain.
+
+And, as smoking and drinking go largely together, as the two practices
+were, indeed, original exchanges of social degradations between the
+civilised man and the savage, the savage getting very much the worst
+of the bargain, so the practices largely disappear together. Pipe and
+glass, cigar and sherry-cobbler, like the Siamese twins, who could
+only live connected, have both died out in our model city. Tobacco,
+by far the most innocent partner of the firm, lived, as it perhaps
+deserved to do, a little the longest; but it passed away, and the
+tobacconist's counter, like the dram counter, has disappeared.
+
+The streets of our city, though sufficiently filled with busy people,
+are comparatively silent. The subways relieve the heavy traffic, and
+the factories are all at short distances from the town, except those
+in which the work that is carried on is silent and free from nuisance.
+This brings me to speak of some of the public buildings which have
+relation to our present studies.
+
+It has been found in our towns, generally, that men and women who
+are engaged in industrial callings, such as tailoring, shoe-making,
+dressmaking, lace-work and the like, work at their own homes amongst
+their children. That this is a common cause of disease is well
+understood. I have myself seen the half-made riding-habit that was
+ultimately to clothe some wealthy damsel rejoicing in her morning ride
+act as the coverlet of a poor tailor's child stricken with malignant
+scarlet fever. These things must be, in the ordinary course of events
+under our present bad sanitary system. In the model city we have
+in our mind's eye, these dangers are met by the simple provision of
+workmen's offices or workrooms. In convenient parts of the town there
+are blocks of buildings, designed mainly after the manner of the
+houses, in which each workman can have a work-room on payment of a
+moderate sum per week. Here he may work as many hours as he pleases,
+but he may not transform the room into a home. Each block is under
+the charge of a superintendent, and also under the observation of the
+sanitary authorities. The family is thus separated from the work,
+and the working man is secured the same advantages as the lawyer,
+the merchant, the banker now possesses: or to make the parallel more
+correct, he has the same advantage as the man or woman who works in a
+factory, and goes home to eat and to sleep.
+
+In most towns throughout the kingdom the laundry system is dangerous
+in the extreme. For anything the healthy householder knows, the
+clothes he and his children wear have been mixed before, during, and
+after the process of washing, with the clothes that have come from the
+bed or the body of some sufferer from a contagious malady. Some of the
+most fatal outbreaks of disease I have met with have been communicated
+in this manner. In our model community this danger is entirely avoided
+by the establishment of public laundries, under municipal direction.
+No person is obliged to send any article of clothing to be washed at
+the public laundry; but if he does not send there he must have the
+washing done at home. Private laundries that do not come under the
+inspection of the sanitary officer are absolutely forbidden. It
+is incumbent on all who send clothes to the public laundry from an
+infected house to state the fact. The clothes thus received are passed
+for special cleansing into the disinfecting rooms. They are specially
+washed, dried and prepared for future wear. The laundries are
+placed in convenient positions, a little outside the town; they
+have extensive drying grounds, and, practically, they are worked
+so economically, that homewashing days, those invaders of domestic
+comfort and health, are abolished.
+
+Passing along the main streets of the city we see in twenty places,
+equally distant, a separate building surrounded by its own grounds,--a
+model hospital for the sick. To make these institutions the best of
+their kind, no expense is spared. Several elements contribute to their
+success. They are small, and are readily removable. The old idea of
+warehousing diseases on the largest possible scale, and of making it
+the boast of an institution that it contains so many hundred beds,
+is abandoned here. The old idea of building an institution so that
+it shall stand for centuries, like a Norman castle, but, unlike the
+castle, still retain its original character as a shelter for the
+afflicted, is abandoned here. The still more absurd idea of building
+hospitals for the treatment of special organs of the body, as if the
+different organs could walk out of the body and present themselves for
+treatment, is also abandoned.
+
+It will repay us a minute of time to look at one of these model
+hospitals. One is the _fac simile_ of the other, and is devoted to the
+service of every five thousand of the population. Like every building
+in the place, it is erected on a subway. There is a wide central
+entrance, to which there is no ascent, and into which a carriage, cab,
+or ambulance can drive direct. On each side the gateway are the houses
+of the resident medical officer and of the matron. Passing down the
+centre, which is lofty and covered in with glass, we arrive at
+two sidewings running right and left from the centre, and forming
+cross-corridors. These are the wards: twelve on one hand for male,
+twelve on the other for female patients. The cross-corridors are
+twelve feet wide and twenty feet high, and are roofed with glass; The
+corridor on each side is a framework of walls of glazed brick,
+arched over head, and divided into six segments. In each segment is
+a separate, light, elegant removable ward, constructed of glass and
+iron, twelve feet high, fourteen feet long, and ten feet wide. The
+cubic capacity of each ward is 1,680 feet. Every patient who is ill
+enough to require constant attendance has one of these wards entirely
+to himself, so that the injurious influences on the sick, which are
+created by mixing up, in one large room, the living and the dying;
+those who could sleep, were they at rest, with those who cannot
+sleep, because they are racked with pain; those who are too nervous
+or sensitive to move, or cough, or speak, lest they should disturb
+others; and those who do whatever pleases them:--these bad influences
+are absent.
+
+The wards are fitted up neatly and elegantly. At one end they open
+into the corridor, at the other towards a verandah which leads to a
+garden. In bright weather those sick persons, who are even confined to
+bed, can, under the direction of the doctor, be wheeled in their beds
+out into the gardens without leaving the level floor. The wards are
+warmed by a current of air made to circulate through them by the
+action of a steam-engine, with which every hospital is supplied, and
+which performs such a number of useful purposes, that the wonder is,
+how hospital management could go on without the engine.
+
+If at any time a ward becomes infectious, it is removed from its
+position and is replaced by a new ward. It is then taken to pieces,
+disinfected, and laid by ready to replace another that may require
+temporary ejection.
+
+The hospital is supplied on each side with ordinary baths, hot-air
+baths, vapour baths, and saline baths.
+
+A day sitting-room is attached to each wing, and every reasonable
+method is taken for engaging the minds of the sick in agreeable and
+harmless pastimes.
+
+Two trained nurses attend to each corridor, and connected with the
+hospital is a school for nurses, under the direction of the medical
+superintendent and the matron. From this school, nurses are provided
+for the town; they are not merely efficient for any duty in the
+vocation in which they are always engaged, either within the hospital
+or out of it, but from the care with which they attend to their own
+personal cleanliness, and the plan they pursue of changing every
+garment on leaving an infectious case, they fail to be the bearers of
+any communicable disease. To one hospital four medical officers are
+appointed, each of whom, therefore, has six resident patients under
+his care. The officers are called simply medical officers, the
+distinction, now altogether obsolete, between physicians and surgeons
+being discarded.
+
+The hospital is brought, by an electrical wire, into communication
+with all the fire-stations, factories, mills, theatres, and other
+important public places. It has an ambulance always ready to be sent
+out to bring any injured persons to the institution. The ambulance
+drives straight into the hospital, where a bed of the same height on
+silent wheels, so that it can be moved without vibration into a ward,
+receives the patient.
+
+The kitchens, laundries, and laboratories are in a separate block at
+the back of the institution, but are connected with it by the central
+corridor. The kitchen and laundries are at the top of this building,
+the laboratories below. The disinfecting-room is close to the
+engine-room, and superheated steam, which the engine supplies, is used
+for disinfection.
+
+The out-patient department, which is apart from the body of the
+hospital, resembles that of the Queen's Hospital, Birmingham,--the
+first out-patient department, as far as I am aware, that ever deserved
+to be seen by a generous public. The patients waiting for advice
+are seated in a large hall, warmed at all seasons to a proper heat,
+lighted from the top through a glass roof, and perfectly ventilated.
+The infectious cases are separated carefully from the rest. The
+consulting rooms of the medical staff are comfortably fitted, the
+dispensary is thoroughly officered, and the order that prevails is so
+effective that a sick person, who is punctual to time, has never to
+wait.
+
+The medical officers attached to the hospital in our model city are
+allowed to hold but one appointment at the same time, and that for a
+limited period. Thus every medical man in the city obtains the equal
+advantage of hospital practice, and the value of the best medical and
+surgical skill is fairly equalised through the whole community.
+
+In addition to the hospital building is a separate block, furnished
+with wards, constructed in the same way as the general wards, for the
+reception of children suffering from any of the infectious diseases.
+These wards are so planned that the people, generally, send sick
+members of their own family into them for treatment, and pay for the
+privilege.
+
+Supplementary to the hospital are certain other institutions of a
+kindred character. To check the terrible course of infantile mortality
+of other large cities,--the 76 in the 1,000 of mortality under five
+years of age, homes for little children are abundant. In these the
+destitute young are carefully tended by intelligent nurses; so that
+mothers, while following their daily callings, are enabled to leave
+their children under efficient care.
+
+In a city from which that grand source of wild mirth, hopeless sorrow
+and confirmed madness, alcohol, has been expelled, it could hardly be
+expected that much insanity would be found. The few who are insane are
+placed in houses licensed as asylums, but not different in appearance
+to other houses in the city. Here the insane live, in small
+communities, under proper medical supervision, with their own gardens
+and pastimes.
+
+The houses of the helpless and aged are, like the asylums, the same as
+the houses of the rest of the town. No large building of pretentious
+style uprears itself for the poor; no men badged and badgered as
+paupers walk the place. Those poor who are really, from physical
+causes, unable to work, are maintained in a manner showing that
+they possess yet the dignity of human kind; and that, being worth
+preservation, they are therefore worthy of respectful tenderness. The
+rest, those who can work, are employed in useful labours, which pay
+for their board. If they cannot find work, and are deserving, they may
+lodge in the house and earn their subsistence; or they may live from
+the house and receive pay for work done. If they will not work, they,
+as vagrants, find a home in prison, where they are compelled to share
+the common lot of mankind.
+
+Our model city is of course well furnished with baths, swimming
+baths, Turkish baths, playgrounds, gymnasia, libraries, board schools,
+fine-art schools, lecture halls, and places of instructive amusement.
+In every board-school drill forms part of the programme. I need not
+dwell on these subjects, but must pass to the sanitary officers and
+offices.
+
+There is in the city one principal sanitary officer, a duly qualified
+medical man elected by the Municipal Council, whose sole duty it is to
+watch over the sanitary welfare of the place. Under him, as sanitary
+officers, are all the medical men who form the poor law medical staff.
+To him these make their reports on vaccination and every matter
+of health pertaining to their respective districts; to him every
+registrar of births and deaths forwards copies of his registration
+returns; and to his office are sent, by the medical men generally,
+registered returns of the cases of sickness prevailing in the
+district. His inspectors likewise make careful returns of all the
+known prevailing diseases of the lower animals and of plants. To his
+office are forwarded, for examination and analysis, specimens of foods
+and drinks suspected to be adulterated, impure, or otherwise
+unfitted for use. For the conduction of these researches the sanitary
+superintendent is allowed a competent chemical staff. Thus, under this
+central supervision, every death, every disease of the living world in
+the district, and every assumable cause of disease, comes to light and
+is subjected, if need be, to inquiry.
+
+At a distance from the town are the sanitary works, the sewage pumping
+works, the water and gas works, the slaughter-houses and the public
+laboratories. The sewage, which is brought from the town partly by
+its own flow and partly by pumping apparatus, is conveyed away to
+well-drained sewage farms belonging to, but at a distance from, the
+city where it is utilised.
+
+The water supply, derived from a river which flows to the south-west
+of the city, is unpolluted by sewage or other refuse, is carefully
+filtered, is tested twice daily, and if found unsatisfactory is
+supplied through a reserve tank, after it has been made to undergo
+further purification. It is carried through the city everywhere by
+iron pipes. Leaden pipes are forbidden. In the sanitary establishment
+are disinfecting rooms, a mortuary, and ambulances for the conveyance
+of persons suffering from contagious disease. These are at all times
+open to the use of the public, subject to the few and simple rules of
+the management.
+
+The gas, like the water, is submitted to regular analysis by the staff
+of the sanitary officer, and any fault which may be detected, and
+which indicates a departure from the standard of purity framed by the
+Municipal Council, is immediately remedied, both gas and water being
+exclusively under the control of the local authority.
+
+The inspectors of the sanitary officer have under them a body of
+scavengers. These, each day, in the early morning, pass through the
+various districts allotted to them, and remove all refuse in closed
+vans. Every portion of manure from stables, streets, and yards is
+in this way removed daily, and transported to the city farms for
+utilisation.
+
+Two additional conveniences are supplied by the scientific work of
+the sanitary establishment. From steam-works steam is condensed, and
+a large supply of distilled water is obtained and preserved in a
+separate tank. This distilled water is conveyed by a small main
+into the city, and is supplied at a moderate cost for those domestic
+purposes for which hard water is objectionable.
+
+The second sanitary convenience is a large ozone generator. By this
+apparatus ozone is produced in any required quantity, and is made to
+play many useful purposes. It is passed through the drinking water
+in the reserve reservoir whenever the water shows excess of organic
+impurity, and it is conveyed into the city for diffusion into private
+houses, for purposes of disinfection.
+
+The slaughter-houses of the city are all public, and are separated
+by a distance of a quarter of a mile from the city. They are easily
+removable edifices, and are under the supervision of the sanitary
+staff. The Jewish system of inspecting every carcase that is killed is
+rigorously carried out, with this improvement, that the inspector is a
+man of scientific knowledge.
+
+All animals used for food,--cattle, fowls, swine, rabbits,--are
+subjected to examination in the slaughter-house, or in the market, if
+they be brought into the city from other depots. The slaughter-houses
+are so constructed that the animals killed are relieved from the pain
+of death. They pass through a narcotic chamber, and are brought to the
+slaughterer oblivious of their fate. The slaughter-houses drain into
+the sewers of the city, and their complete purification daily, from
+all offal and refuse, is rigidly enforced.
+
+The buildings, sheds, and styes for domestic food-producing animals
+are removed a short distance from the city, and are also under the
+supervision of the sanitary officer; the food and water supplied for
+these animals comes equally, with human food, under proper inspection.
+
+One other subject only remains to be noticed in connection with the
+arrangements of our model city, and that is the mode of the disposal
+of the dead. The question of cremation and of burial in the earth
+has been considered, and there are some who advocate cremation. For
+various reasons the process of burial is still retained. Firstly,
+because the cremation process is open to serious medico-legal
+objections; secondly, because, by the complete resolution of the body
+into its elementary and inodorous gases in the cremation furnace, that
+intervening chemical link between the organic and inorganic worlds,
+the ammonia, is destroyed, and the economy of nature is thereby
+dangerously disturbed; thirdly, because the natural tendencies of the
+people lead them still to the earth, as the most fitting resting-place
+into which, when lifeless, they should be drawn.
+
+Thus the cemetery holds its place in our city, but in a form much
+modified from the ordinary cemetery. The burial ground is artificially
+made of a fine carboniferous earth. Vegetation of rapid growth is
+cultivated over it. The dead are placed in the earth from the bier,
+either in basket work or simply in the shroud; and the monumental
+slab, instead of being set over or at the head or foot of a raised
+grave, is placed in a spacious covered hall or temple, and records
+simply the fact that the person commemorated was recommitted to earth
+in those grounds. In a few months, indeed, no monument would
+indicate the remains of any dead. In that rapidly-resolving soil the
+transformation of dust into dust is too perfect to leave a trace of
+residuum. The natural circle of transmutation is harmlessly completed,
+and the economy of nature conserved.
+
+
+
+RESULTS.
+
+
+Omitting, necessarily, many minor but yet important details, I close
+the description of the imaginary health city. I have yet to indicate
+what are the results that might be fairly predicted in respect to the
+disease and mortality presented under the conditions specified.
+
+Two kinds of observation guide me in this essay: one derived from
+statistical and sanitary work; the other from experience, extended now
+over thirty years, of disease, its phenomena, its origins, its causes,
+its terminations.
+
+I infer, then, that in our model city certain forms of disease would
+find no possible home, or, at the worst, a home so transient as not
+to affect the mortality in any serious degree. The infantile diseases,
+infantile and remittent fevers, convulsions, diarrhoea, croup,
+marasmus, dysentery, would, I calculate, be almost unknown. Typhus
+and typhoid fevers and cholera could not, I believe, exist in the
+city except temporarily, and by pure accident; small-pox would be
+kept under entire control; puerperal fever and hospital fever would,
+probably, cease altogether; rheumatic fever, induced by residence
+in damp houses, and the heart disease subsequent upon it, would
+be removed. Death from privation and from purpura and scurvy would
+certainly cease. Delirium tremens, liver disease, alcoholic phthisis,
+alcoholic degeneration of kidney and all the varied forms of
+paralysis, insanity, and other affections due to alcohol, would
+be completely effaced. The parasitic diseases arising from the
+introduction into the body, through food, of the larvae of the
+entozoa, would cease. That large class of deaths from pulmonary
+consumption, induced in less favoured cities by exposure to impure
+air and badly ventilated rooms, would, I believe, be reduced so as to
+bring down the mortality of this signally fatal malady one third at
+least.
+
+Some diseases, pre-eminently those which arise from uncontrollable
+causes, from sudden fluctuations of temperature, electrical storms,
+and similar great variations of nature, would remain as active as
+ever; and pneumonia, bronchitis, congestion of the lungs, and summer
+cholera, would still hold their sway. Cancer, also, and allied
+constitutional diseases of strong hereditary character, would yet, as
+far as I can see, prevail. I fear, moreover, it must be admitted that
+two or three of the epidemic diseases, notably scarlet fever, measles,
+and whooping cough, would assert themselves, and, though limited
+in their diffusion by the sanitary provisions for arresting their
+progress, would claim a considerable number of victims.
+
+With these last facts clearly in view, I must be careful not to claim
+for my model city more than it deserves; but calculating the mortality
+which would be saved, and comparing the result with the mortality
+which now prevails in the most favoured of our large English towns, I
+conclude that an average mortality of eight per thousand would be the
+maximum in the first generation living under this salutary _regime_.
+That in a succeeding generation Mr. Chadwick's estimate of a possible
+mortality of five per thousand would be realised, I have no reasonable
+doubt, since the almost unrecognised, though potent, influence of
+heredity in disease would immediately lessen in intensity, and the
+healthier parents would bring forth the healthier offspring.
+
+As my voice ceases to dwell on this theme of a yet unknown city of
+health, do not, I pray you, wake as from a mere dream. The details
+of the city exist. They have been worked out by those pioneers of
+sanitary science, so many of whom surround me to-day, and specially
+by him whose hopeful thought has suggested my design. I am, therefore,
+but as a draughtsman, who, knowing somewhat your desires and
+aspirations, have drawn a plan, which you in your wisdom can modify,
+improve, perfect. In this I know we are of one mind, that though the
+ideal we all of us hold be never reached during our lives, we shall
+continue to work successfully for its realisation. Utopia itself is
+but another word for time; and some day the masses, who now heed us
+not, or smile incredulously at our proceedings, will awake to our
+conceptions. Then our knowledge, like light rapidly conveyed from one
+torch to another, will bury us in its brightness.
+
+    _By swift degrees the love of Nature works
+    And warms the bosom: till at last, sublimed
+    To rapture and enthusiastic heat,
+    We feel the present DEITY, and taste
+    The joy of GOD to see a happy world!_
+
+
+
+
+
+
+
+End of the Project Gutenberg EBook of Hygeia, a City of Health
+by Benjamin Ward Richardson
+
+*** END OF THIS PROJECT GUTENBERG EBOOK HYGEIA, A CITY OF HEALTH ***
+
+***** This file should be named 12036.txt or 12036.zip *****
+This and all associated files of various formats will be found in:
+        http://www.gutenberg.net/1/2/0/3/12036/
+
+Produced by Paul Murray, Sam and the Online Distributed Proofreading
+Team.
+
+
+Updated editions will replace the previous one--the old editions
+will be renamed.
+
+Creating the works from public domain print editions means that no
+one owns a United States copyright in these works, so the Foundation
+(and you!) can copy and distribute it in the United States without
+permission and without paying copyright royalties.  Special rules,
+set forth in the General Terms of Use part of this license, apply to
+copying and distributing Project Gutenberg-tm electronic works to
+protect the PROJECT GUTENBERG-tm concept and trademark.  Project
+Gutenberg is a registered trademark, and may not be used if you
+charge for the eBooks, unless you receive specific permission.  If you
+do not charge anything for copies of this eBook, complying with the
+rules is very easy.  You may use this eBook for nearly any purpose
+such as creation of derivative works, reports, performances and
+research.  They may be modified and printed and given away--you may do
+practically ANYTHING with public domain eBooks.  Redistribution is
+subject to the trademark license, especially commercial
+redistribution.
+
+
+
+*** START: FULL LICENSE ***
+
+THE FULL PROJECT GUTENBERG LICENSE
+PLEASE READ THIS BEFORE YOU DISTRIBUTE OR USE THIS WORK
+
+To protect the Project Gutenberg-tm mission of promoting the free
+distribution of electronic works, by using or distributing this work
+(or any other work associated in any way with the phrase "Project
+Gutenberg"), you agree to comply with all the terms of the Full Project
+Gutenberg-tm License (available with this file or online at
+http://gutenberg.net/license).
+
+
+Section 1.  General Terms of Use and Redistributing Project Gutenberg-tm
+electronic works
+
+1.A.  By reading or using any part of this Project Gutenberg-tm
+electronic work, you indicate that you have read, understand, agree to
+and accept all the terms of this license and intellectual property
+(trademark/copyright) agreement.  If you do not agree to abide by all
+the terms of this agreement, you must cease using and return or destroy
+all copies of Project Gutenberg-tm electronic works in your possession.
+If you paid a fee for obtaining a copy of or access to a Project
+Gutenberg-tm electronic work and you do not agree to be bound by the
+terms of this agreement, you may obtain a refund from the person or
+entity to whom you paid the fee as set forth in paragraph 1.E.8.
+
+1.B.  "Project Gutenberg" is a registered trademark.  It may only be
+used on or associated in any way with an electronic work by people who
+agree to be bound by the terms of this agreement.  There are a few
+things that you can do with most Project Gutenberg-tm electronic works
+even without complying with the full terms of this agreement.  See
+paragraph 1.C below.  There are a lot of things you can do with Project
+Gutenberg-tm electronic works if you follow the terms of this agreement
+and help preserve free future access to Project Gutenberg-tm electronic
+works.  See paragraph 1.E below.
+
+1.C.  The Project Gutenberg Literary Archive Foundation ("the Foundation"
+or PGLAF), owns a compilation copyright in the collection of Project
+Gutenberg-tm electronic works.  Nearly all the individual works in the
+collection are in the public domain in the United States.  If an
+individual work is in the public domain in the United States and you are
+located in the United States, we do not claim a right to prevent you from
+copying, distributing, performing, displaying or creating derivative
+works based on the work as long as all references to Project Gutenberg
+are removed.  Of course, we hope that you will support the Project
+Gutenberg-tm mission of promoting free access to electronic works by
+freely sharing Project Gutenberg-tm works in compliance with the terms of
+this agreement for keeping the Project Gutenberg-tm name associated with
+the work.  You can easily comply with the terms of this agreement by
+keeping this work in the same format with its attached full Project
+Gutenberg-tm License when you share it without charge with others.
+
+1.D.  The copyright laws of the place where you are located also govern
+what you can do with this work.  Copyright laws in most countries are in
+a constant state of change.  If you are outside the United States, check
+the laws of your country in addition to the terms of this agreement
+before downloading, copying, displaying, performing, distributing or
+creating derivative works based on this work or any other Project
+Gutenberg-tm work.  The Foundation makes no representations concerning
+the copyright status of any work in any country outside the United
+States.
+
+1.E.  Unless you have removed all references to Project Gutenberg:
+
+1.E.1.  The following sentence, with active links to, or other immediate
+access to, the full Project Gutenberg-tm License must appear prominently
+whenever any copy of a Project Gutenberg-tm work (any work on which the
+phrase "Project Gutenberg" appears, or with which the phrase "Project
+Gutenberg" is associated) is accessed, displayed, performed, viewed,
+copied or distributed:
+
+This eBook is for the use of anyone anywhere at no cost and with
+almost no restrictions whatsoever.  You may copy it, give it away or
+re-use it under the terms of the Project Gutenberg License included
+with this eBook or online at www.gutenberg.net
+
+1.E.2.  If an individual Project Gutenberg-tm electronic work is derived
+from the public domain (does not contain a notice indicating that it is
+posted with permission of the copyright holder), the work can be copied
+and distributed to anyone in the United States without paying any fees
+or charges.  If you are redistributing or providing access to a work
+with the phrase "Project Gutenberg" associated with or appearing on the
+work, you must comply either with the requirements of paragraphs 1.E.1
+through 1.E.7 or obtain permission for the use of the work and the
+Project Gutenberg-tm trademark as set forth in paragraphs 1.E.8 or
+1.E.9.
+
+1.E.3.  If an individual Project Gutenberg-tm electronic work is posted
+with the permission of the copyright holder, your use and distribution
+must comply with both paragraphs 1.E.1 through 1.E.7 and any additional
+terms imposed by the copyright holder.  Additional terms will be linked
+to the Project Gutenberg-tm License for all works posted with the
+permission of the copyright holder found at the beginning of this work.
+
+1.E.4.  Do not unlink or detach or remove the full Project Gutenberg-tm
+License terms from this work, or any files containing a part of this
+work or any other work associated with Project Gutenberg-tm.
+
+1.E.5.  Do not copy, display, perform, distribute or redistribute this
+electronic work, or any part of this electronic work, without
+prominently displaying the sentence set forth in paragraph 1.E.1 with
+active links or immediate access to the full terms of the Project
+Gutenberg-tm License.
+
+1.E.6.  You may convert to and distribute this work in any binary,
+compressed, marked up, nonproprietary or proprietary form, including any
+word processing or hypertext form.  However, if you provide access to or
+distribute copies of a Project Gutenberg-tm work in a format other than
+"Plain Vanilla ASCII" or other format used in the official version
+posted on the official Project Gutenberg-tm web site (www.gutenberg.net),
+you must, at no additional cost, fee or expense to the user, provide a
+copy, a means of exporting a copy, or a means of obtaining a copy upon
+request, of the work in its original "Plain Vanilla ASCII" or other
+form.  Any alternate format must include the full Project Gutenberg-tm
+License as specified in paragraph 1.E.1.
+
+1.E.7.  Do not charge a fee for access to, viewing, displaying,
+performing, copying or distributing any Project Gutenberg-tm works
+unless you comply with paragraph 1.E.8 or 1.E.9.
+
+1.E.8.  You may charge a reasonable fee for copies of or providing
+access to or distributing Project Gutenberg-tm electronic works provided
+that
+
+- You pay a royalty fee of 20% of the gross profits you derive from
+     the use of Project Gutenberg-tm works calculated using the method
+     you already use to calculate your applicable taxes.  The fee is
+     owed to the owner of the Project Gutenberg-tm trademark, but he
+     has agreed to donate royalties under this paragraph to the
+     Project Gutenberg Literary Archive Foundation.  Royalty payments
+     must be paid within 60 days following each date on which you
+     prepare (or are legally required to prepare) your periodic tax
+     returns.  Royalty payments should be clearly marked as such and
+     sent to the Project Gutenberg Literary Archive Foundation at the
+     address specified in Section 4, "Information about donations to
+     the Project Gutenberg Literary Archive Foundation."
+
+- You provide a full refund of any money paid by a user who notifies
+     you in writing (or by e-mail) within 30 days of receipt that s/he
+     does not agree to the terms of the full Project Gutenberg-tm
+     License.  You must require such a user to return or
+     destroy all copies of the works possessed in a physical medium
+     and discontinue all use of and all access to other copies of
+     Project Gutenberg-tm works.
+
+- You provide, in accordance with paragraph 1.F.3, a full refund of any
+     money paid for a work or a replacement copy, if a defect in the
+     electronic work is discovered and reported to you within 90 days
+     of receipt of the work.
+
+- You comply with all other terms of this agreement for free
+     distribution of Project Gutenberg-tm works.
+
+1.E.9.  If you wish to charge a fee or distribute a Project Gutenberg-tm
+electronic work or group of works on different terms than are set
+forth in this agreement, you must obtain permission in writing from
+both the Project Gutenberg Literary Archive Foundation and Michael
+Hart, the owner of the Project Gutenberg-tm trademark.  Contact the
+Foundation as set forth in Section 3 below.
+
+1.F.
+
+1.F.1.  Project Gutenberg volunteers and employees expend considerable
+effort to identify, do copyright research on, transcribe and proofread
+public domain works in creating the Project Gutenberg-tm
+collection.  Despite these efforts, Project Gutenberg-tm electronic
+works, and the medium on which they may be stored, may contain
+"Defects," such as, but not limited to, incomplete, inaccurate or
+corrupt data, transcription errors, a copyright or other intellectual
+property infringement, a defective or damaged disk or other medium, a
+computer virus, or computer codes that damage or cannot be read by
+your equipment.
+
+1.F.2.  LIMITED WARRANTY, DISCLAIMER OF DAMAGES - Except for the "Right
+of Replacement or Refund" described in paragraph 1.F.3, the Project
+Gutenberg Literary Archive Foundation, the owner of the Project
+Gutenberg-tm trademark, and any other party distributing a Project
+Gutenberg-tm electronic work under this agreement, disclaim all
+liability to you for damages, costs and expenses, including legal
+fees.  YOU AGREE THAT YOU HAVE NO REMEDIES FOR NEGLIGENCE, STRICT
+LIABILITY, BREACH OF WARRANTY OR BREACH OF CONTRACT EXCEPT THOSE
+PROVIDED IN PARAGRAPH F3.  YOU AGREE THAT THE FOUNDATION, THE
+TRADEMARK OWNER, AND ANY DISTRIBUTOR UNDER THIS AGREEMENT WILL NOT BE
+LIABLE TO YOU FOR ACTUAL, DIRECT, INDIRECT, CONSEQUENTIAL, PUNITIVE OR
+INCIDENTAL DAMAGES EVEN IF YOU GIVE NOTICE OF THE POSSIBILITY OF SUCH
+DAMAGE.
+
+1.F.3.  LIMITED RIGHT OF REPLACEMENT OR REFUND - If you discover a
+defect in this electronic work within 90 days of receiving it, you can
+receive a refund of the money (if any) you paid for it by sending a
+written explanation to the person you received the work from.  If you
+received the work on a physical medium, you must return the medium with
+your written explanation.  The person or entity that provided you with
+the defective work may elect to provide a replacement copy in lieu of a
+refund.  If you received the work electronically, the person or entity
+providing it to you may choose to give you a second opportunity to
+receive the work electronically in lieu of a refund.  If the second copy
+is also defective, you may demand a refund in writing without further
+opportunities to fix the problem.
+
+1.F.4.  Except for the limited right of replacement or refund set forth
+in paragraph 1.F.3, this work is provided to you 'AS-IS' WITH NO OTHER
+WARRANTIES OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO
+WARRANTIES OF MERCHANTIBILITY OR FITNESS FOR ANY PURPOSE.
+
+1.F.5.  Some states do not allow disclaimers of certain implied
+warranties or the exclusion or limitation of certain types of damages.
+If any disclaimer or limitation set forth in this agreement violates the
+law of the state applicable to this agreement, the agreement shall be
+interpreted to make the maximum disclaimer or limitation permitted by
+the applicable state law.  The invalidity or unenforceability of any
+provision of this agreement shall not void the remaining provisions.
+
+1.F.6.  INDEMNITY - You agree to indemnify and hold the Foundation, the
+trademark owner, any agent or employee of the Foundation, anyone
+providing copies of Project Gutenberg-tm electronic works in accordance
+with this agreement, and any volunteers associated with the production,
+promotion and distribution of Project Gutenberg-tm electronic works,
+harmless from all liability, costs and expenses, including legal fees,
+that arise directly or indirectly from any of the following which you do
+or cause to occur: (a) distribution of this or any Project Gutenberg-tm
+work, (b) alteration, modification, or additions or deletions to any
+Project Gutenberg-tm work, and (c) any Defect you cause.
+
+
+Section  2.  Information about the Mission of Project Gutenberg-tm
+
+Project Gutenberg-tm is synonymous with the free distribution of
+electronic works in formats readable by the widest variety of computers
+including obsolete, old, middle-aged and new computers.  It exists
+because of the efforts of hundreds of volunteers and donations from
+people in all walks of life.
+
+Volunteers and financial support to provide volunteers with the
+assistance they need, is critical to reaching Project Gutenberg-tm's
+goals and ensuring that the Project Gutenberg-tm collection will
+remain freely available for generations to come.  In 2001, the Project
+Gutenberg Literary Archive Foundation was created to provide a secure
+and permanent future for Project Gutenberg-tm and future generations.
+To learn more about the Project Gutenberg Literary Archive Foundation
+and how your efforts and donations can help, see Sections 3 and 4
+and the Foundation web page at http://www.pglaf.org.
+
+
+Section 3.  Information about the Project Gutenberg Literary Archive
+Foundation
+
+The Project Gutenberg Literary Archive Foundation is a non profit
+501(c)(3) educational corporation organized under the laws of the
+state of Mississippi and granted tax exempt status by the Internal
+Revenue Service.  The Foundation's EIN or federal tax identification
+number is 64-6221541.  Its 501(c)(3) letter is posted at
+http://pglaf.org/fundraising.  Contributions to the Project Gutenberg
+Literary Archive Foundation are tax deductible to the full extent
+permitted by U.S. federal laws and your state's laws.
+
+The Foundation's principal office is located at 4557 Melan Dr. S.
+Fairbanks, AK, 99712., but its volunteers and employees are scattered
+throughout numerous locations.  Its business office is located at
+809 North 1500 West, Salt Lake City, UT 84116, (801) 596-1887, email
+business@pglaf.org.  Email contact links and up to date contact
+information can be found at the Foundation's web site and official
+page at http://pglaf.org
+
+For additional contact information:
+     Dr. Gregory B. Newby
+     Chief Executive and Director
+     gbnewby@pglaf.org
+
+Section 4.  Information about Donations to the Project Gutenberg
+Literary Archive Foundation
+
+Project Gutenberg-tm depends upon and cannot survive without wide
+spread public support and donations to carry out its mission of
+increasing the number of public domain and licensed works that can be
+freely distributed in machine readable form accessible by the widest
+array of equipment including outdated equipment.  Many small donations
+($1 to $5,000) are particularly important to maintaining tax exempt
+status with the IRS.
+
+The Foundation is committed to complying with the laws regulating
+charities and charitable donations in all 50 states of the United
+States.  Compliance requirements are not uniform and it takes a
+considerable effort, much paperwork and many fees to meet and keep up
+with these requirements.  We do not solicit donations in locations
+where we have not received written confirmation of compliance.  To
+SEND DONATIONS or determine the status of compliance for any
+particular state visit http://pglaf.org
+
+While we cannot and do not solicit contributions from states where we
+have not met the solicitation requirements, we know of no prohibition
+against accepting unsolicited donations from donors in such states who
+approach us with offers to donate.
+
+International donations are gratefully accepted, but we cannot make
+any statements concerning tax treatment of donations received from
+outside the United States.  U.S. laws alone swamp our small staff.
+
+Please check the Project Gutenberg Web pages for current donation
+methods and addresses.  Donations are accepted in a number of other
+ways including including checks, online payments and credit card
+donations.  To donate, please visit: http://pglaf.org/donate
+
+
+Section 5.  General Information About Project Gutenberg-tm electronic
+works.
+
+Professor Michael S. Hart is the originator of the Project Gutenberg-tm
+concept of a library of electronic works that could be freely shared
+with anyone.  For thirty years, he produced and distributed Project
+Gutenberg-tm eBooks with only a loose network of volunteer support.
+
+Project Gutenberg-tm eBooks are often created from several printed
+editions, all of which are confirmed as Public Domain in the U.S.
+unless a copyright notice is included.  Thus, we do not necessarily
+keep eBooks in compliance with any particular paper edition.
+
+Each eBook is in a subdirectory of the same number as the eBook's
+eBook number, often in several formats including plain vanilla ASCII,
+compressed (zipped), HTML and others.
+
+Corrected EDITIONS of our eBooks replace the old file and take over
+the old filename and etext number.  The replaced older file is renamed.
+VERSIONS based on separate sources are treated as new eBooks receiving
+new filenames and etext numbers.
+
+Most people start at our Web site which has the main PG search facility:
+
+     http://www.gutenberg.net
+
+This Web site includes information about Project Gutenberg-tm,
+including how to make donations to the Project Gutenberg Literary
+Archive Foundation, how to help produce our new eBooks, and how to
+subscribe to our email newsletter to hear about new eBooks.
+
+EBooks posted prior to November 2003, with eBook numbers BELOW #10000,
+are filed in directories based on their release date.  If you want to
+download any of these eBooks directly, rather than using the regular
+search system you may utilize the following addresses and just
+download by the etext year.
+
+     http://www.gutenberg.net/etext06
+
+    (Or /etext 05, 04, 03, 02, 01, 00, 99,
+     98, 97, 96, 95, 94, 93, 92, 92, 91 or 90)
+
+EBooks posted since November 2003, with etext numbers OVER #10000, are
+filed in a different way.  The year of a release date is no longer part
+of the directory path.  The path is based on the etext number (which is
+identical to the filename).  The path to the file is made up of single
+digits corresponding to all but the last digit in the filename.  For
+example an eBook of filename 10234 would be found at:
+
+     http://www.gutenberg.net/1/0/2/3/10234
+
+or filename 24689 would be found at:
+     http://www.gutenberg.net/2/4/6/8/24689
+
+An alternative method of locating eBooks:
+     http://www.gutenberg.net/GUTINDEX.ALL
+
+

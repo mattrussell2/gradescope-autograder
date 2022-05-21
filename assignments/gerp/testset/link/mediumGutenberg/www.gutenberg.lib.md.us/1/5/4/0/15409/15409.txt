@@ -1,0 +1,1139 @@
+The Project Gutenberg EBook of An Elegy Wrote in a Country Church Yard
+(1751) and The Eton College Manuscript, by Thomas Gray
+
+This eBook is for the use of anyone anywhere at no cost and with
+almost no restrictions whatsoever.  You may copy it, give it away or
+re-use it under the terms of the Project Gutenberg License included
+with this eBook or online at www.gutenberg.net
+
+
+Title: An Elegy Wrote in a Country Church Yard (1751) and The Eton College Manuscript
+
+Author: Thomas Gray
+
+Release Date: March 18, 2005 [EBook #15409]
+
+Language: English
+
+Character set encoding: ASCII
+
+*** START OF THIS PROJECT GUTENBERG EBOOK AN ELEGY WROTE IN A COUNTRY ***
+
+
+
+
+Produced by David Starner, Diane Monico and the Online Distributed
+Proofreading Team at http://www.pgdp.net.
+
+
+
+
+
+
+
+
+
+
+The Augustan Reprint Society
+
+
+
+THOMAS GRAY
+
+_An Elegy Wrote in a Country Church Yard_
+
+(1751)
+
+and
+
+_The Eton College Manuscript_
+
+
+
+With an Introduction by
+
+George Sherburn
+
+
+Publication Number 31
+
+
+Los Angeles
+Williams Andrews Clark Memorial Library
+University of California
+1951
+
+
+
+
+GENERAL EDITORS
+
+H. RICHARD ARCHER, _Clark Memorial Library_
+RICHARD C. BOYS, _University of Michigan_
+JOHN LOFTIS, _University of California, Los Angeles_
+
+
+ASSISTANT EDITOR
+
+W. EARL BRITTON, _University of Michigan_
+
+
+ADVISORY EDITORS
+
+EMMETT L. AVERY, _State College of Washington_
+BENJAMIN BOYCE, _Duke University_
+LOUIS I. BREDVOLD, _University of Michigan_
+CLEANTH BROOKS, _Yale University_
+JAMES L. CLIFFORD, _Columbia University_
+ARTHUR FRIEDMAN, _University of Chicago_
+EDWARD NILES HOOKER, _University of California, Los Angeles_
+LOUIS A. LANDA, _Princeton University_
+SAMUEL H. MONK, _University of Minnesota_
+ERNEST MOSSNER, _University of Texas_
+JAMES SUTHERLAND, _University College, London_
+H.T. SWEDENBERG, JR., _University of California, Los Angeles_
+
+
+
+
+
+INTRODUCTION
+
+
+To some the eighteenth-century definition of proper poetic matter is
+unacceptable; but to any who believe that true poetry may (if not
+"must") consist in "what oft was thought but ne'er so well expressed,"
+Gray's "Churchyard" is a majestic achievement--perhaps (accepting the
+definition offered) the supreme achievement of its century. Its
+success, so the great critic of its day thought, lay in its appeal to
+"the common reader"; and though no friend of Gray's other work, Dr.
+Johnson went on to commend the "Elegy" as abounding "with images which
+find a mirrour in every mind and with sentiments to which every bosom
+returns an echo." Universality, clarity, incisive lapidary
+diction--these qualities may be somewhat staled in praise of the
+"classical" style, yet it is precisely in these traits that the
+"Elegy" proves most nobly. The artificial figures of rhetorical
+arrangement that are so omnipresent in the antitheses, chiasmuses,
+parallelisms, etc., of Pope and his school are in Gray's best
+quatrains unobtrusive or even infrequent.
+
+Often in the art of the period an affectation of simplicity covers and
+reveals by turns a great thirst for ingenuity. Swift's prose is a fair
+example; in the "Tale of a Tub" and even in "Gulliver" at first sight
+there seems to appear only an honest and simple directness; but pry
+beneath the surface statements, or allow yourself to be dazzled by
+their coruscations of meaning, and you immediately see you are
+watching a stylistic prestidigitator. The later, more orderly dignity
+of Dr. Johnson's exquisitely chosen diction is likewise ingeniously
+studied and self-conscious. When Gray soared into the somewhat turgid
+pindaric tradition of his day, he too was slaking a thirst for
+rhetorical complexities. But in the "Elegy" we have none of that. Nor
+do we have artifices like the "chaste Eve" or the "meek-eyed maiden"
+apostrophized in Collins and Joseph Warton. For Gray the hour when the
+sky turns from opal to dusk leaves one not "breathless with
+adoration," but moved calmly to placid reflection tuned to drowsy
+tinklings or to a moping owl. It endures no contortions of image or of
+verse. It registers the sensations of the hour and the reflections
+appropriate to it--simply.
+
+It is not difficult to be clear--so we are told by some who habitually
+fail of that quality--if you have nothing subtle to say. And it has
+been urged on high authority in our day that there is nothing really
+"fine" in Gray's "Churchyard." However conscious Gray was in limiting
+his address to "the common reader," we may be certain he was not
+writing to the obtuse, the illiterate or the insensitive. He was to
+create an evocation of evening: the evening of a day and the
+approaching night of life. The poem was not to be perplexed by doubt;
+it ends on a note of "trembling hope"--but on "hope." There are
+perhaps better evocations of similar moods, but not of this precise
+mood. Shakespeare's poignant Sonnet LXXIII ("That time of year"),
+which suggests no hope, may be one. Blake's "Nurse's Song" is, in
+contrast, subtly tinged with modernistic disillusion:
+
+    When the voices of children are heard on the green
+    And whisp'rings are in the dale,
+    The days of my youth rise fresh in my mind,
+    My face turns green and pale.
+
+    Then come home, my children, the sun is gone down,
+    And the dews of night arise;
+    Your spring & your day are wasted in play,
+    And your winter and night in disguise.
+
+Here, too, are no tremblings of hope, no sound confidence in the
+"average" man, such as Gray surprisingly glimpses. One begins to
+suspect that it is more necessary to be subtle in evocations of
+despair than in those of hope, even if the hope is tremulous. The mood
+Gray sought required no obvious subtlety. The nearest approach to Gray
+(found in Catullus) may likewise be said to be deficient in overtones;
+but it also comes home to the heart of everyman:
+
+    o quid solutis est beatius curis,
+    cum mens onus reponit, ac peregrino
+    labore fessi venimus larem ad nostrum
+    desideratoque acquiescimus lecto!
+
+These simple lines convey what Gray's ploughman is achieving for one
+evening, but not what the rude forefathers have achieved for eternity.
+From the ploughman and the simple annals of the poor the poem diverges
+to reproach the proud and great for their disregard of undistinguished
+merit, and moves on to praise of the sequestered life, and to an
+epitaph applicable either to a "poeta ignotus" or to Gray himself. The
+epitaph with its trembling hope transforms the poem into something
+like a personal yet universal requiem; and for one villager--perhaps
+for himself--Gray seems to murmur through the gathering darkness: "et
+lux perpetua luceat ei." Although in this epitaph we may seem to be
+concerned with an individual, we do well to note that the youth to
+fortune and fame unknown, whose great "bounty" was only a tear, is as
+completely anonymous as the ploughman or the rude forefathers.
+
+The somber aspects of evening are perhaps more steadily preserved by
+Gray than by his contemporaries. From Milton to Joseph Warton all
+poets had made their ploughman unwearied as (to quote Warton):
+
+    He jocund whistles thro' the twilight groves.
+
+With Gray all this blithe whistling stopped together. Evening poems by
+Dyer, Warton, and Collins had tended to be "pretty," but here again
+Gray resisted temptation and regretfully omitted a stanza designed to
+precede immediately the epitaph:
+
+    There scatter'd oft, the earliest of ye Year
+    By hands unseen, are Show'rs of Violets found;
+    The Red-breast loves to build & warble there,
+    And little Footsteps lightly print the Ground.
+
+With similar critical tact Gray realized that one might have too much
+of stately moral reflections unmixed with drama. Possibly such an
+idea determined him in discarding four noble quatrains with which he
+first designed to end his poem. After line 72 in the manuscript now in
+Eton College appeared these stanzas:
+
+    The thoughtless World to Majesty may bow
+    Exalt the brave, & idolize Success
+    But more to Innocence their Safety owe
+    Than Power & Genius e'er conspired to bless
+
+    And thou, who mindful of the unhonour'd Dead
+    Dost in these Notes their artless Tale relate
+    By Night & lonely Contemplation led
+    To linger in the gloomy Walks of Fate
+
+    Hark how the sacred Calm, that broods around
+    Bids ev'ry fierce tumultuous Passion cease
+    In still small Accents, whisp'ring from the Ground
+    A grateful Earnest of eternal Peace
+
+    No more with Reason & thyself at Strife
+    Give anxious Cares & endless Wishes room
+    But thro the cool sequester'd Vale of Life
+    Pursue the silent Tenour of thy Doom.
+
+"And here," comments Mason, "the Poem was originally intended to
+conclude, before the happy idea of the hoary-headed Swain, &c.
+suggested itself to him." To reconstitute the poem with this original
+ending gives an interesting structure. The first three quatrains evoke
+the fall of darkness; four stanzas follow presenting the rude
+forefathers in their narrow graves; eleven quatrains follow in
+reproach of Ambition, Grandeur, Pride, et al., for failure to realize
+the high merit of humility. Then after line 72 of the final version
+would come these four rejected stanzas, continuing the reproach of
+"the thoughtless world," and turning all too briefly to one who could
+"their artless tale relate," and to the calm that then breathes around
+tumultuous passion and speaks of eternal peace--and "the silent tenor
+of thy doom."
+
+That would give a simpler structure; and one may argue whether turning
+back from the thoughtless world to praise again the "cool sequester'd
+vale of life" and then appending "the happy idea of the hoary-headed
+swain, &c." does really improve the poem structurally. Its method is,
+however, more acceptable in that now the reflections are imbedded in
+"drama" (or at least in narrative), and the total effect is more
+pleasing to present-day readers since we escape, or seem to escape,
+from the cool universality of humble life to a focus on an individual
+grief. To end on a grim note of generalized "doom," would have given
+the poem a temporary success such as it deserved; and it must be
+acknowledged that the knell-like sound of "No more ... No more" (lines
+20, 21) echoed and re-echoed for decades through the imaginations of
+gloom-fed poets. But Gray, although an undoubted "graveyard" poet, is
+no mere graveyard poet: he stands above and apart from the lot of
+them, and he was not content to end despondently in a descending
+gloom. His, as he told West, in a celebrated letter, was a "white
+melancholy, or rather leucocholy"; and he wrote of "lachrymae rerum"
+rather than of private mordant sorrows.
+
+The poem is couched in universals: Gray writes in "a" country
+churchyard, and the actual Stoke Poges, dear and lovely as it
+doubtless was to Gray, clings to the fame of the poem almost by
+accident. And yet, by a sort of paradox, this "universal" poem in its
+setting and mood is completely English. One could go too far from home
+for examples of distinction--for the polar stars of the rude
+forefathers--just as one could err by excess of "commonplace"
+reflections. Some such idea encouraged Gray to modify his fifteenth
+quatrain, which in the Eton MS reads (the first line has partly
+perished from folding of the paper):
+
+    Some [Village] Cato [who] with dauntless Breast
+    The little Tyrant of his Fields withstood;
+    Some mute inglorious Tully here may rest;
+    Some Caesar, guiltless of his Country's Blood.
+
+The substitution of English names is an obvious attempt to bring truth
+closer to the souls of his readers by use of "domestica facta" and the
+avoidance of school-boy learning.
+
+All these changes illustrate the quality of Gray's curious felicity.
+His assault on the reader's sensibilities was organized and careful:
+here is no sign of that contradiction in terms, "unpremeditated art."
+He probably did not work on the poem so long as historians have said
+he did, but he scanted neither time nor attention. Mason thought the
+poem begun and perhaps finished in 1742, and he connected its
+somberness with Gray's great sorrow over the death of his close friend
+Richard West. All this seems more than doubtful: to Dr. Thomas
+Wharton in September 1746 Gray mentioned recently composing "a few
+autumnal verses," and there is no real evidence of work on the poem
+before this time. Walpole evidently inclined to 1746 as the date of
+commencement, and it may be pointed out that Mason himself is not so
+sure of 1742 as have been his Victorian successors. All he says is, "I
+am inclined to believe that the Elegy ... was begun, if not concluded,
+at this time [1742] also." Gray's reputation for extreme leisurely
+composition depends largely on the "inclination" to believe that the
+"Elegy" was begun in 1742 and on a later remark by Walpole concerning
+Gray's project for a History of Poetry. In a letter of 5 May 1761
+Walpole joked to Montagu saying that Gray, "if he rides Pegasus at his
+usual foot-pace, will finish the first page two years hence." Not
+really so slow as this remark suggests, Gray finally sent his "Elegy"
+to Walpole in June of 1750, and in December he sent perhaps an earlier
+form of the poem to Dr. Wharton. Naturally delighted with the
+perfected utterance of this finely chiseled work, these two friends
+passed it about in manuscript, and allowed copies to be taken.
+
+Publication, normally abhorrent to Gray, thus became inevitable,
+though apparently not contemplated by Gray himself. The private
+success of the poem was greater than he had anticipated, and in
+February of 1751 he was horrified to receive a letter from the editor
+of a young and undistinguished periodical, "The Magazine of
+Magazines," who planned to print forthwith the "ingenious poem,
+call'd Reflections in a Country-Churchyard." Gray hastily wrote to
+Walpole (11 February), insisting that he should "make Dodsley print it
+immediately" from Walpole's copy, without Gray's name, but with good
+paper and letter. He prescribed the titlepage as well as other
+details, and within four days Dodsley had the poem in print, and
+anticipated the piratical "Magazine" by one day. But the "Magazine"
+named Gray as the author, and success without anonymity was the fate
+of the "Elegy." Edition followed edition, and the poem was almost from
+birth an international classic.
+
+One of the author's prescriptions for publication concerned the verse
+form. He told Walpole that Dodsley must "print it without any Interval
+between the Stanza's, because the Sense is in some Places continued
+beyond them." In the Egerton MS Gray had written the poem with no
+breaks to set off quatrains, but in the earlier MS (Eton College),
+where the poem is entitled, "Stanza's, wrote in a Country
+Church-Yard," the quatrains are spaced in normal fashion. The
+injunction shows Gray's sensitiveness as to metrical form. He had
+called the poem an Elegy only after urging by Mason, and he possibly
+doubted if his metre was "soft" enough for true elegy. The metre
+hitherto had not been common in elegies, though James Hammond's "Love
+Elegies" (1743) had used it and won acclaim. But the heroic
+(hendecasyllabic) quatrain was regarded in general as too lofty,
+stately, cool, for elegy. For the universal aspect of Gray's lament,
+however, it was highly apt as compared with the less majestic
+octosyllabic line, hitherto normal in this genre. For years after
+Gray's great success, however, most elegies, if in quatrain form,
+followed Gray's quatrain in manner, whether or not their subjects
+demanded the stately line.
+
+The reasons why Gray is almost a poet of only one poem are not far to
+seek. He did not covet applause, and apart from melancholy his own
+emotions were too private to be published. In the "Elegy" he is true
+to himself and to the spirit of his age--perhaps of most ages. When he
+sought for material outside of his own experience, he went curiously
+to books, and was captivated by the "recherche." He was also caught by
+the rising cult of sublimity in his two great pindaric odes, and by
+the cult of the picturesque in his flirtations with Scandinavian
+materials. In these later poems he broadened the field of poetic
+material notably; but in them he hardly deepened the imaginative or
+emotional tone: his manner, rather, became elaborate and theatrical.
+The "Elegy" is the language of the heart sincerely perfected.
+
+The poem has pleased many and pleased long--throughout two centuries.
+In part it works through "pleasing melancholy"; in part it appeals to
+innumerable humble readers conscious of their own unheralded merit.
+Inevitably, since the industrial revolution, modernist critics have
+tended to stress its appeal to class consciousness. This appeal, real
+though it is, can be overemphasized. The rude forefathers are not
+primarily presented as underprivileged. Though poverty-stricken and
+ignorant, they are happy in family life and jocund in the field.
+"Nature is nature wherever placed," as the intellectuals of Gray's
+time loved to say, and the powers of the village fathers, potentially,
+equal the greatest; their virtue is contentment. They neither want nor
+need "storied urn or animated bust." If they are unappreciated by
+Ambition, Grandeur, Pride, et al., the lack of appreciation is due to
+a corruption of values. The value commended in the "Elegy" is that of
+the simple life, which alone is rational and virtuous--it is the life
+according to nature. Sophisticated living, Gray implies in the stanza
+that once ended the poem, finds man at war with himself and with
+reason; but the cool sequestered path--its goal identical with that of
+the paths of Glory--finds man at peace with himself and with reason.
+The theme was not new before Gray made it peculiarly his own, and it
+has become somewhat hackneyed in the last two hundred years; but the
+fact that it is seldom unheard in any decade testifies to its
+permanency of appeal, and the fact that it was "ne'er so well
+express'd" as in the "Elegy" justifies our love for that poem.
+
+George Sherburn
+Harvard University
+
+
+
+
+A NOTE ON THE TEXTS
+
+
+The first edition of the "Elegy" is here reproduced from a copy in the
+William Andrews Clark Memorial Library.
+
+By permission of the Provost and Fellows of Eton College, the
+manuscript preserved in the library of Eton College is also
+reproduced. This manuscript once belonged to Gray's friend,
+biographer, and editor, William Mason. In spite of its dimness, due to
+creases in the paper and to the fact that the ink shows through from
+the other side of the paper, this manuscript is chosen for
+reproduction because it preserves the quatrains discarded before
+printing the poem, and has other interesting variants in text. Two
+other MSS of the poem in Gray's hand are known to exist. One is
+preserved in the British Museum (Egerton 2400, ff. 45-6) and the other
+is the copy made by Gray in Volume II of his Commonplace Books. This,
+is appropriately preserved in the library of Pembroke College,
+Cambridge. Sir William Fraser bequeathed to Eton College the MS there
+found, which in certain editions of the poem is called "the Fraser
+manuscript."
+
+
+
+
+AN
+
+ELEGY
+
+WROTE IN A
+
+Country Church Yard.
+
+
+
+_LONDON:_
+
+Printed for R. DODSLEY in _Pall-mall_;
+
+And sold by M. COOPER in _Pater-noster-Row_. 1751.
+
+[Price Six-pence.]
+
+
+
+
+Advertisement.
+
+
+     _The following_ POEM _came into my Hands by Accident, if the
+     general Approbation with which this little Piece has been
+     spread, may be call'd by so slight a Term as Accident. It is
+     this Approbation which makes it unnecessary for me to make
+     any Apology but to the Author: As he cannot but feel some
+     Satisfaction in having pleas'd so many Readers already, I
+     flatter myself he will forgive my communicating that
+     Pleasure to many more._
+
+The _EDITOR_
+
+
+
+
+AN
+
+ELEGY, _&c._
+
+
+      The _Curfeu_ tolls the Knell of parting Day,
+    The lowing Herd winds slowly o'er the Lea,
+    The Plow-man homeward plods his weary Way,
+    And leaves the World to Darkness, and to me.
+      Now fades the glimmering Landscape on the Sight,
+    And all the Air a solemn Stillness holds;
+    Save where the Beetle wheels his droning Flight,
+    And drowsy Tinklings lull the distant Folds.
+      Save that from yonder Ivy-mantled Tow'r
+    The mopeing Owl does to the Moon complain
+    Of such, as wand'ring near her sacred Bow'r,
+    Molest her ancient solitary Reign.
+      Beneath those rugged Elms, that Yew-Tree's Shade,
+    Where heaves the Turf in many a mould'ring Heap,
+    Each in his narrow Cell for ever laid,
+    The rude Forefathers of the Hamlet sleep.
+      The breezy Call of Incense-breathing Morn,
+    The Swallow twitt'ring from the Straw-built Shed,
+    The Cock's shrill Clarion, or the ecchoing Horn,
+    No more shall wake them from their lowly Bed.
+      For them no more the blazing Hearth shall burn,
+    Or busy Houswife ply her Evening Care:
+    No Children run to lisp their Sire's Return,
+    Or climb his Knees the envied Kiss to share.
+      Oft did the Harvest to their Sickle yield,
+    Their Furrow oft the stubborn Glebe has broke;
+    How jocund did they they drive their Team afield!
+    How bow'd the Woods beneath their sturdy Stroke!
+      Let not Ambition mock their useful Toil,
+    Their homely Joys and Destiny obscure;
+    Nor Grandeur hear with a disdainful Smile,
+    The short and simple Annals of the Poor.
+      The Boast of Heraldry, the Pomp of Pow'r,
+    And all that Beauty, all that Wealth e'er gave,
+    Awaits alike th' inevitable Hour.
+    The Paths of Glory lead but to the Grave.
+      Forgive, ye Proud, th' involuntary Fault,
+    If Memory to these no Trophies raise,
+    Where thro' the long-drawn Isle and fretted Vault
+    The pealing Anthem swells the Note of Praise.
+      Can storied Urn or animated Bust
+    Back to its Mansion call the fleeting Breath?
+    Can Honour's Voice provoke the silent Dust,
+    Or Flatt'ry sooth the dull cold Ear of Death!
+      Perhaps in this neglected Spot is laid
+    Some Heart once pregnant with celestial Fire,
+    Hands that the Reins of Empire might have sway'd,
+    Or wak'd to Extacy the living Lyre.
+      But Knowledge to their Eyes her ample Page
+    Rich with the Spoils of Time did ne'er unroll;
+    Chill Penury repress'd their noble Rage,
+    And froze the genial Current of the Soul.
+      Full many a Gem of purest Ray serene,
+    The dark unfathom'd Caves of Ocean bear:
+    Full many a Flower is born to blush unseen,
+    And waste its Sweetness on the desart Air.
+      Some Village-_Hampden_ that with dauntless Breast
+    The little Tyrant of his Fields withstood;
+    Some mute inglorious _Milton_ here may rest,
+    Some _Cromwell_ guiltless of his Country's Blood.
+      Th' Applause of list'ning Senates to command,
+    The Threats of Pain and Ruin to despise,
+    To scatter Plenty o'er a smiling Land,
+    And read their Hist'ry in a Nation's Eyes
+      Their Lot forbad: nor circumscrib'd alone
+    Their growing Virtues, but their Crimes confin'd;
+    Forbad to wade through Slaughter to a Throne,
+    And shut the Gates of Mercy on Mankind,
+      The struggling Pangs of conscious Truth to hide,
+    To quench the Blushes of ingenuous Shame,
+    Or heap the Shrine of Luxury and Pride
+    With Incense, kindled at the Muse's Flame.
+      Far from the madding Crowd's ignoble Strife,
+    Their sober Wishes never learn'd to stray;
+    Along the cool sequester'd Vale of Life
+    They kept the noiseless Tenor of their Way.
+      Yet ev'n these Bones from Insult to protect
+    Some frail Memorial still erected nigh,
+    With uncouth Rhimes and shapeless Sculpture deck'd,
+    Implores the passing Tribute of a Sigh.
+      Their Name, their Years, spelt by th' unlettered Muse,
+    The Place of Fame and Elegy supply:
+    And many a holy Text around she strews,
+    That teach the rustic Moralist to dye.
+      For who to dumb Forgetfulness a Prey,
+    This pleasing anxious Being e'er resign'd,
+    Left the warm Precincts of the chearful Day,
+    Nor cast one longing ling'ring Look behind!
+      On some fond Breast the parting Soul relies,
+    Some pious Drops the closing Eye requires;
+    Ev'n from the Tomb the Voice of Nature cries
+    Awake, and faithful to her wonted Fires.
+       For thee, who mindful of th' unhonour'd Dead
+    Dost in these Lines their artless Tale relate;
+    If chance, by lonely Contemplation led,
+    Some hidden Spirit shall inquire thy Fate,
+       Haply some hoary-headed Swain may say,
+    'Oft have we seen him at the Peep of Dawn
+    'Brushing with hasty Steps the Dews away
+    'To meet the Sun upon the upland Lawn.
+       'There at the Foot of yonder nodding Beech
+    'That wreathes its old fantastic Roots so high,
+    'His listless Length at Noontide wou'd he stretch,
+    'And pore upon the Brook that babbles by.
+       'Hard by yon Wood, now frowning as in Scorn,
+    'Mutt'ring his wayward Fancies he wou'd rove,
+    'Now drooping, woeful wan, like one forlorn,
+    'Or craz'd with Care, or cross'd in hopeless Love.
+       'One Morn I miss'd him on the custom'd Hill,
+    'Along the Heath, and near his fav'rite Tree;
+    'Another came; nor yet beside the Rill,
+    'Nor up the Lawn, nor at the Wood was he.
+      'The next with Dirges due in sad Array
+    'Slow thro' the Church-way Path we saw him born.
+    'Approach and read (for thou can'st read) the Lay,
+    'Grav'd on the Stone beneath yon aged Thorn.
+
+
+                    The EPITAPH.
+
+      _Here rests his Head upon the Lap of Earth
+    A Youth to Fortune and to Fame unknown:
+    Fair Science frown'd not on his humble Birth,
+    And Melancholy mark'd him for her own.
+      Large was his Bounty, and his Soul sincere,
+    Heav'n did a Recompense as largely send:
+    He gave to Mis'ry all he had, a Tear:
+    He gain'd from Heav'n ('twas all he wish'd) a Friend
+      No farther seek his Merits to disclose,
+    Or draw his Frailties from their dread Abode,
+    (There they alike in trembling Hope repose)
+    The Bosom of his Father and his God._
+
+
+FINIS.
+
+
+
+
+PUBLICATIONS OF THE AUGUSTAN REPRINT SOCIETY
+
+FIRST YEAR (1946-47)
+
+Numbers 1-4 out of print.
+
+5. Samuel Wesley's _Epistle to a Friend Concerning Poetry_ (1700) and
+_Essay on Heroic Poetry_ (1693).
+
+6. _Representation of the Impiety and Immorality of the Stage_ (1704) and
+_Some Thoughts Concerning the Stage_ (1704).
+
+SECOND YEAR (1947-1948)
+
+7. John Gay's _The Present State of Wit_ (1711); and a section on Wit from
+_The English Theophrastus_ (1702).
+
+8. Rapin's _De Carmine Pastorali_, translated by Creech (1684).
+
+9. T. Hanmer's (?) _Some Remarks on the Tragedy of Hamlet_ (1736).
+
+10. Corbyn Morris' _Essay towards Fixing the True Standards of Wit,
+etc._ (1744).
+
+11. Thomas Purney's _Discourse on the Pastoral_ (1717).
+
+12. Essays on the Stage, selected, with an Introduction by Joseph Wood
+Krutch.
+
+THIRD YEAR (1948-1949)
+
+13. Sir John Falstaff (pseud.), _The Theatre_ (1720).
+
+14. Edward Moore's _The Gamester_ (1753).
+
+15. John Oldmixon's _Reflections on Dr. Swift's Letter to Harley_
+(1712); and Arthur Mainwaring's _The British Academy_ (1712).
+
+16. Nevil Payne's _Fatal Jealousy_ (1673).
+
+17. Nicholas Rowe's _Some Account of the Life of Mr. William Shakespeare_
+(1709).
+
+18. "Of Genius," in _The Occasional Paper_, Vol. III, No. 10 (1719);
+and Aaron Hill's Preface to _The Creation_ (1720).
+
+FOURTH YEAR (1949-1950)
+
+19. Susanna Centlivre's _The Busie Body_ (1709).
+
+20. Lewis Theobold's _Preface to The Works of Shakespeare_ (1734).
+
+21. _Critical Remarks on Sir Charles Grandison, Clarissa, and Pamela_
+(1754).
+
+22. Samuel Johnson's _The Vanity of Human Wishes_ (1749) and Two _Rambler_
+papers (1750).
+
+23. John Dryden's _His Majesties Declaration Defended_ (1681).
+
+24. Pierre Nicole's _An Essay on True and Apparent Beauty in Which
+from Settled Principles is Rendered the Grounds for Choosing and
+Rejecting Epigrams_, translated by J.V. Cunningham.
+
+FIFTH YEAR (1950-51)
+
+25. Thomas Baker's _The Fine Lady's Airs_ (1709).
+
+26. Charles Macklin's _The Man of the World_ (1792).
+
+27. Frances Reynolds' _An Enquiry Concerning the Principles of Taste,
+and of the Origin of Our Ideas of Beauty, etc._ (1785).
+
+28. John Evelyn's _An Apologie for the Royal Party_ (1659); and _A
+Panegyric to Charles the Second_ (1661).
+
+29. Daniel Defoe's _A Vindication of the Press_ (1718).
+
+30. Essays on Taste from John Gilbert Cooper's _Letters Concerning
+Taste_, 3rd edition (1757), & John Armstrong's _Miscellanies_ (1770).
+
+
+
+
+William Andrews Clark Memorial Library: University of California
+
+THE AUGUSTAN REPRINT SOCIETY
+
+_General Editors_
+
+H. RICHARD ARCHER
+  William Andrews Clark Memorial Library
+
+R.C. BOYS
+  University of Michigan
+
+E.N. HOOKER
+  University of California, Los Angeles
+
+JOHN LOFTIS
+  University of California, Los Angeles
+
+The Society exists to make available inexpensive reprints (usually
+facsimile reproductions) of rare seventeenth and eighteenth century
+works. The editorial policy of the Society continues unchanged. As in
+the past, the editors welcome suggestions concerning publications. All
+income of the Society is devoted to defraying cost of publication and
+mailing.
+
+All correspondence concerning subscriptions in the United States and
+Canada should be addressed to the William Andrews Clark Memorial
+Library, 2205 West Adams Boulevard, Los Angeles 18, California.
+Correspondence concerning editorial matters may be addressed to any of
+the general editors. The membership fee is $3.00 a year for
+subscribers in the United States and Canada and 15/-for subscribers in
+Great Britain and Europe. British and European subscribers should
+address B.H. Blackwell, Broad Street, Oxford, England.
+
+       *       *       *       *       *
+
+Publications for the sixth year [1951-1952],
+
+(At least six items, most of them from the following list, will be
+reprinted.)
+
+
+THOMAS GRAY: _An Elegy Wrote in a Country Church Yard_ (1751).
+Introduction by George Sherburn.
+
+JAMES BOSWELL, ANDREW ERSKINE, and GEORGE DEMPSTER: _Critical
+Strictures on the New Tragedy of Elvira_ (1763). Introduction by
+Frederick A. Pottle.
+
+_An Essay on the New Species of Writing Founded by Mr. Fielding_
+(1751). Introduction by James A. Work.
+
+HENRY GALLY: _A Critical Essay on Characteristic Writing_ (1725).
+Introduction by Alexander Chorney.
+
+[JOHN PHILLIPS]: _Satyr Against Hypocrits_ (1655). Introduction by
+Leon Howard.
+
+_Prefaces to Fiction._ Selected and with an Introduction by Benjamin
+Boyce.
+
+THOMAS TYERS: _A Biographical Sketch of Dr. Samuel Johnson_ ([1785]).
+Introduction by Gerald Dennis Meyer.
+
+
+Publications for the first five years (with the exception of NOS. 1-4,
+which are out of print) are available at the rate of $3.00 a year.
+Prices for individual numbers may be obtained by writing to the
+Society.
+
+       *       *       *       *       *
+
+THE AUGUSTAN REPRINT SOCIETY
+_WILLIAM ANDREWS CLARK MEMORIAL LIBRARY_
+2205 WEST ADAMS BOULEVARD, LOS ANGELES 18, CALIFORNIA
+
+Make check or money order payable to THE REGENTS OF THE UNIVERSITY OF
+CALIFORNIA.
+
+
+
+
+[Illustration: The Eton College Manuscript, Page 1]
+
+[Illustration: The Eton College Manuscript, Page 2]
+
+[Illustration: The Eton College Manuscript, Page 3]
+
+[Illustration: The Eton College Manuscript, Page 4]
+
+
+
+
+
+End of the Project Gutenberg EBook of An Elegy Wrote in a Country Church
+Yard (1751) and The Eton College Manuscript, by Thomas Gray
+
+*** END OF THIS PROJECT GUTENBERG EBOOK AN ELEGY WROTE IN A COUNTRY ***
+
+***** This file should be named 15409.txt or 15409.zip *****
+This and all associated files of various formats will be found in:
+        http://www.gutenberg.net/1/5/4/0/15409/
+
+Produced by David Starner, Diane Monico and the Online Distributed
+Proofreading Team at http://www.pgdp.net.
+
+
+Updated editions will replace the previous one--the old editions
+will be renamed.
+
+Creating the works from public domain print editions means that no
+one owns a United States copyright in these works, so the Foundation
+(and you!) can copy and distribute it in the United States without
+permission and without paying copyright royalties.  Special rules,
+set forth in the General Terms of Use part of this license, apply to
+copying and distributing Project Gutenberg-tm electronic works to
+protect the PROJECT GUTENBERG-tm concept and trademark.  Project
+Gutenberg is a registered trademark, and may not be used if you
+charge for the eBooks, unless you receive specific permission.  If you
+do not charge anything for copies of this eBook, complying with the
+rules is very easy.  You may use this eBook for nearly any purpose
+such as creation of derivative works, reports, performances and
+research.  They may be modified and printed and given away--you may do
+practically ANYTHING with public domain eBooks.  Redistribution is
+subject to the trademark license, especially commercial
+redistribution.
+
+
+
+*** START: FULL LICENSE ***
+
+THE FULL PROJECT GUTENBERG LICENSE
+PLEASE READ THIS BEFORE YOU DISTRIBUTE OR USE THIS WORK
+
+To protect the Project Gutenberg-tm mission of promoting the free
+distribution of electronic works, by using or distributing this work
+(or any other work associated in any way with the phrase "Project
+Gutenberg"), you agree to comply with all the terms of the Full Project
+Gutenberg-tm License (available with this file or online at
+http://gutenberg.net/license).
+
+
+Section 1.  General Terms of Use and Redistributing Project Gutenberg-tm
+electronic works
+
+1.A.  By reading or using any part of this Project Gutenberg-tm
+electronic work, you indicate that you have read, understand, agree to
+and accept all the terms of this license and intellectual property
+(trademark/copyright) agreement.  If you do not agree to abide by all
+the terms of this agreement, you must cease using and return or destroy
+all copies of Project Gutenberg-tm electronic works in your possession.
+If you paid a fee for obtaining a copy of or access to a Project
+Gutenberg-tm electronic work and you do not agree to be bound by the
+terms of this agreement, you may obtain a refund from the person or
+entity to whom you paid the fee as set forth in paragraph 1.E.8.
+
+1.B.  "Project Gutenberg" is a registered trademark.  It may only be
+used on or associated in any way with an electronic work by people who
+agree to be bound by the terms of this agreement.  There are a few
+things that you can do with most Project Gutenberg-tm electronic works
+even without complying with the full terms of this agreement.  See
+paragraph 1.C below.  There are a lot of things you can do with Project
+Gutenberg-tm electronic works if you follow the terms of this agreement
+and help preserve free future access to Project Gutenberg-tm electronic
+works.  See paragraph 1.E below.
+
+1.C.  The Project Gutenberg Literary Archive Foundation ("the Foundation"
+or PGLAF), owns a compilation copyright in the collection of Project
+Gutenberg-tm electronic works.  Nearly all the individual works in the
+collection are in the public domain in the United States.  If an
+individual work is in the public domain in the United States and you are
+located in the United States, we do not claim a right to prevent you from
+copying, distributing, performing, displaying or creating derivative
+works based on the work as long as all references to Project Gutenberg
+are removed.  Of course, we hope that you will support the Project
+Gutenberg-tm mission of promoting free access to electronic works by
+freely sharing Project Gutenberg-tm works in compliance with the terms of
+this agreement for keeping the Project Gutenberg-tm name associated with
+the work.  You can easily comply with the terms of this agreement by
+keeping this work in the same format with its attached full Project
+Gutenberg-tm License when you share it without charge with others.
+
+1.D.  The copyright laws of the place where you are located also govern
+what you can do with this work.  Copyright laws in most countries are in
+a constant state of change.  If you are outside the United States, check
+the laws of your country in addition to the terms of this agreement
+before downloading, copying, displaying, performing, distributing or
+creating derivative works based on this work or any other Project
+Gutenberg-tm work.  The Foundation makes no representations concerning
+the copyright status of any work in any country outside the United
+States.
+
+1.E.  Unless you have removed all references to Project Gutenberg:
+
+1.E.1.  The following sentence, with active links to, or other immediate
+access to, the full Project Gutenberg-tm License must appear prominently
+whenever any copy of a Project Gutenberg-tm work (any work on which the
+phrase "Project Gutenberg" appears, or with which the phrase "Project
+Gutenberg" is associated) is accessed, displayed, performed, viewed,
+copied or distributed:
+
+This eBook is for the use of anyone anywhere at no cost and with
+almost no restrictions whatsoever.  You may copy it, give it away or
+re-use it under the terms of the Project Gutenberg License included
+with this eBook or online at www.gutenberg.net
+
+1.E.2.  If an individual Project Gutenberg-tm electronic work is derived
+from the public domain (does not contain a notice indicating that it is
+posted with permission of the copyright holder), the work can be copied
+and distributed to anyone in the United States without paying any fees
+or charges.  If you are redistributing or providing access to a work
+with the phrase "Project Gutenberg" associated with or appearing on the
+work, you must comply either with the requirements of paragraphs 1.E.1
+through 1.E.7 or obtain permission for the use of the work and the
+Project Gutenberg-tm trademark as set forth in paragraphs 1.E.8 or
+1.E.9.
+
+1.E.3.  If an individual Project Gutenberg-tm electronic work is posted
+with the permission of the copyright holder, your use and distribution
+must comply with both paragraphs 1.E.1 through 1.E.7 and any additional
+terms imposed by the copyright holder.  Additional terms will be linked
+to the Project Gutenberg-tm License for all works posted with the
+permission of the copyright holder found at the beginning of this work.
+
+1.E.4.  Do not unlink or detach or remove the full Project Gutenberg-tm
+License terms from this work, or any files containing a part of this
+work or any other work associated with Project Gutenberg-tm.
+
+1.E.5.  Do not copy, display, perform, distribute or redistribute this
+electronic work, or any part of this electronic work, without
+prominently displaying the sentence set forth in paragraph 1.E.1 with
+active links or immediate access to the full terms of the Project
+Gutenberg-tm License.
+
+1.E.6.  You may convert to and distribute this work in any binary,
+compressed, marked up, nonproprietary or proprietary form, including any
+word processing or hypertext form.  However, if you provide access to or
+distribute copies of a Project Gutenberg-tm work in a format other than
+"Plain Vanilla ASCII" or other format used in the official version
+posted on the official Project Gutenberg-tm web site (www.gutenberg.net),
+you must, at no additional cost, fee or expense to the user, provide a
+copy, a means of exporting a copy, or a means of obtaining a copy upon
+request, of the work in its original "Plain Vanilla ASCII" or other
+form.  Any alternate format must include the full Project Gutenberg-tm
+License as specified in paragraph 1.E.1.
+
+1.E.7.  Do not charge a fee for access to, viewing, displaying,
+performing, copying or distributing any Project Gutenberg-tm works
+unless you comply with paragraph 1.E.8 or 1.E.9.
+
+1.E.8.  You may charge a reasonable fee for copies of or providing
+access to or distributing Project Gutenberg-tm electronic works provided
+that
+
+- You pay a royalty fee of 20% of the gross profits you derive from
+     the use of Project Gutenberg-tm works calculated using the method
+     you already use to calculate your applicable taxes.  The fee is
+     owed to the owner of the Project Gutenberg-tm trademark, but he
+     has agreed to donate royalties under this paragraph to the
+     Project Gutenberg Literary Archive Foundation.  Royalty payments
+     must be paid within 60 days following each date on which you
+     prepare (or are legally required to prepare) your periodic tax
+     returns.  Royalty payments should be clearly marked as such and
+     sent to the Project Gutenberg Literary Archive Foundation at the
+     address specified in Section 4, "Information about donations to
+     the Project Gutenberg Literary Archive Foundation."
+
+- You provide a full refund of any money paid by a user who notifies
+     you in writing (or by e-mail) within 30 days of receipt that s/he
+     does not agree to the terms of the full Project Gutenberg-tm
+     License.  You must require such a user to return or
+     destroy all copies of the works possessed in a physical medium
+     and discontinue all use of and all access to other copies of
+     Project Gutenberg-tm works.
+
+- You provide, in accordance with paragraph 1.F.3, a full refund of any
+     money paid for a work or a replacement copy, if a defect in the
+     electronic work is discovered and reported to you within 90 days
+     of receipt of the work.
+
+- You comply with all other terms of this agreement for free
+     distribution of Project Gutenberg-tm works.
+
+1.E.9.  If you wish to charge a fee or distribute a Project Gutenberg-tm
+electronic work or group of works on different terms than are set
+forth in this agreement, you must obtain permission in writing from
+both the Project Gutenberg Literary Archive Foundation and Michael
+Hart, the owner of the Project Gutenberg-tm trademark.  Contact the
+Foundation as set forth in Section 3 below.
+
+1.F.
+
+1.F.1.  Project Gutenberg volunteers and employees expend considerable
+effort to identify, do copyright research on, transcribe and proofread
+public domain works in creating the Project Gutenberg-tm
+collection.  Despite these efforts, Project Gutenberg-tm electronic
+works, and the medium on which they may be stored, may contain
+"Defects," such as, but not limited to, incomplete, inaccurate or
+corrupt data, transcription errors, a copyright or other intellectual
+property infringement, a defective or damaged disk or other medium, a
+computer virus, or computer codes that damage or cannot be read by
+your equipment.
+
+1.F.2.  LIMITED WARRANTY, DISCLAIMER OF DAMAGES - Except for the "Right
+of Replacement or Refund" described in paragraph 1.F.3, the Project
+Gutenberg Literary Archive Foundation, the owner of the Project
+Gutenberg-tm trademark, and any other party distributing a Project
+Gutenberg-tm electronic work under this agreement, disclaim all
+liability to you for damages, costs and expenses, including legal
+fees.  YOU AGREE THAT YOU HAVE NO REMEDIES FOR NEGLIGENCE, STRICT
+LIABILITY, BREACH OF WARRANTY OR BREACH OF CONTRACT EXCEPT THOSE
+PROVIDED IN PARAGRAPH F3.  YOU AGREE THAT THE FOUNDATION, THE
+TRADEMARK OWNER, AND ANY DISTRIBUTOR UNDER THIS AGREEMENT WILL NOT BE
+LIABLE TO YOU FOR ACTUAL, DIRECT, INDIRECT, CONSEQUENTIAL, PUNITIVE OR
+INCIDENTAL DAMAGES EVEN IF YOU GIVE NOTICE OF THE POSSIBILITY OF SUCH
+DAMAGE.
+
+1.F.3.  LIMITED RIGHT OF REPLACEMENT OR REFUND - If you discover a
+defect in this electronic work within 90 days of receiving it, you can
+receive a refund of the money (if any) you paid for it by sending a
+written explanation to the person you received the work from.  If you
+received the work on a physical medium, you must return the medium with
+your written explanation.  The person or entity that provided you with
+the defective work may elect to provide a replacement copy in lieu of a
+refund.  If you received the work electronically, the person or entity
+providing it to you may choose to give you a second opportunity to
+receive the work electronically in lieu of a refund.  If the second copy
+is also defective, you may demand a refund in writing without further
+opportunities to fix the problem.
+
+1.F.4.  Except for the limited right of replacement or refund set forth
+in paragraph 1.F.3, this work is provided to you 'AS-IS' WITH NO OTHER
+WARRANTIES OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO
+WARRANTIES OF MERCHANTIBILITY OR FITNESS FOR ANY PURPOSE.
+
+1.F.5.  Some states do not allow disclaimers of certain implied
+warranties or the exclusion or limitation of certain types of damages.
+If any disclaimer or limitation set forth in this agreement violates the
+law of the state applicable to this agreement, the agreement shall be
+interpreted to make the maximum disclaimer or limitation permitted by
+the applicable state law.  The invalidity or unenforceability of any
+provision of this agreement shall not void the remaining provisions.
+
+1.F.6.  INDEMNITY - You agree to indemnify and hold the Foundation, the
+trademark owner, any agent or employee of the Foundation, anyone
+providing copies of Project Gutenberg-tm electronic works in accordance
+with this agreement, and any volunteers associated with the production,
+promotion and distribution of Project Gutenberg-tm electronic works,
+harmless from all liability, costs and expenses, including legal fees,
+that arise directly or indirectly from any of the following which you do
+or cause to occur: (a) distribution of this or any Project Gutenberg-tm
+work, (b) alteration, modification, or additions or deletions to any
+Project Gutenberg-tm work, and (c) any Defect you cause.
+
+
+Section  2.  Information about the Mission of Project Gutenberg-tm
+
+Project Gutenberg-tm is synonymous with the free distribution of
+electronic works in formats readable by the widest variety of computers
+including obsolete, old, middle-aged and new computers.  It exists
+because of the efforts of hundreds of volunteers and donations from
+people in all walks of life.
+
+Volunteers and financial support to provide volunteers with the
+assistance they need, is critical to reaching Project Gutenberg-tm's
+goals and ensuring that the Project Gutenberg-tm collection will
+remain freely available for generations to come.  In 2001, the Project
+Gutenberg Literary Archive Foundation was created to provide a secure
+and permanent future for Project Gutenberg-tm and future generations.
+To learn more about the Project Gutenberg Literary Archive Foundation
+and how your efforts and donations can help, see Sections 3 and 4
+and the Foundation web page at http://www.pglaf.org.
+
+
+Section 3.  Information about the Project Gutenberg Literary Archive
+Foundation
+
+The Project Gutenberg Literary Archive Foundation is a non profit
+501(c)(3) educational corporation organized under the laws of the
+state of Mississippi and granted tax exempt status by the Internal
+Revenue Service.  The Foundation's EIN or federal tax identification
+number is 64-6221541.  Its 501(c)(3) letter is posted at
+http://pglaf.org/fundraising.  Contributions to the Project Gutenberg
+Literary Archive Foundation are tax deductible to the full extent
+permitted by U.S. federal laws and your state's laws.
+
+The Foundation's principal office is located at 4557 Melan Dr. S.
+Fairbanks, AK, 99712., but its volunteers and employees are scattered
+throughout numerous locations.  Its business office is located at
+809 North 1500 West, Salt Lake City, UT 84116, (801) 596-1887, email
+business@pglaf.org.  Email contact links and up to date contact
+information can be found at the Foundation's web site and official
+page at http://pglaf.org
+
+For additional contact information:
+     Dr. Gregory B. Newby
+     Chief Executive and Director
+     gbnewby@pglaf.org
+
+
+Section 4.  Information about Donations to the Project Gutenberg
+Literary Archive Foundation
+
+Project Gutenberg-tm depends upon and cannot survive without wide
+spread public support and donations to carry out its mission of
+increasing the number of public domain and licensed works that can be
+freely distributed in machine readable form accessible by the widest
+array of equipment including outdated equipment.  Many small donations
+($1 to $5,000) are particularly important to maintaining tax exempt
+status with the IRS.
+
+The Foundation is committed to complying with the laws regulating
+charities and charitable donations in all 50 states of the United
+States.  Compliance requirements are not uniform and it takes a
+considerable effort, much paperwork and many fees to meet and keep up
+with these requirements.  We do not solicit donations in locations
+where we have not received written confirmation of compliance.  To
+SEND DONATIONS or determine the status of compliance for any
+particular state visit http://pglaf.org
+
+While we cannot and do not solicit contributions from states where we
+have not met the solicitation requirements, we know of no prohibition
+against accepting unsolicited donations from donors in such states who
+approach us with offers to donate.
+
+International donations are gratefully accepted, but we cannot make
+any statements concerning tax treatment of donations received from
+outside the United States.  U.S. laws alone swamp our small staff.
+
+Please check the Project Gutenberg Web pages for current donation
+methods and addresses.  Donations are accepted in a number of other
+ways including including checks, online payments and credit card
+donations.  To donate, please visit: http://pglaf.org/donate
+
+
+Section 5.  General Information About Project Gutenberg-tm electronic
+works.
+
+Professor Michael S. Hart is the originator of the Project Gutenberg-tm
+concept of a library of electronic works that could be freely shared
+with anyone.  For thirty years, he produced and distributed Project
+Gutenberg-tm eBooks with only a loose network of volunteer support.
+
+
+Project Gutenberg-tm eBooks are often created from several printed
+editions, all of which are confirmed as Public Domain in the U.S.
+unless a copyright notice is included.  Thus, we do not necessarily
+keep eBooks in compliance with any particular paper edition.
+
+
+Most people start at our Web site which has the main PG search facility:
+
+     http://www.gutenberg.net
+
+This Web site includes information about Project Gutenberg-tm,
+including how to make donations to the Project Gutenberg Literary
+Archive Foundation, how to help produce our new eBooks, and how to
+subscribe to our email newsletter to hear about new eBooks.

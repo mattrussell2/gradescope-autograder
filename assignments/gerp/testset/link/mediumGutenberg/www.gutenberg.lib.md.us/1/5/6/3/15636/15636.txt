@@ -1,0 +1,932 @@
+Project Gutenberg's The Future of Astronomy, by Edward C. Pickering
+
+This eBook is for the use of anyone anywhere at no cost and with
+almost no restrictions whatsoever.  You may copy it, give it away or
+re-use it under the terms of the Project Gutenberg License included
+with this eBook or online at www.gutenberg.net
+
+
+Title: The Future of Astronomy
+
+Author: Edward C. Pickering
+
+Release Date: April 17, 2005 [EBook #15636]
+
+Language: English
+
+Character set encoding: ASCII
+
+*** START OF THIS PROJECT GUTENBERG EBOOK THE FUTURE OF ASTRONOMY ***
+
+
+
+
+Produced by Susan Skinner and the Online Distributed Proofreading
+Team with images generously made available by the Bibliotheque
+nationale de France (BnF/Gallica) at http://gallica.bnf.fr
+
+
+
+
+
+
+
+
+
+
+
+THE FUTURE OF ASTRONOMY
+
+BY PROFESSOR EDWARD C. PICKERING
+
+Reprinted from the POPULAR SCIENCE MONTHLY, August, 1909.
+
+
+
+
+THE FUTURE OF ASTRONOMY[1]
+
+BY PROFESSOR EDWARD C. PICKERING
+
+HARVARD COLLEGE OBSERVATORY
+
+
+It is claimed by astronomers that their science is not only the oldest,
+but that it is the most highly developed of the sciences. Indeed it
+should be so, since no other science has ever received such support from
+royalty, from the state and from the private individual. However this
+may be, there is no doubt that in recent years astronomers have had
+granted to them greater opportunities for carrying on large pieces of
+work than have been entrusted to men in any other department of pure
+science. One might expect that the practical results of a science like
+physics would appeal to the man who has made a vast fortune through some
+of its applications. The telephone, the electric transmission of power,
+wireless telegraphy and the submarine cable are instances of immense
+financial returns derived from the most abstruse principles of physics.
+Yet there are scarcely any physical laboratories devoted to research, or
+endowed with independent funds for this object, except those supported
+by the government. The endowment of astronomical observatories devoted
+to research, and not including that given for teaching, is estimated to
+amount to half a million dollars annually. Several of the larger
+observatories have an annual income of fifty thousand dollars.
+
+[1] Commencement address at Case School of Applied Science, Cleveland,
+May 27, 1909.
+
+I once asked the wisest man I know, what was the reason for this
+difference. He said that it was probably because astronomy appealed to
+the imagination. A practical man, who has spent all his life in his
+counting room or mill, is sometimes deeply impressed with the vast
+distances and grandeur of the problems of astronomy, and the very
+remoteness and difficulty of studying the stars attract him.
+
+My object in calling your attention to this matter is the hope that what
+I have to say of the organization of astronomy may prove of use to those
+interested in other branches of science, and that it may lead to placing
+them on the footing they should hold. My arguments apply with almost
+equal force to physics, to chemistry, and in fact to almost every branch
+of physical or natural science, in which knowledge may be advanced by
+observation or experiment.
+
+The practical value of astronomy in the past is easily established.
+Without it, international commerce on a large scale would have been
+impossible. Without the aid of astronomy, accurate boundaries of large
+tracts of land could not have been defined and standard time would have
+been impossible. The work of the early astronomers was eminently
+practical, and appealed at once to every one. This work has now been
+finished. We can compute the positions of the stars for years, almost
+for centuries, with all the accuracy needed for navigation, for
+determining time or for approximate boundaries of countries. The
+investigations now in progress at the greatest observatories have
+little, if any, value in dollars and cents. They appeal, however, to the
+far higher sense, the desire of the intellectual human being to
+determine the laws of nature, the construction of the material universe,
+and the properties of the heavenly bodies of which those known to exist
+far outnumber those that can be seen.
+
+Three great advances have been made in astronomy. First, the invention
+of the telescope, with which we commonly associate the name of Galileo,
+from the wonderful results he obtained with it. At that time there was
+practically no science in America, and for more than two centuries we
+failed to add materially to this invention. Half a century ago the
+genius of the members of one family, Alvan Clark and his two sons,
+placed America in the front rank not only in the construction, but in
+the possession, of the largest and most perfect telescopes ever made. It
+is not easy to secure the world's record in any subject. The Clarks
+constructed successively, the 18-inch lens for Chicago, the 26-inch for
+Washington, the 30-inch for Pulkowa, the 36-inch for Lick and the
+40-inch for Yerkes. Each in turn was the largest yet made, and each time
+the Clarks were called upon to surpass the world's record, which they
+themselves had already established. Have we at length reached the limit
+in size? If we include reflectors, no, since we have mirrors of 60
+inches aperture at Mt. Wilson and Cambridge, and a still larger one of
+100 inches has been undertaken. It is more than doubtful, however,
+whether a further increase in size is a great advantage. Much more
+depends on other conditions, especially those of climate, the kind of
+work to be done and, more than all, the man behind the gun. The case is
+not unlike that of a battleship. Would a ship a thousand feet long
+always sink one of five hundred feet? It seems as if we had nearly
+reached the limit of size of telescopes, and as if we must hope for the
+next improvement in some other direction.
+
+The second great advance in astronomy originated in America, and was in
+an entirely different direction, the application of photography to the
+study of the stars. The first photographic image of a star was obtained
+in 1850, by George P. Bond, with the assistance of Mr. J.A. Whipple, at
+the Harvard College Observatory. A daguerreotype plate was placed at the
+focus of the 15-inch equatorial, at that time one of the two largest
+refracting telescopes in the world. An image of [Greek: alpha] Lyrae was
+thus obtained, and for this Mr. Bond received a gold medal at the first
+international exhibition, that at the Crystal Palace, in London, in
+1851. In 1857, Mr. Bond, then Professor Bond, director of the Harvard
+Observatory, again took up the matter with collodion wet plates, and in
+three masterly papers showed the advantages of photography in many ways.
+The lack of sensitiveness of the wet plate was perhaps the only reason
+why its use progressed but slowly. Quarter of a century later, with the
+introduction of the dry plate and the gelatine film, a new start was
+made. These photographic plates were very sensitive, were easily
+handled, and indefinitely long exposures could be made with them. As a
+result, photography has superseded visual observations, in many
+departments of astronomy, and is now carrying them far beyond the limits
+that would have been deemed possible a few years ago.
+
+The third great advance in astronomy is in photographing the spectra of
+the stars. The first photograph showing the lines in a stellar spectrum
+was obtained by Dr. Henry Draper, of New York, in 1872. Sir William
+Huggins in 1863 had obtained an image of the spectrum of Sirius, on a
+photographic plate, but no lines were visible in it. In 1876 he again
+took up the subject, and, by an early publication, preceded Dr. Draper.
+When we consider the attention the photography of stellar spectra is
+receiving at the present time, in nearly all the great observatories in
+the world, it may well be regarded as the third great advance in
+astronomy.
+
+What will be the fourth advance, and how will it be brought about? To
+answer this question we must consider the various ways in which
+astronomy, and for that matter any other science, may be advanced.
+
+First, by educating astronomers. There are many observatories where
+excellent instruction in astronomy is given, either to the general
+student or to one who wishes to make it his profession. At almost any
+active observatory a student would be received as a volunteer assistant.
+Unfortunately, few young men can afford to accept an unpaid position,
+and the establishment of a number of fellowships each offering a small
+salary sufficient to support the student would enable him to acquire the
+necessary knowledge to fill a permanent position. The number of these
+scholarships should not be large, lest more students should undertake
+the work than would be required to fill the permanent paying positions
+in astronomy, as they become vacant.
+
+In Europe, a favorite method of aiding science is to offer a prize for
+the best memoir on a specified subject. On theoretical grounds this is
+extremely objectionable. Since the papers presented are anonymous and
+confidential, no one but the judges know how great is the effort wasted
+in duplication. The larger the prize, the greater the injury to science,
+since the greater will be the energy diverted from untried fields. It
+would be much wiser to invite applications, select the man most likely
+to produce a useful memoir, and award the prize to him if he achieved
+success.
+
+The award of a medal, if of great intrinsic value, would be an unwise
+expenditure. The Victoria Cross is an example of a successful
+foundation, highly prized, but of small intrinsic value. If made of
+gold, it would carry no greater honor, and would be more liable to be
+stolen, melted down or pawned.
+
+Honorary membership in a famous society, or honorary degrees, have great
+value if wisely awarded. Both are highly prized, form an excellent
+stimulus to continued work, and as they are both priceless, and without
+price, they in no way diminish the capacity for work. I recently had
+occasion to compare the progress in various sciences of different
+countries, and found that the number of persons elected as foreign
+associates of the seven great national societies of the world was an
+excellent test. Eighty-seven persons were members of two or more of
+these societies. Only six are residents of the United States, while an
+equal number come from Saxony, which has only a twentieth of the
+population. Of the six residents here, only three were born in the
+United States. Not a single mathematician, or doctor, from this country
+appears on the list. Only in astronomy are we well represented. Out of a
+total of ten astronomers, four come from England, and three from the
+United States. Comparing the results for the last one hundred and fifty
+years, we find an extraordinary growth for the German races, an equally
+surprising diminution for the French and other Latin races, while the
+proportion of Englishmen has remained unchanged.
+
+A popular method of expending money, both by countries and by
+individuals, is in sending expeditions to observe solar eclipses. These
+appeal both to donors and recipients. The former believe that they are
+making a great contribution to science, while the latter enjoy a long
+voyage to a distant country, and in case of clouds they are not expected
+to make any scientific return. If the sky is clear at the time of the
+eclipse, the newspapers of the next day report that great results have
+been secured, and after that nothing further is ever heard. Exceptions
+should be made of the English Eclipse Committee and the Lick
+Observatory, which, by long continued study and observation, are
+gradually solving the difficult problems which can be reached in this
+way only.
+
+The gift of a large telescope to a university is of very doubtful value,
+unless it is accompanied, first, by a sum much greater than its cost,
+necessary to keep it employed in useful work, and secondly, to require
+that it shall be erected, not on the university grounds, but in some
+region, probably mountainous or desert, where results of real value can
+be obtained.
+
+Having thus considered, among others, some of the ways in which
+astronomy is not likely to be much advanced, we proceed to those which
+will secure the greatest scientific return for the outlay. One of the
+best of these is to create a fund to be used in advancing research,
+subject only to the condition that results of the greatest possible
+value to science shall be secured. One advantage of this method is that
+excellent results may be obtained at once from a sum, either large or
+small. Whatever is at first given may later be increased indefinitely,
+if the results justify it. One of the wisest as well as the greatest of
+donors has said: "Find the particular man," but unfortunately, this plan
+has been actually tried only with some of the smaller funds. Any one who
+will read the list of researches aided by the Rumford Fund, the
+Elizabeth Thompson Fund or the Bruce Fund of 1890 will see that the
+returns are out of all proportion to the money expended. The trustees of
+such a fund as is here proposed should not regard themselves as patrons
+conferring a favor on those to whom grants are made, but as men seeking
+for the means of securing large scientific returns for the money
+entrusted to them. An astronomer who would aid them in this work, by
+properly expending a grant, would confer rather than receive a favor.
+They should search for astronomical bargains, and should try to purchase
+results where the money could be expended to the best advantage. They
+should make it their business to learn of the work of every astronomer
+engaged in original research. A young man who presented a paper of
+unusual importance at a scientific meeting, or published it in an
+astronomical journal, would receive a letter inviting him to submit
+plans to the trustees, if he desired aid in extending his work. In many
+cases, it would be found that, after working for years under most
+unfavorable conditions, he had developed a method of great value and had
+applied it to a few stars, but must now stop for want of means. A small
+appropriation would enable him to employ an assistant who, in a short
+time, could do equally good work. The application of this method to a
+hundred or a thousand stars would then be only a matter of time and
+money.
+
+The American Astronomical Society met last August at a summer resort on
+Lake Erie. About thirty astronomers read papers, and in a large portion
+of the cases the appropriation of a few hundred dollars would have
+permitted a great extension in these researches. A sad case is that of a
+brilliant student who may graduate at a college, take a doctor's degree
+in astronomy, and perhaps pass a year or two in study at a foreign
+observatory. He then returns to this country, enthusiastic and full of
+ideas, and considers himself fortunate in securing a position as
+astronomer in a little country college. He now finds himself overwhelmed
+with work as a teacher, without time or appliances for original work.
+What is worse, no one sympathizes with him in his aspirations, and after
+a few years he abandons hope and settles down to the dull routine of
+lectures, recitations and examinations. A little encouragement at the
+right time, aid by offering to pay for an assistant, for a suitable
+instrument, or for publishing results, and perhaps a word to the
+president of his college if the man showed real genius, might make a
+great astronomer, instead of a poor teacher. For several years, a small
+fund, yielding a few hundred dollars annually, has been disbursed at
+Harvard in this way, with very encouraging results.
+
+A second method of aiding astronomy is through the large observatories.
+These institutions, if properly managed, have after years of careful
+study and trial developed elaborate systems of solving the great
+problems of the celestial universe. They are like great factories, which
+by taking elaborate precautions to save waste at every point, and by
+improving in every detail both processes and products, are at length
+obtaining results on a large scale with a perfection and economy far
+greater than is possible by individuals, or smaller institutions. The
+expenses of such an observatory are very large, and it has no pecuniary
+return, since astronomical products are not salable. A great portion of
+the original endowment has been spent on the plant, expensive buildings
+and instruments. Current expenditures, like library expenses, heating,
+lighting, etc., are independent of the output. It is like a man swimming
+up stream. He may struggle desperately, and yet make no progress. Any
+gain in power effects a real advance. This is the condition of nearly
+all the larger observatories. Their income is mainly used for current
+expenses, which would be nearly the same whatever their output. A
+relatively small increase in income can thus be spent to great
+advantage. The principal instruments are rarely used to their full
+capacities, and the methods employed could be greatly extended without
+any addition to the executive or other similar expenses. A man
+superintending the work of several assistants can often have their
+number doubled, and his output increased in nearly the same proportion,
+with no additional expense except the moderate one of their salaries. A
+single observatory could thus easily do double the work that could be
+accomplished if its resources were divided between two of half the
+size.
+
+A third, and perhaps the best, method of making a real advance in
+astronomy is by securing the united work of the leading astronomers of
+the world. The best example of this is the work undertaken in 1870 by
+the Astronomische Gesellschaft, the great astronomical society of the
+world. The sky was divided into zones, and astronomers were invited to
+measure the positions of all the stars in these zones. The observation
+of two of the northern and two of the southern zones were undertaken by
+American observatories. The zone from +1 deg. to +5 deg. was undertaken by the
+Chicago Observatory, but was abandoned owing to the great fire of 1871,
+and the work was assumed and carried to completion by the Dudley
+Observatory at Albany. The zone from +50 deg. to +55 deg. was undertaken by
+Harvard. An observer and corps of assistants worked on this problem for
+a quarter of a century. The completed results now fill seven quarto
+volumes of our annals. Of the southern zones, that from -14 deg. to -18 deg. was
+undertaken by the Naval Observatory at Washington, and is now finished.
+The zone from -10 deg. to -14 deg. was undertaken at Harvard, and a second
+observer and corps of assistants have been working on it for twenty
+years. It is now nearly completed, and we hope to begin its publication
+this year. The other zones were taken by European astronomers. As a
+result of the whole, we have the precise positions of nearly a hundred
+and fifty thousand stars, which serve as a basis for the places of all
+the objects in the sky.
+
+Another example of cooperative work is a plan proposed by the writer in
+1906, at the celebration of the two-hundredth anniversary of the birth
+of Franklin. It was proposed, first to find the best place in the world
+for an astronomical observatory, which would probably be in South
+Africa, to erect there a telescope of the largest size, a reflector of
+seven feet aperture. This instrument should be kept at work throughout
+every clear night, taking photographs according to a plan recommended by
+an international committee of astronomers. The resulting plates should
+not be regarded as belonging to a single institution, but should be at
+the service of whoever could make the best use of them. Copies of any,
+or all, would be furnished at cost to any one who wished for them. As an
+example of their use, suppose that an astronomer at a little German
+University should discover a law regulating the stars in clusters.
+Perhaps he has only a small telescope, near the smoke and haze of a
+large city, and has no means of securing the photographs he needs. He
+would apply to the committee, and they would vote that ten photographs
+of twenty clusters, each with an exposure of an hour, should be taken
+with the large telescope. This would occupy about a tenth part of the
+time of the telescope for a year. After making copies, the photographs
+would be sent to the astronomer who would perhaps spend ten years in
+studying and measuring them. The committee would have funds at their
+disposal to furnish him, if necessary, with suitable measuring
+instruments, assistants for reducing the results, and means for
+publication. They would thus obtain the services of the most skilful
+living astronomers, each in his own special line of work, and the latter
+would obtain in their own homes material for study, the best that the
+world could supply. Undoubtedly, by such a combination if properly
+organized, results could be obtained far better than is now possible by
+the best individual work, and at a relatively small expense. Many years
+of preparation will evidently be needed to carry out such a plan, and to
+save time we have taken the first step and have sent a skilful and
+experienced observer to South Africa to study its climate and compare it
+with the experience he has gained during the last twenty years from a
+similar study of the climate of South America and the western portion of
+the United States.
+
+The next question to be considered is in what direction we may expect
+the greatest advance in astronomy will be made. Fortunate indeed would
+be the astronomer who could answer this question correctly. When Ptolemy
+made the first catalogue of the stars, he little expected that his
+observations would have any value nearly two thousand years later. The
+alchemists had no reason to doubt that their results were as important
+as those of the chemists. The astrologers were respected as much as the
+astronomers. Although there is a certain amount of fashion in astronomy,
+yet perhaps the best test is the judgment of those who have devoted
+their lives to that science. Thirty years ago the field was narrow. It
+was the era of big telescopes. Every astronomer wanted a larger
+telescope than his neighbors, with which to measure double stars. If he
+could not get such an instrument, he measured the positions of the stars
+with a transit circle. Then came astrophysics, including photography,
+spectroscopy and photometry. The study of the motion of the stars along
+the line of sight, by means of photographs of their spectra, is now the
+favorite investigation at nearly all the great observatories of the
+world. The study of the surfaces of the planets, while the favorite
+subject with the public, next to the destruction of the earth by a
+comet, does not seem to appeal to astronomers. Undoubtedly, the only way
+to advance our knowledge in this direction is by the most powerful
+instruments, mounted in the best possible locations. Great astronomers
+are very conservative, and any sensational story in the newspapers is
+likely to have but little support from them. Instead of aiding, it
+greatly injures real progress in science.
+
+There is no doubt that, during the next half century, much time and
+energy will be devoted to the study of the fixed stars. The study of
+their motions as indicated by their change in position was pursued with
+great care by the older astronomers. The apparent motions were so small
+that a long series of years was required and, in general, for want of
+early observations of the precise positions of the faint stars, this
+work was confined mainly to the bright stars. Photography is yearly
+adding a vast amount of material available for this study, but the
+minuteness of the quantities to be measured renders an accurate
+determination of their laws very difficult. Moreover, we can thus only
+determine the motions at right angles to the line of sight, the motion
+towards us or from us being entirely insensible in this way. Then came
+the discovery of the change in the spectrum when a body was in motion,
+but still this change was so small that visual observations of it proved
+of but little value. Attaching a carefully constructed spectroscope to
+one of the great telescopes of the world, photographing the spectrum of
+a star, and measuring it with the greatest care, provided a tool of
+wonderful efficiency. The motion, which sometimes amounts to several
+hundreds of miles a second could thus be measured to within a fraction
+of a mile. The discovery that the motion was variable, owing to the
+star's revolving around a great dark planet sometimes larger than the
+star, added greatly not only to the interest of these researches, but
+also to the labor involved. Instead of a single measure for each star,
+in the case of the so-called spectroscopic binaries, we must make enough
+measures to determine the dimensions of the orbit, its form and the
+period of revolution.
+
+What has been said of the motions of the stars applies also, in general,
+to the determination of their distances. A vast amount of labor has been
+expended on this problem. When at length the distance of a single star
+was finally determined, the quantity to be measured was so small as to
+be nearly concealed by the unavoidable errors of measurement. The
+parallax, or one half of the change in the apparent position of the
+stars as the earth moves around the sun, has its largest value for the
+nearest stars. No case has yet been found in which this quantity is as
+large as a foot rule seen at a distance of fifty miles, and for
+comparatively few stars is it certainly appreciable. An extraordinary
+degree of precision has been attained in recent measures of this
+quantity, but for a really satisfactory solution of this problem, we
+must probably devise some new method, like the use of the spectroscope
+for determining motions. Two or three illustrations of the kind of
+methods which might be used to solve this problem may be of interest.
+There are certain indications of the presence of a selective absorbing
+medium in space. That is, a medium like red glass, for instance, which
+would cut off the blue light more than the red light. Such a medium
+would render the blue end of the spectrum of a distant star much
+fainter, as compared with the red end, than in the case of a near star.
+A measure of the relative intensity of the two rays would servo to
+measure the distance, or thickness of the absorbing medium. The effect
+would be the same for all stars of the same class of spectrum. It could
+be tested by the stars forming a cluster, like the Pleiades, which are
+doubtless all at nearly the same distance from us. The spectra of stars
+of the tenth magnitude, or fainter, can be photographed well enough to
+be measured in this way, so that the relative distances of nearly a
+million stars could be thus determined.
+
+Another method which would have a more limited application, would depend
+on the velocity of light. It has been maintained that the velocity of
+light in space is not the same for different colors. Certain stars,
+called Algol stars, vary in light at regular intervals when partially
+eclipsed by the interposition of a large dark satellite. Recent
+observations of these eclipses, through glass of different colors, show
+variations in the time of obscuration. Apparently, some of the rays
+reach the earth sooner than others, although all leave the star at the
+same time. As the entire time may amount to several centuries, an
+excessively small difference in velocity would be recognizable. A more
+delicate test would be to measure the intensity of different portions of
+the spectrum at a time when the light is changing most rapidly. The
+effect should be opposite according as the light is increasing or
+diminishing. It should also show itself in the measures of all
+spectroscopic binaries.
+
+A third method of great promise depends on a remarkable investigation
+carried on in the physical laboratory of the Case School of Applied
+Science. According to the undulatory theory of light, all space is
+filled with a medium called ether, like air, but as much more tenuous
+than air as air is more tenuous than the densest metals. As the earth is
+moving through space at the rate of several miles a second, we should
+expect to feel a breeze as we rush through the ether, like that of the
+air when in an automobile we are moving with but one thousandth part of
+this velocity. The problem is one of the greatest delicacy, but a former
+officer of the Case School, one of the most eminent of living
+physicists, devised a method of solving it. The extraordinary result was
+reached that no breeze was perceptible. This result appeared to be so
+improbable that it has been tested again and again, but every time, the
+more delicate the instrument employed, the more certainly is the law
+established. If we could determine our motion with reference to the
+ether, we should have a fixed line of reference to which all other
+motions could be referred. This would give us a line of ever-increasing
+length from which to measure stellar distances.
+
+Still another method depends on the motion of the sun in space. There is
+some evidence that this motion is not straight, but along a curved line.
+We see the stars, not as they are now, but as they were when the light
+left them. In the case of the distant stars this may have occurred
+centuries ago. Accordingly, if we measure the motion of the sun from
+them, and from near stars, a comparison with its actual motion will
+give us a clue to their distances. Unfortunately, all the stars appear
+to have large motions whose law we do not know, and therefore we have no
+definite starting point unless we can refer all to the ether which may
+be assumed to be at rest.
+
+If the views expressed to you this morning are correct, we may expect
+that the future of astronomy will take the following form: There will be
+at least one very large observatory employing one or two hundred
+assistants, and maintaining three stations. Two of these will be
+observing stations, one in the western part of the United States, not
+far from latitude +30 deg., the other similarly situated in the southern
+hemisphere, probably in South Africa, in latitude -30 deg.. The locations
+will be selected wholly from their climatic conditions. They will be
+moderately high, from five to ten thousand feet, and in desert regions.
+The altitude will prevent extreme heat, and clouds or rain will be rare.
+The range of temperature and unsteadiness of the air will be diminished
+by placing them on hills a few hundred feet above the surrounding
+country. The equipment and work of the two stations will be
+substantially the same. Each will have telescopes and other instruments
+of the largest size, which will be kept at work throughout the whole of
+every clear night. The observers will do but little work in the daytime,
+except perhaps on the sun, and will not undertake much of the
+computation or reductions. This last work will be carried on at a third
+station, which will be near a large city where the cost of living and of
+intellectual labor is low. The photographs will be measured and stored
+at this station, and all the results will be prepared for publication,
+and printed there. The work of all three stations will be carefully
+organized so as to obtain the greatest result for a given expenditure.
+Every inducement will be offered to visiting astronomers who wish to do
+serious work at either of the stations and also to students who intend
+to make astronomy their profession. In the case of photographic
+investigations it will be best to send the photographs so that
+astronomers desiring them can work at home. The work of the young
+astronomers throughout the world will be watched carefully and large
+appropriations made to them if it appears that they can spend them to
+advantage. Similar aid will be rendered to astronomers engaged in
+teaching, and to any one, professional or amateur, capable of doing work
+of the highest grade. As a fundamental condition for success, no
+restrictions will be made that will interfere with the greatest
+scientific efficiency, and no personal or local prejudices that will
+restrict the work.
+
+These plans may seem to you visionary, and too Utopian for the twentieth
+century. But they may be nearer fulfilment than we anticipate. The true
+astronomer of to-day is eminently a practical man. He does not accept
+plans of a sensational character. The same qualities are needed in
+directing a great observatory successfully, as in managing a railroad,
+or factory. Any one can propose a gigantic expenditure, but to prove to
+a shrewd man of affairs that it is feasible and advisable is a very
+different matter. It is much more difficult to give away money wisely
+than to earn it. Many men have made great fortunes, but few have learned
+how to expend money wisely in advancing science, or to give it away
+judiciously. Many persons have given large sums to astronomy, and some
+day we shall find the man with broad views who will decide to have the
+advice and aid of the astronomers of the world, in his plans for
+promoting science, and who will thus expend his money, as he made it,
+taking the greatest care that not one dollar is wasted. Again, let us
+consider the next great advance, which perhaps will be a method of
+determining the distances of the stars. Many of us are working on this
+problem, the solution of which may come to some one any day. The present
+field is a wide one, the prospects are now very bright, and we may look
+forward to as great an advance in the twentieth century, as in the
+nineteenth. May a portion of this come to the Case School and, with your
+support, may its enviable record, in the past, be surpassed by its
+future achievements.
+
+
+
+
+
+End of Project Gutenberg's The Future of Astronomy, by Edward C. Pickering
+
+*** END OF THIS PROJECT GUTENBERG EBOOK THE FUTURE OF ASTRONOMY ***
+
+***** This file should be named 15636.txt or 15636.zip *****
+This and all associated files of various formats will be found in:
+        http://www.gutenberg.net/1/5/6/3/15636/
+
+Produced by Susan Skinner and the Online Distributed Proofreading
+Team with images generously made available by the Bibliotheque
+nationale de France (BnF/Gallica) at http://gallica.bnf.fr
+
+
+Updated editions will replace the previous one--the old editions
+will be renamed.
+
+Creating the works from public domain print editions means that no
+one owns a United States copyright in these works, so the Foundation
+(and you!) can copy and distribute it in the United States without
+permission and without paying copyright royalties.  Special rules,
+set forth in the General Terms of Use part of this license, apply to
+copying and distributing Project Gutenberg-tm electronic works to
+protect the PROJECT GUTENBERG-tm concept and trademark.  Project
+Gutenberg is a registered trademark, and may not be used if you
+charge for the eBooks, unless you receive specific permission.  If you
+do not charge anything for copies of this eBook, complying with the
+rules is very easy.  You may use this eBook for nearly any purpose
+such as creation of derivative works, reports, performances and
+research.  They may be modified and printed and given away--you may do
+practically ANYTHING with public domain eBooks.  Redistribution is
+subject to the trademark license, especially commercial
+redistribution.
+
+
+
+*** START: FULL LICENSE ***
+
+THE FULL PROJECT GUTENBERG LICENSE
+PLEASE READ THIS BEFORE YOU DISTRIBUTE OR USE THIS WORK
+
+To protect the Project Gutenberg-tm mission of promoting the free
+distribution of electronic works, by using or distributing this work
+(or any other work associated in any way with the phrase "Project
+Gutenberg"), you agree to comply with all the terms of the Full Project
+Gutenberg-tm License (available with this file or online at
+http://gutenberg.net/license).
+
+
+Section 1.  General Terms of Use and Redistributing Project Gutenberg-tm
+electronic works
+
+1.A.  By reading or using any part of this Project Gutenberg-tm
+electronic work, you indicate that you have read, understand, agree to
+and accept all the terms of this license and intellectual property
+(trademark/copyright) agreement.  If you do not agree to abide by all
+the terms of this agreement, you must cease using and return or destroy
+all copies of Project Gutenberg-tm electronic works in your possession.
+If you paid a fee for obtaining a copy of or access to a Project
+Gutenberg-tm electronic work and you do not agree to be bound by the
+terms of this agreement, you may obtain a refund from the person or
+entity to whom you paid the fee as set forth in paragraph 1.E.8.
+
+1.B.  "Project Gutenberg" is a registered trademark.  It may only be
+used on or associated in any way with an electronic work by people who
+agree to be bound by the terms of this agreement.  There are a few
+things that you can do with most Project Gutenberg-tm electronic works
+even without complying with the full terms of this agreement.  See
+paragraph 1.C below.  There are a lot of things you can do with Project
+Gutenberg-tm electronic works if you follow the terms of this agreement
+and help preserve free future access to Project Gutenberg-tm electronic
+works.  See paragraph 1.E below.
+
+1.C.  The Project Gutenberg Literary Archive Foundation ("the Foundation"
+or PGLAF), owns a compilation copyright in the collection of Project
+Gutenberg-tm electronic works.  Nearly all the individual works in the
+collection are in the public domain in the United States.  If an
+individual work is in the public domain in the United States and you are
+located in the United States, we do not claim a right to prevent you from
+copying, distributing, performing, displaying or creating derivative
+works based on the work as long as all references to Project Gutenberg
+are removed.  Of course, we hope that you will support the Project
+Gutenberg-tm mission of promoting free access to electronic works by
+freely sharing Project Gutenberg-tm works in compliance with the terms of
+this agreement for keeping the Project Gutenberg-tm name associated with
+the work.  You can easily comply with the terms of this agreement by
+keeping this work in the same format with its attached full Project
+Gutenberg-tm License when you share it without charge with others.
+
+1.D.  The copyright laws of the place where you are located also govern
+what you can do with this work.  Copyright laws in most countries are in
+a constant state of change.  If you are outside the United States, check
+the laws of your country in addition to the terms of this agreement
+before downloading, copying, displaying, performing, distributing or
+creating derivative works based on this work or any other Project
+Gutenberg-tm work.  The Foundation makes no representations concerning
+the copyright status of any work in any country outside the United
+States.
+
+1.E.  Unless you have removed all references to Project Gutenberg:
+
+1.E.1.  The following sentence, with active links to, or other immediate
+access to, the full Project Gutenberg-tm License must appear prominently
+whenever any copy of a Project Gutenberg-tm work (any work on which the
+phrase "Project Gutenberg" appears, or with which the phrase "Project
+Gutenberg" is associated) is accessed, displayed, performed, viewed,
+copied or distributed:
+
+This eBook is for the use of anyone anywhere at no cost and with
+almost no restrictions whatsoever.  You may copy it, give it away or
+re-use it under the terms of the Project Gutenberg License included
+with this eBook or online at www.gutenberg.net
+
+1.E.2.  If an individual Project Gutenberg-tm electronic work is derived
+from the public domain (does not contain a notice indicating that it is
+posted with permission of the copyright holder), the work can be copied
+and distributed to anyone in the United States without paying any fees
+or charges.  If you are redistributing or providing access to a work
+with the phrase "Project Gutenberg" associated with or appearing on the
+work, you must comply either with the requirements of paragraphs 1.E.1
+through 1.E.7 or obtain permission for the use of the work and the
+Project Gutenberg-tm trademark as set forth in paragraphs 1.E.8 or
+1.E.9.
+
+1.E.3.  If an individual Project Gutenberg-tm electronic work is posted
+with the permission of the copyright holder, your use and distribution
+must comply with both paragraphs 1.E.1 through 1.E.7 and any additional
+terms imposed by the copyright holder.  Additional terms will be linked
+to the Project Gutenberg-tm License for all works posted with the
+permission of the copyright holder found at the beginning of this work.
+
+1.E.4.  Do not unlink or detach or remove the full Project Gutenberg-tm
+License terms from this work, or any files containing a part of this
+work or any other work associated with Project Gutenberg-tm.
+
+1.E.5.  Do not copy, display, perform, distribute or redistribute this
+electronic work, or any part of this electronic work, without
+prominently displaying the sentence set forth in paragraph 1.E.1 with
+active links or immediate access to the full terms of the Project
+Gutenberg-tm License.
+
+1.E.6.  You may convert to and distribute this work in any binary,
+compressed, marked up, nonproprietary or proprietary form, including any
+word processing or hypertext form.  However, if you provide access to or
+distribute copies of a Project Gutenberg-tm work in a format other than
+"Plain Vanilla ASCII" or other format used in the official version
+posted on the official Project Gutenberg-tm web site (www.gutenberg.net),
+you must, at no additional cost, fee or expense to the user, provide a
+copy, a means of exporting a copy, or a means of obtaining a copy upon
+request, of the work in its original "Plain Vanilla ASCII" or other
+form.  Any alternate format must include the full Project Gutenberg-tm
+License as specified in paragraph 1.E.1.
+
+1.E.7.  Do not charge a fee for access to, viewing, displaying,
+performing, copying or distributing any Project Gutenberg-tm works
+unless you comply with paragraph 1.E.8 or 1.E.9.
+
+1.E.8.  You may charge a reasonable fee for copies of or providing
+access to or distributing Project Gutenberg-tm electronic works provided
+that
+
+- You pay a royalty fee of 20% of the gross profits you derive from
+     the use of Project Gutenberg-tm works calculated using the method
+     you already use to calculate your applicable taxes.  The fee is
+     owed to the owner of the Project Gutenberg-tm trademark, but he
+     has agreed to donate royalties under this paragraph to the
+     Project Gutenberg Literary Archive Foundation.  Royalty payments
+     must be paid within 60 days following each date on which you
+     prepare (or are legally required to prepare) your periodic tax
+     returns.  Royalty payments should be clearly marked as such and
+     sent to the Project Gutenberg Literary Archive Foundation at the
+     address specified in Section 4, "Information about donations to
+     the Project Gutenberg Literary Archive Foundation."
+
+- You provide a full refund of any money paid by a user who notifies
+     you in writing (or by e-mail) within 30 days of receipt that s/he
+     does not agree to the terms of the full Project Gutenberg-tm
+     License.  You must require such a user to return or
+     destroy all copies of the works possessed in a physical medium
+     and discontinue all use of and all access to other copies of
+     Project Gutenberg-tm works.
+
+- You provide, in accordance with paragraph 1.F.3, a full refund of any
+     money paid for a work or a replacement copy, if a defect in the
+     electronic work is discovered and reported to you within 90 days
+     of receipt of the work.
+
+- You comply with all other terms of this agreement for free
+     distribution of Project Gutenberg-tm works.
+
+1.E.9.  If you wish to charge a fee or distribute a Project Gutenberg-tm
+electronic work or group of works on different terms than are set
+forth in this agreement, you must obtain permission in writing from
+both the Project Gutenberg Literary Archive Foundation and Michael
+Hart, the owner of the Project Gutenberg-tm trademark.  Contact the
+Foundation as set forth in Section 3 below.
+
+1.F.
+
+1.F.1.  Project Gutenberg volunteers and employees expend considerable
+effort to identify, do copyright research on, transcribe and proofread
+public domain works in creating the Project Gutenberg-tm
+collection.  Despite these efforts, Project Gutenberg-tm electronic
+works, and the medium on which they may be stored, may contain
+"Defects," such as, but not limited to, incomplete, inaccurate or
+corrupt data, transcription errors, a copyright or other intellectual
+property infringement, a defective or damaged disk or other medium, a
+computer virus, or computer codes that damage or cannot be read by
+your equipment.
+
+1.F.2.  LIMITED WARRANTY, DISCLAIMER OF DAMAGES - Except for the "Right
+of Replacement or Refund" described in paragraph 1.F.3, the Project
+Gutenberg Literary Archive Foundation, the owner of the Project
+Gutenberg-tm trademark, and any other party distributing a Project
+Gutenberg-tm electronic work under this agreement, disclaim all
+liability to you for damages, costs and expenses, including legal
+fees.  YOU AGREE THAT YOU HAVE NO REMEDIES FOR NEGLIGENCE, STRICT
+LIABILITY, BREACH OF WARRANTY OR BREACH OF CONTRACT EXCEPT THOSE
+PROVIDED IN PARAGRAPH F3.  YOU AGREE THAT THE FOUNDATION, THE
+TRADEMARK OWNER, AND ANY DISTRIBUTOR UNDER THIS AGREEMENT WILL NOT BE
+LIABLE TO YOU FOR ACTUAL, DIRECT, INDIRECT, CONSEQUENTIAL, PUNITIVE OR
+INCIDENTAL DAMAGES EVEN IF YOU GIVE NOTICE OF THE POSSIBILITY OF SUCH
+DAMAGE.
+
+1.F.3.  LIMITED RIGHT OF REPLACEMENT OR REFUND - If you discover a
+defect in this electronic work within 90 days of receiving it, you can
+receive a refund of the money (if any) you paid for it by sending a
+written explanation to the person you received the work from.  If you
+received the work on a physical medium, you must return the medium with
+your written explanation.  The person or entity that provided you with
+the defective work may elect to provide a replacement copy in lieu of a
+refund.  If you received the work electronically, the person or entity
+providing it to you may choose to give you a second opportunity to
+receive the work electronically in lieu of a refund.  If the second copy
+is also defective, you may demand a refund in writing without further
+opportunities to fix the problem.
+
+1.F.4.  Except for the limited right of replacement or refund set forth
+in paragraph 1.F.3, this work is provided to you 'AS-IS' WITH NO OTHER
+WARRANTIES OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO
+WARRANTIES OF MERCHANTIBILITY OR FITNESS FOR ANY PURPOSE.
+
+1.F.5.  Some states do not allow disclaimers of certain implied
+warranties or the exclusion or limitation of certain types of damages.
+If any disclaimer or limitation set forth in this agreement violates the
+law of the state applicable to this agreement, the agreement shall be
+interpreted to make the maximum disclaimer or limitation permitted by
+the applicable state law.  The invalidity or unenforceability of any
+provision of this agreement shall not void the remaining provisions.
+
+1.F.6.  INDEMNITY - You agree to indemnify and hold the Foundation, the
+trademark owner, any agent or employee of the Foundation, anyone
+providing copies of Project Gutenberg-tm electronic works in accordance
+with this agreement, and any volunteers associated with the production,
+promotion and distribution of Project Gutenberg-tm electronic works,
+harmless from all liability, costs and expenses, including legal fees,
+that arise directly or indirectly from any of the following which you do
+or cause to occur: (a) distribution of this or any Project Gutenberg-tm
+work, (b) alteration, modification, or additions or deletions to any
+Project Gutenberg-tm work, and (c) any Defect you cause.
+
+
+Section  2.  Information about the Mission of Project Gutenberg-tm
+
+Project Gutenberg-tm is synonymous with the free distribution of
+electronic works in formats readable by the widest variety of computers
+including obsolete, old, middle-aged and new computers.  It exists
+because of the efforts of hundreds of volunteers and donations from
+people in all walks of life.
+
+Volunteers and financial support to provide volunteers with the
+assistance they need, is critical to reaching Project Gutenberg-tm's
+goals and ensuring that the Project Gutenberg-tm collection will
+remain freely available for generations to come.  In 2001, the Project
+Gutenberg Literary Archive Foundation was created to provide a secure
+and permanent future for Project Gutenberg-tm and future generations.
+To learn more about the Project Gutenberg Literary Archive Foundation
+and how your efforts and donations can help, see Sections 3 and 4
+and the Foundation web page at http://www.pglaf.org.
+
+
+Section 3.  Information about the Project Gutenberg Literary Archive
+Foundation
+
+The Project Gutenberg Literary Archive Foundation is a non profit
+501(c)(3) educational corporation organized under the laws of the
+state of Mississippi and granted tax exempt status by the Internal
+Revenue Service.  The Foundation's EIN or federal tax identification
+number is 64-6221541.  Its 501(c)(3) letter is posted at
+http://pglaf.org/fundraising.  Contributions to the Project Gutenberg
+Literary Archive Foundation are tax deductible to the full extent
+permitted by U.S. federal laws and your state's laws.
+
+The Foundation's principal office is located at 4557 Melan Dr. S.
+Fairbanks, AK, 99712., but its volunteers and employees are scattered
+throughout numerous locations.  Its business office is located at
+809 North 1500 West, Salt Lake City, UT 84116, (801) 596-1887, email
+business@pglaf.org.  Email contact links and up to date contact
+information can be found at the Foundation's web site and official
+page at http://pglaf.org
+
+For additional contact information:
+     Dr. Gregory B. Newby
+     Chief Executive and Director
+     gbnewby@pglaf.org
+
+
+Section 4.  Information about Donations to the Project Gutenberg
+Literary Archive Foundation
+
+Project Gutenberg-tm depends upon and cannot survive without wide
+spread public support and donations to carry out its mission of
+increasing the number of public domain and licensed works that can be
+freely distributed in machine readable form accessible by the widest
+array of equipment including outdated equipment.  Many small donations
+($1 to $5,000) are particularly important to maintaining tax exempt
+status with the IRS.
+
+The Foundation is committed to complying with the laws regulating
+charities and charitable donations in all 50 states of the United
+States.  Compliance requirements are not uniform and it takes a
+considerable effort, much paperwork and many fees to meet and keep up
+with these requirements.  We do not solicit donations in locations
+where we have not received written confirmation of compliance.  To
+SEND DONATIONS or determine the status of compliance for any
+particular state visit http://pglaf.org
+
+While we cannot and do not solicit contributions from states where we
+have not met the solicitation requirements, we know of no prohibition
+against accepting unsolicited donations from donors in such states who
+approach us with offers to donate.
+
+International donations are gratefully accepted, but we cannot make
+any statements concerning tax treatment of donations received from
+outside the United States.  U.S. laws alone swamp our small staff.
+
+Please check the Project Gutenberg Web pages for current donation
+methods and addresses.  Donations are accepted in a number of other
+ways including including checks, online payments and credit card
+donations.  To donate, please visit: http://pglaf.org/donate
+
+
+Section 5.  General Information About Project Gutenberg-tm electronic
+works.
+
+Professor Michael S. Hart is the originator of the Project Gutenberg-tm
+concept of a library of electronic works that could be freely shared
+with anyone.  For thirty years, he produced and distributed Project
+Gutenberg-tm eBooks with only a loose network of volunteer support.
+
+
+Project Gutenberg-tm eBooks are often created from several printed
+editions, all of which are confirmed as Public Domain in the U.S.
+unless a copyright notice is included.  Thus, we do not necessarily
+keep eBooks in compliance with any particular paper edition.
+
+
+Most people start at our Web site which has the main PG search facility:
+
+     http://www.gutenberg.net
+
+This Web site includes information about Project Gutenberg-tm,
+including how to make donations to the Project Gutenberg Literary
+Archive Foundation, how to help produce our new eBooks, and how to
+subscribe to our email newsletter to hear about new eBooks.

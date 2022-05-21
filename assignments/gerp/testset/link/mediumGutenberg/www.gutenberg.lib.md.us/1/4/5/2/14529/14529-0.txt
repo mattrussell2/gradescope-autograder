@@ -1,0 +1,1188 @@
+﻿The Project Gutenberg EBook of The Old English Physiologus, by Albert S. Cook
+
+This eBook is for the use of anyone anywhere at no cost and with
+almost no restrictions whatsoever.  You may copy it, give it away or
+re-use it under the terms of the Project Gutenberg License included
+with this eBook or online at www.gutenberg.net
+
+
+Title: The Old English Physiologus
+
+Author: Albert S. Cook
+
+Release Date: December 30, 2004 [EBook #14529]
+
+Language: English and Old English
+
+Character set encoding: UTF-8
+
+*** START OF THIS PROJECT GUTENBERG EBOOK THE OLD ENGLISH PHYSIOLOGUS ***
+
+
+
+
+Produced by David Starner, Ben Beasley and the Online Distributed
+Proofreading Team
+
+
+
+
+
+﻿YALE STUDIES IN ENGLISH
+ALBERT S. COOK, EDITOR
+LXIII
+
+
+THE
+OLD ENGLISH PHYSIOLOGUS
+
+
+TEXT AND PROSE TRANSLATION
+BY
+ALBERT STANBURROUGH COOK
+Professor of the English Language and Literature in Yale University
+
+
+VERSE TRANSLATION
+BY
+JAMES HALL PITMAN
+Fellow in English of Yale University
+
+
+NEW HAVEN: YALE UNIVERSITY PRESS
+LONDON: HUMPHREY MILFORD
+OXFORD UNIVERSITY PRESS
+MDCCCXXI
+
+
+[FACSIMILE]
+
+
+
+
+PREFACE
+
+
+The Old English _Physiologus_, or _Bestiary_, is a series of three brief
+poems, dealing with the mythical traits of a land-animal, a sea-beast,
+and a bird respectively, and deducing from them certain moral or
+religious lessons. These three creatures are selected from a much larger
+number treated in a work of the same name which was compiled at
+Alexandria before 140 B.C., originally in Greek, and afterwards
+translated into a variety of languages--into Latin before 431. The
+standard form of the _Physiologus_ has 49 chapters, each dealing with a
+separate animal (sometimes imaginary) or other natural object, beginning
+with the lion, and ending with the ostrich; examples of these are the
+pelican, the eagle, the phoenix, the ant (cf. Prov. 6.6), the fox, the
+unicorn, and the salamander. In this standard text, the Old English
+poems are represented by chapters 16, 17, and 18, dealing in succession
+with the panther, a mythical sea-monster called the asp-turtle (usually
+denominated the whale), and the partridge. Of these three poems, the
+third is so fragmentary that little is left except eight lines of
+religious application, and four of exhortation by the poet, so that the
+outline of the poem, and especially the part descriptive of the
+partridge, must be conjecturally restored by reference to the treatment
+in the fuller versions, which are based upon Jer. 17.11 (the texts drawn
+upon for the application in lines 5-11 are 2 Cor. 6.17,18; Isa. 55.7;
+Heb. 2.10,11).
+
+It has been said: 'With the exception of the Bible, there is perhaps no
+other book in all literature that has been more widely current in every
+cultivated tongue and among every class of people.' Such currency might
+be illustrated from many English authors. Two passages from Elizabethan
+literature may serve as specimens--the one from Spenser, the other from
+Shakespeare. The former is from the _Faerie Queene_ (1. 11.34):
+
+    At last she saw, where he upstarted brave
+    Out of the well, wherein he drenched lay;
+    As Eagle fresh out of the Ocean wave,
+    Where he hath left his plumes all hoary gray,
+    And deckt himselfe with feathers youthly gay,
+    Like Eyas hauke up mounts unto the skies,
+    His newly budded pineons to assay,
+    And marveiles at himselfe, still as he flies:
+    So new this new-borne knight to battell new did rise.
+
+The other is from _Hamlet_ (Laertes to the King):
+
+    To his good friends thus wide I'll ope my arms;
+    And like the kind life-rendering pelican,
+    Repast them with my blood.[1]
+
+However widely diffused, the symbolism exemplified by the _Physiologus_
+is peculiarly at home in the East. Thus Egypt symbolized the sun, with
+his death at night passing into a rebirth, by the phœnix, which, by a
+natural extension, came to signify the resurrection. And the Bible not
+only sends the sluggard to the ant, and bids men consider the lilies of
+the field, but with a large sweep commands (Job 12.7,8): 'Ask now the
+beasts, and they shall teach thee; and the fowls of the air, and they
+shall tell thee; or speak to the earth, and it shall teach thee; and the
+fishes of the sea shall declare unto thee.'
+
+[Footnote 1: Alfred de Musset, in _La Nuit de Mai_, develops the image
+of the pelican through nearly thirty lines.]
+
+The text as here printed is extracted from my edition, _The Old English
+Elenc, Phœnix, and Physiologus_ (Yale University Press, 1919), where a
+critical apparatus may be found; here it may be sufficient to say that
+Italic letters in square brackets denote my emendations, and Roman
+letters those of previous editors. The translations have not hitherto
+been published, and no complete ones are extant in any language, save
+those contained in Thorpe's edition of the _Codex Exoniensis_, which
+appeared in 1842. The long conjectural passage in the _Partridge_ is due
+wholly to Mr. Pitman.
+
+                                                                  A.S.C.
+
+March 27, 1921.
+
+
+
+
+PHYSIOLOGUS
+
+
+
+
+[**Transcriber's note: The following texts have been split into small
+sections based on the pagination of the original. These sections
+alternate as follows, each section being separated from its neighbors by
+rows of asterisks: Old English verse; Modern English verse translation;
+Modern English prose translation. While this fragments each version, it
+facilitates comparison in parallel.]
+
+
+I
+
+THE PANTHER
+
+
+      Monge sindon    geond middangeard
+    unrīmu cynn,    [_þāra_] þe wē æþelu ne magon
+    ryhte āreccan    nē rīm witan;
+    þæs wīde sind    geond wor[_u_]l[d] innan
+5   fugla and dēora    foldhrērendra
+    wornas widsceope,    swā wæter bibūgeð
+    þisne beorhtan bōsm,    brim grymetende,
+    sealtȳpa geswing.
+                         Wē bi sumum hȳrdon
+    wrǣtlīc[_um_] gecynd[_e_]    wildra secgan,
+10  fīrum frēamǣrne,    feorlondum on,
+    eard weardian,    ēðles nēotan,
+    æfter dūnscrafum.    Is þæt dēor Pandher
+    bi noman hāten,    þæs þe niþþa bear[n],
+
+       *       *       *       *       *
+
+      Of living creatures many are the kinds
+    Throughout the world--unnumbered, since no man
+    Can count their multitudes, nor rightly learn
+    The ways of their wild nature; wide they roam,
+    These beasts and birds, as far as ocean sets
+    A limit to the earth, embracing her
+    And all her sunny fields with salty seas
+    And toss of roaring billows.
+                                 We have heard
+    From men of wider lore of one wild beast,
+    Wonderful dweller in a far-off land
+    Renowned of men, who loves his native glens
+    And dusky caverns. Him have wise men called
+
+       *       *       *       *       *
+
+Many, yea numberless, are the tribes throughout the world whose natures
+we can not rightly expound nor their multitudes reckon, so immense are
+the swarms of birds and earth-treading animals wherever water, the
+roaring ocean, the surge of salt billows, encompasses the smiling bosom
+of earth.
+
+We have heard about one marvelous kind of wild beast which inhabits, in
+lands far off, a domain renowned among men, rejoicing there in his home
+amid the mountain-caves. This beast is called panther, as the learned
+
+       *       *       *       *       *
+
+    wīsfæste weras,    on gewritum cȳþa[_ð_]
+15  bi þām ānstapan.
+                        Sē is ǣ[_g_]hwām frēond,
+    duguða ēstig,    būtan dracan ānum;
+    þām hē in ealle tīd    andwrāð leofaþ,
+    þurh yfla gehwylc    þe hē geæfnan mæg.
+      Ðæt is wrǣtlīc dēor,    wundrum scȳne,
+20  hīwa gehwylces.    Swā hæleð secgað,
+    gǣsthālge guman,    þætte Iōsēphes
+    tunece wǣre    telga gehwylces
+    blēom bregdende,    þāra beorhtra gehwylc,
+    ǣghwæs ǣnlīcra,    ōþrum līxte
+25  dryhta bearnum,    swā þæs dēores hīw,
+    blǣc, brigda gehwæs,    beorhtra and scȳnra
+    wundrum līxeð,    þætte wrǣtlīcra
+    ǣghwylc ōþrum,    ǣnlīcra gīen
+    and fǣgerra,    frætwum blīceð,
+30  symle sellīcra.
+                       Hē hafað sundorgecynd,
+
+       *       *       *       *       *
+
+    The panther, and in books have told of him,
+    The solitary rover.
+                        He is kind,
+    A bounteous friend to every living thing
+    Save one alone, the dragon; but with him
+    The panther ever lives at enmity,
+    Employing every means within his power
+    To work him evil.
+                      Fair is he, full bright
+    And wonderful of hue. The holy scribes
+    Tell us how Joseph's many-colored coat,
+    Gleaming with varying dyes of every shade,
+    Brilliant, resplendent, dazzled all men's eyes
+    That looked upon it. So the panther's hues
+    Shine altogether lovely, marvelous,
+    While each fair color in its beauty glows
+    Ever more rare and charming than the rest.
+      His wondrous character is mild, and free
+
+       *       *       *       *       *
+
+among the children of men report in their books concerning that lonely
+wanderer.
+
+He is a friend, bountiful in kindness, to every one save only the
+dragon; with him he always lives at enmity by means of every injury he
+can inflict.
+
+He is a bewitching animal, marvelously beautiful with every color. Just
+as, according to men holy in spirit, Joseph's coat was variegated with
+hues of every shade, each shining before the sons of men brighter and
+more perfect than another, so does the color of this beast blaze with
+every diversity, gleaming in wondrous wise so clear and fair that each
+tint is ever lovelier than the next, glows more enchanting in its
+splendor, more rare, more beauteous, and more strange.
+
+He has a nature all his own, so gentle and so calm is
+
+       *       *       *       *       *
+
+    milde, gemetfæst.    Hē is monþwǣre,
+    lufsum and lēoftæl:    nele lāþes wiht
+    ǣ[ng]um geæfnan    būtan þām āttorsceaþan,
+    his fyrngeflitan,    þe ic ǣr fore sægde.
+35    Symle, fylle fægen,    þonne fōddor þigeð,
+    æfter þām gereordum    ræste sēceð,
+    dȳgle stōwe    under dūnscrafum;
+    ðǣr se þēo[d]wiga    þrēonihta fæc
+    swifeð on swe[_o_]fote,    slǣpe gebiesga[d].
+40  Þonne ellenrōf    ūp āstondeð,
+    þrymme gewelga[d],    on þone þriddan dæg,
+    snēome of slǣpe.    Swēghlēoþor cymeð,
+    wōþa wynsumast,    þurh þæs wildres mūð;
+    æfter pære stefne    stenc ūt cymeð
+45  of þām wongstede--    wynsumra stēam,
+    swēttra and swīþra,    swæcca gehwylcum,
+    wyrta blōstmum    and wudublēdum,
+    eallum æþelīcra    eorþan frætw[um].
+
+       *       *       *       *       *
+
+    From all disturbing passion. Gracious, kind,
+    And full of love, he meditates no harm
+    But to that venomous foe, as I have told,
+    His ancient enemy.
+                       Once he has rejoiced
+    His heart with feasting, straight he finds a nook
+    Hidden among dim caves, his resting-place.
+    There three nights' space, in deepest slumber wrapped,
+    The people's champion lies. Then, stout of heart,
+    The third day he arises fresh from sleep,
+    Endowed with glory. From the creature's mouth
+    Issues a melody of sweetest strains;
+    And close upon the voice a balmy scent
+    Fills all the place--an incense lovelier,
+    Sweeter, and abler to perfume the air,
+    Than any odor of an earthly flower
+    Or scent of woodland fruit, more excellent
+
+       *       *       *       *       *
+
+it. Kind, attractive, and friendly, he has no thought of doing harm to
+any save the envenomed foe, his ancient adversary of whom I spoke.
+
+When, delighting in a feast, he has partaken of food, ever at the end of
+the meal he betakes himself to his resting-place, a hidden retreat among
+the mountain-caves; there the champion of his race, overcome by sleep,
+abandons himself to slumber for the space of three nights. Then the
+dauntless one, replenished with vigor, straightway arises from sleep
+when the third day has come. A melody, the most ravishing of strains,
+flows from the wild beast's mouth; and, following the music, there
+issues a fragrance from the place--a fume more transporting, sweet, and
+strong than any odor whatever, than blossoms of plants or fruits of the
+forest, choicer
+
+       *       *       *       *       *
+
+    Þonne of ceastrum    and cynestōlum
+50  and of burgsalum    beornþrēat monig
+    farað foldwegum    folca þrȳþum;
+    ēoredcystum,    ofestum gefȳsde,
+    dareðlācende    --dēor [s]wā some--
+    æfter þǣre stefne    on þone stenc farað.
+55    Swā is Dryhten God,    drēama Rǣdend,
+    eallum ēaðmēde    ōþrum gesceaftum,
+    duguða gehwylcre,    būtan dracan ānum,
+    āttres ordfruman--    þæt is se ealda fēond
+    þone hē gesǣlde    in sūsla grund,
+60  and gefetrade    fȳrnum tēagum,
+    biþeahte þrēanȳdum;    and þȳ þriddan dæge
+    of dīgle ārās,    þæs þe hē dēað fore ūs
+    þrēo niht þolade,    Þēoden engla,
+    sigora Sellend.    Þæt wæs swēte stenc,
+65  wlitig and wynsum,    geond woruld ealle.
+    Siþþan tō þām swicce    sōðfæste men,
+
+       *       *       *       *       *
+
+    Than all this world's adornments. Then from town
+    And palace, then from castle-hall, come forth
+    Along the roads great troops of hurrying men--
+    The very beasts come also; all press on
+    Toward that sweet odor, when the voice is stilled.
+      Such as this creature is the Lord our God,
+    Giver of joys, to all creation kind,
+    To men benignant, save alone to him,
+    The dragon, author of all wickedness,
+    Satan, the ancient adversary whom,
+    Fettered with fire, shackled with dire constraint,
+    Into the pit of torments God cast down.
+    The third day Christ arose from out the grave,
+    For three nights having suffered death for us,
+    He, Lord of angels, he in whom alone
+    Is hope of overcoming. Far and wide
+    The tidings spread, like perfume fresh and sweet,
+    Through all the world. Then to that fragrance thronged
+
+       *       *       *       *       *
+
+than aught that clothes the earth with beauty. Thereupon from cities,
+courts, and castle-halls many companies of heroes flock along the
+highways of earth; the wielders of the spear press forward in hurrying
+throngs to that perfume--and so also do animals--when once the music has
+ceased.
+
+Even so the Lord God, the Giver of joy, is gracious to all creatures, to
+every order of them, save only the dragon, the source of venom, that
+ancient enemy whom he bound in the abyss of torments; shackling him with
+fiery fetters, and loading him with dire constraints, he arose from
+darkness on the third day after he, the Lord of angels, the Bestower of
+victory, had for three nights endured death on our behalf. That was a
+sweet perfume throughout the world, winsome and entrancing. Henceforth,
+
+       *       *       *       *       *
+
+    on healfa gehwone,    hēapum þrungon
+    geond ealne ymbhwyrft    eorþan scēat[a].
+    Swā se snottra gecwæð    Sanctus Paulus:
+70  'Monigfealde sind    geond middangeard
+    gōd ungnȳðe    þe ūs tō giefe dǣleð
+    and tō feorhnere    Fæder ælmihtig,
+    and se ānga Hyht    ealra gesceafta
+    uppe ge niþre.'    Þæt is æþele stenc.
+
+       *       *       *       *       *
+
+    From every side all men whose hearts were true,
+    Throughout the regions of the circled earth.
+    Thus spoke the wise St. Paul: 'In all the world
+    His gifts are many, which he gives to us
+    For our salvation with unstinting hand,
+    Almighty Father, he, the only Hope
+    Of all in heaven or here below on earth.'
+    This is that noble fragrance, rare and sweet,
+    Which draws all men to seek it from afar.
+
+       *       *       *       *       *
+
+through the whole extent of earth's regions, righteous men have streamed
+in multitudes from every side to that fragrance. As said the wise St.
+Paul: 'Manifold over the world are the lavish bounties which the Father
+almighty, the Hope of all creatures above and below, bestows on us as
+grace and salvation.' That, too, is a sweet odor.
+
+
+
+
+II
+
+THE WHALE (ASP-TURTLE)
+
+
+      Nū ic fitte gēn    ymb fisca cynn
+    wille wōðcræfte    wordum cȳþan
+    þurh mōdgemynd,    bi þām miclan hwale.
+    Sē bið unwillum    oft gemēted,
+5   frēcne and fer[_h_]ðgrim,    fareðlācendum,
+    niþþa gehwylcum;    þām is noma cenned,
+    fyr[ge]nstrēama geflotan,    Fastitocalon.
+      Is þæs hīw gelīc    hrēofum stāne,
+    swylce wōrie    bi wædes ōfre,
+10  sondbeorgum ymbseald,    sǣrȳrica mǣst,
+    swā þæt wēnaþ    wǣglīþende
+    þæt hȳ on ēalond sum    ēagum wlīten;
+    and þonne gehȳd[_i_]að    hēahstefn scipu
+    tō þām unlonde    oncyrrāpum,
+15  s[_ǣ_]laþ sǣmearas    sundes æt ende,
+
+       *       *       *       *       *
+
+      Now will I spur again my wit, and use
+    Poetic skill to weave words into song,
+    Telling of one among the race of fish,
+    The great asp-turtle. Men who sail the sea
+    Often unwillingly encounter him,
+    Dread preyer on mankind. His name we know,
+    The ocean-swimmer, Fastitocalon.
+      Dun, like rough stone in color, as he floats
+    He seems a heaving bank of reedy grass
+    Along the shore, with rolling dunes behind,
+    So that sea-wanderers deem their gaze has found
+    An island. Boldly then their high-prowed ships
+    They moor with cables to that shore, a land
+    That is no land. Still floating on the waves,
+    Their ocean-coursers curvet at the marge;
+
+       *       *       *       *       *
+
+This time I will with poetic art rehearse, by means of words and wit, a
+poem about a kind of fish, the great sea-monster which is often
+unwillingly met, terrible and cruel-hearted to seafarers, yea, to every
+man; this swimmer of the ocean-streams is known as the asp-turtle.
+
+His appearance is like that of a rough boulder, as if there were tossing
+by the shore a great ocean-reedbank begirt with sand-dunes, so that
+seamen imagine they are gazing upon an island, and moor their
+high-prowed ships with cables to that false land, make fast the
+ocean-coursers at the sea's end, and, bold of heart, climb up
+
+       *       *       *       *       *
+
+    and þonne in þæt ēglond    ūp gewītað
+    collenfer[_h_]þe;    cēolas stondað
+    bi staþe fæste    strēame biwunden.
+    Ðonne gewīciað    wērigfer[_h_]ðe,
+20  faroðlācende,    frēcnes ne wēnað.
+      On þām ēalonde    ǣled weccað,
+    hēah fyr ǣlað.    Hæleþ bēoþ on wynnum,
+    rēonigmōde,    ræste gel[y]ste.
+    Þonne gefēleð    fācnes cræftig
+25  þæt him þā fērend on    fæste wuniaþ,
+    wīc weardiað,    wedres on luste,
+    ðonne semninga    on sealtne wǣg
+    mid þā nōþe    niþer gewīteþ,
+    gārsecges gæst,    grund gesēceð,
+30  and þonne in dēaðsele    drence bifæsteð
+    scipu mid scealcum.
+                           Swā bið scinn[_en_]a þēaw,
+    dēofla wīse,    þæt hī droht[i]ende
+    þurh dyrne meaht    duguðe beswīcað,
+    and on teosu tyhtaþ    tilra dǣda,
+35  wēmað on willan,    þæt hȳ wraþe sēcen,
+
+       *       *       *       *       *
+
+    The weary-hearted sailors mount the isle,
+    And, free from thought of peril, there abide.
+      Elated, on the sands they build a fire,
+    A mounting blaze. There, light of heart, they sit--
+    No more discouraged--eager for sweet rest.
+    Then when the crafty fiend perceives that men,
+    Encamped upon him, making their abode,
+    Enjoy the gentle weather, suddenly
+    Under the salty waves he plunges down,
+    Straight to the bottom deep he drags his prey;
+    He, guest of ocean, in his watery haunts
+    Drowns ships and men, and fast imprisons them
+    Within the halls of death.
+                               Such is the way
+    Of demons, devils' wiles: to hide their power,
+    And stealthily inveigle heedless men,
+    Inciting them against all worthy deeds,
+    And luring them to seek for help and comfort
+
+       *       *       *       *       *
+
+on that island; the vessels stand by the beach, enringed by the flood.
+The weary-hearted sailors then encamp, dreaming not of peril.
+
+On the island they start a fire, kindle a mounting flame. The dispirited
+heroes, eager for repose, are flushed with joy. Now when the cunning
+plotter feels that the seamen are firmly established upon him, and have
+settled down to enjoy the weather, the guest of ocean sinks without
+warning into the salt wave with his prey (?), and makes for the bottom,
+thus whelming ships and men in that abode of death.
+
+Such is the way of demons, the wont of devils: they spend their lives in
+outwitting men by their secret power, inciting them to the corruption of
+good deeds, misguiding
+
+       *       *       *       *       *
+
+    frōfre tō fēondum,    oþþæt hy fæste ðǣr
+    æt þām wǣrlogan    wīc gecēosað.
+    Þonne þæt gecnāweð    of cwicsūsle
+    flāh fēond gemāh,    þætte fīra gehwylc
+40  hæleþa cynnes    on his hringe biþ
+    fæste gefēged,    hē him feorgbona,
+    þurh slīþen searo,    siþþan weorþeð,
+    wloncum and hēanum    þe his willan hēr
+    firenum fremmað;    mid þām hē fǣringa,
+45  heoloþhelme biþeaht,    helle sēceð,
+    gōda gēasne,    grundlēasne wylm
+    under mistglōme,    swā se micla hwæl
+    se þe bisenceð    sǣlīþende
+    eorlas and ȳðmearas.
+                            Hē hafað ōþre gecynd,
+50  wæterþisa wlonc,    wrǣtlīcran gīen.
+    Þonne hine on holme    hunger bysgað,
+    and þone āglǣcan    ǣtes lysteþ,
+    ðonne se mereweard    mūð ontȳneð,
+
+       *       *       *       *       *
+
+    From unsuspected foes, until at last
+    They choose a dwelling with the faithless one.
+    Then, when the fiend, by crafty malice stirred,
+    From where hell's torments bind him fast, perceives
+    That men are firmly set in his domain,
+    With treachery unspeakable he hastes
+    To snare and to destroy the lives of those,
+    Both proud and lowly, who in sin perform
+    His will on earth. Donning the mystic helm
+    Of darkness, with his prey he speeds to hell,
+    The place devoid of good--all misty gloom,
+    Where broods a sullen lake, black, bottomless,
+    Just as the monster, Fastitocalon,
+    Destroys seafarers, overwhelming men
+    And staunch-built ships.
+                             Another trait he has,
+    This proud sea-swimmer, still more marvelous.
+    When hunger grips the monster on the deep,
+    Making him long for food, his gaping mouth
+    The ocean-warder opens, stretching wide
+
+       *       *       *       *       *
+
+them at will so that they seek help and support from fiends, until they
+end by making their fixed abode with the betrayer. When, from out his
+living torture, the crafty, malicious enemy perceives that any one is
+firmly settled within his domain, he proceeds, by his malignant wiles,
+to become the slayer of that man, be he rich or poor, who sinfully does
+his will; and, covered by his cap of darkness, suddenly betakes himself
+with them to hell, where naught of good is found, a bottomless abyss
+shrouded in misty gloom--like that monster which engulfs the
+ocean-traversing men and ships.
+
+This proud tosser of the waves has another and still more wonderful
+trait. When hunger plagues him on the deep, and the monster longs for
+food, this haunter of the sea opens his mouth, and sets his lips agape;
+
+       *       *       *       *       *
+
+    wīde weleras;    cymeð wynsum stenc
+55  of his innoþe,    þætte ōþre þurh þone,
+    sǣfisca cynn,    beswicen weorðaþ.
+    Swimmað sundhwate    þǣr se swēta stenc
+    ūt gewīt[e]ð.    Hī þǣr in farað,
+    unware weorude,    oþþæt se wīda ceafl
+60  gefylled bið;    þonne fǣringa
+    ymbe þā herehūþe    hlemmeð tōgædre
+    grimme gōman.
+                     Swā biþ gumena gehwām
+    se þe oftost his    unwærlīce,
+    on þās lǣnan tīd,    līf biscēawað:
+65  lǣteð hine beswīcan    þurh swētne stenc,
+    lēasne willan,    þæt hē biþ leahtrum fāh
+    wið Wuldorcyning.    Him se āwyrgda ongēan
+    æfter hinsīþe    helle ontȳneð,
+    þām þe lēaslīce    līces wynne
+70  ofer ferh[ð]gereaht    fremedon on unrǣd.
+    Þonne se fǣcna    in þām fæstenne
+    gebrōht hafað,    bealwes cræftig,
+
+       *       *       *       *       *
+
+    His monstrous lips; and from his cavernous maw
+    Sends an entrancing odor. This sweet scent,
+    Deceiving other fishes, lures them on
+    In swiftly moving schools toward that fell place
+    Whence comes the perfume. There, unwary host,
+    They enter in, until the yawning mouth
+    Is filled to overflowing, when, at once,
+    Trapping their prey, the fearful jaws snap shut.
+      So, in this fleeting earthly time, each man
+    Who orders heedlessly his mortal life
+    Lets a sweet odor, some beguiling wish,
+    Entice him, so that in the eyes of God,
+    The King of glory, his iniquities
+    Make him abhorrent. After death for him
+    The all-accursed devil opens hell--
+    Opens for all who in their folly here
+    Let pleasures of the body overcome
+    Their spirits' guidance. When the wily fiend
+    Into his hold beside the fiery lake
+
+       *       *       *       *       *
+
+whereupon there issues a ravishing perfume from his inwards, by which
+other kinds of fish are beguiled. With lively motions they swim to where
+the sweet odor comes forth, and there enter in, a heedless host, until
+the wide gorge is full; then, in one instant, he snaps his fierce jaws
+together about the swarming prey.
+
+Thus it is with any one who, in this fleeting time, full oft neglects to
+take heed to his life, and allows himself to be enticed by sweet
+fragrance, a lying lure, so that he becomes hostile to the King of glory
+by reason of his sins. The accursed one will, when they die, throw wide
+the doors of hell to those who, in their folly, have wrought the
+treacherous delights of the body, contrary to the wise guidance of the
+soul. When the deceiver, skilful in wrongdoing, hath brought into that
+fastness,
+
+       *       *       *       *       *
+
+    æt þām [_ā_]dwylme,    þā þe him on cleofiað,
+    gyltum gehrodene,    and ǣr georne his
+75  in hira līfdagum    lārum hȳrdon,
+    þonne he þā grimman    gōman bihlemmeð,
+    æfter feorhcwale,     fæste tōgædre,
+    helle hlinduru.    Nāgon hwyrft nē swice,
+    ūtsīþ ǣfre,    þā [_þe_] þǣr in cumað,
+80  þon mā þe þā fiscas,    faraðlācende,
+    of þæs hwæles fenge    hweorfan mōtan.
+      Forþon is eallinga  . . . . . . . . .
+    . . . . . . . . . . . . . . . . . . . .
+    dryhtna Dryhtne, and ā dēoflum wiðsace
+85  wordum and weorcum,    þæt wē Wuldorcyning
+    gesēon mōton.    Uton ā sibbe tō him,
+    on þās hwīlnan tīd,    hǣlu sēcan,
+    þæt wē mid swā lēofne    in lofe mōtan
+    tō wīdan feore    wuldres nēotan.
+
+       *       *       *       *       *
+
+    With evil craft has led those erring ones
+    Who cleave to him, sore laden with their sins,
+    Those who in earthly life have hearkened well
+    To his instruction, after death close shut
+    He snaps those woful jaws, the gates of hell.
+    Whoever enters there has no relief,
+    Nor may he any more escape his doom
+    And thence depart, than can the swimming fish
+    Elude the monster.
+                       Therefore it is [best
+    And[1]] altogether [right for each of us
+    To serve and honor God,[1]] the Lord of lords,
+    And always in our every word and deed
+    To combat devils, that we may at last
+    Behold the King of glory. In this time
+    Of transitory things, then, let us seek
+    Peace and salvation from him, that we may
+    Rejoice for ever in so dear a Lord,
+    And praise his glory everlastingly.
+
+[Footnote 1: Conjecturally supplied.]
+
+       *       *       *       *       *
+
+the lake of fire, those that cleave to him and are laden with guilt,
+such as had eagerly followed his teachings in the days of their life, he
+then, after their death, snaps tight together his fierce jaws, the gates
+of hell. They who enter there have neither relief nor escape, no means
+of flight, any more than the fishes that swim the sea can escape from
+the clutch of the monster.
+
+Therefore is it by all means [best for every one of us to serve[1]] the
+Lord of lords, and strive against devils with words and works, that so
+we may come to behold the King of glory. Let us ever, now in this
+fleeting time, seek from him grace and salvation, that so with the
+Beloved we may in worship enjoy the bliss of heaven for evermore.
+
+[Footnote 1: Conjecturally supplied.]
+
+       *       *       *       *       *
+
+
+
+
+III
+
+THE PARTRIDGE[1]
+
+
+      Hȳrde ic secgan gēn    bi sumum fugle
+    wundorlīcne[2]. . . . . . . . . . . . .
+    . . . . . . . . . . . . . . . . . . . .
+    . . . . . . . . . . . . . . . . . . . .
+    . . . . . . . . . . . . . . . . . . . .
+    . . . . . . . . . . . . . . . . fǣger
+    þæt word þe gecwæð    wuldres Ealdor:
+5   'In swā hwylce tiid    swā gē mid trēowe tō mē
+    on hyge hweorfað,    and gē hellfirena
+    sweartra geswīcað,    swā ic symle tō ēow
+    mid siblufan    sōna gecyrre
+    þurh milde mōd;    gē bēoð mē siþþan
+
+[Footnote 1: The partridge (like the cuckoo) broods the eggs of other
+birds. When they are hatched and grown, they fly off to their true
+parents. So men may turn from the devil, who has wrongfully gained
+possession of them, to their heavenly Father, who will receive them as
+his children.]
+
+[Footnote 2: Gap in the manuscript, probably of considerable length.]
+
+       *       *       *       *       *
+
+      About another creature have I heard
+    A wondrous [tale.] [There is] a bird [men call
+    The partridge. Strange is she, unlike all birds
+    In field or wood who brood upon their eggs,
+    Hatching their young. The partridge lays no eggs,
+    Nor builds a dwelling; but instead, she steals
+    The well-wrought nests of others. There she sits,
+    Warming a stranger brood, until at last
+    The eggs are hatched. But when the stolen chicks
+    Are fledged, they straightway fly away to seek
+    Their proper kin, and leave the partridge there
+    Forsaken. In such wise the devil works
+    To steal the souls of those whose youthful minds
+    Or foolish hearts in vain resist his wiles.
+    But when they reach maturer age, they see
+    They are true children of the Lord of lords.
+    Then they desert the lying fiend, and seek
+    Their rightful Father, who with open arms
+    Receives them, as he long since promised them.[1]]
+      Fair is that word the Lord of glory spoke:
+    'In such time as you turn with faithful hearts
+    To me, and put away your hellish sins,
+    Abominable to me, then will I turn
+    To you in love for ever, for my heart
+    Is mild and gracious. Thenceforth you shall be
+
+[Footnote 1: Conjecturally supplied, on the basis of other versions.]
+
+       *       *       *       *       *
+
+So, too, I have heard tell a wondrous [tale[1]] about a certain bird.[2]
+... fair the word[3] spoken by the King of glory: 'At whatsoever time ye
+turn to me with faith in your soul, and forsake the black iniquities of
+hell, I will turn straightway to you with love, in the gentleness of my
+heart; and thenceforth ye shall be reckoned to
+
+[Footnote 1: Conjecturally supplied.]
+
+[Footnote 2: Gap in the manuscript, probably of considerable length.]
+
+[Footnote 3: Cf. 2 Cor. 6.17,18; Isa. 55.7; Heb. 2.10,11.]
+
+       *       *       *       *       *
+
+10  torhte, tīrēadge,    talade and rīmde,
+    beorhte gebrōþor    on bearna stǣl.'
+      Uton wē þȳ geornor    Gode ōliccan,
+    firene fēogan,    friþes earnian,
+    duguðe tō Dryhtne,    þenden ūs dæg scīne,
+15  þæt swā æþelne    eardwīca cyst
+    in wuldres wlite    wunian mōtan.
+                                                                  Finit.
+
+       *       *       *       *       *
+
+    Refulgent, glorious, numbered with the host
+    Of heaven, and, instead of children, called
+    Bright brethren of the Lord.'
+                                  Let us by this
+    Be taught to please God better, hating sin,
+    And strive to earn salvation from the Lord,
+    His full deliverance, so long as day
+    Shall shine upon us, that we may at last
+    Inhabit heavenly mansions, nobler far
+    Than earthly dwellings, gloriously bright.
+
+                                                                  Finit.
+
+       *       *       *       *       *
+
+me as glorious and renowned, as my illustrious brethren, yea, in the
+place of children.'
+
+Let us therefore propitiate God with all zeal, abhor evil, and gain
+forgiveness and salvation from the Lord while for us the day still
+shines, so that thus we may, in glorious beauty, inhabit a dwelling
+excellent beyond compare. Finit.
+
+
+
+
+
+End of Project Gutenberg's The Old English Physiologus, by Albert S. Cook
+
+*** END OF THIS PROJECT GUTENBERG EBOOK THE OLD ENGLISH PHYSIOLOGUS ***
+
+***** This file should be named 14529-0.txt or 14529-0.zip *****
+This and all associated files of various formats will be found in:
+        http://www.gutenberg.net/1/4/5/2/14529/
+
+Produced by David Starner, Ben Beasley and the Online Distributed
+Proofreading Team
+
+
+Updated editions will replace the previous one--the old editions
+will be renamed.
+
+Creating the works from public domain print editions means that no
+one owns a United States copyright in these works, so the Foundation
+(and you!) can copy and distribute it in the United States without
+permission and without paying copyright royalties.  Special rules,
+set forth in the General Terms of Use part of this license, apply to
+copying and distributing Project Gutenberg-tm electronic works to
+protect the PROJECT GUTENBERG-tm concept and trademark.  Project
+Gutenberg is a registered trademark, and may not be used if you
+charge for the eBooks, unless you receive specific permission.  If you
+do not charge anything for copies of this eBook, complying with the
+rules is very easy.  You may use this eBook for nearly any purpose
+such as creation of derivative works, reports, performances and
+research.  They may be modified and printed and given away--you may do
+practically ANYTHING with public domain eBooks.  Redistribution is
+subject to the trademark license, especially commercial
+redistribution.
+
+
+
+*** START: FULL LICENSE ***
+
+THE FULL PROJECT GUTENBERG LICENSE
+PLEASE READ THIS BEFORE YOU DISTRIBUTE OR USE THIS WORK
+
+To protect the Project Gutenberg-tm mission of promoting the free
+distribution of electronic works, by using or distributing this work
+(or any other work associated in any way with the phrase "Project
+Gutenberg"), you agree to comply with all the terms of the Full Project
+Gutenberg-tm License (available with this file or online at
+http://gutenberg.net/license).
+
+
+Section 1.  General Terms of Use and Redistributing Project Gutenberg-tm
+electronic works
+
+1.A.  By reading or using any part of this Project Gutenberg-tm
+electronic work, you indicate that you have read, understand, agree to
+and accept all the terms of this license and intellectual property
+(trademark/copyright) agreement.  If you do not agree to abide by all
+the terms of this agreement, you must cease using and return or destroy
+all copies of Project Gutenberg-tm electronic works in your possession.
+If you paid a fee for obtaining a copy of or access to a Project
+Gutenberg-tm electronic work and you do not agree to be bound by the
+terms of this agreement, you may obtain a refund from the person or
+entity to whom you paid the fee as set forth in paragraph 1.E.8.
+
+1.B.  "Project Gutenberg" is a registered trademark.  It may only be
+used on or associated in any way with an electronic work by people who
+agree to be bound by the terms of this agreement.  There are a few
+things that you can do with most Project Gutenberg-tm electronic works
+even without complying with the full terms of this agreement.  See
+paragraph 1.C below.  There are a lot of things you can do with Project
+Gutenberg-tm electronic works if you follow the terms of this agreement
+and help preserve free future access to Project Gutenberg-tm electronic
+works.  See paragraph 1.E below.
+
+1.C.  The Project Gutenberg Literary Archive Foundation ("the Foundation"
+or PGLAF), owns a compilation copyright in the collection of Project
+Gutenberg-tm electronic works.  Nearly all the individual works in the
+collection are in the public domain in the United States.  If an
+individual work is in the public domain in the United States and you are
+located in the United States, we do not claim a right to prevent you from
+copying, distributing, performing, displaying or creating derivative
+works based on the work as long as all references to Project Gutenberg
+are removed.  Of course, we hope that you will support the Project
+Gutenberg-tm mission of promoting free access to electronic works by
+freely sharing Project Gutenberg-tm works in compliance with the terms of
+this agreement for keeping the Project Gutenberg-tm name associated with
+the work.  You can easily comply with the terms of this agreement by
+keeping this work in the same format with its attached full Project
+Gutenberg-tm License when you share it without charge with others.
+
+1.D.  The copyright laws of the place where you are located also govern
+what you can do with this work.  Copyright laws in most countries are in
+a constant state of change.  If you are outside the United States, check
+the laws of your country in addition to the terms of this agreement
+before downloading, copying, displaying, performing, distributing or
+creating derivative works based on this work or any other Project
+Gutenberg-tm work.  The Foundation makes no representations concerning
+the copyright status of any work in any country outside the United
+States.
+
+1.E.  Unless you have removed all references to Project Gutenberg:
+
+1.E.1.  The following sentence, with active links to, or other immediate
+access to, the full Project Gutenberg-tm License must appear prominently
+whenever any copy of a Project Gutenberg-tm work (any work on which the
+phrase "Project Gutenberg" appears, or with which the phrase "Project
+Gutenberg" is associated) is accessed, displayed, performed, viewed,
+copied or distributed:
+
+This eBook is for the use of anyone anywhere at no cost and with
+almost no restrictions whatsoever.  You may copy it, give it away or
+re-use it under the terms of the Project Gutenberg License included
+with this eBook or online at www.gutenberg.net
+
+1.E.2.  If an individual Project Gutenberg-tm electronic work is derived
+from the public domain (does not contain a notice indicating that it is
+posted with permission of the copyright holder), the work can be copied
+and distributed to anyone in the United States without paying any fees
+or charges.  If you are redistributing or providing access to a work
+with the phrase "Project Gutenberg" associated with or appearing on the
+work, you must comply either with the requirements of paragraphs 1.E.1
+through 1.E.7 or obtain permission for the use of the work and the
+Project Gutenberg-tm trademark as set forth in paragraphs 1.E.8 or
+1.E.9.
+
+1.E.3.  If an individual Project Gutenberg-tm electronic work is posted
+with the permission of the copyright holder, your use and distribution
+must comply with both paragraphs 1.E.1 through 1.E.7 and any additional
+terms imposed by the copyright holder.  Additional terms will be linked
+to the Project Gutenberg-tm License for all works posted with the
+permission of the copyright holder found at the beginning of this work.
+
+1.E.4.  Do not unlink or detach or remove the full Project Gutenberg-tm
+License terms from this work, or any files containing a part of this
+work or any other work associated with Project Gutenberg-tm.
+
+1.E.5.  Do not copy, display, perform, distribute or redistribute this
+electronic work, or any part of this electronic work, without
+prominently displaying the sentence set forth in paragraph 1.E.1 with
+active links or immediate access to the full terms of the Project
+Gutenberg-tm License.
+
+1.E.6.  You may convert to and distribute this work in any binary,
+compressed, marked up, nonproprietary or proprietary form, including any
+word processing or hypertext form.  However, if you provide access to or
+distribute copies of a Project Gutenberg-tm work in a format other than
+"Plain Vanilla ASCII" or other format used in the official version
+posted on the official Project Gutenberg-tm web site (www.gutenberg.net),
+you must, at no additional cost, fee or expense to the user, provide a
+copy, a means of exporting a copy, or a means of obtaining a copy upon
+request, of the work in its original "Plain Vanilla ASCII" or other
+form.  Any alternate format must include the full Project Gutenberg-tm
+License as specified in paragraph 1.E.1.
+
+1.E.7.  Do not charge a fee for access to, viewing, displaying,
+performing, copying or distributing any Project Gutenberg-tm works
+unless you comply with paragraph 1.E.8 or 1.E.9.
+
+1.E.8.  You may charge a reasonable fee for copies of or providing
+access to or distributing Project Gutenberg-tm electronic works provided
+that
+
+- You pay a royalty fee of 20% of the gross profits you derive from
+     the use of Project Gutenberg-tm works calculated using the method
+     you already use to calculate your applicable taxes.  The fee is
+     owed to the owner of the Project Gutenberg-tm trademark, but he
+     has agreed to donate royalties under this paragraph to the
+     Project Gutenberg Literary Archive Foundation.  Royalty payments
+     must be paid within 60 days following each date on which you
+     prepare (or are legally required to prepare) your periodic tax
+     returns.  Royalty payments should be clearly marked as such and
+     sent to the Project Gutenberg Literary Archive Foundation at the
+     address specified in Section 4, "Information about donations to
+     the Project Gutenberg Literary Archive Foundation."
+
+- You provide a full refund of any money paid by a user who notifies
+     you in writing (or by e-mail) within 30 days of receipt that s/he
+     does not agree to the terms of the full Project Gutenberg-tm
+     License.  You must require such a user to return or
+     destroy all copies of the works possessed in a physical medium
+     and discontinue all use of and all access to other copies of
+     Project Gutenberg-tm works.
+
+- You provide, in accordance with paragraph 1.F.3, a full refund of any
+     money paid for a work or a replacement copy, if a defect in the
+     electronic work is discovered and reported to you within 90 days
+     of receipt of the work.
+
+- You comply with all other terms of this agreement for free
+     distribution of Project Gutenberg-tm works.
+
+1.E.9.  If you wish to charge a fee or distribute a Project Gutenberg-tm
+electronic work or group of works on different terms than are set
+forth in this agreement, you must obtain permission in writing from
+both the Project Gutenberg Literary Archive Foundation and Michael
+Hart, the owner of the Project Gutenberg-tm trademark.  Contact the
+Foundation as set forth in Section 3 below.
+
+1.F.
+
+1.F.1.  Project Gutenberg volunteers and employees expend considerable
+effort to identify, do copyright research on, transcribe and proofread
+public domain works in creating the Project Gutenberg-tm
+collection.  Despite these efforts, Project Gutenberg-tm electronic
+works, and the medium on which they may be stored, may contain
+"Defects," such as, but not limited to, incomplete, inaccurate or
+corrupt data, transcription errors, a copyright or other intellectual
+property infringement, a defective or damaged disk or other medium, a
+computer virus, or computer codes that damage or cannot be read by
+your equipment.
+
+1.F.2.  LIMITED WARRANTY, DISCLAIMER OF DAMAGES - Except for the "Right
+of Replacement or Refund" described in paragraph 1.F.3, the Project
+Gutenberg Literary Archive Foundation, the owner of the Project
+Gutenberg-tm trademark, and any other party distributing a Project
+Gutenberg-tm electronic work under this agreement, disclaim all
+liability to you for damages, costs and expenses, including legal
+fees.  YOU AGREE THAT YOU HAVE NO REMEDIES FOR NEGLIGENCE, STRICT
+LIABILITY, BREACH OF WARRANTY OR BREACH OF CONTRACT EXCEPT THOSE
+PROVIDED IN PARAGRAPH F3.  YOU AGREE THAT THE FOUNDATION, THE
+TRADEMARK OWNER, AND ANY DISTRIBUTOR UNDER THIS AGREEMENT WILL NOT BE
+LIABLE TO YOU FOR ACTUAL, DIRECT, INDIRECT, CONSEQUENTIAL, PUNITIVE OR
+INCIDENTAL DAMAGES EVEN IF YOU GIVE NOTICE OF THE POSSIBILITY OF SUCH
+DAMAGE.
+
+1.F.3.  LIMITED RIGHT OF REPLACEMENT OR REFUND - If you discover a
+defect in this electronic work within 90 days of receiving it, you can
+receive a refund of the money (if any) you paid for it by sending a
+written explanation to the person you received the work from.  If you
+received the work on a physical medium, you must return the medium with
+your written explanation.  The person or entity that provided you with
+the defective work may elect to provide a replacement copy in lieu of a
+refund.  If you received the work electronically, the person or entity
+providing it to you may choose to give you a second opportunity to
+receive the work electronically in lieu of a refund.  If the second copy
+is also defective, you may demand a refund in writing without further
+opportunities to fix the problem.
+
+1.F.4.  Except for the limited right of replacement or refund set forth
+in paragraph 1.F.3, this work is provided to you 'AS-IS' WITH NO OTHER
+WARRANTIES OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO
+WARRANTIES OF MERCHANTIBILITY OR FITNESS FOR ANY PURPOSE.
+
+1.F.5.  Some states do not allow disclaimers of certain implied
+warranties or the exclusion or limitation of certain types of damages.
+If any disclaimer or limitation set forth in this agreement violates the
+law of the state applicable to this agreement, the agreement shall be
+interpreted to make the maximum disclaimer or limitation permitted by
+the applicable state law.  The invalidity or unenforceability of any
+provision of this agreement shall not void the remaining provisions.
+
+1.F.6.  INDEMNITY - You agree to indemnify and hold the Foundation, the
+trademark owner, any agent or employee of the Foundation, anyone
+providing copies of Project Gutenberg-tm electronic works in accordance
+with this agreement, and any volunteers associated with the production,
+promotion and distribution of Project Gutenberg-tm electronic works,
+harmless from all liability, costs and expenses, including legal fees,
+that arise directly or indirectly from any of the following which you do
+or cause to occur: (a) distribution of this or any Project Gutenberg-tm
+work, (b) alteration, modification, or additions or deletions to any
+Project Gutenberg-tm work, and (c) any Defect you cause.
+
+
+Section  2.  Information about the Mission of Project Gutenberg-tm
+
+Project Gutenberg-tm is synonymous with the free distribution of
+electronic works in formats readable by the widest variety of computers
+including obsolete, old, middle-aged and new computers.  It exists
+because of the efforts of hundreds of volunteers and donations from
+people in all walks of life.
+
+Volunteers and financial support to provide volunteers with the
+assistance they need, is critical to reaching Project Gutenberg-tm's
+goals and ensuring that the Project Gutenberg-tm collection will
+remain freely available for generations to come.  In 2001, the Project
+Gutenberg Literary Archive Foundation was created to provide a secure
+and permanent future for Project Gutenberg-tm and future generations.
+To learn more about the Project Gutenberg Literary Archive Foundation
+and how your efforts and donations can help, see Sections 3 and 4
+and the Foundation web page at http://www.pglaf.org.
+
+
+Section 3.  Information about the Project Gutenberg Literary Archive
+Foundation
+
+The Project Gutenberg Literary Archive Foundation is a non profit
+501(c)(3) educational corporation organized under the laws of the
+state of Mississippi and granted tax exempt status by the Internal
+Revenue Service.  The Foundation's EIN or federal tax identification
+number is 64-6221541.  Its 501(c)(3) letter is posted at
+http://pglaf.org/fundraising.  Contributions to the Project Gutenberg
+Literary Archive Foundation are tax deductible to the full extent
+permitted by U.S. federal laws and your state's laws.
+
+The Foundation's principal office is located at 4557 Melan Dr. S.
+Fairbanks, AK, 99712., but its volunteers and employees are scattered
+throughout numerous locations.  Its business office is located at
+809 North 1500 West, Salt Lake City, UT 84116, (801) 596-1887, email
+business@pglaf.org.  Email contact links and up to date contact
+information can be found at the Foundation's web site and official
+page at http://pglaf.org
+
+For additional contact information:
+     Dr. Gregory B. Newby
+     Chief Executive and Director
+     gbnewby@pglaf.org
+
+
+Section 4.  Information about Donations to the Project Gutenberg
+Literary Archive Foundation
+
+Project Gutenberg-tm depends upon and cannot survive without wide
+spread public support and donations to carry out its mission of
+increasing the number of public domain and licensed works that can be
+freely distributed in machine readable form accessible by the widest
+array of equipment including outdated equipment.  Many small donations
+($1 to $5,000) are particularly important to maintaining tax exempt
+status with the IRS.
+
+The Foundation is committed to complying with the laws regulating
+charities and charitable donations in all 50 states of the United
+States.  Compliance requirements are not uniform and it takes a
+considerable effort, much paperwork and many fees to meet and keep up
+with these requirements.  We do not solicit donations in locations
+where we have not received written confirmation of compliance.  To
+SEND DONATIONS or determine the status of compliance for any
+particular state visit http://pglaf.org
+
+While we cannot and do not solicit contributions from states where we
+have not met the solicitation requirements, we know of no prohibition
+against accepting unsolicited donations from donors in such states who
+approach us with offers to donate.
+
+International donations are gratefully accepted, but we cannot make
+any statements concerning tax treatment of donations received from
+outside the United States.  U.S. laws alone swamp our small staff.
+
+Please check the Project Gutenberg Web pages for current donation
+methods and addresses.  Donations are accepted in a number of other
+ways including including checks, online payments and credit card
+donations.  To donate, please visit: http://pglaf.org/donate
+
+
+Section 5.  General Information About Project Gutenberg-tm electronic
+works.
+
+Professor Michael S. Hart is the originator of the Project Gutenberg-tm
+concept of a library of electronic works that could be freely shared
+with anyone.  For thirty years, he produced and distributed Project
+Gutenberg-tm eBooks with only a loose network of volunteer support.
+
+
+Project Gutenberg-tm eBooks are often created from several printed
+editions, all of which are confirmed as Public Domain in the U.S.
+unless a copyright notice is included.  Thus, we do not necessarily
+keep eBooks in compliance with any particular paper edition.
+
+
+Most people start at our Web site which has the main PG search facility:
+
+     http://www.gutenberg.net
+
+This Web site includes information about Project Gutenberg-tm,
+including how to make donations to the Project Gutenberg Literary
+Archive Foundation, how to help produce our new eBooks, and how to
+subscribe to our email newsletter to hear about new eBooks.

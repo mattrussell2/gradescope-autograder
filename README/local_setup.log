@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2022.1.13)  21 MAY 2022 11:05
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2022.1.13)  21 MAY 2022 14:34
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -284,72 +284,88 @@ LaTeX Font Info:    External font `cmex10' loaded for size
 {/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}]pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.46 
-      [1
+l.52 \end{itemize}
+                   [1
 
-] [2]
-Overfull \hbox (3.60124pt too wide) in paragraph at lines 59--61
-\OT1/cmr/m/n/10.95 Install Docker Desk-top: [][]https://www.docker.com/products/docker-desktop/[][]
- []
-
-(/usr/share/texlive/texmf-dist/tex/latex/listings/lstlang1.sty
+] [2] (/usr/share/texlive/texmf-dist/tex/latex/listings/lstlang1.sty
 File: lstlang1.sty 2019/09/10 1.8c listings language file
 ) (/usr/share/texlive/texmf-dist/tex/latex/listings/lstlang1.sty
 File: lstlang1.sty 2019/09/10 1.8c listings language file
 )
-Overfull \hbox (3.34738pt too wide) in paragraph at lines 63--68
-\OT1/cmr/m/n/10.95 make one. We sug-gest us-ing [][][] for this: go to [][]https://gitlab.cs.tufts.edu[][],
- []
-
-[3
-
-]
 LaTeX Font Info:    Font shape `OT1/cmtt/bx/n' in size <9> not available
-(Font)              Font shape `OT1/cmtt/m/n' tried instead on input line 70.
-<access_token.png, id=37, 108.405pt x 292.09125pt>
+(Font)              Font shape `OT1/cmtt/m/n' tried instead on input line 71.
+<access_token.png, id=28, 108.405pt x 292.09125pt>
 File: access_token.png Graphic file (type png)
 <use access_token.png>
-Package pdftex.def Info: access_token.png  used on input line 96.
-(pdftex.def)             Requested size: 81.30354pt x 219.06789pt.
+Package pdftex.def Info: access_token.png  used on input line 91.
+(pdftex.def)             Requested size: 75.88297pt x 204.46246pt.
+ [3
 
-Underfull \hbox (badness 10000) in paragraph at lines 98--106
+]
+Underfull \hbox (badness 1642) in paragraph at lines 93--101
+\OT1/cmr/m/n/10.95 cre-ate one, go to [][][] in your browser, and
+ []
+
+
+Underfull \hbox (badness 1810) in paragraph at lines 93--101
+\OT1/cmr/m/n/10.95 Next, hover over the set-tings cog on the lower
+ []
+
+
+Underfull \hbox (badness 1308) in paragraph at lines 93--101
+\OT1/cmr/m/n/10.95 left, and se-lect `Ac-cess To-kens'. Cre-ate an ac-
+ []
+
+
+Underfull \hbox (badness 1038) in paragraph at lines 93--101
+\OT1/cmr/m/n/10.95 cess to-ken; this will be used by the Grade-scope
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 93--101
 
  []
 
-[4 </home/matt/gradescope-autograding/README/access_token.png>] [5]
+[4 </home/matt/gradescope-autograding/README/access_token.png>] [5] [6] [7
+
+] [8]
+LaTeX Font Info:    Trying to load font information for OMS+cmr on input line 283.
+ (/usr/share/texlive/texmf-dist/tex/latex/base/omscmr.fd
+File: omscmr.fd 2019/12/16 v2.5j Standard LaTeX font definitions
+)
+LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10.95> not available
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 283.
+ [9] [10]
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <10.95> on input line 165.
+(Font)              <10.95> on input line 332.
 
-Overfull \hbox (33.82826pt too wide) in paragraph at lines 165--184
-[] 
+Overfull \hbox (50.82826pt too wide) in paragraph at lines 332--352
+[][] 
  []
 
-[6
-
-] [7]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 244.
- [8]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 244.
+[11]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 354.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 354.
  (/home/matt/gradescope-autograding/README/local_setup.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 244.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 244.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 354.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 354.
 Package rerunfilecheck Info: File `local_setup.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 244.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 354.
  ) 
 Here is how much of TeX's memory you used:
- 7901 strings out of 481239
- 116026 string characters out of 5920377
- 657841 words of memory out of 5000000
- 22935 multiletter control sequences out of 15000+600000
+ 7972 strings out of 481239
+ 116995 string characters out of 5920377
+ 698883 words of memory out of 5000000
+ 22978 multiletter control sequences out of 15000+600000
  539443 words of font info for 48 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 34i,7n,50p,269b,1963s stack positions out of 5000i,500n,10000p,200000b,80000s
-{/usr/share/texmf/fonts/enc/dvips/cm-super/cm-super-ts1.enc}</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt9.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfrm1095.pfb>
-Output written on /home/matt/gradescope-autograding/README/local_setup.pdf (9 pages, 139070 bytes).
+ 34i,7n,50p,259b,1878s stack positions out of 5000i,500n,10000p,200000b,80000s
+{/usr/share/texmf/fonts/enc/dvips/cm-super/cm-super-ts1.enc}</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt9.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfrm1095.pfb>
+Output written on /home/matt/gradescope-autograding/README/local_setup.pdf (12 pages, 159369 bytes).
 PDF statistics:
- 212 PDF objects out of 1000 (max. 8388607)
- 189 compressed objects within 2 object streams
- 112 named destinations out of 1000 (max. 500000)
+ 254 PDF objects out of 1000 (max. 8388607)
+ 226 compressed objects within 3 object streams
+ 137 named destinations out of 1000 (max. 500000)
  6 words of extra memory for PDF output out of 10000 (max. 10000000)
 
