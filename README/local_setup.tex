@@ -23,6 +23,8 @@ instructions for both setting up autograders on Gradescope, and for using our in
 framework for \code{C/C++} code. Setup from start to finish is intended to take roughly 30 minutes.
 If you have any questions, please reach out to me at \code{mrussell@cs.tufts.edu}. Thanks!
 
+\chapter*{Infrastructure Setup}
+
 \section*{Infrastructure Background}
 Gradescope's autograders rely on \code{Docker} containers which are spun up each time 
 a submission is graded. The default container runs a variant of \code{Ubuntu 18.04},
@@ -45,18 +47,9 @@ Pros and cons of these approaches:
       for every assignment, you can point Gradescope to the container on \code{Dockerhub} - no 
       \code{.zip} file uploading required. And, if you make minor changes to the setup script, 
       usually rebuilding the container is very fast. All of the steps to do the building and deploying 
-      of the container are done in a script for you. One drawback of this approach is that you need 
-      the \code{.dockercreds} file - this file contains a deploy key for the \code{tuftscs} 
-      account on \code{Dockerhub}. The key is not in this repository as it's public; it should be 
-      in Tufts Box - if not, email me at \code{mrussell@cs.tufts.edu}.
+      of the container are done in a script for you. 
 \end{itemize}
 
-\section*{Autograding Background}
-Once the container is built, there is of course the issue of how to run and test student's code. 
-This is no easy task! However, this document includes documentation on an autograding framework we have 
-developed which makes writing tests for student code as easy as possible. 
-
-\chapter*{Infrastructure Setup}
 \section*{Autograding .git Repo}
 Regardless of whether you use the \code{.zip} method or the \code{Docker} method, you will need to
 create a \code{git} repository for your autograder. This repository will be used by the autograder; 
@@ -75,7 +68,7 @@ git switch -c main
 \end{bashcodeblock}
 We have a sample repo for you to start with. This repository contains:
 \begin{itemize}
-      \item Files both the \code{.zip} and \code{Docker} methods 
+      \item Files to setup both the \code{.zip} and \code{Docker} methods.
       \item A sample autograder for the first cs-15 assignment. 
       \item The autograding framework.
 \end{itemize}
@@ -87,7 +80,7 @@ mv gradescope-autograding/* .
 rm -rf gradescope-autograding
 \end{bashcodeblock}
 
-\begin{wrapfigure}[15]{l}{0.25\textwidth}
+\begin{wrapfigure}[9]{l}{0.25\textwidth}
       \includegraphics[scale=0.7]{access_token.png}
 \end{wrapfigure}
 Great! Now, you will need an Access Token so your autograder can pull from the repo. To create one, 
@@ -163,7 +156,7 @@ script. If you make `breaking' changes to your autograder, change the tag name i
 \end{itemize}
 
 \section*{Conclusion}
-Okay, you are ready to begin developing an autograder! Continue to the next section to learn 
+Okay, you are ready to setup an autograder! Continue to the next section to learn 
 about the autograder, and for a walkthrough to setup an assignment. 
 
 \chapter*{Autograding Framework}
@@ -210,7 +203,7 @@ depending on your test configuration.
 |---testset/          [everything needed to run tests]
 |   |---copy/         [files here will be copied to build/]
 |   |---cpp/          [.cpp driver files]
-|   |---link          [files here will be symlinked in build/]
+|   |---link/         [files here will be symlinked in build/]
 |   |---makefile/     [contains custom Makefile]
 |   |---ref_output/   [output of reference implementation]
 |   |---solution/     [solution code]
@@ -222,19 +215,19 @@ depending on your test configuration.
 \section*{Files/Directories Created by the Autograder}
 \begin{bashcodeblock}
 .
-|--- results
-|   |--- build      [student submission files]
+|--- results/
+|   |--- build/      [student submission files]
 |   |   |--- 
-|   |   |--- test01 [compiled executables]
+|   |   |--- test01  [compiled executables]
 |   |   |--- ...
 |   |   |--- test21
-|   |--- logs
+|   |--- logs/
 |   |   |--- status
 |   |   |--- test01.compile.log
 |   |   |--- test01.summary
 |   |   |--- ...
 |   |   |--- test21.summary
-|   |--- output
+|   |--- output/
 |       |--- test01.ofile
 |       |--- test01.ofile.diff
 |       |--- test01.ofile.ccized
@@ -288,8 +281,6 @@ depending on your test configuration.
 \end{itemize}
 
 
-\subsection*{ofiles}
-
 \section*{How to Build Reference Output}
 Once you've configured your tests, you can build the reference output as follows:
 \begin{bashcodeblock}
@@ -297,7 +288,11 @@ cd ../../framework
 python3 build_ref_output.py -p ../../assignments/hwname
 \end{bashcodeblock}
 The reference code will be run as a submission, and the output of the reference will be placed in 
-the \code{REPO_ROOT/hwname/testset/ref_output/} directory.
+the \code{REPO_ROOT/hwname/testset/ref_output/} directory. If you need to debug your setup, run 
+\begin{bashcodeblock}
+python3 build_ref_output.py -p ../../assignments/hwname -k
+\end{bashcodeblock}
+This will keep the temporary directories used to run the autograder. 
 
 \section*{Testing an Autograder Locally}
 After you've produced the reference output, copy a potential submission code to a directory named 
@@ -325,7 +320,7 @@ gradescope there isn't likely much to be gained from this.
 
 \section*{Test .toml Configuration Options}
 These are the configuration options for a test. You may set any of these in \code{[common]},
-under a test group, or within a specific test. 
+under a test group, or within a specific test.\\ 
 
 \begin{tabular}{ | l | c | l | }
 \hline			
