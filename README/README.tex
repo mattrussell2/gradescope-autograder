@@ -10,6 +10,22 @@
 \usepackage[hang,flushmargin]{footmisc} 
 \input{code_environment.tex} 
 
+% find: \\code\{(.*?)\}
+% replace: `$1`
+
+% find: \\begin\{bashcodeblock\}
+%replace: ```
+
+%find: \\end\{bashcodeblock\}
+%replace: ```
+
+%find: \\chapter\*\{(.*?)\}
+% replace: ## $1
+
+%find: \\section\*\{(.*?)\}
+% replace: ### $1
+
+
 \pagestyle{headings}
 \title{Gradescope Autograder Configuration}
  
