@@ -498,7 +498,9 @@ class Test:
         # [[ note: various filenames not set in constructor because files might not exist yet. ]]
         self.fout_diffs_passed = True
         created_files = os.listdir(OUTPUT_DIR)
-        ofilenames = [x for x in os.listdir(REF_OUTPUT_DIR) if x.endswith(f"{self.testname}.ofile")]        
+        ofilenames = [x for x in os.listdir(REF_OUTPUT_DIR) if self.testname in x and x.endswith(".ofile")] 
+        ofilenames += [x for x in created_files if self.testname in x and x.endswith(".ofile")]
+        ofilenames = list(set(ofilenames)) # remove duplicates    
         for ofilename in ofilenames:
             if ofilename not in created_files:
                 Path(f"{OUTPUT_DIR}/{ofilename}.diff").write_text(f"diff: {ofilename} not found!")
