@@ -55,9 +55,8 @@ tests = [
 
 [med_and_large]
 max_score   = 2.5
-diff_ofiles = false
 argv = ["mediumGutenberg", "#{testname}.ofile"]
 tests = [
      { testname = "test31", description = "Medium Gutenberg - Time and Memory Complexity" },
-    { testname = "test33", description = "Medium Gutenberg with Queries" },
+     { testname = "test32", description = "Medium Gutenberg with Queries" },
  ]
