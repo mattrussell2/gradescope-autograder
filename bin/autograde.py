@@ -109,7 +109,6 @@ import traceback
 from functools import reduce, partial
 from collections.abc import Iterable
 if 'canonicalizers.py' in os.listdir():
-    print("IMPORT CANONCIALISERS")
     import canonicalizers
 
 # colors for printing to terminal
@@ -454,8 +453,8 @@ class Test:
                 problems with any non-utf8 output [encountered with largeGutenberg]. 
                 [TODO] refactor to use RUN
         """        
-        if canonicalize:                            
-            Path(f"{filea}.ccized").write_text(self.canonicalizer(filea))
+        if canonicalize:                         
+            Path(f"{filea}.ccized").write_text(self.canonicalizer(Path(filea).read_text()))
             filea = f"{filea}.ccized"
             fileb = f"{fileb}.ccized" # reference should already exist
             filec = f"{filea}.diff"   # ignore filec - filea.diff ==> ext will be canonicalized.diff
@@ -494,7 +493,7 @@ class Test:
         self.stderr_diff_passed = self.run_diff(self.fpaths['stderr'],  
                                                 self.fpaths['ref_stderr'],
                                                 self.fpaths['stderr.diff'],
-                                                self.ccize_stderr) #sort_stderr)
+                                                self.ccize_stderr)
 
         # [[ note: various filenames not set in constructor because files might not exist yet. ]]
         self.fout_diffs_passed = True
@@ -508,7 +507,7 @@ class Test:
                 if not self.run_diff(f"{OUTPUT_DIR}/{ofilename}", 
                                      f"{REF_OUTPUT_DIR}/{ofilename}", 
                                      f"{OUTPUT_DIR}/{ofilename}.diff",
-                                     self.ccize_ofiles): #sort=self.sort_ofiles): # [TODO, use canonicalizer fn here]
+                                     self.ccize_ofiles):
                     self.fout_diffs_passed = False
         
     def determine_success(self):

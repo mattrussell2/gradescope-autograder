@@ -180,13 +180,13 @@ depending on your test configuration.
 |---testrunner.sh     [script that runs this file]
 |---submission/       [student submission (provided by gs)]
 |---testset/          [everything needed to run tests]
-|   |---copy/         [files here will be copied to build/]
+|   |---copy/         [files here will be copied to results/build/]
 |   |---cpp/          [.cpp driver files]
-|   |---link/         [files here will be symlinked in build/]
+|   |---link/         [files here will be symlinked in results/build/]
 |   |---makefile/     [contains custom Makefile]
 |   |---ref_output/   [output of reference implementation]
 |   |---solution/     [solution code]
-|   |---stdin/        [files here are sent as stdin]
+|   |---stdin/        [files here are sent to stdin]
 |---testst.toml       [testing configuration file]
 |-
 ```
@@ -231,9 +231,8 @@ depending on your test configuration.
 * If the students are writing programs which have their own `main()`, then you do not need files in `.cpp` - you may still choose to have your own custom `Makefile` if you wish (otherwise, be sure to set `our_makefile = false` in `testset.toml`). 
 * The target to build (e.g. `make target`) must be named the same as the program to run (e.g. `./target`).
 * Canonicalization functions which are used by the autograder in canonicalizers.py must:
-* * take a single parameter, which is the filename of the student's output 
+* * take a single parameter, which is a string containing the student's output 
 * * return a string, which contains the canonicalized output 
-* * TODO - refactor this to be string input???
 * The `.diff`, `.ccized`, and `.valgrind` output files for each test will only be created if your configuation requires them.
 * This framework supports `diff`ing against any number of output files written to by the program. Such files must be named `<testname>.ANYTHING_HERE.ofile`. The expectation is that the program will receive the name of the file to produce as an input argument. Then, in the `testset.toml` file, you will ensure that the `argv` variable includes `#{testname}.ANYTHING_HERE.ofile` in the `argv` list. See the `gerp` example: `assignments/gerp/testset.toml`. 
 * The `summary` files are a `snapshot' of all of the variables of a test - a summary is created upon initialization of the test, and is overwritten after a test completes with all the information about the test. This is very useful for debugging!
