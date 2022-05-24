@@ -1,0 +1,36 @@
+#!/bin/bash 
+
+# .zip setup requires us to reset Python version.
+# NOTE! If this is done in setup.sh, it breaks the container when it boots up. Yuck.
+if [[ $(python3 --version) == "Python 3.6.9" ]]; then
+    update-alternatives --install /usr/bin/python3 python3 /usr/bin/python3.9 1
+    update-alternatives --set python3 /usr/bin/python3.9
+fi
+
+# load the config variables
+source <(grep = /autograder/source/config.ini)
+
+# go to the repo and pull; hide output from students put put in log if needed
+cd    /autograder/source/course-repo
+git   pull -f > /autograder/source/PULL_LOG 2>&1
+
+# make bin/ and lib/ available to autograder (diff-so-pretty, upate_results.py, etc.)
+export PATH=$PATH:/autograder/source/course-repo/$AUTOGRADING_ROOT/bin
+export PATH=$PATH:/autograder/source/course-repo/$AUTOGRADING_ROOT/lib
+
+# copy the autograding files for this assignment
+cp -r $ASSIGN_ROOT/$ASSIGNMENT_TITLE/$ASSIGN_AUTOGRADING_SUBFOLDER/* /autograder/
+
+# run the autograder!
+cd /autograder/
+chmod +x testrunner.sh
+./testrunner.sh > results/stdout 2>&1
+
+# print result to screen if interactive terminal
+if [[ $- == *i* ]]
+then
+    cat results/stdout
+fi
+
+# copy the results to the gradescope folder
+update_results.py
