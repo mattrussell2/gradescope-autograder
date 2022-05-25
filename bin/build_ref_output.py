@@ -6,15 +6,14 @@ import shutil
 import subprocess
 import autograde
 
-
 TMPDIR         = 'temp_ref_build_dir'
 ORIG_DIR       = os.getcwd()
 AUTOGRADER_DIR = ORIG_DIR
 
 ap = argparse.ArgumentParser()      
-ap.add_argument('-j', '--num-jobs',       type=int, default=1,      help="concurrent jobs; default=1; -1=number of available cores")
-ap.add_argument('-k', '--keep-build-dir', action='store_true',      help="will not destroy temporary directory to build / run reference code")
-ap.add_argument('-n', '--no-copy',        action='store_true',      help="will not copy reference files to [hw_path]/testset/ref_output")
+ap.add_argument('-j', '--num-jobs',       type=int, default=1, help="concurrent jobs; default=1; -1=number of available cores")
+ap.add_argument('-k', '--keep-build-dir', action='store_true', help="will not destroy temporary directory to build / run reference code")
+ap.add_argument('-n', '--no-copy',        action='store_true', help="will not copy reference files to [hw_path]/testset/ref_output")
 
 ARGS = vars(ap.parse_args())
 
