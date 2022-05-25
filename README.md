@@ -1,4 +1,4 @@
-# gradescope autograding setup
+`# gradescope autograding setup
 Gradescope is great tool for autograding assignments. However, there is still a substantial amount
 of infrastructure required to deploy and run an autograder on gradescope. This document provides 
 instructions for setting up an autograder on Gradescope which usesour in-house autograding
@@ -282,22 +282,22 @@ under a test group, or within a specific test.
 
 | option | default | pupose | 
 |---|---|---|
-| `max_time` | 30 | maximum time (in seconds) for a test |
-| max_ram | -1 (unlimited) | maximum ram (in kb) for a test |
-| valgrind | true | run an additional test with valgrind |
-| diff_stdout | true | test diff of student vs. reference stdout |
-| diff_stderr | true | test diff of student vs. reference stderr |
-| diff_ofiles | true | test diff of student vs. reference output files |
-| ccize_stdout | false | diff canonicalized stdout instead of stdout |
-| ccize_stderr | false | diff canonicalized stderr instead of stderr |
-| ccize_ofiles | false | diff canonicalized ofiles instead of ofiles |
-| ccizer_name | "" | name of canonicalization function to use |
-| our_makefile | true | use testset/makefile/Makefile to build tests |
-| pretty_diff | true | use diff-so-pretty for easy-to-ready diffs |
-| max_score | 1 | maximum points (on gradescope) for this test |
-| visibility | "after-due-date" | gradescope visibility setting |
-| argv | [ ] | argv input to the program |
-| executable | None | executable to build and run |
+| `max_time` | `30` | maximum time (in seconds) for a test |
+| `max_ram` | `-1` (unlimited) | maximum ram (in kb) for a test |
+| `valgrind` | `true` | run an additional test with valgrind |
+| `diff_stdout` | `true` | test diff of student vs. reference stdout |
+| `diff_stderr` | `true` | test diff of student vs. reference stderr |
+| `diff_ofiles` | `true` | test diff of student vs. reference output files |
+| `ccize_stdout` | `false` | diff canonicalized stdout instead of stdout |
+| `ccize_stderr` | `false` | diff canonicalized stderr instead of stderr |
+| `ccize_ofiles` | `false` | diff canonicalized ofiles instead of ofiles |
+| `ccizer_name` | `""` | name of canonicalization function to use |
+| `our_makefile` | `true` | use testset/makefile/Makefile to build tests |
+| `pretty_diff` | `true` | use diff-so-pretty for easy-to-ready diffs |
+| `max_score` | `1` | maximum points (on gradescope) for this test |
+| `visibility` | `"after-due-date"` | gradescope visibility setting |
+| `argv` | `[ ]` | argv input to the program |
+| `executable` | `None` | executable to build and run |
 
 # Conclusion
 That should be enough to get you up and running! Please feel free to contact me with any questions you have, and/or any bugs, feature requests, etc. you find. Thanks!
