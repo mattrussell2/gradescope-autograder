@@ -186,7 +186,7 @@ depending on your test configuration.
 |   |---ref_output/   [output of reference implementation]
 |   |---solution/     [solution code]
 |   |---stdin/        [files here are sent to stdin]
-|---testest.toml       [testing configuration file]
+|---testest.toml      [testing configuration file]
 |-
 ```
 
