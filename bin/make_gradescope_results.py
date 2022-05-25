@@ -1,8 +1,4 @@
-#!/usr/bin/env python3
-
-# Tried to be cool and print passed and failed in colors on Gradescope, but
-# they put all the stdout into a <code> tag :(
-
+#!/usr/bin/python3
 import os
 import json
 from datetime import datetime, timezone
@@ -131,9 +127,7 @@ def get_total_score():
 def get_max_score():
     return sum([x['max_score'] for x in TEST_SUMMARIES])    
 
-
-# Path to this file
-HERE           = os.path.dirname(os.path.abspath(__file__))
+HERE           = os.getcwd()
 
 # Path to student testXX.summary files and compilation logs
 LOG_DIR        = os.path.join(HERE, "results", "logs")
