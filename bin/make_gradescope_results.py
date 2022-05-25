@@ -1,4 +1,4 @@
-#!/usr/bin/python3
+#!/usr/bin/env python3
 import os
 import json
 from datetime import datetime, timezone
