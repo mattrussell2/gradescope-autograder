@@ -282,7 +282,7 @@ under a test group, or within a specific test.
 
 | option | default | pupose | 
 |---|---|---|
-| max_time | 30 | maximum time (in seconds) for a test |
+| `max_time` | 30 | maximum time (in seconds) for a test |
 | max_ram | -1 (unlimited) | maximum ram (in kb) for a test |
 | valgrind | true | run an additional test with valgrind |
 | diff_stdout | true | test diff of student vs. reference stdout |
