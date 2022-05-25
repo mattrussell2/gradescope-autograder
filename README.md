@@ -140,14 +140,13 @@ about the autograding framework, and for a walkthrough to setup an assignment.
 # Autograding Framework
 ## Introduction
 The autograding framework is designed to have you writing and deploying tests as quickly as possible. 
-In general tests will be a 
-set of `.cpp` files. Each one will be compiled and run with the student's submission code,
-and the output of the test will be `diff`'d against a reference implementation that you provide. Alternatively, a set of `.stdin` files can be run on a single executable. 
-`Valgrind` can be run on tests, `stderr` can be `diff`'d. The framework depends on a
-`testset.toml` file for the configuration. 
+There are two primary forms of assignment that this autograder supports:
+* Tests which are a set of `.cpp` files, each with `main()`. 
+* Tests which test a student's executable program. 
+In either case, you can send a file to `stdin` for a test; `stdout` and `stderr` will be `diff`'d automatically against the output of a reference implementation. Output can be canonicalized before `diff`, and `valgrind` can be run on the programs as well. More details will follow. 
 
 ## testset.toml configuration file
-`testset.toml` will be configured as follows:
+The framework depends on a `testset.toml` file (https://toml.io/en/) to specify the testing configuration. `testset.toml` will be configured as follows:
 ```
 [common]
 # common test options will go here
@@ -176,7 +175,7 @@ These are all of the possible options, but you may not need many of them
 depending on your test configuration.
 ```
 .
-|---canonicalizers.py [opt. file with canonicalization fn(s)]
+|---canonicalizers.py [file with canonicalization function(s)]
 |---testrunner.sh     [script that runs this file]
 |---submission/       [student submission (provided by gs)]
 |---testset/          [everything needed to run tests]
@@ -187,7 +186,7 @@ depending on your test configuration.
 |   |---ref_output/   [output of reference implementation]
 |   |---solution/     [solution code]
 |   |---stdin/        [files here are sent to stdin]
-|---testst.toml       [testing configuration file]
+|---testest.toml       [testing configuration file]
 |-
 ```
 
@@ -195,9 +194,9 @@ depending on your test configuration.
 ```
 .
 |--- results/
-|   |--- build/      [student submission files]
-|   |   |--- 
-|   |   |--- test01  [compiled executables]
+|   |--- build/      
+|   |   |--- File.cpp [student submission files]
+|   |   |--- test01   [compiled executables]
 |   |   |--- ...
 |   |   |--- test21
 |   |--- logs/
