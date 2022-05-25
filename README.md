@@ -237,32 +237,33 @@ depending on your test configuration.
 * The `summary` files are a dump of the state of a Test object - a summary is created upon initialization of the test, and is overwritten after a test completes with all the information about the test. All of the configuration options are there for a given test, so this is very useful for debugging!
 
 
-## How to Build Reference Output
-Once you've configured your tests, you can build the reference output as follows:
+## Testing the Autograder
+### Preliminaries
+In order to build reference output and test your code easily, first add the `bin/` folder to your `$PATH`. 
+To do this, run the following commands, replacing `REPO_ROOT` with the path to the repository root on your system. 
 ```
-cd path/to/repo/root/bin
-python3 build_ref_output.py -p path/to/assignment/autograder/
+echo -e "export PATH=\$PATH:/REPO_ROOT/bin\n" >> ~/.bashrc
+source ~/.bashrc
 ```
+### Bulding the Reference Output
+Once you've configured your tests, run the command `build_ref_output` from the assignment's autograder directory.
 The reference code will be run as a submission, and the output of the reference will be placed in 
 the `REPO_ROOT/hwname/testset/ref_output/` directory. If you need to debug your setup, run 
 ```
-python3 build_ref_output.py -p path/to/assignment/autograder/ -k
+build_ref_output -k
 ```
-This will keep the temporary directories used to run the autograder. 
+This will keep the temporary directories used to run the autograder and build the reference output.
 
-[TODO] - make this smoother.
-
-## Testing an Autograder Locally
-After you've produced the reference output, copy a potential submission code to a directory named 
-`submission` in the autograder folder (`REPO_ROOT/hwname/submission/`). Then run 
-```
-python3 path/to/repo/root/bin/autograde.py
+### Testing with an Example Submission
+After you've produced the reference output, copy potential submission code to a directory named 
+`submission` in the root of the homework's autograding folder (`REPO_ROOT/hwname/submission/`). Then run 
+the command `autograde`. Results should be shown, and the `results` folder will be created.
 ```
 
-## Parallel Compilation and Parallel Execution
+### Parallel Compilation and Parallel Execution
 If you would like to enable parallel compilation and parallel execution of tests, instead run 
 ```
-python3 path/to/repo/root/bin/autograde.py -j NUMCORES
+autograde -j NUMCORES
 ```
 where `NUMCORES` is the number of cores 
 you would like to utilize (`-1` will use all available cores). Note that multiple tests may be 
@@ -270,7 +271,7 @@ run on each core concurrently. The default setting is for one core to be used wi
 concurrently; that is, only one test will be run at a time (no concurrent tests are run). You can
 also build the reference output with parallelization by running 
 ```
-python3 build_ref_output.py -p path/to/assignment/autograder/ -j NUMCORES
+build_ref_output.py -j NUMCORES
 ```
 Note that on gradescope the file `testrunner.sh` is what actually runs the autograder. This is so you can have some flexibility around running the autograder without having to rebuild the container/zip file - `run_autograder` will call this script, so feel free to add extra bash commands before/after tests are run. You 
 change the command in that file to include `-j NUMCORES` if you'd like, although on 

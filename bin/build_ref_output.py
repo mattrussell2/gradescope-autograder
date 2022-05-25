@@ -5,6 +5,7 @@ import argparse
 import shutil
 import subprocess
 
+
 TMPDIR         = 'temp_ref_build_dir'
 ORIG_DIR       = os.getcwd()
 AUTOGRADER_DIR = ORIG_DIR
@@ -19,11 +20,10 @@ ap.add_argument('-n', '--no-copy',        action='store_true',      help="will n
 ARGS = vars(ap.parse_args())
 
 if not ARGS['homework_path']:
-    print("ERROR: provide the path of the homework autograding directory")
-    exit(1)
-else:
-    if ARGS['homework_path'][-1] == '/':
-        ARGS['homework_path'] = ARGS['homework_path'][:-1]
+    ARGS['homework_path'] = os.getcwd()
+
+if ARGS['homework_path'][-1] == '/':
+    ARGS['homework_path'] = ARGS['homework_path'][:-1]
 
 if not os.path.exists(os.path.join(ARGS['homework_path'], 'testset')):
     print(f"ERROR: solution must be in {ARGS['homework_path']}/testset")
@@ -33,16 +33,16 @@ if not os.path.exists(os.path.join(ARGS['homework_path'], 'testset', 'solution')
     print(f"ERROR: solution folder must be in {ARGS['homework_path']}/testset")
     exit(1)
 
-if ARGS['autograder_dir']:
-    AUTOGRADER_DIR = ARGS['autograder_dir']
-    if 'autograde.py' in AUTOGRADER_DIR: 
-        AUTOGRADER_DIR = AUTOGRADER_DIR.split('autograde.py')[0]
+# if ARGS['autograder_dir']:
+#     AUTOGRADER_DIR = ARGS['autograder_dir']
+#     if 'autograde.py' in AUTOGRADER_DIR: 
+#         AUTOGRADER_DIR = AUTOGRADER_DIR.split('autograde.py')[0]
 
-if not os.path.exists(os.path.join(AUTOGRADER_DIR, 'autograde.py')):
-    print(f"ERROR: autograde.py must be located in the directory this script is called from. " + \
-           "If not, rerun with `autograde.py -a path/to/folder/that/contains/` autograde.py")
+# if not os.path.exists(os.path.join(AUTOGRADER_DIR, 'autograde.py')):
+#     print(f"ERROR: autograde.py must be located in the directory this script is called from. " + \
+#            "If not, rerun with `autograde.py -a path/to/folder/that/contains/` autograde.py")
 
-os.chdir(ARGS['homework_path'])
+# os.chdir(ARGS['homework_path'])
 
 try:    
     print("creating temporary build directory")
@@ -53,16 +53,17 @@ try:
     shutil.copytree('.', TMPDIR, dirs_exist_ok=True)
 
     print("copying solution as submission")
-    shutil.copytree(os.path.join("testset", "solution"), os.path.join(TMPDIR, "submission"))
-
-    os.chdir(TMPDIR)
-    shutil.copyfile(os.path.join(AUTOGRADER_DIR, 'autograde.py'), 'autograde.py')
+    shutil.copytree(os.path.join("testset", "solution"), os.path.join(TMPDIR, "submission"))    
+    os.chdir(TMPDIR)    
+    #shutil.copyfile(os.path.join(AUTOGRADER_DIR, 'autograde.py'), 'autograde.py')
 
     if not os.path.exists(os.path.join('testset','ref_output')):
         os.mkdir(os.path.join('testset','ref_output'))
     
-    print("running tests")
-    subprocess.run(["python3", "autograde.py", '-j', str(ARGS['num_jobs'])])
+    print("running tests")    
+    import autograde
+    autograde.run_autograder(['-j', str(ARGS['num_jobs'])])
+    #subprocess.run(["autograde.py", '-j', str(ARGS['num_jobs'])])
 
     if not ARGS['no_copy']:
         print("copying output files to testset/ref_output")

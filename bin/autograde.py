@@ -91,6 +91,7 @@ thus, for gerp, in the .toml file, the 'argv' variable includes #{testname}.ofil
 [TODO] be more intelligent in terms of when to re-run tests - now am re-running every time
 """
 import os
+import sys
 import subprocess
 import argparse
 import shutil
@@ -108,7 +109,8 @@ from filelock import FileLock
 import traceback
 from functools import reduce, partial
 from collections.abc import Iterable
-if 'canonicalizers.py' in os.listdir():
+if 'canonicalizers.py' in os.listdir():   
+    sys.path.append(os.getcwd())
     import canonicalizers
 
 # colors for printing to terminal
@@ -411,13 +413,13 @@ class Test:
                                          STDERRPATH=self.fpaths['stderr'])
         self.exit_status = test_rcode
         self.timed_out   = test_rcode == 124        
-        self.segfault    = test_rcode == [11, 139]
+        self.segfault    = test_rcode in [11, 139]
         
         self.max_ram_exceeded = False
         if os.path.exists(self.fpaths['memory']):
             memdata = Path(self.fpaths['memory']).read_text()
             if memdata != '': # this might happen if timeout kills program
-                max_rss = int(memdata.splitlines()[-1]) # last line if we have segfault info
+                max_rss = int(memdata.splitlines()[-1]) # if segfault, last line has max_rss info
                 self.max_ram_exceeded = max_rss > self.max_ram                  
       
     def run_valgrind(self):  
@@ -445,27 +447,36 @@ class Test:
                 if 'canoniczliaze', run diff on canonicalized output from filea and fileb                
             Precondition: 
                 Assumes filea and fileb both exist.
+            Inputs:
+                filea        (str)  : student output filename
+                fileb        (str)  : reference output filename
+                filec        (str)  : file to write diff output to
+                canonicalize (bool) : whether or not to run diff on canonicalized output.
             Returns: 
-                True iff the diff succeeds
-            Notes:
+                (bool) Whether or not the diff succeeds
+            Notes:                
                 I like pretty diffs, so diff-so-fancy is enabled by default. :) 
                 Am doing diffs with subprocess shell=True. Otherwise will have 
-                problems with any non-utf8 output [encountered with largeGutenberg]. 
-                [TODO] refactor to use RUN
+                problems with any non-utf8 output [encountered with largeGutenberg in gerp]. 
+                [TODO] refactor to use RUN        
+                [TODO] deal with case where student writes to wrong output file
         """        
+        if not os.path.exists(filea):
+            Path(filea).write_text(f"diff: {ofilename} not found!")
+            return False
+        elif not os.path.exists(fileb): 
+            INFORM(f"reference output missing for: {self.testname} " + 
+                    "- ignore if building reference output", color=RED)
+
         if canonicalize:                         
             Path(f"{filea}.ccized").write_text(self.canonicalizer(Path(filea).read_text()))
             filea = f"{filea}.ccized"
-            fileb = f"{fileb}.ccized" # reference should already exist
-            filec = f"{filea}.diff"   # ignore filec - filea.diff ==> ext will be canonicalized.diff
-        
-        # this case is only when the reference files haven't been generated yet
-        if not os.path.exists(fileb):
-            Path(filec).write_text(f"diff: REFERENCE FILE: {filea} not found!")
-            INFORM(f"ref output missing for: {self.testname} - {self.description} - ignore if building ref output", color=RED)
-            
+            fileb = f"{fileb}.ccized"
+            filec = f"{filea}.diff"   # => will be original 'filea'.ccized.diff
+                           
         diff_result  = subprocess.run(f"diff {filea} {fileb} > {filec}", shell=True, 
                                         capture_output=True, universal_newlines=True)
+        
         diff_retcode = diff_result.returncode # diff-so-fancy returns 0 on failure, so use this!
        
         # diff-so-fancy requires output of [diff -u ...] as its input
@@ -488,30 +499,24 @@ class Test:
         self.stdout_diff_passed = self.run_diff(self.fpaths['stdout'], 
                                                 self.fpaths['ref_stdout'],
                                                 self.fpaths['stdout.diff'], 
-                                                self.ccize_stdout) #sort_stdout)                                             
+                                                self.ccize_stdout)
         
         self.stderr_diff_passed = self.run_diff(self.fpaths['stderr'],  
                                                 self.fpaths['ref_stderr'],
                                                 self.fpaths['stderr.diff'],
                                                 self.ccize_stderr)
-
-        # [[ note: various filenames not set in constructor because files might not exist yet. ]]
-        self.fout_diffs_passed = True
-        created_files = os.listdir(OUTPUT_DIR)
-        ofilenames = [x for x in os.listdir(REF_OUTPUT_DIR) if self.testname in x and x.endswith(".ofile")] 
-        ofilenames += [x for x in created_files if self.testname in x and x.endswith(".ofile")]
-        ofilenames = list(set(ofilenames)) # remove duplicates    
-        for ofilename in ofilenames:
-            if ofilename not in created_files:
-                Path(f"{OUTPUT_DIR}/{ofilename}.diff").write_text(f"diff: {ofilename} not found!")
-                self.fout_diffs_passed = False                
-            else:   
-                if not self.run_diff(f"{OUTPUT_DIR}/{ofilename}", 
-                                     f"{REF_OUTPUT_DIR}/{ofilename}", 
-                                     f"{OUTPUT_DIR}/{ofilename}.diff",
-                                     self.ccize_ofiles):
-                    self.fout_diffs_passed = False
         
+        self.fout_diffs_passed = True
+        created_files = os.listdir(REF_OUTPUT_DIR) if os.path.exists(REF_OUTPUT_DIR) else []
+        created_files = list(set(created_files + os.listdir(OUTPUT_DIR))) 
+        ofilenames = [x for x in created_files if self.testname in x and x.endswith(".ofile")]                 
+        for ofilename in ofilenames:
+            if not self.run_diff(f"{OUTPUT_DIR}/{ofilename}", 
+                                 f"{REF_OUTPUT_DIR}/{ofilename}", 
+                                 f"{OUTPUT_DIR}/{ofilename}.diff",
+                                 self.ccize_ofiles):
+                self.fout_diffs_passed = False
+    
     def determine_success(self):
         """
             Purpose:
@@ -698,6 +703,7 @@ def build_testing_directories():
     Path(f'{LOG_DIR}/status.lock').write_text("Lockfile for status reporting")
     Path(f'{LOG_DIR}/status').write_text("")
     
+    # don't allow student code to write to the testset!
     chmod_dir(TESTSET_DIR, "550")
 
 class CustomFormatter(argparse.HelpFormatter):
@@ -729,8 +735,9 @@ def filter_tests(TESTS, OPTS):
     if OPTS['tests']:
         TESTS = { testname: TESTS[testname] for testname in OPTS['tests'] }
     
-    if OPTS['diff'] == []:
+    if OPTS['diff'] == []:        
         OPTS['diff'] = ['.stdout.diff', '.stderr.diff', '.ofile.diff']
+
     elif OPTS['diff'] != None:
         OPTS['diff'] = [f".{x}.diff" for x in OPTS['diff']]
     
@@ -804,7 +811,7 @@ def load_tests(TOML):
             TESTS[tinfo['testname']] = Test(TEST_CONFIG)
     return TESTS
 
-def parse_args():
+def parse_args(argv):
     """
         Purpose:
             Loads .toml file parse provided configuation options, and returns lists of Tests to run
@@ -847,7 +854,7 @@ def parse_args():
     ap.add_argument('-f', '--filter',   nargs='*', metavar="filteropt",  type=str, help=HELP['f'])    
     ap.add_argument('-t', '--tests',    nargs='*', metavar="testXX",     type=str, help=HELP['t'])         
 
-    args = vars(ap.parse_args())
+    args = vars(ap.parse_args(argv))
     if args['jobs'] == -1:
         args['jobs'] = cpu_count()
     return args
@@ -913,9 +920,8 @@ def find_logs(exts, tests_to_report, directory=OUTPUT_DIR):
 def cleanup():
     chmod_dir(TESTSET_DIR, "770")
 
-if __name__ == '__main__':
-    
-    OPTS = parse_args()
+def run_autograder(argv):
+    OPTS = parse_args(argv)
 
     if not os.path.exists('testset.toml'):
         FAIL("testset.toml must be in the current directory")
@@ -971,3 +977,6 @@ if __name__ == '__main__':
 
     finally:
         cleanup()
+
+if __name__ == '__main__':
+    run_autograder(sys.argv[1:])
