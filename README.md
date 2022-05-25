@@ -1,4 +1,4 @@
-`# gradescope autograding setup
+# gradescope autograding setup
 Gradescope is great tool for autograding assignments. However, there is still a substantial amount
 of infrastructure required to deploy and run an autograder on gradescope. This document provides 
 instructions for setting up an autograder on Gradescope which usesour in-house autograding
