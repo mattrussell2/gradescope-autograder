@@ -1,11 +1,11 @@
-# gradescope autograding setup
+# Gradescope Autograding Setup
 Gradescope is great tool for autograding assignments. However, there is still a substantial amount
 of infrastructure required to deploy and run an autograder on gradescope. This document provides 
 instructions for setting up an autograder on Gradescope which usesour in-house autograding
 framework for `C/C++` code. Setup from start to finish is intended to take roughly 30 minutes.
 If you have any questions, please reach out to me at `mrussell@cs.tufts.edu`
 
-# infrastructure setup
+# Infrastructure Setup
 
 ## background
 Gradescope's autograders rely on `Docker` containers which are spun up each time 
@@ -25,7 +25,7 @@ Fear not! There is lots of starter code to do the bulk of the heavy lifting here
       `Docker` on your system. If you're not familiar with `Docker`, this workflow is suggested. 
 * The `Docker` method is more streamlined once it's setup. After uploading the container, for every assignment, you can point Gradescope to the container on `Dockerhub` - no `.zip` file uploading required. And, if you make minor changes to the setup script, usually rebuilding the container is very fast. All of the steps to do the building and deploying of the container are done in a script for you. If you already use `Docker`, will be interested in tweaking the `Docker` container's build settings (`clang` version, etc.) or are feeling adventurous, go for this option. 
 
-## autograding `.git` repo
+## Autograding `.git` Repo
 Regardless of whether you use the `.zip` method or the `Docker` method, you will need to create a `git` repository for your autograder. This repository will be used by the autograding container; each time a code is autograded, the code from your repository will be pulled, the assignment's autograding files will be copied to right place, and our autograding script will do the bulk of the work running the tests and producing results. So, if you don't currently have a repository related to course material, please make one. 
 We suggest using `gitlab` for this: go to https://gitlab.cs.tufts.edu, and 
 login with `LDAP`, using your Tufts eecs `utln` and password. Then create a new repository from scratch. You do not need a `README`. 
@@ -83,7 +83,7 @@ Okay! Assuming you've updated the `config` with the paths you'd like, and have a
 As mentioned above, with the `.zip` method, you'll need to upload a `.zip` file for each 
 assignment. However, there is no other setup required. 
 
-### for each assignment with the .zip method: 
+### For each assignment with the .zip method: 
 * `cd setup/zipbuild && ./build_container.sh` - this will produce the necessary `Autograder.zip` file. Note: if you don't change the `setup.sh` or `run_autograder` scripts, you can re-use this file for multiple assigments.  
 * On gradescope, after creating the programming assignment, upload the `Autograder.zip` file in the `configure autograder' section.
 * It should build and be tagged with no errors - if not, check the output of the autograder. 
@@ -108,7 +108,7 @@ me at `mrussell@cs.tufts.edu`, and I'll send you the file ASAP.
 Note!! This access token must be kept private; to that end, please keep your course autograding
 repository private.
 
-### build and upload the container to Dockerhub
+### Build and upload the container to Dockerhub
 Once you've updated the `config.ini` with the necessary variables, run:
 ```
 cd dockerbuild
@@ -116,13 +116,13 @@ cd dockerbuild
 ```
 The container will be built and uploaded to Dockerhub with the tag you specified. Note: in rare cases, the `Docker` build process hangs in the early stages. If this happens to you, run `rm ~/.docker/config.json` and try again. For the future, if you make changes to any of the files in the `dockerbuild` folder, or to `bin/run_autograder`, make sure to re-run this script. 
 
-### to-dos per assignment with the `Docker` method 
+### For each assignment with the `Docker` method 
 
 * On gradescope, after creating the programming assignment, select the 'Manual Docker Configuration' option in the configure autograder' section; place the contents of the `.dockertag` file in the box (e.g. `tuftscs/gradescope-docker:cs-11-2022summer`).
 
 That's it! 
 
-## what happens when a student submits code
+## What happens when a student submits code
 When a student submits code: 
 * The `Docker` container is fired up on `aws`
 * The script located in the repo at `bin/run_autograder` is run.  This script (basically):
@@ -133,7 +133,7 @@ When a student submits code:
 
 **Note! The assignment name for your autograder for an assignment in the course repository must be the same as the assignment name on gradescope. An environment variable $ASSIGNMENT_TITLE is provided to our script, and this (along with the paths you specified earlier) is used to find the autograder files. If the names don't match, there will be issues.** 
 
-### Conclusion
+## Conclusion
 Okay, you are ready to setup an autograder! Continue to the next section to learn 
 about the autograding framework, and for a walkthrough to setup an assignment. 
 
@@ -252,14 +252,14 @@ This will keep the temporary directories used to run the autograder.
 
 [TODO] - make this smoother.
 
-### Testing an Autograder Locally
+## Testing an Autograder Locally
 After you've produced the reference output, copy a potential submission code to a directory named 
 `submission` in the autograder folder (`REPO_ROOT/hwname/submission/`). Then run 
 ```
 python3 path/to/repo/root/bin/autograde.py
 ```
 
-### Parallel Compilation and Parallel Execution
+## Parallel Compilation and Parallel Execution
 If you would like to enable parallel compilation and parallel execution of tests, instead run 
 ```
 python3 path/to/repo/root/bin/autograde.py -j NUMCORES
@@ -276,7 +276,7 @@ Note that on gradescope the file `testrunner.sh` is what actually runs the autog
 change the command in that file to include `-j NUMCORES` if you'd like, although on 
 gradescope there isn't likely much to be gained from this.  
 
-### Test .toml Configuration Options
+## Test .toml Configuration Options
 These are the configuration options for a test. You may set any of these in `[common]`,
 under a test group, or within a specific test.
 
