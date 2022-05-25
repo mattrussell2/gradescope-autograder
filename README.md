@@ -58,7 +58,7 @@ For example:
 ```
 REPO_REMOTE_PATH="https://cs-15-2022uc:glpat-Blah8173Blah8023Blah@gitlab.cs.tufts.edu/mrussell/cs-15-2022uc.git"
 ```
-Note that this path has your deploy token keys, so please keep your repository private!
+Note that this path has your access token inside of it, so if you set it to have `write` permissions (not recommended) please keep your repository private!
 
 Before we continue, let's go over the other options for this file: 
 
