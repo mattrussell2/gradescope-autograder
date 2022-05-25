@@ -100,7 +100,7 @@ Update the `PUT_YOUR_TAG_HERE` in
 tuftscs/gradescope-docker:PUT_YOUR_TAG_HERE     
 ```
 to reflect something related to your course for the tag name (e.g. `cs-11-2022summer`).
-Note that `tuftscs/gradescope-docker:` is required at the start of the value. This will be the tag that is uploaded to `Dockerhub`; the autograder will need it to know where to find the `Docker` container to run the autograder.
+Note that `tuftscs/gradescope-docker:` is required at the start of the value. This will be the tag that is uploaded to `Dockerhub`; gradescope will need it to know where to find the `Docker` container to run the autograder.
 
 ### DOCKERCREDS
 If you have a 'pro' account on `Dockerhub` ($50/yr), feel free to simply create your own access token and put it here - note that you'll need to add `gradescopeecs` as a private collaborator to the repository on `Dockerhub`. If you don't have this, reach out to 
@@ -114,7 +114,7 @@ Once you've updated the `config.ini` with the necessary variables, run:
 cd dockerbuild
 ./deploy_container
 ```
-The container will be built and uploaded to Dockerhub with the tag you specified. This should take a few minutes to build the first time, but subsequent uploads will be lightning fast! Note: in rare cases, the `Docker` build process hangs in the early stages. If this happens to you, run `rm ~/.docker/config.json` and try again. For the future, if you make changes to any of the files in the `dockerbuild` folder, or to `bin/run_autograder`, make sure to re-run this script. If you make 'breaking' changes to your autograder, change the tag name in the `.dockertag` file.
+The container will be built and uploaded to Dockerhub with the tag you specified. Note: in rare cases, the `Docker` build process hangs in the early stages. If this happens to you, run `rm ~/.docker/config.json` and try again. For the future, if you make changes to any of the files in the `dockerbuild` folder, or to `bin/run_autograder`, make sure to re-run this script. 
 
 ### to-dos per assignment with the `Docker` method 
 
