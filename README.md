@@ -258,7 +258,6 @@ This will keep the temporary directories used to run the autograder and build th
 After you've produced the reference output, copy potential submission code to a directory named 
 `submission` in the root of the homework's autograding folder (`REPO_ROOT/hwname/submission/`). Then run 
 the command `autograde`. Results should be shown, and the `results` folder will be created.
-```
 
 ### Parallel Compilation and Parallel Execution
 If you would like to enable parallel compilation and parallel execution of tests, instead run 
