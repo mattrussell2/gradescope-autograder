@@ -229,13 +229,13 @@ depending on your test configuration.
 * If you plan to use files in `.cpp`, you must use a custom `Makefile` - see the example: `assignments/hw1_ArrayLists/testset/makefile/Makefile`.
 * If the students are writing programs which have their own `main()`, then you do not need files in `.cpp` - you may still choose to have your own custom `Makefile` if you wish (otherwise, be sure to set `our_makefile = false` in `testset.toml`). 
 * The target to build (e.g. `make target`) must be named the same as the program to run (e.g. `./target`).
-* Canonicalization functions which are used by the autograder in canonicalizers.py must:
-* * take a single parameter, which is a string containing the student's output 
+* Canonicalization functions which are used by the autograder in `canonicalizers.py` must:
+* * take a single parameter - this will be a string containing the student's output from whichever stream is to be canonicalized
 * * return a string, which contains the canonicalized output 
 * The `.diff`, `.ccized`, and `.valgrind` output files for each test will only be created if your configuation requires them.
 * This framework supports `diff`ing against any number of output files written to by the program. Such files must be named `<testname>.ANYTHING_HERE.ofile`. The expectation is that the program will receive the name of the file to produce as an input argument. Then, in the `testset.toml` file, you will ensure that the `argv` variable includes `#{testname}.ANYTHING_HERE.ofile` in the `argv` list. See the `gerp` example: `assignments/gerp/testset.toml`. 
-* The `summary` files are a `snapshot' of all of the variables of a test - a summary is created upon initialization of the test, and is overwritten after a test completes with all the information about the test. This is very useful for debugging!
-\end{itemize}
+* The `summary` files are a dump of the state of a Test object - a summary is created upon initialization of the test, and is overwritten after a test completes with all the information about the test. All of the configuration options are there for a given test, so this is very useful for debugging!
+
 
 ## How to Build Reference Output
 Once you've configured your tests, you can build the reference output as follows:
@@ -272,7 +272,7 @@ also build the reference output with parallelization by running
 ```
 python3 build_ref_output.py -p path/to/assignment/autograder/ -j NUMCORES
 ```
-Note that on gradescope the file `testrunner.sh` is what actually runs the autograder. You can 
+Note that on gradescope the file `testrunner.sh` is what actually runs the autograder. This is so you can have some flexibility around running the autograder without having to rebuild the container/zip file - `run_autograder` will call this script, so feel free to add extra bash commands before/after tests are run. You 
 change the command in that file to include `-j NUMCORES` if you'd like, although on 
 gradescope there isn't likely much to be gained from this.  
 
