@@ -64,12 +64,12 @@ Before we continue, let's go over the other options for this file:
 
 |     KEY          |        Purpose       |
 |------------------|----------------------|
-| DOCKER_CREDS     | Credentials to login to docker. [Docker only]      |
-| DOCKER_TAG       |  tuftscs/gradescope-docker:YOURTAGNAME [Docker only] |
-| REPO_REMOTE_PATH | https path to your repository |
-| ASSIGN_ROOT      | where assignments autograding folders are relative to repo root |
-| ASSIGN_AUTOGRADING_SUBFOLDER | for assignments, if you put the autograder in a subfolder of the assignment folder, put the intermediate path here (e.g. if you use the structure `REPO_ROOT/assignments/hw1_ArrayLists/autograder/(autograding files)`, then `autograder` would be placed as the value here) |
-| AUTOGRADING_ROOT | path from repo root which contains bin/ setup/ and lib/ |
+| `DOCKER_CREDS`     | Credentials to login to docker. [Docker only]      |
+| `DOCKER_TAG`       |  tuftscs/gradescope-docker:YOURTAGNAME [Docker only] |
+| `REPO_REMOTE_PATH` | https path to your repository |
+| `ASSIGN_ROOT`      | where assignments autograding folders are relative to repo root |
+| `ASSIGN_AUTOGRADING_SUBFOLDER` | for assignments, if you put the autograder in a subfolder of the assignment folder, put the intermediate path here (e.g. if you use the structure `REPO_ROOT/assignments/hw1_ArrayLists/autograder/(autograding files)`, then `autograder` would be placed as the value here) |
+| `AUTOGRADING_ROOT` | path from repo root which contains bin/ setup/ and lib/ |
 
 NOTE! do not put any spaces around the `=` characters in this file.
 
