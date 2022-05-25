@@ -84,7 +84,7 @@ As mentioned above, with the `.zip` method, you'll need to upload a `.zip` file 
 assignment. However, there is no other setup required. 
 
 ### for each assignment with the .zip method: 
-* `cd setup/zipbuild && ./build_container.sh` - this will produce the necessary `Autograder.zip` file. 
+* `cd setup/zipbuild && ./build_container.sh` - this will produce the necessary `Autograder.zip` file. Note: if you don't change the `setup.sh` or `run_autograder` scripts, you can re-use this file for multiple assigments.  
 * On gradescope, after creating the programming assignment, upload the `Autograder.zip` file in the `configure autograder' section.
 * It should build and be tagged with no errors - if not, check the output of the autograder. 
 * Contact me if you run into trouble!
