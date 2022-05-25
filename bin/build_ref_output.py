@@ -4,7 +4,6 @@ from pathlib import Path
 import argparse
 import shutil
 import subprocess
-import autograde
 
 TMPDIR         = 'temp_ref_build_dir'
 ORIG_DIR       = os.getcwd()
@@ -40,6 +39,7 @@ try:
     if not os.path.exists(os.path.join('testset','ref_output')):
         os.mkdir(os.path.join('testset','ref_output'))
     
+    import autograde
     print("running tests")
     autograde.run_autograder(['-j', str(ARGS['num_jobs'])])
    
