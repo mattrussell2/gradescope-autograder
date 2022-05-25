@@ -21,7 +21,7 @@ if not os.path.exists('testset'):
     print(f"ERROR: testset folder must exist")
     exit(1)
 
-if not os.path.exists('testset', 'solution'):
+if not os.path.exists(os.path.join('testset', 'solution')):
     print(f"ERROR: solution folder must be in testset/")
     exit(1)
 
