@@ -172,7 +172,7 @@ depending on your test configuration.
 ```
 .
 |---canonicalizers.py [file with canonicalization function(s)]
-|---testrunner.sh     [script that runs this file]
+|---testrunner.sh     [script that runs `autograde`]
 |---submission/       [student submission (provided by gs)]
 |---testset/          [everything needed to run tests]
 |   |---copy/         [files here will be copied to results/build/]
@@ -232,6 +232,132 @@ depending on your test configuration.
 * This framework supports `diff`ing against any number of output files written to by the program. Such files must be named `<testname>.ANYTHING_HERE.ofile`. The expectation is that the program will receive the name of the file to produce as an input argument. Then, in the `testset.toml` file, you will ensure that the `argv` variable includes `#{testname}.ANYTHING_HERE.ofile` in the `argv` list. See the `gerp` example: `assignments/gerp/testset.toml`. 
 * The `summary` files are a dump of the state of a Test object - a summary is created upon initialization of the test, and is overwritten after a test completes with all the information about the test. All of the configuration options are there for a given test, so this is very useful for debugging!
 
+## Example configurations 
+### Example configuration for hw1_ArrayLists
+The hw1_ArrayLists assignment requires students to write an `ArrayList` class - thus, we want our autograding setup to be a set of `.cpp` files, each with `main()`. The example `testset` directory in  `assignments/hw1_ArrayLists/` is structured as follows:
+
+```
+.
+|---testrunner.sh     [script that runs `autograde`]
+|---testset/          [everything needed to run tests]
+|   |---cpp/          [.cpp driver files]
+|   |---makefile/     [contains custom Makefile]
+|   |---ref_output/   [output of reference implementation]
+|   |---solution/     [solution code]
+|---testest.toml      [testing configuration file]
+|-
+```
+For this assignmnent, there is no canonicalization required, no input from `stdin`, nothing to copy or link to the build directory. The corresponding `testset.toml` file is as follows:
+
+```
+[common]
+# using defaults! however, empty 'common' should exist
+
+[tests]
+tests = [
+    { testname = "test01", description = "size 0 list to string" },
+    { testname = "test02", description = "size 1 list to string"},
+    { testname = "test03", description = "size 7 list to string" },
+    { testname = "test04", description = "isempty test" },
+    { testname = "test05", description = "isempty test2" },
+    { testname = "test06", description = "clear test on empty list" },
+    { testname = "test07", description = "clear test on nonempty list" },
+    { testname = "test08", description = "size test"},
+    { testname = "test09", description = "size test2"},
+    { testname = "test10", description = "check throw on first() with empty list"},
+    { testname = "test11", description = "first() test"},
+    { testname = "test12", description = "check throw on last() with empty list" },
+    { testname = "test13", description = "last() test2"},
+    { testname = "test14", description = "elementAt test" },
+    { testname = "test15", description = "elementAt test2" },
+    { testname = "test16", description = "elementAt test3"},
+    { testname = "test17", description = "pushAtBack" },
+    { testname = "test18", description = "pushAtBack 2"},
+    { testname = "test19", description = "pushAtBack 3" },
+    { testname = "test20", description = "pushAtFront" },
+    { testname = "test21", description = "pushAtFront2" }
+]
+```
+Here the autograder will assume that `testset/cpp/test01.cpp` contains `main()`, and that there's a target named `test01` in `testset/makefile/Makefile` which produces an executable named `test01`; it will run `make test01`, and then `./test01`.
+
+### Example configuration for gerp
+This assignment requires students to build a program named `gerp`, which mirrors a subset of functionality from `grep`. The students provide their own implementations and `Makefile`. For this assignment, the example `testset` directory in  `assignments/gerp` is structured as follows:
+```
+.
+|---canonicalizers.py [file with canonicalization functions]
+|---testrunner.sh     [script that runs `autograde`]
+|---testset/          [everything needed to run tests]
+|   |---copy/         [files to copy to build/]
+|   |---link/         [files to symlink to build/]
+|   |---ref_output/   [output of reference implementation]
+|   |---solution/     [solution code]
+|   |---stdin/        [files to send to `stdin`]
+|---testest.toml      [testing configuration file]
+|-
+```
+For this assignmnent, we want to test the *sorted* output of student code against the *sorted* output of the reference implementation; thus, there is a function named `sort_lines` in `canonicalizers.py` which is used by the autograder. Also, there are library files which the students will need that are in `copy/`. There is a large set of directories which it's easier to link, so those are in `link/`. For each test, there will need to be a unique input to `stdin`, so those files are in `stdin/` (named `testname.stidn`). The corresponding `testset.toml` file is as follows:
+
+```
+[common]
+max_time     = 600             # 10 minutes
+max_ram      = 8000000         # 8GB
+diff_ofiles  = true            # we will diff the output files produced by the program against the reference
+ccize_ofiles = true            # canonicalize the output files before diff'ing
+ccizer_name  = "sort_lines"    # use 'sort_lines' function in canonicalizers.py
+our_makefile = false           # use the student's Makefile
+executable   = "gerp"          # all of the tests will run this executable
+
+[tiny]
+argv  = ["tinyData", "#{testname}.ofile"] 
+tests = [
+    { testname = "test01", description = "Tiny Sensitive - we", visibility = "visible"},
+    { testname = "test02", description = "Tiny Sensitive - COMP15" },
+    { testname = "test03", description = "Tiny Insensitive - @i remember", visibility = "visible" },
+    { testname = "test04", description = "Tiny Insensitive - @i i" },          
+    { testname = "test05", description = "Tiny Insensitive - @i pretty" }, 
+    { testname = "test06", description = "Tiny Insensitive - @i gibberish" },
+    { testname = "test07", description = "Tiny Tricky - grep!", visibility = "visible" },
+    { testname = "test08", description = "Tiny Tricky - 40?" },
+    { testname = "test09", description = """Tiny Tricky - \u0022Tree-Mendous""" },
+    { testname = "test10", description = """Tiny Tricky - @i don\u0027t""" }
+]
+
+# these would be used with larger directories
+[small] 
+argv  = ["smallGutenberg", "#{testname}.ofile"]
+tests = [
+    { testname = "test11", description = "Small Gutenberg Sensitive - student", valgrind = true }, 
+    { testname = "test12", description = "Small Gutenberg Sensitive - Jumbo", visibility = "visible"},
+    { testname = "test13", description = "Small Gutenberg Sensitive - Easier" },    
+    { testname = "test14", description = "Small Gutenberg Sensitive - texts" },
+    { testname = "test15", description = "Small Gutenberg Sensitive - Civilization" },
+    { testname = "test16", description = "Small Gutenberg Sensitive - bachelor" },
+    { testname = "test17", description = "Small Gutenberg Insensitive - @i zoological" },
+    { testname = "test18", description = "Small Gutenberg Insensitive - @i intelligent" },
+    { testname = "test19", description = "Small Gutenberg Insensitive - @i parents" },
+    { testname = "test20", description = "Small Gutenberg Insensitive - @i insensitive diana" },
+    { testname = "test21", description = "Small Gutenberg Tricky - [*]" },
+    { testname = "test22", description = "Small Gutenberg Tricky - computer\u0027s" },
+    { testname = "test23", description = """Small Gutenberg Tricky - \u0022\u0027Joke!\u0027""" }, 
+    { testname = "test24", description = "Small Gutenberg Tricky - A--little-bit--wild?" },
+    { testname = "test25", description = "Small Gutenberg Tricky - @i {....." },
+    { testname = "test26", description = "Small Gutenberg Tricky - @i www.gutenberg.org" },
+    { testname = "test27", description = "Small Gutenberg Tricky - @i cometh?" },
+    { testname = "test28", description = "Small Gutenberg Tricky - @i deal!" },
+    { testname = "test29", description = """Small Gutenberg Tricky - @i \u0022\u0027""" },
+    { testname = "test30", description = """Small Gutenberg Tricky - @i \"yours?\u0022""" }
+]
+
+[medium]
+valgrind  = false # would take too long
+max_score = 2.5   # these tests are weighted more
+argv = ["mediumGutenberg", "#{testname}.ofile"]
+tests = [
+     { testname = "test31", description = "Medium Gutenberg - Time and Memory Complexity" },
+     { testname = "test32", description = "Medium Gutenberg with Queries" },
+ ]
+```
+Notice options for custom timeout, max_ram, etc. Details for each option can be found at the end of this document.
 
 ## Testing the Autograder
 ### Preliminaries
@@ -249,7 +375,7 @@ This will keep the temporary directories used to run the autograder and build th
 
 ### Testing with an Example Submission
 After you've produced the reference output, copy potential submission code to a directory named 
-`submission` in the root of the homework's autograding folder (`REPO_ROOT/hwname/submission/`). Then run the command `autograde`. Results should be shown, and a `results` folder will be created.
+`submission` in the root of the homework's autograding folder (`REPO_ROOT/hwname/submission/`). Then run the command `autograde`. Results should be shown, and a `results` folder will be created. Make sure to remove `submission` and `results` before doing `git push`. [TODO write a script to run all this in a temporary directory]
 
 ### Parallel Compilation and Parallel Execution
 If you would like to enable parallel compilation and parallel execution of tests, instead run 
