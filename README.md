@@ -47,7 +47,7 @@ mv gradescope-autograding/* .
 rm -rf gradescope-autograding
 ```
 Great! Now, you will need an Access Token so your autograder can pull from the repo. To create one, go to `gitlab` in your browser, and navigate to the course repository you just created. Next, hover over the settings cog on the lower left, and select `Access Tokens`.
-Create one - this will be used by the Gradescope autograder to pull the most recent version of the autograding files for an assignment. We suggest only providing `read repository` access to the token. Feel free to select whatever you'd like for the name, expiration date, and role. Once the token is created, copy the key. Now, return to your repo, and open the `config.ini` file - `REPO_ROOT/setup/config.ini` and update the `REPO_REMOTE_PATH` variable as follows:
+Create one - this will be used by the Gradescope autograder to pull the most recent version of the autograding files for an assignment. We suggest only providing `read repository` access to the token. Feel free to select whatever you'd like for the name, expiration date, and role. Once the token is created, copy the key. Now, return to your repo, and open the `autograder_config.ini` file - `REPO_ROOT/etc/autograder_config.ini` and update the `REPO_REMOTE_PATH` variable as follows:
 
 ```
 https://REPOSITORY-NAME:ACCESS-TOKEN@gitlab.cs.tufts.edu/path/to/repository.git
@@ -71,7 +71,7 @@ Before we continue, let's go over the other options for this file:
 
 NOTE! do not put any spaces around the `=` characters in this file.
 
-The values in the sample `config.ini` will work with the directory structure as-is in this repo.
+The values in the sample `autograder_config.ini` will work with the directory structure as-is in this repo.
 Feel free to customize the paths - for instance, if you'd like to place your assignments in the root directory of your grading repo, then update the value of `ASSIGN_ROOT` to be "". 
 
 Okay! Assuming you've updated the `config` with the paths you'd like, and have added the `REPO_REMOTE_PATH`, continue with one of either the `.zip` or `Docker` methods below.
@@ -88,7 +88,7 @@ assignment. However, there is no other setup required. For the future, if you ma
 
 ## `Docker` method
 If you don't have `Docker Desktop`, install it: https://www.docker.com/products/docker-desktop/
-Then, open back up the `setup/config.ini` file.
+Then, open back up the `etc/autograder_config.ini` file.
 You will need to add two more things here. 
 
 ### DOCKERTAG
@@ -105,7 +105,7 @@ Note!! This access token must be kept private; to that end, please keep your cou
 repository private.
 
 ### Build and upload the container to Dockerhub
-Once you've updated the `config.ini` with the necessary variables, run:
+Once you've updated the `autograder_config.ini` with the necessary variables, run:
 ```
 cd dockerbuild
 ./deploy_container
