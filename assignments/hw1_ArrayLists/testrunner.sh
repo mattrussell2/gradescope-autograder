@@ -1,3 +1,3 @@
 #!/bin/bash
 
-./autograde.py
+autograde
