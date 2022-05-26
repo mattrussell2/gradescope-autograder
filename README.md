@@ -64,18 +64,17 @@ Before we continue, let's go over the other options for this file:
 
 |     KEY          |        Purpose       |
 |------------------|----------------------|
-| `DOCKER_CREDS`     | Credentials to login to docker. [Docker only]      |
-| `DOCKER_TAG`       |  `tuftscs/gradescope-docker:YOURTAGNAME` [Docker only] |
+| `DOCKER_CREDS`     | Credentials to login to docker. [`Docker` only - see `Docker` method section ]      |
+| `DOCKER_TAG`       |  `tuftscs/gradescope-docker:YOURTAGNAME` [`Docker` only - see `Docker` method section] |
 | `REPO_REMOTE_PATH` | `https` path to your repository |
-| `ASSIGN_ROOT`      | where assignments autograding folders are relative to repo root |
-| `ASSIGN_AUTOGRADING_SUBFOLDER` | for assignments, if you put the autograder in a subfolder of the assignment folder, put the intermediate path here (e.g. if you use the structure `REPO_ROOT/assignments/hw1_ArrayLists/autograder/(autograding files)`, then `autograder` would be placed as the value here) |
+| `ASSIGN_ROOT`      | where assignment autograding folders are relative to repo root (so if you use the structure `REPO_ROOT/assignments/(your assignments here)` then `assignments` would be placed as the value here)|
+| `ASSIGN_AUTOGRADING_SUBFOLDER` | for assignments, if you put the autograder in a subfolder of the assignment folder, put the intermediate path here (so if you use the structure `REPO_ROOT/assignments/hw1_ArrayLists/autograder/(autograding files)` then `autograder` would be placed as the value here) |
 | `AUTOGRADING_ROOT` | path from repo root which contains bin/ setup/ and lib/ |
 
 NOTE! do not put any spaces around the `=` characters in this file.
 
-More information on the Docker options are below - as for the other options, if you plan to put only autograding material in this repo, then the defaults will likely be fine; the options may come in handy if you'd like to customize things.
-
-For instance, if you'd like to place your assignments in the root directory of your grading repo, then update the value of `ASSIGN_ROOT` to be "". The values in the sample `config.ini` will work with the directory structure as-is in this repo.
+The values in the sample `config.ini` will work with the directory structure as-is in this repo.
+Feel free to customize the paths - for instance, if you'd like to place your assignments in the root directory of your grading repo, then update the value of `ASSIGN_ROOT` to be "". 
 
 Okay! Assuming you've updated the `config` with the paths you'd like, and have added the `REPO_REMOTE_PATH`, continue with one of either the `.zip` or `Docker` methods below.
 
