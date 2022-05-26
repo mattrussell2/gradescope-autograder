@@ -278,7 +278,7 @@ tests = [
     { testname = "test21", description = "pushAtFront2" }
 ]
 ```
-Here the autograder will assume that `testset/cpp/test01.cpp` contains `main()`, and that there's a target named `test01` in `testset/makefile/Makefile` which produces an executable named `test01`; it will run `make test01`, and then `./test01`.
+Here the autograder will assume that `testset/cpp/TESTNAME.cpp` contains `main()`, and that there's a target named `TESTNAME` in `testset/makefile/Makefile` which produces an executable named `TESTNAME`; it will run `make TESTNAME`, and then `./TESTNAME`.
 
 ### Example configuration for gerp
 This assignment requires students to build a program named `gerp`, which mirrors a subset of functionality from `grep`. The students provide their own implementations and `Makefile`. For this assignment, the example `testset` directory in  `assignments/gerp` is structured as follows:
