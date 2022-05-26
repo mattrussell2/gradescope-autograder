@@ -2,17 +2,14 @@
 
 # initial apt stuff
 apt-get update -y && apt-get upgrade -y
-apt-get install software-properties-common -y
-
-# install necessary packages
-apt-get install lsb-release \
+apt-get install software-properties-common \
+                lsb-release \
                 build-essential \
                 wget \
                 git \
                 clang-format \
                 valgrind \
-                ssh \
-                sudo \
+                ssh \                
                 time \
                 clang -y
 
@@ -38,7 +35,7 @@ cp /autograder/source/bin/run_autograder /autograder/
 printf 'export PS1=\"\\u@gs:\\W\\$ \"\n' >> ~/.bashrc
 
 # load the config vars so we have access to $REPO_REMOTE_PATH
-source <(grep = /autograder/source/config.ini)
+source /autograder/source/config.ini
 
 # clone the course repo
 cd /autograder/source && git clone $REPO_REMOTE_PATH course-repo

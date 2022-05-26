@@ -3,17 +3,14 @@ FROM gradescope/auto-builds:ubuntu-22.04
 
 # initial apt stuff
 RUN apt-get update -y && apt-get upgrade -y
-RUN apt-get install software-properties-common -y
-
-# install necessary packages
-RUN apt-get install lsb-release \
+RUN apt-get install software-properties-common \
+                    lsb-release \
                     build-essential \
                     wget \
                     git \
                     clang-format \
                     valgrind \
-                    ssh \
-                    sudo \                    
+                    ssh \                    
                     time \
                     clang-12 -y
 
@@ -31,15 +28,14 @@ COPY bin/run_autograder /autograder/run_autograder
 RUN mkdir /autograder/source/
 
 # copy configuration file
-COPY config.tmp /autograder/source/config.ini
+COPY autograder_config.ini /autograder/source/autograder_config.ini
 
 # message of the day
-COPY lib/motd /etc/motd
+COPY etc/motd /etc/motd
 
 # pretty bash terminal header
 RUN printf "export PS1=\"\\u@gs:\\W\\$ \"\n" >> ~/.bashrc
 
-ARG REPO_REMOTE_PATH
-
 # clone the course repository
+ARG REPO_REMOTE_PATH
 RUN cd /autograder/source/ && git clone $REPO_REMOTE_PATH course-repo
