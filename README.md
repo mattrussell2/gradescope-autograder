@@ -94,7 +94,7 @@ Update the `PUT_YOUR_TAG_HERE` in
 ```
 tuftscs/gradescope-docker:PUT_YOUR_TAG_HERE     
 ```
-to reflect something related to your course for the tag name (e.g. `cs-11-2022summer`).
+Please select a tagname which reflects something specific related to your course and the semester (e.g. `cs-11-2022-summer`).
 Note that `tuftscs/gradescope-docker:` is required at the start of the value. This will be the tag that is uploaded to `Dockerhub`; `Gradescope` will need it to know where to find the `Docker` container to run the autograder.
 
 ### DOCKERCREDS
@@ -112,7 +112,7 @@ The container will be built and uploaded to Dockerhub with the tag you specified
 
 ### For each assignment with the `Docker` method 
 
-* On `Gradescope`, after creating the programming assignment, select the 'Manual Docker Configuration' option in the configure autograder' section; place the contents of the `DOCKERTAG` variable in the box (e.g. `tuftscs/gradescope-docker:cs-11-2022summer`).
+* On `Gradescope`, after creating the programming assignment, select the 'Manual Docker Configuration' option in the configure autograder' section; place the contents of the `DOCKERTAG` variable in the box (e.g. `tuftscs/gradescope-docker:cs-11-2022-summer`).
 
 That's it! 
 
