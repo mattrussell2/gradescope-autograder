@@ -1,7 +1,7 @@
 # Gradescope Autograding Setup
 Gradescope is great tool for autograding assignments. However, there is still a substantial amount
 of infrastructure required to deploy and run an autograder on gradescope. This document provides 
-instructions for setting up an autograder on Gradescope which usesour in-house autograding
+instructions for setting up an autograder on Gradescope which uses our in-house autograding
 framework for `C/C++` code. Setup from start to finish is intended to take roughly 30 minutes.
 If you have any questions, please reach out to me at `mrussell@cs.tufts.edu`
 
