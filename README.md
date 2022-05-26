@@ -322,7 +322,6 @@ tests = [
     { testname = "test10", description = """Tiny Tricky - @i don\u0027t""" }
 ]
 
-# these would be used with larger directories
 [small] 
 argv  = ["smallGutenberg", "#{testname}.ofile"]
 tests = [
@@ -357,7 +356,7 @@ tests = [
      { testname = "test32", description = "Medium Gutenberg with Queries" },
  ]
 ```
-Notice options for custom timeout, max_ram, etc. Details for each option can be found at the end of this document.
+Notice options for custom timeout, max_ram, etc. Details for each option can be found at the end of this document. 
 
 ## Testing the Autograder
 ### Preliminaries
