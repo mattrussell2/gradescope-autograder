@@ -246,7 +246,7 @@ The hw1_ArrayLists assignment requires students to write an `ArrayList` class - 
 |---testest.toml      [testing configuration file]
 |-
 ```
-For this assignmnent, there is no canonicalization required, no input from `stdin`, nothing to copy or link to the build directory. The corresponding `testset.toml` file is as follows:
+For this assignment, there is no canonicalization required, no input from `stdin`, nothing to copy or link to the build directory. The corresponding `testset.toml` file is as follows:
 
 ```
 [common]
