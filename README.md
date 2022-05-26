@@ -295,7 +295,7 @@ This assignment requires students to build a program named `gerp`, which mirrors
 |---testest.toml      [testing configuration file]
 |-
 ```
-For this assignmnent, we want to test the *sorted* output of student code against the *sorted* output of the reference implementation; thus, there is a function named `sort_lines` in `canonicalizers.py` which is used by the autograder. Also, there are library files which the students will need that are in `copy/`. There is a large set of directories which it's easier to link, so those are in `link/`. For each test, there will need to be a unique input to `stdin`, so those files are in `stdin/` (named `testname.stidn`). The corresponding `testset.toml` file is as follows:
+For this assignmnent, we want to test the *sorted* output of student code against the *sorted* output of the reference implementation; thus, there is a function named `sort_lines` in `canonicalizers.py` which is used by the autograder. Also, there are library files which the students will need that are in `copy/`. There is a large set of directories which it's easier to link, so those are in `link/`. For each test, there will need to be a unique input to `stdin`, so those files are in `stdin/` (named `testname.stdin`). The corresponding `testset.toml` file is as follows:
 
 ```
 [common]
