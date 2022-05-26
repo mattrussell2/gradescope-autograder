@@ -356,7 +356,7 @@ tests = [
      { testname = "test32", description = "Medium Gutenberg with Queries" },
  ]
 ```
-Notice options for custom timeout, max_ram, etc. Details for each option can be found at the end of this document. 
+Notice options for custom timeout, max_ram, etc. Details for each option can be found at the end of this document. Regarding output files, `gerp` expects two command-line arguments - the name of the directory to index, and a file to write output to. For each of the tests, `#{testname}.ofile` will be converted to `test01.ofile`, etc. If your students need to write to an output file, please have them take the name of the file as an input argument, and use this template. They can potentially write to multiple files; in the `testset.toml` file, as long the string contains `#{testname}` and ends with an `.ofile` extension, you're good to go.
 
 ## Testing the Autograder
 ### Preliminaries
