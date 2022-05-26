@@ -27,13 +27,7 @@ cp -r $REPO_ROOT/$ASSIGN_ROOT/$ASSIGNMENT_TITLE/$ASSIGN_AUTOGRADING_SUBFOLDER/* 
 # run the autograder!
 cd /autograder/
 chmod +x testrunner.sh
-./testrunner.sh > results/stdout 2>&1
+./testrunner.sh
 
-# print result to screen if interactive terminal
-if [[ $- == *i* ]]
-then
-    cat results/stdout
-fi
-
-# copy the results to the gradescope folder
+# make results and put them in /autograder/results/results.json
 make_gradescope_results.py
