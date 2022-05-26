@@ -1,13 +1,13 @@
 # Gradescope Autograding Setup
 Gradescope is great tool for autograding assignments. However, there is still a substantial amount
 of infrastructure required to deploy and run an autograder on gradescope. This document provides 
-instructions for setting up an autograder on Gradescope which usesour in-house autograding
+instructions for setting up an autograder on Gradescope which uses our in-house autograding
 framework for `C/C++` code. Setup from start to finish is intended to take roughly 30 minutes.
 If you have any questions, please reach out to me at `mrussell@cs.tufts.edu`
 
 # Infrastructure Setup
 
-## background
+## Background
 Gradescope's autograders rely on `Docker` containers which are spun up each time 
 a submission is graded. The default container runs a variant of `Ubuntu 18.04` which contains
 the bare-bones infrastructure to make Gradescope's systems function. Before diving into autograding, you will need to set up a method to integrate with Gradescope's systems. This document presents two options: 
@@ -19,16 +19,14 @@ the bare-bones infrastructure to make Gradescope's systems function. Before divi
 
 Fear not! There is lots of starter code to do the bulk of the heavy lifting here, so either way you choose, you will likely not need to do too much setup. However, here are some pros and cons of these approaches:
 
-* The `.zip` method requires more manual work. You have to upload
-      a new `.zip` file each time you want to update the autograder; the `Docker` container 
-      will then need to be built from scratch on Gradescope, which takes time. However, you don't need 
-      `Docker` on your system. If you're not familiar with `Docker`, this workflow is suggested. 
+* The `.zip` method requires more manual work. You have to upload a new `.zip` file each time you want to update the autograder; the `Docker` container will then need to be built from scratch on Gradescope, which takes time. However, you don't need `Docker` on your system. If you're not familiar with `Docker`, this workflow is suggested. 
 * The `Docker` method is more streamlined once it's setup. After uploading the container, for every assignment, you can point Gradescope to the container on `Dockerhub` - no `.zip` file uploading required. And, if you make minor changes to the setup script, usually rebuilding the container is very fast. All of the steps to do the building and deploying of the container are done in a script for you. If you already use `Docker`, will be interested in tweaking the `Docker` container's build settings (`clang` version, etc.) or are feeling adventurous, go for this option. 
+* Gradescope's default container runs `Ubuntu 18.04`; we manually install `Python 3.9` in the container in the `setup.sh` file; the `Docker` setup we have builds `Ubuntu 22.04`, which comes with `Python 3.10` by default.
 
 ## Autograding `.git` Repo
-Regardless of whether you use the `.zip` method or the `Docker` method, you will need to create a `git` repository for your autograder. This repository will be used by the autograding container; each time a code is autograded, the code from your repository will be pulled, the assignment's autograding files will be copied to right place, and our autograding script will do the bulk of the work running the tests and producing results. So, if you don't currently have a repository related to course material, please make one. 
-We suggest using `gitlab` for this: go to https://gitlab.cs.tufts.edu, and 
-login with `LDAP`, using your Tufts eecs `utln` and password. Then create a new repository from scratch. You do not need a `README`. 
+Regardless of whether you use the `.zip` method or the `Docker` method, you will need to create a `git` repository for your autograder. This repository will be used by the autograding container; whenever an assignment is autograded, the code from your repository will be pulled, the assignment's autograding files will be copied to right place, and our autograding script will do run the tests and produce the results for Gradescope. So, if you don't currently have a repository related to course material, please make one. 
+We suggest using `gitlab` for this: go to https://gitlab.cs.tufts.edu and 
+login with `LDAP` using your Tufts eecs `utln` and password. Then create a new repository from scratch. You do not need a `README`. 
 Now, in your terminal:
 ```
 mkdir your-repo-name
@@ -64,24 +62,23 @@ Before we continue, let's go over the other options for this file:
 
 |     KEY          |        Purpose       |
 |------------------|----------------------|
-| `DOCKER_CREDS`     | Credentials to login to docker. [Docker only]      |
-| `DOCKER_TAG`       |  `tuftscs/gradescope-docker:YOURTAGNAME` [Docker only] |
+| `DOCKER_CREDS`     | Credentials to login to docker. [`Docker` only - see `Docker method` section for details]      |
+| `DOCKER_TAG`       |  `tuftscs/gradescope-docker:YOURTAGNAME` [`Docker` only - see `Docker method` section for details] |
 | `REPO_REMOTE_PATH` | `https` path to your repository |
-| `ASSIGN_ROOT`      | where assignments autograding folders are relative to repo root |
-| `ASSIGN_AUTOGRADING_SUBFOLDER` | for assignments, if you put the autograder in a subfolder of the assignment folder, put the intermediate path here (e.g. if you use the structure `REPO_ROOT/assignments/hw1_ArrayLists/autograder/(autograding files)`, then `autograder` would be placed as the value here) |
+| `ASSIGN_ROOT`      | where assignment autograding folders are relative to repo root (so if you use the structure `REPO_ROOT/assignments/(your assignments here)` then `assignments` would be placed as the value here)|
+| `ASSIGN_AUTOGRADING_SUBFOLDER` | for assignments, if you put the autograder in a subfolder of the assignment folder, put the intermediate path here (so if you use the structure `REPO_ROOT/assignments/hw1_ArrayLists/autograder/(autograding files)` then `autograder` would be placed as the value here) |
 | `AUTOGRADING_ROOT` | path from repo root which contains bin/ setup/ and lib/ |
 
 NOTE! do not put any spaces around the `=` characters in this file.
 
-More information on the Docker options are below - as for the other options, if you plan to put only autograding material in this repo, then the defaults will likely be fine; the options may come in handy if you'd like to customize things.
-
-For instance, if you'd like to place your assignments in the root directory of your grading repo, then update the value of `ASSIGN_ROOT` to be "". The values in the sample `config.ini` will work with the directory structure as-is in this repo.
+The values in the sample `config.ini` will work with the directory structure as-is in this repo.
+Feel free to customize the paths - for instance, if you'd like to place your assignments in the root directory of your grading repo, then update the value of `ASSIGN_ROOT` to be "". 
 
 Okay! Assuming you've updated the `config` with the paths you'd like, and have added the `REPO_REMOTE_PATH`, continue with one of either the `.zip` or `Docker` methods below.
 
 ## .zip method
 As mentioned above, with the `.zip` method, you'll need to upload a `.zip` file for each 
-assignment. However, there is no other setup required. 
+assignment. However, there is no other setup required. For the future, if you make changes to any of the files in the `dockerbuild` folder, or to `bin/run_autograder`, make sure to rebuild and re-upload the `Autograder.zip` file.
 
 ### For each assignment with the .zip method: 
 * `cd setup/zipbuild && ./build_container.sh` - this will produce the necessary `Autograder.zip` file. Note: if you don't change the `setup.sh` or `run_autograder` scripts, you can re-use this file for multiple assigments.  
@@ -100,11 +97,10 @@ Update the `PUT_YOUR_TAG_HERE` in
 tuftscs/gradescope-docker:PUT_YOUR_TAG_HERE     
 ```
 to reflect something related to your course for the tag name (e.g. `cs-11-2022summer`).
-Note that `tuftscs/gradescope-docker:` is required at the start of the value. This will be the tag that is uploaded to `Dockerhub`; gradescope will need it to know where to find the `Docker` container to run the autograder.
+Note that `tuftscs/gradescope-docker:` is required at the start of the value. This will be the tag that is uploaded to `Dockerhub`; Gradescope will need it to know where to find the `Docker` container to run the autograder.
 
 ### DOCKERCREDS
-If you have a 'pro' account on `Dockerhub` ($50/yr), feel free to simply create your own access token and put it here - note that you'll need to add `gradescopeecs` as a private collaborator to the repository on `Dockerhub`. If you don't have this, reach out to 
-me at `mrussell@cs.tufts.edu`, and I'll send you the file ASAP. 
+If you have a 'pro' account on `Dockerhub`, create your own access token and put it here - note that you'll need to add `gradescopeecs` as a private collaborator to the repository on `Dockerhub`. If you don't have a `pro` account, reach out to me at `mrussell@cs.tufts.edu`, and I'll send you the DOCKERCREDS. 
 Note!! This access token must be kept private; to that end, please keep your course autograding
 repository private.
 
@@ -118,20 +114,20 @@ The container will be built and uploaded to Dockerhub with the tag you specified
 
 ### For each assignment with the `Docker` method 
 
-* On gradescope, after creating the programming assignment, select the 'Manual Docker Configuration' option in the configure autograder' section; place the contents of the `.dockertag` file in the box (e.g. `tuftscs/gradescope-docker:cs-11-2022summer`).
+* On gradescope, after creating the programming assignment, select the 'Manual Docker Configuration' option in the configure autograder' section; place the contents of the `DOCKERTAG` variable in the box (e.g. `tuftscs/gradescope-docker:cs-11-2022summer`).
 
 That's it! 
 
 ## What happens when a student submits code
 When a student submits code: 
-* The `Docker` container is fired up on `aws`
-* The script located in the repo at `bin/run_autograder` is run.  This script (basically):
+* The `Docker` container is fired up on `aws` - again, note that with either method you use above, a `Docker` container is still used.
+* The script located at `bin/run_autograder` is run.  This script (basically):
 * * Runs `git pull` to get the most recent version of your autograding tests. 
 * * Copies files related to the assignment's autograder.
 * * Runs our autograding framework [details below]. 
 * * Saves the results at `/autograder/results/results.json` in a form readable by Gradescope. 
 
-**Note! The assignment name for your autograder for an assignment in the course repository must be the same as the assignment name on gradescope. An environment variable $ASSIGNMENT_TITLE is provided to our script, and this (along with the paths you specified earlier) is used to find the autograder files. If the names don't match, there will be issues.** 
+**Note! The assignment name for an assignment in the course repository must be the same as the assignment name on gradescope. An environment variable $ASSIGNMENT_TITLE is provided to our script, and this (along with the paths you specified earlier) is used to find the autograder files. If the names don't match, there will be issues.** 
 
 ## Conclusion
 Okay, you are ready to setup an autograder! Continue to the next section to learn 
@@ -239,16 +235,13 @@ depending on your test configuration.
 
 ## Testing the Autograder
 ### Preliminaries
-In order to build reference output and test your code easily, first add the `bin/` folder to your `$PATH`. 
-To do this, run the following commands, replacing `REPO_ROOT` with the path to the repository root on your system. 
+In order to build reference output and test your code easily, first add the `bin/` folder to your `$PATH`. To do this, run the following commands, replacing `REPO_ROOT` with the path to the repository root on your system. 
 ```
 echo -e "export PATH=\$PATH:/REPO_ROOT/bin\n" >> ~/.bashrc
 source ~/.bashrc
 ```
-### Bulding the Reference Output
-Once you've configured your tests, run the command `build_ref_output` from the assignment's autograder directory.
-The reference code will be run as a submission, and the output of the reference will be placed in 
-the `REPO_ROOT/hwname/testset/ref_output/` directory. If you need to debug your setup, run 
+### Building the Reference Output
+Once you've configured your tests, run the command `build_ref_output` from the assignment's autograder directory. The reference code will be run as a submission, and the output of the reference will be placed in the `REPO_ROOT/hwname/testset/ref_output/` directory. If you need to debug your setup, run 
 ```
 build_ref_output -k
 ```
@@ -256,25 +249,18 @@ This will keep the temporary directories used to run the autograder and build th
 
 ### Testing with an Example Submission
 After you've produced the reference output, copy potential submission code to a directory named 
-`submission` in the root of the homework's autograding folder (`REPO_ROOT/hwname/submission/`). Then run 
-the command `autograde`. Results should be shown, and the `results` folder will be created.
+`submission` in the root of the homework's autograding folder (`REPO_ROOT/hwname/submission/`). Then run the command `autograde`. Results should be shown, and a `results` folder will be created.
 
 ### Parallel Compilation and Parallel Execution
 If you would like to enable parallel compilation and parallel execution of tests, instead run 
 ```
 autograde -j NUMCORES
 ```
-where `NUMCORES` is the number of cores 
-you would like to utilize (`-1` will use all available cores). Note that multiple tests may be 
-run on each core concurrently. The default setting is for one core to be used with no tests running 
-concurrently; that is, only one test will be run at a time (no concurrent tests are run). You can
-also build the reference output with parallelization by running 
+where `NUMCORES` is the number of cores you would like to utilize (`-1` will use all available cores). Note that multiple tests may be run on each core concurrently. The default setting is for one core to be used with no tests running concurrently; that is, only one test will be run at a time (no concurrent tests are run). You can also build the reference output with parallelization by running 
 ```
 build_ref_output.py -j NUMCORES
 ```
-Note that on gradescope the file `testrunner.sh` is what actually runs the autograder. This is so you can have some flexibility around running the autograder without having to rebuild the container/zip file - `run_autograder` will call this script, so feel free to add extra bash commands before/after tests are run. You 
-change the command in that file to include `-j NUMCORES` if you'd like, although on 
-gradescope there isn't likely much to be gained from this.  
+Note that on gradescope the file `testrunner.sh` is what actually runs the autograder. This is so you can have some flexibility around running the autograder without having to rebuild the container/.zip file - `run_autograder` will call this script, so feel free to add extra bash commands before/after tests are run. You change the command in that file to include `-j NUMCORES` if you'd like, although on gradescope there isn't likely much to be gained from this.
 
 ## Test .toml Configuration Options
 These are the configuration options for a test. You may set any of these in `[common]`,
@@ -297,7 +283,7 @@ under a test group, or within a specific test.
 | `max_score` | `1` | maximum points (on gradescope) for this test |
 | `visibility` | `"after-due-date"` | gradescope visibility setting |
 | `argv` | `[ ]` | argv input to the program |
-| `executable` | `None` | executable to build and run |
+| `executable` | `(testname)` | executable to build and run |
 
 # Conclusion
 That should be enough to get you up and running! Please feel free to contact me with any questions you have, and/or any bugs, feature requests, etc. you find. Thanks!
