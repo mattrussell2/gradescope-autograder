@@ -6,14 +6,10 @@
 
 cd ../../
 
-source setup/config.ini 
-grep -v "DOCKER_CREDS\|DOCKER_TAG\|REPO_PATH" setup/config.ini > config.tmp
+source etc/autograder_config.ini 
+grep -v "DOCKER_CREDS\|DOCKER_TAG\|REPO_PATH" etc/autograder_config.ini > autograder_config.ini 
 docker build --tag $DOCKER_TAG --build-arg REPO_REMOTE_PATH=$REPO_REMOTE_PATH -f setup/dockerbuild/Dockerfile .
-rm config.tmp
+rm autograder_config.ini 
 
+echo $DOCKER_CREDS | docker login --username tuftscs --password-stdin
 docker push $DOCKER_TAG
-if [ $? != 0 ]; then
-    echo "need to login to docker -- username is: tuftscs"
-    echo $DOCKER_CREDS | docker login --username tuftscs --password-stdin
-    docker push $DOCKER_TAG
-fi

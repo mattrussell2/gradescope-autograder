@@ -1,6 +1,7 @@
 #!/bin/bash 
 
-REPO_ROOT="/autograder/source/course-repo"
+SOURCE_DIR="/autograder/source"
+REPO_ROOT="$SOURCE_DIR/course-repo"
 
 # .zip setup requires us to reset Python version.
 # NOTE! If this is done in setup.sh, it breaks the container when it boots up. Yuck.
@@ -10,11 +11,11 @@ if [[ $(python3 --version) == "Python 3.6.9" ]]; then
 fi
 
 # load the config variables
-source <(grep = /autograder/source/config.ini)
+source $SOURCE_DIR/autograder_config.ini
 
 # go to the repo and pull; hide output from students put put in log if needed
-cd    /autograder/source/course-repo
-git   pull -f > /autograder/source/PULL_LOG 2>&1
+cd    $REPO_ROOT
+git   pull -f > $SOURCE_DIR/PULL_LOG 2>&1
 
 # make bin/ and lib/ available to autograder (diff-so-pretty, make_gradescope_results.py, etc.)
 export PATH=$PATH:$REPO_ROOT/$AUTOGRADING_ROOT/bin
