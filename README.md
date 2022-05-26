@@ -19,11 +19,9 @@ the bare-bones infrastructure to make Gradescope's systems function. Before divi
 
 Fear not! There is lots of starter code to do the bulk of the heavy lifting here, so either way you choose, you will likely not need to do too much setup. However, here are some pros and cons of these approaches:
 
-* The `.zip` method requires more manual work. You have to upload
-      a new `.zip` file each time you want to update the autograder; the `Docker` container 
-      will then need to be built from scratch on Gradescope, which takes time. However, you don't need 
-      `Docker` on your system. If you're not familiar with `Docker`, this workflow is suggested. 
+* The `.zip` method requires more manual work. You have to upload a new `.zip` file each time you want to update the autograder; the `Docker` container will then need to be built from scratch on Gradescope, which takes time. However, you don't need `Docker` on your system. If you're not familiar with `Docker`, this workflow is suggested. 
 * The `Docker` method is more streamlined once it's setup. After uploading the container, for every assignment, you can point Gradescope to the container on `Dockerhub` - no `.zip` file uploading required. And, if you make minor changes to the setup script, usually rebuilding the container is very fast. All of the steps to do the building and deploying of the container are done in a script for you. If you already use `Docker`, will be interested in tweaking the `Docker` container's build settings (`clang` version, etc.) or are feeling adventurous, go for this option. 
+* Gradescope's default container runs `Ubuntu 18.04`; we manually install `Python 3.9` in the container in the `setup.sh` file; the `Docker` setup we have builds `Ubuntu 22.04`, which comes with `Python 3.10` by default.
 
 ## Autograding `.git` Repo
 Regardless of whether you use the `.zip` method or the `Docker` method, you will need to create a `git` repository for your autograder. This repository will be used by the autograding container; whenever an assignment is autograded, the code from your repository will be pulled, the assignment's autograding files will be copied to right place, and our autograding script will do run the tests and produce the results for Gradescope. So, if you don't currently have a repository related to course material, please make one. 
