@@ -372,8 +372,8 @@ build_ref_output -k
 This will keep the temporary directories used to run the autograder and build the reference output.
 
 ### Testing with an Example Submission
-After you've produced the reference output, copy potential submission code to a directory named 
-`submission` in the root of the homework's autograding folder (`REPO_ROOT/hwname/submission/`). Then run the command `autograde`. Results should be shown, and a `results` folder will be created. Make sure to remove `submission` and `results` before doing `git push`. [TODO write a script to run all this in a temporary directory]
+After you've produced the reference output, run the command 
+`test_autograder -s SUBMISSION_DIR`, where `SUBMISSION_DIR` contains the submission code you would like to test. For instance, if you want to test with the solution code, run `test_autograder -s testset/solution`. This script will create a temporary testing directory named `temp_testing_dir`, copy everything there, and run the tests. You can optionally remove this directory after tests are run with the `-d` option. The `-j` option is also available [see next section]. 
 
 ### Parallel Compilation and Parallel Execution
 If you would like to enable parallel compilation and parallel execution of tests, instead run 
