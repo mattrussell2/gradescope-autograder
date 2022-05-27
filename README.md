@@ -364,6 +364,11 @@ In order to build reference output and test your code easily, first add the `bin
 echo -e "export PATH=\$PATH:/REPO_ROOT/bin\n" >> ~/.bashrc
 source ~/.bashrc
 ```
+Also, if you don't have `diff-so-fancy` installed on your system, run:
+```
+echo -e "export PATH=\$PATH:/REPO_ROOT/lib\n" >> ~/.bashrc
+source ~/.bashrc
+```
 ### Building the Reference Output
 Once you've configured your tests, run the command `build_ref_output` from the assignment's autograder directory. The reference code will be run as a submission, and the output of the reference will be placed in the `REPO_ROOT/hwname/testset/ref_output/` directory. If you need to debug your setup, run 
 ```
