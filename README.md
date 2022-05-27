@@ -121,9 +121,9 @@ When a student submits code:
 * The Docker container is fired up on `aws` - again, note that with either method you use above, a Docker container is still used.
 * The script located at `bin/run_autograder` is run.  This script (basically):
 * * Runs `git pull` to get the most recent version of your autograding tests. 
-* * Copies files related to the assignment's autograder.
-* * Runs our autograding framework [details below]. 
-* * Saves the results at `/autograder/results/results.json` in a form readable by Gradescope. 
+* * Copies files related to the assignment's autograder to `/autograder/` - the default working directory for all of Gradescope's autograders.
+* * Runs `autograde.py` - our autograding framework [details below]. 
+* * Runs `make_gradescope_results.py`, which parses the results files and saves the results at `/autograder/results/results.json` in a form readable by Gradescope. 
 
 **Note! The assignment name for an assignment in the course repository must be the same as the assignment name on Gradescope. An environment variable $ASSIGNMENT_TITLE is provided to our script, and this (along with the paths you specified earlier) is used to find the autograder files. If the names don't match, there will be issues.** 
 
@@ -357,6 +357,22 @@ tests = [
 ```
 Notice options for custom timeout, max_ram, etc. Details for each option can be found at the end of this document. Regarding output files, `gerp` expects two command-line arguments - the name of the directory to index, and a file to write output to. For each of the tests, `#{testname}.ofile` will be converted to `test01.ofile`, etc. If your students need to write to an output file, please have them take the name of the file as an input argument, and use this template. They can potentially write to multiple files; in the `testset.toml` file, as long the string contains `#{testname}` and ends with an `.ofile` extension, you're good to go.
 
+## `autograde.py`
+`autograde.py` is the script that does all of the autograding. Here's the basic grading procedure:
+* Parse input arguments
+* Load the `testset.toml` file and validate configuration
+* Create `Test` objects; each `Test` object contains all of the possible configuration variables, either customized, or the defaults. 
+* Build directories required to run tests
+* Compile the executable(s) specified in the configuration
+* Run each test: 
+* * Save the initial Test object to `results/logs/testname.summary`
+* * Execute the specified command
+* * Run any `diff`s required based on the testing configuration; run canonicalization prior to `diff` if specified. 
+* * Run `valgrind` if required.
+* * Determine whether the test passed or not
+* * Save the completed Test object to `results/logs/testname.summary`
+* Report the results to `stdout`.
+
 ## Testing the Autograder
 ### Preliminaries
 In order to build reference output and test your code easily, first add the `bin/` folder to your `$PATH`. To do this, run the following commands, replacing `REPO_ROOT` with the path to the repository root on your system. 
@@ -370,7 +386,11 @@ echo -e "export PATH=\$PATH:/REPO_ROOT/lib\n" >> ~/.bashrc
 source ~/.bashrc
 ```
 ### Building the Reference Output
-Once you've configured your tests, run the command `build_ref_output` from the assignment's autograder directory. The reference code will be run as a submission, and the output of the reference will be placed in the `REPO_ROOT/hwname/testset/ref_output/` directory. If you need to debug your setup, run 
+Once you've configured your tests, run the command 
+```
+build_ref_output
+``` 
+from the assignment's autograder directory. The reference code will be run as a submission, and the output of the reference will be placed in the `REPO_ROOT/hwname/testset/ref_output/` directory. If you need to debug your setup, run 
 ```
 build_ref_output -k
 ```
@@ -378,7 +398,14 @@ This will keep the temporary directories used to run the autograder and build th
 
 ### Testing with an Example Submission
 After you've produced the reference output, run the command 
-`test_autograder -s SUBMISSION_DIR`, where `SUBMISSION_DIR` contains the submission code you would like to test. For instance, if you want to test with the solution code, run `test_autograder -s testset/solution`. This script will create a temporary testing directory named `temp_testing_dir`, copy everything there, and run the tests. You can optionally remove this directory after tests are run with the `-d` option. The `-j` option is also available [see next section]. 
+```
+test_autograder -s SUBMISSION_DIR
+```
+where `SUBMISSION_DIR` contains the submission code you would like to test. For instance, if you want to test with the solution code, run 
+```
+test_autograder -s testset/solution
+```
+This script will create a temporary testing directory named `temp_testing_dir`, copy everything there, and run the tests. You can optionally remove this directory after tests are run with the `-d` option. The `-j` option is also available [see next section]. 
 
 ### Parallel Compilation and Parallel Execution
 If you would like to enable parallel compilation and parallel execution of tests, instead run 
@@ -388,6 +415,10 @@ autograde -j NUMCORES
 where `NUMCORES` is the number of cores you would like to utilize (`-1` will use all available cores). Note that multiple tests may be run on each core concurrently. The default setting is for one core to be used with no tests running concurrently; that is, only one test will be run at a time (no concurrent tests are run). You can also build the reference output with parallelization by running 
 ```
 build_ref_output.py -j NUMCORES
+```
+and, similarly, 
+```
+test_autograder -j NUMCORES
 ```
 Note that on Gradescope the file `testrunner.sh` is what actually runs the autograder. This is so you can have some flexibility around running the autograder without having to rebuild the container/.zip file - `run_autograder` will call this script, so feel free to add extra bash commands before/after tests are run. You change the command in that file to include `-j NUMCORES` if you'd like, although on Gradescope there isn't likely much to be gained from this.
 
@@ -413,6 +444,10 @@ under a test group, or within a specific test.
 | `visibility` | `"after-due-date"` | Gradescope visibility setting |
 | `argv` | `[ ]` | argv input to the program |
 | `executable` | `(testname)` | executable to build and run |
+
+
+## A note on visibility settings in Gradescope
+Gradescope allows each test to have a different visiblity setting - the options are `hidden`, `after-due-date`, or `visible`. Note that if any of the options are `hidden`, none of the tests can be visible. For `cs-15`, we usually release some of the tests for the students, and so make these `visible`. We also decided that we would like to show students their total final autograder score prior to the due date; that is, they could see their 'final score', but only a few of the actual tests. In order to facilitate this, we have added a `test00` in `bin/make_gradescope_results.py` - this is commented out by default, but if you would like to show students their final autograder score without revealing all of the test results then uncomment `#make_test00()` in the `make_results()` function (line ~250).
 
 # Conclusion
 That should be enough to get you up and running! Please feel free to contact me with any questions you have, and/or any bugs, feature requests, etc. you find. Thanks!
