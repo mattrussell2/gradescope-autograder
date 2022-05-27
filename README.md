@@ -36,7 +36,7 @@ git switch -c main
 The repo where you're reading this `README` is the sample repo for you to start with. This repository contains:
 * Our `C/C++` autograding framework.
 * Files to setup assignments with either the `.zip` or Docker method, such that the autograding framework runs automatically.
-* Sample autograding assignments for two different `cs-15` assignments.
+* Sample autograding assignments for two different cs-15 assignments.
 You can copy these files as follows:
 ```
 git clone git@gitlab.cs.tufts.edu:mrussell/gradescope-autograding
@@ -44,7 +44,7 @@ rm -rf gradescope-autograding/.git
 mv gradescope-autograding/* .
 rm -rf gradescope-autograding
 ```
-Great! Now, you will need an Access Token so your autograder can pull from the repo. To create one, go to `gitlab` in your browser, and navigate to the course repository you just created. Next, hover over the settings cog on the lower left, and select `Access Tokens`.
+Great! Now, you will need an Access Token so your autograder can pull from the repo. To create one, go to gitlab in your browser, and navigate to the course repository you just created. Next, hover over the settings cog on the lower left, and select `Access Tokens`.
 Create one - this will be used by the Gradescope autograder to pull the most recent version of the autograding files for an assignment. We suggest only providing `read repository` access to the token. Feel free to select whatever you'd like for the name, expiration date, and role. Once the token is created, copy the key. Now, return to your repo, and open the `autograder_config.ini` file - `REPO_ROOT/etc/autograder_config.ini` and update the `REPO_REMOTE_PATH` variable as follows:
 
 ```
