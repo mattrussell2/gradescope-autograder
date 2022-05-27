@@ -9,7 +9,7 @@ If you have any questions, please reach out to me at `mrussell@cs.tufts.edu`
 
 ## Background
 Gradescope's autograders rely on Docker containers which are spun up each time 
-a submission is graded. The default container runs a variant of `Ubuntu 18.04` which contains
+a submission is graded. The default container runs a variant of Ubuntu 18.04 which contains
 the bare-bones infrastructure to make Gradescope's systems function. Before diving into autograding, you will need to set up a method to integrate with Gradescope's systems. This document presents two options: 
 
 * The `.zip` method - this workflow is to manually upload a `.zip` file containing two scripts: `setup.sh`, which installs dependencies (e.g. `Python`, `clang`, etc.), and a shell script named `run_autograder`, which runs the autograder.
@@ -19,11 +19,11 @@ Fear not! There is lots of starter code to do the bulk of the heavy lifting here
 
 * The `.zip` method requires more manual work. You have to upload a new `.zip` file each time you want to update the autograder; the Docker container will then need to be built from scratch on Gradescope, which takes time. However, you don't need Docker on your system. If you're not familiar with Docker, this workflow is suggested. 
 * The Docker method is more streamlined once it's setup. After uploading the container, for every assignment, you can point Gradescope to the container on Dockerhub - no `.zip` file uploading required. If you already use Docker, will be interested in tweaking the Docker container's build settings (`clang` version, etc.) or are feeling adventurous, go for this option. 
-* Gradescope's default container runs `Ubuntu 18.04`; we manually install `Python 3.9` in the container in the `setup.sh` file; the Docker setup we have builds `Ubuntu 22.04`, which comes with `Python 3.10` by default.
+* Gradescope's default container runs Ubuntu 18.04; we manually install Python 3.9 in the container in the `setup.sh` file; the Docker setup we have builds Ubuntu 22.04, which comes with Python 3.10 by default.
 
-## Autograding `.git` Repo
-Regardless of whether you use the `.zip` method or the Docker method, you will need to create a `git` repository for your autograder. This repository will be used by the autograding container; whenever an assignment is autograded, the code from your repository will be pulled, the assignment's autograding files will be copied to right place, and our autograding script will do run the tests and produce the results for Gradescope. So, if you don't currently have a repository related to course material, please make one. 
-We suggest using `gitlab` for this: go to https://gitlab.cs.tufts.edu and 
+## Autograding git Repo
+Regardless of whether you use the `.zip` method or the Docker method, you will need to create a git repository for your autograder. This repository will be used by the autograding container; whenever an assignment is autograded, the code from your repository will be pulled, the assignment's autograding files will be copied to right place, and our autograding script will do run the tests and produce the results for Gradescope. So, if you don't currently have a repository related to course material, please make one. 
+We suggest using gitlab for this: go to https://gitlab.cs.tufts.edu and 
 login with `LDAP` using your Tufts eecs `utln` and password. Then create a new repository from scratch. You do not need a `README`. 
 Now, in your terminal:
 ```
