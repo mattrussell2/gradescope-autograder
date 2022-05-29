@@ -1,0 +1,22 @@
+
+[1;32mpassed test01 - size 0 list to string[0m
+[1;32mpassed test02 - size 1 list to string[0m
+[1;32mpassed test03 - size 7 list to string[0m
+[1;32mpassed test04 - isempty test[0m
+[1;32mpassed test05 - isempty test2[0m
+[1;32mpassed test06 - clear test on empty list[0m
+[1;32mpassed test07 - clear test on nonempty list[0m
+[1;32mpassed test08 - size test[0m
+[1;32mpassed test09 - size test2[0m
+[1;32mpassed test10 - check throw on first() with empty list[0m
+[1;32mpassed test11 - first() test[0m
+[1;32mpassed test12 - check throw on last() with empty list[0m
+[1;32mpassed test13 - last() test2[0m
+[1;32mpassed test14 - elementAt test[0m
+[1;32mpassed test15 - elementAt test2[0m
+[1;32mpassed test16 - elementAt test3[0m
+[1;32mpassed test17 - pushAtBack[0m
+[1;32mpassed test18 - pushAtBack 2[0m
+[1;32mpassed test19 - pushAtBack 3[0m
+[1;32mpassed test20 - pushAtFront[0m
+[1;32mpassed test21 - pushAtFront2[0m
