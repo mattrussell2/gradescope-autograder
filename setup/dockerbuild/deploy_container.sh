@@ -7,7 +7,7 @@
 cd ../../
 
 source etc/autograder_config.ini 
-grep -v "DOCKER_CREDS\|DOCKER_TAG\|REPO_PATH" etc/autograder_config.ini > autograder_config.ini 
+grep -v "DOCKER_CREDS\|DOCKER_TAG\|REPO_REMOTE_PATH" etc/autograder_config.ini > autograder_config.ini 
 docker build --tag $DOCKER_TAG --build-arg REPO_REMOTE_PATH=$REPO_REMOTE_PATH -f setup/dockerbuild/Dockerfile .
 rm autograder_config.ini 
 
