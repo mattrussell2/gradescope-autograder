@@ -1,5 +1,0 @@
-[1;36m== running make test11 ==
-[0m[1;32mclang++ -g3 -Wall -Wextra -std=c++14 -I .  -o test11 CharArrayList.o ../../testset/cpp/test11.cpp
-[0m[1;32m[0m[1;32m
-build completed successfully
-[0m
