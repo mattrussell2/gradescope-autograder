@@ -65,12 +65,12 @@ Before we continue, let's go over the other options for this file:
 | `REPO_REMOTE_PATH` | `https` path to your repository |
 | `ASSIGN_ROOT`      | where assignment autograding folders are relative to repo root (so if you use the structure `REPO_ROOT/assignments/(your assignments here)` then `assignments` would be placed as the value here)|
 | `ASSIGN_AUTOGRADING_SUBFOLDER` | for assignments, if you put the autograder in a subfolder of the assignment folder, put the intermediate path here (so if you use the structure `REPO_ROOT/assignments/hw1_ArrayLists/autograder/(autograding files)` then `autograder` would be placed as the value here) |
-| `AUTOGRADING_ROOT` | path from repo root which contains `bin/`, `setup/`, and `lib/` |
+| `AUTOGRADING_ROOT` | path from repo root which contains `bin/`, `etc/`, `lib/`, and `setup/` |
 
 NOTE! do not put any spaces around the `=` characters in this file.
 
 The values in the sample `autograder_config.ini` will work with the directory structure as-is in this repo.
-Feel free to customize the paths - for instance, if you'd like to place your assignments in the root directory of your grading repo, then update the value of `ASSIGN_ROOT` to be "". ** [TODO] NOTE! Currently the path variables are broken...you'll have to update the installation files manually with other path info if you change things. Will fix ASAP ***
+Feel free to customize the paths - for instance, if you'd like to place your assignments in the root directory of your grading repo, then update the value of `ASSIGN_ROOT` to be "".
 
 Okay! Assuming you've updated the `config` with the paths you'd like, and have added the `REPO_REMOTE_PATH`, continue with one of either the `.zip` or Docker methods below.
 
@@ -454,9 +454,8 @@ That should be enough to get you up and running! Please feel free to contact me 
 
 ## [1.0.0] - 2022-5-29
 * Changed
-  - README.md        - added changelog; mentioned path bugs; fixed perl library include path instructions
+  - README.md        - added changelog; fixed perl library include path instructions
   - bin/autograde.py - diffs now correctly save to a file [diffs were being done and incorrect output was being caught, but .diff files weren't being written to]
+  - setup/dockerbuild/deploy_container.sh - update grep -v instruction to exclude REPO_REMOTE_PATH
   - setup/dockerbuild/Dockerfile - copy lib/DiffHighlight.pm to /usr/share/perl5
   - setup/zipbuild/setup.sh      - copy lib/DiffHighlight.pm to /usr/share/perl5
-* TODO
-  - integrate the path variables in the config file into the Dockerfile/setup.sh scripts

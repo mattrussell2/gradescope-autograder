@@ -1,6 +1,4 @@
 #!/usr/bin/env perl
-# library file for diff-so-fancy
-# i know, this shouldn't live in bin/, but here we are.
 my $VERSION = "1.4.2";
 
 #################################################################################
