@@ -70,7 +70,7 @@ Before we continue, let's go over the other options for this file:
 NOTE! do not put any spaces around the `=` characters in this file.
 
 The values in the sample `autograder_config.ini` will work with the directory structure as-is in this repo.
-Feel free to customize the paths - for instance, if you'd like to place your assignments in the root directory of your grading repo, then update the value of `ASSIGN_ROOT` to be "". 
+Feel free to customize the paths - for instance, if you'd like to place your assignments in the root directory of your grading repo, then update the value of `ASSIGN_ROOT` to be "". ** [TODO] NOTE! Currently the path variables are broken...you'll have to update the installation files manually with other path info if you change things. Will fix ASAP ***
 
 Okay! Assuming you've updated the `config` with the paths you'd like, and have added the `REPO_REMOTE_PATH`, continue with one of either the `.zip` or Docker methods below.
 
@@ -456,5 +456,7 @@ That should be enough to get you up and running! Please feel free to contact me 
 
 ## [1.0.0] - 2022-5-29
 * Changed
-  - README.md        - added changelog
+  - README.md        - added changelog; mentioned path bugs.
   - bin/autograde.py - diffs now correctly save to a file
+  - setup/dockerbuild/Dockerfile - copy lib/DiffHighlight.pm to /usr/share/perl5
+  - setup/zipbuild/setup.sh - copy lib/DiffHighlight.pm to /usr/share/perl5
