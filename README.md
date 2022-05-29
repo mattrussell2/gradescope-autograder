@@ -380,11 +380,9 @@ In order to build reference output and test your code easily, first add the `bin
 echo -e "export PATH=\$PATH:/REPO_ROOT/bin\n" >> ~/.bashrc
 source ~/.bashrc
 ```
-Also, if you don't have `diff-so-fancy` installed on your system, run:
-```
-echo -e "export PATH=\$PATH:/REPO_ROOT/lib\n" >> ~/.bashrc
-source ~/.bashrc
-```
+Also, if you don't have `diff-so-fancy` installed on your system you'll want to add `REPO_ROOT/lib` 
+to your perl library include path (run `perl -V` to see available options).
+
 ### Building the Reference Output
 Once you've configured your tests, run the command 
 ```
@@ -456,7 +454,7 @@ That should be enough to get you up and running! Please feel free to contact me 
 
 ## [1.0.0] - 2022-5-29
 * Changed
-  - README.md        - added changelog; mentioned path bugs.
+  - README.md        - added changelog; mentioned path bugs; fixed perl library include path instructions
   - bin/autograde.py - diffs now correctly save to a file
   - setup/dockerbuild/Dockerfile - copy lib/DiffHighlight.pm to /usr/share/perl5
   - setup/zipbuild/setup.sh - copy lib/DiffHighlight.pm to /usr/share/perl5
