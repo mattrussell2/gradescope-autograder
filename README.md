@@ -366,12 +366,12 @@ Notice options for custom timeout, max_ram, etc. Details for each option can be 
 * Build directories required to run tests
 * Compile the executable(s) specified in the configuration
 * Run each test: 
-* * Save the initial Test object to `results/logs/testname.summary`
-* * Execute the specified command
-* * Run any `diff`s required based on the testing configuration; run canonicalization prior to `diff` if specified. 
-* * Run `valgrind` if required.
-* * Determine whether the test passed or not
-* * Save the completed Test object to `results/logs/testname.summary`
+    * Save the initial Test object to `results/logs/testname.summary`
+    * Execute the specified command
+    * Run any `diff`s required based on the testing configuration; run canonicalization prior to `diff` if specified. 
+    * Run `valgrind` if required.
+    * Determine whether the test passed or not
+    * Save the completed Test object to `results/logs/testname.summary`
 * Report the results to `stdout`.
 
 ## Testing the Autograder
@@ -412,7 +412,7 @@ autograde -j NUMCORES
 ```
 where `NUMCORES` is the number of cores you would like to utilize (`-1` will use all available cores). Note that multiple tests may be run on each core concurrently. The default setting is for one core to be used with no tests running concurrently; that is, only one test will be run at a time (no concurrent tests are run). You can also build the reference output with parallelization by running 
 ```
-build_ref_output.py -j NUMCORES
+build_ref_output -j NUMCORES
 ```
 and, similarly, 
 ```
@@ -445,7 +445,7 @@ under a test group, or within a specific test.
 
 
 ## A note on visibility settings in Gradescope
-Gradescope allows each test to have a different visiblity setting - the options are `hidden`, `after-due-date`, or `visible`. Note that if any of the options are `hidden`, none of the tests can be visible. For `cs-15`, we usually release some of the tests for the students, and so make these `visible`. We also decided that we would like to show students their total final autograder score prior to the due date; that is, they could see their 'final score', but only a few of the actual tests. In order to facilitate this, we have added a `test00` in `bin/make_gradescope_results.py` - this is commented out by default, but if you would like to show students their final autograder score without revealing all of the test results then uncomment `#make_test00()` in the `make_results()` function (line ~250).
+Gradescope allows each test to have a different visiblity setting - the options are `hidden`, `after-due-date`, or `visible`. Note that if any of the options are `hidden`, none of the tests can be visible. For `cs-15`, we usually release some of the tests for the students, and so make these `visible`. However, the default is `after-due-date`. We also decided that we would like to show students their total final autograder score prior to the due date; that is, they could see their 'final score', but only a few of the actual tests. In order to facilitate this, we have added a `test00` in `bin/make_gradescope_results.py` - this is commented out by default, but if you would like to show students their final autograder score without revealing all of the test results then uncomment `#make_test00()` in the `make_results()` function (line ~250).
 
 # Conclusion
 That should be enough to get you up and running! Please feel free to contact me with any questions you have, and/or any bugs, feature requests, etc. you find. Thanks!
