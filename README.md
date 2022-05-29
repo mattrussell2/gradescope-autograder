@@ -455,8 +455,8 @@ That should be enough to get you up and running! Please feel free to contact me 
 ## [1.0.0] - 2022-5-29
 * Changed
   - README.md        - added changelog; mentioned path bugs; fixed perl library include path instructions
-  - bin/autograde.py - diffs now correctly save to a file
+  - bin/autograde.py - diffs now correctly save to a file [diffs were being done and incorrect output was being caught, but .diff files weren't being written to]
   - setup/dockerbuild/Dockerfile - copy lib/DiffHighlight.pm to /usr/share/perl5
-  - setup/zipbuild/setup.sh - copy lib/DiffHighlight.pm to /usr/share/perl5
+  - setup/zipbuild/setup.sh      - copy lib/DiffHighlight.pm to /usr/share/perl5
 * TODO
   - integrate the path variables in the config file into the Dockerfile/setup.sh scripts
