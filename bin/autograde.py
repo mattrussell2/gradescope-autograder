@@ -474,16 +474,14 @@ class Test:
             fileb = f"{fileb}.ccized"
             filec = f"{filea}.diff"   # => will be original 'filea'.ccized.diff
                            
-        diff_result  = subprocess.run(f"diff {filea} {fileb} > {filec}", shell=True, 
-                                        capture_output=False)
+        diff_result  = subprocess.run(f"diff {filea} {fileb} > {filec}", shell=True)
         
         diff_retcode = diff_result.returncode # diff-so-fancy returns 0 on failure, so use this!
        
         # diff-so-fancy requires output of [diff -u ...] as its input
         # seems easiest to just rerun the diff. 
         if self.pretty_diff:
-            subprocess.run(f"diff -u {filea} {fileb} | diff-so-fancy > {filec}", shell=True, 
-                            capture_output=False)
+            subprocess.run(f"diff -u {filea} {fileb} | diff-so-fancy > {filec}", shell=True)                            
         
         return diff_retcode == 0
     

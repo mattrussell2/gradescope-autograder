@@ -451,3 +451,10 @@ Gradescope allows each test to have a different visiblity setting - the options 
 
 # Conclusion
 That should be enough to get you up and running! Please feel free to contact me with any questions you have, and/or any bugs, feature requests, etc. you find. Thanks!
+
+# Changelog
+
+## [1.0.0] - 2022-5-29
+* Changed
+  - README.md        - added changelog
+  - bin/autograde.py - diffs now correctly save to a file
