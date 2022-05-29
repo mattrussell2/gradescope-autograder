@@ -380,8 +380,7 @@ In order to build reference output and test your code easily, first add the `bin
 echo -e "export PATH=\$PATH:/REPO_ROOT/bin\n" >> ~/.bashrc
 source ~/.bashrc
 ```
-Also, if you don't have `diff-so-fancy` installed on your system you'll want to add `REPO_ROOT/lib` 
-to your perl library include path (run `perl -V` to see available options).
+Also, if you don't have `diff-so-fancy` installed on your system and would like to use the `pretty_diff` option then you'll want to add `REPO_ROOT/lib` to your perl library include path (run `perl -V` to see available options).
 
 ### Building the Reference Output
 Once you've configured your tests, run the command 
@@ -437,7 +436,7 @@ under a test group, or within a specific test.
 | `ccize_ofiles` | `false` | diff canonicalized ofiles instead of ofiles |
 | `ccizer_name` | `""` | name of canonicalization function to use |
 | `our_makefile` | `true` | use testset/makefile/Makefile to build tests |
-| `pretty_diff` | `true` | use diff-so-pretty for easy-to-ready diffs |
+| `pretty_diff` | `false` | use diff-so-pretty for easy-to-ready diffs |
 | `max_score` | `1` | maximum points (on Gradescope) for this test |
 | `visibility` | `"after-due-date"` | Gradescope visibility setting |
 | `argv` | `[ ]` | argv input to the program |
@@ -455,7 +454,7 @@ That should be enough to get you up and running! Please feel free to contact me 
 ## [1.0.0] - 2022-5-29
 * Changed
   - README.md        - added changelog; fixed perl library include path instructions; clarified that `bin/`, `etc/`, `lib/` and `setup/` all `AUTOGRADING_ROOT` in the config file`
-  - bin/autograde.py - diffs now correctly save to a file [diffs were being done and incorrect output was being caught, but .diff files weren't being written to]
+  - bin/autograde.py - diffs now correctly save to a file [diffs were being done and incorrect output was being caught, but .diff files weren't being written to]; make pretty_diff false by default
   - setup/dockerbuild/deploy_container.sh - update grep -v instruction to exclude REPO_REMOTE_PATH
   - setup/dockerbuild/Dockerfile - copy lib/DiffHighlight.pm to /usr/share/perl5
   - setup/zipbuild/setup.sh      - copy lib/DiffHighlight.pm to /usr/share/perl5

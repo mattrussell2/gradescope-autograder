@@ -202,7 +202,7 @@ class TestConfig:
     diff_ofiles:   bool = True    
     
     valgrind:      bool = True
-    pretty_diff:   bool = True
+    pretty_diff:   bool = False
     our_makefile:  bool = True        
     exitcodepass:  int  = 0
     visibility:    str  = "after-due-date" # gradescope setting    
@@ -455,11 +455,10 @@ class Test:
             Returns: 
                 (bool) Whether or not the diff succeeds
             Notes:                
-                I like pretty diffs, so diff-so-fancy is enabled by default. :) 
+                I like pretty diffs, so diff-so-fancy is an option. :) 
                 Am doing diffs with subprocess shell=True. Otherwise will have 
                 problems with any non-utf8 output [encountered with largeGutenberg in gerp]. 
-                [TODO] refactor to use RUN        
-                [TODO] deal with case where student writes to wrong output file
+                [TODO] refactor to use RUN?                        
         """        
         if not os.path.exists(filea):
             Path(f"{filea}.diff").write_text(f"diff: {ofilename} not found!")
@@ -474,12 +473,10 @@ class Test:
             fileb = f"{fileb}.ccized"
             filec = f"{filea}.diff"   # => will be original 'filea'.ccized.diff
                            
-        diff_result  = subprocess.run(f"diff {filea} {fileb} > {filec}", shell=True)
-        
-        diff_retcode = diff_result.returncode # diff-so-fancy returns 0 on failure, so use this!
+        diff_result  = subprocess.run(f"diff {filea} {fileb} > {filec}", shell=True)        
+        diff_retcode = diff_result.returncode # diff-so-fancy returns 0 on failure, always use this!
        
         # diff-so-fancy requires output of [diff -u ...] as its input
-        # seems easiest to just rerun the diff. 
         if self.pretty_diff:
             subprocess.run(f"diff -u {filea} {fileb} | diff-so-fancy > {filec}", shell=True)                            
         
