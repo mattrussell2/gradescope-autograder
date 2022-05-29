@@ -454,7 +454,7 @@ That should be enough to get you up and running! Please feel free to contact me 
 
 ## [1.0.0] - 2022-5-29
 * Changed
-  - README.md        - added changelog; fixed perl library include path instructions
+  - README.md        - added changelog; fixed perl library include path instructions; clarified that `bin/`, `etc/`, `lib/` and `setup/` all `AUTOGRADING_ROOT` in the config file`
   - bin/autograde.py - diffs now correctly save to a file [diffs were being done and incorrect output was being caught, but .diff files weren't being written to]
   - setup/dockerbuild/deploy_container.sh - update grep -v instruction to exclude REPO_REMOTE_PATH
   - setup/dockerbuild/Dockerfile - copy lib/DiffHighlight.pm to /usr/share/perl5
