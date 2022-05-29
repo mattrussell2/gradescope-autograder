@@ -462,7 +462,7 @@ class Test:
                 [TODO] deal with case where student writes to wrong output file
         """        
         if not os.path.exists(filea):
-            Path(filea).write_text(f"diff: {ofilename} not found!")
+            Path(f"{filea}.diff").write_text(f"diff: {ofilename} not found!")
             return False
         elif not os.path.exists(fileb): 
             INFORM(f"reference output missing for: {self.testname} " + 
@@ -475,7 +475,7 @@ class Test:
             filec = f"{filea}.diff"   # => will be original 'filea'.ccized.diff
                            
         diff_result  = subprocess.run(f"diff {filea} {fileb} > {filec}", shell=True, 
-                                        capture_output=True, universal_newlines=True)
+                                        capture_output=False)
         
         diff_retcode = diff_result.returncode # diff-so-fancy returns 0 on failure, so use this!
        
@@ -483,7 +483,7 @@ class Test:
         # seems easiest to just rerun the diff. 
         if self.pretty_diff:
             subprocess.run(f"diff -u {filea} {fileb} | diff-so-fancy > {filec}", shell=True, 
-                                        capture_output=True, universal_newlines=True)
+                            capture_output=False)
         
         return diff_retcode == 0
     
