@@ -28,6 +28,9 @@ cp /autograder/source/setup/config.ini /autograder/source/config.ini
 # update message of the day
 cp /autograder/source/lib/motd /etc/motd
 
+# copy DiffHighlight.pm so diff-so-fancy can view it
+cp /autograder/source/lib/DiffHighlight.pm /usr/share/perl5/
+
 # this script needs to be placed in /autograder in order for the autograder to work right. 
 cp /autograder/source/bin/run_autograder /autograder/
 
