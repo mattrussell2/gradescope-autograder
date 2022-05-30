@@ -1,5 +1,0 @@
-[CharArrayList of size 1 <<m>>] --> [CharArrayList of size 0 <<>>]
-PASS: Student correctly called clear() on a non-empty ArrayList.
-
-[CharArrayList of size 7 <<Comp 15>>] --> [CharArrayList of size 0 <<>>]
-PASS: Student correctly called clear() on a non-empty ArrayList.

@@ -120,10 +120,10 @@ That's it!
 When a student submits code: 
 * The Docker container is fired up on `aws` - again, note that with either method you use above, a Docker container is still used.
 * The script located at `bin/run_autograder` is run.  This script (basically):
-* * Runs `git pull` to get the most recent version of your autograding tests. 
-* * Copies files related to the assignment's autograder to `/autograder/` - the default working directory for all of Gradescope's autograders.
-* * Runs `autograde.py` - our autograding framework [details below]. 
-* * Runs `make_gradescope_results.py`, which parses the results files and saves the results at `/autograder/results/results.json` in a form readable by Gradescope. 
+    * Runs `git pull` to get the most recent version of your autograding tests. 
+    * Copies files related to the assignment's autograder to `/autograder/` - the default working directory for all of Gradescope's autograders.
+    * Runs `autograde.py` - our autograding framework [details below]. 
+    * Runs `make_gradescope_results.py`, which parses the results files and saves the results at `/autograder/results/results.json` in a form readable by Gradescope. 
 
 **Note! The assignment name for an assignment in the course repository must be the same as the assignment name on Gradescope. An environment variable $ASSIGNMENT_TITLE is provided to our script, and this (along with the paths you specified earlier) is used to find the autograder files. If the names don't match, there will be issues.** 
 
@@ -141,7 +141,7 @@ There are two primary forms of assignment that this autograder supports:
 In either case, you can send a file to `stdin` for a test, and `stdout`/`stderr` will both `diff`'d automatically against the output of a reference implementation. Output can be canonicalized before `diff`, and `valgrind` can be run on the programs as well. More details will follow. 
 
 ## `testset.toml` configuration file
-The framework depends on a `testset.toml` file (https://toml.io/en/) to specify the testing configuration. `testset.toml` will be configured as follows:
+The framework depends on a `testset.toml` file (https://toml.io) to specify the testing configuration. `testset.toml` will be configured as follows:
 ```
 [common]
 # common test options will go here
@@ -190,7 +190,8 @@ depending on your test configuration.
 .
 |--- results/
 |   |--- build/      
-|   |   |--- File.cpp [student submission files]
+|   |   |--- [student submission files]
+|   |   |--- [files copied from copy/ and symlinked from link/]
 |   |   |--- test01   [compiled executables]
 |   |   |--- ...
 |   |   |--- test21
@@ -218,15 +219,15 @@ depending on your test configuration.
 |       |--- test21.valgrind
 |-
 ```
-## Important Notes
-* Files in `stdin/` named `<testname>.stdin` (`test01.stdin`) will be sent via `stdin` for that test. 
+## General Notes
+* Files in `testset/stdin/` named `<testname>.stdin` (`test01.stdin`) will be sent to `stdin` for that test. 
 * Files in `.cpp/` named `<testname>.cpp` (`test01.cpp`) will each contain `main()`, and will be compiled and linked with the student's code.
 * If you plan to use files in `.cpp`, you must use a custom `Makefile` - see the example: `assignments/hw1_ArrayLists/testset/makefile/Makefile`.
 * If the students are writing programs which have their own `main()`, then you do not need files in `.cpp` - you may still choose to have your own custom `Makefile` if you wish (otherwise, be sure to set `our_makefile = false` in `testset.toml`). 
 * The target to build (e.g. `make target`) must be named the same as the program to run (e.g. `./target`).
 * Canonicalization functions which are used by the autograder in `canonicalizers.py` must:
-* * take a single parameter - this will be a string containing the student's output from whichever stream is to be canonicalized
-* * return a string, which contains the canonicalized output 
+    * Take a single parameter - this will be a string containing the student's output from whichever stream is to be canonicalized
+    * Return a string, which contains the canonicalized output 
 * The `.diff`, `.ccized`, and `.valgrind` output files for each test will only be created if your configuation requires them.
 * This framework supports `diff`ing against any number of output files written to by the program. Such files must be named `<testname>.ANYTHING_HERE.ofile`. The expectation is that the program will receive the name of the file to produce as an input argument. Then, in the `testset.toml` file, you will ensure that the `argv` variable includes `#{testname}.ANYTHING_HERE.ofile` in the `argv` list. See the `gerp` example: `assignments/gerp/testset.toml`. 
 * The `summary` files are a dump of the state of a Test object - a summary is created upon initialization of the test, and is overwritten after a test completes with all the information about the test. All of the configuration options are there for a given test, so this is very useful for debugging!
@@ -365,12 +366,12 @@ Notice options for custom timeout, max_ram, etc. Details for each option can be 
 * Build directories required to run tests
 * Compile the executable(s) specified in the configuration
 * Run each test: 
-* * Save the initial Test object to `results/logs/testname.summary`
-* * Execute the specified command
-* * Run any `diff`s required based on the testing configuration; run canonicalization prior to `diff` if specified. 
-* * Run `valgrind` if required.
-* * Determine whether the test passed or not
-* * Save the completed Test object to `results/logs/testname.summary`
+    * Save the initial Test object to `results/logs/testname.summary`
+    * Execute the specified command
+    * Run any `diff`s required based on the testing configuration; run canonicalization prior to `diff` if specified. 
+    * Run `valgrind` if required.
+    * Determine whether the test passed or not
+    * Save the completed Test object to `results/logs/testname.summary`
 * Report the results to `stdout`.
 
 ## Testing the Autograder
@@ -411,7 +412,7 @@ autograde -j NUMCORES
 ```
 where `NUMCORES` is the number of cores you would like to utilize (`-1` will use all available cores). Note that multiple tests may be run on each core concurrently. The default setting is for one core to be used with no tests running concurrently; that is, only one test will be run at a time (no concurrent tests are run). You can also build the reference output with parallelization by running 
 ```
-build_ref_output.py -j NUMCORES
+build_ref_output -j NUMCORES
 ```
 and, similarly, 
 ```
@@ -444,7 +445,7 @@ under a test group, or within a specific test.
 
 
 ## A note on visibility settings in Gradescope
-Gradescope allows each test to have a different visiblity setting - the options are `hidden`, `after-due-date`, or `visible`. Note that if any of the options are `hidden`, none of the tests can be visible. For `cs-15`, we usually release some of the tests for the students, and so make these `visible`. We also decided that we would like to show students their total final autograder score prior to the due date; that is, they could see their 'final score', but only a few of the actual tests. In order to facilitate this, we have added a `test00` in `bin/make_gradescope_results.py` - this is commented out by default, but if you would like to show students their final autograder score without revealing all of the test results then uncomment `#make_test00()` in the `make_results()` function (line ~250).
+Gradescope allows each test to have a different visiblity setting - the options are `hidden`, `after-due-date`, or `visible`. Note that if any of the options are `hidden`, none of the tests can be visible. For `cs-15`, we usually release some of the tests for the students, and so make these `visible`. However, the default is `after-due-date`. We also decided that we would like to show students their total final autograder score prior to the due date; that is, they could see their 'final score', but only a few of the actual tests. In order to facilitate this, we have added a `test00` in `bin/make_gradescope_results.py` - this is commented out by default, but if you would like to show students their final autograder score without revealing all of the test results then uncomment `#make_test00()` in the `make_results()` function (line ~250).
 
 # Conclusion
 That should be enough to get you up and running! Please feel free to contact me with any questions you have, and/or any bugs, feature requests, etc. you find. Thanks!
@@ -458,3 +459,4 @@ That should be enough to get you up and running! Please feel free to contact me 
   - `setup/dockerbuild/deploy_container.sh` - update `grep -v` instruction to exclude `REPO_REMOTE_PATH`
   - `setup/dockerbuild/Dockerfile` - copy `lib/DiffHighlight.pm` to `/usr/share/perl5`
   - `setup/zipbuild/setup.sh`      - copy `lib/DiffHighlight.pm` to `/usr/share/perl5`
+  - Added `tokens` branch with token setup [currently in alpha, will use for cs-15 summer if prof. biswas wants.]
