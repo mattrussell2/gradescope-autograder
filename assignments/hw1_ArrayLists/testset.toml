@@ -1,27 +1,70 @@
 [common]
 # using defaults! however, empty 'common' should exist
 
-[tests]
-tests = [
+
+[visible_tests]
+visibility = "visible"
+tests      = [ 
     { testname = "test01", description = "size 0 list to string" },
     { testname = "test02", description = "size 1 list to string"},
     { testname = "test03", description = "size 7 list to string" },
+    { testname = "test10", description = "check throw on first() with empty list"},
+    { testname = "test17", description = "pushAtBack" },
+    { testname = "test20", description = "pushAtFront" },
+    { testname = "test27", description = "popFromFront() - Empty List" },
+    { testname = "test32", description = "removeAt - Out of Range - size() + 1" },
+]
+
+[hidden_tests]
+tests = [
     { testname = "test04", description = "isempty test" },
     { testname = "test05", description = "isempty test2" },
     { testname = "test06", description = "clear test on empty list" },
     { testname = "test07", description = "clear test on nonempty list" },
     { testname = "test08", description = "size test"},
     { testname = "test09", description = "size test2"},
-    { testname = "test10", description = "check throw on first() with empty list"},
     { testname = "test11", description = "first() test"},
     { testname = "test12", description = "check throw on last() with empty list" },
     { testname = "test13", description = "last() test2"},
     { testname = "test14", description = "elementAt test" },
     { testname = "test15", description = "elementAt test2" },
     { testname = "test16", description = "elementAt test3"},
-    { testname = "test17", description = "pushAtBack" },
     { testname = "test18", description = "pushAtBack 2"},
     { testname = "test19", description = "pushAtBack 3" },
-    { testname = "test20", description = "pushAtFront" },
-    { testname = "test21", description = "pushAtFront2" }
+    { testname = "test21", description = "pushAtFront2" },
+    { testname = "test22", description = "pushAtFront() - 3,000 elements" },
+    { testname = "test23", description = "insertAt() in bounds"},
+    { testname = "test24", description = "insertAt() at size-th position in array" },
+    { testname = "test25", description = "insertAt() out of range [size + 1]" },
+    { testname = "test26", description = "insertAt() index 0"},
+    { testname = "test28", description = "popFromFront() - Non-Empty List"},
+    { testname = "test29", description = "popFromBack() - Empty List" },
+    { testname = "test30", description = "popFromBack() - Non-Empty List" },
+    { testname = "test31", description = "removeAt() - in-range" },
+    { testname = "test32", description = "removeAt - Out of Range - size() + 1" },
+    { testname = "test33", description = "replace - in range"},
+    { testname = "test34", description = "replaceAt - out of range - size() + 1" },
+    { testname = "test35", description = "concatenate two empty char array lists" },
+    { testname = "test36", description = "concatenate an empty char array list with nonempty one"},
+    { testname = "test37", description = "concatenate a non empty char array list with an empty one" },
+    { testname = "test38", description = "concatenates a non empty char array list with a nonempty one"},
+    { testname = "test39", description = "concatenates a non empty char array list with itself" },
+    { testname = "test40", description = "Copy Constructor CharArrayList Test" },
+    { testname = "test41", description = "Assignment Operator" },
+    { testname = "test42", description = "Assignment Operator - Non-Empty LHS" },
+    { testname = "test43", description = "insertAt - Out of Bounds - index[-1]"},
+    { testname = "test44", description = "removeAt - Out of Bounds - index[-1]" },
+    { testname = "test45", description = "replaceAt - Out of Bounds - index[-1]" },
+    { testname = "test46", description = "toReverseString()"},
+    { testname = "test47", description = "size() - while sequentially removing elements" },
+    { testname = "test48", description = "size() - while sequentially adding elements"},
+    { testname = "test49", description = "first() - while sequentially removing elements" },
+    { testname = "test50", description = "first() - while sequentially adding elements" },
+    { testname = "test51", description = "elementAt - while adding elements" },
+    { testname = "test52", description = "elementAt - while removing elements" },
+    { testname = "test53", description = "insertInOrder - Empty List"},
+    { testname = "test54", description = "insertInOrder - Insert 'a' into ['b', 'c', 'd', 'e']" },
+    { testname = "test55", description = "insertInOrder - Insert 'c' into ['a', 'b', 'd', 'e']" },
+    { testname = "test56", description = "insertInOrder - Insert 'z' into ['a', 'b', 'c', 'd']"},
+    { testname = "test57", description = "size() - while sequentially removing elements" }
 ]
