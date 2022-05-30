@@ -205,7 +205,7 @@ class TestConfig:
     pretty_diff:   bool = False
     our_makefile:  bool = True        
     exitcodepass:  int  = 0
-    visibility:    str  = "after-due-date" # gradescope setting    
+    visibility:    str  = "after_due_date" # gradescope setting    
     argv:          List[str] = field(default_factory=list)  
     
     # These will be assigned to a test by the time it finshes execution    

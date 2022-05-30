@@ -439,13 +439,13 @@ under a test group, or within a specific test.
 | `our_makefile` | `true` | use testset/makefile/Makefile to build tests |
 | `pretty_diff` | `false` | use diff-so-pretty for easy-to-ready diffs |
 | `max_score` | `1` | maximum points (on Gradescope) for this test |
-| `visibility` | `"after-due-date"` | Gradescope visibility setting |
+| `visibility` | `"after_due_date"` | Gradescope visibility setting |
 | `argv` | `[ ]` | argv input to the program |
 | `executable` | `(testname)` | executable to build and run |
 
 
 ## A note on visibility settings in Gradescope
-Gradescope allows each test to have a different visiblity setting - the options are `hidden`, `after-due-date`, or `visible`. Note that if any of the options are `hidden`, none of the tests can be visible. For `cs-15`, we usually release some of the tests for the students, and so make these `visible`. However, the default is `after-due-date`. We also decided that we would like to show students their total final autograder score prior to the due date; that is, they could see their 'final score', but only a few of the actual tests. In order to facilitate this, we have added a `test00` in `bin/make_gradescope_results.py` - this is commented out by default, but if you would like to show students their final autograder score without revealing all of the test results then uncomment `#make_test00()` in the `make_results()` function (line ~250).
+Gradescope allows each test to have a different visiblity setting - the options are `hidden`, `after_due_date`, `after_published`, or `visible`. Note that if any of the options are `hidden`, none of the tests can be visible. For `cs-15`, we usually release some of the tests for the students, and so make these `visible`. However, the default is `after_due_date`. We also decided that we would like to show students their total final autograder score prior to the due date; that is, they could see their 'final score', but only a few of the actual tests. In order to facilitate this, we have added a `test00` in `bin/make_gradescope_results.py` - this is commented out by default, but if you would like to show students their final autograder score without revealing all of the test results then uncomment `#make_test00()` in the `make_results()` function (line ~250).
 
 # Conclusion
 That should be enough to get you up and running! Please feel free to contact me with any questions you have, and/or any bugs, feature requests, etc. you find. Thanks!
