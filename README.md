@@ -460,7 +460,10 @@ That should be enough to get you up and running! Please feel free to contact me 
   - `setup/dockerbuild/Dockerfile` - copy `lib/DiffHighlight.pm` to `/usr/share/perl5`
   - `setup/zipbuild/setup.sh`      - copy `lib/DiffHighlight.pm` to `/usr/share/perl5`
   - Added `tokens` branch with token setup [currently in alpha, will use for cs-15 summer if prof. biswas wants.]
-## [1.0.1] - 2022 5-30
+## [1.0.1] - 2022-5-30
 * Changed
     - `README.md` - `after-due-date` -> `after_due_date`; added discussion of `after_published`
     - `bin/autograde.py` - `after-due-date` -> `after_due_date`
+## [1.0.2] - 2022-5-31
+* Changed
+    - `bin/autograde.py` - change `RUN` command option `universal_newlines=True` to `universal_newlines=False`; this will produce binary output for `result.stdout` and `result.stderr`, so changed `Path(STDOUTPATH/STDERRPATH).write_text(result.stdout/result.stderr)` to `write_bytes`. This will mean that student code which is invalid binary output will not crash program; also, `read_bytes` and decode with `utf-8` before sending to canonicalizer; write fail message to `.diff` if cannot decode.

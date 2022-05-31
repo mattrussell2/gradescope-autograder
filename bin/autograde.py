@@ -86,9 +86,8 @@ set, then the diffs will be generated for any '.ofile'. Multiple .ofiles can be 
 test. [The expectation is that the program takes as input the name of the file to produce; 
 thus, for gerp, in the .toml file, the 'argv' variable includes #{testname}.ofile]
 
-[TODO] current code assumes no binary data via stdin/stdout; can refactor subprocess call from 
-       capture_output=True and universal_newlines to shell=True with the command as-is.
 [TODO] be more intelligent in terms of when to re-run tests - now am re-running every time
+[ccizer] read bytes - input to canonicalizer is BYTES, not strings. 
 """
 import os
 import sys
@@ -155,7 +154,7 @@ def INFORM(s, color):
     print(COLORIZE(s, color))
     
 def RUN(cmd_ary, timeout=30, stdin=None, input=None, cwd=".", 
-        capture_output=True,  universal_newlines=True):
+        capture_output=True,  universal_newlines=False):
     """
         Runs the subprocess module on the given command and returns the result.
 
@@ -175,10 +174,9 @@ def RUN(cmd_ary, timeout=30, stdin=None, input=None, cwd=".",
     """    
     return subprocess.run(["timeout", str(timeout)] + cmd_ary, 
                           stdin=stdin, 
-                          capture_output=capture_output,
-                          #shell=True,
+                          capture_output=capture_output,                          
                           universal_newlines=universal_newlines,
-                          cwd=cwd, #cwd=cwd,   #cwd=cwd, 
+                          cwd=cwd,
                           input=input)
     
 def FAIL(s):
@@ -391,8 +389,8 @@ class Test:
         else:
             result = RUN(exec_cmds, timeout=self.max_time, cwd=BUILD_DIR)
                 
-        if STDOUTPATH: Path(STDOUTPATH).write_text(result.stdout)
-        if STDERRPATH: Path(STDERRPATH).write_text(result.stderr)
+        if STDOUTPATH: Path(STDOUTPATH).write_bytes(result.stdout)
+        if STDERRPATH: Path(STDERRPATH).write_bytes(result.stderr)
 
         return result.returncode
 
@@ -467,8 +465,19 @@ class Test:
             INFORM(f"reference output missing for: {self.testname} " + 
                     "- ignore if building reference output", color=RED)
 
-        if canonicalize:                         
-            Path(f"{filea}.ccized").write_text(self.canonicalizer(Path(filea).read_text()))
+        if canonicalize:
+            bytes = Path(filea).read_bytes()
+            try:
+                text   = bytes.decode('utf-8')                     
+            except TypeError:
+                ccized = "ERROR: binary output in student result"
+            else:
+                try:
+                    ccized = self.canonicalizer(text)
+                except: 
+                    ccized = "ERROR: canonicalizer failed"
+
+            Path(f"{filea}.ccized").write_text(ccized)
             filea = f"{filea}.ccized"
             fileb = f"{fileb}.ccized"
             filec = f"{filea}.diff"   # => will be original 'filea'.ccized.diff
