@@ -6,7 +6,7 @@
 
 cd ../../ 
 cp setup/zipbuild/setup.sh .
-grep -v "DOCKER_CREDS\|DOCKER_TAG\|REPO_REMOTE_PATH" etc/autograder_config.ini  > autograder_config.ini 
+grep -v "DOCKER_CREDS\|DOCKER_TAG" etc/autograder_config.ini  > autograder_config.ini 
 cp bin/run_autograder .
 zip -r setup/zipbuild/Autograder.zip .
 rm setup.sh
