@@ -37,7 +37,5 @@ printf 'export PS1=\"\\u@gs:\\W\\$ \"\n' >> ~/.bashrc
 # load the config vars so we have access to $REPO_REMOTE_PATH
 source /autograder/source/autograder_config.ini
 
-#REPO_REMOTE_PATH=$(cat /autograder/source/autograder_config.ini | grep REPO_REMOTE_PATH | cut -d '=' -f 2)
-
 # clone the course repo
 cd /autograder/source && git clone $REPO_REMOTE_PATH course-repo
