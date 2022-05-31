@@ -9,7 +9,7 @@ apt-get install software-properties-common \
                 git \
                 clang-format \
                 valgrind \
-                ssh \                
+                ssh \
                 time \
                 clang -y
 
