@@ -22,9 +22,6 @@ apt install python3.9 python3.9-distutils -y
 python3.9 -m pip install --upgrade pip
 python3.9 -m pip install toml dataclasses tqdm filelock python_dateutil
 
-# copy the config file
-cp /autograder/source/autograder_config.ini /autograder/source/autograder_config.ini
-
 # update message of the day
 cp /autograder/source/etc/motd /etc/motd
 
