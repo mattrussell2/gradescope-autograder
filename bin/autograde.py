@@ -579,15 +579,6 @@ def run_full_test(test):
     test.determine_success()           
     test.save_status(finished=True)
     return test
-
-def run_full_test_wrapper(lock=None, test=None):
-    if lock:
-        with tqdm.get_lock():
-            test = run_full_test(test)
-    else:
-        test = run_full_test(test)
-
-    return test
     
 def run_tests(TESTS, OPTS):
     """
@@ -600,12 +591,13 @@ def run_tests(TESTS, OPTS):
             Make sure to store result as list before returning
     """
     INFORM(f"\n== Running {len(TESTS)} test{'s' if len(TESTS) > 1 else ''} ==", color=CYAN)        
-    lock         = True if OPTS['jobs'] == 1 else False
-    func_to_run  = partial(run_full_test_wrapper, lock)
-    result       = process_map(func_to_run, TESTS.values(), 
-                               ncols=60, max_workers=OPTS['jobs'])
+    if OPTS['jobs'] == 1:
+        return { test.testname: run_full_test(test) for test in TESTS.values() }
+    else: 
+        result = process_map(run_full_test, TESTS.values(), 
+                             ncols=60, max_workers=OPTS['jobs'])
         
-    return {test.testname: test for test in result}
+        return { test.testname: test for test in result }
    
 def compile_exec(target):
     """
@@ -661,7 +653,10 @@ def compile_execs(TOML, TESTS, OPTS):
 
     num_execs = len(execs_to_compile)
     INFORM(f"== Compiling {num_execs} executable{'s' if num_execs >= 1 else ''} ==", color=CYAN)
-    compiled_list = process_map(compile_exec, execs_to_compile, ncols=60, max_workers=OPTS['jobs'])    
+    if OPTS['jobs'] == 1:
+        compiled_list = [compile_exec(x) for x in execs_to_compile]
+    else:    
+        compiled_list = process_map(compile_exec, execs_to_compile, ncols=60, max_workers=OPTS['jobs'])    
 
     if sum(compiled_list) != num_execs:
         INFORM(f"== Compilation Failed! ==\n", color=RED)
