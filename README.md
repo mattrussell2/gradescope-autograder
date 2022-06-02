@@ -444,13 +444,34 @@ under a test group, or within a specific test.
 | `executable` | `(testname)` | executable to build and run |
 
 
-## A note on visibility settings in Gradescope
+## Visibility settings in Gradescope
 Gradescope allows each test to have a different visiblity setting - the options are `hidden`, `after_due_date`, `after_published`, or `visible`. Note that if any of the options are `hidden`, none of the tests can be visible. For `cs-15`, we usually release some of the tests for the students, and so make these `visible`. However, the default is `after_due_date`. We also decided that we would like to show students their total final autograder score prior to the due date; that is, they could see their 'final score', but only a few of the actual tests. In order to facilitate this, we have added a `test00` in `bin/make_gradescope_results.py` - this is commented out by default, but if you would like to show students their final autograder score without revealing all of the test results then uncomment `#make_test00()` in the `make_results()` function (line ~250).
+
+## Score in Gradescope
+Note that if the `max_score` for a test is `0`, then Gradescope will assume that the student passes the test. There's no way around this on our end, so if you want to have 'optional' tests, then just lower the maximum score of the autograder on Gradescope (on gradescope.com - `assignment->settings->AUTOGRADER POINTS`).
 
 # Conclusion
 That should be enough to get you up and running! Please feel free to contact me with any questions you have, and/or any bugs, feature requests, etc. you find. Thanks!
 
 # Changelog
+## [1.0.4] - 2022-6-2
+* Changed
+    - `README.md` - max points note
+    - `README.md` - changed arrangement of Changelog to be most recent first. 
+
+## [1.0.3] - 2022-6-1
+* Changed
+    - `/bin/autograde.py` - refactored multi-processed `tqdm` with `-j 1` (default behavior) to manually run a loop instead of `process_map` with a lock - on @Marty's Mac, for whatever reason the call to `process_map` was not working correctly, and this fixes the issue.
+
+## [1.0.2] - 2022-5-31
+* Changed
+    - `bin/autograde.py` - change `RUN` command option `universal_newlines=True` to `universal_newlines=False`; this will produce binary output for `result.stdout` and `result.stderr`, so changed `Path(STDOUTPATH/STDERRPATH).write_text(result.stdout/result.stderr)` to `write_bytes`. This will mean that student code which is invalid binary output will not crash program; also, `read_bytes` and decode with `utf-8` before sending to canonicalizer; write fail message to `.diff` if cannot be decoded. Note that regular `diff` on 'binary' files will work fine; as long as the text is `utf-8` encodable, 
+    `diff` will function as normal; otherwise, will get 'binary files differ' message, which is good. 
+
+## [1.0.1] - 2022-5-30
+* Changed
+    - `README.md` - `after-due-date` -> `after_due_date`; added discussion of `after_published`
+    - `bin/autograde.py` - `after-due-date` -> `after_due_date`
 
 ## [1.0.0] - 2022-5-29
 * Changed
@@ -460,14 +481,5 @@ That should be enough to get you up and running! Please feel free to contact me 
   - `setup/dockerbuild/Dockerfile` - copy `lib/DiffHighlight.pm` to `/usr/share/perl5`
   - `setup/zipbuild/setup.sh`      - copy `lib/DiffHighlight.pm` to `/usr/share/perl5`
   - Added `tokens` branch with token setup [currently in alpha, will use for cs-15 summer if prof. biswas wants.]
-## [1.0.1] - 2022-5-30
-* Changed
-    - `README.md` - `after-due-date` -> `after_due_date`; added discussion of `after_published`
-    - `bin/autograde.py` - `after-due-date` -> `after_due_date`
-## [1.0.2] - 2022-5-31
-* Changed
-    - `bin/autograde.py` - change `RUN` command option `universal_newlines=True` to `universal_newlines=False`; this will produce binary output for `result.stdout` and `result.stderr`, so changed `Path(STDOUTPATH/STDERRPATH).write_text(result.stdout/result.stderr)` to `write_bytes`. This will mean that student code which is invalid binary output will not crash program; also, `read_bytes` and decode with `utf-8` before sending to canonicalizer; write fail message to `.diff` if cannot be decoded. Note that regular `diff` on 'binary' files will work fine; as long as the text is `utf-8` encodable, 
-    `diff` will function as normal; otherwise, will get 'binary files differ' message, which is good. 
-## [1.0.3] - 2022-6-1
-* Changed
-    - `/bin/autograde.py` - refactored multi-processed `tqdm` with `-j 1` (default behavior) to manually run a loop instead of `process_map` with a lock - on @Marty's Mac, for whatever reason the call to `process_map` was not working correctly, and this fixes the issue.
+
+
