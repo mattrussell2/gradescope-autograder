@@ -54,9 +54,9 @@ mitigation_map = {
         Check that your output to std::cout EXACTLY matches
         that of the Assignment Spec and/or the reference. 
         (Watch out for trailing whitespace!)
-        For Gerp: Try sorting your STDOUT and the reference STDOUT and then diff them.
-        For Gerp: Are you printing the line twice if there are two instances of a single word in it?
     """,
+    #For Gerp: Try sorting your STDOUT and the reference STDOUT and then diff them.
+    #For Gerp: Are you printing the line twice if there are two instances of a single word in it?
 
     CERR_FAIL:  
     """
@@ -142,8 +142,8 @@ RESULTS_JSONPATH  = os.path.join(HERE, "results", "results.json")
 # dictionary where we'll keep the results
 RESULTS = {
     "score":             get_total_score(),
-    "visibility":        AFTER_PUBLISHED,
-    "stdout_visibility": AFTER_PUBLISHED,
+    "visibility":        VISIBLE if 'lab' in os.environ['ASSIGNMENT_TITLE'] else AFTER_PUBLISHED,
+    "stdout_visibility": VISIBLE if 'lab' in os.environ['ASSIGNMENT_TITLE'] else AFTER_PUBLISHED,
     "tests":             []
 }
 
@@ -200,7 +200,7 @@ def make_test_result(name, visibility, score, max_score, output):
 # key->value pairs and return a single formatted string.
 def get_failure_reason(test):
     fail = OrderedDict([(RESULT, FAILED)]) # use this so we print items in order
-
+    
     failure_tests = {
         SEGFAULT:    lambda test: test['segfault'],
         TIMEOUT:     lambda test: test['timed_out'],
@@ -212,14 +212,19 @@ def get_failure_reason(test):
         OUTOFMEMORY: lambda test: test['max_ram_exceeded'],
         "OTHER":     lambda test: True
     }
-    
-    for failtype, func in failure_tests.items():
-        if func(test):
-            fail[REASON] = failtype
-            if fail[REASON] in [BUILD_FAIL, BADEXEC_FAIL]:
-                fail[COMPILE_LOG] = get_compile_log(test['executable'])
-            fail[POS_MITIGATE] = mitigation_map[fail[REASON]]
-            return "\n".join([f"{k}{v}" for k, v in fail.items()])
+    if failure_tests[BUILD_FAIL](test):
+        fail[COMPILE_LOG] = get_compile_log(test['executable']) 
+    else:    
+        for failtype, func in failure_tests.items():
+            if func(test):
+                fail[REASON] = failtype                
+                if failtype == COUT_FAIL:
+                    fail['Diff Result for stdout\n'] = Path(f"/autograder/results/output/{test['testname']}.stdout.diff").read_text()
+                elif failtype == CERR_FAIL:
+                    fail['Diff Result for stderr\n'] = Path(f"/autograder/results/output/{test['testname']}.stderr.diff").read_text()
+                fail[POS_MITIGATE] = mitigation_map[failtype]
+                break
+    return "\n".join([f"{k}{v}" for k, v in fail.items()])
 
 
 # Some BullS*&%t we had to do because Gradescope does not display the top-level
@@ -254,7 +259,7 @@ def make_test00():
     )
 
 def make_results():
-    #make_test00()
+   # make_test00()
 
     # maybe necessary? not sure. i think the program exits immediately if compilation fails, so yes.
     # compile_logfiles = get_compile_logs()
