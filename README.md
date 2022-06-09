@@ -454,10 +454,19 @@ Note that if the `max_score` for a test is `0`, then Gradescope will assume that
 That should be enough to get you up and running! Please feel free to contact me with any questions you have, and/or any bugs, feature requests, etc. you find. Thanks!
 
 # Changelog
+## [1.0.6] - 2022-6-9
+* Changed
+    - `bin/autograde.py` - added `compiled` variable to `Test` class, and added logic to not run 
+test on compilation failure. 
+    - `bin/autograde.py` - changed output to compilation log files to be `utf-8` encoded strings; 
+will also write binary if output from `make` is not `utf-8` encodable for whatever reason.
+    - `bin/make_gradescope_results.py` - work correctly with tests that didn't compile - instead of failing, 
+show the compilation log.
+
 ## [1.0.5] - 2022-6-6
 * Changed
     - `bin/autograde.py` - automatically remove any `.o` files and any executables needed for testing.
-    - `bin/autograde.py` - removed header comments, added [TODO] related to `Test` var which notes compilation failure - needed if we're going to try to run tests even if some didn't compile!
+    - `bin/autograde.py` - removed header comments, added [TODO] related to `Test` var which notes compilation failure - needed if we're going to try to run tests even if some didn't compile!   
 
 ## [1.0.4] - 2022-6-2
 * Changed
