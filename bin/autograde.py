@@ -4,90 +4,7 @@ autograde.py
 matt russell
 5-17-2022
 
-*** Overall structure for an assignment ***
-.
-├── canonicalizers.py [optional - file with canonicalization functions]
-├── testrunner.sh     [script that runs this file; add any things to do before/after tests here]
-├── submission        [student submission - will be provided on gs]
-├── testset           [everything needed to run tests]
-│   ├── copy          [optional - any files here will be copied to the build directory]
-│   ├── cpp           [.cpp driver files (usually named <testname>.cpp)]
-│   ├── link          [optional - any files to be symlinked in the build directory]
-│   ├── makefile      [holds custom Makefile to build the drivers in cpp/]
-│   ├── ref_output    [output of reference - run build_ref_output.py to build the ref output]
-│   ├── solution      [solution code]
-│   └── stdin         [files here are sent to stdin of a test (usually named <testname>.stdin)]
-└── testset.toml      [testing configuration file]
-
-After a test is run, these directories will be created
-.
-├── results
-│   ├── build      [where student's code is built; all executables compiled will be placed here]
-│   ├── logs       [logs from compilation, and one log per test]
-│   └── output     [output from all tests]
-└
-The essential idea is that anything needed to run the test as *input* is in testset/, and anything 
-that is created as *output* is placed in results/ 
-
-*** results ***
-Here is the basic structure of results/
-.
-├── results
-│   ├── build
-│   │   ├── [student submission files]
-│   │   ├── test01 [compiled executables]
-│   │   ├── ...
-│   │   └── test21
-│   ├── logs
-│   │   ├── status
-│   │   ├── test01.compile.log
-│   │   ├── test01.summary
-│   │   ├── ...
-│   │   └── test21.summary
-│   └── output
-│       ├── test01.ofile
-│       ├── test01.ofile.diff
-│       ├── test01.ofile.ccized
-│       ├── test01.ofile.ccized.diff
-│       ├── test01.stderr
-│       ├── test01.stderr.diff
-│       ├── test01.stderr.ccized
-│       ├── test01.stderr.ccized.diff 
-│       ├── test01.stdout
-│       ├── test01.stdout.diff
-│       ├── test01.stdout.ccized
-│       ├── test01.stdout.ccized.diff
-│       ├── test01.valgrind
-│       ├── ...
-│       └── test21.valgrind
-└
-files produced by default configuration:
-    #{testname}.stdout 
-    #{testname}.stderr
-    #{testname}.valgrind
-
-other files produced:
-.toml option      default value       files produced / notes
--------------------------------------------------------------
-diff_stdout           true            #{testname}.stdout.diff 
-diff_stderr           true            #{testname}.stderr.diff
-diff_ofiles           true            #{testname}.ofile.diff
- 
-ccize_stdout          false           #{testname}.stdout.ccized.diff
-ccize_stderr          false           #{testname}.stderr.ccized.diff
-ccize_ofiles          false           #{testname}.ofiles.ccized.diff
-
-ccizer_name            ""             canonical function name to run [lives in canonicalizers.py]
-                                      required if any of ccize_stdout/stderr/ofiles is true
-
-Note that the output files #{testname}.ofile are not 'directly' specified by the configuation.
-However, any file with a '.ofile' extension is considered an output file, and if 'diff_ofiles' is
-set, then the diffs will be generated for any '.ofile'. Multiple .ofiles can be created for any 
-test. [The expectation is that the program takes as input the name of the file to produce; 
-thus, for gerp, in the .toml file, the 'argv' variable includes #{testname}.ofile]
-
 [TODO] be more intelligent in terms of when to re-run tests - now am re-running every time
-[ccizer] read bytes - input to canonicalizer is BYTES, not strings. 
 """
 import os
 import sys
@@ -209,6 +126,7 @@ class TestConfig:
     # These will be assigned to a test by the time it finshes execution    
     # could keep these as part of the 'Test' class, but it's easier 
     # to load a test from file by throwing all the variables into the config.
+    compiled:           bool = None
     success:            bool = None 
     valgrind_passed:    bool = None
     stdout_diff_passed: bool = None
@@ -275,6 +193,9 @@ class Test:
             "ref_stderr":  f"{REF_OUTPUT_DIR}/{self.testname}.stderr",                                    
         }
        
+        # can only get here if the test has compiled
+        self.compiled = True 
+
         if self.executable == None:
             self.executable = self.testname
       
@@ -573,11 +494,16 @@ def report_results(TESTS, OPTS):
 
 def run_full_test(test):
     test.save_status(finished=False)
-    test.run_test()        
-    test.run_diffs()    
-    test.run_valgrind()    
-    test.determine_success()           
-    test.save_status(finished=True)
+    if not os.path.exists(os.path.join(BUILD_DIR, test.executable)):
+        test.success  = False
+        test.compiled = False
+        test.save_status(finished=True)
+    else:
+        test.run_test()        
+        test.run_diffs()    
+        test.run_valgrind()    
+        test.determine_success()           
+        test.save_status(finished=True)
     return test
     
 def run_tests(TESTS, OPTS):
@@ -610,14 +536,23 @@ def compile_exec(target):
         Returns:    
             whether or not the compilation was successful
     """    
+    # if student provides executable, remove it. 
+    if os.path.exists(os.path.join(BUILD_DIR, target)):
+        os.remove(os.path.join(BUILD_DIR, target))
+
     target = target[2:] # remove the './' prefix
     with open(f"{LOG_DIR}/{target}.compile.log", "w") as f:
         INFORMF(f"== running make {target} ==\n", f, color=CYAN)
         compilation_proc    = RUN(["make", target], cwd=BUILD_DIR)
         compilation_success = compilation_proc.returncode == 0   
         compilation_color   = GREEN if compilation_success else RED 
-        INFORMF(compilation_proc.stdout, stream=f, color=compilation_color) 
-        INFORMF(compilation_proc.stderr, stream=f, color=compilation_color)
+        
+        for stream in [compilation_proc.stdout, compilation_proc.stderr]:            
+            try:            
+                INFORMF(stream.decode('utf-8'), stream=f, color=compilation_color) 
+            except:
+                INFORMF(stream, stream=f, color=compilation_color)
+            
         if not compilation_success:
             INFORMF(f"\ncompilation failed\n", stream=f, color=RED)                
         elif target not in os.listdir(BUILD_DIR):
@@ -692,6 +627,12 @@ def build_testing_directories():
     
     # if submission dir doesn't have +w, we won't be able to copy anything after first copytree()
     chmod_dir(SUBMISSION_DIR, "770")
+
+    # remove any student-provided .o files
+    for f in os.listdir(SUBMISSION_DIR): 
+        if f.endswith('.o'):
+            os.remove(os.path.join(SUBMISSION_DIR, f))
+            
     shutil.copytree(SUBMISSION_DIR, BUILD_DIR, dirs_exist_ok=True)
     if os.path.exists(COPY_DIR):
         shutil.copytree(COPY_DIR, BUILD_DIR, dirs_exist_ok=True)
