@@ -272,7 +272,7 @@ def make_test00():
     )
 
 def make_results():
-    make_test00()
+    # make_test00()
 
     # maybe necessary? not sure. i think the program exits immediately if compilation fails, so yes.
     # compile_logfiles = get_compile_logs()
