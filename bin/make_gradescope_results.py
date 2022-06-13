@@ -5,7 +5,7 @@ from datetime import datetime, timezone
 from webbrowser import get
 import ast
 from pathlib import Path
-from collections import OrderedDict 
+from collections import OrderedDict
 
 # We need dateutil on Gradescope, but not on Halligan. This library does not
 # exist locally, so we simply pass when running locally.
@@ -13,7 +13,7 @@ try:
     from dateutil import parser
     HALLIGAN = False
     # file made by gs; has useful info like duedatetime of assignment
-    SUBMISSION_METADATA_PATH = "/autograder/submission_metadata.json" 
+    SUBMISSION_METADATA_PATH = "/autograder/submission_metadata.json"
 except:
     HALLIGAN = True
 
@@ -41,24 +41,24 @@ OUTOFMEMORY  = "The program exceeded the maximum amount of memory allowed\n"
 # Gradescope visibility options
 VISIBLE         = "visible"         # Used for "public" group
 AFTER_PUBLISHED = "after_published" # Used for "private" group
-AFTER_DUE_DATE  = "after_due_date"  
+AFTER_DUE_DATE  = "after_due_date"
 HIDDEN          = "hidden"          # Careful if using this setting! Gradescope
-                                    # hides the total score from students if 
+                                    # hides the total score from students if
                                     # ANY test is hidden.... smh....
 
 # todo: reinsert canonicalization messages, after considering how canonicalizers
 # will be needed in the future
 mitigation_map = {
-    COUT_FAIL: 
+    COUT_FAIL:
     """
         Check that your output to std::cout EXACTLY matches
-        that of the Assignment Spec and/or the reference. 
+        that of the Assignment Spec and/or the reference.
         (Watch out for trailing whitespace!)
     """,
     #For Gerp: Try sorting your STDOUT and the reference STDOUT and then diff them.
     #For Gerp: Are you printing the line twice if there are two instances of a single word in it?
 
-    CERR_FAIL:  
+    CERR_FAIL:
     """
         Your output to std::cerr and/or your Exception Message did not match the expected output.
         Check that your output to std::cerr and/or your Exception Message EXACTLY matches
@@ -73,42 +73,42 @@ mitigation_map = {
 
     BADEXEC_FAIL:
     """
-        make must build the same name as the target (i.e. make myprogram must 
-        build a program named myprogram). Ensure you have `-o yourprogram` in 
+        make must build the same name as the target (i.e. make myprogram must
+        build a program named myprogram). Ensure you have `-o yourprogram` in
         the linking command of your Makefile.
     """,
 
-    EXIT_FAIL: 
+    EXIT_FAIL:
     """
-        Your program must exit successfully. In most cases this means returning 
+        Your program must exit successfully. In most cases this means returning
         0 (EXIT_SUCCESS) from main.
     """,
-    
-    SEGFAULT: 
+
+    SEGFAULT:
     """
-        Segfaults usually occur when uninitialized or out-of-bounds memory are accessed. 
+        Segfaults usually occur when uninitialized or out-of-bounds memory are accessed.
         Make sure to carefully check variable initialization, use of pointer-variables, and
-        that the destructors of your class(es) is/are working as expected. 
+        that the destructors of your class(es) is/are working as expected.
     """,
     OUTOFMEMORY:
     """
         There is a limit on the maximum memory allowed for your program. Consult the assignment spec
-        for details. Use the command `/usr/bin/time -v ./myprogram` and refer to the 'Maximum 
+        for details. Use the command `/usr/bin/time -v ./myprogram` and refer to the 'Maximum
         resident set size' line to see how much memory your program is using.
     """,
-    TIMEOUT: 
+    TIMEOUT:
     """
         Be sure your code is running as efficiently as possible, and has no infinite loops!
     """,
 
-    "OTHER": 
+    "OTHER":
     """
         No standard mitigation suggestion is available!
     """
 }
 
 # helper functions for file loading/saving, etc.
-def load_dict_from_file(d, fname):    
+def load_dict_from_file(d, fname):
     return ast.literal_eval(Path(os.path.join(d, fname)).read_text())
 
 def load_dicts_from_files(d, extension):
@@ -129,7 +129,7 @@ def get_total_score():
     return sum([x['max_score'] * x['success'] for x in TEST_SUMMARIES])
 
 def get_max_score():
-    return sum([x['max_score'] for x in TEST_SUMMARIES])    
+    return sum([x['max_score'] for x in TEST_SUMMARIES])
 
 HERE           = os.getcwd()
 
@@ -151,12 +151,12 @@ RESULTS = {
     "tests":             []
 }
 
-# Set defaults for gradescope now, so at least there's the total score if all 
-# else fails.    
+# Set defaults for gradescope now, so at least there's the total score if all
+# else fails.
 save_json(RESULTS_JSONPATH, RESULTS)
 
 def before_duedate():
-    if HALLIGAN: return True # Halligan doesn't care 
+    if HALLIGAN: return True # Halligan doesn't care
     try:
         metadata = load_json(SUBMISSION_METADATA_PATH)
         due_date = parser.parse(metadata["assignment"]["due_date"])
@@ -188,23 +188,23 @@ def wrong_output_program(execname):
 # We append dictionaries returned by this function to the results.json["tests"]
 # list.
 def make_test_result(name, visibility, score, max_score, output):
-    return { 
+    return {
         "name":       name,
         "visibility": visibility,
         "score":      score,
         "max_score":  max_score,
         "output":     output
     }
-  
+
 # Returns a formatted string with the reason a test failed.
 # If a test fails to compile, we grab the contents compileLog for the failed
 # test and add it to the returned string
-# Format the reason and mitigation into a nice format that looks good on 
+# Format the reason and mitigation into a nice format that looks good on
 # Gradescope. Using a dict, we can dynamically pass in any number of
 # key->value pairs and return a single formatted string.
 def get_failure_reason(test):
     fail = OrderedDict([(RESULT, FAILED)]) # use this so we print items in order
-    
+
     failure_tests = {
         SEGFAULT:    lambda test: test['segfault'] == True,
         TIMEOUT:     lambda test: test['timed_out'] == True,
@@ -217,15 +217,24 @@ def get_failure_reason(test):
         "OTHER":     lambda test: True
     }
     if failure_tests[BUILD_FAIL](test):
-        fail[COMPILE_LOG] = get_compile_log(test['executable']) 
-    else:    
+        fail[COMPILE_LOG] = get_compile_log(test['executable'])
+    else:
         for failtype, func in failure_tests.items():
             if func(test):
-                fail[REASON] = failtype                
+                fail[REASON] = failtype
                 if failtype == COUT_FAIL:
-                    fail['Diff Result for stdout\n'] = Path(f"/autograder/results/output/{test['testname']}.stdout.diff").read_text()
+                    if not test['ccize_stdout']:
+                        fname = f"{test['testname']}.stdout.diff"
+                    else:
+                        fname = f"{test['testname']}.stdout.ccized.diff"
+                    fail['Diff Result for stdout\n'] = Path(f"/autograder/results/output/{fname}").read_text()
                 elif failtype == CERR_FAIL:
-                    fail['Diff Result for stderr\n'] = Path(f"/autograder/results/output/{test['testname']}.stderr.diff").read_text()
+                    if not test['ccize_stderr']:
+                        fname = f"{test['testname']}.stderr.diff"
+                    else:
+                        fname = f"{test['testname']}.stderr.ccized.diff"
+                    fail['Diff Result for stderr\n'] = Path(f"/autograder/results/output/{fname}").read_text()
+                
                 fail[POS_MITIGATE] = mitigation_map[failtype]
                 break
     return "\n".join([f"{k}{v}" for k, v in fail.items()])
@@ -237,10 +246,10 @@ def get_failure_reason(test):
 # Gradescope will hide the final autograder score if ANY of your individual
 # tests are set with the visibility == 'hidden'
 # So, add the tentative final autograder score as the first test, namely 'test00'.
-# We now leave this test as "visible" at all times, but change the name of 
-# the test to 'Final Autograder Score' once the date today is past the 
-# due_date. If it is before the due_date, we title it 'Tentative Autograder 
-# Score'. 
+# We now leave this test as "visible" at all times, but change the name of
+# the test to 'Final Autograder Score' once the date today is past the
+# due_date. If it is before the due_date, we title it 'Tentative Autograder
+# Score'.
 def make_test00():
     if before_duedate():
         name = "test00 - Tentative Final Autograder Score"
@@ -252,7 +261,7 @@ def make_test00():
     else:
         name = "test00 - Final Autograder Score"
         info = "This is your Final Autograder Score"
-    
+
     RESULTS["tests"].append(make_test_result(
             name       = name,
             visibility = VISIBLE,
@@ -263,7 +272,7 @@ def make_test00():
     )
 
 def make_results():
-   # make_test00()
+    make_test00()
 
     # maybe necessary? not sure. i think the program exits immediately if compilation fails, so yes.
     # compile_logfiles = get_compile_logs()
@@ -279,7 +288,7 @@ def make_results():
         max_score = test['max_score']
         score     = max_score * test['success']
         reason    = TESTPASS if score == max_score else get_failure_reason(test)
-        
+
         vresult = "Valgrind: "
         if not test['valgrind']:
             vresult += "Valgrind was intentionally not run on this test."
