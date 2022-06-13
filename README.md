@@ -454,6 +454,10 @@ Note that if the `max_score` for a test is `0`, then Gradescope will assume that
 That should be enough to get you up and running! Please feel free to contact me with any questions you have, and/or any bugs, feature requests, etc. you find. Thanks!
 
 # Changelog
+## [1.0.7] - 2022-6-13
+* Changed 
+    - `bin/make_gradescope_results.py` - updated code to correctly display canonicalized `stdout`/`stderr` if required.
+
 ## [1.0.6] - 2022-6-9
 * Changed
     - `bin/autograde.py` - added `compiled` variable to `Test` class, and added logic to not run 
