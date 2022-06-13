@@ -1,0 +1,15 @@
+==8590== Memcheck, a memory error detector
+==8590== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
+==8590== Using Valgrind-3.15.0 and LibVEX; rerun with -h for copyright info
+==8590== Command: ./test34
+==8590== Parent PID: 8589
+==8590== 
+==8590== 
+==8590== HEAP SUMMARY:
+==8590==     in use at exit: 0 bytes in 0 blocks
+==8590==   total heap usage: 5 allocs, 5 frees, 72,939 bytes allocated
+==8590== 
+==8590== All heap blocks were freed -- no leaks are possible
+==8590== 
+==8590== For lists of detected and suppressed errors, rerun with: -s
+==8590== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)

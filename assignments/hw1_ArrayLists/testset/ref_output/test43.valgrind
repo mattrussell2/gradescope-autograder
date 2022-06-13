@@ -1,0 +1,15 @@
+==8660== Memcheck, a memory error detector
+==8660== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
+==8660== Using Valgrind-3.15.0 and LibVEX; rerun with -h for copyright info
+==8660== Command: ./test43
+==8660== Parent PID: 8658
+==8660== 
+==8660== 
+==8660== HEAP SUMMARY:
+==8660==     in use at exit: 0 bytes in 0 blocks
+==8660==   total heap usage: 5 allocs, 5 frees, 72,940 bytes allocated
+==8660== 
+==8660== All heap blocks were freed -- no leaks are possible
+==8660== 
+==8660== For lists of detected and suppressed errors, rerun with: -s
+==8660== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)

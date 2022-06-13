@@ -1,6 +1,6 @@
 [common]
 # using defaults! however, empty 'common' should exist
-
+visibility = "after_published"
 
 [visible_tests]
 visibility = "visible"
