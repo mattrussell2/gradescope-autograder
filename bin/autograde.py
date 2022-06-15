@@ -6,7 +6,7 @@ matt russell
 
 [TODO] be more intelligent in terms of when to re-run tests - now am re-running every time
 [TODO] change timeout to be a parameter to subprocess.run (?)
-[TODO] test the MAX_V_MEMORY, and integrate it more cleanly into the code. 
+[TODO] test the MAX_V_MEMORY, and integrate it more cleanly into the code...note: doesn't currently work as expected; tweaking default timeout to be a smaller value may very well remove the majority of problems here.
 [TODO] since start of 2022uc, have added bits and pieces here and there...do some general cleanup of the code.
 """
 import os
