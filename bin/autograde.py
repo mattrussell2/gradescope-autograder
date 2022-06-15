@@ -5,6 +5,8 @@ matt russell
 5-17-2022
 
 [TODO] be more intelligent in terms of when to re-run tests - now am re-running every time
+[TODO] change timeout to be a parameter to subprocess.run 
+[TODO] use resource setrlimit to limit RAM, etc.
 """
 import os
 import sys
