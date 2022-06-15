@@ -5,8 +5,9 @@ matt russell
 5-17-2022
 
 [TODO] be more intelligent in terms of when to re-run tests - now am re-running every time
-[TODO] change timeout to be a parameter to subprocess.run 
-[TODO] use resource setrlimit to limit RAM, etc.
+[TODO] change timeout to be a parameter to subprocess.run (?)
+[TODO] test the MAX_V_MEMORY, and integrate it more cleanly into the code. 
+[TODO] since start of 2022uc, have added bits and pieces here and there...do some general cleanup of the code.
 """
 import os
 import sys
@@ -63,6 +64,11 @@ MAKEFILE_PATH  = f"{TESTSET_DIR}/makefile/Makefile"
 MEMLEAK_PASS   = "All heap blocks were freed -- no leaks are possible"
 MEMERR_PASS    = "ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)" 
 
+MAX_V_MEMORY   = 100 * 1024 * 1024 # 100MB per process
+
+def LIMIT_VMEM():
+    resource.setrlimit(resource.RLIMIT_AS, (MAX_V_MEMORY, resource.RLIM_INFINITY))
+
 def COLORIZE(s, color):
     return f"{START_COLOR}{color}{s}{RESET_COLOR}"
 
@@ -73,7 +79,7 @@ def INFORM(s, color):
     print(COLORIZE(s, color))
     
 def RUN(cmd_ary, timeout=30, stdin=None, input=None, cwd=".", 
-        capture_output=True,  universal_newlines=False):
+        capture_output=True,  universal_newlines=False, preexec_fn=None):
     """
         Runs the subprocess module on the given command and returns the result.
 
@@ -96,7 +102,8 @@ def RUN(cmd_ary, timeout=30, stdin=None, input=None, cwd=".",
                           capture_output=capture_output,                          
                           universal_newlines=universal_newlines,
                           cwd=cwd,
-                          input=input)
+                          input=input, 
+                          preexec_fn = preexec_fn)
     
 def FAIL(s):
     INFORM(s, color=RED)
@@ -308,7 +315,7 @@ class Test:
 
         if os.path.exists(self.fpaths['stdin']):            
             with open(self.fpaths['stdin'], "r") as stdin:
-                result = RUN(exec_cmds, timeout=self.max_time, stdin=stdin, cwd=BUILD_DIR)
+                result = RUN(exec_cmds, timeout=self.max_time, stdin=stdin, cwd=BUILD_DIR, preexec_fn=LIMIT_VMEM)
         else:
             result = RUN(exec_cmds, timeout=self.max_time, cwd=BUILD_DIR)
                 
