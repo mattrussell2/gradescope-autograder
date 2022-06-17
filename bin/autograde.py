@@ -64,7 +64,7 @@ MAKEFILE_PATH  = f"{TESTSET_DIR}/makefile/Makefile"
 MEMLEAK_PASS   = "All heap blocks were freed -- no leaks are possible"
 MEMERR_PASS    = "ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)" 
 
-MAX_V_MEMORY   = 100 * 1024 * 1024 # 100MB per process
+MAX_V_MEMORY   = 1000 * 1024 * 1024 # 1GB per process
 
 def LIMIT_VMEM():
     resource.setrlimit(resource.RLIMIT_AS, (MAX_V_MEMORY, resource.RLIM_INFINITY))
