@@ -460,7 +460,7 @@ That should be enough to get you up and running! Please feel free to contact me 
 * Since start of 2022uc, have added bits and pieces here and there...some general cleanup/maintenance of the code is called for.
 
 # Changelog
-## [1.1.0] - 2022-6-16
+## [1.1.0] - 2022-6-17
 * Changed
     - `bin/run_autograder` - now will replace any spaces in `$ASSIGNMENT_TITLE` with underscores. This 
 will allow spaces in the gradescope title. Note that upgrading to this version requires rebuilding the container.
