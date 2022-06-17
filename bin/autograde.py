@@ -5,9 +5,6 @@ matt russell
 5-17-2022
 
 [TODO] be more intelligent in terms of when to re-run tests - now am re-running every time
-[TODO] change timeout to be a parameter to subprocess.run (?)
-[TODO] test the MAX_V_MEMORY, and integrate it more cleanly into the code...note: doesn't currently work as expected; tweaking default timeout to be a smaller value may very well remove the majority of problems here.
-[TODO] since start of 2022uc, have added bits and pieces here and there...do some general cleanup of the code.
 """
 import os
 import sys
@@ -27,6 +24,7 @@ from multiprocessing import cpu_count, Lock
 from filelock import FileLock
 import traceback
 from functools import reduce, partial
+import resource
 from collections.abc import Iterable
 if 'canonicalizers.py' in os.listdir():   
     sys.path.append(os.getcwd())
@@ -64,9 +62,9 @@ MAKEFILE_PATH  = f"{TESTSET_DIR}/makefile/Makefile"
 MEMLEAK_PASS   = "All heap blocks were freed -- no leaks are possible"
 MEMERR_PASS    = "ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)" 
 
-MAX_V_MEMORY   = 1000 * 1024 * 1024 # 1GB per process
+MAX_V_MEMORY   = 1000 * 1024 * 1024 # 100MB per process
 
-def LIMIT_VMEM():
+def limit_virtual_memory():
     resource.setrlimit(resource.RLIMIT_AS, (MAX_V_MEMORY, resource.RLIM_INFINITY))
 
 def COLORIZE(s, color):
@@ -78,7 +76,7 @@ def INFORMF(s, stream, color):
 def INFORM(s, color):
     print(COLORIZE(s, color))
     
-def RUN(cmd_ary, timeout=30, stdin=None, input=None, cwd=".", 
+def RUN(cmd_ary, timeout=5, stdin=None, input=None, cwd=".", 
         capture_output=True,  universal_newlines=False, preexec_fn=None):
     """
         Runs the subprocess module on the given command and returns the result.
@@ -315,7 +313,8 @@ class Test:
 
         if os.path.exists(self.fpaths['stdin']):            
             with open(self.fpaths['stdin'], "r") as stdin:
-                result = RUN(exec_cmds, timeout=self.max_time, stdin=stdin, cwd=BUILD_DIR, preexec_fn=LIMIT_VMEM)
+                result = RUN(exec_cmds, timeout=self.max_time, stdin=stdin, cwd=BUILD_DIR, 
+                             preexec_fn=limit_virtual_memory)
         else:
             result = RUN(exec_cmds, timeout=self.max_time, cwd=BUILD_DIR)
                 
@@ -339,6 +338,7 @@ class Test:
         test_rcode       = self.run_exec(exec_prepend=prepend, 
                                          STDOUTPATH=self.fpaths['stdout'], 
                                          STDERRPATH=self.fpaths['stderr'])
+        test_rcode       = abs(test_rcode) # sometimes returns negative value
         self.exit_status = test_rcode
         self.timed_out   = test_rcode == 124        
         self.segfault    = test_rcode in [11, 139]
