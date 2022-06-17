@@ -125,7 +125,8 @@ When a student submits code:
     * Runs `autograde.py` - our autograding framework [details below]. 
     * Runs `make_gradescope_results.py`, which parses the results files and saves the results at `/autograder/results/results.json` in a form readable by Gradescope. 
 
-**Note! The assignment name for an assignment in the course repository must be the same as the assignment name on Gradescope. An environment variable $ASSIGNMENT_TITLE is provided to our script, and this (along with the paths you specified earlier) is used to find the autograder files. If the names don't match, there will be issues.** 
+**Note! The assignment name for an assignment in the course repository must be the same as the assignment name on Gradescope. An environment variable $ASSIGNMENT_TITLE is provided to our script, and this (along with the paths you specified earlier) is used to find the autograder files. If the names don't match, there will be issues. Update 6-17-2022: You may now use spaces in place of underscores on gradescope; however, the 
+other text must match exactly (case sensitive).** 
 
 ## Conclusion
 Okay, you are ready to setup an autograder! Continue to the next section to learn 
@@ -454,12 +455,16 @@ Note that if the `max_score` for a test is `0`, then Gradescope will assume that
 That should be enough to get you up and running! Please feel free to contact me with any questions you have, and/or any bugs, feature requests, etc. you find. Thanks!
 
 # TODOS
-## 6-24-2022
+## 6-14-2022
 * Currently, the `max_ram` setting doesn't actually limit the amount of ram a test can use. Looks like the os might kill the entire test harness if a given processes causes excessive memory use. Have added a `MAX_V_MEMORY` variable at the top of `bin/autograde.py`, along with a fn which will set the max memory available for the processes; this is not yet tested, though. TODO: test and document the functionality properly, and tweak the usage so that the setting can be tweaked in the `.toml` file - idea: this should likely be a 'global-only' setting?? 
 * Currently the `timeout` time is being handled by calling the `timeout` function - there is the possibility of using a `timeout` parameter in the `subprocess.run` call -- in some ways, I like it as-is (no `try-catch` needed), but maybe will change. TODO: determine whether to update this setting or not. 
 * Since start of 2022uc, have added bits and pieces here and there...some general cleanup/maintenance of the code is called for.
 
 # Changelog
+## [1.1.0] - 2022-6-16
+* Changed
+    - `bin/run_autograder` - now will replace any spaces in `$ASSIGNMENT_TITLE` with underscores. This 
+will allow spaces in the gradescope title. Note that upgrading to this version requires rebuilding the container.
 ## [1.0.9] - 2022-6-16
 * Changed
     - `bin/autograde.py` - updated default max memory usage per proc to `1GB` - valgrind was crashing at the `100MB` cap during `CalcYouLater` testing!

@@ -2,6 +2,8 @@
 
 SOURCE_DIR="/autograder/source"
 REPO_ROOT="$SOURCE_DIR/course-repo"
+ASSIGNMENT_TITLE="${ASSIGNMENT_TITLE// /_}" # replace spaces with underscores
+
 
 # .zip setup requires us to reset Python version.
 # NOTE! If this is done in setup.sh, it breaks the container when it boots up. Yuck.
