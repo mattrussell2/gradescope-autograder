@@ -53,7 +53,7 @@ tests = [
     { testname = "test30", description = """Small Gutenberg Tricky - @i \"yours?\u0022""" }
 ]
 
-[med_and_large]
+[med]
 max_score   = 2.5
 argv = ["mediumGutenberg", "#{testname}.ofile"]
 tests = [

@@ -455,7 +455,6 @@ Note that if the `max_score` for a test is `0`, then Gradescope will assume that
 That should be enough to get you up and running! Please feel free to contact me with any questions you have, and/or any bugs, feature requests, etc. you find. Thanks!
 
 # TODOS
-## 6-14-2022
 * Currently, the `max_ram` setting doesn't actually limit the amount of ram a test can use. Looks like the os might kill the entire test harness if a given processes causes excessive memory use. Have added a `MAX_V_MEMORY` variable at the top of `bin/autograde.py`, along with a fn which will set the max memory available for the processes; this is not yet tested, though. TODO: test and document the functionality properly, and tweak the usage so that the setting can be tweaked in the `.toml` file - idea: this should likely be a 'global-only' setting?? 
 * Currently the `timeout` time is being handled by calling the `timeout` function - there is the possibility of using a `timeout` parameter in the `subprocess.run` call -- in some ways, I like it as-is (no `try-catch` needed), but maybe will change. TODO: determine whether to update this setting or not. 
 * Since start of 2022uc, have added bits and pieces here and there...some general cleanup/maintenance of the code is called for.
