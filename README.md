@@ -465,6 +465,7 @@ That should be enough to get you up and running! Please feel free to contact me 
 * Changed
     - `bin/run_autograder` - now will replace any spaces in `$ASSIGNMENT_TITLE` with underscores. This 
 will allow spaces in the gradescope title. Note that upgrading to this version requires rebuilding the container.
+    - `bin/autograde.py` - negative returncode values are now handled correctly.
 ## [1.0.9] - 2022-6-16
 * Changed
     - `bin/autograde.py` - updated default max memory usage per proc to `1GB` - valgrind was crashing at the `100MB` cap during `CalcYouLater` testing!
