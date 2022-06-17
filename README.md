@@ -455,11 +455,14 @@ That should be enough to get you up and running! Please feel free to contact me 
 
 # TODOS
 ## 6-24-2022
-* Currently, the `max_ram` setting doesn't actually limit the amount of ram a test can use. Looks like the os might kill the entire test harness if a given processes causes excessive memory use. Have added a `MAX_V_MEMORY` variable at the top of `bin/autograde.py`, along with a fn which will set the max memory available for the processes; this is not yet tested, though. TODO: test and document the functionality properly, and tweak the usage so that the setting can be tweaked in the `.toml` file - idea: this should likely be a 'global-only' setting??
+* Currently, the `max_ram` setting doesn't actually limit the amount of ram a test can use. Looks like the os might kill the entire test harness if a given processes causes excessive memory use. Have added a `MAX_V_MEMORY` variable at the top of `bin/autograde.py`, along with a fn which will set the max memory available for the processes; this is not yet tested, though. TODO: test and document the functionality properly, and tweak the usage so that the setting can be tweaked in the `.toml` file - idea: this should likely be a 'global-only' setting?? 
 * Currently the `timeout` time is being handled by calling the `timeout` function - there is the possibility of using a `timeout` parameter in the `subprocess.run` call -- in some ways, I like it as-is (no `try-catch` needed), but maybe will change. TODO: determine whether to update this setting or not. 
 * Since start of 2022uc, have added bits and pieces here and there...some general cleanup/maintenance of the code is called for.
 
 # Changelog
+## [1.0.9] - 2022-6-16
+* Changed
+    - `bin/autograde.py` - updated default max memory usage per proc to `1GB` - valgrind was crashing at the `100MB` cap during `CalcYouLater` testing!
 ## [1.0.8] - 2022-6-14
 * Changed
     - `bin/autograde.py` - first draft of an enforced max memory usage; separate from the `max_ram` param used for 'correctness' purposes. 
