@@ -358,15 +358,17 @@ class Test:
         valgrind_command = [
             "/usr/bin/valgrind",                      # doesn't have 72,704 bug
             "--show-leak-kinds=all",                  # gimme all the leaks
-            "--leak-check=full",                      # leaks -> errors
+            "--leak-check=full",                      # catch all kinds of leaks
+            "--errors-for-leak-kinds=none",           # separate errors from leaks
             "--error-exitcode=1",                     # errors return 1
             f"--log-file={self.fpaths['valgrind']}"
         ]
         if self.valgrind:
-            self.valgrind_passed = self.run_exec(valgrind_command) == 0
+            self.valgrind_rcode  = self.run_exec(valgrind_command)
             valgrind_output      = Path(self.fpaths['valgrind']).read_text()       
             self.memory_leaks    = MEMLEAK_PASS not in valgrind_output
             self.memory_errors   = MEMERR_PASS not in valgrind_output
+            self.valgrind_passed = not self.memory_leaks and not self.memory_errors
         
     def run_diff(self, filea, fileb, filec, canonicalize=False):
         """
@@ -467,40 +469,77 @@ class Test:
         else:
             self.success = True    
 
-def report_testgroup(header, group, color):
-    groupstr = '\n\t\t      '.join(group)
-    INFORM(f"{header}: {groupstr}\n", color=color)   
-
+def print_testgroup(report, keys, OPTS):
+    """
+        Purpose:
+            Print a group of test results (regular/valgrind) to the terminal
+        Returns: 
+            None                    
+        Notes: 
+            Depending on OPTS['lengthy_output'], will print one or two columns
+    """  
+    try:
+        columns, lines = os.get_terminal_size()
+    except OSError:
+        columns = 144
+    if OPTS['lengthy_output']:
+        col_width = columns 
+        max_width = col_width // 2
+    else:
+        col_width = columns // 2     
+        max_width = col_width - 2
+    
+    for key in keys:
+        for i, test in enumerate(report[key]['tests']):
+            report[key]['tests'][i] = f"{report[key]['tests'][i][:max_width]: <{col_width}}"    
+    
+    # headers
+    for title in keys:
+        INFORM(f"{title: <{max([len(x) for x in keys])}} {len(report[title]['tests'])}", color=report[title]["color"])    
+    print()
+    
+    outstrs = []
+    for title in [k for k in keys if len(report[k]["tests"]) > 0]:
+        outstrs.append(COLORIZE(f"{f'{title:-^{max_width}}': <{col_width}}", report[title]['color']))
+        for teststr in report[title]['tests']:
+            outstrs.append(COLORIZE(teststr, report[title]["color"]))
+    
+    if OPTS['lengthy_output']:
+        print('\n'.join(outstrs))
+    else:
+        colwstr = "{0" + f": <{col_width}" + "}{1" + f": <{col_width}" + "}"
+        print('\n'.join([colwstr.format(*x) for x in zip(outstrs[:len(outstrs)//2], outstrs[len(outstrs)//2:])]))
+       
 def report_results(TESTS, OPTS): 
-    INFORM(f"\n== Test Report ==", color=CYAN)  
-
-    # obviously not so efficient, but easy to read.
+    """
+        Purpose:
+            Print test results to the terminal
+        Returns: 
+            None                    
+    """            
     report = {
-        "passed":          [f"{name} - {t.description}" for name,t in TESTS.items() if t.success],
-        "failed":          [f"{name} - {t.description}" for name,t in TESTS.items() if not t.success],
-        "passed_valgrind": [f"{name} - {t.description}" for name,t in TESTS.items() if t.valgrind and t.valgrind_passed],
-        "failed_valgrind": [f"{name} - {t.description}" for name,t in TESTS.items() if t.valgrind and not t.valgrind_passed],
-        "timed_out":       [f"{name} - {t.description}" for name,t in TESTS.items() if t.timed_out]
+        "Passed":             { "func": lambda test: test.success,                                     "tests": [], "color": GREEN   },
+        "Segfaulted":         { "func": lambda test: test.segfault,                                    "tests": [], "color": MAGENTA },
+        "Failed stdout diff": { "func": lambda test: test.diff_stdout and not test.stdout_diff_passed, "tests": [], "color": RED     },
+        "Failed stderr diff": { "func": lambda test: test.diff_stderr and not test.stderr_diff_passed, "tests": [], "color": RED     },
+        "Failed ofile diff":  { "func": lambda test: test.diff_ofiles and not test.fout_diffs_passed,  "tests": [], "color": RED     },        
+        "Timed Out":          { "func": lambda test: test.timed_out,                                   "tests": [], "color": RED     },        
+        "Valgrind Passed":    { "func": lambda test: test.valgrind and test.valgrind_passed == True,   "tests": [], "color": GREEN   },        
+        "Memory Leak":        { "func": lambda test: test.valgrind and test.memory_leaks == True,      "tests": [], "color": MAGENTA },
+        "Memory Error":       { "func": lambda test: test.valgrind and test.memory_errors == True,     "tests": [], "color": MAGENTA },
     }    
-    num_valgrind = len(report['passed_valgrind']) + len(report['failed_valgrind'])
-    nums = { key: f"{len(report[key]):02} / {len(TESTS) if 'valgrind' not in key else num_valgrind}" for key in report }
-                
-    passclr   = COLORIZE(f"Passed    {nums['passed']}",    color=GREEN)   
-    failclr   = COLORIZE(f"Failed    {nums['failed']}",    color=RED)         
-    tmoutclr  = COLORIZE(f"Timed Out {nums['timed_out']}", color=MAGENTA)
 
-    print(f"{passclr}\n{failclr}\n{tmoutclr}\n")
-    report_testgroup("\tPassed tests", report["passed"],    GREEN)    
-    report_testgroup("\tFailed tests", report["failed"],    RED)    
-    report_testgroup("\t   Timed Out", report['timed_out'], MAGENTA)
-
-    INFORM(f"\n== Valgrind Report ==", color=CYAN)  
-    passvclr = COLORIZE(f"Passed Valgrind: {nums['passed_valgrind']}", color=GREEN)
-    failvclr = COLORIZE(f"Failed Valgrind: {nums['failed_valgrind']}", color=RED)
-    print(f"{passvclr}\n{failvclr}\n") 
-    report_testgroup("     Passed Valgrind", report['passed_valgrind'], GREEN)
-    report_testgroup("     Failed Valgrind", report['failed_valgrind'], RED)
-
+    for cat in report:
+        report[cat]["tests"] = [f"{name} - {t.description}" for name,t in TESTS.items() if report[cat]["func"](t)]
+       
+    valgrind_keys = ["Valgrind Passed", "Memory Leak", "Memory Error"]
+    normal_keys   = [k for k in report if k not in valgrind_keys]
+  
+    INFORM(f"\n== Test Report ==", color=CYAN) 
+    print_testgroup(report, normal_keys, OPTS)          
+    INFORM(f"\n== Valgrind Report ==", color=CYAN)
+    print_testgroup(report, valgrind_keys, OPTS)
+    
 def run_full_test(test):
     test.save_status(finished=False)
     if not os.path.exists(os.path.join(BUILD_DIR, test.executable)):
@@ -508,10 +547,10 @@ def run_full_test(test):
         test.compiled = False
         test.save_status(finished=True)
     else:
-        test.run_test()        
-        test.run_diffs()    
-        test.run_valgrind()    
-        test.determine_success()           
+        test.run_test()
+        test.run_diffs()
+        test.run_valgrind()
+        test.determine_success()
         test.save_status(finished=True)
     return test
     
@@ -792,12 +831,14 @@ def parse_args(argv):
         'j': "number of parallel jobs; default=1; -1=number of available cores",
         'f': "one or more filters to apply: (f)ailed, (p)assed",   
         'd': "one or more diffs to show: stdout, stderr, and ofile",
-        't': "one or more tests to run"
+        't': "one or more tests to run",
+        'l': "show output in one column"
     }    
     ap = argparse.ArgumentParser(formatter_class=CustomFormatter)      
-    ap.add_argument('-s', '--status',       action='store_true', help=HELP['s'])
-    ap.add_argument('-v', '--valgrind',     action='store_true', help=HELP['v'])
-    ap.add_argument('-c', '--compile-logs', action='store_true', help=HELP['c']) 
+    ap.add_argument('-s', '--status',         action='store_true', help=HELP['s'])
+    ap.add_argument('-v', '--valgrind',       action='store_true', help=HELP['v'])
+    ap.add_argument('-c', '--compile-logs',   action='store_true', help=HELP['c']) 
+    ap.add_argument('-l', '--lengthy-output', action='store_true', help=HELP['l'])
     ap.add_argument('-j', '--jobs',     default=1, metavar="jobs",       type=int, help=HELP['j'])
     ap.add_argument('-d', '--diff',     nargs='*', metavar="diffopt",    type=str, help=HELP['d'])
     ap.add_argument('-f', '--filter',   nargs='*', metavar="filteropt",  type=str, help=HELP['f'])    
@@ -899,7 +940,7 @@ def run_autograder(argv):
         build_testing_directories()  
         compile_execs(TOML, TESTS, OPTS)
         TESTS = run_tests(TESTS, OPTS)    
-            
+        
         if OPTS['status']:       
             statusfile    = Path(f"{LOG_DIR}/status").read_text().splitlines()        
             filteredlines = list(filter(lambda l: any([t in l for t in TESTS]), statusfile))                     

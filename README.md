@@ -460,6 +460,14 @@ That should be enough to get you up and running! Please feel free to contact me 
 * Since start of 2022uc, have added bits and pieces here and there...some general cleanup/maintenance of the code is called for.
 
 # Changelog
+## [1.1.1] - 2022-6-20
+* Changed
+    - `bin/autograde.py` - added `--errors-for-leak-kinds=none` to `valgrind` args - this will prevent
+leaks from being shown as errors. Refactored scoring logic to deduce valgrind failure from combination
+of no leaks/errors (no longer checking exit code).
+    - `bin/autograde.py` - reformatted output to two columns for easier viewing. Added optional arg `-l`
+which forces single-column output. Generally cleaned up logic of test reporting for easy add-ons later.
+
 ## [1.1.0] - 2022-6-17
 * Changed
     - `bin/run_autograder` - now will replace any spaces in `$ASSIGNMENT_TITLE` with underscores. This 
@@ -518,5 +526,3 @@ show the compilation log.
   - `setup/dockerbuild/Dockerfile` - copy `lib/DiffHighlight.pm` to `/usr/share/perl5`
   - `setup/zipbuild/setup.sh`      - copy `lib/DiffHighlight.pm` to `/usr/share/perl5`
   - Added `tokens` branch with token setup [currently in alpha, will use for cs-15 summer if prof. biswas wants.]
-
-

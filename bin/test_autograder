@@ -13,6 +13,7 @@ ap = argparse.ArgumentParser()
 ap.add_argument('-s', '--submission', type=str, default='./submission', help="submission folder path; default=./submission")
 ap.add_argument('-j', '--num-jobs',   type=int, default=1, help="concurrent jobs; default=1; -1=number of available cores")
 ap.add_argument('-d', '--destroy-test-dir', action='store_true', help="will destroy temporary directories created to test the submission")
+ap.add_argument('-l', '--lengthy-output', action='store_true', help="will print lengthy output")
 
 ARGS = vars(ap.parse_args())
 
@@ -37,7 +38,10 @@ try:
 
     import autograde
     print("running tests")
-    autograde.run_autograder(['-j', str(ARGS['num_jobs'])])   
+    outvec = ['-j', str(ARGS['num_jobs'])]
+    if ARGS['lengthy_output']:
+        outvec.append('-l')
+    autograde.run_autograder(outvec)   
     print("done!")
 finally:
     os.chdir('..')
