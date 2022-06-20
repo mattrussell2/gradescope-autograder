@@ -432,26 +432,29 @@ class Test:
                 These files will be written to by the student's program        
                 Design here requires that student's program reads in the filename to write to 
         """
-        self.stdout_diff_passed = self.run_diff(self.fpaths['stdout'], 
-                                                self.fpaths['ref_stdout'],
-                                                self.fpaths['stdout.diff'], 
-                                                self.ccize_stdout)
+        if self.diff_stdout:
+            self.stdout_diff_passed = self.run_diff(self.fpaths['stdout'], 
+                                                    self.fpaths['ref_stdout'],
+                                                    self.fpaths['stdout.diff'], 
+                                                    self.ccize_stdout)
         
-        self.stderr_diff_passed = self.run_diff(self.fpaths['stderr'],  
-                                                self.fpaths['ref_stderr'],
-                                                self.fpaths['stderr.diff'],
-                                                self.ccize_stderr)
+        if self.diff_stderr:
+            self.stderr_diff_passed = self.run_diff(self.fpaths['stderr'],  
+                                                    self.fpaths['ref_stderr'],
+                                                    self.fpaths['stderr.diff'],
+                                                    self.ccize_stderr)
         
-        self.fout_diffs_passed = True
-        created_files = os.listdir(REF_OUTPUT_DIR) if os.path.exists(REF_OUTPUT_DIR) else []
-        created_files = list(set(created_files + os.listdir(OUTPUT_DIR))) 
-        ofilenames = [x for x in created_files if self.testname in x and x.endswith(".ofile")]                 
-        for ofilename in ofilenames:
-            if not self.run_diff(f"{OUTPUT_DIR}/{ofilename}", 
-                                 f"{REF_OUTPUT_DIR}/{ofilename}", 
-                                 f"{OUTPUT_DIR}/{ofilename}.diff",
-                                 self.ccize_ofiles):
-                self.fout_diffs_passed = False
+        if self.diff_ofiles:
+            self.fout_diffs_passed = True
+            created_files = os.listdir(REF_OUTPUT_DIR) if os.path.exists(REF_OUTPUT_DIR) else []
+            created_files = list(set(created_files + os.listdir(OUTPUT_DIR))) 
+            ofilenames = [x for x in created_files if self.testname in x and x.endswith(".ofile")]                 
+            for ofilename in ofilenames:
+                if not self.run_diff(f"{OUTPUT_DIR}/{ofilename}", 
+                                     f"{REF_OUTPUT_DIR}/{ofilename}", 
+                                     f"{OUTPUT_DIR}/{ofilename}.diff",
+                                     self.ccize_ofiles):
+                    self.fout_diffs_passed = False
     
     def determine_success(self):
         """
