@@ -45,7 +45,7 @@ mv gradescope-autograding/* .
 rm -rf gradescope-autograding
 ```
 Great! Now, you will need an Access Token so your autograder can pull from the repo. To create one, go to gitlab in your browser, and navigate to the course repository you just created. Next, hover over the settings cog on the lower left, and select `Access Tokens`.
-Create one - this will be used by the Gradescope autograder to pull the most recent version of the autograding files for an assignment. We suggest only providing `read repository` access to the token. Feel free to select whatever you'd like for the name, expiration date, and role. Once the token is created, copy the key. Now, return to your repo, and open the `autograder_config.ini` file - `REPO_ROOT/etc/autograder_config.ini` and update the `REPO_REMOTE_PATH` variable as follows:
+Create one - this will be used by the Gradescope autograder to pull the most recent version of the autograding files for an assignment. We suggest only providing `read repository` access to the token. Feel free to select whatever you'd like for the name, expiration date, and role. Once the token is created, copy the key. Now, return to your repo, and open the `etc/autograder_config.ini` file - `REPO_ROOT/etc/autograder_config.ini` and update the `REPO_REMOTE_PATH` variable as follows:
 
 ```
 https://REPOSITORY-NAME:ACCESS-TOKEN@gitlab.cs.tufts.edu/path/to/repository.git
@@ -56,7 +56,7 @@ REPO_REMOTE_PATH="https://cs-15-2022uc:glpat-Blah8173Blah8023Blah@gitlab.cs.tuft
 ```
 Note that this path has your access token inside of it, so if you set it to have `write` permissions (not recommended), then anyone with access to the autograder container can push changes to the repo. Also, if your repo is public, anyone can have push access, so please keep your repository private!
 
-Before we continue, let's go over the other options for this file: 
+Before we continue, let's go over the other options for the `etc/autograder_config.ini` file: 
 
 |     KEY          |        Purpose       |
 |------------------|----------------------|
