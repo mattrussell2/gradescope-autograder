@@ -62,7 +62,7 @@ MAKEFILE_PATH  = f"{TESTSET_DIR}/makefile/Makefile"
 MEMLEAK_PASS   = "All heap blocks were freed -- no leaks are possible"
 MEMERR_PASS    = "ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)" 
 
-MAX_V_MEMORY   = 1000 * 1024 * 1024 # 100MB per process
+MAX_V_MEMORY   = 1000 * 1024 * 1024 # 1GB per process
 
 def limit_virtual_memory():
     resource.setrlimit(resource.RLIMIT_AS, (MAX_V_MEMORY, resource.RLIM_INFINITY))
@@ -77,7 +77,7 @@ def INFORM(s, color):
     print(COLORIZE(s, color))
     
 def RUN(cmd_ary, timeout=5, stdin=None, input=None, cwd=".", 
-        capture_output=True,  universal_newlines=False, preexec_fn=None):
+        capture_output=True, universal_newlines=False, preexec_fn=None):
     """
         Runs the subprocess module on the given command and returns the result.
 
@@ -92,16 +92,16 @@ def RUN(cmd_ary, timeout=5, stdin=None, input=None, cwd=".",
             (completedProcess) : the result of the completed subprocess module
 
         Notes:
-            Always capture output and use universal newlines.
+            Always capture output; universal newlines = False so binary output okay.
             Always add a timeout argument - this is adjustable in the .toml file
     """    
     return subprocess.run(["timeout", str(timeout)] + cmd_ary, 
-                          stdin=stdin, 
-                          capture_output=capture_output,                          
-                          universal_newlines=universal_newlines,
-                          cwd=cwd,
-                          input=input, 
-                          preexec_fn = preexec_fn)
+                          stdin              = stdin, 
+                          capture_output     = capture_output,                          
+                          universal_newlines = universal_newlines,
+                          cwd                = cwd,
+                          input              = input, 
+                          preexec_fn         = preexec_fn)
     
 def FAIL(s):
     INFORM(s, color=RED)
@@ -109,7 +109,6 @@ def FAIL(s):
 
 @dataclass
 class TestConfig:    
-    # These are configuation options for the test
     max_time:      int  = 30 
     max_ram:       int  = -1 
     max_score:     int  = 1
@@ -180,8 +179,8 @@ class TestConfig:
 
 class Test:
     
-    # when halligan has python 10, we'll use inheritance with dataclasses...
-    # this is good for now
+    # when our servers have python 10, we'll use inheritance with dataclasses...
+    # this works for now.
     def __init__(self, config):
         for (key, value) in vars(config).items():            
             if key != "tests":  # a 'Test' shouldn't contain any information about other Tests.
@@ -231,7 +230,7 @@ class Test:
             for replacement_k, replacement_v in replacements.items():
                 value_s = value_s.replace(replacement_k, replacement_v) 
         elif isinstance(value_s, Iterable) and not isinstance(value_s, dict):
-            value_s = [get_replacement_s(v) for v in value_s]
+            value_s = [self.replace_placeholders(v) for v in value_s]
         return value_s
 
     def replace_placeholders_in_self(self):
@@ -316,7 +315,8 @@ class Test:
                 result = RUN(exec_cmds, timeout=self.max_time, stdin=stdin, cwd=BUILD_DIR, 
                              preexec_fn=limit_virtual_memory)
         else:
-            result = RUN(exec_cmds, timeout=self.max_time, cwd=BUILD_DIR)
+            result = RUN(exec_cmds, timeout=self.max_time, cwd=BUILD_DIR,
+                        preexec_fn=limit_virtual_memory)
                 
         if STDOUTPATH: Path(STDOUTPATH).write_bytes(result.stdout)
         if STDERRPATH: Path(STDERRPATH).write_bytes(result.stderr)
@@ -328,7 +328,7 @@ class Test:
             Purpose: 
                 Runs the 'standard' test and sets variables associated with pass / failure
             Notes:
-                add ../../ to memory file because we'll be running from the build directory
+                add ../../ to memory file because we'll be running from testset/build/ directory
         """      
         if self.max_ram != -1:
             prepend  = ['/usr/bin/time', '-o', os.path.join('..','..',self.fpaths['memory']), '-f', '%M']
@@ -391,18 +391,18 @@ class Test:
                 [TODO] refactor to use RUN?                        
         """        
         if not os.path.exists(filea):
-            Path(f"{filea}.diff").write_text(f"diff: {ofilename} not found!")
+            Path(f"{filea}.diff").write_text(f"diff: {filea} not found!")
             return False
         elif not os.path.exists(fileb): 
             INFORM(f"reference output missing for: {self.testname} " + 
-                    "- ignore if building reference output", color=RED)
+                    "- ignore if building reference output", color=MAGENTA)
 
         if canonicalize:
             bytes = Path(filea).read_bytes()
             try:
                 text   = bytes.decode('utf-8')                     
             except TypeError:
-                ccized = "ERROR: binary output in student result"
+                ccized = "ERROR: non-utf-8 encodable text in student result"
             else:
                 try:
                     ccized = self.canonicalizer(text)
@@ -498,12 +498,14 @@ def print_testgroup(report, keys, OPTS):
     
     # headers
     for title in keys:
-        INFORM(f"{title: <{max([len(x) for x in keys])}} {len(report[title]['tests'])}", color=report[title]["color"])    
+        INFORM(f"{title: <{max([len(x) for x in keys])}} {len(report[title]['tests'])}", 
+              color=report[title]["color"])    
     print()
     
     outstrs = []
     for title in [k for k in keys if len(report[k]["tests"]) > 0]:
-        outstrs.append(COLORIZE(f"{f'{title:-^{max_width}}': <{col_width}}", report[title]['color']))
+        outstrs.append(COLORIZE(f"{f'{title:-^{max_width}}': <{col_width}}", 
+                                report[title]['color']))
         for teststr in report[title]['tests']:
             outstrs.append(COLORIZE(teststr, report[title]["color"]))
     
@@ -511,7 +513,8 @@ def print_testgroup(report, keys, OPTS):
         print('\n'.join(outstrs))
     else:
         colwstr = "{0" + f": <{col_width}" + "}{1" + f": <{col_width}" + "}"
-        print('\n'.join([colwstr.format(*x) for x in zip(outstrs[:len(outstrs)//2], outstrs[len(outstrs)//2:])]))
+        print('\n'.join([colwstr.format(*x) for x in 
+                        zip(outstrs[:len(outstrs)//2], outstrs[len(outstrs)//2:])]))
        
 def report_results(TESTS, OPTS): 
     """
@@ -664,9 +667,8 @@ def build_testing_directories():
         Notes: 
             These directories are hard-coded in this file - 
             there should be no need to change them.
+            don't remove results_dir directly because gradescope puts the 'stdout' file there
     """ 
-    # don't remove results_dir directly because gradescope puts the 'stdout' file there
-    # this should be refactored.
     if os.path.exists(RESULTS_DIR):
         for fldr in BUILD_DIR, LOG_DIR, OUTPUT_DIR:
             if os.path.exists(fldr):
