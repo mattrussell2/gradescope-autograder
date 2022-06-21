@@ -439,7 +439,7 @@ under a test group, or within a specific test.
 | `ccize_ofiles` | `false` | diff canonicalized ofiles instead of ofiles |
 | `ccizer_name` | `""` | name of canonicalization function to use |
 | `our_makefile` | `true` | use testset/makefile/Makefile to build tests |
-| `pretty_diff` | `false` | use diff-so-pretty for easy-to-ready diffs |
+| `pretty_diff` | `false` | use diff-so-pretty for easy-to-read diffs |
 | `max_score` | `1` | maximum points (on Gradescope) for this test |
 | `visibility` | `"after_due_date"` | Gradescope visibility setting |
 | `argv` | `[ ]` | argv input to the program |
