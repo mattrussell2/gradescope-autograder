@@ -3,7 +3,7 @@ Gradescope is great tool for autograding assignments. However, there is still a 
 of infrastructure required to deploy and run an autograder on Gradescope. This document provides 
 instructions for setting up an autograder on Gradescope which uses our in-house autograding
 framework for `C/C++` code. Setup from start to finish is intended to take roughly 30 minutes.
-If you have any questions, please reach out to me at `mrussell@cs.tufts.edu`
+If you have any questions, please reach out to me at `mrussell@cs.tufts.edu`, or open an issue here. 
 
 # Infrastructure Setup
 
@@ -54,7 +54,7 @@ For example:
 ```
 REPO_REMOTE_PATH="https://cs-15-2022uc:glpat-Blah8173Blah8023Blah@gitlab.cs.tufts.edu/mrussell/cs-15-2022uc.git"
 ```
-Note that this path has your access token inside of it, so if you set it to have `write` permissions (not recommended) please keep your repository private!
+Note that this path has your access token inside of it, so if you set it to have `write` permissions (not recommended), then anyone with access to the autograder container can push changes to the repo. Also, if your repo is public, anyone can have push access, so please keep your repository private!
 
 Before we continue, let's go over the other options for this file: 
 
