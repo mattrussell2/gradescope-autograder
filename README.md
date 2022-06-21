@@ -98,7 +98,7 @@ Please select a tagname which reflects something specific related to your course
 Note that `tuftscs/gradescope-docker:` is required at the start of the value. This will be the tag that is uploaded to Dockerhub; Gradescope will need it to know where to find the Docker container to run the autograder.
 
 ### `DOCKERCREDS`
-If you have a 'pro' account on Dockerhub, create your own access token and put it here - note that you'll need to add `gradescopeecs` as a private collaborator to the repository on Dockerhub. If you don't have a `pro` account, reach out to me at `mrussell@cs.tufts.edu`, and I'll send you the DOCKERCREDS. 
+If you have a 'pro' account on Dockerhub, create your own access token and put it here - note that you'll need to add `gradescopeecs` as a private collaborator to the repository on Dockerhub. If you don't have a `pro` account, (and you're at Tufts) reach out to me at `mrussell@cs.tufts.edu`, and I'll send you the DOCKERCREDS. 
 Note!! This access token must be kept private; to that end, please keep your course autograding
 repository private.
 
