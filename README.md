@@ -62,7 +62,7 @@ Before we continue, let's go over the other options for the `etc/autograder_conf
 |------------------|----------------------|
 | `DOCKER_CREDS`     | Credentials to login to docker. [Docker only - see `Docker method` section for details]      |
 | `DOCKER_TAG`       |  `tuftscs/gradescope-docker:YOURTAGNAME` [Docker only - see `Docker method` section for details] |
-| `REPO_REMOTE_PATH` | `https` path to your repository |
+| `REPO_REMOTE_PATH` | `https` path to your repository, including the access token |
 | `ASSIGN_ROOT`      | where assignment autograding folders are relative to repo root (so if you use the structure `REPO_ROOT/assignments/(your assignments here)` then `assignments` would be placed as the value here)|
 | `ASSIGN_AUTOGRADING_SUBFOLDER` | for assignments, if you put the autograder in a subfolder of the assignment folder, put the intermediate path here (so if you use the structure `REPO_ROOT/assignments/hw1_ArrayLists/autograder/(autograding files)` then `autograder` would be placed as the value here) |
 | `AUTOGRADING_ROOT` | path from repo root which contains `bin/`, `etc/`, `lib/`, and `setup/` |
