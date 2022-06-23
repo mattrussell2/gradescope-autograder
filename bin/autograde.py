@@ -524,6 +524,7 @@ def print_testgroup(report, keys, OPTS):
     print()
     
     outstrs = []
+    keys = [k for k in keys if k not in ["Failed", "Valgrind Failed"]]
     for title in keys:
         outstrs.append(COLORIZE(f"{f'{title:-^{max_width}}': <{col_width}}", 
                                 report[title]['color']))
@@ -554,7 +555,7 @@ def report_results(TESTS, OPTS):
         "Timed Out":           { "func": lambda test: test.timed_out,                                   "tests": [], "color": RED     }, 
         "Exceeded Max Ram":    { "func": lambda test: test.max_ram_exceeded,                            "tests": [], "color": RED     },   
         "Valgrind Passed":     { "func": lambda test: test.valgrind and test.valgrind_passed,           "tests": [], "color": GREEN   },        
-        "Valgrind Failed":     { "func": lambda test: test.valgrind and not test.valgrind_passed,       "tests": [], "color": MAGENTA },                
+        "Valgrind Failed":     { "func": lambda test: test.valgrind and not test.valgrind_passed,       "tests": [], "color": RED     },                
         "Memory Leak":         { "func": lambda test: test.valgrind and test.memory_leaks,              "tests": [], "color": MAGENTA },
         "Memory Error":        { "func": lambda test: test.valgrind and test.memory_errors,             "tests": [], "color": MAGENTA },
         "V. Exceeded Max Ram": { "func": lambda test: test.valgrind and test.valg_out_of_mem,           "tests": [], "color": RED     }
@@ -563,8 +564,8 @@ def report_results(TESTS, OPTS):
     for cat in report:
         report[cat]["tests"] = [f"{name} - {t.description}" for name,t in TESTS.items() if report[cat]["func"](t)]
        
-    valgrind_keys = ["Valgrind Passed", "Memory Leak", "Memory Error", "V. Exceeded Max Ram"]
-    normal_keys   = [k for k in report if k not in valgrind_keys and k not in ["Failed", "Valgrind Failed"]]
+    valgrind_keys = ["Valgrind Passed", "Valgrind Failed", "Memory Leak", "Memory Error", "V. Exceeded Max Ram"]
+    normal_keys   = [k for k in report if k not in valgrind_keys]
   
     INFORM(f"\n== Test Report ==", color=CYAN) 
     print_testgroup(report, normal_keys, OPTS)          
