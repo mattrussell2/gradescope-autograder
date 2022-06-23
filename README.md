@@ -443,10 +443,10 @@ under a test group, or within a specific test.
 | `max_score` | `1` | maximum points (on Gradescope) for this test |
 | `visibility` | `"after_due_date"` | Gradescope visibility setting |
 | `argv` | `[ ]` | argv input to the program |
-| `executable` | `(testname)` | executable to build and run |
-| `max_valgrind_score` | 8 | `[common]` only setting - maximum valgrind score for this assignment. 
+| `executable` | `(testna`me)` | executable to build and run |
+| `max_valgrind_score` | `8` | `[common]` only setting - maximum valgrind score for this assignment. 
 | `valgrind_score_visibility` | `"after_due_date"` | `[common]` only setting - visibility of the test which will hold the total valgrind points for the student. 
-| `kill_limit` | 500 | test will be killed if it's memory usage exceeds this value (in `MB`) [soft rlimit_data will be set to this value in a preexec function to the subprocess call] - Note: if the program exceeds the limit, it will receive `SIGSEGV` from the os. Unfortunately, nothing is produced on `stderr`. However, if `valgrind` is also run and fails to produce a log file (due to also receiving `SIGSEGV`), the test will be assumed to have exceeded max ram...in general, however, this is tricky to debug. In my experience, `valgrind` will fail to allocate memory but still produce a log file at `~50MB` of ram; any lower and no log file will be produced. The default setting of `500` `MB` should be fine for most tests, and will work with the smallest (default) container. |
+| `kill_limit` | `500` | test will be killed if it's memory usage exceeds this value (in `MB`) [soft rlimit_data will be set to this value in a preexec function to the subprocess call] - Note: if the program exceeds the limit, it will receive `SIGSEGV` from the os. Unfortunately, nothing is produced on `stderr`. However, if `valgrind` is also run and fails to produce a log file (due to also receiving `SIGSEGV`), the test will be assumed to have exceeded max ram...in general, however, this is tricky to debug. In my experience, `valgrind` will fail to allocate memory but still produce a log file at `~50MB` of ram; any lower and no log file will be produced. The default setting of `500` `MB` should be fine for most tests, and will work with the smallest (default) container. |
 
 
 ## Visibility settings in Gradescope
@@ -459,13 +459,17 @@ Note that if the `max_score` for a test is `0`, then Gradescope will assume that
 That should be enough to get you up and running! Please feel free to contact me with any questions you have, and/or any bugs, feature requests, etc. you find. Thanks!
 
 # TODOS
-* The `max_ram` setting doesn't actually limit the amount of ram a test can use - it only verifies that a student's code uses less than the `max_ram` amount. It looks like the os might kill the entire test harness if a given processes has excessive memory use; added a `MAX_V_MEMORY` variable at the top of `bin/autograde.py`, along with a fn which will set the max memory available for the processes. TODO: document the functionality properly, and make it so the value can be tweaked in the `.toml` file. (Note: this should likely be a 'global-only' setting) 
 * Update the funcationality of `bin/autograde.py` so that if a grader is re-running tests, we don't nuke the entire build folder, but intelligently load the data from alread-run tests. Also, need to verify that the various filter, etc. options work as expected. 
 
 # Changelog
 
 ## [1.1.2] - 2022-6-23
 * Changed 
+    - `bin/autograde.py` - Changed `MAX_V_MEMORY` to `kill_limit`, which is now a configurable parameter for tests; default value is `500` `MB`; updated the preexec function setting the limit to take a parameter.
+    - `bin/autograde.py` - Added `max_valgrind_score` and `valgrind_score_visibility` `[common]` only parameters. 
+    - `bin/autograde.py` - Added `valg_out_of_mem` test result, which will fire if the test file is not created; this way, the autograder won't crash on valgrind being killed b/c out of ram do not producing a log file. 
+    - `bin/autograde.py` - Changed reporting mechanism to output # of failed tests, and to display only failures (# segfaults, etc.) when there are any; added `Exceeded Max Ram` and `V. Exceeded Max Ram`.
+    - `bin/make_gradescope_results.py` - added the valgrind test; loads the global data from the `testset.toml` file; note that the defaults for these (8, `"after_due_date"`) are set in this file - [TODO] refactor to set defaults in `autograde.py` and load them from any given test in this file?
 
 ## [1.1.1] - 2022-6-20
 * Changed
