@@ -383,7 +383,7 @@ In order to build reference output and test your code easily, first add the `bin
 echo -e "export PATH=\$PATH:/REPO_ROOT/bin\n" >> ~/.bashrc
 source ~/.bashrc
 ```
-Also, if you don't have `diff-so-fancy` installed on your system and would like to use the `pretty_diff` option then you'll want to add `REPO_ROOT/lib` to your perl library include path (run `perl -V` to see available options).
+Also, if you don't have `diff-so-fancy` installed on your system and would like to use the `pretty_diff` option then you'll want to add `REPO_ROOT/lib` to your perl library include path (either update `$PERLLIB` in `~/.bashrc` or run `perl -V` to see available locations to copy the file `etc/DiffHighlight.pm` to).
 
 ### Building the Reference Output
 Once you've configured your tests, run the command 
