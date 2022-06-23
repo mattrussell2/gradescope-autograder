@@ -6,6 +6,7 @@ from webbrowser import get
 import ast
 from pathlib import Path
 from collections import OrderedDict
+import toml
 
 # We need dateutil on Gradescope, but not on Halligan. This library does not
 # exist locally, so we simply pass when running locally.
@@ -45,6 +46,18 @@ AFTER_DUE_DATE  = "after_due_date"
 HIDDEN          = "hidden"          # Careful if using this setting! Gradescope
                                     # hides the total score from students if
                                     # ANY test is hidden.... smh....
+
+# todo: put this in a fn
+TESTSET = toml.load('testset.toml')
+if 'max_valgrind_score' in TESTSET['common']:
+    MAX_VALGRIND_SCORE = TESTSET['common']['max_valgrind_score']
+else:
+    MAX_VALGRIND_SCORE = 8
+
+if 'valgrind_score_visibility' in TESTSET['common']:
+    VALGRIND_VISIBILITY = TESTSET['common']['valgrind_score_visibility']
+else:
+    VALGRIND_VISIBILITY = "after_due_date"
 
 # todo: reinsert canonicalization messages, after considering how canonicalizers
 # will be needed in the future
@@ -125,22 +138,19 @@ def save_json(fname, data, d=None):
     with open(savepath, 'w') as f:
         json.dump(data, f, indent=4)
 
+def get_valgrind_score():
+    return round(sum([x['valgrind_passed'] == True for x in TEST_SUMMARIES if x['valgrind']]) / \
+                     len([x for x in TEST_SUMMARIES if x['valgrind']]) * MAX_VALGRIND_SCORE, 2)
+
 def get_total_score():
-    return sum([x['max_score'] * x['success'] for x in TEST_SUMMARIES])
+    return sum([x['max_score'] * x['success'] for x in TEST_SUMMARIES]) + get_valgrind_score()
 
 def get_max_score():
-    return sum([x['max_score'] for x in TEST_SUMMARIES])
-
-HERE           = os.getcwd()
-
-# Path to student testXX.summary files and compilation logs
-LOG_DIR        = os.path.join(HERE, "results", "logs")
-
-# loads the summaries - one per test - as dictionaries
-TEST_SUMMARIES = load_dicts_from_files(LOG_DIR, '.summary')
-
-#if not os.path.exists('results'):
-#    os.mkdir('results')
+    return sum([x['max_score'] for x in TEST_SUMMARIES]) + MAX_VALGRIND_SCORE
+            
+HERE              = os.getcwd()
+LOG_DIR           = os.path.join(HERE, "results", "logs")
+TEST_SUMMARIES    = load_dicts_from_files(LOG_DIR, '.summary')
 RESULTS_JSONPATH  = os.path.join(HERE, "results", "results.json")
 
 # dictionary where we'll keep the results
@@ -271,17 +281,20 @@ def make_test00():
         )
     )
 
-def make_results():
-    # make_test00()
 
-    # maybe necessary? not sure. i think the program exits immediately if compilation fails, so yes.
-    # compile_logfiles = get_compile_logs()
-    # if any([build_failed(log.split('.compile.log')[0]) for log in compile_logfiles]) and \
-    #    len(TEST_SUMMARIES) == 0:
-    #     testname = "compilation failed"
-    #     max_score = 0
-    #     score = 0
-    #     reason = "Your program
+def make_valgrind_test():    
+    RESULTS["tests"].append(make_test_result(
+        name       = "Valgrind Score",
+        visibility = VALGRIND_VISIBILITY,
+        score      = get_valgrind_score(),
+        max_score  = MAX_VALGRIND_SCORE,
+        output     = "This is your total Valgrind score.\n"
+        )
+    )
+
+def make_results():
+    #make_test00()
+    make_valgrind_test()
 
     for test in TEST_SUMMARIES:
         testname  = test['testname']
