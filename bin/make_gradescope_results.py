@@ -139,8 +139,11 @@ def save_json(fname, data, d=None):
         json.dump(data, f, indent=4)
 
 def get_valgrind_score():
-    return round(sum([x['valgrind_passed'] == True for x in TEST_SUMMARIES if x['valgrind']]) / \
+    try:        
+        return round(sum([x['valgrind_passed'] == True for x in TEST_SUMMARIES if x['valgrind']]) / \
                      len([x for x in TEST_SUMMARIES if x['valgrind']]) * MAX_VALGRIND_SCORE, 2)
+    except ZeroDivisionError:
+        return 0
 
 def get_total_score():
     return sum([x['max_score'] * x['success'] for x in TEST_SUMMARIES]) + get_valgrind_score()
