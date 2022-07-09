@@ -462,6 +462,9 @@ That should be enough to get you up and running! Please feel free to contact me 
 * Update the funcationality of `bin/autograde.py` so that if a grader is re-running tests, we don't nuke the entire build folder, but intelligently load the data from alread-run tests. Also, need to verify that the various filter, etc. options work as expected. 
 
 # Changelog
+## [1.1.4] - 2022-7-9
+* Changed 
+    - `bin/make_gradescope_results.py` - Don't crash when `diff_stderr=False` 
 ## [1.1.3] - 2022-6-27
 * Changed
     - `bin/make_gradescope_results.py` - Don't crash when no valgrind tests. 

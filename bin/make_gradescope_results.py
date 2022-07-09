@@ -235,13 +235,13 @@ def get_failure_reason(test):
         for failtype, func in failure_tests.items():
             if func(test):
                 fail[REASON] = failtype
-                if failtype == COUT_FAIL:
+                if failtype == COUT_FAIL and test['diff_stdout']:
                     if not test['ccize_stdout']:
                         fname = f"{test['testname']}.stdout.diff"
                     else:
                         fname = f"{test['testname']}.stdout.ccized.diff"
                     fail['Diff Result for stdout\n'] = Path(f"/autograder/results/output/{fname}").read_text()
-                elif failtype == CERR_FAIL:
+                elif failtype == CERR_FAIL and test['diff_stderr']:
                     if not test['ccize_stderr']:
                         fname = f"{test['testname']}.stderr.diff"
                     else:
