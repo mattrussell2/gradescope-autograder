@@ -90,7 +90,7 @@ assignment. However, there is no other setup required. For the future, if you ma
 This method takes a bit more setup in advance. 
 
 1. You will need to host your container somewhere. We suggest using the [GitHub container registry](https://docs.github.com/en/packages/working-with-a-github-packages-registry/working-with-the-container-registry), however if you have a 'pro' account on Dockerhub, that's also a good option. 
-2. If you use the GitHub registry, make sure to share your package with `gradescope-autograder-servers` after you upload it; if you use Dockerhub, you'll need to add `gradescopeecs` as a private collaborator to your package.
+2. If you use the GitHub registry, make sure to share your repo with `gradescope-autograder-servers` after you upload it; if you use Dockerhub, you'll need to add `gradescopeecs` as a private collaborator to your repo.
 3. See the file `etc/docker_config.ini`. You'll need to update the values of these variables as needed. Variables are as follows:
 
 |     KEY          |        Purpose       |
