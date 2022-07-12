@@ -94,8 +94,8 @@ This method takes a bit more setup in advance.
 2. If you use the GitHub registry, make sure to share your repo with `gradescope-autograder-servers` after you upload it; if you use Dockerhub, you'll need to add `gradescopeecs` as a private collaborator to your repo.
 3. See the file `etc/docker_config.ini`. You'll need to update the values of these variables as needed. Variables are as follows:
 
-|     KEY          |        Purpose       |
-|------------------|----------------------|
+|     KEY          |        Default       |        Purpose       |
+|------------------|----------------------|----------------------|
 | `CONTAINER_REMOTE`   | `ghcr.io` | Which container registry you use (default is GitHub) |
 | `CONTAINER_NAME`      | `gradescope-docker` | Name of the package repo that will hold your autograding docker container. |
 | `CONTAINER_TAG` | `autograder-autobuild` | Tag of the container which will be used for the course's autograder. One tag will be used per course| 
