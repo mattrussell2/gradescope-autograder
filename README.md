@@ -65,18 +65,17 @@ Make sure to run `source ~/.bashrc` or equivalent after editing the file.
 ## etc/autograder_config.ini
 The file `etc/autograder_config.ini` contains various important bits of information toward deploying your autograder. Options for the `etc/autograder_config.ini` file are as follows:
 
-|     KEY          |        Purpose       |
-|------------------|----------------------|
-| `REPO_REMOTE_VARNAME`   | Variable name of the environment variable used above - default is `AUTOGRADING_REPO_REMOTE_PATH` 
-| `ASSIGN_ROOT`      | where assignment autograding folders are relative to repo root (so if you use the structure `REPO_ROOT/assignments/(your assignments here)` then `assignments` would be placed as the value here)|
-| `ASSIGN_AUTOGRADING_SUBFOLDER` | for assignments, if you put the autograder in a subfolder of the assignment folder, put the intermediate path here (so if you use the structure `REPO_ROOT/assignments/hw1_ArrayLists/autograder/(autograding files)` then `autograder` would be placed as the value here) |
-| `AUTOGRADING_ROOT` | path from repo root which contains `bin/`, `etc/`, `lib/`, and `setup/` |
+|     KEY          |        Default       |      Purpose       |
+|------------------|----------------------|----------------------|
+| `REPO_REMOTE_VARNAME`   |  `AUTOGRADING_REPO_REMOTE_PATH` | Variable name of the environment variable used above  |
+| `AUTOGRADING_ROOT` | `""` | Path from repo root which contains `bin/`, `etc/`, `lib/`, and `setup/` |
+| `ASSIGN_ROOT`      | `assignments` | Path from `AUTOGRADING_ROOT` were assignment autograding folders live |
+| `ASSIGN_AUTOGRADING_SUBFOLDER` | `""` | Path from a given assignment folder which holds autograding files/folder for that assignment.  |
+
 
 NOTE! do not put any spaces around the `=` characters in this file.
 
-The values in the sample `autograder_config.ini` will work with the directory structure as-is in this repo. Feel free to customize the paths - for instance, if you'd like to place your assignments in the root directory of your grading repo, then update the value of `ASSIGN_ROOT` to be "".
-
-Okay! now continue with one of either the `.zip` or Docker methods below.
+The values in the sample `autograder_config.ini` will work with the directory structure as-is in this repo. Okay! now continue with one of either the `.zip` or Docker methods below.
 
 ## .zip method
 As mentioned above, with the `.zip` method, you'll need to upload a `.zip` file for each 
