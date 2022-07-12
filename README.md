@@ -67,7 +67,7 @@ The file `etc/autograder_config.ini` contains various important bits of informat
 
 |     KEY          |        Purpose       |
 |------------------|----------------------|
-| `REPO_REMOTE_VARNAME`   | `AUTOGRADING_REPO_REMOTE_PATH` | Variable name of the environment variable used above |
+| `REPO_REMOTE_VARNAME`   | | Variable name of the environment variable used above - default is `AUTOGRADING_REPO_REMOTE_PATH` 
 | `ASSIGN_ROOT`      | where assignment autograding folders are relative to repo root (so if you use the structure `REPO_ROOT/assignments/(your assignments here)` then `assignments` would be placed as the value here)|
 | `ASSIGN_AUTOGRADING_SUBFOLDER` | for assignments, if you put the autograder in a subfolder of the assignment folder, put the intermediate path here (so if you use the structure `REPO_ROOT/assignments/hw1_ArrayLists/autograder/(autograding files)` then `autograder` would be placed as the value here) |
 | `AUTOGRADING_ROOT` | path from repo root which contains `bin/`, `etc/`, `lib/`, and `setup/` |
