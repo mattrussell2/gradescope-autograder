@@ -101,7 +101,7 @@ This method takes a bit more setup in advance.
 | `REGISTRY_USER_VARNAME` | `GHUNAME` | Variable name of the environment variable which holds the username to login to the `CONTAINER_REMOTE`. 
 | `REGISTRY_PASS_VARNAME` | `GHPAT` | Variable name of the environment variable which holds the password/access token to login to the `CONTAINER_REMOTE`. 
 
-Note that in this case `GHUNAME` and `GHPAT` are the names of environment variables. So with this setup you'd need `export GHUNAME='myghubusername'` in your `~/.bashrc`, etc. Make sure to run `source ~/.bashrc` after editing the file.
+Note that in this case `GHUNAME` and `GHPAT` are the names of environment variables (NOT the values of the variables themselves). So with this example you'd need `export GHUNAME='myghubusername'` in your `~/.bashrc`, etc. Make sure to run `source ~/.bashrc` after editing the file.
 
 5. If you don't have `Docker Desktop`, install it: https://www.docker.com/products/docker-desktop/. 
 
