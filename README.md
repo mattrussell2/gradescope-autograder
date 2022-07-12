@@ -13,12 +13,12 @@ a submission is graded. The default container runs a variant of Ubuntu 18.04 whi
 the bare-bones infrastructure to make Gradescope's systems function. Before diving into autograding, you will need to set up a method to integrate with Gradescope's systems. This document presents two options: 
 
 * The `.zip` method - this workflow is to manually upload a `.zip` file containing two scripts: `setup.sh`, which installs dependencies (e.g. `Python`, `clang`, etc.), and a shell script named `run_autograder`, which runs the autograder.
-* The Docker method - this workflow is to build the Docker container from scratch and upload it to Dockerhub.
+* The Docker method - this workflow is to build the Docker container from scratch and upload it to the container registry of your choice.
 
 Fear not! There is lots of starter code to do the bulk of the heavy lifting here, so either way you choose, you will likely not need to do too much setup. However, here are some pros and cons of these approaches:
 
 * The `.zip` method requires more manual work. You have to upload a new `.zip` file each time you want to update the autograder; the Docker container will then need to be built from scratch on Gradescope, which takes time. However, you don't need Docker on your system. If you're not familiar with Docker, this workflow is suggested. 
-* The Docker method is more streamlined once it's setup. After uploading the container, for every assignment, you can point Gradescope to the container on Dockerhub - no `.zip` file uploading required. If you already use Docker, will be interested in tweaking the Docker container's build settings (`clang` version, etc.) or are feeling adventurous, go for this option. 
+* The Docker method is more streamlined once it's setup. After uploading the container, for every assignment, you can point Gradescope to the container location - no `.zip` file uploading required. If you already use Docker, will be interested in tweaking the Docker container's build settings (`clang` version, etc.) or are feeling adventurous, go for this option. 
 * Gradescope's default container runs Ubuntu 18.04; we manually install Python 3.9 in the container in the `setup.sh` file; the Docker setup we have builds Ubuntu 22.04, which comes with Python 3.10 by default.
 
 ## Autograding git Repo
@@ -44,35 +44,39 @@ rm -rf gradescope-autograding/.git
 mv gradescope-autograding/* .
 rm -rf gradescope-autograding
 ```
-Great! Now, you will need an Access Token so your autograder can pull from the repo. To create one, go to gitlab in your browser, and navigate to the course repository you just created. Next, hover over the settings cog on the lower left, and select `Access Tokens`.
-Create one - this will be used by the Gradescope autograder to pull the most recent version of the autograding files for an assignment. We suggest only providing `read repository` access to the token. Feel free to select whatever you'd like for the name, expiration date, and role. Once the token is created, copy the key. Now, return to your repo, and open the `etc/autograder_config.ini` file - `REPO_ROOT/etc/autograder_config.ini` and update the `REPO_REMOTE_PATH` variable as follows:
+Great! Now, you will need an Access Token so your autograder can pull from the repo. To create one, go to gitlab in your browser, and navigate to the course repository you just created. Next, hover over the settings cog on the lower left, and select `Access Tokens`. Create one - this will be used by the Gradescope autograder to pull the most recent version of the autograding files for an assignment. We suggest only providing `read repository` access to the token. Feel free to select whatever you'd like for the name, expiration date, and role. Once the token is created, copy the key. 
+
+You will need to now create an environment variable with the remote path to your autograding repo, including the acess token copied above. 
+
+Now, open your `~/.bashrc` file (or appropriate file for whichever shell you use), and add the following line at the end: 
 
 ```
-https://REPOSITORY-NAME:ACCESS-TOKEN@gitlab.cs.tufts.edu/path/to/repository.git
+export AUTOGRADING_REPO_REMOTE_PATH="https://REPOSITORY-NAME:ACCESS-TOKEN@gitlab.cs.tufts.edu/path/to/repository.git"
 ```
-For example:
-```
-REPO_REMOTE_PATH="https://cs-15-2022uc:glpat-Blah8173Blah8023Blah@gitlab.cs.tufts.edu/mrussell/cs-15-2022uc.git"
-```
-Note that this path has your access token inside of it, so if you set it to have `write` permissions (not recommended), then anyone with access to the autograder container can push changes to the repo. Also, if your repo is public, anyone can have push access, so please keep your repository private!
+Where the appropriate substitions have been made - for example:
 
-Before we continue, let's go over the other options for the `etc/autograder_config.ini` file: 
+```
+export AUTOGRADING_REPO_REMOTE_PATH="https://cs-15-2022uc:glpat-Blah8173Blah8023Blah@gitlab.cs.tufts.edu/mrussell/cs-15-2022uc.git"
+```
+If you don't use BASH, use the `export` variety for your shell. The default variable name is `AUTOGRADING_REPO_REMOTE_PATH`, however you can configure the variable name to be whatever you'd like (see next section for details). 
+
+Make sure to run `source ~/.bashrc` or equivalent after editing the file. 
+
+## etc/autograder_config.ini
+The file `etc/autograder_config.ini` contains various important bits of information toward deploying your autograder. Options for the `etc/autograder_config.ini` file are as follows:
 
 |     KEY          |        Purpose       |
 |------------------|----------------------|
-| `DOCKER_CREDS`     | Credentials to login to docker. [Docker only - see `Docker method` section for details]      |
-| `DOCKER_TAG`       |  `tuftscs/gradescope-docker:YOURTAGNAME` [Docker only - see `Docker method` section for details] |
-| `REPO_REMOTE_PATH` | `https` path to your repository, including the access token |
+| `REPO_REMOTE_VARNAME`   | `AUTOGRADING_REPO_REMOTE_PATH` | Variable name of the environment variable used above |
 | `ASSIGN_ROOT`      | where assignment autograding folders are relative to repo root (so if you use the structure `REPO_ROOT/assignments/(your assignments here)` then `assignments` would be placed as the value here)|
 | `ASSIGN_AUTOGRADING_SUBFOLDER` | for assignments, if you put the autograder in a subfolder of the assignment folder, put the intermediate path here (so if you use the structure `REPO_ROOT/assignments/hw1_ArrayLists/autograder/(autograding files)` then `autograder` would be placed as the value here) |
 | `AUTOGRADING_ROOT` | path from repo root which contains `bin/`, `etc/`, `lib/`, and `setup/` |
 
 NOTE! do not put any spaces around the `=` characters in this file.
 
-The values in the sample `autograder_config.ini` will work with the directory structure as-is in this repo.
-Feel free to customize the paths - for instance, if you'd like to place your assignments in the root directory of your grading repo, then update the value of `ASSIGN_ROOT` to be "".
+The values in the sample `autograder_config.ini` will work with the directory structure as-is in this repo. Feel free to customize the paths - for instance, if you'd like to place your assignments in the root directory of your grading repo, then update the value of `ASSIGN_ROOT` to be "".
 
-Okay! Assuming you've updated the `config` with the paths you'd like, and have added the `REPO_REMOTE_PATH`, continue with one of either the `.zip` or Docker methods below.
+Okay! now continue with one of either the `.zip` or Docker methods below.
 
 ## .zip method
 As mentioned above, with the `.zip` method, you'll need to upload a `.zip` file for each 
@@ -85,34 +89,35 @@ assignment. However, there is no other setup required. For the future, if you ma
 * Contact me if you run into trouble!
 
 ## Docker method
-If you don't have `Docker Desktop`, install it: https://www.docker.com/products/docker-desktop/
-Then, open back up the `etc/autograder_config.ini` file.
-You will need to add two more things here. 
+This method takes a bit more setup in advance. 
 
-### `DOCKERTAG`
-Update the `PUT_YOUR_TAG_HERE` in
-```
-tuftscs/gradescope-docker:PUT_YOUR_TAG_HERE     
-```
-Please select a tagname which reflects something specific related to your course and the semester (e.g. `cs-11-2022-summer`).
-Note that `tuftscs/gradescope-docker:` is required at the start of the value. This will be the tag that is uploaded to Dockerhub; Gradescope will need it to know where to find the Docker container to run the autograder. If you're not at Tufts, please use your own dockerhub location.
+1. You will need to host your container somewhere. We suggest using the [GitHub container registry](https://docs.github.com/en/packages/working-with-a-github-packages-registry/working-with-the-container-registry), however if you have a 'pro' account on Dockerhub, that's also a good option. 
+2. If you use the GitHub registry, make sure to share your package with `gradescope-autograder-servers` after you upload it; if you use Dockerhub, you'll need to add `gradescopeecs` as a private collaborator to your package.
+3. See the file `etc/docker_config.ini`. You'll need to update the values of these variables as needed. Variables are as follows:
 
-### `DOCKERCREDS`
-If you have a 'pro' account on Dockerhub (or if you're not at Tufts), then create your own access token and put it here - note that you'll need to add `gradescopeecs` as a private collaborator to the repository on Dockerhub. If you don't have a `pro` account, (and you're at Tufts) reach out to me at `mrussell@cs.tufts.edu`, and I'll send you the DOCKERCREDS. 
-Note!! This access token must be kept private; to that end, please keep your course autograding
-repository private.
+|     KEY          |        Purpose       |
+|------------------|----------------------|
+| `CONTAINER_REMOTE`   | `ghcr.io` | Which container registry you use (default is GitHub) |
+| `CONTAINER_NAME`      | `gradescope-docker` | Name of the package repo that will hold your autograding docker container. |
+| `CONTAINER_TAG` | `autograder-autobuild` | Tag of the container which will be used for the course's autograder. One tag will be used per course| 
+| `REGISTRY_USER_VARNAME` | `GHUNAME` | Variable name of the environment variable which holds the username to login to the `CONTAINER_REMOTE`. 
+| `REGISTRY_PASS_VARNAME` | `GHPAT` | Variable name of the environment variable which holds the password/access token to login to the `CONTAINER_REMOTE`. 
 
-### Build and upload the container to Dockerhub
-Once you've updated the `autograder_config.ini` with the necessary variables, run:
+Note that in this case `GHUNAME` and `GHPAT` are the names of environment variables. So with this setup you'd need `export GHUNAME='myghubusername'` in your `~/.bashrc`, etc. Make sure to run `source ~/.bashrc` after editing the file.
+
+5. If you don't have `Docker Desktop`, install it: https://www.docker.com/products/docker-desktop/. 
+
+### Build and deploy the container
+Once you've updated the `etc/autograder_config.ini` and `etc/docker_config.ini` files with the necessary variables, and have put the necessary exports in your `~/.bashrc` file, run:
 ```
 cd dockerbuild
 ./deploy_container
 ```
-The container will be built and uploaded to Dockerhub with the tag you specified. Note: in rare cases, the Docker build process hangs in the early stages. If this happens to you, run `rm ~/.docker/config.json` and try again. For the future, if you make changes to any of the files in the `dockerbuild` folder, or to `bin/run_autograder`, make sure to re-run this script. 
+The container will be built and uploaded to the location you've specified. Note: in rare cases, the Docker build process hangs in the early stages. If this happens to you, run `rm ~/.docker/config.json` and try again. For the future, if you make changes to any of the files in the `dockerbuild` folder, or to `bin/run_autograder`, make sure to re-run this script. 
 
 ### For each assignment with the Docker method 
 
-* On Gradescope, after creating the programming assignment, select the 'Manual Docker Configuration' option in the configure autograder' section; place the contents of the `DOCKERTAG` variable in the box (e.g. `tuftscs/gradescope-docker:cs-11-2022-summer`).
+* On Gradescope, after creating the programming assignment, select the 'Manual Docker Configuration' option in the configure autograder' section; place the full remote path to your container (e.g. `ghcr.io/ghubusername/ghubpackageregistry:dockertag`) 
 
 That's it! 
 
@@ -462,6 +467,15 @@ That should be enough to get you up and running! Please feel free to contact me 
 * Update the funcationality of `bin/autograde.py` so that if a grader is re-running tests, we don't nuke the entire build folder, but intelligently load the data from alread-run tests. Also, need to verify that the various filter, etc. options work as expected. 
 
 # Changelog
+## [1.1.5] - 2022-7-12
+Substantial revision - updated configuation to manage secret keeping better by using environment variables for Docker configuration - some configuration variables now hold name of the environnment variable, rather than the data itself. Updated default to not use Dockerhub anymore, but rather GitHub Container registry; this avoid sketchy sharing of private info (dockercreds), and makes the docker setup more generalized (can login to any container registry with new setup).
+* Created
+    - `etc/docker_config.ini` - Placed docker-only configuration here
+* Changed
+    - `etc/autograder_config.ini` - Updated variable names, separated out docker-only variables
+    - `setup/dockerbuild/deploy_container.sh` - use better secret keeping
+    - `setup/zipbuild/build_container.sh` and `.../setup.sh` - use better secret keeping
+
 ## [1.1.4] - 2022-7-9
 * Changed 
     - `bin/make_gradescope_results.py` - Don't crash when `diff_stderr=False` 
