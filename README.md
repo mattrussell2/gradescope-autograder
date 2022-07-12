@@ -63,19 +63,18 @@ If you don't use BASH, use the `export` variety for your shell. The default vari
 Make sure to run `source ~/.bashrc` or equivalent after editing the file. 
 
 ## etc/autograder_config.ini
-The file `etc/autograder_config.ini` contains various important bits of information toward deploying your autograder. Options for the `etc/autograder_config.ini` file are as follows:
+The file `etc/autograder_config.ini` contains various important bits of information toward deploying your autograder. Note that the values in the sample `autograder_config.ini` related to directory structure will work with the directory structure as-is in this repo, but if you change the basic directory structure, they'll be necessary. Options for the `etc/autograder_config.ini` file are as follows:
 
 |     KEY          |        Default       |      Purpose       |
 |------------------|----------------------|----------------------|
 | `REPO_REMOTE_VARNAME`   |  `AUTOGRADING_REPO_REMOTE_PATH` | Variable name of the environment variable used above  |
 | `AUTOGRADING_ROOT` | `""` | Path from repo root which contains `bin/`, `etc/`, `lib/`, and `setup/` |
-| `ASSIGN_ROOT`      | `assignments` | Path from `AUTOGRADING_ROOT` were assignment autograding folders live |
-| `ASSIGN_AUTOGRADING_SUBFOLDER` | `""` | Path from a given assignment folder which holds autograding files/folder for that assignment.  |
-
+| `ASSIGN_ROOT`      | `assignments` | Path from `AUTOGRADING_ROOT` where assignment autograding folders live |
+| `ASSIGN_AUTOGRADING_SUBFOLDER` | `""` | Path from a given assignment folder which holds the autograding files for that assignment.  |
 
 NOTE! do not put any spaces around the `=` characters in this file.
 
-The values in the sample `autograder_config.ini` will work with the directory structure as-is in this repo. Okay! now continue with one of either the `.zip` or Docker methods below.
+Okay! now continue with one of either the `.zip` or Docker methods below.
 
 ## .zip method
 As mentioned above, with the `.zip` method, you'll need to upload a `.zip` file for each 
