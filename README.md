@@ -89,6 +89,7 @@ assignment. However, there is no other setup required. For the future, if you ma
 ## Docker method
 This method takes a bit more setup in advance. 
 
+0. If you don't have `Docker Desktop`, install it: https://www.docker.com/products/docker-desktop/. 
 1. You will need to host your container somewhere. We suggest using the [GitHub container registry](https://docs.github.com/en/packages/working-with-a-github-packages-registry/working-with-the-container-registry), however if you have a 'pro' account on Dockerhub, that's also a good option. 
 2. If you use the GitHub registry, make sure to share your repo with `gradescope-autograder-servers` after you upload it; if you use Dockerhub, you'll need to add `gradescopeecs` as a private collaborator to your repo.
 3. See the file `etc/docker_config.ini`. You'll need to update the values of these variables as needed. Variables are as follows:
@@ -102,8 +103,6 @@ This method takes a bit more setup in advance.
 | `REGISTRY_PASS_VARNAME` | `GHPAT` | Variable name of the environment variable which holds the password/access token to login to the `CONTAINER_REMOTE`. 
 
 Note that in this case `GHUNAME` and `GHPAT` are the names of environment variables (NOT the values of the variables themselves). So with this example you'd need `export GHUNAME='myghubusername'` in your `~/.bashrc`, etc. Make sure to run `source ~/.bashrc` after editing the file.
-
-5. If you don't have `Docker Desktop`, install it: https://www.docker.com/products/docker-desktop/. 
 
 ### Build and deploy the container
 Once you've updated the `etc/autograder_config.ini` and `etc/docker_config.ini` files with the necessary variables, and have put the necessary exports in your `~/.bashrc` file, run:
