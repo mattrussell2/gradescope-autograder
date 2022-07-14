@@ -224,10 +224,10 @@ depending on your test configuration.
 ```
 ## General Notes
 * Files in `testset/stdin/` named `<testname>.stdin` (`test01.stdin`) will be sent to `stdin` for that test. 
-* Files in `.cpp/` named `<testname>.cpp` (`test01.cpp`) will each contain `main()`, and will be compiled and linked with the student's code.
-* If you plan to use files in `.cpp`, you must use a custom `Makefile` - see the example: `assignments/hw1_ArrayLists/testset/makefile/Makefile`.
-* If the students are writing programs which have their own `main()`, then you do not need files in `.cpp` - you may still choose to have your own custom `Makefile` if you wish (otherwise, be sure to set `our_makefile = false` in `testset.toml`). 
-* The target to build (e.g. `make target`) must be named the same as the program to run (e.g. `./target`).
+* Files in `testset/cpp/` named `<testname>.cpp` (`test01.cpp`) are intended to be driver files; each one will contain `main()`, and will be compiled and linked with the student's code.
+* If you plan to use driver files in `testset/cpp/`, you must use a custom `Makefile` - see the example: `assignments/hw1_ArrayLists/testset/makefile/Makefile`.
+* If the students are writing programs which have their own `main()`, then you do not need files in `testset/cpp/` - you may still choose to have your own custom `Makefile` if you wish (otherwise, be sure to set `our_makefile = false` in `testset.toml`). 
+* Whether using custom drivers or not, the target to build (e.g. `make target`) must always be named the same as the program to run (e.g. `./target`).
 * Canonicalization functions which are used by the autograder in `canonicalizers.py` must:
     * Take a single parameter - this will be a string containing the student's output from whichever stream is to be canonicalized
     * Return a string, which contains the canonicalized output 
