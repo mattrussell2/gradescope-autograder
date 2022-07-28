@@ -1,4 +1,5 @@
 #!/bin/bash
+
 # deploy_container.sh
 # builds and deploys the autograding docker container for gradescope
 # by matt russell 
@@ -7,9 +8,13 @@
 cd ../../
 
 source etc/autograder_config.ini 
-grep -v "DOCKER_CREDS\|DOCKER_TAG\|REPO_REMOTE_PATH" etc/autograder_config.ini > autograder_config.ini 
-docker build --tag $DOCKER_TAG --build-arg REPO_REMOTE_PATH=$REPO_REMOTE_PATH -f setup/dockerbuild/Dockerfile .
+source etc/docker_config.ini
+
+cp etc/autograder_config.ini .
+
+docker build --tag $CONTAINER_TAG --build-arg REPO_REMOTE_PATH="${!REPO_REMOTE_VARNAME}" -f setup/dockerbuild/Dockerfile .
+
 rm autograder_config.ini 
 
-echo $DOCKER_CREDS | docker login --username tuftscs --password-stdin
-docker push $DOCKER_TAG
+echo "${!REGISTRY_PASS_VARNAME}" | docker login "${CONTAINER_REMOTE}" --username "${!REGISTRY_USER_VARNAME}" --password-stdin
+docker push "${CONTAINER_REMOTE}/${!REGISTRY_USER_VARNAME}/${CONTAINER_NAME}:${CONTAINER_TAG}"

@@ -20,7 +20,7 @@ apt install python3.9 python3.9-distutils -y
 
 # install pip packages
 python3.9 -m pip install --upgrade pip
-python3.9 -m pip install toml dataclasses tqdm filelock python_dateutil pandas
+python3.9 -m pip install toml dataclasses tqdm filelock python_dateutil
 
 # update message of the day
 cp /autograder/source/etc/motd /etc/motd
@@ -38,4 +38,4 @@ printf 'export PS1=\"\\u@gs:\\W\\$ \"\n' >> ~/.bashrc
 source /autograder/source/autograder_config.ini
 
 # clone the course repo
-cd /autograder/source && git clone $REPO_REMOTE_PATH course-repo
+cd /autograder/source && git clone "${REPO_REMOTE_PATH}" course-repo

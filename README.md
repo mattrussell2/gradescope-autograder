@@ -3,7 +3,7 @@ Gradescope is great tool for autograding assignments. However, there is still a 
 of infrastructure required to deploy and run an autograder on Gradescope. This document provides 
 instructions for setting up an autograder on Gradescope which uses our in-house autograding
 framework for `C/C++` code. Setup from start to finish is intended to take roughly 30 minutes.
-If you have any questions, please reach out to me at `mrussell@cs.tufts.edu`
+If you have any questions, please reach out to me at `mrussell@cs.tufts.edu`, or open an issue here. 
 
 # Infrastructure Setup
 
@@ -13,12 +13,12 @@ a submission is graded. The default container runs a variant of Ubuntu 18.04 whi
 the bare-bones infrastructure to make Gradescope's systems function. Before diving into autograding, you will need to set up a method to integrate with Gradescope's systems. This document presents two options: 
 
 * The `.zip` method - this workflow is to manually upload a `.zip` file containing two scripts: `setup.sh`, which installs dependencies (e.g. `Python`, `clang`, etc.), and a shell script named `run_autograder`, which runs the autograder.
-* The Docker method - this workflow is to build the Docker container from scratch and upload it to Dockerhub.
+* The Docker method - this workflow is to build the Docker container from scratch and upload it to the container registry of your choice.
 
 Fear not! There is lots of starter code to do the bulk of the heavy lifting here, so either way you choose, you will likely not need to do too much setup. However, here are some pros and cons of these approaches:
 
 * The `.zip` method requires more manual work. You have to upload a new `.zip` file each time you want to update the autograder; the Docker container will then need to be built from scratch on Gradescope, which takes time. However, you don't need Docker on your system. If you're not familiar with Docker, this workflow is suggested. 
-* The Docker method is more streamlined once it's setup. After uploading the container, for every assignment, you can point Gradescope to the container on Dockerhub - no `.zip` file uploading required. If you already use Docker, will be interested in tweaking the Docker container's build settings (`clang` version, etc.) or are feeling adventurous, go for this option. 
+* The Docker method is more streamlined once it's setup. After uploading the container, for every assignment, you can point Gradescope to the container location - no `.zip` file uploading required. If you already use Docker, will be interested in tweaking the Docker container's build settings (`clang` version, etc.) or are feeling adventurous, go for this option. 
 * Gradescope's default container runs Ubuntu 18.04; we manually install Python 3.9 in the container in the `setup.sh` file; the Docker setup we have builds Ubuntu 22.04, which comes with Python 3.10 by default.
 
 ## Autograding git Repo
@@ -44,35 +44,37 @@ rm -rf gradescope-autograding/.git
 mv gradescope-autograding/* .
 rm -rf gradescope-autograding
 ```
-Great! Now, you will need an Access Token so your autograder can pull from the repo. To create one, go to gitlab in your browser, and navigate to the course repository you just created. Next, hover over the settings cog on the lower left, and select `Access Tokens`.
-Create one - this will be used by the Gradescope autograder to pull the most recent version of the autograding files for an assignment. We suggest only providing `read repository` access to the token. Feel free to select whatever you'd like for the name, expiration date, and role. Once the token is created, copy the key. Now, return to your repo, and open the `autograder_config.ini` file - `REPO_ROOT/etc/autograder_config.ini` and update the `REPO_REMOTE_PATH` variable as follows:
+Great! Now, you will need an Access Token so your autograder can pull from the repo. To create one, go to gitlab in your browser, and navigate to the course repository you just created. Next, hover over the settings cog on the lower left, and select `Access Tokens`. Create one - this will be used by the Gradescope autograder to pull the most recent version of the autograding files for an assignment. We suggest only providing `read repository` access to the token. Feel free to select whatever you'd like for the name, expiration date, and role. Once the token is created, copy the key. 
+
+You will need to now create an environment variable with the remote path to your autograding repo, including the acess token copied above. 
+
+Now, open your `~/.bashrc` file (or appropriate file for whichever shell you use), and add the following line at the end: 
 
 ```
-https://REPOSITORY-NAME:ACCESS-TOKEN@gitlab.cs.tufts.edu/path/to/repository.git
+export AUTOGRADING_REPO_REMOTE_PATH="https://REPOSITORY-NAME:ACCESS-TOKEN@gitlab.cs.tufts.edu/path/to/repository.git"
 ```
-For example:
-```
-REPO_REMOTE_PATH="https://cs-15-2022uc:glpat-Blah8173Blah8023Blah@gitlab.cs.tufts.edu/mrussell/cs-15-2022uc.git"
-```
-Note that this path has your access token inside of it, so if you set it to have `write` permissions (not recommended) please keep your repository private!
+Where the appropriate substitions have been made - for example:
 
-Before we continue, let's go over the other options for this file: 
+```
+export AUTOGRADING_REPO_REMOTE_PATH="https://cs-15-2022uc:glpat-Blah8173Blah8023Blah@gitlab.cs.tufts.edu/mrussell/cs-15-2022uc.git"
+```
+If you don't use BASH, use the `export` variety for your shell. The default variable name is `AUTOGRADING_REPO_REMOTE_PATH`, however you can configure the variable name to be whatever you'd like (see next section for details). 
 
-|     KEY          |        Purpose       |
-|------------------|----------------------|
-| `DOCKER_CREDS`     | Credentials to login to docker. [Docker only - see `Docker method` section for details]      |
-| `DOCKER_TAG`       |  `tuftscs/gradescope-docker:YOURTAGNAME` [Docker only - see `Docker method` section for details] |
-| `REPO_REMOTE_PATH` | `https` path to your repository |
-| `ASSIGN_ROOT`      | where assignment autograding folders are relative to repo root (so if you use the structure `REPO_ROOT/assignments/(your assignments here)` then `assignments` would be placed as the value here)|
-| `ASSIGN_AUTOGRADING_SUBFOLDER` | for assignments, if you put the autograder in a subfolder of the assignment folder, put the intermediate path here (so if you use the structure `REPO_ROOT/assignments/hw1_ArrayLists/autograder/(autograding files)` then `autograder` would be placed as the value here) |
-| `AUTOGRADING_ROOT` | path from repo root which contains `bin/`, `etc/`, `lib/`, and `setup/` |
+Make sure to run `source ~/.bashrc` or equivalent after editing the file. 
+
+## etc/autograder_config.ini
+The file `etc/autograder_config.ini` contains various important bits of information toward deploying your autograder. Note that the values in the sample `autograder_config.ini` related to directory structure will work with the directory structure as-is in this repo, but if you change the basic directory structure, they'll be necessary. Options for the `etc/autograder_config.ini` file are as follows:
+
+|     KEY          |        Default       |      Purpose       |
+|------------------|----------------------|----------------------|
+| `REPO_REMOTE_VARNAME`   |  `AUTOGRADING_REPO_REMOTE_PATH` | Variable name of the environment variable used above  |
+| `AUTOGRADING_ROOT` | `""` | Path from repo root which contains `bin/`, `etc/`, `lib/`, and `setup/` |
+| `ASSIGN_ROOT`      | `assignments` | Path from `AUTOGRADING_ROOT` where assignment autograding folders live |
+| `ASSIGN_AUTOGRADING_SUBFOLDER` | `""` | Path from a given assignment folder which holds the autograding files for that assignment.  |
 
 NOTE! do not put any spaces around the `=` characters in this file.
 
-The values in the sample `autograder_config.ini` will work with the directory structure as-is in this repo.
-Feel free to customize the paths - for instance, if you'd like to place your assignments in the root directory of your grading repo, then update the value of `ASSIGN_ROOT` to be "".
-
-Okay! Assuming you've updated the `config` with the paths you'd like, and have added the `REPO_REMOTE_PATH`, continue with one of either the `.zip` or Docker methods below.
+Okay! now continue with one of either the `.zip` or Docker methods below.
 
 ## .zip method
 As mentioned above, with the `.zip` method, you'll need to upload a `.zip` file for each 
@@ -85,34 +87,34 @@ assignment. However, there is no other setup required. For the future, if you ma
 * Contact me if you run into trouble!
 
 ## Docker method
-If you don't have `Docker Desktop`, install it: https://www.docker.com/products/docker-desktop/
-Then, open back up the `etc/autograder_config.ini` file.
-You will need to add two more things here. 
+This method takes a bit more setup in advance. 
 
-### `DOCKERTAG`
-Update the `PUT_YOUR_TAG_HERE` in
-```
-tuftscs/gradescope-docker:PUT_YOUR_TAG_HERE     
-```
-Please select a tagname which reflects something specific related to your course and the semester (e.g. `cs-11-2022-summer`).
-Note that `tuftscs/gradescope-docker:` is required at the start of the value. This will be the tag that is uploaded to Dockerhub; Gradescope will need it to know where to find the Docker container to run the autograder.
+0. If you don't have `Docker Desktop`, install it: https://www.docker.com/products/docker-desktop/. 
+1. You will need to host your container somewhere. We suggest using the [GitHub container registry](https://docs.github.com/en/packages/working-with-a-github-packages-registry/working-with-the-container-registry), however if you have a 'pro' account on Dockerhub, that's also a good option. 
+2. If you use the GitHub registry, make sure to share your repo with `gradescope-autograder-servers` after you upload it; if you use Dockerhub, you'll need to add `gradescopeecs` as a private collaborator to your repo.
+3. See the file `etc/docker_config.ini`. You'll need to update the values of these variables as needed. Variables are as follows:
 
-### `DOCKERCREDS`
-If you have a 'pro' account on Dockerhub, create your own access token and put it here - note that you'll need to add `gradescopeecs` as a private collaborator to the repository on Dockerhub. If you don't have a `pro` account, reach out to me at `mrussell@cs.tufts.edu`, and I'll send you the DOCKERCREDS. 
-Note!! This access token must be kept private; to that end, please keep your course autograding
-repository private.
+|     KEY          |        Default       |        Purpose       |
+|------------------|----------------------|----------------------|
+| `CONTAINER_REMOTE`   | `ghcr.io` | Which container registry you use (default is GitHub) |
+| `CONTAINER_NAME`      | `gradescope-docker` | Name of the package repo that will hold your autograding docker container. |
+| `CONTAINER_TAG` | `autograder-autobuild` | Tag of the container which will be used for the course's autograder. One tag will be used per course| 
+| `REGISTRY_USER_VARNAME` | `GHUNAME` | Variable name of the environment variable which holds the username to login to the `CONTAINER_REMOTE`. 
+| `REGISTRY_PASS_VARNAME` | `GHPAT` | Variable name of the environment variable which holds the password/access token to login to the `CONTAINER_REMOTE`. 
 
-### Build and upload the container to Dockerhub
-Once you've updated the `autograder_config.ini` with the necessary variables, run:
+Note that in this case `GHUNAME` and `GHPAT` are the names of environment variables (NOT the values of the variables themselves). So with this example you'd need `export GHUNAME='myghubusername'` in your `~/.bashrc`, etc. Make sure to run `source ~/.bashrc` after editing the file.
+
+### Build and deploy the container
+Once you've updated the `etc/autograder_config.ini` and `etc/docker_config.ini` files with the necessary variables, and have put the necessary exports in your `~/.bashrc` file, run:
 ```
 cd dockerbuild
 ./deploy_container
 ```
-The container will be built and uploaded to Dockerhub with the tag you specified. Note: in rare cases, the Docker build process hangs in the early stages. If this happens to you, run `rm ~/.docker/config.json` and try again. For the future, if you make changes to any of the files in the `dockerbuild` folder, or to `bin/run_autograder`, make sure to re-run this script. 
+The container will be built and uploaded to the location you've specified. Note: in rare cases, the Docker build process hangs in the early stages. If this happens to you, run `rm ~/.docker/config.json` and try again. For the future, if you make changes to any of the files in the `dockerbuild` folder, or to `bin/run_autograder`, make sure to re-run this script. 
 
 ### For each assignment with the Docker method 
 
-* On Gradescope, after creating the programming assignment, select the 'Manual Docker Configuration' option in the configure autograder' section; place the contents of the `DOCKERTAG` variable in the box (e.g. `tuftscs/gradescope-docker:cs-11-2022-summer`).
+* On Gradescope, after creating the programming assignment, select the 'Manual Docker Configuration' option in the configure autograder' section; place the full remote path to your container (e.g. `ghcr.io/ghubusername/ghubpackageregistry:dockertag`) 
 
 That's it! 
 
@@ -139,7 +141,7 @@ There are two primary forms of assignment that this autograder supports:
 * Tests which are a set of `.cpp` files, each with `main()`. 
 * Tests which test a student's completed executable program. 
 
-In either case, you can send a file to `stdin` for a test, and `stdout`/`stderr` will both `diff`'d automatically against the output of a reference implementation. Output can be canonicalized before `diff`, and `valgrind` can be run on the programs as well. More details will follow. 
+In either case, you can send a file to `stdin` for a test, and `stdout`/`stderr` will both `diff`'d automatically against the output of a reference implementation. Output can be canonicalized before `diff`, and `valgrind` can be run on the programs as well. Limits can be set for memory usage, timeout, etc. See details below.
 
 ## `testset.toml` configuration file
 The framework depends on a `testset.toml` file (https://toml.io) to specify the testing configuration. `testset.toml` will be configured as follows:
@@ -222,10 +224,10 @@ depending on your test configuration.
 ```
 ## General Notes
 * Files in `testset/stdin/` named `<testname>.stdin` (`test01.stdin`) will be sent to `stdin` for that test. 
-* Files in `.cpp/` named `<testname>.cpp` (`test01.cpp`) will each contain `main()`, and will be compiled and linked with the student's code.
-* If you plan to use files in `.cpp`, you must use a custom `Makefile` - see the example: `assignments/hw1_ArrayLists/testset/makefile/Makefile`.
-* If the students are writing programs which have their own `main()`, then you do not need files in `.cpp` - you may still choose to have your own custom `Makefile` if you wish (otherwise, be sure to set `our_makefile = false` in `testset.toml`). 
-* The target to build (e.g. `make target`) must be named the same as the program to run (e.g. `./target`).
+* Files in `testset/cpp/` named `<testname>.cpp` (`test01.cpp`) are intended to be driver files; each one will contain `main()`, and will be compiled and linked with the student's code.
+* If you plan to use driver files in `testset/cpp/`, you must use a custom `Makefile` - see the example: `assignments/hw1_ArrayLists/testset/makefile/Makefile`.
+* If the students are writing programs which have their own `main()`, then you do not need files in `testset/cpp/` - you may still choose to have your own custom `Makefile` if you wish (otherwise, be sure to set `our_makefile = false` in `testset.toml`). 
+* Whether using custom drivers or not, the target to build (e.g. `make target`) must always be named the same as the program to run (e.g. `./target`).
 * Canonicalization functions which are used by the autograder in `canonicalizers.py` must:
     * Take a single parameter - this will be a string containing the student's output from whichever stream is to be canonicalized
     * Return a string, which contains the canonicalized output 
@@ -277,6 +279,7 @@ tests = [
     { testname = "test19", description = "pushAtBack 3" },
     { testname = "test20", description = "pushAtFront" },
     { testname = "test21", description = "pushAtFront2" }
+    # ... more tests here ...
 ]
 ```
 Here the autograder will assume that `testset/cpp/TESTNAME.cpp` contains `main()`, and that there's a target named `TESTNAME` in `testset/makefile/Makefile` which produces an executable named `TESTNAME`; it will run `make TESTNAME`, and then `./TESTNAME`.
@@ -382,7 +385,7 @@ In order to build reference output and test your code easily, first add the `bin
 echo -e "export PATH=\$PATH:/REPO_ROOT/bin\n" >> ~/.bashrc
 source ~/.bashrc
 ```
-Also, if you don't have `diff-so-fancy` installed on your system and would like to use the `pretty_diff` option then you'll want to add `REPO_ROOT/lib` to your perl library include path (run `perl -V` to see available options).
+Also, if you don't have `diff-so-fancy` installed on your system and would like to use the `pretty_diff` option then you'll want to add `REPO_ROOT/lib` to your perl library include path (either update `$PERLLIB` in `~/.bashrc` or run `perl -V` to see available locations to copy the file `etc/DiffHighlight.pm` to).
 
 ### Building the Reference Output
 Once you've configured your tests, run the command 
@@ -428,7 +431,7 @@ under a test group, or within a specific test.
 | option | default | pupose | 
 |---|---|---|
 | `max_time` | `30` | maximum time (in seconds) for a test |
-| `max_ram` | `-1` (unlimited) | maximum ram (in kb) for a test |
+| `max_ram` | `-1` (unlimited) | maximum ram (in kb) usage for a test to be considered successful [`/usr/bin/time -f %M` value is used] |
 | `valgrind` | `true` | run an additional test with valgrind |
 | `diff_stdout` | `true` | test diff of student vs. reference stdout |
 | `diff_stderr` | `true` | test diff of student vs. reference stderr |
@@ -438,11 +441,14 @@ under a test group, or within a specific test.
 | `ccize_ofiles` | `false` | diff canonicalized ofiles instead of ofiles |
 | `ccizer_name` | `""` | name of canonicalization function to use |
 | `our_makefile` | `true` | use testset/makefile/Makefile to build tests |
-| `pretty_diff` | `false` | use diff-so-pretty for easy-to-ready diffs |
+| `pretty_diff` | `false` | use diff-so-pretty for easy-to-read diffs |
 | `max_score` | `1` | maximum points (on Gradescope) for this test |
 | `visibility` | `"after_due_date"` | Gradescope visibility setting |
 | `argv` | `[ ]` | argv input to the program |
 | `executable` | `(testname)` | executable to build and run |
+| `max_valgrind_score` | `8` | `[common]` only setting - maximum valgrind score for this assignment. 
+| `valgrind_score_visibility` | `"after_due_date"` | `[common]` only setting - visibility of the test which will hold the total valgrind points for the student. 
+| `kill_limit` | `500` | test will be killed if it's memory usage exceeds this value (in `MB`) [soft rlimit_data will be set to this value in a preexec function to the subprocess call] - Note: if the program exceeds the limit, it will receive `SIGSEGV` from the os. Unfortunately, nothing is produced on `stderr`. However, if `valgrind` is also run and fails to produce a log file (due to also receiving `SIGSEGV`), the test will be assumed to have exceeded max ram...in general, however, this is tricky to debug. In my experience, `valgrind` will fail to allocate memory but still produce a log file at `~50MB` of ram; any lower and no log file will be produced. The default setting of `500` `MB` should be fine for most tests, and will work with the smallest (default) container. |
 
 
 ## Visibility settings in Gradescope
@@ -455,11 +461,37 @@ Note that if the `max_score` for a test is `0`, then Gradescope will assume that
 That should be enough to get you up and running! Please feel free to contact me with any questions you have, and/or any bugs, feature requests, etc. you find. Thanks!
 
 # TODOS
-* Currently, the `max_ram` setting doesn't actually limit the amount of ram a test can use. Looks like the os might kill the entire test harness if a given processes causes excessive memory use. Have added a `MAX_V_MEMORY` variable at the top of `bin/autograde.py`, along with a fn which will set the max memory available for the processes; this is not yet tested, though. TODO: test and document the functionality properly, and tweak the usage so that the setting can be tweaked in the `.toml` file - idea: this should likely be a 'global-only' setting?? 
-* Currently the `timeout` time is being handled by calling the `timeout` function - there is the possibility of using a `timeout` parameter in the `subprocess.run` call -- in some ways, I like it as-is (no `try-catch` needed), but maybe will change. TODO: determine whether to update this setting or not. 
-* Since start of 2022uc, have added bits and pieces here and there...some general cleanup/maintenance of the code is called for.
+* Update the funcationality of `bin/autograde.py` so that if a grader is re-running tests, we don't nuke the entire build folder, but intelligently load the data from alread-run tests. Also, need to verify that the various filter, etc. options work as expected. 
+* Bug - sometimes, when parallel compilation is done, intermediate files are not being managed well -- multiple processes are trying to compile the same dependency, and things fail with a message like "xxx.o deleted". Clearly, the best possible scenario would be to build each .o file once, but not sure how to do this; a separate build directory for each test seems like overkill. It might be wise to nix parallel compilation, or to separate the num_jobs param into two, one for num parallel compilation jobs, and one for parallel test running jobs.
 
 # Changelog
+## [1.1.6] - 2022-7-28
+* Changed 
+  * `bin/autograde.py` - `autograde.py` now correctly handles the case where  `"#{testname}"` is provided as the value of the `executable` variable in the `testset.toml` file for a test.
+
+## [1.1.5] - 2022-7-12
+Substantial revision of setup configuration - updated configuation to manage secret keeping better by using environment variables for Docker configuration - some configuration variables now hold name of the environnment variable, rather than the data itself. Updated default to not use Dockerhub anymore, but rather GitHub Container registry; this avoid sketchy sharing of private info (dockercreds), and makes the docker setup more generalized (can login to any container registry with new setup).
+* Created
+    - `etc/docker_config.ini` - Placed docker-only configuration here
+* Changed
+    - `etc/autograder_config.ini` - Updated variable names, separated out docker-only variables
+    - `setup/dockerbuild/deploy_container.sh` - use better secret keeping
+    - `setup/zipbuild/build_container.sh` and `.../setup.sh` - use better secret keeping
+
+## [1.1.4] - 2022-7-9
+* Changed 
+    - `bin/make_gradescope_results.py` - Don't crash when `diff_stderr=False` 
+## [1.1.3] - 2022-6-27
+* Changed
+    - `bin/make_gradescope_results.py` - Don't crash when no valgrind tests. 
+
+## [1.1.2] - 2022-6-23
+* Changed 
+    - `bin/autograde.py` - Changed `MAX_V_MEMORY` to `kill_limit`, which is now a configurable parameter for tests; default value is `500` `MB`; updated the preexec function setting the limit to take a parameter.
+    - `bin/autograde.py` - Added `max_valgrind_score` and `valgrind_score_visibility` `[common]` only parameters. 
+    - `bin/autograde.py` - Added `valg_out_of_mem` test result, which will fire if the test file is not created; this way, the autograder won't crash on valgrind being killed b/c out of ram do not producing a log file. 
+    - `bin/autograde.py` - Changed reporting mechanism to output # of failed tests, and to display only failures (# segfaults, etc.) when there are any; added `Exceeded Max Ram` and `V. Exceeded Max Ram`.
+    - `bin/make_gradescope_results.py` - added the valgrind test; loads the global data from the `testset.toml` file; note that the defaults for these (8, `"after_due_date"`) are set in this file - [TODO] refactor to set defaults in `autograde.py` and load them from any given test in this file?
 
 ## [1.1.1] - 2022-6-20
 * Changed

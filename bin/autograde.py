@@ -61,11 +61,10 @@ MAKEFILE_PATH  = f"{TESTSET_DIR}/makefile/Makefile"
 
 MEMLEAK_PASS   = "All heap blocks were freed -- no leaks are possible"
 MEMERR_PASS    = "ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)" 
+VALG_NO_MEM    = "Valgrind's memory management: out of memory"
 
-MAX_V_MEMORY   = 1000 * 1024 * 1024 # 100MB per process
-
-def limit_virtual_memory():
-    resource.setrlimit(resource.RLIMIT_AS, (MAX_V_MEMORY, resource.RLIM_INFINITY))
+def limit_virtual_memory(limit):
+    resource.setrlimit(resource.RLIMIT_DATA, (limit, resource.RLIM_INFINITY))
 
 def COLORIZE(s, color):
     return f"{START_COLOR}{color}{s}{RESET_COLOR}"
@@ -77,7 +76,7 @@ def INFORM(s, color):
     print(COLORIZE(s, color))
     
 def RUN(cmd_ary, timeout=5, stdin=None, input=None, cwd=".", 
-        capture_output=True,  universal_newlines=False, preexec_fn=None):
+        capture_output=True, universal_newlines=False, preexec_fn=None):
     """
         Runs the subprocess module on the given command and returns the result.
 
@@ -92,16 +91,16 @@ def RUN(cmd_ary, timeout=5, stdin=None, input=None, cwd=".",
             (completedProcess) : the result of the completed subprocess module
 
         Notes:
-            Always capture output and use universal newlines.
+            Always capture output; universal newlines = False so binary output okay.
             Always add a timeout argument - this is adjustable in the .toml file
     """    
     return subprocess.run(["timeout", str(timeout)] + cmd_ary, 
-                          stdin=stdin, 
-                          capture_output=capture_output,                          
-                          universal_newlines=universal_newlines,
-                          cwd=cwd,
-                          input=input, 
-                          preexec_fn = preexec_fn)
+                          stdin              = stdin, 
+                          capture_output     = capture_output,                          
+                          universal_newlines = universal_newlines,
+                          cwd                = cwd,
+                          input              = input, 
+                          preexec_fn         = preexec_fn)
     
 def FAIL(s):
     INFORM(s, color=RED)
@@ -109,7 +108,6 @@ def FAIL(s):
 
 @dataclass
 class TestConfig:    
-    # These are configuation options for the test
     max_time:      int  = 30 
     max_ram:       int  = -1 
     max_score:     int  = 1
@@ -129,6 +127,11 @@ class TestConfig:
     exitcodepass:  int  = 0
     visibility:    str  = "after_due_date" # gradescope setting    
     argv:          List[str] = field(default_factory=list)  
+
+    # assignment-wide settings
+    kill_limit:                int = 500
+    max_valgrind_score:        int = 2
+    valgrind_score_visibility: str = "after_due_date"
     
     # These will be assigned to a test by the time it finshes execution    
     # could keep these as part of the 'Test' class, but it's easier 
@@ -142,6 +145,7 @@ class TestConfig:
     timed_out:          bool = None
     memory_errors:      bool = None
     memory_leaks:       bool = None 
+    valg_out_of_mem:    bool = None
     segfault:           bool = None   
     max_ram_exceeded:   bool = None
     exit_status:        int  = None            
@@ -180,8 +184,8 @@ class TestConfig:
 
 class Test:
     
-    # when halligan has python 10, we'll use inheritance with dataclasses...
-    # this is good for now
+    # when our servers have python 10, we'll use inheritance with dataclasses...
+    # this works for now.
     def __init__(self, config):
         for (key, value) in vars(config).items():            
             if key != "tests":  # a 'Test' shouldn't contain any information about other Tests.
@@ -199,6 +203,8 @@ class Test:
             "ref_stdout":  f"{REF_OUTPUT_DIR}/{self.testname}.stdout",
             "ref_stderr":  f"{REF_OUTPUT_DIR}/{self.testname}.stderr",                                    
         }
+
+        self.kill_limit = self.kill_limit * 1024 * 1024
        
         # can only get here if the test has compiled
         self.compiled = True 
@@ -231,7 +237,7 @@ class Test:
             for replacement_k, replacement_v in replacements.items():
                 value_s = value_s.replace(replacement_k, replacement_v) 
         elif isinstance(value_s, Iterable) and not isinstance(value_s, dict):
-            value_s = [get_replacement_s(v) for v in value_s]
+            value_s = [self.replace_placeholders(v) for v in value_s]
         return value_s
 
     def replace_placeholders_in_self(self):
@@ -314,10 +320,11 @@ class Test:
         if os.path.exists(self.fpaths['stdin']):            
             with open(self.fpaths['stdin'], "r") as stdin:
                 result = RUN(exec_cmds, timeout=self.max_time, stdin=stdin, cwd=BUILD_DIR, 
-                             preexec_fn=limit_virtual_memory)
+                             preexec_fn = limit_virtual_memory(self.kill_limit))
         else:
-            result = RUN(exec_cmds, timeout=self.max_time, cwd=BUILD_DIR)
-                
+            result = RUN(exec_cmds, timeout=self.max_time, cwd=BUILD_DIR,
+                        preexec_fn = limit_virtual_memory(self.kill_limit))
+        
         if STDOUTPATH: Path(STDOUTPATH).write_bytes(result.stdout)
         if STDERRPATH: Path(STDERRPATH).write_bytes(result.stderr)
 
@@ -328,17 +335,18 @@ class Test:
             Purpose: 
                 Runs the 'standard' test and sets variables associated with pass / failure
             Notes:
-                add ../../ to memory file because we'll be running from the build directory
+                add ../../ to memory file because we'll be running from testset/build/ directory
         """      
         if self.max_ram != -1:
-            prepend  = ['/usr/bin/time', '-o', os.path.join('..','..',self.fpaths['memory']), '-f', '%M']
+            prepend  = ['/usr/bin/time', '-o', os.path.join('..','..', self.fpaths['memory']), '-f', '%M']
         else:
             prepend  = []
 
         test_rcode       = self.run_exec(exec_prepend=prepend, 
                                          STDOUTPATH=self.fpaths['stdout'], 
                                          STDERRPATH=self.fpaths['stderr'])
-        test_rcode       = abs(test_rcode) # sometimes returns negative value
+
+        test_rcode       = abs(test_rcode) # returns negative value if killed by signal
         self.exit_status = test_rcode
         self.timed_out   = test_rcode == 124        
         self.segfault    = test_rcode in [11, 139]
@@ -348,12 +356,16 @@ class Test:
             memdata = Path(self.fpaths['memory']).read_text()
             if memdata != '': # this might happen if timeout kills program
                 max_rss = int(memdata.splitlines()[-1]) # if segfault, last line has max_rss info
-                self.max_ram_exceeded = max_rss > self.max_ram                  
+                self.max_ram_exceeded = max_rss > self.max_ram if self.max_ram != -1 else self.kill_limit                 
       
     def run_valgrind(self):  
         """
             Purpose: 
-                Runs the valgrind test and sets variables associated with valgrind pass / failure
+                Runs the valgrind test and sets variables associated with valgrind pass / failur
+            Note: 
+                Valgrind will be killed by the os if memory usage exceeds kill_limit; 
+                in practice, this usually only happens if the 'main' test has the same issue; 
+                the 'main' test should show a segfault; here, we will set max_ram_exceeded to true
         """         
         valgrind_command = [
             "/usr/bin/valgrind",                      # doesn't have 72,704 bug
@@ -364,11 +376,19 @@ class Test:
             f"--log-file={self.fpaths['valgrind']}"
         ]
         if self.valgrind:
-            self.valgrind_rcode  = self.run_exec(valgrind_command)
-            valgrind_output      = Path(self.fpaths['valgrind']).read_text()       
-            self.memory_leaks    = MEMLEAK_PASS not in valgrind_output
-            self.memory_errors   = MEMERR_PASS not in valgrind_output
-            self.valgrind_passed = not self.memory_leaks and not self.memory_errors
+            self.valgrind_rcode = self.run_exec(valgrind_command)
+            if not os.path.exists(self.fpaths['valgrind']):
+                self.valgrind_passed  = False
+                self.memory_leaks     = False
+                self.memory_errors    = True
+                self.max_ram_exceeded = True
+                self.valg_out_of_mem  = True
+            else:
+                valgrind_output      = Path(self.fpaths['valgrind']).read_text()
+                self.memory_leaks    = MEMLEAK_PASS not in valgrind_output
+                self.memory_errors   = MEMERR_PASS not in valgrind_output
+                self.valg_out_of_mem = VALG_NO_MEM in valgrind_output
+                self.valgrind_passed = not self.memory_leaks and not self.memory_errors and not self.valg_out_of_mem
         
     def run_diff(self, filea, fileb, filec, canonicalize=False):
         """
@@ -391,18 +411,18 @@ class Test:
                 [TODO] refactor to use RUN?                        
         """        
         if not os.path.exists(filea):
-            Path(f"{filea}.diff").write_text(f"diff: {ofilename} not found!")
+            Path(f"{filea}.diff").write_text(f"diff: {filea} not found!")
             return False
         elif not os.path.exists(fileb): 
             INFORM(f"reference output missing for: {self.testname} " + 
-                    "- ignore if building reference output", color=RED)
+                    "- ignore if building reference output", color=MAGENTA)
 
         if canonicalize:
             bytes = Path(filea).read_bytes()
             try:
                 text   = bytes.decode('utf-8')                     
             except TypeError:
-                ccized = "ERROR: binary output in student result"
+                ccized = "ERROR: non-utf-8 encodable text in student result"
             else:
                 try:
                     ccized = self.canonicalizer(text)
@@ -496,14 +516,18 @@ def print_testgroup(report, keys, OPTS):
         for i, test in enumerate(report[key]['tests']):
             report[key]['tests'][i] = f"{report[key]['tests'][i][:max_width]: <{col_width}}"    
     
+    keys = [k for k in keys if len(report[k]['tests']) > 0]
     # headers
     for title in keys:
-        INFORM(f"{title: <{max([len(x) for x in keys])}} {len(report[title]['tests'])}", color=report[title]["color"])    
+        INFORM(f"{title: <{max([len(x) for x in keys])}} {len(report[title]['tests'])}", 
+              color=report[title]["color"])    
     print()
     
     outstrs = []
-    for title in [k for k in keys if len(report[k]["tests"]) > 0]:
-        outstrs.append(COLORIZE(f"{f'{title:-^{max_width}}': <{col_width}}", report[title]['color']))
+    keys = [k for k in keys if k not in ["Failed", "Valgrind Failed"]]
+    for title in keys:
+        outstrs.append(COLORIZE(f"{f'{title:-^{max_width}}': <{col_width}}", 
+                                report[title]['color']))
         for teststr in report[title]['tests']:
             outstrs.append(COLORIZE(teststr, report[title]["color"]))
     
@@ -511,7 +535,8 @@ def print_testgroup(report, keys, OPTS):
         print('\n'.join(outstrs))
     else:
         colwstr = "{0" + f": <{col_width}" + "}{1" + f": <{col_width}" + "}"
-        print('\n'.join([colwstr.format(*x) for x in zip(outstrs[:len(outstrs)//2], outstrs[len(outstrs)//2:])]))
+        print('\n'.join([colwstr.format(*x) for x in 
+                        zip(outstrs[:len(outstrs)//2], outstrs[len(outstrs)//2:])]))
        
 def report_results(TESTS, OPTS): 
     """
@@ -519,23 +544,27 @@ def report_results(TESTS, OPTS):
             Print test results to the terminal
         Returns: 
             None                    
-    """            
+    """
     report = {
-        "Passed":             { "func": lambda test: test.success,                                     "tests": [], "color": GREEN   },
-        "Segfaulted":         { "func": lambda test: test.segfault,                                    "tests": [], "color": MAGENTA },
-        "Failed stdout diff": { "func": lambda test: test.diff_stdout and not test.stdout_diff_passed, "tests": [], "color": RED     },
-        "Failed stderr diff": { "func": lambda test: test.diff_stderr and not test.stderr_diff_passed, "tests": [], "color": RED     },
-        "Failed ofile diff":  { "func": lambda test: test.diff_ofiles and not test.fout_diffs_passed,  "tests": [], "color": RED     },        
-        "Timed Out":          { "func": lambda test: test.timed_out,                                   "tests": [], "color": RED     },        
-        "Valgrind Passed":    { "func": lambda test: test.valgrind and test.valgrind_passed == True,   "tests": [], "color": GREEN   },        
-        "Memory Leak":        { "func": lambda test: test.valgrind and test.memory_leaks == True,      "tests": [], "color": MAGENTA },
-        "Memory Error":       { "func": lambda test: test.valgrind and test.memory_errors == True,     "tests": [], "color": MAGENTA },
+        "Passed":              { "func": lambda test: test.success,                                     "tests": [], "color": GREEN   },
+        "Failed":              { "func": lambda test: not test.success,                                 "tests": [], "color": RED     },
+        "Segfaulted":          { "func": lambda test: test.segfault,                                    "tests": [], "color": RED     },
+        "Failed stdout diff":  { "func": lambda test: test.diff_stdout and not test.stdout_diff_passed, "tests": [], "color": RED     },
+        "Failed stderr diff":  { "func": lambda test: test.diff_stderr and not test.stderr_diff_passed, "tests": [], "color": RED     },
+        "Failed ofile diff":   { "func": lambda test: test.diff_ofiles and not test.fout_diffs_passed,  "tests": [], "color": RED     },        
+        "Timed Out":           { "func": lambda test: test.timed_out,                                   "tests": [], "color": RED     }, 
+        "Exceeded Max Ram":    { "func": lambda test: test.max_ram_exceeded,                            "tests": [], "color": RED     },   
+        "Valgrind Passed":     { "func": lambda test: test.valgrind and test.valgrind_passed,           "tests": [], "color": GREEN   },        
+        "Valgrind Failed":     { "func": lambda test: test.valgrind and not test.valgrind_passed,       "tests": [], "color": RED     },                
+        "Memory Leak":         { "func": lambda test: test.valgrind and test.memory_leaks,              "tests": [], "color": MAGENTA },
+        "Memory Error":        { "func": lambda test: test.valgrind and test.memory_errors,             "tests": [], "color": MAGENTA },
+        "V. Exceeded Max Ram": { "func": lambda test: test.valgrind and test.valg_out_of_mem,           "tests": [], "color": RED     }
     }    
 
     for cat in report:
         report[cat]["tests"] = [f"{name} - {t.description}" for name,t in TESTS.items() if report[cat]["func"](t)]
        
-    valgrind_keys = ["Valgrind Passed", "Memory Leak", "Memory Error"]
+    valgrind_keys = ["Valgrind Passed", "Valgrind Failed", "Memory Leak", "Memory Error", "V. Exceeded Max Ram"]
     normal_keys   = [k for k in report if k not in valgrind_keys]
   
     INFORM(f"\n== Test Report ==", color=CYAN) 
@@ -664,9 +693,8 @@ def build_testing_directories():
         Notes: 
             These directories are hard-coded in this file - 
             there should be no need to change them.
+            don't remove results_dir directly because gradescope puts the 'stdout' file there
     """ 
-    # don't remove results_dir directly because gradescope puts the 'stdout' file there
-    # this should be refactored.
     if os.path.exists(RESULTS_DIR):
         for fldr in BUILD_DIR, LOG_DIR, OUTPUT_DIR:
             if os.path.exists(fldr):
