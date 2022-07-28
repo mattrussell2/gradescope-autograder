@@ -621,6 +621,14 @@ def compile_exec(target):
         os.remove(os.path.join(BUILD_DIR, target))
 
     target = target[2:] # remove the './' prefix
+
+    # REFACTOR LOGIC HERE - testname replacement should be something else after path is there.
+    # if testname is the target and has been replaced, extract the name from the path
+    if '/' in target or '\\' in target:
+        if '/' in target: schar = '/'
+        else:             schar = '\\'        
+        target = target.split(schar)[-1]
+
     with open(f"{LOG_DIR}/{target}.compile.log", "w") as f:
         INFORMF(f"== running make {target} ==\n", f, color=CYAN)
         compilation_proc    = RUN(["make", target], cwd=BUILD_DIR)
