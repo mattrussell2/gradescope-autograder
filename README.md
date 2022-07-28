@@ -460,6 +460,7 @@ That should be enough to get you up and running! Please feel free to contact me 
 * Since start of 2022uc, have added bits and pieces here and there...some general cleanup/maintenance of the code is called for.
 
 # Changelog
+
 ## [1.1.1] - 2022-6-20
 * Changed
     - `bin/autograde.py` - added `--errors-for-leak-kinds=none` to `valgrind` args - this will prevent

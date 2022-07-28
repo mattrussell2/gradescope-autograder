@@ -203,9 +203,9 @@ class Test:
         # can only get here if the test has compiled
         self.compiled = True 
 
-        if self.executable == None:
+        if self.executable == None or self.executable == "#{testname}":
             self.executable = self.testname
-      
+
         if self.executable[0] != '/':
             self.executable = './' + self.executable
 
