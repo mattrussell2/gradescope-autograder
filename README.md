@@ -229,7 +229,11 @@ depending on your test configuration.
 * If the students are writing programs which have their own `main()`, then you do not need files in `testset/cpp/` - you may still choose to have your own custom `Makefile` if you wish (otherwise, be sure to set `our_makefile = false` in `testset.toml`). 
 * Whether using custom drivers or not, the target to build (e.g. `make target`) must always be named the same as the program to run (e.g. `./target`).
 * Canonicalization functions which are used by the autograder in `canonicalizers.py` must:
-    * Take a single parameter - this will be a string containing the student's output from whichever stream is to be canonicalized
+    * Take four parameters:
+        1.  A string containing the student's output from whichever stream is to be canonicalized
+        2.  A string containing the reference solution's output from whichever stream is to be canonicalized
+        3.  A string containing the name of the test (e.g. `test01`)
+        4.  A dictionary containing any specific test configuration options (e.g. `{'my_config_var': 10}`)
     * Return a string, which contains the canonicalized output 
 * The `.diff`, `.ccized`, and `.valgrind` output files for each test will only be created if your configuation requires them.
 * This framework supports `diff`ing against any number of output files written to by the program. Such files must be named `<testname>.ANYTHING_HERE.ofile`. The expectation is that the program will receive the name of the file to produce as an input argument. Then, in the `testset.toml` file, you will ensure that the `argv` variable includes `#{testname}.ANYTHING_HERE.ofile` in the `argv` list. See the `gerp` example: `assignments/gerp/testset.toml`. 
@@ -440,6 +444,7 @@ under a test group, or within a specific test.
 | `ccize_stderr` | `false` | diff canonicalized stderr instead of stderr |
 | `ccize_ofiles` | `false` | diff canonicalized ofiles instead of ofiles |
 | `ccizer_name` | `""` | name of canonicalization function to use |
+| `ccizer_args` | `{}` | arguments to pass to canonicalization function |
 | `our_makefile` | `true` | use testset/makefile/Makefile to build tests |
 | `exitcodepass` | `0` | return code considered successful by the autograder|
 | `pretty_diff` | `false` | use diff-so-pretty for easy-to-read diffs |
@@ -466,6 +471,17 @@ That should be enough to get you up and running! Please feel free to contact me 
 * Bug - sometimes, when parallel compilation is done, intermediate files are not being managed well -- multiple processes are trying to compile the same dependency, and things fail with a message like "xxx.o deleted". Clearly, the best possible scenario would be to build each .o file once, but not sure how to do this; a separate build directory for each test seems like overkill. It might be wise to nix parallel compilation, or to separate the num_jobs param into two, one for num parallel compilation jobs, and one for parallel test running jobs.
 
 # Changelog
+## [1.1.7] - 2022-8-1
+* 'Breaking Change' related to canonicalization.
+* Changed
+    * `bin/autograde.py` - added `testset.toml` config variable `ccizer_args` - this is a dictionary of arguments to pass to the canonicalization function. 
+    * `bin/autograde.py` - canonicalization function now takes 4 arguments instead of 1 - arguments now include:
+      * student output
+      * reference output
+      * test name
+      * canonicalizer options
+These arguments will be provided by default to the canonicalization function. For backwards compatibility, change the paramters of your canonicalization function to include `*args`.
+    
 ## [1.1.6] - 2022-7-28
 * Changed 
   * `bin/autograde.py` - `autograde.py` now correctly handles the case where  `"#{testname}"` is provided as the value of the `executable` variable in the `testset.toml` file for a test.

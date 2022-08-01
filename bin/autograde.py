@@ -116,6 +116,7 @@ class TestConfig:
     ccize_stderr:  bool = False
     ccize_ofiles:  bool = False
     ccizer_name:   str  = ""
+    ccizer_args:   dict = field(default_factory=dict)  
 
     diff_stdout:   bool = True
     diff_stderr:   bool = True 
@@ -213,8 +214,8 @@ class Test:
             self.executable = self.testname
 
         if self.executable[0] != '/':
-            self.executable = './' + self.executable
-
+            self.executable = './' + self.executable             
+        
         self.replace_placeholders_in_self()
 
         if vars(config)["ccizer_name"] != "":
@@ -230,7 +231,7 @@ class Test:
                 #{name} shouldn't be used anymore, but keeping it for backwards compatibility
         """ 
         replacements = {
-            "#{testname}": f"{OUTPUT_DIR}/{self.testname}", 
+            "#{testname}": f"{OUTPUT_DIR}/{self.testname}",
             "#{name}":     f"{OUTPUT_DIR}/{self.testname}",
         }
         if isinstance(value_s, str):
@@ -420,15 +421,23 @@ class Test:
         if canonicalize:
             bytes = Path(filea).read_bytes()
             try:
-                text   = bytes.decode('utf-8')                     
+                text   = bytes.decode('utf-8')
             except TypeError:
                 ccized = "ERROR: non-utf-8 encodable text in student result"
-            else:
+            else:                
                 try:
-                    ccized = self.canonicalizer(text)
-                except: 
-                    ccized = "ERROR: canonicalizer failed"
-
+                    if os.path.exists(fileb):
+                        solution_text = Path(fileb).read_bytes().decode('utf-8')                        
+                    else:
+                        solution_text = None                   
+                    ccized = self.canonicalizer(text, solution_text, self.testname, self.ccizer_args)
+                except Exception as e: 
+                    ccized = f"ERROR: canonicalizer failed - {repr(e)}"
+            if ccized == None:
+                INFORM(f"canonicalizer for test {self.testname} does not return a string with the" +
+                        "result - defaulting to empty string", color=MAGENTA)                    
+                ccized = ""
+            
             Path(f"{filea}.ccized").write_text(ccized)
             filea = f"{filea}.ccized"
             fileb = f"{fileb}.ccized"
@@ -621,7 +630,7 @@ def compile_exec(target):
         os.remove(os.path.join(BUILD_DIR, target))
 
     target = target[2:] # remove the './' prefix
-
+    
     # REFACTOR LOGIC HERE - testname replacement should be something else after path is there.
     # if testname is the target and has been replaced, extract the name from the path
     if '/' in target or '\\' in target:
