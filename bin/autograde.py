@@ -11,7 +11,7 @@ import sys
 import subprocess
 import argparse
 import shutil
-import ast
+import traceback
 import toml as tml
 from pathlib import Path
 from copy import deepcopy
@@ -212,12 +212,12 @@ class Test:
 
         if self.executable == None or self.executable == "#{testname}":
             self.executable = self.testname
-
-        if self.executable[0] != '/':
-            self.executable = './' + self.executable             
-        
+                     
         self.replace_placeholders_in_self()
 
+        if self.executable[0] != '/':
+            self.executable = './' + self.executable
+        
         if vars(config)["ccizer_name"] != "":
             setattr(self, "canonicalizer", getattr(canonicalizers, vars(config)["ccizer_name"]))        
 
@@ -432,7 +432,7 @@ class Test:
                         solution_text = None                   
                     ccized = self.canonicalizer(text, solution_text, self.testname, self.ccizer_args)
                 except Exception as e: 
-                    ccized = f"ERROR: canonicalizer failed - {repr(e)}"
+                    ccized = f"ERROR: canonicalizer failed - {repr(e)}\n{traceback.format_exc()}"
             if ccized == None:
                 INFORM(f"canonicalizer for test {self.testname} does not return a string with the" +
                         "result - defaulting to empty string", color=MAGENTA)                    
