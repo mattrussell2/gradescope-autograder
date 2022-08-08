@@ -221,6 +221,9 @@ class Test:
         if vars(config)["ccizer_name"] != "":
             setattr(self, "canonicalizer", getattr(canonicalizers, vars(config)["ccizer_name"]))        
 
+        if self.max_ram != -1:
+            self.max_ram *= 1024
+
     def replace_placeholders(self, value_s):
         """
             Purpose:
