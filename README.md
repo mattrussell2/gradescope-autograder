@@ -434,7 +434,7 @@ under a test group, or within a specific test.
 
 | option | default | pupose | 
 |---|---|---|
-| `max_time` | `30` | maximum time (in seconds) for a test |
+| `max_time` | `10` | maximum time (in seconds) for a test |
 | `max_ram` | `-1` (unlimited) | maximum ram (in MB) usage for a test to be considered successful [`/usr/bin/time -f %M` value * 1024 is used] |
 | `valgrind` | `true` | run an additional test with valgrind |
 | `diff_stdout` | `true` | test diff of student vs. reference stdout |
@@ -474,6 +474,7 @@ That should be enough to get you up and running! Please feel free to contact me 
 ## [1.1.8] - 2022-8-7
 * Changed 
     * `bin/autograde.py` - set `max_ram` to be in `MB` in the `testset.toml` files to be consistent with `kill_limit` form.
+    * `bin/autograde.py` - lower `max_time` to `10` seconds.
 ## [1.1.7] - 2022-8-1
 * 'Breaking Change' related to canonicalization.
 * Changed

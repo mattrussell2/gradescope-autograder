@@ -108,7 +108,7 @@ def FAIL(s):
 
 @dataclass
 class TestConfig:    
-    max_time:      int  = 30 
+    max_time:      int  = 10 
     max_ram:       int  = -1 
     max_score:     int  = 1
         
