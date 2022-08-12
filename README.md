@@ -224,19 +224,30 @@ depending on your test configuration.
 ```
 ## General Notes
 * Files in `testset/stdin/` named `<testname>.stdin` (`test01.stdin`) will be sent to `stdin` for that test. 
-* Files in `testset/cpp/` named `<testname>.cpp` (`test01.cpp`) are intended to be driver files; each one will contain `main()`, and will be compiled and linked with the student's code.
-* If you plan to use driver files in `testset/cpp/`, you must use a custom `Makefile` - see the example: `assignments/hw1_ArrayLists/testset/makefile/Makefile`.
-* If the students are writing programs which have their own `main()`, then you do not need files in `testset/cpp/` - you may still choose to have your own custom `Makefile` if you wish (otherwise, be sure to set `our_makefile = false` in `testset.toml`). 
-* Whether using custom drivers or not, the target to build (e.g. `make target`) must always be named the same as the program to run (e.g. `./target`).
+* The `.diff`, `.ccized`, and `.valgrind` output files for each test will only be created if your configuation requires them.
+* This framework supports `diff`ing against any number of output files written to by the program. Such files must be named `<testname>.ANYTHING_HERE.ofile`. The expectation is that the program will receive the name of the file to produce as an input argument. Then, in the `testset.toml` file, you will ensure that the `argv` variable includes `#{testname}.ANYTHING_HERE.ofile` in the `argv` list. See the `gerp` assignment for an example: `assignments/gerp/testset.toml`. 
 * Canonicalization functions which are used by the autograder in `canonicalizers.py` must:
     * Take four parameters:
         1.  A string containing the student's output from whichever stream is to be canonicalized
         2.  A string containing the reference solution's output from whichever stream is to be canonicalized
         3.  A string containing the name of the test (e.g. `test01`)
         4.  A dictionary containing any specific test configuration options (e.g. `{'my_config_var': 10}`)
-    * Return a string, which contains the canonicalized output 
-* The `.diff`, `.ccized`, and `.valgrind` output files for each test will only be created if your configuation requires them.
-* This framework supports `diff`ing against any number of output files written to by the program. Such files must be named `<testname>.ANYTHING_HERE.ofile`. The expectation is that the program will receive the name of the file to produce as an input argument. Then, in the `testset.toml` file, you will ensure that the `argv` variable includes `#{testname}.ANYTHING_HERE.ofile` in the `argv` list. See the `gerp` example: `assignments/gerp/testset.toml`. 
+    * Return a string, which contains the canonicalized output
+
+
+
+### Driver-based testing notes
+When deploying a set of tests where each test is a unique driver file:
+* Files in `testset/cpp/` named `<testname>.cpp` (`test01.cpp`) are intended to be driver files; each one will contain `main()`, and will be compiled and linked with the student's code.
+* You must use a custom `Makefile`, where each test has its own target (i.e. we will run `make test01`). The `Makefile` will be run from the `results/build` directory, and will need to compile and link with the driver files which will live in the relative `../../testset/cpp` directory. See the example: `assignments/hw1_ArrayLists/testset/makefile/Makefile`.
+* Whenever using `our_makefile`, the target to build (e.g. `make target`) must always be named the same as the program to run (e.g. `./target`).
+
+### Student-executable testing notes
+When deploying a set of tests where students have produced a fully executable program:
+* You do not need files in `testset/cpp/` (the folder is not necessary either).
+* You may still choose to have your own custom `Makefile` if you wish (otherwise, be sure to set `our_makefile = false` in `testset.toml`).
+
+
 * The `summary` files are a dump of the state of a Test object - a summary is created upon initialization of the test, and is overwritten after a test completes with all the information about the test. All of the configuration options are there for a given test, so this is very useful for debugging!
 
 ## Example configurations 
