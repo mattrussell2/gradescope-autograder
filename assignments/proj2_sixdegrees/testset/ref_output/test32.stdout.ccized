@@ -1,1 +1,9 @@
-ERROR: canonicalizer failed - FileNotFoundError(2, 'No such file or directory')
+provided dfs between Ariana Grande and Stevie Wonder is a correct path
+-------
+provided dfs between Ty Dolla $ign and Troye Sivan is a correct path
+-------
+provided bfs between Ariana Grande and Stevie Wonder is a correct and optimal shortest path
+-------
+provided bfs between Ty Dolla $ign and Troye Sivan is a correct and optimal shortest path
+-------
+provided not between Ariana Grande and Skrillex is a correct path

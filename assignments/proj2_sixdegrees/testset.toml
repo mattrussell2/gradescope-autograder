@@ -6,15 +6,20 @@ max_valgrind_score = 3
 valgrind_score_visibility = "after_due_date"
 ccize_stdout = true 
 ccizer_name = "process_output"
-ccizer_args ={ artists_file="artists.txt" }
+ccizer_args ={ artists_file="testset/copy/artists.txt" }
 argv  = ["artists.txt"]
+max_score = 2
+max_ram = 3000
+kill_limit = 4500
+max_time = 10
+
 
 [SixDegrees_tests]
 tests = [
     { testname="test07", description="dfs Sia -> David Guetta", visibility = "visible"}, 
     { testname="test08", description="dfs David Guetta -> Sia"}, 
     { testname="test09", description="dfs Slim Thug -> Slim Thug", visibility = "visible"},
-    { testname="test10", description="dfs with backtracking", argv=["test10.data"], ccizer_args={artists_file="test10.data"}},
+    { testname="test10", description="dfs with backtracking", argv=["test10.data"], ccizer_args={artists_file="testset/copy/test10.data"}},
     { testname="test11", description="dfs with adjacent vertices"},
     { testname="test12", description="dfs disconnected graph"},
     { testname="test13", description="dfs artist not in graph"},
@@ -25,17 +30,17 @@ tests = [
     { testname="test18", description="bfs with adjacent vertices" },
     { testname="test19", description="bfs on disconnected graph"},
     { testname="test20", description="bfs artist not in graph"},
-    { testname="test21", description="dfs stress test"},
+    { testname="test21", description="bfs stress test"},
     { testname="test22", description="not with an excluded artist missing from graph" },
-    { testname="test23", description="not with exhausted exclusions", argv=["small.data"], ccizer_args={artists_file="small.data"} },
+    { testname="test23", description="not with exhausted exclusions", argv=["small.data"], ccizer_args={artists_file="testset/copy/small.data"} },
     { testname="test24", description="not with one exclusion (0)"},
     { testname="test25", description="not with one exclusion (1)"},
     { testname="test26", description="not with no exclusions"},
-    { testname="test27", description="not with disconnected path", argv=["small.data"], ccizer_args={artists_file="small.data"} },
+    { testname="test27", description="not with disconnected path", argv=["small.data"], ccizer_args={artists_file="testset/copy/small.data"} },
     { testname="test28", description="not excluding self"},
     { testname="test29", description="not with three exclusions"},
     { testname="test30", description="not stress test"},
-    { testname="test31", description="bfs long path", argv=["test31.data"], ccizer_args={artists_file="test31.data"}},
+    { testname="test31", description="bfs long path", argv=["test31.data"], ccizer_args={artists_file="testset/copy/test31.data"}},
     { testname="test32", description="stress test all commands" }
 ]
 

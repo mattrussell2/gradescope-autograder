@@ -48,20 +48,23 @@ def validate_result(student, solution, query_data, graph, ith_query):
 
     # case of length 1 might be not found or no path cases - return in these instances.
     # however, might also be a dfs case where solution and student disagree but student is correct. 
-    if len(student) == 1 and ((solution != None and ("A path does not exist between"  in solution or \
-                                                    "was not found in the dataset :(" in solution)) \
-                              or solution == None and ("A path does not exist between" in student or \
-                                                       "was not found in the dataset :(" in student)):
-        return student
+    if len(student) == 1 and ((solution != None and ("A path does not exist between"  in solution[0] or \
+                                                    "was not found in the dataset :(" in solution[0])) \
+                              or solution == None and ("A path does not exist between" in student[0] or \
+                                                       "was not found in the dataset :(" in student[0])):
+        return student[0]
 
-    # running reference implementation; assume correct
-    if solution == None:        
-        return f"provided {query_data['query_type']} between {query_data['source']} and {query_data['dest']} is a correct path\nlength of path provided is: {len(student)}"
-    
     # Format is: ""source" collaborated with "dest" in "song"". 
     # after split, we have source and dest
     stud_source, stud_dest = get_source(student[0]), get_dest(student[-1])   
 
+    # running reference implementation; assume correct
+    if solution == None: 
+        if query_data['query_type'] == 'bfs':        
+            return f"provided {query_data['query_type']} between {stud_source} and {stud_dest} is a correct and optimal shortest path"
+        else:
+            return f"provided {query_data['query_type']} between {stud_source} and {stud_dest} is a correct path"       
+        
     if stud_source != query_data['source'] or stud_dest != query_data['dest']:
         return f"INCORRECT_PATH -- STUDENT SOURCE: {stud_source} -> STUDENT DESTINATION: {stud_dest}\n" + \
                f"                  SOLUTION SOURCE: {query_data['source']} -> SOLUTION DESTINATION: {query_data['dest']}"

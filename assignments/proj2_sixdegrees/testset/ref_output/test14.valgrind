@@ -1,15 +1,15 @@
-==13976== Memcheck, a memory error detector
-==13976== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
-==13976== Using Valgrind-3.15.0 and LibVEX; rerun with -h for copyright info
-==13976== Command: ./SixDegrees artists.txt
-==13976== Parent PID: 13975
-==13976== 
-==13976== 
-==13976== HEAP SUMMARY:
-==13976==     in use at exit: 0 bytes in 0 blocks
-==13976==   total heap usage: 215,237 allocs, 215,237 frees, 14,922,642 bytes allocated
-==13976== 
-==13976== All heap blocks were freed -- no leaks are possible
-==13976== 
-==13976== For lists of detected and suppressed errors, rerun with: -s
-==13976== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)
+==28990== Memcheck, a memory error detector
+==28990== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
+==28990== Using Valgrind-3.15.0 and LibVEX; rerun with -h for copyright info
+==28990== Command: ./SixDegrees artists.txt
+==28990== Parent PID: 28989
+==28990== 
+==28990== 
+==28990== HEAP SUMMARY:
+==28990==     in use at exit: 0 bytes in 0 blocks
+==28990==   total heap usage: 215,237 allocs, 215,237 frees, 14,922,642 bytes allocated
+==28990== 
+==28990== All heap blocks were freed -- no leaks are possible
+==28990== 
+==28990== For lists of detected and suppressed errors, rerun with: -s
+==28990== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)
