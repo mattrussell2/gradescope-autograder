@@ -1,25 +1,20 @@
 # Testing Makefile
-# Is run from the submission directory
-TESTSETDIR=../../testset
-TESTSOURCEDIR=${TESTSETDIR}/cpp
-
+# Is run from the results/build/ directory
+TESTSOURCEDIR=../../testset/cpp
 
 CXX      = clang++
 CXXFLAGS = -g3 -Wall -Wextra -std=c++14 -I .
 
+TESTS=$(shell bash -c "echo test{01..57}")
 
-ARRAYLISTTESTS=$(shell bash -c "echo test{01..57}")
-
-${ARRAYLISTTESTS}: CharArrayList.o
-	${CXX} ${CXXFLAGS}  -o $@ $^ ${TESTSOURCEDIR}/$@.cpp
-
-
-# Don't delete .o files
-.SECONDARY:
-
+${TESTS}: CharArrayList.o
+	${CXX} ${CXXFLAGS} -o $@ $^ ${TESTSOURCEDIR}/$@.cpp
 
 %.o: %.cpp $(shell echo *.h)
 	${CXX} ${CXXFLAGS} -c $<
 
+# Don't delete .o files
+.SECONDARY:
+
 clean:
-	rm -rf test?? *.o *.dSYM
+	rm -rf test?? *.o 
