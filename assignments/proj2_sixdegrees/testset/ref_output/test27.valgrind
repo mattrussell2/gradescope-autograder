@@ -1,0 +1,15 @@
+==29288== Memcheck, a memory error detector
+==29288== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
+==29288== Using Valgrind-3.15.0 and LibVEX; rerun with -h for copyright info
+==29288== Command: ./SixDegrees small.data
+==29288== Parent PID: 29287
+==29288== 
+==29288== 
+==29288== HEAP SUMMARY:
+==29288==     in use at exit: 0 bytes in 0 blocks
+==29288==   total heap usage: 220 allocs, 220 frees, 107,424 bytes allocated
+==29288== 
+==29288== All heap blocks were freed -- no leaks are possible
+==29288== 
+==29288== For lists of detected and suppressed errors, rerun with: -s
+==29288== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)
