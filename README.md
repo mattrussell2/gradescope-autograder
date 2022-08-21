@@ -482,6 +482,11 @@ That should be enough to get you up and running! Please feel free to contact me 
 * Bug - sometimes, when parallel compilation is done, intermediate files are not being managed well -- multiple processes are trying to compile the same dependency, and things fail with a message like "xxx.o deleted". Clearly, the best possible scenario would be to build each .o file once, but not sure how to do this; a separate build directory for each test seems like overkill. It might be wise to nix parallel compilation, or to separate the num_jobs param into two, one for num parallel compilation jobs, and one for parallel test running jobs.
 
 # Changelog
+## [1.1.9] - 2022-8-21
+* Changed
+    * `README` - indicate that `Ubuntu 22.04` should be used in zip builds.
+    * `setup/zipbuild/setup.sh` - changed clang version to clang-12; this avoids known compatibility issues with most recent clang and valgrind versions.
+    * `setup/zipbuild/build_container.sh` - remove any currently existing `Autograder.zip` file, without this, every time the script runs, the size of the zip file will increase. 
 ## [1.1.8] - 2022-8-7
 * Changed 
     * `bin/autograde.py` - set `max_ram` to be in `MB` in the `testset.toml` files to be consistent with `kill_limit` form.
