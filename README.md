@@ -19,7 +19,7 @@ Fear not! There is lots of starter code to do the bulk of the heavy lifting here
 
 * The `.zip` method requires more manual work. You have to upload a new `.zip` file each time you want to update the autograder; the Docker container will then need to be built from scratch on Gradescope, which takes time. However, you don't need Docker on your system. If you're not familiar with Docker, this workflow is suggested. 
 * The Docker method is more streamlined once it's setup. After uploading the container, for every assignment, you can point Gradescope to the container location - no `.zip` file uploading required. If you already use Docker, will be interested in tweaking the Docker container's build settings (`clang` version, etc.) or are feeling adventurous, go for this option. 
-* Gradescope's default container runs Ubuntu 18.04; we manually install Python 3.9 in the container in the `setup.sh` file; the Docker setup we have builds Ubuntu 22.04, which comes with Python 3.10 by default. Update - looks like Gradescope now has the option to select the root container linux variant.
+* ~~Gradescope's default container runs Ubuntu 18.04; we manually install Python 3.9 in the container in the `setup.sh` file; the Docker setup we have builds Ubuntu 22.04, which comes with Python 3.10 by default.~~ Update - looks like Gradescope now has the option to select the root container linux variant - the `setup.sh` script has been updated to work with Ubuntu 22.04.
 
 ## Autograding git Repo
 Regardless of whether you use the `.zip` method or the Docker method, you will need to create a git repository for your autograder. This repository will be used by the autograding container; whenever an assignment is autograded, the code from your repository will be pulled, the assignment's autograding files will be copied to right place, and our autograding script will do run the tests and produce the results for Gradescope. So, if you don't currently have a repository related to course material, please make one. 
@@ -78,7 +78,7 @@ Okay! now continue with one of either the `.zip` or Docker methods below.
 
 ## .zip method
 As mentioned above, with the `.zip` method, you'll need to upload a `.zip` file for each 
-assignment. However, there is no other setup required. For the future, if you make changes to any of the files in the `dockerbuild` folder, or to `bin/run_autograder`, make sure to rebuild and re-upload the `Autograder.zip` file.
+assignment (make sure to select `Ubuntu 22.04` for the container type). However, there is no other setup required. For the future, if you make changes to any of the files in the `dockerbuild` folder, or to `bin/run_autograder`, make sure to rebuild and re-upload the `Autograder.zip` file. 
 
 ### For each assignment with the .zip method: 
 * `cd setup/zipbuild && ./build_container.sh` - this will produce the necessary `Autograder.zip` file. Note: if you don't change the `setup.sh` or `run_autograder` scripts, you can re-use this file for multiple assigments.  

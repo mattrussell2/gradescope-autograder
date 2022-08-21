@@ -11,12 +11,9 @@ apt-get install software-properties-common \
                 valgrind \
                 ssh \
                 time \
-                clang -y
+                clang-12 -y
 
-# install python3.9 - the default is 3.6.9; autograder needs >= 3.8
-add-apt-repository ppa:deadsnakes/ppa -y
-apt update -y
-apt install python3.9 python3.9-distutils -y
+ln -s /usr/bin/clang++-12 /usr/bin/clang++
 
 # install pip packages
 python3.9 -m pip install --upgrade pip
