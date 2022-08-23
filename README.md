@@ -482,6 +482,9 @@ That should be enough to get you up and running! Please feel free to contact me 
 * Bug - sometimes, when parallel compilation is done, intermediate files are not being managed well -- multiple processes are trying to compile the same dependency, and things fail with a message like "xxx.o deleted". Clearly, the best possible scenario would be to build each .o file once, but not sure how to do this; a separate build directory for each test seems like overkill. It might be wise to nix parallel compilation, or to separate the num_jobs param into two, one for num parallel compilation jobs, and one for parallel test running jobs.
 
 # Changelog
+## [1.2.0] - 2022-8-23
+* Changed
+    * `setup/dockerbuild/deploy_container.sh` - updated local tag to include username and reponame; this fixes error where container wouldn't be found when trying to push to dockerhub. 
 ## [1.1.9] - 2022-8-21
 * Changed
     * `README` - indicate that `Ubuntu 22.04` should be used in zip builds.
