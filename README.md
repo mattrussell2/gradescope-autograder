@@ -76,7 +76,7 @@ Okay! now continue with one of either the `.zip` or Docker methods below.
 
 ## .zip method
 As mentioned above, with the `.zip` method, you'll need to upload a `.zip` file for each 
-assignment (make sure to select `Ubuntu 22.04` for the container type). However, there is no other setup required. For the future, if you make changes to any of the files in the `dockerbuild` folder, or to `bin/run_autograder`, make sure to rebuild and re-upload the `Autograder.zip` file. 
+assignment (make sure to select `Ubuntu 22.04` for the container type; the Python version, etc. are configured to work with the Jammy Jellyfish defaults). However, there is no other setup required. For the future, if you make changes to any of the files in the `dockerbuild` folder, or to `bin/run_autograder`, make sure to rebuild and re-upload the `Autograder.zip` file. 
 
 ### For each assignment with the .zip method: 
 * `cd setup/zipbuild && ./build_container.sh` - this will produce the necessary `Autograder.zip` file. Note: if you don't change the `setup.sh` or `run_autograder` scripts, you can re-use this file for multiple assigments.  
