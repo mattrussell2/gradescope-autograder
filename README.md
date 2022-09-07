@@ -450,7 +450,7 @@ under a test group, or within a specific test.
 | `ccize_ofiles` | `false` | diff canonicalized ofiles instead of ofiles |
 | `ccizer_name` | `""` | name of canonicalization function to use |
 | `ccizer_args` | `{}` | arguments to pass to canonicalization function |
-| `our_makefile` | `true` | use testset/makefile/Makefile to build tests |
+| `our_makefile` | `true` | use `testset/makefile/Makefile` to build tests |
 | `exitcodepass` | `0` | return code considered successful by the autograder|
 | `pretty_diff` | `false` | use diff-so-fancy for easy-to-read diffs |
 | `max_score` | `1` | maximum points (on Gradescope) for this test |
