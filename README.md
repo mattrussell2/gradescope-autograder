@@ -457,7 +457,7 @@ under a test group, or within a specific test.
 | `visibility` | `"after_due_date"` | Gradescope visibility setting |
 | `argv` | `[ ]` | argv input to the program |
 | `executable` | `(testname)` | executable to build and run |
-| `max_valgrind_score` | `8` | `[common]` only setting - maximum valgrind score for this assignment. 
+| `max_valgrind_score` | `8` | `[common]` only setting - maximum valgrind score for this assignment [per-test valgrind score is deduced by default based on this value]. 
 | `valgrind_score_visibility` | `"after_due_date"` | `[common]` only setting - visibility of the test which will hold the total valgrind points for the student. 
 | `kill_limit` | `500` | test will be killed if it's memory usage exceeds this value (in `MB`) [soft rlimit_data will be set to this value in a preexec function to the subprocess call] - Note: if the program exceeds the limit, it will receive `SIGSEGV` from the os. Unfortunately, nothing is produced on `stderr`. However, if `valgrind` is also run and fails to produce a log file (due to also receiving `SIGSEGV`), the test will be assumed to have exceeded max ram...in general, however, this is tricky to debug. In my experience, `valgrind` will fail to allocate memory but still produce a log file at `~50MB` of ram; any lower and no log file will be produced. The default setting of `500` `MB` should be fine for most tests, and will work with the smallest (default) container. |
 
