@@ -452,7 +452,7 @@ under a test group, or within a specific test.
 | `ccizer_args` | `{}` | arguments to pass to canonicalization function |
 | `our_makefile` | `true` | use testset/makefile/Makefile to build tests |
 | `exitcodepass` | `0` | return code considered successful by the autograder|
-| `pretty_diff` | `false` | use diff-so-pretty for easy-to-read diffs |
+| `pretty_diff` | `false` | use diff-so-fancy for easy-to-read diffs |
 | `max_score` | `1` | maximum points (on Gradescope) for this test |
 | `visibility` | `"after_due_date"` | Gradescope visibility setting |
 | `argv` | `[ ]` | argv input to the program |
