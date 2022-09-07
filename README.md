@@ -223,7 +223,7 @@ depending on your test configuration.
 ## General Notes
 * Files in `testset/stdin/` named `<testname>.stdin` (`test01.stdin`) will be sent to `stdin` for that test. 
 * The `.diff`, `.ccized`, and `.valgrind` output files for each test will only be created if your configuation requires them.
-* This framework supports `diff`ing against any number of output files written to by the program. Such files must be named `<testname>.ANYTHING_HERE.ofile`. The expectation is that the program will receive the name of the file to produce as an input argument. Then, in the `testset.toml` file, you will ensure that the `argv` variable includes `#{testname}.ANYTHING_HERE.ofile` in the `argv` list. See the `gerp` assignment for an example: `assignments/gerp/testset.toml`. 
+* This framework supports `diff`ing against any number of output files written to by the program. Such files must be named `<testname>.ANYTHING_HERE.ofile`. The expectation is that the program will receive the name of the file to produce as an input argument. Then, in the `testset.toml` file, you will ensure that the `argv` variable includes `#{testname}.ANYTHING_HERE.ofile` in the `argv` list. See the `gerp` example configuration below for details. 
 * Canonicalization functions which are used by the autograder in `canonicalizers.py` must:
     * Take four parameters:
         1.  A string containing the student's output from whichever stream is to be canonicalized
@@ -231,8 +231,7 @@ depending on your test configuration.
         3.  A string containing the name of the test (e.g. `test01`)
         4.  A dictionary containing any specific test configuration options (e.g. `{'my_config_var': 10}`)
     * Return a string, which contains the canonicalized output
-
-
+* The `summary` files contain a dump of the state of the backend `Test` object from the `autograde.py` script - a summary is created upon initialization of the test, and is overwritten after a test finishes. All of the configuration options (e.g. `diff_stdout`, etc.)and results (e.g. `stdout_diff_passed`) are part of the `Test` object, so the `summary` files are very useful for debugging!
 
 ### Driver-based testing notes
 When deploying a set of tests where each test is a unique driver file:
@@ -244,9 +243,6 @@ When deploying a set of tests where each test is a unique driver file:
 When deploying a set of tests where students have produced a fully executable program:
 * You do not need files in `testset/cpp/` (the folder is not necessary either).
 * You may still choose to have your own custom `Makefile` if you wish (otherwise, be sure to set `our_makefile = false` in `testset.toml`).
-
-
-* The `summary` files are a dump of the state of a Test object - a summary is created upon initialization of the test, and is overwritten after a test completes with all the information about the test. All of the configuration options are there for a given test, so this is very useful for debugging!
 
 ## Example configurations 
 ### Example configuration for hw1_ArrayLists
