@@ -666,15 +666,15 @@ def compile_exec(target):
 
     with open(f"{LOG_DIR}/{target}.compile.log", "w") as f:
         INFORMF(f"== running make {target} ==\n", f, color=CYAN)
-        compilation_proc    = RUN(["make", target], cwd=BUILD_DIR)
+        compilation_proc    = RUN(["make", target], cwd=BUILD_DIR, stdout=f, stderr=f)
         compilation_success = compilation_proc.returncode == 0   
         compilation_color   = GREEN if compilation_success else RED 
         
-        for stream in [compilation_proc.stdout, compilation_proc.stderr]:            
-            try:            
-                INFORMF(stream.decode('utf-8'), stream=f, color=compilation_color) 
-            except:
-                INFORMF(stream, stream=f, color=compilation_color)
+        # for stream in [compilation_proc.stdout, compilation_proc.stderr]:            
+        #     try:            
+        #         INFORMF(stream.decode('utf-8'), stream=f, color=compilation_color) 
+        #     except:
+        #         INFORMF(stream, stream=f, color=compilation_color)
             
         if not compilation_success:
             INFORMF(f"\ncompilation failed\n", stream=f, color=RED)                
