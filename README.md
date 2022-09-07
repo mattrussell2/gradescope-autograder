@@ -9,8 +9,7 @@ If you have any questions, please reach out to me at `mrussell@cs.tufts.edu`, or
 
 ## Background
 Gradescope's autograders rely on Docker containers which are spun up each time 
-a submission is graded. The default container runs a variant of Ubuntu 18.04 which contains
-the bare-bones infrastructure to make Gradescope's systems function. Before diving into autograding, you will need to set up a method to integrate with Gradescope's systems. This document presents two options: 
+a submission is graded. However, they provide two methods to interface with these containers. You will need to pick one (both are supported here).
 
 * The `.zip` method - this workflow is to manually upload a `.zip` file containing two scripts: `setup.sh`, which installs dependencies (e.g. `Python`, `clang`, etc.), and a shell script named `run_autograder`, which runs the autograder.
 * The Docker method - this workflow is to build the Docker container from scratch and upload it to the container registry of your choice.
