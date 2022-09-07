@@ -20,7 +20,7 @@ Fear not! There is lots of starter code to do the bulk of the heavy lifting here
 * The Docker method is more streamlined once it's setup. After uploading the container, for every assignment, you can point Gradescope to the container location - no `.zip` file uploading required. If you already use Docker, will be interested in tweaking the container's build settings (`clang` version, etc.) or are feeling adventurous, go for this option. 
 
 ## Autograding git Repo
-Regardless of whether you use the `.zip` method or the Docker method, you will need to create a git repository for your autograder. This repository will be used by the autograding container; whenever an assignment is autograded, the code from your repository will be pulled, the assignment's autograding files will be copied to right place, and our autograding script will do run the tests and produce the results for Gradescope. So, if you don't currently have a repository related to course material, please make one. 
+Regardless of whether you use the `.zip` method or the Docker method, you will need to create a git repository for your autograder. This repository will be used by the autograding container; whenever an assignment is autograded, the code from your repository will be pulled, the assignment's autograding files will be copied to right place, and our autograding script will run tests and produce results for Gradescope. So, if you don't currently have a repository related to course material, please make one. 
 We suggest using gitlab for this: go to https://gitlab.cs.tufts.edu and 
 login with `LDAP` using your Tufts eecs `utln` and password. Then create a new repository from scratch. You do not need a `README`. 
 Now, in your terminal:
