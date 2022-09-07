@@ -136,8 +136,8 @@ about the autograding framework, and for a walkthrough to setup an assignment.
 ## Introduction
 The autograding framework is designed to have you writing and deploying tests as quickly as possible. 
 There are two primary forms of assignment that this autograder supports:
-* Tests which are a set of `.cpp` files, each with `main()`. 
-* Tests which test a student's completed executable program. 
+* Tests which are a set of `.cpp` driver files, each with its own `main()`. 
+* Tests which build and run a student's completed executable program with different inputs. 
 
 In either case, you can send a file to `stdin` for a test, and `stdout`/`stderr` will both `diff`'d automatically against the output of a reference implementation. Output can be canonicalized before `diff`, and `valgrind` can be run on the programs as well. Limits can be set for memory usage, timeout, etc. See details below.
 
