@@ -1,0 +1,5 @@
+This is intended to test the max_ram and kill_limit features of the autograder. 
+
+The 'solution' code should fail/pass as indicated in the description strings for the tests.
+To run it and test, run `build_ref_output` in this directory.  If that command fails, read the 
+README.md in the repo's root directory for more info. 
