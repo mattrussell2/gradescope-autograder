@@ -360,7 +360,7 @@ class Test:
             memdata = Path(self.fpaths['memory']).read_text()
             if memdata != '': # this might happen if timeout kills program
                 max_rss = int(memdata.splitlines()[-1]) # if segfault, last line has max_rss info
-                self.max_ram_exceeded = max_rss > self.max_ram if self.max_ram != -1 else self.kill_limit                 
+                self.max_ram_exceeded = (max_rss > self.max_ram and self.max_ram != -1)
       
     def run_valgrind(self):  
         """
@@ -385,7 +385,7 @@ class Test:
                 self.valgrind_passed  = False
                 self.memory_leaks     = False
                 self.memory_errors    = True
-                self.max_ram_exceeded = True
+                self.max_ram_exceeded = True # no valgrind file produced only when test process is aborted by OS. 
                 self.valg_out_of_mem  = True
             else:
                 valgrind_output      = Path(self.fpaths['valgrind']).read_text()
