@@ -455,7 +455,7 @@ under a test group, or within a specific test.
 | `pretty_diff` | `false` | use diff-so-fancy for easy-to-read diffs |
 | `max_score` | `1` | maximum points (on Gradescope) for this test |
 | `visibility` | `"after_due_date"` | Gradescope visibility setting |
-| `argv` | `[ ]` | argv input to the program |
+| `argv` | `[ ]` | argv input to the program - Note: all arguments in the list must be represented as strings (e.g. ["1", "abcd"...])|
 | `executable` | `(testname)` | executable to build and run |
 | `max_valgrind_score` | `8` | `[common]` only setting - maximum valgrind score for this assignment [per-test valgrind score is deduced by default based on this value]. 
 | `valgrind_score_visibility` | `"after_due_date"` | `[common]` only setting - visibility of the test which will hold the total valgrind points for the student. 
