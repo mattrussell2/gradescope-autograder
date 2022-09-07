@@ -121,7 +121,7 @@ When a student submits code:
 * The Docker container is fired up on `aws` - again, note that with either method you use above, a Docker container is still used.
 * The script located at `bin/run_autograder` is run.  This script (basically):
     * Runs `git pull` to get the most recent version of your autograding tests. 
-    * Copies files related to the assignment's autograder to `/autograder/` - the default working directory for all of Gradescope's autograders.
+    * Copies files for the assignment's autograder to `/autograder/` - the initial working directory for Gradescope's autograder.
     * Runs `autograde.py` - our autograding framework [details below]. 
     * Runs `make_gradescope_results.py`, which parses the results files and saves the results at `/autograder/results/results.json` in a form readable by Gradescope. 
 
