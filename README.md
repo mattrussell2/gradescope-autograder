@@ -459,7 +459,7 @@ under a test group, or within a specific test.
 | `executable` | `(testname)` | executable to build and run |
 | `max_valgrind_score` | `8` | `[common]` only setting - maximum valgrind score for this assignment [per-test valgrind score is deduced by default based on this value]. 
 | `valgrind_score_visibility` | `"after_due_date"` | `[common]` only setting - visibility of the test which will hold the total valgrind points for the student. 
-| `kill_limit` | `500` | test will be killed if it's memory usage exceeds this value (in `MB`) [soft rlimit_data will be set to this value in a preexec function to the subprocess call] - Note: if the program exceeds the limit, it will receive `SIGSEGV` from the os. Unfortunately, nothing is produced on `stderr`. However, if `valgrind` is also run and fails to produce a log file (due to also receiving `SIGSEGV`), the test will be assumed to have exceeded max ram...in general, however, this is tricky to debug. In my experience, `valgrind` will fail to allocate memory but still produce a log file at `~50MB` of ram; any lower and no log file will be produced. The default setting of `500` `MB` should be fine for most tests, and will work with the smallest (default) container. |
+| `kill_limit` | `500` | test will be killed if it's memory usage exceeds this value (in `MB`) [soft and hard rlimit_data will be set to this value in a preexec function to the subprocess call] - Note: if the program exceeds the limit, it will receive `SIGSEGV` from the os. Unfortunately, nothing is produced on `stderr`. However, if `valgrind` is also run and fails to produce a log file (due to also receiving `SIGSEGV`), the test will be assumed to have exceeded max ram...in general, however, this is tricky to debug. In my experience, `valgrind` will fail to allocate memory but still produce a log file at `~50MB` of ram; any lower and no log file will be produced. The default setting of `500` `MB` should be fine for most tests, and will work with the smallest (default) container. |
 
 
 ## Visibility settings in Gradescope
@@ -476,6 +476,10 @@ That should be enough to get you up and running! Please feel free to contact me 
 * Bug - sometimes, when parallel compilation is done, intermediate files are not being managed well -- multiple processes are trying to compile the same dependency, and things fail with a message like "xxx.o deleted". Clearly, the best possible scenario would be to build each .o file once, but not sure how to do this; a separate build directory for each test seems like overkill. It might be wise to nix parallel compilation, or to separate the num_jobs param into two, one for num parallel compilation jobs, and one for parallel test running jobs.
 
 # Changelog
+## [1.2.2] - 2022-9-7
+* Changed
+    * `bin/autograde.py` - Update rlimit code to limit BOTH the soft and hard limits. Should avoid crashing the autograder from now on. 
+    * `README.md` - Minor updates.
 ## [1.2.1] - 2022-9-7
 * Changed 
     * `README.md` - `Guest` permissions for the Gitlab PAT can't pull!
