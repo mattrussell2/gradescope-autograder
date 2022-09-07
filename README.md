@@ -44,7 +44,7 @@ rm -rf gradescope-autograding/.git
 mv gradescope-autograding/* .
 rm -rf gradescope-autograding
 ```
-Great! Now, you will need an Access Token so your autograder can pull from the repo. To create one, go to gitlab in your browser, and navigate to the course repository you just created. Next, hover over the settings cog on the lower left, and select `Access Tokens`. Create one - this will be used by the Gradescope autograder to pull the most recent version of the autograding files for an assignment. We suggest only providing `read repository` access to the token. Feel free to select whatever you'd like for the name, expiration date, and role. Once the token is created, copy the key. 
+Great! Now, you will need an Access Token so your autograder can pull from the repo. To create one, go to gitlab in your browser, and navigate to the course repository you just created. Next, hover over the settings cog on the lower left, and select `Access Tokens`. Create one - this will be used by the Gradescope autograder to pull the most recent version of the autograding files for an assignment. We suggest only providing `read repository` access to the token. Feel free to select whatever you'd like for the name, expiration date, and role, however role must be at least `Developer` in order to be able to pull. Once the token is created, copy the key. 
 
 You will need to now create an environment variable with the remote path to your autograding repo, including the acess token copied above. 
 
@@ -482,6 +482,10 @@ That should be enough to get you up and running! Please feel free to contact me 
 * Bug - sometimes, when parallel compilation is done, intermediate files are not being managed well -- multiple processes are trying to compile the same dependency, and things fail with a message like "xxx.o deleted". Clearly, the best possible scenario would be to build each .o file once, but not sure how to do this; a separate build directory for each test seems like overkill. It might be wise to nix parallel compilation, or to separate the num_jobs param into two, one for num parallel compilation jobs, and one for parallel test running jobs.
 
 # Changelog
+## [1.2.1] - 2022-9-7
+* Changed 
+    * `README.md` - `Guest` permissions for the Gitlab PAT can't pull!
+    * `setup/dockerbuild/deploy_container.sh` - fixed incorrect tag during dockerbuild step.
 ## [1.2.0] - 2022-8-23
 * Changed
     * `setup/dockerbuild/deploy_container.sh` - updated local tag to include username and reponame; this fixes error where container wouldn't be found when trying to push to dockerhub. 

@@ -12,7 +12,7 @@ source etc/docker_config.ini
 
 cp etc/autograder_config.ini .
 
-docker build --tag $CONTAINER_TAG --build-arg REPO_REMOTE_PATH="${!REPO_REMOTE_VARNAME}" -f setup/dockerbuild/Dockerfile .
+docker build --tag "${CONTAINER_REMOTE}/${!REGISTRY_USER_VARNAME}/${CONTAINER_NAME}:${CONTAINER_TAG}" --build-arg REPO_REMOTE_PATH="${!REPO_REMOTE_VARNAME}" -f setup/dockerbuild/Dockerfile .
 
 rm autograder_config.ini 
 
