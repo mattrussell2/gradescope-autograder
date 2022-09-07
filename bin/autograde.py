@@ -64,7 +64,7 @@ MEMERR_PASS    = "ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)
 VALG_NO_MEM    = "Valgrind's memory management: out of memory"
 
 def limit_virtual_memory(limit):
-    resource.setrlimit(resource.RLIMIT_DATA, (limit, resource.RLIM_INFINITY))
+    resource.setrlimit(resource.RLIMIT_DATA, (limit, limit))
 
 def COLORIZE(s, color):
     return f"{START_COLOR}{color}{s}{RESET_COLOR}"
