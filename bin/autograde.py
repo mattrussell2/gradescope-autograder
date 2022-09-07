@@ -666,7 +666,8 @@ def compile_exec(target):
 
     with open(f"{LOG_DIR}/{target}.compile.log", "w") as f:
         INFORMF(f"== running make {target} ==\n", f, color=CYAN)
-        compilation_proc    = RUN(["make", target], cwd=BUILD_DIR, stdout=f, stderr=f)
+        compilation_proc    = RUN(["make", target], cwd=BUILD_DIR, 
+                                  stdout=f, stderr=subprocess.STDOUT)
         compilation_success = compilation_proc.returncode == 0   
         compilation_color   = GREEN if compilation_success else RED 
         
