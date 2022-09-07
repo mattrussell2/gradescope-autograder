@@ -105,7 +105,7 @@ Note that in this case `GHUNAME` and `GHPAT` are the names of environment variab
 ### Build and deploy the container
 Once you've updated the `etc/autograder_config.ini` and `etc/docker_config.ini` files with the necessary variables, and have put the necessary exports in your `~/.bashrc` file, run:
 ```
-cd dockerbuild
+cd setup/dockerbuild
 ./deploy_container
 ```
 The container will be built and uploaded to the location you've specified. Note: in rare cases, the Docker build process hangs in the early stages. If this happens to you, run `rm ~/.docker/config.json` and try again. For the future, if you make changes to any of the files in the `dockerbuild` folder, or to `bin/run_autograder`, make sure to re-run this script. 
