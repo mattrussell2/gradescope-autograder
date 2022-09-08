@@ -175,13 +175,12 @@ class TestConfig:
             setattr(self, key, value)
         return self  
 
-    def mergecopy(self, drop=None, **kwargs):
+    def mergecopy(self, **kwargs):
         """
             Purpose: 
                 Returns a deep copy of myself, updated with the parmeters provided.
             Parameters: 
-                drop (List[str])        : A list of keys to drop
-                kwards (key-value pairs : a list of key-value pairs to update              
+                kwargs (key-value pairs) : a list of key-value pairs to update              
             Returns: 
                 The updated copy
         """
