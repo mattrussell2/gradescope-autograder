@@ -1,0 +1,8 @@
+This is a sanity-check of tests. 
+There is really no 'solution' as-such, it's just a set of .cpp tests. 
+
+The tests each are supposed to pass/fail as indicated. 
+
+Running build_ref_output will run the tests and print the result summary.
+
+Run build_ref_output -k to see the results/ folder with the relevant info. 

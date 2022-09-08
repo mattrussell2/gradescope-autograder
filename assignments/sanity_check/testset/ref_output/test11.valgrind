@@ -1,0 +1,15 @@
+==33979== Memcheck, a memory error detector
+==33979== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
+==33979== Using Valgrind-3.18.1 and LibVEX; rerun with -h for copyright info
+==33979== Command: ./test11 /workspaces/ubuntu/gradescope-test/assignments/tests/temp_ref_build_dir/results/output/test11.ofile
+==33979== Parent PID: 33978
+==33979== 
+==33979== 
+==33979== HEAP SUMMARY:
+==33979==     in use at exit: 0 bytes in 0 blocks
+==33979==   total heap usage: 4 allocs, 4 frees, 81,468 bytes allocated
+==33979== 
+==33979== All heap blocks were freed -- no leaks are possible
+==33979== 
+==33979== For lists of detected and suppressed errors, rerun with: -s
+==33979== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)

@@ -474,8 +474,14 @@ That should be enough to get you up and running! Please feel free to contact me 
 # TODOS
 * Update the funcationality of `bin/autograde.py` so that if a grader is re-running tests, we don't nuke the entire build folder, but intelligently load the data from alread-run tests. Also, need to verify that the various filter, etc. options work as expected. 
 * Bug - sometimes, when parallel compilation is done, intermediate files are not being managed well -- multiple processes are trying to compile the same dependency, and things fail with a message like "xxx.o deleted". Clearly, the best possible scenario would be to build each .o file once, but not sure how to do this; a separate build directory for each test seems like overkill. It might be wise to nix parallel compilation, or to separate the num_jobs param into two, one for num parallel compilation jobs, and one for parallel test running jobs.
+* Bug - test summary sometimes cuts of last row of tests. Likely a silly rounding error.  
 
 # Changelog
+## [1.3.1] - 2022-9-7
+* Changed
+    * `bin/autograde.py` - Minor updates to print more info in test summary.
+* Added
+    * `assignments/sanity_check` - A 'sanity check' assignment with checks for expected passing and failure cases. Good for future deployments. Put more tests here! This is of the 'arraylist' variety - perhaps add a sanity check for the 'gerp' variety of testset as well.
 ## [1.3.0] - 2022-9-7
 * Changed
     * `bin/autograde.py` - Refactored code to not use the `capture_output=True` param of subprocess module. Problem was that if the max rlimit is passed due to a bunch of output (for instance with an infinite loop printing to cout), than the captured stream's bytes exceedes the rlimit and the autograder crashes. Instead, refactored RUN() to call subprocess.run() with stdin/stderr params; these are /dev/null if not otherwise specified. For 'regular' tests, they'll always be the default (`output/testname.stdout`, `output/testname.stderr`), and valgrind is called with `--logfile=...`, so the valgrind tests send their logs to the logfile as usual. Minor assumption here that `valgrind` tests aren't going to be checked for their `stdout` content, but based on the other structure here this is natural. This should finally fix the kerfuffle with max_ram/kill_limit being overrun. 

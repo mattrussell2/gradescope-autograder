@@ -587,6 +587,7 @@ def report_results(TESTS, OPTS):
         "Failed stderr diff":  { "func": lambda test: test.diff_stderr and not test.stderr_diff_passed, "tests": [], "color": RED     },
         "Failed ofile diff":   { "func": lambda test: test.diff_ofiles and not test.fout_diffs_passed,  "tests": [], "color": RED     },        
         "Timed Out":           { "func": lambda test: test.timed_out,                                   "tests": [], "color": RED     }, 
+        "Invalid Exit Code":   { "func": lambda test: test.exit_status != test.exitcodepass,            "tests": [], "color": RED     },
         "Exceeded Max Ram":    { "func": lambda test: test.max_ram_exceeded,                            "tests": [], "color": RED     }, 
         "Exceeded Kill Limit": { "func": lambda test: test.kill_limit_exceeded,                         "tests": [], "color": RED     },  
         "Valgrind Passed":     { "func": lambda test: test.valgrind and test.valgrind_passed,           "tests": [], "color": GREEN   },        
