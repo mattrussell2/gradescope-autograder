@@ -208,7 +208,8 @@ class Test:
             "ref_stderr":  f"{REF_OUTPUT_DIR}/{self.testname}.stderr",                                    
         }
 
-        self.kill_limit = self.kill_limit * 1024 * 1024
+        # MB -> B; setrlimit uses Bytes
+        self.kill_limit = self.kill_limit * 1024 * 1024 
        
         # can only get here if the test has compiled
         self.compiled = True 
@@ -225,7 +226,7 @@ class Test:
             setattr(self, "canonicalizer", getattr(canonicalizers, vars(config)["ccizer_name"]))        
 
         if self.max_ram != -1:
-            self.max_ram *= 1024 #MB -> KB
+            self.max_ram *= 1024 #MB -> KB; /usr/bin/time -o %M uses KB
 
     def replace_placeholders(self, value_s):
         """
@@ -252,7 +253,7 @@ class Test:
             Purpose:
                 Replaces all placeholders from the .toml file [#{testname}] with the correct stuff.
             Note!
-                Assumes no dictionaries from .toml.
+                Assumes no dictionaries in .toml.
         """
         for (key, value) in vars(self).items():
             if isinstance(value, Iterable) and \
@@ -351,7 +352,8 @@ class Test:
             Purpose: 
                 Runs the 'standard' test and sets variables associated with pass / failure
             Notes:
-                add ../../ to memory file because we'll be running from testset/build/ directory
+                add ../../ to memory file because we'll be running from testset/build/ directory and 
+                valgrind writes to a local path. 
         """      
         if self.max_ram != -1:
             prepend  = ['/usr/bin/time', '-o', os.path.join('..','..', self.fpaths['memory']), '-f', '%M']
@@ -375,6 +377,7 @@ class Test:
                 max_rss = int(memdata.splitlines()[-1]) # if segfault, last line has max_rss info; data in KB
                 self.max_ram_exceeded = (self.max_ram != -1 and max_rss > self.max_ram)
 
+        # Checking for std::bad_alloc is a bit bittle. 
         self.kill_limit_exceeded = False
         if os.path.exists(self.fpaths['stderr']):
             stderrdata = Path(self.fpaths['stderr']).read_bytes().decode('utf-8') 
