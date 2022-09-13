@@ -1,3 +1,0 @@
-[CharArrayList of size 4 <<What>>] + [CharArrayList of size 6 << Is Up>>] == [CharArrayList of size 10 <<What Is Up>>]
-Making sure contents of other list did not change...
-[CharArrayList of size 6 << Is Up>>]

@@ -223,7 +223,7 @@ depending on your test configuration.
 ## General Notes
 * Files in `testset/stdin/` named `<testname>.stdin` (`test01.stdin`) will be sent to `stdin` for that test. 
 * The `.diff`, `.ccized`, and `.valgrind` output files for each test will only be created if your configuation requires them.
-* This framework supports `diff`ing against any number of output files written to by the program. Such files must be named `<testname>.ANYTHING_HERE.ofile`. The expectation is that the program will receive the name of the file to produce as an input argument. Then, in the `testset.toml` file, you will ensure that the `argv` variable includes `#{testname}.ANYTHING_HERE.ofile` in the `argv` list. See the `gerp` example configuration below for details. 
+* This framework supports `diff`ing against any number of output files written to by the program. Such files must be named `<testname>.ANYTHING_HERE.ofile`. The expectation is that the program will receive the name of the file to produce as an input argument. Then, in the `testset.toml` file, you will ensure that the `argv` variable includes `#{testname}.ANYTHING_HERE.ofile` in the `argv` list. See the example configuration #2 below for details. 
 * Canonicalization functions which are used by the autograder in `canonicalizers.py` must:
     * Take four parameters:
         1.  A string containing the student's output from whichever stream is to be canonicalized
@@ -236,7 +236,7 @@ depending on your test configuration.
 ### Driver-based testing notes
 When deploying a set of tests where each test is a unique driver file:
 * Files in `testset/cpp/` named `<testname>.cpp` (`test01.cpp`) are intended to be driver files; each one will contain `main()`, and will be compiled and linked with the student's code.
-* You must use a custom `Makefile`, where each test has its own target (i.e. we will run `make test01`). The `Makefile` will be run from the `results/build` directory, and will need to compile and link with the driver files which will live in the relative `../../testset/cpp` directory. See the example: `assignments/hw1_ArrayLists/testset/makefile/Makefile`.
+* You must use a custom `Makefile`, where each test has its own target (i.e. we will run `make test01`). The `Makefile` will be run from the `results/build` directory, and will need to compile and link with the driver files which will live in the relative `../../testset/cpp` directory. See the example: `assignments/sanity_check/testset/makefile/Makefile`.
 * Whenever using `our_makefile`, the target to build (e.g. `make target`) must always be named the same as the program to run (e.g. `./target`).
 
 ### Student-executable testing notes
@@ -245,8 +245,8 @@ When deploying a set of tests where students have produced a fully executable pr
 * You may still choose to have your own custom `Makefile` if you wish (otherwise, be sure to set `our_makefile = false` in `testset.toml`).
 
 ## Example configurations 
-### Example configuration for hw1_ArrayLists
-The hw1_ArrayLists assignment requires students to write an `ArrayList` class - thus, we want our autograding setup to be a set of `.cpp` files, each with `main()`. The example `testset` directory in  `assignments/hw1_ArrayLists/` is structured as follows:
+### Example configuration #1
+An example directory/file setup for an assignment with course-staff provided `.cpp` driver files is below
 
 ```
 .
@@ -293,8 +293,8 @@ tests = [
 ```
 Here the autograder will assume that `testset/cpp/TESTNAME.cpp` contains `main()`, and that there's a target named `TESTNAME` in `testset/makefile/Makefile` which produces an executable named `TESTNAME`; it will run `make TESTNAME`, and then `./TESTNAME`.
 
-### Example configuration for gerp
-This assignment requires students to build a program named `gerp`, which mirrors a subset of functionality from `grep`. The students provide their own implementations and `Makefile`. For this assignment, the example `testset` directory in  `assignments/gerp` is structured as follows:
+### Example configuration #2
+This is an example set of required files for an assignment which depends on a student-produced executable file. Also, it illustrates the use of canoncializer functions:
 ```
 .
 |---canonicalizers.py [file with canonicalization functions]
@@ -308,68 +308,45 @@ This assignment requires students to build a program named `gerp`, which mirrors
 |---testest.toml      [testing configuration file]
 |-
 ```
-For this assignmnent, we want to test the *sorted* output of student code against the *sorted* output of the reference implementation; thus, there is a function named `sort_lines` in `canonicalizers.py` which is used by the autograder. Also, there are library files which the students will need that are in `copy/`. There is a large set of directories which it's easier to link, so those are in `link/`. For each test, there will need to be a unique input to `stdin`, so those files are in `stdin/` (named `testname.stdin`). The corresponding `testset.toml` file is as follows:
+For this example, let's imagine we want to test the *sorted* output of student code against the *sorted* output of the reference implementation; we would then provide a function in `canonicalizers.py` to do the sorting. 
 
 ```
 [common]
 max_time     = 600             # 10 minutes
-max_ram      = 8000000         # 8GB
+max_ram      = 3000000         # 3GB
 diff_ofiles  = true            # we will diff the output files produced by the program against the reference
 ccize_ofiles = true            # canonicalize the output files before diff'ing
 ccizer_name  = "sort_lines"    # use 'sort_lines' function in canonicalizers.py
 our_makefile = false           # use the student's Makefile
-executable   = "gerp"          # all of the tests will run this executable
+executable   = "myprog"       # all of the tests will run this executable
 
-[tiny]
-argv  = ["tinyData", "#{testname}.ofile"] 
+[set_one]
+argv  = ["myDataFile", "#{testname}.ofile"] 
 tests = [
-    { testname = "test01", description = "Tiny Sensitive - we", visibility = "visible"},
-    { testname = "test02", description = "Tiny Sensitive - COMP15" },
-    { testname = "test03", description = "Tiny Insensitive - @i remember", visibility = "visible" },
-    { testname = "test04", description = "Tiny Insensitive - @i i" },          
-    { testname = "test05", description = "Tiny Insensitive - @i pretty" }, 
-    { testname = "test06", description = "Tiny Insensitive - @i gibberish" },
-    { testname = "test07", description = "Tiny Tricky - grep!", visibility = "visible" },
-    { testname = "test08", description = "Tiny Tricky - 40?" },
-    { testname = "test09", description = """Tiny Tricky - \u0022Tree-Mendous""" },
-    { testname = "test10", description = """Tiny Tricky - @i don\u0027t""" }
+    { testname = "test01", description = "my first test },
+    { testname = "test02", description = "my second test },
+    { testname = "test03", description = "my third test" } 
 ]
 
-[small] 
-argv  = ["smallGutenberg", "#{testname}.ofile"]
+[set_two] 
+argv  = ["myOtherDataFile", "#{testname}.ofile"]
 tests = [
-    { testname = "test11", description = "Small Gutenberg Sensitive - student", valgrind = true }, 
-    { testname = "test12", description = "Small Gutenberg Sensitive - Jumbo", visibility = "visible"},
-    { testname = "test13", description = "Small Gutenberg Sensitive - Easier" },    
-    { testname = "test14", description = "Small Gutenberg Sensitive - texts" },
-    { testname = "test15", description = "Small Gutenberg Sensitive - Civilization" },
-    { testname = "test16", description = "Small Gutenberg Sensitive - bachelor" },
-    { testname = "test17", description = "Small Gutenberg Insensitive - @i zoological" },
-    { testname = "test18", description = "Small Gutenberg Insensitive - @i intelligent" },
-    { testname = "test19", description = "Small Gutenberg Insensitive - @i parents" },
-    { testname = "test20", description = "Small Gutenberg Insensitive - @i insensitive diana" },
-    { testname = "test21", description = "Small Gutenberg Tricky - [*]" },
-    { testname = "test22", description = "Small Gutenberg Tricky - computer\u0027s" },
-    { testname = "test23", description = """Small Gutenberg Tricky - \u0022\u0027Joke!\u0027""" }, 
-    { testname = "test24", description = "Small Gutenberg Tricky - A--little-bit--wild?" },
-    { testname = "test25", description = "Small Gutenberg Tricky - @i {....." },
-    { testname = "test26", description = "Small Gutenberg Tricky - @i www.gutenberg.org" },
-    { testname = "test27", description = "Small Gutenberg Tricky - @i cometh?" },
-    { testname = "test28", description = "Small Gutenberg Tricky - @i deal!" },
-    { testname = "test29", description = """Small Gutenberg Tricky - @i \u0022\u0027""" },
-    { testname = "test30", description = """Small Gutenberg Tricky - @i \"yours?\u0022""" }
+    { testname = "testXX", description = "myTest", valgrind = true }, 
+    { testname = "testYY", description = "myTest2" },
+    { testname = "testZZ", description = "myTest3" }
+    ...
 ]
 
-[medium]
-valgrind  = false # would take too long
+[set_three]
+valgrind  = false # for example, if for this set you didn't want to run valgrind
 max_score = 2.5   # these tests are weighted more
-argv = ["mediumGutenberg", "#{testname}.ofile"]
+argv = ["myThirdDataFile", "#{testname}.ofile"]
 tests = [
-     { testname = "test31", description = "Medium Gutenberg - Time and Memory Complexity" },
-     { testname = "test32", description = "Medium Gutenberg with Queries" },
+     { testname = "test31", description = "Hello Reader!" },
+     { testname = "test32", description = "Happy testing!" },
  ]
 ```
-Notice options for custom timeout, max_ram, etc. Details for each option can be found at the end of this document. Regarding output files, `gerp` expects two command-line arguments - the name of the directory to index, and a file to write output to. For each of the tests, `#{testname}.ofile` will be converted to `test01.ofile`, etc. If your students need to write to an output file, please have them take the name of the file as an input argument, and use this template. They can potentially write to multiple files; in the `testset.toml` file, as long the string contains `#{testname}` and ends with an `.ofile` extension, you're good to go.
+Notice options for custom timeout, max_ram, etc. Details for each option can be found at the end of this document. Regarding output files, the program that the students would stubmit above is expected to take two command-line arguments - the name of some data file, and the name of an output file to write. For each of the tests, `#{testname}.ofile` will be converted to `test01.ofile`, etc. If your students need to write to an output file, please have them take the name of the file as an input argument, and use this template. They can potentially write to multiple files; in the `testset.toml` file, as long the string contains `#{testname}` and ends with an `.ofile` extension, you're good to go. NOTE! To be clear, the characters "#{testname}" will actually be replaced with the full path for the autograder's output file for that test. For example, if the testname is "test01", and the output file is "test01.ofile", the full path will be something like "/home/autograder/autograder/testset/test01.ofile". This will be determined by the autograder; however, it's worth noting that #{testname} is only intended to be used in the `argv` field to refer to the output file. TODO: change the "#{testname}" to something like"#{testofpath}".
 
 ## `autograde.py`
 `autograde.py` is the script that does all of the autograding. Here's the basic grading procedure:
@@ -477,6 +454,12 @@ That should be enough to get you up and running! Please feel free to contact me 
 * Bug - test summary sometimes cuts of last row of tests. Likely a silly rounding error.  
 
 # Changelog
+## [1.3.2] - 2022-9-12
+* Removed
+    * `assignments/` - everything removed here except for `assignments/sanity_check`
+* Changed
+    * `README.md` - update docs to not discuss tufts-course-specific items. 
+
 ## [1.3.1] - 2022-9-7
 * Changed
     * `bin/autograde.py` - Minor updates to print more info in test summary.
