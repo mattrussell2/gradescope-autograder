@@ -454,6 +454,9 @@ That should be enough to get you up and running! Please feel free to contact me 
 * Bug - test summary sometimes cuts of last row of tests. Likely a silly rounding error.  
 
 # Changelog
+## [1.3.3] - 2022-9-13
+* Changed
+    * `bin/autograde.py` - unicodedecodeerror fix crashing issue when student ccized / stderr has non-utf-8-decodeable text in their output. 
 ## [1.3.2] - 2022-9-12
 * Removed
     * `assignments/` - everything removed here except for `assignments/sanity_check`

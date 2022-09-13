@@ -380,7 +380,10 @@ class Test:
         # Checking for std::bad_alloc is a bit bittle. 
         self.kill_limit_exceeded = False
         if os.path.exists(self.fpaths['stderr']):
-            stderrdata = Path(self.fpaths['stderr']).read_bytes().decode('utf-8') 
+            try:
+                stderrdata = Path(self.fpaths['stderr']).read_bytes().decode('utf-8') 
+            except (TypeError, UnicodeDecodeError):
+                stderrdata = "ERROR: non-utf-8 encodable text in student result"
             if "std::bad_alloc" in stderrdata:
                 self.kill_limit_exceeded = True
         
@@ -448,7 +451,7 @@ class Test:
             bytes = Path(filea).read_bytes()
             try:
                 text   = bytes.decode('utf-8')
-            except TypeError:
+            except (TypeError, UnicodeDecodeError):
                 ccized = "ERROR: non-utf-8 encodable text in student result"
             else:                
                 try:
