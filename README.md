@@ -454,6 +454,9 @@ That should be enough to get you up and running! Please feel free to contact me 
 * Bug - test summary sometimes cuts of last row of tests. Likely a silly rounding error.  
 
 # Changelog
+## [1.3.4] - 2022-9-30
+* Changed
+    * `bin/autograde.py` - Updated autograde to be interoperable with `our_makefile=true` for some tests and `false` for others. Note that a global setting for either will break; just set the relevant setting within the test subgroup if using both for one assignment. 
 ## [1.3.3] - 2022-9-13
 * Changed
     * `bin/autograde.py` - unicodedecodeerror fix crashing issue when student ccized / stderr has non-utf-8-decodeable text in their output. 

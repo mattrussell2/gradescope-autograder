@@ -707,24 +707,27 @@ def compile_execs(TOML, TESTS, OPTS):
         Notes:      
             Will copy the custom Makefile to build/ if it exists.
     """ 
-    execs_to_compile =    { test.executable   for test in TESTS.values() }
-    our_makefile     = any([test.our_makefile for test in TESTS.values()])
-    
-    if our_makefile:
+    execs_to_compile = { test.executable:test.our_makefile for test in TESTS.values() }
+    our_makefile_tests = [test for test in execs_to_compile if execs_to_compile[test]]
+    their_makefile_tests = [test for test in execs_to_compile if not execs_to_compile[test]]
+ 
+    compiled_list = []
+    num_execs = len(execs_to_compile)
+    INFORM(f"== Compiling {num_execs} executable{'s' if num_execs >= 1 else ''} ==", color=CYAN)
+    if their_makefile_tests:
+        INFORM(f"== Compiling {len(their_makefile_tests)} executable{'s' if len(their_makefile_tests) >= 1 else ''} with the student's makefile ==", color=CYAN)
+        compiled_list = [compile_exec(x) for x in their_makefile_tests]
+        
+    if our_makefile_tests:
+        INFORM(f"== Compiling {len(our_makefile_tests)} executable{'s' if len(our_makefile_tests) >= 1 else ''} with our makefile ==", color=CYAN)
         if not os.path.exists(MAKEFILE_PATH):
             print("our_makefile option requires a custom Makefile in testset/makefile/")
         else:
             shutil.copyfile(MAKEFILE_PATH, 'results/build/Makefile')
-
-    num_execs = len(execs_to_compile)
-    INFORM(f"== Compiling {num_execs} executable{'s' if num_execs >= 1 else ''} ==", color=CYAN)
-    if OPTS['jobs'] == 1:
-        compiled_list = [compile_exec(x) for x in execs_to_compile]
-    else:    
-        compiled_list = process_map(compile_exec, execs_to_compile, ncols=60, max_workers=OPTS['jobs'])    
+        compiled_list += [compile_exec(x) for x in our_makefile_tests]
 
     if sum(compiled_list) != num_execs:
-        INFORM(f"== Compilation Failed! ==\n", color=RED)
+        INFORM(f"== Some Tests Failed to Compile! ==\n", color=RED)
         report_compile_logs()                          
 
 def chmod_dir(d, permissions):    
