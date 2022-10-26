@@ -436,7 +436,7 @@ under a test group, or within a specific test.
 | `executable` | `(testname)` | executable to build and run |
 | `max_valgrind_score` | `8` | `[common]` only setting - maximum valgrind score for this assignment [per-test valgrind score is deduced by default based on this value]. 
 | `valgrind_score_visibility` | `"after_due_date"` | `[common]` only setting - visibility of the test which will hold the total valgrind points for the student. 
-| `kill_limit` | `500` | `[common]` only setting - test will be killed if it's memory usage exceeds this value (in `MB`) - Note: soft and rlimit_data will be set to this value in a preexec function to the subprocess call, this parameter is `[common`] only, specifically intended to keep the container from crashing. Also, if the program exceeds the limit, it will likely receive `SIGSEGV` or `SIGABRT` from the os. Unfortunately, nothing is produced on `stderr` in this case, so while the test will likely fail based on exitcode, it's difficult to 'know' to report an exceeded memory error. However, if `valgrind` is also run and fails to produce a log file (due to also receiving `SIGSEGV`/`SIGABRT`), the test will be assumed to have exceeded max ram...in general, however, this is tricky to debug. NB: In my experience, `valgrind` will fail to allocate memory but still produce a log file at `~50MB` of ram; any lower and no log file will be produced. The default setting of `500` `MB` should be fine for most tests, and will work with the smallest (default) container. |
+| `kill_limit` | `750` | `[common]` only setting - test will be killed if it's memory usage exceeds this value (in `MB`) - soft and hard rlimit_data will be set to this value in a preexec function to the subprocess call. NOTE: this parameter is specifically intended to keep the container from crashing, and thus is `[common]` only. Also, if the program exceeds the limit, it will likely receive `SIGSEGV` or `SIGABRT` from the os. Unfortunately, nothing is produced on `stderr` in this case, so while the test will likely fail based on exitcode, it's difficult to 'know' to report an exceeded memory error. However, if `valgrind` is also run and fails to produce a log file (due to also receiving `SIGSEGV`/`SIGABRT`), the test will be assumed to have exceeded max ram...in general, however, this is tricky to debug. In my experience, `valgrind` will fail to allocate memory but still produce a log file at `~50MB` of ram; any lower and no log file will be produced. The default setting of `750` `MB` should be fine for most tests, and will work with the smallest (default) container. |
 
 
 ## Visibility settings in Gradescope
@@ -454,6 +454,9 @@ That should be enough to get you up and running! Please feel free to contact me 
 * Bug - test summary sometimes cuts of last row of tests. Likely a silly rounding error.  
 
 # Changelog
+## [1.3.5] - 2022-10-26
+* Changed 
+    * `bin/autograde.py` - updated default `kill_limit` setting to 750. 
 ## [1.3.4] - 2022-9-30
 * Changed
     * `bin/autograde.py` - Updated autograde to be interoperable with `our_makefile=true` for some tests and `false` for others. Note that a global setting for either will break; just set the relevant setting within the test subgroup if using both for one assignment. 

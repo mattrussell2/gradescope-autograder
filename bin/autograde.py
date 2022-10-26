@@ -133,7 +133,7 @@ class TestConfig:
     argv:          List[str] = field(default_factory=list)  
 
     # assignment-wide settings
-    kill_limit:                int = 500
+    kill_limit:                int = 750
     max_valgrind_score:        int = 2
     valgrind_score_visibility: str = "after_due_date"
     
