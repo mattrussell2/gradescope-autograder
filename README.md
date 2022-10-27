@@ -113,6 +113,7 @@ The container will be built and uploaded to the location you've specified. Note:
 ### For each assignment with the Docker method 
 
 * On Gradescope, after creating the programming assignment, select the 'Manual Docker Configuration' option in the configure autograder' section; place the full remote path to your container (e.g. `ghcr.io/ghubusername/ghubpackageregistry:dockertag`) 
+* Note that the container will pull the most recent version of the repo every time it runs...so it's a good idea to rebuild the container if you make massive changes to the repo, or in general every month or so, to keep things snappy.  
 
 That's it! 
 
