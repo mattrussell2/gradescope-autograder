@@ -762,7 +762,7 @@ def build_testing_directories():
 
     # remove any student-provided .o files
     for f in os.listdir(SUBMISSION_DIR): 
-        if f.endswith('.o'):
+        if f.endswith('.o') or os.path.exists(os.path.join(LINK_DIR, f)):
             os.remove(os.path.join(SUBMISSION_DIR, f))
             
     shutil.copytree(SUBMISSION_DIR, BUILD_DIR, dirs_exist_ok=True)
