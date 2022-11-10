@@ -396,8 +396,8 @@ test_autograder -s testset/solution
 ```
 This script will create a temporary testing directory named `temp_testing_dir`, copy everything there, and run the tests. You can optionally remove this directory after tests are run with the `-d` option. The `-j` option is also available [see next section]. 
 
-### Parallel Compilation and Parallel Execution
-If you would like to enable parallel compilation and parallel execution of tests, instead run 
+### Parallel Execution of Tests
+If you would like to enable parallel execution of tests, instead run 
 ```
 autograde -j NUMCORES
 ```
@@ -409,7 +409,9 @@ and, similarly,
 ```
 test_autograder -j NUMCORES
 ```
-Note that on Gradescope the file `testrunner.sh` is what actually runs the autograder. This is so you can have some flexibility around running the autograder without having to rebuild the container/.zip file - `run_autograder` will call this script, so feel free to add extra bash commands before/after tests are run. You change the command in that file to include `-j NUMCORES` if you'd like, although on Gradescope there isn't likely much to be gained from this.
+
+### testrunner.sh
+In Gradescope's docker container, the usual `run_autograder` script runs the assignment-specific script named `testrunner.sh`, which in turn actually runs `autograde`. The reason for this extra script is to maximize flexibility; any changes made to `run_autograder` would have to both require rebuilding the container and would need to propagate across assignments. This setup, by contrast, allows you to make changes for a given assignment without having to rebuild the container/.zip file. That is to say, feel free to add extra commands before/after tests are run in `testrunner.sh`. For instance, you change the command in that file to include `-j NUMCORES` if you'd like, although on Gradescope there isn't likely much to be gained from this.
 
 ## Test .toml Configuration Options
 These are the configuration options for a test. You may set any of these in `[common]`,
