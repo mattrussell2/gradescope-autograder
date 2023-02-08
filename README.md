@@ -457,12 +457,15 @@ That should be enough to get you up and running! Please feel free to contact me 
 * Bug - test summary sometimes cuts of last row of tests. Likely a silly rounding error.  
 
 # Changelog
+## [1.3.6] - 2023-02-08
+* Changed
+    * `bin/autograde.py` - autograder's output fixed to show all results for all tests (last test with an odd number was being dropped)    
 ## [1.3.5] - 2022-10-26
 * Changed 
     * `bin/autograde.py` - updated default `kill_limit` setting to 750. 
 ## [1.3.4] - 2022-9-30
 * Changed
-    * `bin/autograde.py` - Updated autograde to be interoperable with `our_makefile=true` for some tests and `false` for others. Note that a global setting for either will break; just set the relevant setting within the test subgroup if using both for one assignment. 
+    * `bin/autograde.py` - updated autograde to be interoperable with `our_makefile=true` for some tests and `false` for others. Note that a global setting for either will break; just set the relevant setting within the test subgroup if using both for one assignment. 
 ## [1.3.3] - 2022-9-13
 * Changed
     * `bin/autograde.py` - unicodedecodeerror fix crashing issue when student ccized / stderr has non-utf-8-decodeable text in their output. 
@@ -486,7 +489,7 @@ That should be enough to get you up and running! Please feel free to contact me 
     * `bin/autograde.py` - remove any student files that are also in the link directory prior
 to symlinking. 
 * Changed
-    * `bin/autograde.py` - Update rlimit code to limit BOTH the soft and hard limits. Should avoid crashing the autograder from now on. Fixed bug with `self.max_ram_exceeded` value being incorrectly deduced.
+    * `bin/autograde.py` - update rlimit code to limit BOTH the soft and hard limits. Should avoid crashing the autograder from now on. Fixed bug with `self.max_ram_exceeded` value being incorrectly deduced.
     * `README.md` - Minor updates.
 ## [1.2.1] - 2022-9-7
 * Changed 

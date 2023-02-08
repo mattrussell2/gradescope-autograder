@@ -573,6 +573,9 @@ def print_testgroup(report, keys, OPTS):
     if OPTS['lengthy_output']:
         print('\n'.join(outstrs))
     else:
+        if len(outstrs) % 2 != 0:
+            outstrs.append(" " * col_width)
+        
         colwstr = "{0" + f": <{col_width}" + "}{1" + f": <{col_width}" + "}"
         print('\n'.join([colwstr.format(*x) for x in 
                         zip(outstrs[:len(outstrs)//2], outstrs[len(outstrs)//2:])]))
