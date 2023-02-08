@@ -314,7 +314,7 @@ For this example, let's imagine we want to test the *sorted* output of student c
 ```
 [common]
 max_time     = 600             # 10 minutes
-max_ram      = 3000000         # 3GB
+max_ram      = 3000            # 3GB
 diff_ofiles  = true            # we will diff the output files produced by the program against the reference
 ccize_ofiles = true            # canonicalize the output files before diff'ing
 ccizer_name  = "sort_lines"    # use 'sort_lines' function in canonicalizers.py
