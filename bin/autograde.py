@@ -424,9 +424,9 @@ class Test:
         """
             Purpose:
                 Run diff on filea and fileb, and write the output to filec
-                if 'canoniczliaze', run diff on canonicalized output from filea and fileb                
-            Precondition: 
-                Assumes filea and fileb both exist.
+                if 'canonicalize', run diff on canonicalized output from filea and fileb
+            Assumes:
+                filea and fileb must only contain utf-8 decodable characters              
             Inputs:
                 filea        (str)  : student output filename
                 fileb        (str)  : reference output filename
@@ -434,46 +434,46 @@ class Test:
                 canonicalize (bool) : whether or not to run diff on canonicalized output.
             Returns: 
                 (bool) Whether or not the diff succeeds
-            Notes:                
-                I like pretty diffs, so diff-so-fancy is an option. :) 
-                Am doing diffs with subprocess shell=True. Otherwise will have 
-                problems with any non-utf8 output [encountered with largeGutenberg in gerp]. 
-                [TODO] refactor to use RUN?                        
-        """        
+            Notes:
+                Do diffs with subprocess run and shell=True. Otherwise will have 
+                problems with any non-utf8 output [encountered with largeGutenberg in gerp].     
+                If solution code is run as a submission, ccized solution output will be 
+                generated.                   
+        """
         if not os.path.exists(filea):
             Path(f"{filea}.diff").write_text(f"diff: {filea} not found!")
             return False
-        elif not os.path.exists(fileb): 
+        if not os.path.exists(fileb): 
             INFORM(f"reference output missing for: {self.testname} " + 
                     "- ignore if building reference output", color=MAGENTA)
 
         if canonicalize:
-            bytes = Path(filea).read_bytes()
             try:
-                text   = bytes.decode('utf-8')
+                text   = Path(filea).read_bytes().decode('utf-8')
             except (TypeError, UnicodeDecodeError):
-                ccized = "ERROR: non-utf-8 encodable text in student result"
-            else:                
-                try:
-                    if os.path.exists(fileb):
-                        solution_text = Path(fileb).read_bytes().decode('utf-8')                        
-                    else:
-                        solution_text = None                   
-                    ccized = self.canonicalizer(text, solution_text, self.testname, self.ccizer_args)
-                except Exception as e: 
-                    ccized = f"ERROR: canonicalizer failed - {repr(e)}\n{traceback.format_exc()}"
-            if ccized == None:
-                INFORM(f"canonicalizer for test {self.testname} does not return a string with the" +
-                        "result - defaulting to empty string", color=MAGENTA)                    
-                ccized = ""
+                cc_result = "ERROR: non-utf-8 encodable text in student result"
+                            
+            try:
+                orig_solution_txt = Path(fileb).read_bytes().decode('utf-8') if os.path.exists(fileb) else None
+
+                cc_result = self.canonicalizer(text, orig_solution_txt, self.testname, self.ccizer_args)
+                
+                if cc_result == None:
+                    INFORM(f"canonicalizer for test {self.testname} does not return a string with the" +
+                            "result - defaulting to empty string", color=MAGENTA)                    
+                    cc_result = ""
+            except Exception as e: 
+                cc_result = f"ERROR: canonicalizer failed - {repr(e)}\n{traceback.format_exc()}"
             
-            Path(f"{filea}.ccized").write_text(ccized)
+            Path(f"{filea}.ccized").write_text(cc_result)
+
+            filec = f"{filea}.ccized.diff" 
+            
             filea = f"{filea}.ccized"
             fileb = f"{fileb}.ccized"
-            filec = f"{filea}.diff"   # => will be original 'filea'.ccized.diff
-                           
+            
         diff_result  = subprocess.run(f"diff {filea} {fileb} > {filec}", shell=True)        
-        diff_retcode = diff_result.returncode # diff-so-fancy returns 0 on failure, always use this!
+        diff_retcode = diff_result.returncode # diff-so-fancy returns 0 on failure, so always use this!
        
         # diff-so-fancy requires output of [diff -u ...] as its input
         if self.pretty_diff:
