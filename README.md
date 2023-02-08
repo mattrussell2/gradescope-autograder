@@ -421,7 +421,7 @@ under a test group, or within a specific test.
 |---|---|---|
 | `max_time` | `10` | maximum time (in seconds) for a test [a test foo is run as `timeout max_time ./foo`]|
 | `max_ram` | `-1` (unlimited) | maximum ram (in MB) usage for a test to be considered successful [`/usr/bin/time -f %M` value is compared with max_ram * 1024] |
-| `valgrind` | `true` | run an additional test with valgrind [valgrind tests ignore max_ram] |
+| `valgrind` | `true` | run an additional test with valgrind [valgrind tests ignore `max_ram`] |
 | `diff_stdout` | `true` | test diff of student vs. reference stdout |
 | `diff_stderr` | `true` | test diff of student vs. reference stderr |
 | `diff_ofiles` | `true` | test diff of student vs. reference output files |
