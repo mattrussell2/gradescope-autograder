@@ -228,10 +228,10 @@ depending on your test configuration.
 * Canonicalization functions which are used by the autograder in `canonicalizers.py` must:
     * Take four parameters:
         1.  A string containing the student's output from whichever stream is to be canonicalized
-        2.  A string containing the reference solution's output from whichever stream is to be canonicalized
+        2.  A string containing the reference solution's (non-canonicalized) output from whichever stream is to be canonicalized
         3.  A string containing the name of the test (e.g. `test01`)
         4.  A dictionary containing any specific test configuration options (e.g. `{'my_config_var': 10}`)
-    * Return a string, which contains the canonicalized output
+    * Return a string, which contains the canonicalized output of the student
 * The `summary` files contain a dump of the state of the backend `Test` object from the `autograde.py` script - a summary is created upon initialization of the test, and is overwritten after a test finishes. All of the configuration options (e.g. `diff_stdout`, etc.)and results (e.g. `stdout_diff_passed`) are part of the `Test` object, so the `summary` files are very useful for debugging!
 
 ### Driver-based testing notes
