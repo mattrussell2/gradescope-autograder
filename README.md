@@ -453,8 +453,6 @@ That should be enough to get you up and running! Please feel free to contact me 
 
 # TODOS
 * Update the funcationality of `bin/autograde.py` so that if a grader is re-running tests, we don't nuke the entire build folder, but intelligently load the data from alread-run tests. Also, need to verify that the various filter, etc. options work as expected. 
-* Bug - sometimes, when parallel compilation is done, intermediate files are not being managed well -- multiple processes are trying to compile the same dependency, and things fail with a message like "xxx.o deleted". Clearly, the best possible scenario would be to build each .o file once, but not sure how to do this; a separate build directory for each test seems like overkill. It might be wise to nix parallel compilation, or to separate the num_jobs param into two, one for num parallel compilation jobs, and one for parallel test running jobs.
-* Bug - test summary sometimes cuts of last row of tests. Likely a silly rounding error.  
 
 # Changelog
 ## [1.3.6] - 2023-02-08
