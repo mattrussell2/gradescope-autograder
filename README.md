@@ -58,7 +58,8 @@ export AUTOGRADING_REPO_REMOTE_PATH="https://cs-15-2022uc:glpat-Blah8173Blah8023
 ```
 If you don't use BASH, use the `export` variety for your shell. The default variable name is `AUTOGRADING_REPO_REMOTE_PATH`, however you can configure the variable name to be whatever you'd like (see next section for details). 
 
-Make sure to run `source ~/.bashrc` or equivalent after editing the file. 
+Make sure to run `source ~/.bashrc` or equivalent after editing the file.
+
 
 ## etc/autograder_config.ini
 The file `etc/autograder_config.ini` contains various important bits of information toward deploying your autograder. Note that the values in the sample `autograder_config.ini` related to directory structure will work with the directory structure as-is in this repo, but if you change the basic directory structure, they'll be necessary. Options for the `etc/autograder_config.ini` file are as follows:
@@ -108,12 +109,12 @@ Once you've updated the `etc/autograder_config.ini` and `etc/docker_config.ini` 
 cd setup/dockerbuild
 ./deploy_container
 ```
-The container will be built and uploaded to the location you've specified. Note: in rare cases, the Docker build process hangs in the early stages. If this happens to you, run `rm ~/.docker/config.json` and try again. For the future, if you make changes to any of the files in the `dockerbuild` folder, or to `bin/run_autograder`, make sure to re-run this script. 
+The remote repo will be cloned, and then the container will be built and uploaded to the location you've specified. Note: in rare cases, the Docker build process hangs in the early stages. If this happens to you, run `rm ~/.docker/config.json` and try again. For the future, if you make changes to any of the files in the `dockerbuild` folder, or to `bin/run_autograder`, make sure to re-run this script. 
 
 ### For each assignment with the Docker method 
 
 * On Gradescope, after creating the programming assignment, select the 'Manual Docker Configuration' option in the configure autograder' section; place the full remote path to your container (e.g. `ghcr.io/ghubusername/ghubpackageregistry:dockertag`) 
-* Note that the container will pull the most recent version of the repo every time it runs...so it's a good idea to rebuild the container if you make massive changes to the repo, or in general every month or so, to keep things snappy.  
+* Note that the container will pull the most recent version of the repo every time it runs...so it's a good idea to rebuild the container if you make massive changes to the repo to keep things snappy.  
 
 That's it! 
 
@@ -455,6 +456,10 @@ That should be enough to get you up and running! Please feel free to contact me 
 * Update the funcationality of `bin/autograde.py` so that if a grader is re-running tests, we don't nuke the entire build folder, but intelligently load the data from alread-run tests. Also, need to verify that the various filter, etc. options work as expected. 
 
 # Changelog
+## [1.3.7] - 2023-05-23
+* Changed
+    * `setup/dockerbuild/deploy_container.sh` - clone repo before docker build; no more ARG with deploy key; delete after build
+    * `setup/dockerbuild/Dockerfile` - use `COPY` to move the repo files over
 ## [1.3.6] - 2023-02-08
 * Changed
     * `bin/autograde.py` - autograder's output fixed to show all results for all tests (last test with an odd number was being dropped)    

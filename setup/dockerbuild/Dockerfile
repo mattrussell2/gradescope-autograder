@@ -39,6 +39,5 @@ COPY lib/DiffHighlight.pm /usr/share/perl5/
 # pretty bash terminal header
 RUN printf "export PS1=\"\\u@gs:\\W\\$ \"\n" >> ~/.bashrc
 
-# clone the course repository
-ARG REPO_REMOTE_PATH
-RUN cd /autograder/source/ && git clone $REPO_REMOTE_PATH course-repo
+# copy the course repository
+COPY course-repo /autograder/source/course-repo/
