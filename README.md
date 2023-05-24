@@ -134,8 +134,8 @@ When a student submits code:
 **Note! The assignment name for an assignment in the course repository must be the same as the assignment name on Gradescope. An environment variable $ASSIGNMENT_TITLE is provided to our script, and this (along with the paths you specified earlier) is used to find the autograder files. If the names don't match, there will be issues. Update 6-17-2022: You may now use spaces in place of underscores on gradescope; however, the 
 other text must match exactly (case sensitive).** 
 
-## Token Management and submission caps
-At Tufts, we have a system for students to be able to manage late submissions with 'tokens'. The token system is flexible and generally works well. The idea is that the students maintain a bank of X tokens, where each token is effectively a 1-day extension on a given assignment. For any assignment, the maximum number of tokens a student can use is usually 2 - so up to 2 days late. Further, although a student may submit to see (part of) autograder score in advance, they have a cap on the number of submissions available. This framework supports managing tokens and a submission cap. 
+## Token Management
+At Tufts, we have a system for students to be able to manage late submissions with 'tokens'. The token system is flexible and generally works well. The idea is that the students maintain a bank of X tokens, where each token is effectively a 1-day extension on a given assignment. For any assignment, the maximum number of tokens a student can use is usually 2 - so up to 2 days late. 
 
 ### Postgres
 Although maintaining a file in the repo is at first glance an option, the container needs write permission to the repo, which could get hairy. Likewise, unintended consequences with many students may occur. The solution presented here is Postgres. All of the connection to the server is maintained in the back-end: you only have to setup the server (free) and add a few config variables. 
