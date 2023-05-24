@@ -134,13 +134,13 @@ When a student submits code:
 **Note! The assignment name for an assignment in the course repository must be the same as the assignment name on Gradescope. An environment variable $ASSIGNMENT_TITLE is provided to our script, and this (along with the paths you specified earlier) is used to find the autograder files. If the names don't match, there will be issues. Update 6-17-2022: You may now use spaces in place of underscores on gradescope; however, the 
 other text must match exactly (case sensitive).** 
 
-## Token Management and submission caps
-At Tufts, we have a system for students to be able to manage late submissions with 'tokens'. The token system is flexible and generally works well. The idea is that the students maintain a bank of X tokens, where each token is effectively a 1-day extension on a given assignment. For any assignment, the maximum number of tokens a student can use is usually 2 - so up to 2 days late. Further, although a student may submit to see (part of) autograder score in advance, they have a cap on the number of submissions available. This framework supports managing tokens and a submission cap. 
+## Token Management
+At Tufts, we have a system for students to be able to manage late submissions with 'tokens'. The token system is flexible and generally works well. The idea is that the students maintain a bank of X tokens, where each token is effectively a 1-day extension on a given assignment. For any assignment, the maximum number of tokens a student can use is usually 2 - so up to 2 days late. 
 
 ### Postgres
-Although maintaining a file in the repo is at first glance an option, the container needs write permission to the repo, which could get hairy. Likewise, unintended consequences with many students may occur. The solution presented here is Postgres. All of the connection to the server is maintained in the back-end: you only have to setup the server (free) and add a few config variables. 
+Although maintaining a file in the repo is at first glance an option, the container needs write permission to the repo, which could get hairy. Likewise, unintended consequences with many students may occur. The solution presented here is Postgres. All of the connection to the server is maintained in the back-end: you only have to setup the server (free) and add a few config variables. Also note that the database URL is not stored in the git repo, and the file which contains the URL is delted in the autograding docker container prior to execution of student's code. 
 
-The way the table will is organized, there is one row per student, with one column representing the tokens remaining ('tokens left'), and a column per assignment, which will be created automatically. The value of the assignment columns will default to 0, and will increase by 1 for each token the student uses on that assignment. Likewise, the 'tokens left' value will decrement for each token used. 
+The way the postgres table will be organized, there will be one row per student, with one column representing the tokens remaining ('tokens left'), and a column per assignment, which will be created automatically. The value of the assignment columns will default to 0, and will increase by 1 for each token the student uses on that assignment. Likewise, the 'tokens left' value will decrement for each token used. 
 
 For even a few hundred students, the free 'TinyTurtle' option at ElephantSQL will work fine. 
 1) Create an account at ElephantSQL and a new TinyTurtle database (free) [or, make and host a postgres db somewhere else].
@@ -492,6 +492,20 @@ That should be enough to get you up and running! Please feel free to contact me 
 * Update the funcationality of `bin/autograde.py` so that if a grader is re-running tests, we don't nuke the entire build folder, but intelligently load the data from alread-run tests. Also, need to verify that the various filter, etc. options work as expected. 
 
 # Changelog
+## [2.0.0] - 2023-05-24
+After token and security fixes, we're at a distinctly new point - 2.0. 
+* Changed
+    * `bin/run_autograder` - chmod directories for security
+    * `bin/autograde.py` - add user argument to subprocess calls that run student code; pass "student" to those calls, 
+                         - also makes any non-student-facing files (solution, repo, etc.) 770.
+    * `setup/dockerbuild/Dockerfile` - add command to create 'student' user without elevated permissions
+    * `README.md` - remove security TODO
+
+## [1.4.1] - 2023-05-24
+* Changed
+    * `bin/run_autograder` - delete the file that contains the postgres URL prior to executing the autograder. 
+    * `README.md` - added more security TODOs. 
+
 ## [1.4.0] - 2023-05-24
 * Added
     * `etc/token_config.ini` - token management configuration
