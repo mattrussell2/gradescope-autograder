@@ -138,7 +138,7 @@ other text must match exactly (case sensitive).**
 At Tufts, we have a system for students to be able to manage late submissions with 'tokens'. The token system is flexible and generally works well. The idea is that the students maintain a bank of X tokens, where each token is effectively a 1-day extension on a given assignment. For any assignment, the maximum number of tokens a student can use is usually 2 - so up to 2 days late. 
 
 ### Postgres
-Although maintaining a file in the repo is at first glance an option, the container needs write permission to the repo, which could get hairy. Likewise, unintended consequences with many students may occur. The solution presented here is Postgres. All of the connection to the server is maintained in the back-end: you only have to setup the server (free) and add a few config variables. 
+Although maintaining a file in the repo is at first glance an option, the container needs write permission to the repo, which could get hairy. Likewise, unintended consequences with many students may occur. The solution presented here is Postgres. All of the connection to the server is maintained in the back-end: you only have to setup the server (free) and add a few config variables. Also note that the database URL is not stored in the git repo, and the file which contains the URL is delted in the autograding docker container prior to execution of student's code. 
 
 The way the postgres table will be organized, there will be one row per student, with one column representing the tokens remaining ('tokens left'), and a column per assignment, which will be created automatically. The value of the assignment columns will default to 0, and will increase by 1 for each token the student uses on that assignment. Likewise, the 'tokens left' value will decrement for each token used. 
 
@@ -490,8 +490,14 @@ That should be enough to get you up and running! Please feel free to contact me 
 
 # TODOS
 * Update the funcationality of `bin/autograde.py` so that if a grader is re-running tests, we don't nuke the entire build folder, but intelligently load the data from alread-run tests. Also, need to verify that the various filter, etc. options work as expected. 
+* Implement stronger security protocols around autograding files, etc. It should be enough to create a non-sudo user in the build phase, to chmod the repo to be +x only, and then to add an argument to the RUN function which executes the provided code string as the non-root user. 
 
 # Changelog
+## [1.4.1] - 2023-05-24
+* Changed
+    * `bin/run_autograder` - delete the file that contains the postgres URL prior to executing the autograder. 
+    * `README.md` - added more security TODOs. 
+
 ## [1.4.0] - 2023-05-24
 * Added
     * `etc/token_config.ini` - token management configuration

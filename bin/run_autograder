@@ -33,6 +33,9 @@ if [ $rc -ne 0 ]; then
     exit $rc
 fi
 
+# remove this file so there is no chance of student code accessing the postgres URL
+rm /autograder/source/token_config.ini
+
 # run the autograder!
 cd /autograder/
 chmod +x testrunner.sh
