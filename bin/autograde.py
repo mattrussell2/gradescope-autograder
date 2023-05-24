@@ -26,24 +26,24 @@ import traceback
 from functools import reduce, partial
 import resource
 from collections.abc import Iterable
-if 'canonicalizers.py' in os.listdir():   
+if 'canonicalizers.py' in os.listdir():
     sys.path.append(os.getcwd())
     import canonicalizers
 
 # colors for printing to terminal
-RED            = "31m"
-GREEN          = "32m"
-YELLOW         = "33m"
-CYAN           = "36m"
-MAGENTA        = "35m"
-LGRAY          = "37m"
-START_COLOR    = "\033[1;"
-RESET_COLOR    = "\033[0m"
+RED         = "31m"
+GREEN       = "32m"
+YELLOW      = "33m"
+CYAN        = "36m"
+MAGENTA     = "35m"
+LGRAY       = "37m"
+START_COLOR = "\033[1;"
+RESET_COLOR = "\033[0m"
 
-CWD            = os.path.abspath(".")
+CWD = os.path.abspath(".")
 
 SUBMISSION_DIR = f"{CWD}/submission"
-RESULTS_DIR    = f"{CWD}/results" 
+RESULTS_DIR    = f"{CWD}/results"
 TESTSET_DIR    = f"{CWD}/testset"
 
 REF_OUTPUT_DIR = f"{TESTSET_DIR}/ref_output"
@@ -53,31 +53,47 @@ COPY_DIR       = f"{TESTSET_DIR}/copy"
 LINK_DIR       = f"{TESTSET_DIR}/link"
 STDIN_DIR      = f"{TESTSET_DIR}/stdin"
 
-BUILD_DIR      = f"{RESULTS_DIR}/build"
-LOG_DIR        = f"{RESULTS_DIR}/logs"
-OUTPUT_DIR     = f"{RESULTS_DIR}/output"
+BUILD_DIR  = f"{RESULTS_DIR}/build"
+LOG_DIR    = f"{RESULTS_DIR}/logs"
+OUTPUT_DIR = f"{RESULTS_DIR}/output"
 
-MAKEFILE_PATH  = f"{TESTSET_DIR}/makefile/Makefile"
+MAKEFILE_PATH = f"{TESTSET_DIR}/makefile/Makefile"
 
-MEMLEAK_PASS   = "All heap blocks were freed -- no leaks are possible"
-MEMERR_PASS    = "ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)" 
-VALG_NO_MEM    = "Valgrind's memory management: out of memory"
+MEMLEAK_PASS = "All heap blocks were freed -- no leaks are possible"
+MEMERR_PASS  = "ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)"
+VALG_NO_MEM  = "Valgrind's memory management: out of memory"
+
+# Defaults for miscellaneous style settings (besides visibility, and weights)
+DEFAULT_NON_CODE_STYLE_CHECKSET = ['README', '.h', '.cpp']
+DEFAULT_CODE_STYLE_CHECKLIST = ['.h', '.cpp']
+DEFAULT_MAX_COLUMNS = 80
 
 def limit_virtual_memory(limit):
     resource.setrlimit(resource.RLIMIT_DATA, (limit, limit))
 
+
 def COLORIZE(s, color):
     return f"{START_COLOR}{color}{s}{RESET_COLOR}"
 
-def INFORMF(s, stream, color):    
+
+def INFORMF(s, stream, color):
     stream.write(COLORIZE(s, color))
+
 
 def INFORM(s, color):
     print(COLORIZE(s, color))
-    
-def RUN(cmd_ary, timeout=5, stdin=None, input=None, cwd=".", 
-        capture_output=False, universal_newlines=False, preexec_fn=None, 
-        stdout=None, stderr=None):
+
+
+def RUN(cmd_ary,
+        timeout=5,
+        stdin=None,
+        input=None,
+        cwd=".",
+        capture_output=False,
+        universal_newlines=False,
+        preexec_fn=None,
+        stdout=None,
+        stderr=None):
     """
         Runs the subprocess module on the given command and returns the result.
 
@@ -94,71 +110,90 @@ def RUN(cmd_ary, timeout=5, stdin=None, input=None, cwd=".",
         Notes:
             Always capture output; universal newlines = False so binary output okay.
             Always add a timeout argument - this is adjustable in the .toml file
-    """    
-    return subprocess.run(["timeout", str(timeout)] + cmd_ary, 
-                          stdin              = stdin, 
-                          capture_output     = capture_output,                          
-                          universal_newlines = universal_newlines,
-                          cwd                = cwd,
-                          input              = input, 
-                          preexec_fn         = preexec_fn, 
-                          stdout             = stdout, 
-                          stderr             = stderr)
-    
+    """
+    return subprocess.run(["timeout", str(timeout)] + cmd_ary,
+                          stdin=stdin,
+                          capture_output=capture_output,
+                          universal_newlines=universal_newlines,
+                          cwd=cwd,
+                          input=input,
+                          preexec_fn=preexec_fn,
+                          stdout=stdout,
+                          stderr=stderr)
+
+
 def FAIL(s):
     INFORM(s, color=RED)
     exit(1)
 
+
 @dataclass
-class TestConfig:    
-    max_time:      int  = 10 
-    max_ram:       int  = -1 
-    max_score:     int  = 1
-        
-    ccize_stdout:  bool = False
-    ccize_stderr:  bool = False
-    ccize_ofiles:  bool = False
-    ccizer_name:   str  = ""
-    ccizer_args:   dict = field(default_factory=dict)  
+class TestConfig:
+    max_time: int = 10
+    max_ram: int = -1
+    max_score: int = 1
 
-    diff_stdout:   bool = True
-    diff_stderr:   bool = True 
-    diff_ofiles:   bool = True    
-    
-    valgrind:      bool = True
-    pretty_diff:   bool = False
-    our_makefile:  bool = True        
-    exitcodepass:  int  = 0
-    visibility:    str  = "after_due_date" # gradescope setting    
-    argv:          List[str] = field(default_factory=list)  
+    ccize_stdout: bool = False
+    ccize_stderr: bool = False
+    ccize_ofiles: bool = False
+    ccizer_name: str = ""
+    ccizer_args: dict = field(default_factory=dict)
 
-    # assignment-wide settings
-    kill_limit:                int = 750
-    max_valgrind_score:        int = 2
+    diff_stdout: bool = True
+    diff_stderr: bool = True
+    diff_ofiles: bool = True
+
+    valgrind: bool = True
+    pretty_diff: bool = False
+    our_makefile: bool = True
+    exitcodepass: int = 0
+    visibility: str = "after_due_date"               # gradescope setting
+    argv: List[str] = field(default_factory=list)
+
+    # assignment-wide ([common]) settings - note that all besides kill_limit are not even
+    # referenced in this file, however they still must be listed here. If they
+    # are not, a TypeError is raised indicating that the TestConfig __init__
+    # fails when any of these fields are specified in the TOML - 2/25/2023 slamel01
+    kill_limit: int = 5900               # just below (custom) 6k autograder limit
+    max_valgrind_score: int = 8
+    cols_style_weight: float = 0
+    tabs_style_weight: float = 0
+    todos_style_weight: float = 0
+    symbol_style_weight: float = 0
+    break_style_weight: float = 0
+    boolean_style_weight: float = 0
     valgrind_score_visibility: str = "after_due_date"
-    
-    # These will be assigned to a test by the time it finshes execution    
-    # could keep these as part of the 'Test' class, but it's easier 
+    style_score_visbility: str = "after_due_date"
+    # default = [...] doesn't work, need to use default_factory that just has a lambda return some specified [...]
+    non_code_style_checkset: List[str] = field(default_factory=lambda: DEFAULT_NON_CODE_STYLE_CHECKSET)
+    code_style_checkset: List[str] = field(default_factory=lambda: DEFAULT_CODE_STYLE_CHECKLIST)
+    max_columns: int = DEFAULT_MAX_COLUMNS
+
+    max_submissions: int = 1
+
+    # These will be assigned to a test by the time it finshes execution
+    # could keep these as part of the 'Test' class, but it's easier
     # to load a test from file by throwing all the variables into the config.
-    compiled:            bool = None
-    success:             bool = None 
-    valgrind_passed:     bool = None
-    stdout_diff_passed:  bool = None
-    stderr_diff_passed:  bool = None
-    fout_diffs_passed:   bool = None
-    timed_out:           bool = None
-    memory_errors:       bool = None
-    memory_leaks:        bool = None 
-    valg_out_of_mem:     bool = None
-    segfault:            bool = None   
-    max_ram_exceeded:    bool = None
+    compiled: bool = None
+    success: bool = None
+    valgrind_passed: bool = None
+    ofile_file_exists: bool = None
+    stdout_diff_passed: bool = None
+    stderr_diff_passed: bool = None
+    fout_diffs_passed: bool = None
+    timed_out: bool = None
+    memory_errors: bool = None
+    memory_leaks: bool = None
+    valg_out_of_mem: bool = None
+    segfault: bool = None
+    max_ram_exceeded: bool = None
     kill_limit_exceeded: bool = None
-    exit_status:         int  = None            
-    description:         str  = None
-    testname:            str  = None
-    executable:          str  = None    
-    fpaths:              dict = field(default_factory=dict)    
-    
+    exit_status: int = None
+    description: str = None
+    testname: str = None
+    executable: str = None
+    fpaths: dict = field(default_factory=dict)
+
     # this is set as the function with the name provided in the .toml file
     # it must:
     #   * live in the 'canonicalizers.py' file
@@ -173,7 +208,7 @@ class TestConfig:
         """
         for (key, value) in kwargs.items():
             setattr(self, key, value)
-        return self  
+        return self
 
     def mergecopy(self, **kwargs):
         """
@@ -186,47 +221,48 @@ class TestConfig:
         """
         return deepcopy(self).update(**kwargs)
 
+
 class Test:
-    
+
     # when our servers have python 10, we'll use inheritance with dataclasses...
     # this works for now.
     def __init__(self, config):
-        for (key, value) in vars(config).items():            
-            if key != "tests":  # a 'Test' shouldn't contain any information about other Tests.
+        for (key, value) in vars(config).items():
+            if key != "tests":               # a 'Test' shouldn't contain any information about other Tests.
                 setattr(self, key, value)
-        
+
         # note: output files dealt with at runtime
-        self.fpaths   = {            
-            "stdin":       f"{STDIN_DIR}/{self.testname}.stdin",
-            "stdout":      f"{OUTPUT_DIR}/{self.testname}.stdout",
-            "stderr":      f"{OUTPUT_DIR}/{self.testname}.stderr",            
-            "stdout.diff": f"{OUTPUT_DIR}/{self.testname}.stdout.diff",
-            "stderr.diff": f"{OUTPUT_DIR}/{self.testname}.stderr.diff",            
-            "valgrind":    f"{OUTPUT_DIR}/{self.testname}.valgrind",   
-            "memory":      f"{OUTPUT_DIR}/{self.testname}.memory",     
-            "ref_stdout":  f"{REF_OUTPUT_DIR}/{self.testname}.stdout",
-            "ref_stderr":  f"{REF_OUTPUT_DIR}/{self.testname}.stderr",                                    
+        self.fpaths = {
+            "stdin"       : f"{STDIN_DIR}/{self.testname}.stdin",
+            "stdout"      : f"{OUTPUT_DIR}/{self.testname}.stdout",
+            "stderr"      : f"{OUTPUT_DIR}/{self.testname}.stderr",
+            "stdout.diff" : f"{OUTPUT_DIR}/{self.testname}.stdout.diff",
+            "stderr.diff" : f"{OUTPUT_DIR}/{self.testname}.stderr.diff",
+            "valgrind"    : f"{OUTPUT_DIR}/{self.testname}.valgrind",
+            "memtime"     : f"{OUTPUT_DIR}/{self.testname}.memtime",
+            "ref_stdout"  : f"{REF_OUTPUT_DIR}/{self.testname}.stdout",
+            "ref_stderr"  : f"{REF_OUTPUT_DIR}/{self.testname}.stderr",
         }
 
         # MB -> B; setrlimit uses Bytes
-        self.kill_limit = self.kill_limit * 1024 * 1024 
-       
+        self.kill_limit = self.kill_limit * 1024 * 1024
+
         # can only get here if the test has compiled
-        self.compiled = True 
+        self.compiled = True
 
         if self.executable == None or self.executable == "#{testname}":
             self.executable = self.testname
-                     
+
         self.replace_placeholders_in_self()
 
         if self.executable[0] != '/':
             self.executable = './' + self.executable
-        
+
         if vars(config)["ccizer_name"] != "":
-            setattr(self, "canonicalizer", getattr(canonicalizers, vars(config)["ccizer_name"]))        
+            setattr(self, "canonicalizer", getattr(canonicalizers, vars(config)["ccizer_name"]))
 
         if self.max_ram != -1:
-            self.max_ram *= 1024 #MB -> KB; /usr/bin/time -o %M uses KB
+            self.max_ram *= 1024               #MB -> KB; /usr/bin/time -o %M uses KB
 
     def replace_placeholders(self, value_s):
         """
@@ -236,14 +272,14 @@ class Test:
                 This supports lists of lists of lists....but not dictionaries
             Note: 
                 #{name} shouldn't be used anymore, but keeping it for backwards compatibility
-        """ 
+        """
         replacements = {
-            "#{testname}": f"{OUTPUT_DIR}/{self.testname}",
-            "#{name}":     f"{OUTPUT_DIR}/{self.testname}",
+            "#{testname}" : f"{OUTPUT_DIR}/{self.testname}",
+            "#{name}"     : f"{OUTPUT_DIR}/{self.testname}",
         }
         if isinstance(value_s, str):
             for replacement_k, replacement_v in replacements.items():
-                value_s = value_s.replace(replacement_k, replacement_v) 
+                value_s = value_s.replace(replacement_k, replacement_v)
         elif isinstance(value_s, Iterable) and not isinstance(value_s, dict):
             value_s = [self.replace_placeholders(v) for v in value_s]
         return value_s
@@ -262,13 +298,12 @@ class Test:
                 value = [self.replace_placeholders(v) for v in value]
             else:
                 value = self.replace_placeholders(value)
-            setattr(self, key, value) 
+            setattr(self, key, value)
 
-                
     def __repr__(self):
         return (repr(vars(self)))
 
-    def save_status(self, finished=False):  
+    def save_status(self, finished=False):
         """
             Purpose:
                 saves
@@ -278,33 +313,33 @@ class Test:
                 The status file may be concurrently written to by multiple procs, so use a lockfile.
                 Replaces the actual canonicalizer function with its name so the function isn't 
                 attempted to be loaded if the data is read from the file
-        """                
-        logfile  = f"{LOG_DIR}/status"   
+        """
+        logfile  = f"{LOG_DIR}/status"
         lockfile = f"{LOG_DIR}/status.lock"
-        
-        testid = f"{self.testname} - {self.description}"          
+
+        testid = f"{self.testname} - {self.description}"
         if finished:
-            if self.success:            
+            if self.success:
                 line = COLORIZE(f"passed {testid}", color=GREEN)
             else:
                 line = COLORIZE(f"failed {testid}", color=RED)
         else:
             line = COLORIZE(f"not run {testid}", color=CYAN)
-              
+
         with FileLock(lockfile):
-            lines = Path(logfile).read_text().split('\n') 
+            lines = Path(logfile).read_text().split('\n')
             found = [i for i, line in enumerate(lines) if testid in line]
-            
-            if not found:                                       
+
+            if not found:
                 lines.append(line)
-            else:                
+            else:
                 lines[found[0]] = line
-            
+
             lines.sort()
             Path(logfile).write_text('\n'.join(lines))
-        
+
         with open(f"{LOG_DIR}/{self.testname}.summary", 'w') as f:
-            tmpvars = deepcopy(vars(self))            
+            tmpvars                  = deepcopy(vars(self))
             tmpvars['canonicalizer'] = f"function: [{self.ccizer_name}]"
             pprint(tmpvars, stream=f)
 
@@ -320,74 +355,80 @@ class Test:
                 Exit code of the process run
             Note:  
                 If there is a testname.stdin file then it is used as stdin.                
-        """                
+        """
         exec_cmds = [self.executable] + self.argv
         if exec_prepend:
             exec_cmds = exec_prepend + exec_cmds
 
-        if os.path.exists(self.fpaths['stdin']):            
+        if os.path.exists(self.fpaths['stdin']):
             stdin = open(self.fpaths['stdin'], 'r')
         else:
-            stdin = None 
-        
+            stdin = None
+
         if STDOUTPATH:
-            stdout = open(STDOUTPATH, 'wb') 
+            stdout = open(STDOUTPATH, 'wb')
             stderr = open(STDERRPATH, 'wb')
         else:
             stdout = open('/dev/null', 'wb')
             stderr = open('/dev/null', 'wb')
-        
-        result = RUN(exec_cmds, timeout=self.max_time, stdin=stdin, cwd=BUILD_DIR, 
-                    preexec_fn = limit_virtual_memory(self.kill_limit), 
-                    stdout=stdout, stderr=stderr)
+
+        result = RUN(exec_cmds,
+                     timeout=self.max_time,
+                     stdin=stdin,
+                     cwd=BUILD_DIR,
+                     preexec_fn=limit_virtual_memory(self.kill_limit),
+                     stdout=stdout,
+                     stderr=stderr)
 
         for f in [stdin, stdout, stderr]:
             if f != None:
                 f.close()
-    
+
         return result.returncode
 
-    def run_test(self):   
+    def run_test(self):
         """
             Purpose: 
                 Runs the 'standard' test and sets variables associated with pass / failure
             Notes:
-                add ../../ to memory file because we'll be running from testset/build/ directory and 
+                add ../../ to memtime file because we'll be running from testset/build/ directory and 
                 valgrind writes to a local path. 
-        """      
+        """
         if self.max_ram != -1:
-            prepend  = ['/usr/bin/time', '-o', os.path.join('..','..', self.fpaths['memory']), '-f', '%M']
+            prepend = ['/usr/bin/time', '-o', os.path.join('..', '..', self.fpaths['memtime']), '-f', '%M %S %U']
         else:
-            prepend  = []
+            prepend = []
 
-        test_rcode       = self.run_exec(exec_prepend=prepend, 
-                                         STDOUTPATH=self.fpaths['stdout'], 
-                                         STDERRPATH=self.fpaths['stderr'])
+        test_rcode = self.run_exec(exec_prepend=prepend,
+                                   STDOUTPATH=self.fpaths['stdout'],
+                                   STDERRPATH=self.fpaths['stderr'])
 
-        test_rcode       = abs(test_rcode) # returns negative value if killed by signal
+        test_rcode       = abs(test_rcode)               # returns negative value if killed by signal
         self.exit_status = test_rcode
-        self.timed_out   = test_rcode == 124        
+        self.timed_out   = test_rcode == 124
         self.segfault    = test_rcode in [11, 139]
-        
+
         self.max_ram_exceeded = False
-        # ISSUE: if process is killed, no memory output file is produced; then we need to rely on valgrind results
-        if os.path.exists(self.fpaths['memory']):
-            memdata = Path(self.fpaths['memory']).read_text()
-            if memdata != '': # this might happen if timeout kills program
-                max_rss = int(memdata.splitlines()[-1]) # if segfault, last line has max_rss info; data in KB
+        # ISSUE: if process is killed, no memtime output file is produced; then we need to rely on valgrind results
+        if os.path.exists(self.fpaths['memtime']):
+            memdata = Path(self.fpaths['memtime']).read_text()
+            if memdata != '':               # this might happen if timeout kills program
+                max_rss = int(memdata.splitlines()[-1].split()
+                              [0])               # if segfault, last line has max_rss info; data in KB
+
                 self.max_ram_exceeded = (self.max_ram != -1 and max_rss > self.max_ram)
 
-        # Checking for std::bad_alloc is a bit bittle. 
+        # Checking for std::bad_alloc is a bit bittle.
         self.kill_limit_exceeded = False
         if os.path.exists(self.fpaths['stderr']):
             try:
-                stderrdata = Path(self.fpaths['stderr']).read_bytes().decode('utf-8') 
+                stderrdata = Path(self.fpaths['stderr']).read_bytes().decode('utf-8')
             except (TypeError, UnicodeDecodeError):
                 stderrdata = "ERROR: non-utf-8 encodable text in student result"
             if "std::bad_alloc" in stderrdata:
                 self.kill_limit_exceeded = True
-        
-    def run_valgrind(self):  
+
+    def run_valgrind(self):
         """
             Purpose: 
                 Runs the valgrind test and sets variables associated with valgrind pass / failur
@@ -395,13 +436,13 @@ class Test:
                 Valgrind will be killed by the os if memory usage exceeds kill_limit; 
                 in practice, this usually only happens if the 'main' test has the same issue; 
                 the 'main' test should show a segfault; here, we will set max_ram_exceeded to true
-        """         
+        """
         valgrind_command = [
-            "/usr/bin/valgrind",                      # doesn't have 72,704 bug
-            "--show-leak-kinds=all",                  # gimme all the leaks
-            "--leak-check=full",                      # catch all kinds of leaks
-            "--errors-for-leak-kinds=none",           # separate errors from leaks
-            "--error-exitcode=1",                     # errors return 1
+            "/usr/bin/valgrind",               # doesn't have 72,704 bug
+            "--show-leak-kinds=all",               # gimme all the leaks
+            "--leak-check=full",               # catch all kinds of leaks
+            "--errors-for-leak-kinds=none",               # separate errors from leaks
+            "--error-exitcode=1",               # errors return 1
             f"--log-file={self.fpaths['valgrind']}"
         ]
         if self.valgrind:
@@ -410,77 +451,76 @@ class Test:
                 self.valgrind_passed  = False
                 self.memory_leaks     = False
                 self.memory_errors    = True
-                self.max_ram_exceeded = True # valgrind killed so no output file produced
+                self.max_ram_exceeded = True               # valgrind killed so no output file produced
                 self.valg_out_of_mem  = True
             else:
                 valgrind_output      = Path(self.fpaths['valgrind']).read_text()
                 self.memory_leaks    = MEMLEAK_PASS not in valgrind_output
                 self.memory_errors   = MEMERR_PASS not in valgrind_output
-                self.valg_out_of_mem = VALG_NO_MEM in valgrind_output 
-                # if kill limit exceeded in test valgrind fails, but it can't throw errors :/ 
+                self.valg_out_of_mem = VALG_NO_MEM in valgrind_output
+                # if kill limit exceeded in test valgrind fails, but it can't throw errors :/
                 self.valgrind_passed = not self.memory_leaks and not self.memory_errors and not self.valg_out_of_mem and not self.kill_limit_exceeded
-        
+
     def run_diff(self, filea, fileb, filec, canonicalize=False):
         """
             Purpose:
                 Run diff on filea and fileb, and write the output to filec
-                if 'canonicalize', run diff on canonicalized output from filea and fileb
-            Assumes:
-                filea and fileb must only contain utf-8 decodable characters              
+                if 'canoniczliaze', run diff on canonicalized output from filea and fileb                
+            Precondition: 
+                Assumes filea and fileb both exist.
             Inputs:
                 filea        (str)  : student output filename
                 fileb        (str)  : reference output filename
                 filec        (str)  : file to write diff output to
                 canonicalize (bool) : whether or not to run diff on canonicalized output.
             Returns: 
-                (bool) Whether or not the diff succeeds
-            Notes:
-                Do diffs with subprocess run and shell=True. Otherwise will have 
-                problems with any non-utf8 output [encountered with largeGutenberg in gerp].     
-                If solution code is run as a submission, ccized solution output will be 
-                generated.                   
+                (int) the return code of the diff.
+            Notes:                
+                I like pretty diffs, so diff-so-fancy is an option. :) 
+                Am doing diffs with subprocess shell=True. Otherwise will have 
+                problems with any non-utf8 output [encountered with largeGutenberg in gerp]. 
+                [TODO] refactor to use RUN?                        
         """
         if not os.path.exists(filea):
-            Path(f"{filea}.diff").write_text(f"diff: {filea} not found!")
-            return False
-        if not os.path.exists(fileb): 
-            INFORM(f"reference output missing for: {self.testname} " + 
-                    "- ignore if building reference output", color=MAGENTA)
-
+            return 2               # diff's non-existing file return code
+        if not os.path.exists(fileb):
+            INFORM(f"reference output missing for: {self.testname} " + "- ignore if building reference output",
+                   color=MAGENTA)
         if canonicalize:
+            bytes = Path(filea).read_bytes()
             try:
-                text   = Path(filea).read_bytes().decode('utf-8')
+                text = bytes.decode('utf-8')
             except (TypeError, UnicodeDecodeError):
-                cc_result = "ERROR: non-utf-8 encodable text in student result"
-                            
-            try:
-                orig_solution_txt = Path(fileb).read_bytes().decode('utf-8') if os.path.exists(fileb) else None
+                ccized = "ERROR: non-utf-8 encodable text in student result"
+            else:
+                try:
+                    if os.path.exists(fileb):
+                        solution_text = Path(fileb).read_bytes().decode('utf-8')
+                    else:
+                        solution_text = None
+                    ccized = self.canonicalizer(text, solution_text, self.testname, self.ccizer_args)
+                except Exception as e:
+                    ccized = f"ERROR: canonicalizer failed - {repr(e)}\n{traceback.format_exc()}"
+            if ccized == None:
+                INFORM(f"canonicalizer for test {self.testname} does not return a string with the" +
+                       "result - defaulting to empty string",
+                       color=MAGENTA)
+                ccized = ""
 
-                cc_result = self.canonicalizer(text, orig_solution_txt, self.testname, self.ccizer_args)
-                
-                if cc_result == None:
-                    INFORM(f"canonicalizer for test {self.testname} does not return a string with the" +
-                            "result - defaulting to empty string", color=MAGENTA)                    
-                    cc_result = ""
-            except Exception as e: 
-                cc_result = f"ERROR: canonicalizer failed - {repr(e)}\n{traceback.format_exc()}"
-            
-            Path(f"{filea}.ccized").write_text(cc_result)
-
-            filec = f"{filea}.ccized.diff" 
-            
+            Path(f"{filea}.ccized").write_text(ccized)
             filea = f"{filea}.ccized"
             fileb = f"{fileb}.ccized"
-            
-        diff_result  = subprocess.run(f"diff {filea} {fileb} > {filec}", shell=True)        
-        diff_retcode = diff_result.returncode # diff-so-fancy returns 0 on failure, so always use this!
-       
+            filec = f"{filea}.diff"               # => will be original 'filea'.ccized.diff
+
+        diff_result  = subprocess.run(f"diff {filea} {fileb} > {filec}", shell=True)
+        diff_retcode = diff_result.returncode               # diff-so-fancy returns 0 on failure, always use this!
+
         # diff-so-fancy requires output of [diff -u ...] as its input
         if self.pretty_diff:
-            subprocess.run(f"diff -u {filea} {fileb} | diff-so-fancy > {filec}", shell=True)                            
-        
-        return diff_retcode == 0
-    
+            subprocess.run(f"diff -u {filea} {fileb} | diff-so-fancy > {filec}", shell=True)
+
+        return diff_retcode
+
     def run_diffs(self):
         """
             Purpose:
@@ -491,29 +531,28 @@ class Test:
                 Design here requires that student's program reads in the filename to write to 
         """
         if self.diff_stdout:
-            self.stdout_diff_passed = self.run_diff(self.fpaths['stdout'], 
-                                                    self.fpaths['ref_stdout'],
-                                                    self.fpaths['stdout.diff'], 
-                                                    self.ccize_stdout)
-        
+            self.stdout_diff_passed = self.run_diff(self.fpaths['stdout'], self.fpaths['ref_stdout'],
+                                                    self.fpaths['stdout.diff'], self.ccize_stdout) == 0
+
         if self.diff_stderr:
-            self.stderr_diff_passed = self.run_diff(self.fpaths['stderr'],  
-                                                    self.fpaths['ref_stderr'],
-                                                    self.fpaths['stderr.diff'],
-                                                    self.ccize_stderr)
-        
+            self.stderr_diff_passed = self.run_diff(self.fpaths['stderr'], self.fpaths['ref_stderr'],
+                                                    self.fpaths['stderr.diff'], self.ccize_stderr) == 0
+
         if self.diff_ofiles:
             self.fout_diffs_passed = True
-            created_files = os.listdir(REF_OUTPUT_DIR) if os.path.exists(REF_OUTPUT_DIR) else []
-            created_files = list(set(created_files + os.listdir(OUTPUT_DIR))) 
-            ofilenames = [x for x in created_files if self.testname in x and x.endswith(".ofile")]                 
+            created_files          = os.listdir(REF_OUTPUT_DIR) if os.path.exists(REF_OUTPUT_DIR) else []
+            created_files          = list(set(created_files + os.listdir(OUTPUT_DIR)))
+            ofilenames             = [x for x in created_files if self.testname in x and x.endswith(".ofile")]
             for ofilename in ofilenames:
-                if not self.run_diff(f"{OUTPUT_DIR}/{ofilename}", 
-                                     f"{REF_OUTPUT_DIR}/{ofilename}", 
-                                     f"{OUTPUT_DIR}/{ofilename}.diff",
-                                     self.ccize_ofiles):
-                    self.fout_diffs_passed = False
-    
+                retcode = self.run_diff(f"{OUTPUT_DIR}/{ofilename}", f"{REF_OUTPUT_DIR}/{ofilename}",
+                                        f"{OUTPUT_DIR}/{ofilename}.diff", self.ccize_ofiles)
+                if retcode == 2:
+                    self.ofile_file_exists = False
+
+                self.fout_diffs_passed = retcode == 0
+
+                if not self.fout_diffs_passed: break
+
     def determine_success(self):
         """
             Purpose:
@@ -529,7 +568,8 @@ class Test:
            (self.kill_limit_exceeded):
             self.success = False
         else:
-            self.success = True    
+            self.success = True
+
 
 def print_testgroup(report, keys, OPTS):
     """
@@ -539,48 +579,46 @@ def print_testgroup(report, keys, OPTS):
             None                    
         Notes: 
             Depending on OPTS['lengthy_output'], will print one or two columns
-    """  
+    """
     try:
         columns, lines = os.get_terminal_size()
     except OSError:
         columns = 144
     if OPTS['lengthy_output']:
-        col_width = columns 
+        col_width = columns
         max_width = col_width // 2
     else:
-        col_width = columns // 2     
+        col_width = columns // 2
         max_width = col_width - 2
-    
+
     for key in keys:
         for i, test in enumerate(report[key]['tests']):
-            report[key]['tests'][i] = f"{report[key]['tests'][i][:max_width]: <{col_width}}"    
-    
+            report[key]['tests'][i] = f"{report[key]['tests'][i][:max_width]: <{col_width}}"
+
     keys = [k for k in keys if len(report[k]['tests']) > 0]
     # headers
     for title in keys:
-        INFORM(f"{title: <{max([len(x) for x in keys])}} {len(report[title]['tests'])}", 
-              color=report[title]["color"])    
+        INFORM(f"{title: <{max([len(x) for x in keys])}} {len(report[title]['tests'])}", color=report[title]["color"])
     print()
-    
+
     outstrs = []
-    keys = [k for k in keys if k not in ["Failed", "Valgrind Failed"]]
+    keys    = [k for k in keys if k not in ["Failed", "Valgrind Failed"]]
     for title in keys:
-        outstrs.append(COLORIZE(f"{f'{title:-^{max_width}}': <{col_width}}", 
-                                report[title]['color']))
+        outstrs.append(COLORIZE(f"{f'{title:-^{max_width}}': <{col_width}}", report[title]['color']))
         for teststr in report[title]['tests']:
             outstrs.append(COLORIZE(teststr, report[title]["color"]))
-    
+
     if OPTS['lengthy_output']:
         print('\n'.join(outstrs))
     else:
         if len(outstrs) % 2 != 0:
             outstrs.append(" " * col_width)
-        
+
         colwstr = "{0" + f": <{col_width}" + "}{1" + f": <{col_width}" + "}"
-        print('\n'.join([colwstr.format(*x) for x in 
-                        zip(outstrs[:len(outstrs)//2], outstrs[len(outstrs)//2:])]))
-       
-def report_results(TESTS, OPTS): 
+        print('\n'.join([colwstr.format(*x) for x in zip(outstrs[:len(outstrs) // 2], outstrs[len(outstrs) // 2:])]))
+
+
+def report_results(TESTS, OPTS):
     """
         Purpose:
             Print test results to the terminal
@@ -588,34 +626,95 @@ def report_results(TESTS, OPTS):
             None                    
     """
     report = {
-        "Passed":              { "func": lambda test: test.success,                                     "tests": [], "color": GREEN   },
-        "Failed":              { "func": lambda test: not test.success,                                 "tests": [], "color": RED     },
-        "Segfaulted":          { "func": lambda test: test.segfault,                                    "tests": [], "color": RED     },
-        "Failed stdout diff":  { "func": lambda test: test.diff_stdout and not test.stdout_diff_passed, "tests": [], "color": RED     },
-        "Failed stderr diff":  { "func": lambda test: test.diff_stderr and not test.stderr_diff_passed, "tests": [], "color": RED     },
-        "Failed ofile diff":   { "func": lambda test: test.diff_ofiles and not test.fout_diffs_passed,  "tests": [], "color": RED     },        
-        "Timed Out":           { "func": lambda test: test.timed_out,                                   "tests": [], "color": RED     }, 
-        "Invalid Exit Code":   { "func": lambda test: test.exit_status != test.exitcodepass,            "tests": [], "color": RED     },
-        "Exceeded Max Ram":    { "func": lambda test: test.max_ram_exceeded,                            "tests": [], "color": RED     }, 
-        "Exceeded Kill Limit": { "func": lambda test: test.kill_limit_exceeded,                         "tests": [], "color": RED     },  
-        "Valgrind Passed":     { "func": lambda test: test.valgrind and test.valgrind_passed,           "tests": [], "color": GREEN   },        
-        "Valgrind Failed":     { "func": lambda test: test.valgrind and not test.valgrind_passed,       "tests": [], "color": RED     },                
-        "Memory Leak":         { "func": lambda test: test.valgrind and test.memory_leaks,              "tests": [], "color": MAGENTA },
-        "Memory Error":        { "func": lambda test: test.valgrind and test.memory_errors,             "tests": [], "color": MAGENTA },
-        "V. Exceeded Max Ram": { "func": lambda test: test.valgrind and test.valg_out_of_mem,           "tests": [], "color": RED     }
-    }    
+        "Passed" : {
+            "func"  : lambda test: test.success,
+            "tests" : [],
+            "color" : GREEN
+        },
+        "Failed" : {
+            "func"  : lambda test: not test.success,
+            "tests" : [],
+            "color" : RED
+        },
+        "Segfaulted" : {
+            "func"  : lambda test: test.segfault,
+            "tests" : [],
+            "color" : RED
+        },
+        "Failed stdout diff" : {
+            "func"  : lambda test: test.diff_stdout and not test.stdout_diff_passed,
+            "tests" : [],
+            "color" : RED
+        },
+        "Failed stderr diff" : {
+            "func"  : lambda test: test.diff_stderr and not test.stderr_diff_passed,
+            "tests" : [],
+            "color" : RED
+        },
+        "Failed ofile diff" : {
+            "func"  : lambda test: test.diff_ofiles and not test.fout_diffs_passed,
+            "tests" : [],
+            "color" : RED
+        },
+        "Timed Out" : {
+            "func"  : lambda test: test.timed_out,
+            "tests" : [],
+            "color" : RED
+        },
+        "Invalid Exit Code" : {
+            "func"  : lambda test: test.exit_status != test.exitcodepass,
+            "tests" : [],
+            "color" : RED
+        },
+        "Exceeded Max Ram" : {
+            "func"  : lambda test: test.max_ram_exceeded,
+            "tests" : [],
+            "color" : RED
+        },
+        "Exceeded Kill Limit" : {
+            "func"  : lambda test: test.kill_limit_exceeded,
+            "tests" : [],
+            "color" : RED
+        },
+        "Valgrind Passed" : {
+            "func"  : lambda test: test.valgrind and test.valgrind_passed,
+            "tests" : [],
+            "color" : GREEN
+        },
+        "Valgrind Failed" : {
+            "func"  : lambda test: test.valgrind and not test.valgrind_passed,
+            "tests" : [],
+            "color" : RED
+        },
+        "Memory Leak" : {
+            "func"  : lambda test: test.valgrind and test.memory_leaks,
+            "tests" : [],
+            "color" : MAGENTA
+        },
+        "Memory Error" : {
+            "func"  : lambda test: test.valgrind and test.memory_errors,
+            "tests" : [],
+            "color" : MAGENTA
+        },
+        "V. Exceeded Max Ram" : {
+            "func"  : lambda test: test.valgrind and test.valg_out_of_mem,
+            "tests" : [],
+            "color" : RED
+        }
+    }
 
     for cat in report:
-        report[cat]["tests"] = [f"{name} - {t.description}" for name,t in TESTS.items() if report[cat]["func"](t)]
-       
+        report[cat]["tests"] = [f"{name} - {t.description}" for name, t in TESTS.items() if report[cat]["func"](t)]
+
     valgrind_keys = ["Valgrind Passed", "Valgrind Failed", "Memory Leak", "Memory Error", "V. Exceeded Max Ram"]
     normal_keys   = [k for k in report if k not in valgrind_keys]
-  
-    INFORM(f"\n== Test Report ==", color=CYAN) 
-    print_testgroup(report, normal_keys, OPTS)          
+
+    INFORM(f"\n== Test Report ==", color=CYAN)
+    print_testgroup(report, normal_keys, OPTS)
     INFORM(f"\n== Valgrind Report ==", color=CYAN)
     print_testgroup(report, valgrind_keys, OPTS)
-    
+
+
 def run_full_test(test):
     test.save_status(finished=False)
     if not os.path.exists(os.path.join(BUILD_DIR, test.executable)):
@@ -629,7 +728,8 @@ def run_full_test(test):
         test.determine_success()
         test.save_status(finished=True)
     return test
-    
+
+
 def run_tests(TESTS, OPTS):
     """
         Purpose:
@@ -640,15 +740,15 @@ def run_tests(TESTS, OPTS):
             Tests are run in parallel, on per process       
             Make sure to store result as list before returning
     """
-    INFORM(f"\n== Running {len(TESTS)} test{'s' if len(TESTS) > 1 else ''} ==", color=CYAN)        
+    INFORM(f"\n== Running {len(TESTS)} test{'s' if len(TESTS) > 1 else ''} ==", color=CYAN)
     if OPTS['jobs'] == 1:
-        return { test.testname: run_full_test(test) for test in TESTS.values() }
-    else: 
-        result = process_map(run_full_test, TESTS.values(), 
-                             ncols=60, max_workers=OPTS['jobs'])
-        
-        return { test.testname: test for test in result }
-   
+        return {test.testname: run_full_test(test) for test in TESTS.values()}
+    else:
+        result = process_map(run_full_test, TESTS.values(), ncols=60, max_workers=OPTS['jobs'])
+
+        return {test.testname: test for test in result}
+
+
 def compile_exec(target):
     """
         Purpose:    
@@ -659,44 +759,44 @@ def compile_exec(target):
             writes result of compilation to the right place 
         Returns:    
             whether or not the compilation was successful
-    """    
-    # if student provides executable, remove it. 
+    """
+    # if student provides executable, remove it.
     if os.path.exists(os.path.join(BUILD_DIR, target)):
         os.remove(os.path.join(BUILD_DIR, target))
 
-    target = target[2:] # remove the './' prefix
-    
+    target = target[2:]               # remove the './' prefix
+
     # REFACTOR LOGIC HERE - testname replacement should be something else after path is there.
     # if testname is the target and has been replaced, extract the name from the path
     if '/' in target or '\\' in target:
         if '/' in target: schar = '/'
-        else:             schar = '\\'        
-        target = target.split(schar)[-1]
+        else: schar             = '\\'
+        target                  = target.split(schar)[-1]
 
     with open(f"{LOG_DIR}/{target}.compile.log", "w") as f:
         INFORMF(f"== running make {target} ==\n", f, color=CYAN)
-        compilation_proc    = RUN(["make", target], cwd=BUILD_DIR, 
-                                  stdout=f, stderr=subprocess.STDOUT)
-        compilation_success = compilation_proc.returncode == 0   
-        compilation_color   = GREEN if compilation_success else RED 
-        
-        # for stream in [compilation_proc.stdout, compilation_proc.stderr]:            
-        #     try:            
-        #         INFORMF(stream.decode('utf-8'), stream=f, color=compilation_color) 
+        compilation_proc    = RUN(["make", target], cwd=BUILD_DIR, stdout=f, stderr=subprocess.STDOUT)
+        compilation_success = compilation_proc.returncode == 0
+        compilation_color   = GREEN if compilation_success else RED
+
+        # for stream in [compilation_proc.stdout, compilation_proc.stderr]:
+        #     try:
+        #         INFORMF(stream.decode('utf-8'), stream=f, color=compilation_color)
         #     except:
         #         INFORMF(stream, stream=f, color=compilation_color)
-            
+
         if not compilation_success:
-            INFORMF(f"\ncompilation failed\n", stream=f, color=RED)                
+            INFORMF(f"\ncompilation failed\n", stream=f, color=RED)
         elif target not in os.listdir(BUILD_DIR):
             INFORMF(f"\n'make {target}' must build a program named {target}", stream=f, color=RED)
             compilation_success = False
         else:
-            INFORMF("\nbuild completed successfully\n", stream=f, color=GREEN)    
-            RUN(["chmod", "u+x", target], cwd=BUILD_DIR) # g++ doesn't always play nice, so chmod it
+            INFORMF("\nbuild completed successfully\n", stream=f, color=GREEN)
+            RUN(["chmod", "u+x", target], cwd=BUILD_DIR)               # g++ doesn't always play nice, so chmod it
     return compilation_success
 
-def compile_execs(TOML, TESTS, OPTS):    
+
+def compile_execs(TOML, TESTS, OPTS):
     """
         Purpose:
             compile the the tests    
@@ -709,20 +809,24 @@ def compile_execs(TOML, TESTS, OPTS):
             True iff all of the compilations succeeded
         Notes:      
             Will copy the custom Makefile to build/ if it exists.
-    """ 
-    execs_to_compile = { test.executable:test.our_makefile for test in TESTS.values() }
-    our_makefile_tests = [test for test in execs_to_compile if execs_to_compile[test]]
+    """
+    execs_to_compile     = {test.executable: test.our_makefile for test in TESTS.values()}
+    our_makefile_tests   = [test for test in execs_to_compile if execs_to_compile[test]]
     their_makefile_tests = [test for test in execs_to_compile if not execs_to_compile[test]]
- 
+
     compiled_list = []
-    num_execs = len(execs_to_compile)
+    num_execs     = len(execs_to_compile)
     INFORM(f"== Compiling {num_execs} executable{'s' if num_execs >= 1 else ''} ==", color=CYAN)
     if their_makefile_tests:
-        INFORM(f"== Compiling {len(their_makefile_tests)} executable{'s' if len(their_makefile_tests) >= 1 else ''} with the student's makefile ==", color=CYAN)
+        INFORM(
+            f"== Compiling {len(their_makefile_tests)} executable{'s' if len(their_makefile_tests) >= 1 else ''} with the student's makefile ==",
+            color=CYAN)
         compiled_list = [compile_exec(x) for x in their_makefile_tests]
-        
+
     if our_makefile_tests:
-        INFORM(f"== Compiling {len(our_makefile_tests)} executable{'s' if len(our_makefile_tests) >= 1 else ''} with our makefile ==", color=CYAN)
+        INFORM(
+            f"== Compiling {len(our_makefile_tests)} executable{'s' if len(our_makefile_tests) >= 1 else ''} with our makefile ==",
+            color=CYAN)
         if not os.path.exists(MAKEFILE_PATH):
             print("our_makefile option requires a custom Makefile in testset/makefile/")
         else:
@@ -731,18 +835,20 @@ def compile_execs(TOML, TESTS, OPTS):
 
     if sum(compiled_list) != num_execs:
         INFORM(f"== Some Tests Failed to Compile! ==\n", color=RED)
-        report_compile_logs()                          
+        report_compile_logs()
 
-def chmod_dir(d, permissions):    
+
+def chmod_dir(d, permissions):
     """
         Purpose:
             chmod the testset with the provided permissions
         Notes:
             This is used so the student code doesn't overwrite read-only files
     """
-    subprocess.run([f"chmod -R {permissions} {d}"], shell=True)       
+    subprocess.run([f"chmod -R {permissions} {d}"], shell=True)
 
-def build_testing_directories():  
+
+def build_testing_directories():
     """
         Purpose:
             Builds directories required to run tests.
@@ -750,57 +856,60 @@ def build_testing_directories():
             These directories are hard-coded in this file - 
             there should be no need to change them.
             don't remove results_dir directly because gradescope puts the 'stdout' file there
-    """ 
+    """
     if os.path.exists(RESULTS_DIR):
         for fldr in BUILD_DIR, LOG_DIR, OUTPUT_DIR:
             if os.path.exists(fldr):
-                shutil.rmtree(fldr)        
-          
+                shutil.rmtree(fldr)
+
     for fldr in [RESULTS_DIR, BUILD_DIR, LOG_DIR, OUTPUT_DIR]:
         if not os.path.exists(fldr):
             os.mkdir(fldr)
-    
+
     # if submission dir doesn't have +w, we won't be able to copy anything after first copytree()
     chmod_dir(SUBMISSION_DIR, "770")
 
     # remove any student-provided .o files
-    for f in os.listdir(SUBMISSION_DIR): 
+    for f in os.listdir(SUBMISSION_DIR):
         if f.endswith('.o') or os.path.exists(os.path.join(LINK_DIR, f)):
             os.remove(os.path.join(SUBMISSION_DIR, f))
-            
+
     shutil.copytree(SUBMISSION_DIR, BUILD_DIR, dirs_exist_ok=True)
     if os.path.exists(COPY_DIR):
         shutil.copytree(COPY_DIR, BUILD_DIR, dirs_exist_ok=True)
     if os.path.exists(LINK_DIR):
         for f in os.listdir(LINK_DIR):
-            os.symlink(os.path.join('..','..',LINK_DIR, f), os.path.join(BUILD_DIR, f))
+            os.symlink(os.path.join('..', '..', LINK_DIR, f), os.path.join(BUILD_DIR, f))
 
     Path(f'{LOG_DIR}/status.lock').write_text("Lockfile for status reporting")
     Path(f'{LOG_DIR}/status').write_text("")
-    
+
     # don't allow student code to write to the testset!
     chmod_dir(TESTSET_DIR, "550")
+
 
 class CustomFormatter(argparse.HelpFormatter):
     """
         Argparse is great, but it's formatting options are bleh. 
         SO to the rescue - https://stackoverflow.com/a/23941599/8742968
     """
+
     def _format_action_invocation(self, action):
         if not action.option_strings:
             return self._metavar_formatter(action, action.dest)(1)[0]
         else:
             # keep -s, --long as is
-            if action.nargs == 0: 
+            if action.nargs == 0:
                 parts = action.option_strings
-           
-            # from -s ARGS, --long ARGS 
+
+            # from -s ARGS, --long ARGS
             # to   -s, --long ARGS
             else:
                 parts      = [f'{opt_str}' for opt_str in action.option_strings]
                 parts[-1] += f' {self._format_args(action, action.dest.upper())}'
-            
+
             return ', '.join(parts)
+
 
 def filter_tests(TESTS, OPTS):
     """
@@ -808,23 +917,24 @@ def filter_tests(TESTS, OPTS):
         filter the testset to only include those provided by user, if any
     """
     if OPTS['tests']:
-        TESTS = { testname: TESTS[testname] for testname in OPTS['tests'] }
-    
-    if OPTS['diff'] == []:        
+        TESTS = {testname: TESTS[testname] for testname in OPTS['tests']}
+
+    if OPTS['diff'] == []:
         OPTS['diff'] = ['.stdout.diff', '.stderr.diff', '.ofile.diff']
 
     elif OPTS['diff'] != None:
         OPTS['diff'] = [f".{x}.diff" for x in OPTS['diff']]
-    
-    if OPTS['filter']: 
-        OPTS['filter'] = OPTS['filter'][0]        
-        get_test_var = lambda test: test.valgrind_passed if OPTS['valgrind'] else test.success
-        TESTS = {
+
+    if OPTS['filter']:
+        OPTS['filter'] = OPTS['filter'][0]
+        get_test_var   = lambda test: test.valgrind_passed if OPTS['valgrind'] else test.success
+        TESTS          = {
              name: test for name, test in TESTS.items() if \
                             get_test_var(test) and OPTS['filter'] == "passed" or \
                         not get_test_var(test) and OPTS['filter'] == "failed"
-        }            
-    return TESTS    
+        }
+    return TESTS
+
 
 def validate_opt(valid_opts, OPTS, config_type, failure_string):
     """
@@ -832,40 +942,41 @@ def validate_opt(valid_opts, OPTS, config_type, failure_string):
             Validates the the provided configutation options
         Effects:
             Quits with failure string if any of the options are invalid               
-    """    
+    """
     if not OPTS[config_type]:
         return
-  
+
     for opt in OPTS[config_type]:
         if opt not in valid_opts:
             FAIL(f"{failure_string}: {opt}\nvalid options are: {valid_opts}")
+
 
 def validate_opts(TESTS, OPTS):
     """
         Purpose:
             Validate input options from the user        
     """
-
     """
         note: argparser is weird about this; format the list
         start  -> {... 'filter': ['0,12411'],   'diff': ['21,', '1241'],'tests': ['23542,12412']}
         finish -> {... 'filter': ['0', '12411'],'diff': ['21', '1241'], 'tests': ['23542', '12412']}
     """
-    for arg in OPTS:        
+    for arg in OPTS:
         if type(OPTS[arg]) == list:
-            OPTS[arg] = [x for y in [s.replace(',',' ').split() for s in OPTS[arg]] for x in y]
-    
+            OPTS[arg] = [x for y in [s.replace(',', ' ').split() for s in OPTS[arg]] for x in y]
+
     VALID_TEST_NAMES  = TESTS.keys()
     VALID_FILTER_OPTS = ["passed", "failed"]
     VALID_DIFF_OPTS   = ["stdout", "stderr", "ofile", " or none (all are run by default)"]
-    
-    validate_opt(VALID_TEST_NAMES,  OPTS, "tests",  "Invalid test name")
+
+    validate_opt(VALID_TEST_NAMES, OPTS, "tests", "Invalid test name")
     validate_opt(VALID_FILTER_OPTS, OPTS, "filter", "Invalid filter option")
-    validate_opt(VALID_DIFF_OPTS,   OPTS, "diff",   "Invalid diff option")          
+    validate_opt(VALID_DIFF_OPTS, OPTS, "diff", "Invalid diff option")
 
     return OPTS
 
-def load_tests(TOML): 
+
+def load_tests(TOML):
     """
         Purpose:
             Loads tests from the TOML file 
@@ -876,15 +987,16 @@ def load_tests(TOML):
             of the parameters in the 'narrower' configuration overrides the corresponding config
             of the 'broader' category. i.e. the test-specific config overrides the group config,
             and group config overrides the global config.
-    """         
-    COMMON_CONFIG = TestConfig(**TOML['common'])    
+    """
+    COMMON_CONFIG = TestConfig(**TOML['common'])
     TESTS         = {}
-    for group in [TOML[group_name] for group_name in TOML if group_name != "common"]:    
+    for group in [TOML[group_name] for group_name in TOML if group_name != "common"]:
         GROUP_CONFIG = COMMON_CONFIG.mergecopy(**group)
-        for tinfo in group['tests']:            
-            TEST_CONFIG = GROUP_CONFIG.mergecopy(**tinfo)
+        for tinfo in group['tests']:
+            TEST_CONFIG              = GROUP_CONFIG.mergecopy(**tinfo)
             TESTS[tinfo['testname']] = Test(TEST_CONFIG)
     return TESTS
+
 
 def parse_args(argv):
     """
@@ -910,32 +1022,33 @@ def parse_args(argv):
                         
             These args are passed in here 'as expected' i.e. flags are bools, 
             and 'filter', 'diff', and 'tests' are all lists of strings. 
-    """        
+    """
     HELP = {
-        's': "show the success status",
-        'v': "show valgrind output",
-        'c': "show the compilation logs and commands",
-        'j': "number of parallel jobs; default=1; -1=number of available cores",
-        'f': "one or more filters to apply: (f)ailed, (p)assed",   
-        'd': "one or more diffs to show: stdout, stderr, and ofile",
-        't': "one or more tests to run",
-        'l': "show output in one column"
-    }    
-    ap = argparse.ArgumentParser(formatter_class=CustomFormatter)      
-    ap.add_argument('-s', '--status',         action='store_true', help=HELP['s'])
-    ap.add_argument('-v', '--valgrind',       action='store_true', help=HELP['v'])
-    ap.add_argument('-c', '--compile-logs',   action='store_true', help=HELP['c']) 
+        's' : "show the success status",
+        'v' : "show valgrind output",
+        'c' : "show the compilation logs and commands",
+        'j' : "number of parallel jobs; default=1; -1=number of available cores",
+        'f' : "one or more filters to apply: (f)ailed, (p)assed",
+        'd' : "one or more diffs to show: stdout, stderr, and ofile",
+        't' : "one or more tests to run",
+        'l' : "show output in one column"
+    }
+    ap = argparse.ArgumentParser(formatter_class=CustomFormatter)
+    ap.add_argument('-s', '--status', action='store_true', help=HELP['s'])
+    ap.add_argument('-v', '--valgrind', action='store_true', help=HELP['v'])
+    ap.add_argument('-c', '--compile-logs', action='store_true', help=HELP['c'])
     ap.add_argument('-l', '--lengthy-output', action='store_true', help=HELP['l'])
-    ap.add_argument('-j', '--jobs',     default=1, metavar="jobs",       type=int, help=HELP['j'])
-    ap.add_argument('-d', '--diff',     nargs='*', metavar="diffopt",    type=str, help=HELP['d'])
-    ap.add_argument('-f', '--filter',   nargs='*', metavar="filteropt",  type=str, help=HELP['f'])    
-    ap.add_argument('-t', '--tests',    nargs='*', metavar="testXX",     type=str, help=HELP['t'])         
+    ap.add_argument('-j', '--jobs', default=1, metavar="jobs", type=int, help=HELP['j'])
+    ap.add_argument('-d', '--diff', nargs='*', metavar="diffopt", type=str, help=HELP['d'])
+    ap.add_argument('-f', '--filter', nargs='*', metavar="filteropt", type=str, help=HELP['f'])
+    ap.add_argument('-t', '--tests', nargs='*', metavar="testXX", type=str, help=HELP['t'])
 
     args = vars(ap.parse_args(argv))
     if args['jobs'] == -1:
         args['jobs'] = cpu_count()
     return args
-              
+
+
 def report_compile_logs(exitcode=None, type_to_report=None, tests=None):
     """
         Purpose:
@@ -946,21 +1059,22 @@ def report_compile_logs(exitcode=None, type_to_report=None, tests=None):
             tests          (list[string]) : will only print the results of compiling these execs
     """
     compile_pass = "build completed successfully"
-    compile_fail = "build failed"    
-    build_logs   = find_logs(['.compile.log'], os.listdir(LOG_DIR), directory=LOG_DIR) 
-    
-    if type_to_report:
-        type_to_report = compile_pass if type_to_report == "passed" else compile_fail                          
-        build_logs = { f:log for f,log in build_logs.items() if type_to_report in log }            
-    
-    if tests:
-        build_logs = { f:log for f, log in build_logs.items() if f.split('compile.log')[0] in tests }
+    compile_fail = "build failed"
+    build_logs   = find_logs(['.compile.log'], os.listdir(LOG_DIR), directory=LOG_DIR)
 
-    build_pass_fn  = lambda x: True if compile_pass in x else False
+    if type_to_report:
+        type_to_report = compile_pass if type_to_report == "passed" else compile_fail
+        build_logs     = {f: log for f, log in build_logs.items() if type_to_report in log}
+
+    if tests:
+        build_logs = {f: log for f, log in build_logs.items() if f.split('compile.log')[0] in tests}
+
+    build_pass_fn = lambda x: True if compile_pass in x else False
     report_log(build_logs, build_pass_fn, print_header=True)
     if exitcode != None:
         exit(exitcode)
-    
+
+
 def report_log(data_dict, success_fn, print_header=True):
     """
         Purpose: 
@@ -973,15 +1087,16 @@ def report_log(data_dict, success_fn, print_header=True):
     """
     for header in sorted(data_dict.keys()):
         data    = data_dict[header]
-        success = success_fn(data)                                 
-        if header and data and print_header:                
-            INFORM(header, color=CYAN)  
-            INFORM(data,   color=GREEN if success_fn(data) else RED)                                                                   
-        elif header and not data: # .diff files are empty == success
+        success = success_fn(data)
+        if header and data and print_header:
+            INFORM(header, color=CYAN)
+            INFORM(data, color=GREEN if success_fn(data) else RED)
+        elif header and not data:               # .diff files are empty == success
             INFORM(header, color=GREEN if success_fn(data) else RED)
         else:
-            INFORM(data,   color=GREEN if success_fn(data) else RED)
-               
+            INFORM(data, color=GREEN if success_fn(data) else RED)
+
+
 def find_logs(exts, tests_to_report, directory=OUTPUT_DIR):
     """
         Purpose: 
@@ -990,12 +1105,14 @@ def find_logs(exts, tests_to_report, directory=OUTPUT_DIR):
     """
     logs = {}
     for f in os.listdir(directory):
-        if any([f.endswith(ext) for ext in exts]) and any([t in f for t in tests_to_report]):                        
+        if any([f.endswith(ext) for ext in exts]) and any([t in f for t in tests_to_report]):
             logs[f] = Path(os.path.join(directory, f)).read_text()
     return logs
 
+
 def cleanup():
     chmod_dir(TESTSET_DIR, "770")
+
 
 def run_autograder(argv):
     OPTS = parse_args(argv)
@@ -1003,46 +1120,46 @@ def run_autograder(argv):
     if not os.path.exists('testset.toml'):
         FAIL("testset.toml must be in the current directory")
 
-    TOML = tml.load('testset.toml') 
-    
+    TOML = tml.load('testset.toml')
+
     #[TODO] make below feature 'work' as-expected.
     # if we've run tests already, load them in from the log files; otherwise build fresh tests
     # gradescope makes a file /autograder/results/stdout
     # if os.path.exists("results") and os.listdir("results") not in [[], ['stdout']]:
-        
+
     #     TESTS = {}
     #     for f in [x for x in os.listdir(LOG_DIR) if x.endswith(".summary")]:
-    #         fdata = Path(os.path.join(LOG_DIR, f)).read_text()             
-    #         TESTS[f.split('.summary')[0]] = Test(TestConfig(**ast.literal_eval(fdata)))            
-    # else:    
+    #         fdata = Path(os.path.join(LOG_DIR, f)).read_text()
+    #         TESTS[f.split('.summary')[0]] = Test(TestConfig(**ast.literal_eval(fdata)))
+    # else:
     TESTS = load_tests(TOML)
-        
-    # make sure user called program correctly    
-    OPTS  = validate_opts(TESTS, OPTS)
+
+    # make sure user called program correctly
+    OPTS = validate_opts(TESTS, OPTS)
 
     # filters tests based on user options (i.e. passed/failed, -t test01, etc.)
     TESTS = filter_tests(TESTS, OPTS)
 
-    try:       
-        build_testing_directories()  
+    try:
+        build_testing_directories()
         compile_execs(TOML, TESTS, OPTS)
-        TESTS = run_tests(TESTS, OPTS)    
-        
-        if OPTS['status']:       
-            statusfile    = Path(f"{LOG_DIR}/status").read_text().splitlines()        
-            filteredlines = list(filter(lambda l: any([t in l for t in TESTS]), statusfile))                     
+        TESTS = run_tests(TESTS, OPTS)
+
+        if OPTS['status']:
+            statusfile    = Path(f"{LOG_DIR}/status").read_text().splitlines()
+            filteredlines = list(filter(lambda l: any([t in l for t in TESTS]), statusfile))
             line_pass     = lambda x: True if "passed" in x else False if "failed" in x else None
-            report_log({i:l for i,l in enumerate(filteredlines)}, line_pass, print_header=False)
-                
-        elif OPTS['diff']:                               
-            dtests = find_logs(OPTS['diff'], TESTS.keys())                    
+            report_log({i: l for i, l in enumerate(filteredlines)}, line_pass, print_header=False)
+
+        elif OPTS['diff']:
+            dtests = find_logs(OPTS['diff'], TESTS.keys())
             report_log(dtests, lambda x: x == '')
 
-        elif OPTS['compile_logs']:               
+        elif OPTS['compile_logs']:
             report_compile_logs(exitcode=0, type_to_report=OPTS['filter'], tests=TESTS.keys())
 
-        elif OPTS['valgrind']: 
-            vtests     = find_logs(['.valgrind'], TESTS.keys())         
+        elif OPTS['valgrind']:
+            vtests     = find_logs(['.valgrind'], TESTS.keys())
             vtest_pass = lambda x: MEMERR_PASS in x and MEMLEAK_PASS in x
             report_log(vtests, vtest_pass)
         else:
@@ -1054,6 +1171,7 @@ def run_autograder(argv):
 
     finally:
         cleanup()
+
 
 if __name__ == '__main__':
     run_autograder(sys.argv[1:])

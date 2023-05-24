@@ -12,6 +12,8 @@ RUN apt-get install software-properties-common \
                     valgrind \
                     ssh \                    
                     time \
+                    postgresql-client \
+                    jq \
                     clang-12 -y
 
 # use clang++
@@ -19,16 +21,10 @@ RUN ln -s /usr/bin/clang++-12 /usr/bin/clang++
 
 # install python packages
 RUN python3 -m pip install --upgrade pip
-RUN python3 -m pip install toml dataclasses tqdm filelock python_dateutil
+RUN python3 -m pip install toml dataclasses tqdm filelock python_dateutil psycopg2-binary
 
 # run_autograder has to be in /autograder/ or gradescope fails to run
 COPY bin/run_autograder /autograder/run_autograder
-
-# mkdir to move setup scripts and copy necessary files
-RUN mkdir /autograder/source/
-
-# copy configuration file
-COPY autograder_config.ini /autograder/source/autograder_config.ini
 
 # message of the day
 COPY etc/motd /etc/motd
@@ -39,5 +35,9 @@ COPY lib/DiffHighlight.pm /usr/share/perl5/
 # pretty bash terminal header
 RUN printf "export PS1=\"\\u@gs:\\W\\$ \"\n" >> ~/.bashrc
 
-# copy the course repository
-COPY course-repo /autograder/source/course-repo/
+# copy configuration files
+COPY etc/autograder_config.ini /autograder/source/autograder_config.ini
+COPY etc/token_config.ini /autograder/source/token_config.ini
+
+# clone the course repository
+COPY course-repo/ /autograder/source/course-repo/
