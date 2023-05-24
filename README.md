@@ -140,7 +140,7 @@ At Tufts, we have a system for students to be able to manage late submissions wi
 ### Postgres
 Although maintaining a file in the repo is at first glance an option, the container needs write permission to the repo, which could get hairy. Likewise, unintended consequences with many students may occur. The solution presented here is Postgres. All of the connection to the server is maintained in the back-end: you only have to setup the server (free) and add a few config variables. 
 
-The way the table will is organized, there is one row per student, with one column representing the tokens remaining ('tokens left'), and a column per assignment, which will be created automatically. The value of the assignment columns will default to 0, and will increase by 1 for each token the student uses on that assignment. Likewise, the 'tokens left' value will decrement for each token used. 
+The way the postgres table will be organized, there will be one row per student, with one column representing the tokens remaining ('tokens left'), and a column per assignment, which will be created automatically. The value of the assignment columns will default to 0, and will increase by 1 for each token the student uses on that assignment. Likewise, the 'tokens left' value will decrement for each token used. 
 
 For even a few hundred students, the free 'TinyTurtle' option at ElephantSQL will work fine. 
 1) Create an account at ElephantSQL and a new TinyTurtle database (free) [or, make and host a postgres db somewhere else].
