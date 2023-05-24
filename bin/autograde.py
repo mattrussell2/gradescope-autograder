@@ -93,7 +93,8 @@ def RUN(cmd_ary,
         universal_newlines=False,
         preexec_fn=None,
         stdout=None,
-        stderr=None):
+        stderr=None,
+        user=None):
     """
         Runs the subprocess module on the given command and returns the result.
 
@@ -119,7 +120,8 @@ def RUN(cmd_ary,
                           input=input,
                           preexec_fn=preexec_fn,
                           stdout=stdout,
-                          stderr=stderr)
+                          stderr=stderr, 
+                          user=user)
 
 
 def FAIL(s):
@@ -343,7 +345,7 @@ class Test:
             tmpvars['canonicalizer'] = f"function: [{self.ccizer_name}]"
             pprint(tmpvars, stream=f)
 
-    def run_exec(self, exec_prepend=None, STDOUTPATH=None, STDERRPATH=None):
+    def run_exec(self, exec_prepend=None, STDOUTPATH=None, STDERRPATH=None, user="student"):
         """
             Purpose: 
                 Run self.executable from BUILD_DIR; send output streams to STDOUTPATH and STDERRPATH
@@ -378,7 +380,8 @@ class Test:
                      cwd=BUILD_DIR,
                      preexec_fn=limit_virtual_memory(self.kill_limit),
                      stdout=stdout,
-                     stderr=stderr)
+                     stderr=stderr, 
+                     user=user)
 
         for f in [stdin, stdout, stderr]:
             if f != None:
@@ -775,7 +778,7 @@ def compile_exec(target):
 
     with open(f"{LOG_DIR}/{target}.compile.log", "w") as f:
         INFORMF(f"== running make {target} ==\n", f, color=CYAN)
-        compilation_proc    = RUN(["make", target], cwd=BUILD_DIR, stdout=f, stderr=subprocess.STDOUT)
+        compilation_proc    = RUN(["make", target], cwd=BUILD_DIR, stdout=f, stderr=subprocess.STDOUT, user="student")
         compilation_success = compilation_proc.returncode == 0
         compilation_color   = GREEN if compilation_success else RED
 
@@ -792,7 +795,7 @@ def compile_exec(target):
             compilation_success = False
         else:
             INFORMF("\nbuild completed successfully\n", stream=f, color=GREEN)
-            RUN(["chmod", "u+x", target], cwd=BUILD_DIR)               # g++ doesn't always play nice, so chmod it
+            RUN(["chmod", "a+x", target], cwd=BUILD_DIR)  # g++ doesn't always play nice, so chmod it
     return compilation_success
 
 
@@ -884,8 +887,12 @@ def build_testing_directories():
     Path(f'{LOG_DIR}/status.lock').write_text("Lockfile for status reporting")
     Path(f'{LOG_DIR}/status').write_text("")
 
-    # don't allow student code to write to the testset!
+    # don't allow students to see/write/execute anything related to the testset
     chmod_dir(TESTSET_DIR, "550")
+
+    # student code can write to the output/log dirs
+    chmod_dir(OUTPUT_DIR, "777")
+    chmod_dir(LOG_DIR, "777")
 
 
 class CustomFormatter(argparse.HelpFormatter):

@@ -15,8 +15,8 @@ fi
 source $SOURCE_DIR/autograder_config.ini
 
 # go to the repo and pull; hide output from students put put in log if needed
-cd    $REPO_ROOT
-git   pull -f > $SOURCE_DIR/PULL_LOG 2>&1
+cd  $REPO_ROOT
+git pull -f > $SOURCE_DIR/PULL_LOG 2>&1
 
 # make bin/ available to autograder (diff-so-pretty, make_gradescope_results.py, etc.)
 export PATH=$PATH:$REPO_ROOT/$AUTOGRADING_ROOT/bin
@@ -25,6 +25,7 @@ export PATH=$PATH:$REPO_ROOT/$AUTOGRADING_ROOT/lib
 # copy the autograding files for this assignment
 cp -r $REPO_ROOT/$ASSIGN_ROOT/$ASSIGNMENT_TITLE/$ASSIGN_AUTOGRADING_SUBFOLDER/* /autograder/
 
+# validate our submission is number <= X, and tokens, if we're using them. 
 validate_submission
 
 rc=$?
@@ -32,6 +33,15 @@ if [ $rc -ne 0 ]; then
     echo "Submission validation failed. Exiting."
     exit $rc
 fi
+
+# remove this file so there is no chance of student code accessing the postgres URL
+rm /autograder/source/token_config.ini
+
+# make the repo files unavailable to the student group, but still traversable
+chmod -R 771 $REPO_ROOT
+
+# students still need to access the autograde program, and possibly to the library files
+chmod 775 $REPO_ROOT/$AUTOGRADING_ROOT/bin/autograde* $REPO_ROOT/$AUTOGRADING_ROOT/lib
 
 # run the autograder!
 cd /autograder/

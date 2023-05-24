@@ -35,6 +35,9 @@ COPY lib/DiffHighlight.pm /usr/share/perl5/
 # pretty bash terminal header
 RUN printf "export PS1=\"\\u@gs:\\W\\$ \"\n" >> ~/.bashrc
 
+# use this user to run components of the autograder that run student code
+RUN adduser student --no-create-home --disabled-password --gecos ""
+
 # copy configuration files
 COPY etc/autograder_config.ini /autograder/source/autograder_config.ini
 COPY etc/token_config.ini /autograder/source/token_config.ini
