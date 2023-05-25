@@ -68,10 +68,6 @@ DEFAULT_NON_CODE_STYLE_CHECKSET = ['README', '.h', '.cpp']
 DEFAULT_CODE_STYLE_CHECKLIST = ['.h', '.cpp']
 DEFAULT_MAX_COLUMNS = 80
 
-def limit_virtual_memory(limit):
-    resource.setrlimit(resource.RLIMIT_DATA, (limit, limit))
-
-
 def COLORIZE(s, color):
     return f"{START_COLOR}{color}{s}{RESET_COLOR}"
 
@@ -345,6 +341,11 @@ class Test:
             tmpvars['canonicalizer'] = f"function: [{self.ccizer_name}]"
             pprint(tmpvars, stream=f)
 
+    
+    def limit_virtual_memory(self):
+        resource.setrlimit(resource.RLIMIT_DATA, (self.kill_limit, self.kill_limit))
+
+
     def run_exec(self, exec_prepend=None, STDOUTPATH=None, STDERRPATH=None, user="student"):
         """
             Purpose: 
@@ -378,7 +379,7 @@ class Test:
                      timeout=self.max_time,
                      stdin=stdin,
                      cwd=BUILD_DIR,
-                     preexec_fn=(lambda x: limit_virtual_memory(self.kill_limit)) if user == "student" else None,
+                     preexec_fn=self.limit_virtual_memory if user == "student" else None,
                      stdout=stdout,
                      stderr=stderr, 
                      user=user)
