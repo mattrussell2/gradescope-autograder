@@ -31,6 +31,7 @@ def INFORM(s, color):
 INFORM("== Submission Validation ==", CYAN)
 
 def EXIT_FAIL(message):
+    message += f"\nIf you have already submitted, you can activate a different submission by clicking the 'Submission History' button below. Whichever submission you activate will be the one that is graded."
     with open("/autograder/results/results.json", 'w') as f:
         json.dump( {
                 "score": 0, 
@@ -46,6 +47,9 @@ def EXIT_FAIL(message):
     exit(1)
 
 def EXIT_SUCCESS(message):
+    message += f"\nYou have used {len(PREV_SUBMISSIONS) + 1} / 5 submissions for this assignment."
+    with open("/autograder/results/token_results", 'w') as f:
+        f.write(message)
     INFORM(message, GREEN) 
     try:
         CONN.close()
@@ -64,10 +68,10 @@ ASSIGN_NAME      = METADATA['assignment']['title'].replace(' ', '_')
 
 MAX_SUBMISSIONS  = TESTSET_TOML.get('max_submissions', AG_CONFIG['SUBMISSIONS_PER_ASSIGN'])
 if len(PREV_SUBMISSIONS) >= MAX_SUBMISSIONS: 
-    EXIT_FAIL(f"ERROR: max submissions exceeded for this assignment.")
+    EXIT_FAIL(f"ERROR: Max submissions exceeded for this assignment.")
 
 if TOKEN_CONFIG['MANAGE_TOKENS'] == "false":
-    EXIT_SUCCESS("Submission successful.")
+    EXIT_SUCCESS("SUCCESS")
 
 GRACE_TIME         = timedelta(minutes=TOKEN_CONFIG["GRACE_TIME"]) 
 TOKEN_TIME         = timedelta(minutes=TOKEN_CONFIG["TOKEN_TIME"])
@@ -76,18 +80,15 @@ DUE_TIME           = dateparser.parse(METADATA['users'][0]['assignment']['due_da
 ONE_TOKEN_DUE_TIME = DUE_TIME + TOKEN_TIME
 TWO_TOKEN_DUE_TIME = DUE_TIME + TOKEN_TIME * 2
 
-# no tokens required!
-if SUBMISSION_TIME <= DUE_TIME: 
-    exit(0)
-
 if SUBMISSION_TIME > TWO_TOKEN_DUE_TIME:
-    EXIT_FAIL("ERROR: After the two-token deadline.")
+    EXIT_FAIL("ERROR: After two-token deadline.")
 
 COMMANDS = {
     'get_headers': "SELECT column_name FROM information_schema.columns WHERE table_name = 'tokens';",
     'add_user': f"INSERT INTO tokens(pk) VALUES('{NAME}');",
     'get_tokens': f"SELECT * FROM tokens WHERE pk = '{NAME}';",
-    'use_token': f"UPDATE tokens SET \"tokens left\" = \"tokens left\" - 1, \"{ASSIGN_NAME}\" = \"{ASSIGN_NAME}\" + 1 WHERE pk = '{NAME}';"
+    'use_token': f"UPDATE tokens SET \"tokens left\" = \"tokens left\" - 1, \"{ASSIGN_NAME}\" = \"{ASSIGN_NAME}\" + 1 WHERE pk = '{NAME}';", 
+    'add_assignment': f"ALTER TABLE tokens ADD COLUMN \"{ASSIGN_NAME}\" INTEGER DEFAULT 0;"
 }
 
 CONN   = psycopg2.connect(TOKEN_CONFIG["PG_REM_PATH"])
@@ -98,7 +99,7 @@ HEADERS = [x[0] for x in CURSOR.fetchall()]
 
 # add the assignment to the db if it not there yet.
 if ASSIGN_NAME not in HEADERS:
-    CURSOR.execute(f"ALTER TABLE tokens ADD COLUMN \"{ASSIGN_NAME}\" INTEGER DEFAULT 0;")
+    CURSOR.execute(COMMANDS['add_assignment'])
     CONN.commit()
 
     CURSOR.execute(COMMANDS['get_headers'])
@@ -117,40 +118,44 @@ TOKENDATA = dict(zip(HEADERS, USERDATA))
 TOKENS_LEFT = TOKENDATA['tokens left']
 TOKENS_USED = TOKENDATA[ASSIGN_NAME]
 
+# no tokens required!
+if SUBMISSION_TIME <= DUE_TIME: 
+    EXIT_SUCCESS("SUCCESS: Submission arrived before the due date - no tokens required.\nYou have {TOKENS_LEFT} tokens remaining for this semester.")
+
 if SUBMISSION_TIME <= ONE_TOKEN_DUE_TIME:
     
     # already used a token
     if TOKENS_USED == 1:
-        EXIT_SUCCESS(f"Submission succeded. Already used one token previously for {ASSIGN_NAME}, so zero tokens used. You have {TOKENS_LEFT} tokens remaining.")
+        EXIT_SUCCESS(f"SUCCESS: Already used one token previously for {ASSIGN_NAME}, so zero tokens used.\nYou have {TOKENS_LEFT} tokens remaining for this semester.")
 
     # we need to use a token
     if TOKENS_USED == 0:
         if TOKENS_LEFT == 0:
-            EXIT_FAIL("ERROR: tokens needed: 1, tokens remaining: 0.")
+            EXIT_FAIL("ERROR: Tokens needed: 1, tokens available: 0.")
 
         CURSOR.execute(COMMANDS['use_token'])
         CONN.commit()
-        EXIT_SUCCESS(f"Submission succeeded. Used one tokens. You have {TOKENS_LEFT - 1} tokens remaining.")
+        EXIT_SUCCESS(f"SUCCESS: Used one token.\nYou have {TOKENS_LEFT - 1} tokens remaining for the semester.")
     
 
 if SUBMISSION_TIME <= TWO_TOKEN_DUE_TIME:
 
     if TOKENS_USED == 2: 
-        EXIT_SUCCESS(f"Submission succeded. Already used two tokens previously for {ASSIGN_NAME}, so zero tokens used. You have {TOKENS_LEFT} tokens remaining.")
+        EXIT_SUCCESS(f"SUCCESS: Already used two tokens previously for {ASSIGN_NAME}, so zero tokens used.\nYou have {TOKENS_LEFT} tokens remaining for the semester.")
     
     if TOKENS_USED == 1:
         if TOKENS_LEFT == 0:
-            EXIT_FAIL("ERROR: tokens needed: 2, tokens remaining: 0.")
+            EXIT_FAIL("ERROR: Tokens needed: 2, tokens available: 0.")
 
         CURSOR.execute(COMMANDS['use_token'])
         CONN.commit()
-        EXIT_SUCCESS(f"Submission succeeded. Already used one token previously for {ASSIGN_NAME}, but after one token deadline, so one token used. You have {TOKENS_LEFT - 1} tokens remaining.")
+        EXIT_SUCCESS(f"SUCCESS: Already used one token previously for {ASSIGN_NAME}, but after one token deadline, so one token used.\nYou have {TOKENS_LEFT - 1} tokens remaining for the semester.")
     
     if TOKENS_USED == 0:
         if TOKENS_LEFT < 2:
-            EXIT_FAIL(f"ERROR: tokens needed: 2, tokens remaining: {TOKENS_LEFT}.")
+            EXIT_FAIL(f"ERROR: Tokens needed: 2, tokens available: {TOKENS_LEFT}.")
 
         CURSOR.execute(COMMANDS['use_token'])
         CURSOR.execute(COMMANDS['use_token'])
         CONN.commit()
-        EXIT_SUCCESS(f"Submission succeeded. Used two tokens. You have {TOKENS_LEFT - 2} tokens remaining.")
+        EXIT_SUCCESS(f"SUCCESS: Used two tokens.\nYou have {TOKENS_LEFT - 2} tokens remaining for the semester.")
