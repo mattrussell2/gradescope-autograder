@@ -678,7 +678,7 @@ def make_valgrind_test():
 
 def make_results():
     make_token_test()
-    make_test00(style_violations)
+    #make_test00(style_violations)
 
     make_style_test(style_violations)
     make_valgrind_test()
