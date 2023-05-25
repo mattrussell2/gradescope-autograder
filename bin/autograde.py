@@ -378,7 +378,7 @@ class Test:
                      timeout=self.max_time,
                      stdin=stdin,
                      cwd=BUILD_DIR,
-                     preexec_fn=limit_virtual_memory(self.kill_limit),
+                     preexec_fn=(lambda x: limit_virtual_memory(self.kill_limit)) if user == "student" else None,
                      stdout=stdout,
                      stderr=stderr, 
                      user=user)
@@ -389,7 +389,7 @@ class Test:
 
         return result.returncode
 
-    def run_test(self):
+    def run_test(self, user="student"):
         """
             Purpose: 
                 Runs the 'standard' test and sets variables associated with pass / failure
@@ -404,7 +404,8 @@ class Test:
 
         test_rcode = self.run_exec(exec_prepend=prepend,
                                    STDOUTPATH=self.fpaths['stdout'],
-                                   STDERRPATH=self.fpaths['stderr'])
+                                   STDERRPATH=self.fpaths['stderr'], 
+                                   user=user)
 
         test_rcode       = abs(test_rcode)               # returns negative value if killed by signal
         self.exit_status = test_rcode
@@ -431,7 +432,7 @@ class Test:
             if "std::bad_alloc" in stderrdata:
                 self.kill_limit_exceeded = True
 
-    def run_valgrind(self):
+    def run_valgrind(self, user="student"):
         """
             Purpose: 
                 Runs the valgrind test and sets variables associated with valgrind pass / failur
@@ -449,7 +450,7 @@ class Test:
             f"--log-file={self.fpaths['valgrind']}"
         ]
         if self.valgrind:
-            self.valgrind_rcode = self.run_exec(valgrind_command)
+            self.valgrind_rcode = self.run_exec(valgrind_command, user=user)
             if not os.path.exists(self.fpaths['valgrind']):
                 self.valgrind_passed  = False
                 self.memory_leaks     = False
@@ -718,16 +719,18 @@ def report_results(TESTS, OPTS):
     print_testgroup(report, valgrind_keys, OPTS)
 
 
-def run_full_test(test):
+def run_full_test(tup):
+    test = tup[0]
+    user = tup[1]
     test.save_status(finished=False)
     if not os.path.exists(os.path.join(BUILD_DIR, test.executable)):
         test.success  = False
         test.compiled = False
         test.save_status(finished=True)
     else:
-        test.run_test()
+        test.run_test(user=user)
         test.run_diffs()
-        test.run_valgrind()
+        test.run_valgrind(user=user)
         test.determine_success()
         test.save_status(finished=True)
     return test
@@ -744,15 +747,16 @@ def run_tests(TESTS, OPTS):
             Make sure to store result as list before returning
     """
     INFORM(f"\n== Running {len(TESTS)} test{'s' if len(TESTS) > 1 else ''} ==", color=CYAN)
+    user = None if OPTS["no_user"] else "student"
     if OPTS['jobs'] == 1:
-        return {test.testname: run_full_test(test) for test in TESTS.values()}
+        return {test.testname: run_full_test((test, user)) for test in TESTS.values()}
     else:
-        result = process_map(run_full_test, TESTS.values(), ncols=60, max_workers=OPTS['jobs'])
+        result = process_map(run_full_test, [(x, user) for x in TESTS.values()], ncols=60, max_workers=OPTS['jobs'])
 
         return {test.testname: test for test in result}
 
 
-def compile_exec(target):
+def compile_exec(target, OPTS):
     """
         Purpose:    
             compile the target executable in BUILD_DIR    
@@ -776,9 +780,11 @@ def compile_exec(target):
         else: schar             = '\\'
         target                  = target.split(schar)[-1]
 
+    user = None if OPTS["no_user"] else "student"
+
     with open(f"{LOG_DIR}/{target}.compile.log", "w") as f:
         INFORMF(f"== running make {target} ==\n", f, color=CYAN)
-        compilation_proc    = RUN(["make", target], cwd=BUILD_DIR, stdout=f, stderr=subprocess.STDOUT, user="student")
+        compilation_proc    = RUN(["make", target], cwd=BUILD_DIR, stdout=f, stderr=subprocess.STDOUT, user=user)
         compilation_success = compilation_proc.returncode == 0
         compilation_color   = GREEN if compilation_success else RED
 
@@ -795,7 +801,7 @@ def compile_exec(target):
             compilation_success = False
         else:
             INFORMF("\nbuild completed successfully\n", stream=f, color=GREEN)
-            RUN(["chmod", "a+x", target], cwd=BUILD_DIR)  # g++ doesn't always play nice, so chmod it
+            RUN(["chmod", "a+x", target], cwd=BUILD_DIR, user=user)  # g++ doesn't always play nice, so chmod it
     return compilation_success
 
 
@@ -824,7 +830,7 @@ def compile_execs(TOML, TESTS, OPTS):
         INFORM(
             f"== Compiling {len(their_makefile_tests)} executable{'s' if len(their_makefile_tests) >= 1 else ''} with the student's makefile ==",
             color=CYAN)
-        compiled_list = [compile_exec(x) for x in their_makefile_tests]
+        compiled_list = [compile_exec(x, OPTS) for x in their_makefile_tests]
 
     if our_makefile_tests:
         INFORM(
@@ -834,7 +840,7 @@ def compile_execs(TOML, TESTS, OPTS):
             print("our_makefile option requires a custom Makefile in testset/makefile/")
         else:
             shutil.copyfile(MAKEFILE_PATH, 'results/build/Makefile')
-        compiled_list += [compile_exec(x) for x in our_makefile_tests]
+        compiled_list += [compile_exec(x, OPTS) for x in our_makefile_tests]
 
     if sum(compiled_list) != num_execs:
         INFORM(f"== Some Tests Failed to Compile! ==\n", color=RED)
@@ -1026,6 +1032,7 @@ def parse_args(argv):
                           show diff of one or more output streams: stdout, stderr, outfiles
             -t, --tests [testXX [testXX ...]]
                           one or more tests to run
+            -n, --no-user do not run tests in group 'student' [used to build container on local system]
                         
             These args are passed in here 'as expected' i.e. flags are bools, 
             and 'filter', 'diff', and 'tests' are all lists of strings. 
@@ -1038,7 +1045,8 @@ def parse_args(argv):
         'f' : "one or more filters to apply: (f)ailed, (p)assed",
         'd' : "one or more diffs to show: stdout, stderr, and ofile",
         't' : "one or more tests to run",
-        'l' : "show output in one column"
+        'l' : "show output in one column", 
+        'n' : "runs tests without running as student user. Used to build container on local system"
     }
     ap = argparse.ArgumentParser(formatter_class=CustomFormatter)
     ap.add_argument('-s', '--status', action='store_true', help=HELP['s'])
@@ -1049,6 +1057,7 @@ def parse_args(argv):
     ap.add_argument('-d', '--diff', nargs='*', metavar="diffopt", type=str, help=HELP['d'])
     ap.add_argument('-f', '--filter', nargs='*', metavar="filteropt", type=str, help=HELP['f'])
     ap.add_argument('-t', '--tests', nargs='*', metavar="testXX", type=str, help=HELP['t'])
+    ap.add_argument('-n', '--no-user', action='store_true', help=HELP['n'])
 
     args = vars(ap.parse_args(argv))
     if args['jobs'] == -1:

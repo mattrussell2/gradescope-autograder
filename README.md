@@ -492,6 +492,12 @@ That should be enough to get you up and running! Please feel free to contact me 
 * Update the funcationality of `bin/autograde.py` so that if a grader is re-running tests, we don't nuke the entire build folder, but intelligently load the data from alread-run tests. Also, need to verify that the various filter, etc. options work as expected. 
 
 # Changelog
+## [2.0.1] - 2023-05-24
+* Changed
+    * `bin/build_ref_output.py` - add argument to autograde to not use 'student' user if building reference output
+    * `bin/autograde.py` - support arugment for not using `student` user. Also wrapped preexec fn in lambda - this was
+                           a latent bug! The preexec fn was being run globally rather than as a preexec, which makes a 
+                           lot of sense as to why we were seeing weird crashes. Also this is broken on OSX. :/
 ## [2.0.0] - 2023-05-24
 After token and security fixes, we're at a distinctly new point - 2.0. 
 * Changed

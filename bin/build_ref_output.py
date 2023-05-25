@@ -41,7 +41,7 @@ try:
     
     import autograde
     print("running tests")
-    autograde.run_autograder(['-j', str(ARGS['num_jobs'])])
+    autograde.run_autograder(['-j', str(ARGS['num_jobs']), '-n'])
    
     if not ARGS['no_copy']:
         print("copying output files to testset/ref_output")
