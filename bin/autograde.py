@@ -589,6 +589,7 @@ def print_testgroup(report, keys, OPTS):
         columns, lines = os.get_terminal_size()
     except OSError:
         columns = 144
+        
     if OPTS['lengthy_output']:
         col_width = columns
         max_width = col_width // 2
@@ -613,7 +614,7 @@ def print_testgroup(report, keys, OPTS):
         for teststr in report[title]['tests']:
             outstrs.append(COLORIZE(teststr, report[title]["color"]))
 
-    if OPTS['lengthy_output']:
+    if OPTS['lengthy_output'] or len(outstrs) <= 5:
         print('\n'.join(outstrs))
     else:
         if len(outstrs) % 2 != 0:
