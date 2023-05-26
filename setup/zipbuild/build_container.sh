@@ -18,7 +18,7 @@ cp -r etc/ build/etc
 
 # these two files need to be in the root dir
 cp setup/zipbuild/setup.sh build/
-cp bin/run_autograder .
+cp bin/run_autograder build/
 
 cd build
 
