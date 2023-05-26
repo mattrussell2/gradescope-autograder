@@ -6,6 +6,8 @@
 
 cd ../../ 
 
+source etc/autograder_config.ini
+
 # make build directory if it doesn't exist
 if [ ! -d "build" ]; then
     mkdir build
