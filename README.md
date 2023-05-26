@@ -79,6 +79,8 @@ NOTE! do not put any spaces around the `=` characters in this file.
 Okay! now continue with one of either the `.zip` or Docker methods below.
 
 ## .zip method
+##NOTE 5-26-2023 zipbuild is currently broken...working on fix ASAP
+
 As mentioned above, with the `.zip` method, you'll need to upload a `.zip` file for each 
 assignment (make sure to select `Ubuntu 22.04` for the container type; the Python version, etc. are configured to work with the Jammy Jellyfish defaults). However, there is no other setup required. For the future, if you make changes to any of the files in the `dockerbuild` folder, or to `bin/run_autograder`, make sure to rebuild and re-upload the `Autograder.zip` file. 
 
