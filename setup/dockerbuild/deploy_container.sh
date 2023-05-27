@@ -17,4 +17,4 @@ echo "${!REGISTRY_PASS_VARNAME}" | docker login "${CONTAINER_REMOTE}" --username
 docker push "${CONTAINER_REMOTE}/${!REGISTRY_USER_VARNAME}/${CONTAINER_NAME}:${CONTAINER_TAG}"
 
 # clean up 
-rm motd run_autograder token_config.ini autograder_config.ini Dockerfile
+rm motd run_autograder token_config.ini autograder_config.ini
