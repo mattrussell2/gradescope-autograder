@@ -8,36 +8,21 @@ If you have any questions, please reach out to me at `mrussell@cs.tufts.edu`, or
 # Infrastructure Setup
 
 ## Background
-Gradescope's autograders rely on Docker containers which are spun up each time 
-a submission is graded. However, there are two distinct methods with which you can customize the container.
-
-* The `.zip` method - for each assignment, this workflow is to manually upload a `.zip` file containing two scripts: `setup.sh`, which installs dependencies (e.g. `Python`, `clang`, etc.), and a shell script named `run_autograder`, which runs the autograder. Gradescope's default container image is adapted based on your setup.sh script.
-* The Docker method - this workflow is to build the Docker container from scratch and upload it to the container registry of your choice. Then for each assignment you simply point gradescope to use your container. 
-
-The Docker method is slightly more streamlined once it's setup. After uploading the container, for every assignment, you can point Gradescope to the container location - no `.zip` file uploading required, and no waiting for the container to be built again. If you already use Docker, or are feeling adventurous, go for this option. 
+As a high-level overview, each time a submission is provided to gradescope, or a ta re-runs tests:
+* A Docker container based on your build is spun up by Gradescope.
+* `git pull` gets the most recent version of your autograder and tests. 
+* `validate_submission.py` checks if the submission is acceptable
+* `autograde` runs student code and diff vs. reference output
+* `make_gradescope_results.py` parses the results from `autograde` and produce a `results.json` formatted for Gradescope. 
 
 ## Create Your Autograding Git Repo
-Regardless of which method you choose above, you will need a git repository for your autograder. Whenever an assignment is autograded, the code from your repository will be pulled, the assignment's autograding files will be copied to right place, and our autograding script will run tests and produce results for Gradescope. So, if you don't currently have a repository related to course material, please make one. 
-We suggest using gitlab for this: go to https://gitlab.cs.tufts.edu and 
-login with `LDAP` using your Tufts eecs `utln` and password. Then create a new repository from scratch. You do not need a `README`. 
-Now, in your terminal
-```
-mkdir your-repo-name
-cd your-repo-name
-git init
-git remote add origin git@gitlab.cs.tufts.edu:your_utln/your-repo-name.git
-git switch -c main 
-```
-The repo where you're reading this `README` is the sample repo for you to start with. This repository contains:
-* Files to setup assignments with either the `.zip` or Docker method, such that the autograding framework runs automatically. 
-* Our `C/C++` autograding framework.
-* A sample sanity check assignment which illustrates the possible tests you can run. 
-To copy these files
+Before we begin, you will need a git repository for your autograder. If you don't currently have a repository related to course material, please make one. We suggest using gitlab for this: go to https://gitlab.cs.tufts.edu and login with `LDAP` using your Tufts eecs `utln` and password. Then create a new repository from scratch [don't add a README]. Then, clone this repo to get the relevant files. 
 ```
 git clone git@gitlab.cs.tufts.edu:mrussell/gradescope-autograding
-rm -rf gradescope-autograding/.git
-mv gradescope-autograding/* .
-rm -rf gradescope-autograding
+mv gradescope-autograding YOUR_REPO_FOLDER_NAME
+cd YOUR_REPO_FOLDER NAME
+git remote set-url origin git@gitlab.cs.tufts.edu:YOUR_UTLN/YOUR_REPO_NAME.git
+git push
 ```
 Great! You will need an Access Token to provide the autograder container with permissions to the repo. To create one, go to gitlab in your browser, and navigate to the course repository you just created. Next, hover over the settings cog on the lower left, and select `Access Tokens`. Create one. We suggest only providing `read repository` access to the token. Feel free to select whatever you'd like for the name, expiration date, and role, however role must be at least `Developer` in order to be able to pull. Once the token is created, copy the key. 
 
@@ -53,7 +38,6 @@ Where the appropriate substitions have been made - for example:
 ```
 export AUTOGRADING_REPO_REMOTE_PATH="https://cs-15-2022uc:glpat-Blah8173Blah8023Blah@gitlab.cs.tufts.edu/mrussell/cs-15-2022uc.git"
 ```
-If you're teaching summer 2023 cs15 course, perhaps renaming `AUTOGRADING_REPO_REMOTE_PATH` to `CS_15_SUMMER_2023_AUTOGRADING_REPO_REMOTE_PATH` would be a good idea. 
 
 Make sure `source ~/.bashrc` (or equivalent) after editing the file.
 
@@ -83,7 +67,6 @@ REGISTRY_PASS_VARNAME = "GHPAT"
 
 [other]
 SUBMISSIONS_PER_ASSIGN = 5
-
 ```
 
 ### [paths]
@@ -112,6 +95,7 @@ Here is a visualization of the default directory tree and options
 
 |-
 ```
+**Note! The assignment name for an assignment in the `assignments/` folder must have the same name as the assignment name on Gradescope. An environment variable $ASSIGNMENT_TITLE is provided to the container by Gradescope, and this is used to find the autograder files. If the names don't match, there will be issues. One caveat is that you may use spaces in place of underscores on gradescope; however, the other text must match exactly (case sensitive).**
 
 ### [tokens]
 At Tufts, we have a system for students to be able to manage late submissions with 'tokens'. The token system is flexible and generally works well. The idea is that the students maintain a bank of X tokens, where each token is effectively a 1-day extension on a given assignment. For any assignment, the maximum number of tokens a student can use is usually 2 - so up to 2 days late. If you would like to use this system, see the tokens section below; otherwise simply ignore it. 
@@ -124,7 +108,14 @@ Extra info. The only one here currently is `SUBMISSIONS_PER_ASSIGN`, which allow
 
 
 ## Build the Container
-Note that both of these methods require a 'first-time' setup, which builds the container and puts your git repo inside of it. You will not need to rebuild your container after the first time, unless you make changes to any of the files in the `dockerbuild` or `zipbuild` folders, or to the `bin/run_autograder` script.  
+There are two methods by which you can build the Docker container for Gradescope:
+
+1) The `.zip` method - for each assignment, this workflow is to manually upload a `.zip` file to Gradescope that contains two scripts: `setup.sh`, which installs dependencies, and a shell script named `run_autograder`, which runs the autograder. Gradescope then adapts their default container image based on your setup.sh script.
+2) The Docker method - this workflow is to build the Docker container from scratch and upload it to the container registry of your choice. Then for each assignment you simply point gradescope to use your container. 
+
+The Docker method is slightly more streamlined once it's setup. After uploading the container, for every assignment, you can point Gradescope to the container location - no `.zip` file uploading required, and no waiting for the container to be built again. If you already use Docker, or are feeling adventurous, go for this option. 
+
+Both methods require a 'first-time' setup which builds the container and puts your git repo inside of it, but you will not need to rebuild your container after the first time, unless you make changes to any of the files in the `dockerbuild` or `zipbuild` folders, or to the `bin/run_autograder` script, or elsewhere specified in this document.  
 
 ### .zip: first time setup
 * `cd setup/zipbuild && ./build_container.sh` - this produces the necessary `Autograder.zip` file, which will be located in `setup/build/` 
@@ -134,57 +125,44 @@ Note that both of these methods require a 'first-time' setup, which builds the c
     * Go to the `configure autograder` section.
     * Select `Ubuntu 22.04` for the container type.
     * Upload the `Autograder.zip` file
-* It should build and be tagged with no errors - if not, check the output of the autograder. 
+* It should build and be tagged with no errors - this will take ~5 minutes.
 
 ## Docker: first-time setup
 0. Install Docker Desktop https://www.docker.com/products/docker-desktop/. 
 1. You will need to host your container somewhere. We suggest using the [GitHub container registry](https://docs.github.com/en/packages/working-with-a-github-packages-registry/working-with-the-container-registry), however if you have a 'pro' account on Dockerhub, that's also a good option. 
 2. For either registry, you will need a username and password/access token for that registry.
-3. See the [docker] section of `etc/config.toml`. You'll need to update the values of these variables as needed. Variables are as follows:
+3. See the [docker] section of `etc/config.toml`. You'll need to update the values of these variables as needed.
 
 |     KEY          |        Default       |        Purpose       |
 |------------------|----------------------|----------------------|
-| `CONTAINER_REMOTE`   | `ghcr.io` | Which container registry you use (default is GitHub) |
-| `CONTAINER_NAME`      | `gradescope-docker` | Name of the package repo that will hold your autograding docker container. |
+| `CONTAINER_REMOTE`  | `ghcr.io` | Which container registry you use (default is GitHub) |
+| `CONTAINER_NAME` | `gradescope-docker` | Name of the package repo that will hold your autograding docker container. |
 | `CONTAINER_TAG` | `autograder-autobuild` | Tag of the container which will be used for the course's autograder. One tag will be used per course| 
 | `REGISTRY_USER_VARNAME` | `GHUNAME` | Variable name of the environment variable which holds the username to login to the `CONTAINER_REMOTE`. 
 | `REGISTRY_PASS_VARNAME` | `GHPAT` | Variable name of the environment variable which holds the password/access token to login to the `CONTAINER_REMOTE` [NB: The PAT needs write:packages permissions]. 
 
-Note that in this case `GHUNAME` and `GHPAT` are the names of environment variables (NOT the values of the variables themselves). So with this example you'd need `export GHUNAME='myghubusername'` in your `~/.bashrc`, etc. Make sure to run `source ~/.bashrc` after editing the file.
-4. Build and deploy the container. Note: in rare cases, the Docker build process hangs in the early stages. If this happens to you, run `rm ~/.docker/config.json` and try again. 
+Note that in this case `GHUNAME` and `GHPAT` are the names of environment variables (NOT the values of the variables themselves). So with this example you'd need `export GHUNAME='myghubusername'` in your `~/.bashrc`, etc. Run `source ~/.bashrc` after editing the file.
+4. Build and deploy the container. In rare cases, the Docker build process hangs in the early stages. If this happens to you, run `rm ~/.docker/config.json` and try again. 
 ```
 cd setup/dockerbuild
 python3 deploy_container.py
 ```
-5. For either registry, after uploading your container [keep it private!], you will need to share it with gradescope's relevant account:
+5. For either registry, after uploading your container [keep it private!], you will need to share it with gradescope's relevant account - this will only have to be done once.
     * from github: `gradescope-autograder-servers` 
     * from dockerhub: `gradescopeecs`
 
 ## Docker - per-assignment todos
 Select the 'Manual Docker Configuration' option in the `configure autograder` section of the assignment; place the full remote path to your container (e.g. `ghcr.io/ghubusername/ghubpackageregistry:dockertag`). That's it! 
 
-## What happens when a student submits code
-When a student submits code: 
-* A Docker container based on your build is spun up.
-* The script located at `bin/run_autograder` is run.  This script (basically):
-    * Runs `git pull` to get the most recent version of your autograding tests. 
-    * Copies files for the assignment's autograder to `/autograder/` - the initial working directory for Gradescope's autograder.
-    * Runs `validate_submission.py` - checks if the submission number and tokens are valid [only used with configs that specify these options]
-    * Runs `autograde.py` - our autograding framework [details below]. 
-    * Runs `make_gradescope_results.py`, which parses the results files and saves the results at `/autograder/results/results.json` in a form readable by Gradescope. 
-
-**Note! The assignment name for an assignment in the course repository must be the same as the assignment name on Gradescope. An environment variable $ASSIGNMENT_TITLE is provided to our script, and this (along with the paths you specified earlier) is used to find the autograder files. If the names don't match, there will be issues. Update 6-17-2022: You may now use spaces in place of underscores on gradescope; however, the 
-other text must match exactly (case sensitive).** 
-
 ## Token Management
 At Tufts, we have a system for students to be able to manage late submissions with 'tokens'. The token system is flexible and generally works well. The idea is that the students maintain a bank of X tokens, where each token is effectively a 1-day extension on a given assignment. For any assignment, the maximum number of tokens a student can use is usually 2 - so up to 2 days late. 
 
 ### Postgres
-Although maintaining a file in the repo is at first glance an option, the container needs write permission to the repo, which could get hairy. Likewise, unintended consequences with many students may occur. The solution presented here is Postgres. All of the connection to the server is maintained in the back-end: you only have to setup the server (free) and add a few config variables. Also note that the database URL is not stored in the git repo, and the file which contains the URL is delted in the autograding docker container prior to execution of student's code. 
+The solution presented here to manage tokens is Postgres. All of the connection to the server is maintained in the back-end of the scripts here: you only have to setup the server (free) and add a few config variables. 
 
 The way the postgres table will be organized, there will be one row per student, with one column representing the tokens remaining ('tokens left'), and a column per assignment, which will be created automatically. The value of the assignment columns will default to 0, and will increase by 1 for each token the student uses on that assignment. Likewise, the 'tokens left' value will decrement for each token used. 
 
-For even a few hundred students, the free 'TinyTurtle' option at ElephantSQL will work fine. 
+For even a few hundred students, the free 'TinyTurtle' option at ElephantSQL should work fine. 
 1) Create an account at ElephantSQL and a new TinyTurtle database (free) [or, make and host a postgres db somewhere else].
 2) Run the following query to build the table. With ElephantSQL you can do this in the browser.  Change the value 5 below to the number of tokens you would like your students to have for the semester. Make sure to copy everything else exactly.
 ```
@@ -195,7 +173,7 @@ CREATE TABLE tokens(pk NAME PRIMARY KEY,
 ```
 POSTGRES_REMOTE_PATH="postgres://abcdefgh:nSgKEZiD55VdHDlzDXNBT@drona.db.elephantsql.com/abcdefgh"
 ```
-4) Edit the variables in the `[tokens]` section of the `etc/config.toml` file. Make sure to set `MANAGE_TOKENS` to `"true"`. 
+4) Update the variables in the `[tokens]` section of the `etc/config.toml` file. Make sure to set `MANAGE_TOKENS` to `"true"`. 
 
 |     KEY          |        Default       |        Purpose       |
 |------------------|----------------------|----------------------|
@@ -204,9 +182,16 @@ POSTGRES_REMOTE_PATH="postgres://abcdefgh:nSgKEZiD55VdHDlzDXNBT@drona.db.elephan
 | `STARTING_TOKENS` | `5` | Number of tokens each student has at the start of a semester | 
 | `MAX_PER_ASSIGN` | `2` | Maximum number of tokens supported for a given assignment. [NOTE: this must be 2 for now, more/less are not yet supported] | 
 | `POSTGRES_REMOTE_VARNAME` | `"POSTGRES_REMOTE_PATH"` | Variable name of the environment variable which holds the URL of the postgres db. [NOTE!! this variable is substitued with the actual value and put into the container at build time; if you change either the value here, or the actual value of the URL in your `~/.bashrc` file, you will need to rebuild your container. This goes for both Docker and zip build methods.] |
-| `MANAGE_TOKENS` | `"false"` | Whether or not to do token management [default of `"false"` will skip tokens entirely] - NOTE: variable needs to be in quotes|
+| `MANAGE_TOKENS` | `"false"` | Whether or not to do token management [default of `"false"` will skip tokens entirely] - NOTE: variable needs to be in quotes |
 
 Now, every time a student submits, prior to the autograder running, tokens will be checked if the assignment is late. If the token check fails, the autograder will fail immediately. You will want to let students know that in gradescope, if they click 'Submission History' at the bottom of the autograder page, they can 'activate' a different submission. Thus, they can choose which submission they would like to be used for grading. 
+
+## Security
+Security concerns have been raised re: Gradescope's containers by a number of people over the years. Our approach to maximizing security is as follows:
+* A non-root user is created (named `student`) during the container build process. 
+* Prior to running any element of a student's submitted code, all of the files of the repository and configuration files created during the build process are chmodded such that they are not visible to `student`.
+* All subprocess calls which will interact with student code [via `make`, or executing files produced by `make`], are run as the user `student`. 
+This ensures that any time student's code is run, they should not be able to see any of the back-end autograding files. 
 
 ## Conclusion
 Continue to the next section to learn about the autograding framework, and for a walkthrough to setup an assignment. 
@@ -216,30 +201,30 @@ Continue to the next section to learn about the autograding framework, and for a
 The autograding framework is designed to have you writing and deploying tests as quickly as possible. 
 There are two primary forms of assignment that this autograder supports:
 * Tests which are a set of `.cpp` driver files, each with its own `main()`. 
-* Tests which build and run a student's completed executable program with different inputs. 
+* Tests which build and run a student's executable program with different inputs. 
 
-In either case, you can send a file to `stdin` for a test, and `stdout`/`stderr` will both `diff`'d automatically against the output of a reference implementation. Output can be canonicalized before `diff`, and `valgrind` can be run on the programs as well. Limits can be set for memory usage, timeout, etc. See details below.
+In either case, `stdout`/`stderr` will both `diff`'d automatically against the output of a reference implementation. You can optionally send a file to `stdin` for a test, output can be canonicalized before `diff`, and `valgrind` can be run on the programs as well. Limits can be set for memory usage, timeout, etc. See details below.
 
 ## `testset.toml` configuration file
-The framework depends on a `testset.toml` file (https://toml.io) to specify the testing configuration. `testset.toml` will be configured as follows:
+The framework depends on a `testset.toml` file (https://toml.io) to specify the testing configuration. `testset.toml` must be configured as follows:
 ```
 [common]
-# common test options will go here
+# common test options go here
 # this section can be empty, but is mandatory
 # this section must be named "common" 
 
 [set_of_tests] 
-# subsequent sections will each contain a group of tests to run
-# configuration options placed here will override [common]
+# subsequent sections in the .toml file contain a group of tests to run
+# configuration options placed under this section here will override the settings in [common] for these tests
 # test group names (e.g. [set_of_tests]) can be anything
 # tests in a section must be placed in a list named `tests'
 # tests = [
-      {testname="test0", description="my first test"},
-      {testname="test1", description="my second test"},
+      { testname = "test0", description = "my first test" },
+      { testname = "test1", description = "my second test" },
       ..., 
-      {testname="testn", description="my nth test"},
+      { testname = "testn", description = "my nth test" },
 ]
-# each test must have testname and description fields
+# each test **must** have testname and description fields
 # you may add any other option to a given test
 # test-specific options override any 'parent' options
 ```
@@ -271,7 +256,7 @@ depending on your test configuration.
 |--- results/
 |   |--- build/      
 |   |   |--- [student submission files]
-|   |   |--- [files copied from copy/ and symlinked from link/]
+|   |   |--- [files copied from copy/ and symlinks that symlink to files in link/]
 |   |   |--- test01   [compiled executables]
 |   |   |--- ...
 |   |   |--- test21
@@ -300,33 +285,51 @@ depending on your test configuration.
 |-
 ```
 ## General Notes
-* Files in `testset/stdin/` named `<testname>.stdin` (`test01.stdin`) will be sent to `stdin` for that test. 
-* The `.diff`, `.ccized`, and `.valgrind` output files for each test will only be created if your configuation requires them.
-* This framework supports `diff`ing against any number of output files written to by the program. Such files must be named `<testname>.ANYTHING_HERE.ofile`. The expectation is that the program will receive the name of the file to produce as an input argument. Then, in the `testset.toml` file, you will ensure that the `argv` variable includes `#{testname}.ANYTHING_HERE.ofile` in the `argv` list. See the example configuration #2 below for details. 
-* Canonicalization functions which are used by the autograder in `canonicalizers.py` must:
-    * Take four parameters:
-        1.  A string containing the student's output from whichever stream is to be canonicalized
-        2.  A string containing the reference solution's (non-canonicalized) output from whichever stream is to be canonicalized
-        3.  A string containing the name of the test (e.g. `test01`)
-        4.  A dictionary containing any specific test configuration options (e.g. `{'my_config_var': 10}`)
-    * Return a string, which contains the canonicalized output of the student
-* The `summary` files contain a dump of the state of the backend `Test` object from the `autograde.py` script - a summary is created upon initialization of the test, and is overwritten after a test finishes. All of the configuration options (e.g. `diff_stdout`, etc.)and results (e.g. `stdout_diff_passed`) are part of the `Test` object, so the `summary` files are very useful for debugging!
+* Any file in `testset/stdin/` that is named `<testname>.stdin` will be sent to `stdin` for a test with the testname `<testname>`. 
+* For any test, you may specify a list of arguments to send as arguments for the executable. This will be a list, and the variable name is `argv` - for instance
+```
+{ testname = "test0", description = "my first test", argv = [1, 2, 3] }
+```
+* The `.diff`, `.ccized`, and `.valgrind` output files for each test will only be created if your configuation requests them.
+* In addition to `stdout` and `stderr`, this framework supports `diff`ing against any number of output files created by the student's program. However, such output files must be named `<testname>.ANYTHING_HERE.ofile`. The expectation is that the executable will receive the name of the file to produce as an input argument, which you can then work with. For example
+```
+{ testname = "test0", description = "my first test", argv = [test0.one.ofile, test1.two.ofile] }
+```
+You can generalize this functionality to multiple tests with the string `#{testname}.ANYTHING_HERE.ofile` in the `argv` list. For example:
+```
+[set_of_tests]
+argv = [#{testname}.cookies.ofile, #{testname}.candy.ofile]
+tests = [ { testname = "test0", description = "my first test" }
+         ... 
+]
+```
+All of the tests in the group [set_of_tests] will have these two argv arguments specified, whereby the string "${testname}" will be replaced with the name of the test. See example configuration #2 below for further details. 
+* Canonicalization of any of the output streams or output files prior to diffing is supported. Functions which are used by the autograder in `canonicalizers.py` must:
+    * take four parameters:
+        1.  A string which will contain the student's output from whichever stream is to be canonicalized
+        2.  A string which will contain the reference solution's (non-canonicalized) output from whichever stream is to be canonicalized
+        3.  A string which will contain the name of the test (e.g. `test01`)
+        4.  A dictionary which will contain any specific test configuration options (e.g. `{'my_config_var': 10}`)
+    * And return a string, which contains the canonicalized output of the student
+See the specification below for the argument specifics. 
+* **Each `summary` file in the `logs/` directory contains a dump of the state of a given test. Specifically, this is literally a dump of the backend `Test` object from the `autograde.py` script - a summary is created upon initialization of the test, and is overwritten after a test finishes. All of the configuration options (e.g. `diff_stdout`, etc.) and results (e.g. `stdout_diff_passed`) are part of the `Test` object, so the `summary` files are very useful for debugging!**
 
 ### Driver-based testing notes
-When deploying a set of tests where each test is a unique driver file:
+When deploying a set of `cpp` files where each is intended to be their own driver:
 * Files in `testset/cpp/` named `<testname>.cpp` (`test01.cpp`) are intended to be driver files; each one will contain `main()`, and will be compiled and linked with the student's code.
-* You must use a custom `Makefile`, where each test has its own target (i.e. we will run `make test01`). The `Makefile` will be run from the `results/build` directory, and will need to compile and link with the driver files which will live in the relative `../../testset/cpp` directory. See the example: `assignments/sanity_check/testset/makefile/Makefile`.
+* You must use a custom `Makefile` where each test has its own target (i.e. we will run `make test01`). The `Makefile` will be run from the `results/build` directory, and will need to compile and link with the driver files which will live in the relative `../../testset/cpp` directory. See an example here: `assignments/sanity_check/testset/makefile/Makefile`.
 * Whenever using `our_makefile`, the target to build (e.g. `make target`) must always be named the same as the program to run (e.g. `./target`).
 
 ### Student-executable testing notes
-When deploying a set of tests where students have produced a fully executable program:
+When deploying a set of tests which test a student's executable program:
 * You do not need files in `testset/cpp/` (the folder is not necessary either).
-* You may still choose to have your own custom `Makefile` if you wish (otherwise, be sure to set `our_makefile = false` in `testset.toml`).
+* You must set `our_makefile = false` in `testset.toml`
+    * You may still choose to have your own custom `Makefile` if you wish; in that case, of course, set `our_makefile=true` (default).
+    * You can select one option for one set of tests and the other for another set as well.
 
 ## Example configurations 
 ### Example configuration #1
 An example directory/file setup for an assignment with course-staff provided `.cpp` driver files is below
-
 ```
 .
 |---testrunner.sh     [script that runs `autograde`]
@@ -338,8 +341,7 @@ An example directory/file setup for an assignment with course-staff provided `.c
 |---testest.toml      [testing configuration file]
 |-
 ```
-For this assignment, there is no canonicalization required, no input from `stdin`, nothing to copy or link to the build directory. The corresponding `testset.toml` file is as follows:
-
+For this assignment, there is no canonicalization required, no input from `stdin`, nothing to copy or link to the build directory. The corresponding `testset.toml` file is as follows
 ```
 [common]
 # using defaults! however, empty 'common' should exist
@@ -373,7 +375,7 @@ tests = [
 Here the autograder will assume that `testset/cpp/TESTNAME.cpp` contains `main()`, and that there's a target named `TESTNAME` in `testset/makefile/Makefile` which produces an executable named `TESTNAME`; it will run `make TESTNAME`, and then `./TESTNAME`.
 
 ### Example configuration #2
-This is an example set of required files for an assignment which depends on a student-produced executable file. Also, it illustrates the use of canoncializer functions:
+This is an example set of required files for an assignment which depends on a student-produced executable file. Also, it illustrates the use of canoncializer functions
 ```
 .
 |---canonicalizers.py [file with canonicalization functions]
@@ -425,10 +427,10 @@ tests = [
      { testname = "test32", description = "Happy testing!" },
  ]
 ```
-Notice options for custom timeout, max_ram, etc. Details for each option can be found at the end of this document. Regarding output files, the program that the students would stubmit above is expected to take two command-line arguments - the name of some data file, and the name of an output file to write. For each of the tests, `#{testname}.ofile` will be converted to `test01.ofile`, etc. If your students need to write to an output file, please have them take the name of the file as an input argument, and use this template. They can potentially write to multiple files; in the `testset.toml` file, as long the string contains `#{testname}` and ends with an `.ofile` extension, you're good to go. NOTE! To be clear, the characters "#{testname}" will actually be replaced with the full path for the autograder's output file for that test. For example, if the testname is "test01", and the output file is "test01.ofile", the full path will be something like "/home/autograder/autograder/testset/test01.ofile". This will be determined by the autograder; however, it's worth noting that #{testname} is only intended to be used in the `argv` field to refer to the output file. TODO: change the "#{testname}" to something like"#{testofpath}".
+Notice options for custom timeout, max_ram, etc. Details for each option can be found at the end of this document. Regarding output files, the program that the students would stubmit above is expected to take two command-line arguments - the name of some data file, and the name of an output file to write. For each of the tests, `#{testname}.ofile` will be converted to `test01.ofile`, etc. If your students need to write to an output file, please have them take the name of the file as an input argument, and use this template. They can potentially write to multiple files; in the `testset.toml` file, as long the string contains `#{testname}` and ends with an `.ofile` extension, you're good to go. NOTE: For a bit more info, the characters "#{testname}" will actually be replaced with the full path for the autograder's output file for that test. For example, if the testname is "test01", and the output file is "test01.ofile", the full path will be something like "/home/autograder/autograder/testset/test01.ofile". This will be determined by the autograder; however, it's worth noting that #{testname} is only intended to be used in the `argv` field to refer to the output file. 
 
 ## `autograde.py`
-`autograde.py` is the script that does all of the autograding. Here's the basic grading procedure:
+`autograde.py` is the script that does the autograding. Here's the basic procedure:
 * Parse input arguments
 * Load the `testset.toml` file and validate configuration
 * Create `Test` objects; each `Test` object contains all of the possible configuration variables, either customized, or the defaults. 
@@ -444,8 +446,10 @@ Notice options for custom timeout, max_ram, etc. Details for each option can be 
 * Report the results to `stdout`.
 
 ## Testing the Autograder
+In order to run your autograder, you will need to build reference output from a reference solution. 
+
 ### Preliminaries
-In order to build reference output and test your code easily, first add the `bin/` folder to your `$PATH`. To do this, run the following commands, replacing `REPO_ROOT` with the path to the repository root on your system. 
+In order to build reference output and test your code easily, first add the `bin/` folder of the autograding repo to your `$PATH`. To do this, run the following commands, replacing `REPO_ROOT` with the path to the repository root on your system. 
 ```
 echo -e "export PATH=\$PATH:/REPO_ROOT/bin\n" >> ~/.bashrc
 source ~/.bashrc
@@ -453,18 +457,18 @@ source ~/.bashrc
 Also, if you don't have `icdiff` installed on your system and would like to use the `pretty_diff` option you'll need to install it (`brew/apt-get icdiff`).
 
 ### Building the Reference Output
-Once you've configured your tests, run the command 
+Once you've configured your tests, from the assignment's autograder directory [when you run `ls` from here you should see `testset.toml`, `testset`, etc.], run the command 
 ```
 build_ref_output
 ``` 
-from the assignment's autograder directory. The reference code will be run as a submission, and the output of the reference will be placed in the `REPO_ROOT/hwname/testset/ref_output/` directory. If you need to debug your setup, run 
+The reference code will be run *as a submission*, and the output of the reference will be placed in the `REPO_ROOT/hwname/testset/ref_output/` directory. The default behavior of `build_ref_output` is to clean-up the created intermediary autograding files, but if you need to debug your setup, run 
 ```
 build_ref_output -k
 ```
-This will keep the temporary directories used to run the autograder and build the reference output.
+This will keep the directories created to run the autograder and build the reference output. These can be invaluable if you have tests which aren't functioning right - `cd`-ing into `results/logs` or `results/output` can be very helpful!
 
 ### Testing with an Example Submission
-After you've produced the reference output, run the command 
+After you've produced the reference output, if you'd like to test a given folder against the reference, run
 ```
 test_autograder -s SUBMISSION_DIR
 ```
@@ -472,14 +476,14 @@ where `SUBMISSION_DIR` contains the submission code you would like to test. For 
 ```
 test_autograder -s testset/solution
 ```
-This script will create a temporary testing directory named `temp_testing_dir`, copy everything there, and run the tests. You can optionally remove this directory after tests are run with the `-d` option. The `-j` option is also available [see next section]. 
+This script will create a temporary testing directory named `temp_testing_dir`, copy everything there, and run the tests. You can optionally remove this directory after tests are run with the `-d` option.
 
 ### Parallel Execution of Tests
-If you would like to enable parallel execution of tests, instead run 
+The `autograde` program supports parallel execution of tests with the `-j` option
 ```
 autograde -j NUMCORES
 ```
-where `NUMCORES` is the number of cores you would like to utilize (`-1` will use all available cores). Note that multiple tests may be run on each core concurrently. The default setting is for one core to be used with no tests running concurrently; that is, only one test will be run at a time (no concurrent tests are run). You can also build the reference output with parallelization by running 
+where `NUMCORES` is the number of cores you would like to utilize (`-1` will use all available cores). Note that multiple tests may be run on each core concurrently. The default setting is equivalent to `-j 1`, which runs tests without parallelization enabled. You can also build the reference output with parallelization by running 
 ```
 build_ref_output -j NUMCORES
 ```
@@ -488,12 +492,13 @@ and, similarly,
 test_autograder -j NUMCORES
 ```
 
-### testrunner.sh
-In Gradescope's docker container, the usual `run_autograder` script runs the assignment-specific script named `testrunner.sh`, which in turn actually runs `autograde`. The reason for this extra script is to maximize flexibility; any changes made to `run_autograder` would have to both require rebuilding the container and would need to propagate across assignments. This setup, by contrast, allows you to make changes for a given assignment without having to rebuild the container/.zip file. That is to say, feel free to add extra commands before/after tests are run in `testrunner.sh`. For instance, you change the command in that file to include `-j NUMCORES` if you'd like, although on Gradescope there isn't likely much to be gained from this.
+Note that given limits with resource use you should be careful with enabling multiple cores for Gradescope!
 
-## Test .toml Configuration Options
-These are the configuration options for a test. You may set any of these in `[common]`,
-under a test group, or within a specific test.
+### testrunner.sh
+In Gradescope's docker container, the usual `run_autograder` script runs the assignment-specific script named `testrunner.sh`, which in turn actually runs `autograde`. The reason for this extra step is to maximize flexibility; any changes made to `run_autograder` would have to both require rebuilding the container and would need to propagate across assignments. This setup, by contrast, allows you to make changes for a given assignment and then to just `git push` in order to run the new tests. Feel free to add anything here that you'd like.
+
+## Testing Configuration Options
+These are the configuration options for a test. You may set any of these in `[common]`, under a test group, or within a specific test.
 
 | option | default | pupose | 
 |---|---|---|
@@ -521,11 +526,16 @@ under a test group, or within a specific test.
 | `max_submissions` | _ | `[common]` only setting - this value will override the default value of `SUBMISSIONS_PER_ASSIGN` in the `etc/config.toml`. If not set for an assignment, the default value for this is ignored, and the `SUBMISSIONS_PER_ASSIGN` value is used instead. | 
 
 
-## Visibility settings in Gradescope
-Gradescope allows each test to have a different visiblity setting - the options are `hidden`, `after_due_date`, `after_published`, or `visible`. Note that if any of the options are `hidden`, none of the tests can be visible. For `cs-15`, we usually release some of the tests for the students, and so make these `visible`. However, the default is `after_due_date`. We also decided that we would like to show students their total final autograder score prior to the due date; that is, they could see their 'final score', but only a few of the actual tests. In order to facilitate this, we have added a `test00` in `bin/make_gradescope_results.py` - this is commented out by default, but if you would like to show students their final autograder score without revealing all of the test results then uncomment `#make_test00()` in the `make_results()` function (line ~250).
+## Gradescope Results
+After running the autograder, our program produces results for Gradescope. A few notes on this:
+
+### Visibility settings
+Gradescope allows each test to have a different visiblity setting - the options are `hidden`, `after_due_date`, `after_published`, or `visible`. Their systems are setup such that if any of the options are `hidden`, all of the tests will be hidden. The default setting is therefore `after_due_date`, which is usable with tests that are also `visible`. We often like to show some tests but not others, and this generally works well. 
+
+We also decided that we would like to show students their total final autograder score prior to the due date; that is, they could see their 'final score', but only a few of the actual tests. This is not doable by default. In order to facilitate this, added a `test00` in `bin/make_gradescope_results.py` which shows the student's final autograder score. This code is commented out by default, but if you would like to show students their final autograder score without revealing all of the test results then uncomment `#make_test00()` in the `make_results()` function (line ~250) of `bin/make_gradescope_results.py`.
 
 ## Score in Gradescope
-Note that if the `max_score` for a test is `0`, then Gradescope will assume that the student passes the test. There's no way around this on our end, so if you want to have 'optional' tests, then just lower the maximum score of the autograder on Gradescope (on gradescope.com - `assignment->settings->AUTOGRADER POINTS`).
+Note that if the `max_score` for a test is `0`, then Gradescope assumes that the student passes the test. There's no way around this on our end, so if you want to have 'optional' tests, then just lower the maximum score of the autograder on Gradescope (on gradescope.com - `assignment->settings->AUTOGRADER POINTS`).
 
 # Conclusion
 That should be enough to get you up and running! Please feel free to contact me with any questions you have, and/or any bugs, feature requests, etc. you find. Thanks!
