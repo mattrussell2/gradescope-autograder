@@ -250,6 +250,7 @@ depending on your test configuration.
 ```
 
 ## Files/Directories Created by the Autograder
+These express all of the possibilities, but various `.ofile`, `.diff`, `.ccized`, etc. files may not be created depending on your configuration. 
 ```
 .
 |--- results/
@@ -285,12 +286,11 @@ depending on your test configuration.
 ```
 ## General Notes
 * Any file in `testset/stdin/` that is named `<testname>.stdin` will be sent to `stdin` for a test with the testname `<testname>`. 
-* For any test, you may specify a variable `argv` which is a list to send as arguments to the executable. For example
+* For any test, you may specify a variable `argv` which is a list to send as arguments to the executable. For example, the following test will be run as `./test0 1 2 3`.
 ```
 { testname = "test0", description = "my first test", argv = [1, 2, 3] }
 ```
-* The `.diff`, `.ccized`, and `.valgrind` output files for each test will only be created if your configuation requests them.
-* In addition to `stdout` and `stderr`, this framework supports `diff`ing against any number of output files created by the student's program. However, such output files must be named `<testname>.ANYTHING_HERE.ofile`. The expectation is that the executable will receive the name of the file to produce as an input argument, which you can then work with. For example
+* In addition to `diff`ing student's `stdout` and `stderr` against a reference output, this framework supports `diff`ing against any number of output files created by the student's program. Such output files must be named `<testname>.ANYTHING_HERE.ofile`; the expectation is that the executable will receive the name of the file to produce as an input argument. For example
 ```
 { testname = "test0", description = "my first test", argv = [test0.one.ofile, test1.two.ofile] }
 ```
