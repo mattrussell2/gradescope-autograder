@@ -120,7 +120,7 @@ TOKENS_USED = TOKENDATA[ASSIGN_NAME]
 
 # no tokens required!
 if SUBMISSION_TIME <= DUE_TIME: 
-    EXIT_SUCCESS("SUCCESS: Submission arrived before the due date - no tokens required.\nYou have {TOKENS_LEFT} tokens remaining for this semester.")
+    EXIT_SUCCESS(f"SUCCESS: Submission arrived before the due date - no tokens required.\nYou have {TOKENS_LEFT} tokens remaining for this semester.")
 
 if SUBMISSION_TIME <= ONE_TOKEN_DUE_TIME:
     
