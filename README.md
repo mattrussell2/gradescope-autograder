@@ -543,8 +543,9 @@ That should be enough to get you up and running! Please feel free to contact me 
 * Update the functionality of `bin/autograde.py` so that if a grader is re-running tests, we don't nuke the entire build folder, but intelligently load the data from alread-run tests. Also, need to verify that the various filter, etc. options work as expected. 
 
 # Changelog
-## [2.1.0] - 2023-05-27
+## [2.0.0] - 2023-05-27
 Pythonified build process, and merged all config files into one `.toml` file. 
+After the new, improved, simplified build process, token management system, and security fixes, we're at version 2.0 [!]
 * Added
     * `etc/config.toml` - how holds all config options from the old `.ini` files
     * `bin/container_prep.py` - does the logic of common_build.sh; returns the 'secret' config
@@ -561,14 +562,14 @@ Pythonified build process, and merged all config files into one `.toml` file.
     * `setup/zipbuild/build_container.sh` - update to work with new python build process
     * `README.md` - significan README clarifications
 
-## [2.0.4] - 2023-05-27
+## [1.4.6] - 2023-05-27
 Merged most of the two build scripts into one - `common_build.sh`, which is now called by both of the `deploy_container.sh`(dockerbuild) and `build_container.sh` (zipbuild) scripts. 
 * Added
     * `setup/common_build.sh` - does most of the setup for both container styles. 
 * Changed
     * `setup/dockerbuild/deploy_container.sh`
     * `setup/zipbuild/build_container.sh`
-## [2.0.3] - 2023-05-26
+## [1.4.5] - 2023-05-26
 Switch from `diff-so-fancy` to `icdiff` for `pretty_diff` option; used the `ansi` option for gs output for the tests so colorized output works; removed `diff-so-fancy`, and the `lib` dir
 * Changed
     * `setup/dockerbuild/deploy_container.sh` - remove references to `lib`
@@ -581,18 +582,17 @@ Switch from `diff-so-fancy` to `icdiff` for `pretty_diff` option; used the `ansi
     * `bin/diff-so-fancy`
     * `lib/DiffHighlight.pm` - used by `diff-so-fancy`
     * `lib/` - no longer needed.
-## [2.0.2] - 2023-05-26
+## [1.4.4] - 2023-05-26
 * Changed
     * `setup/dockerbuild/deploy_container.sh` - update build dir to setup/build
     * `setup/zipbuild/build_container.sh` - update with all recent fixes for version 2.0; also fixed issue where default python version in 22.04 container is 3.10
     * `setup/zipbuild/setup.sh` - update with all recent fixes for version 2.0
-## [2.0.1] - 2023-05-24
+## [1.4.3] - 2023-05-24
 * Changed
     * `bin/build_ref_output.py` - add argument to autograde to not use 'student' user if building reference output
     * `bin/autograde.py` - support arugment for not using `student` user. Also wrapped preexec fn in lambda - this was
                            a latent bug! The preexec fn was being run globally rather than as a preexec. This still worked to limit the container's ram usage, but was functioning slightly differently than we thought. 
-## [2.0.0] - 2023-05-24
-After token and security fixes, we're at a distinctly new point - 2.0. 
+## [1.4.2] - 2023-05-24
 * Changed
     * `bin/run_autograder` - chmod directories for security
     * `bin/autograde.py` - add user argument to subprocess calls that run student code; pass "student" to those calls, 
