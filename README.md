@@ -42,7 +42,7 @@ export AUTOGRADING_REPO_REMOTE_PATH="https://cs-15-2022uc:glpat-Blah8173Blah8023
 Make sure `source ~/.bashrc` (or equivalent) after editing the file.
 
 ## etc/config.toml
-The file `etc/config.toml` contains various important bits of information toward deploying your autograder. Note that the values in the sample `etc/config.toml`.
+The file `etc/config.toml` contains various important bits of information toward deploying your autograder.
 ```
 [paths]
 ASSIGN_ROOT = "assignments"
