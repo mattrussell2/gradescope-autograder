@@ -559,6 +559,7 @@ Pythonified build process, and merged all config files into one `.toml` file.
     * `bin/run_autograder` - remove python3.6 workarounds
     * `setup/dockerbuild/Dockerfile` - update to work with new python build process
     * `setup/zipbuild/build_container.sh` - update to work with new python build process
+    * `README.md` - significan README clarifications
 
 ## [2.0.4] - 2023-05-27
 Merged most of the two build scripts into one - `common_build.sh`, which is now called by both of the `deploy_container.sh`(dockerbuild) and `build_container.sh` (zipbuild) scripts. 
