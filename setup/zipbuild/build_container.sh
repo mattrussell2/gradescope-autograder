@@ -6,24 +6,26 @@
 
 cd ../../ 
 
-source etc/autograder_config.ini
-
 # make build directory if it doesn't exist
-if [ ! -d "build" ]; then
-    mkdir build
+if [ ! -d "setup/build" ]; then
+    mkdir setup/build
 fi
 
-cp -r bin/ build/bin
-cp -r etc/ build/etc
+cp -r bin/ setup/build/bin
+cp -r etc/ setup/build/etc
+
+
+source etc/autograder_config.ini
 
 # these two files need to be in the root dir
-cp setup/zipbuild/setup.sh build/
-cp bin/run_autograder build/
+cp setup/zipbuild/setup.sh setup/build/
+cp bin/run_autograder setup/build/
 
-cd build
+cd setup/build
 
 if [ ! -d "course-repo" ]; then
     echo "cloning course repo with deploy token"
+    echo ${!REPO_REMOTE_VARNAME}
     git clone ${!REPO_REMOTE_VARNAME} course-repo 
 else 
     echo "course-repo already exists, pulling latest"

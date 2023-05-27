@@ -79,8 +79,6 @@ NOTE! do not put any spaces around the `=` characters in this file.
 Okay! now continue with one of either the `.zip` or Docker methods below.
 
 ## .zip method
-##NOTE 5-26-2023 zipbuild is currently broken...working on fix ASAP
-
 As mentioned above, with the `.zip` method, you'll need to upload a `.zip` file for each 
 assignment (make sure to select `Ubuntu 22.04` for the container type; the Python version, etc. are configured to work with the Jammy Jellyfish defaults). However, there is no other setup required. For the future, if you make changes to any of the files in the `dockerbuild` folder, or to `bin/run_autograder`, make sure to rebuild and re-upload the `Autograder.zip` file. 
 
@@ -494,6 +492,11 @@ That should be enough to get you up and running! Please feel free to contact me 
 * Update the funcationality of `bin/autograde.py` so that if a grader is re-running tests, we don't nuke the entire build folder, but intelligently load the data from alread-run tests. Also, need to verify that the various filter, etc. options work as expected. 
 
 # Changelog
+## [2.0.2] - 2023-05-26
+* Changed
+    * `setup/dockerbuild/deploy_container.sh` - update build dir to setup/build
+    * `setup/zipbuild/build_container.sh` - update with all recent fixes for version 2.0; also fixed issue where default python version in 22.04 container is 3.10
+    * `setup/zipbuild/setup.sh` - update with all recent fixes for version 2.0
 ## [2.0.1] - 2023-05-24
 * Changed
     * `bin/build_ref_output.py` - add argument to autograde to not use 'student' user if building reference output

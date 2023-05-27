@@ -12,17 +12,17 @@ source etc/docker_config.ini
 source etc/token_config.ini
 
 # make build directory if it doesn't exist
-if [ ! -d "build" ]; then
-    mkdir build
+if [ ! -d "setup/build" ]; then
+    mkdir setup/build
 fi
 
-cp -r bin/ build/bin
-cp -r etc/ build/etc
-cp -r lib/ build/lib
+cp -r bin/ setup/build/bin
+cp -r etc/ setup/build/etc
+cp -r lib/ setup/build/lib
 
-cp setup/dockerbuild/Dockerfile build/
+cp setup/dockerbuild/Dockerfile setup/build/
 
-cd build
+cd setup/build
 
 gsed -i "s|POSTGRES_REMOTE_VARNAME|PG_REM_PATH|g" etc/token_config.ini
 gsed -i "s|${POSTGRES_REMOTE_VARNAME}|${POSTGRES_REMOTE_PATH}|g" etc/token_config.ini

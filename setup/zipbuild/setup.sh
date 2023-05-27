@@ -11,28 +11,28 @@ apt-get install software-properties-common \
                 valgrind \
                 ssh \
                 time \
+                postgresql-client \
+                jq \
                 clang-12 -y
 
 ln -s /usr/bin/clang++-12 /usr/bin/clang++
 
 # install pip packages
-python3.9 -m pip install --upgrade pip
-python3.9 -m pip install toml dataclasses tqdm filelock python_dateutil
+python3 -m pip install --upgrade pip
+python3 -m pip install toml dataclasses tqdm filelock python_dateutil psycopg2-binary
+
+source /autograder/source/autograder_config.ini
 
 # update message of the day
-cp /autograder/source/etc/motd /etc/motd
+cp "/autograder/source/course-repo/${AUTOGRADING_ROOT}/etc/motd" /etc/motd
 
 # copy DiffHighlight.pm so diff-so-fancy can view it
-cp /autograder/source/lib/DiffHighlight.pm /usr/share/perl5/
+cp "/autograder/source/course-repo/${AUTOGRADING_ROOT}/lib/DiffHighlight.pm" /usr/share/perl5/
 
 # this script needs to be placed in /autograder in order for the autograder to work right. 
-cp /autograder/source/bin/run_autograder /autograder/
+cp /autograder/source/run_autograder /autograder/
 
 # pretty bash terminal header
 printf 'export PS1=\"\\u@gs:\\W\\$ \"\n' >> ~/.bashrc
 
-# load the config vars so we have access to $REPO_REMOTE_PATH
-source /autograder/source/autograder_config.ini
-
-# clone the course repo
-cd /autograder/source && git clone "${REPO_REMOTE_PATH}" course-repo
+adduser student --no-create-home --disabled-password --gecos ""
