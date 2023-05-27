@@ -14,6 +14,7 @@ RUN apt-get install software-properties-common \
                     time \
                     postgresql-client \
                     jq \
+                    icdiff \
                     clang-12 -y
 
 # use clang++
@@ -28,9 +29,6 @@ COPY bin/run_autograder /autograder/run_autograder
 
 # message of the day
 COPY etc/motd /etc/motd
-
-# DiffHighlight.pm needs to be on the perl path for diff-so-fancy
-COPY lib/DiffHighlight.pm /usr/share/perl5/
 
 # pretty bash terminal header
 RUN printf "export PS1=\"\\u@gs:\\W\\$ \"\n" >> ~/.bashrc

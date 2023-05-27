@@ -481,7 +481,7 @@ class Test:
             Returns: 
                 (int) the return code of the diff.
             Notes:                
-                I like pretty diffs, so diff-so-fancy is an option. :) 
+                I like pretty diffs, so icdiff is an option. :) 
                 Am doing diffs with subprocess shell=True. Otherwise will have 
                 problems with any non-utf8 output [encountered with largeGutenberg in gerp]. 
                 [TODO] refactor to use RUN?                        
@@ -517,12 +517,9 @@ class Test:
             fileb = f"{fileb}.ccized"
             filec = f"{filea}.diff"               # => will be original 'filea'.ccized.diff
 
-        diff_result  = subprocess.run(f"diff {filea} {fileb} > {filec}", shell=True)
-        diff_retcode = diff_result.returncode               # diff-so-fancy returns 0 on failure, always use this!
-
-        # diff-so-fancy requires output of [diff -u ...] as its input
-        if self.pretty_diff:
-            subprocess.run(f"diff -u {filea} {fileb} | diff-so-fancy > {filec}", shell=True)
+        diff_cmd     = "icdiff" if self.pretty_diff else "diff"
+        diff_result  = subprocess.run(f"{diff_cmd} {filea} {fileb} > {filec}", shell=True)
+        diff_retcode = diff_result.returncode
 
         return diff_retcode
 

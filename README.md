@@ -408,7 +408,7 @@ In order to build reference output and test your code easily, first add the `bin
 echo -e "export PATH=\$PATH:/REPO_ROOT/bin\n" >> ~/.bashrc
 source ~/.bashrc
 ```
-Also, if you don't have `diff-so-fancy` installed on your system and would like to use the `pretty_diff` option then you'll want to add `REPO_ROOT/lib` to your perl library include path (either update `$PERLLIB` in `~/.bashrc` or run `perl -V` to see available locations to copy the file `etc/DiffHighlight.pm` to).
+Also, if you don't have `icdiff` installed on your system and would like to use the `pretty_diff` option you'll need to install it (`brew/apt-get icdiff`).
 
 ### Building the Reference Output
 Once you've configured your tests, run the command 
@@ -468,7 +468,7 @@ under a test group, or within a specific test.
 | `ccizer_args` | `{}` | arguments to pass to canonicalization function |
 | `our_makefile` | `true` | use `testset/makefile/Makefile` to build tests |
 | `exitcodepass` | `0` | return code considered successful by the autograder|
-| `pretty_diff` | `false` | use diff-so-fancy for easy-to-read diffs |
+| `pretty_diff` | `false` | use `icdiff` for easy-to-read diffs |
 | `max_score` | `1` | maximum points (on Gradescope) for this test |
 | `visibility` | `"after_due_date"` | Gradescope visibility setting |
 | `argv` | `[ ]` | argv input to the program - Note: all arguments in the list must be represented as strings (e.g. ["1", "abcd"...])|
@@ -492,6 +492,19 @@ That should be enough to get you up and running! Please feel free to contact me 
 * Update the funcationality of `bin/autograde.py` so that if a grader is re-running tests, we don't nuke the entire build folder, but intelligently load the data from alread-run tests. Also, need to verify that the various filter, etc. options work as expected. 
 
 # Changelog
+## [2.0.3] - 2023-05-26
+Switch from `diff-so-fancy` to `icdiff` for `pretty_diff` option; used the `ansi` option for gs output for the tests so colorized output works; removed `diff-so-fancy`, and the `lib` dir
+* Changed
+    * `setup/dockerbuild/deploy_container.sh` - remove references to `lib`
+    * `setup/dockerbuild/Dockerfile` - remove references to `lib`; add `icdiff` to `apt-get` list
+    * `setup/zipbuild/setup.sh` - remove references to `lib`; add `icdiff` to `apt-get` list
+    * `setup/run_autograder.sh` - remove references to `lib`
+    * `bin/make_gradescope_results.py` - use `ansi` option for gradescope test output for color output [!]
+    * `bin/autograde.py` - simplify `diff` logic (`icdiff` returns nonzero exit code on different files as expected)
+* Removed
+    * `bin/diff-so-fancy`
+    * `lib/DiffHighlight.pm` - used by `diff-so-fancy`
+    * `lib/` - no longer needed.
 ## [2.0.2] - 2023-05-26
 * Changed
     * `setup/dockerbuild/deploy_container.sh` - update build dir to setup/build

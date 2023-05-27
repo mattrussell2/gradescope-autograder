@@ -13,6 +13,7 @@ apt-get install software-properties-common \
                 time \
                 postgresql-client \
                 jq \
+                icdiff \
                 clang-12 -y
 
 ln -s /usr/bin/clang++-12 /usr/bin/clang++
@@ -25,9 +26,6 @@ source /autograder/source/autograder_config.ini
 
 # update message of the day
 cp "/autograder/source/course-repo/${AUTOGRADING_ROOT}/etc/motd" /etc/motd
-
-# copy DiffHighlight.pm so diff-so-fancy can view it
-cp "/autograder/source/course-repo/${AUTOGRADING_ROOT}/lib/DiffHighlight.pm" /usr/share/perl5/
 
 # this script needs to be placed in /autograder in order for the autograder to work right. 
 cp /autograder/source/run_autograder /autograder/

@@ -40,8 +40,8 @@ rm /autograder/source/token_config.ini
 # make the repo files unavailable to the student group, but still traversable
 chmod -R 771 $REPO_ROOT
 
-# students still need to access the autograde program, and possibly to the library files
-chmod 775 $REPO_ROOT/$AUTOGRADING_ROOT/bin/autograde* $REPO_ROOT/$AUTOGRADING_ROOT/lib
+# students still need to access the autograde program
+chmod 775 $REPO_ROOT/$AUTOGRADING_ROOT/bin/autograde*
 
 # run the autograder!
 cd /autograder/

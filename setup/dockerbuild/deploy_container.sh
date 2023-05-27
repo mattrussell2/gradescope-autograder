@@ -18,7 +18,6 @@ fi
 
 cp -r bin/ setup/build/bin
 cp -r etc/ setup/build/etc
-cp -r lib/ setup/build/lib
 
 cp setup/dockerbuild/Dockerfile setup/build/
 
@@ -42,4 +41,4 @@ docker build --tag "${CONTAINER_REMOTE}/${!REGISTRY_USER_VARNAME}/${CONTAINER_NA
 echo "${!REGISTRY_PASS_VARNAME}" | docker login "${CONTAINER_REMOTE}" --username "${!REGISTRY_USER_VARNAME}" --password-stdin
 docker push "${CONTAINER_REMOTE}/${!REGISTRY_USER_VARNAME}/${CONTAINER_NAME}:${CONTAINER_TAG}"
 
-rm -rf bin etc lib
+rm -rf bin etc

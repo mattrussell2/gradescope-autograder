@@ -464,7 +464,7 @@ def wrong_output_program(execname):
 
 
 def make_test_result(name, visibility, score, max_score, output):
-    return {"name": name, "visibility": visibility, "score": score, "max_score": max_score, "output": output}
+    return {"name": name, "visibility": visibility, "score": score, "max_score": max_score, "output": output, "output_format": "ansi"}
 
 
 # Returns a formatted string with the reason a test failed.
