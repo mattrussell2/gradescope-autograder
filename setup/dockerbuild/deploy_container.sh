@@ -11,10 +11,10 @@ cd build
 
 source ../../etc/docker_config.ini
 
-docker build --tag "${CONTAINER_REMOTE}/${!REGISTRY_USER_VARNAME}/${CONTAINER_NAME}:${CONTAINER_TAG}" -f Dockerfile .
+docker build --tag "${CONTAINER_REMOTE}/${!REGISTRY_USER_VARNAME}/${CONTAINER_NAME}:${CONTAINER_TAG}" -f ../dockerbuild/Dockerfile .
 
 echo "${!REGISTRY_PASS_VARNAME}" | docker login "${CONTAINER_REMOTE}" --username "${!REGISTRY_USER_VARNAME}" --password-stdin
 docker push "${CONTAINER_REMOTE}/${!REGISTRY_USER_VARNAME}/${CONTAINER_NAME}:${CONTAINER_TAG}"
 
 # clean up 
-rm motd run_autograder token_config.ini autograder_config.ini Dockerfile
+rm motd run_autograder token_config.ini autograder_config.ini
