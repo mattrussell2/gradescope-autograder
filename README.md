@@ -311,7 +311,7 @@ All of the tests in the group [set_of_tests] will have these two argv arguments 
         4.  A dictionary which will contain any specific test configuration options (e.g. `{'my_config_var': 10}`)
     * Return a string, which contains the canonicalized output of the student
 See the specification below for the argument specifics. 
-* **Each `summary` file in the `logs/` directory contains a dump of the state of a given test. Specifically, this is literally a dump of the backend `Test` object from the `autograde.py` script - a summary is created upon initialization of the test, and is overwritten after a test finishes. All of the configuration options (e.g. `diff_stdout`, etc.) and results (e.g. `stdout_diff_passed`) are part of the `Test` object, so the `summary` files are very useful for debugging!**
+* **Each `testname.summary` file in the `logs/` directory contains a dump of the state of a given test. This is literally a dump of the backend `Test` object from the `autograde.py` script, which contains all of the values of the various configuration options (e.g. `diff_stdout`, etc.) and results (e.g. `stdout_diff_passed`). A first summary is created upon initialization of the test, and it is overwritten after a test finishes with the updated results. `summary` files are very useful for debugging!**
 
 ### Driver-based testing notes
 When deploying a set of `cpp` files where each is intended to be their own driver:
