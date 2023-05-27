@@ -151,10 +151,10 @@ python3 deploy_container.py
     * from dockerhub: `gradescopeecs`
 
 ## Docker - per-assignment todos
-Select the 'Manual Docker Configuration' option in the `configure autograder` section of the assignment; place the full remote path to your container (e.g. `ghcr.io/ghubusername/ghubpackageregistry:dockertag`). That's it! 
+Select the 'Manual Docker Configuration' option in the `configure autograder` section of the assignment; place the full remote path to your container (e.g. `ghcr.io/ghubusername/ghubpackageregistry:dockertag`). Gradescope will then immediately be able to use your container.
 
 ## Token Management
-At Tufts, we have a system for students to be able to manage late submissions with 'tokens'. The token system is flexible and generally works well. The idea is that the students maintain a bank of X tokens, where each token is effectively a 1-day extension on a given assignment. For any assignment, the maximum number of tokens a student can use is usually 2 - so up to 2 days late. 
+At Tufts, we have a system for students to be able to manage late submissions with 'tokens'. The token system is flexible and generally works well. The idea is that the students maintain a bank of X tokens, where each token is effectively a 1-day extension on a given assignment. For any assignment, the maximum number of tokens a student can use is usually 2 - so up to 2 days late. If you don't want to use tokens, just skip this section.
 
 ### Postgres
 The solution presented here to manage tokens is Postgres. All of the connection to the server is maintained in the back-end of the scripts here: you only have to setup the server (free) and add a few config variables. 
