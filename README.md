@@ -63,8 +63,37 @@ If you don't use BASH, use the `export` variety for your shell. The default vari
 Make sure to run `source ~/.bashrc` or equivalent after editing the file.
 
 
-## etc/autograder_config.ini
-The file `etc/autograder_config.ini` contains various important bits of information toward deploying your autograder. Note that the values in the sample `autograder_config.ini` related to directory structure will work with the directory structure as-is in this repo, but if you change the basic directory structure, they'll be necessary. Options for the `etc/autograder_config.ini` file are as follows:
+## etc/config.toml
+The file `etc/config.toml` contains various important bits of information toward deploying your autograder. Note that the values in the sample `etc/config.toml`.
+```
+[paths]
+ASSIGN_ROOT = "assignments"
+ASSIGN_AUTOGRADING_SUBFOLDER = "autograder"
+AUTOGRADING_ROOT = "staff-bin/autograding"
+REPO_REMOTE_VARNAME = "AUTOGRADING_REPO_REMOTE_PATH"
+
+[tokens]
+GRACE_TIME = 15   # 15 minutes
+TOKEN_TIME = 1440 # 24 hours
+STARTING_TOKENS = 5
+MAX_PER_ASSIGN = 2
+MANAGE_TOKENS = "true"
+POSTGRES_REMOTE_VARNAME = "POSTGRES_REMOTE_PATH"
+
+[docker]
+CONTAINER_REGISTRY = "ghcr.io"
+CONTAINER_NAME = "gradescope-docker"
+CONTAINER_TAG = "cs15-autobuild-2023su"
+REGISTRY_USER_VARNAME = "GHUNAME"
+REGISTRY_PASS_VARNAME = "GHPAT"
+
+[other]
+SUBMISSIONS_PER_ASSIGN = 5
+
+```
+
+### [paths]
+Items in the `[paths]` section of the `etc/config.toml` file relate to directory structure of the repo. Options are as follows:
 
 |     KEY          |        Default       |      Purpose       |
 |------------------|----------------------|----------------------|
