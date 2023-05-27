@@ -1,5 +1,5 @@
-# Gradescope Autograding Setup
-Gradescope is great tool for autograding assignments. However, there is still a substantial amount
+# Gradescope Autograding 
+Gradescope is great tool for autograding assignments. Nevertheless, there is still a substantial amount
 of infrastructure required to deploy and run an autograder on Gradescope. This document provides 
 instructions for setting up an autograder on Gradescope which uses our in-house autograding
 framework for `C/C++` code. Setup from start to finish is intended to take roughly 30 minutes.
@@ -9,21 +9,18 @@ If you have any questions, please reach out to me at `mrussell@cs.tufts.edu`, or
 
 ## Background
 Gradescope's autograders rely on Docker containers which are spun up each time 
-a submission is graded. However, there are two distinct methods with which you can interface with the containers. You will need to pick one (both are supported here).
+a submission is graded. However, there are two distinct methods with which you can customize the container.
 
-* The `.zip` method - this workflow is to manually upload a `.zip` file containing two scripts: `setup.sh`, which installs dependencies (e.g. `Python`, `clang`, etc.), and a shell script named `run_autograder`, which runs the autograder.
-* The Docker method - this workflow is to build the Docker container from scratch and upload it to the container registry of your choice.
+* The `.zip` method - for each assignment, this workflow is to manually upload a `.zip` file containing two scripts: `setup.sh`, which installs dependencies (e.g. `Python`, `clang`, etc.), and a shell script named `run_autograder`, which runs the autograder. Gradescope's default container image is adapted based on your setup.sh script.
+* The Docker method - this workflow is to build the Docker container from scratch and upload it to the container registry of your choice. Then for each assignment you simply point gradescope to use your container. 
 
-Fear not! There is lots of starter code to do the bulk of the heavy lifting here, so either way you choose, you will likely not need to do too much setup. However, here are some pros and cons of these approaches:
-
-* The `.zip` method requires slightly more manual work. You have to upload a new `.zip` file each time you want to update the autograder; the Docker container will then need to be built from scratch on Gradescope, which takes time. However, you don't need Docker on your system. If you're not familiar with Docker, this workflow is suggested. 
-* The Docker method is more streamlined once it's setup. After uploading the container, for every assignment, you can point Gradescope to the container location - no `.zip` file uploading required. If you already use Docker, will be interested in tweaking the container's build settings (`clang` version, etc.) or are feeling adventurous, go for this option. 
+The Docker method is slightly more streamlined once it's setup. After uploading the container, for every assignment, you can point Gradescope to the container location - no `.zip` file uploading required, and no waiting for the container to be built again. If you already use Docker, or are feeling adventurous, go for this option. 
 
 ## Autograding git Repo
-Regardless of whether you use the `.zip` method or the Docker method you will need to create a git repository for your autograder. This repository will be used by the autograding container; whenever an assignment is autograded, the code from your repository will be pulled, the assignment's autograding files will be copied to right place, and our autograding script will run tests and produce results for Gradescope. So, if you don't currently have a repository related to course material, please make one. 
+Regardless of which method you choose above, you will need a git repository for your autograder. Whenever an assignment is autograded, the code from your repository will be pulled, the assignment's autograding files will be copied to right place, and our autograding script will run tests and produce results for Gradescope. So, if you don't currently have a repository related to course material, please make one. 
 We suggest using gitlab for this: go to https://gitlab.cs.tufts.edu and 
 login with `LDAP` using your Tufts eecs `utln` and password. Then create a new repository from scratch. You do not need a `README`. 
-Now, in your terminal:
+Now, in your terminal
 ```
 mkdir your-repo-name
 cd your-repo-name
@@ -32,23 +29,21 @@ git remote add origin git@gitlab.cs.tufts.edu:your_utln/your-repo-name.git
 git switch -c main 
 ```
 The repo where you're reading this `README` is the sample repo for you to start with. This repository contains:
+* Files to setup assignments with either the `.zip` or Docker method, such that the autograding framework runs automatically. 
 * Our `C/C++` autograding framework.
-* Files to setup assignments with either the `.zip` or Docker method, such that the autograding framework runs automatically.
-* Sample autograding assignments for two different cs-15 assignments.
-You can copy these files as follows:
+* A sample sanity check assignment which illustrates the possible tests you can run. 
+To copy these files
 ```
 git clone git@gitlab.cs.tufts.edu:mrussell/gradescope-autograding
 rm -rf gradescope-autograding/.git
 mv gradescope-autograding/* .
 rm -rf gradescope-autograding
 ```
-Great! Now, you will need an Access Token so your autograder can pull from the repo. To create one, go to gitlab in your browser, and navigate to the course repository you just created. Next, hover over the settings cog on the lower left, and select `Access Tokens`. Create one - this will be used by the Gradescope autograder to pull the most recent version of the autograding files for an assignment. We suggest only providing `read repository` access to the token. Feel free to select whatever you'd like for the name, expiration date, and role, however role must be at least `Developer` in order to be able to pull. Once the token is created, copy the key. 
+Great! You will need an Access Token to provide the autograder container with permissions to the repo. To create one, go to gitlab in your browser, and navigate to the course repository you just created. Next, hover over the settings cog on the lower left, and select `Access Tokens`. Create one. We suggest only providing `read repository` access to the token. Feel free to select whatever you'd like for the name, expiration date, and role, however role must be at least `Developer` in order to be able to pull. Once the token is created, copy the key. 
 
-NOTE on 'secrets': The strategy for handling sensitive data in this repository is to have all of the relevant variables be environment variables on your system. In the configuration files listed below, you will specify the *variable name* (not value), which will then be used during the build process. This enables you maximum flexibility in terms of not having sensitive data in the repo itself.
+A note on 'secrets': The strategy for handling sensitive data in this repository (like your access token) is to have all of the relevant data be stored in enviornment variables on your system. In the configuration files listed below, you will often specify the *variable name* (not value), which will then be used during the build process. This enables you maximum flexibility in terms of not having sensitive data in the repo itself. You can rename these variables to whatever you'd like - we suggest adding identifiers associated with your course, in case you use the framework multiple times. 
 
-To that end, you will first need to create an environment variable with the remote path to your autograding repo, including the acess token copied above. 
-
-Now, open your `~/.bashrc` file (or appropriate file for whichever shell you use), and add the following line at the end: 
+The first example of this will be an environment variable with the remote path to your autograding repo, including the acess token copied above. Open your `~/.bashrc` file (or appropriate file for whichever shell you use), and add the following line (or the appropriate `export` for your shell): 
 
 ```
 export AUTOGRADING_REPO_REMOTE_PATH="https://REPOSITORY-NAME:ACCESS-TOKEN@gitlab.cs.tufts.edu/path/to/repository.git"
@@ -58,19 +53,18 @@ Where the appropriate substitions have been made - for example:
 ```
 export AUTOGRADING_REPO_REMOTE_PATH="https://cs-15-2022uc:glpat-Blah8173Blah8023Blah@gitlab.cs.tufts.edu/mrussell/cs-15-2022uc.git"
 ```
-If you don't use BASH, use the `export` variety for your shell. The default variable name in the config file for this variable is `AUTOGRADING_REPO_REMOTE_PATH`, however you can configure the variable name to be whatever you'd like (see next section for details). 
+If you're teaching summer 2023 cs15 course, perhaps renaming `AUTOGRADING_REPO_REMOTE_PATH` to `CS_15_SUMMER_2023_AUTOGRADING_REPO_REMOTE_PATH` would be a good idea. 
 
-Make sure to run `source ~/.bashrc` or equivalent after editing the file.
-
+Make sure `source ~/.bashrc` (or equivalent) after editing the file.
 
 ## etc/autograder_config.ini
 The file `etc/autograder_config.ini` contains various important bits of information toward deploying your autograder. Note that the values in the sample `autograder_config.ini` related to directory structure will work with the directory structure as-is in this repo, but if you change the basic directory structure, they'll be necessary. Options for the `etc/autograder_config.ini` file are as follows:
 
 |     KEY          |        Default       |      Purpose       |
 |------------------|----------------------|----------------------|
-| `REPO_REMOTE_VARNAME`   |  `AUTOGRADING_REPO_REMOTE_PATH` | Variable name of the environment variable used above  |
-| `AUTOGRADING_ROOT` | `""` | Path from repo root which contains `bin/`, `etc/`, `lib/`, and `setup/` |
-| `ASSIGN_ROOT`      | `assignments` | Path from `AUTOGRADING_ROOT` where assignment autograding folders live |
+| `REPO_REMOTE_VARNAME`   |  `AUTOGRADING_REPO_REMOTE_PATH` | Variable name of the environment variable used to hold the remote path of your autograding repo.  |
+| `AUTOGRADING_ROOT` | `""` | Path from repo root which contains the `bin/`, `etc/`, and `setup/` folders |
+| `ASSIGN_ROOT`      | `assignments` | Path from `AUTOGRADING_ROOT` where the assignment folders are |
 | `ASSIGN_AUTOGRADING_SUBFOLDER` | `""` | Path from a given assignment folder which holds the autograding files for that assignment.  |
 | `SUBMISSIONS_PER_ASSIGN` | 5 | Default number of submissions per assignment the student can submit; set to a large value to ignore [ NOTE: this is overridable on a per-assignment basis; see the test .toml configuation options section. ] |
 
