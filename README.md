@@ -285,7 +285,7 @@ depending on your test configuration.
 ```
 ## General Notes
 * Any file in `testset/stdin/` that is named `<testname>.stdin` will be sent to `stdin` for a test with the testname `<testname>`. 
-* For any test, you may specify a list of arguments to send as arguments for the executable. This will be a list, and the variable name is `argv` - for instance
+* For any test, you may specify a variable `argv` which is a list to send as arguments to the executable. 
 ```
 { testname = "test0", description = "my first test", argv = [1, 2, 3] }
 ```
