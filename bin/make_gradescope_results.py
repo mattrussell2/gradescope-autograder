@@ -36,7 +36,6 @@ COMPILE_LOG = "\nCompile Log:\n\n"
 
 DIFF_STDOUT_RESULT = "Diff Result for stdout:\n"
 DIFF_STDERR_RESULT = "Diff Result for stderr:\n"
-DIFF_LEGEND = "(Top) YOU <------------> REF (Bottom)\n\n"
 
 # Error messages when non UTF-8 characters found in diff files (used by
 # get_failure_reason())
@@ -509,7 +508,7 @@ def get_failure_reason(test):
                     else:
                         fname = f"{test['testname']}.stdout.ccized.diff"
                     try:
-                        fail[DIFF_STDOUT_RESULT] = DIFF_LEGEND + \
+                        fail[DIFF_STDOUT_RESULT] = \
                             Path(os.path.join(HERE, "results",
                                  "output", fname)).read_text()
                     except UnicodeDecodeError:
@@ -520,7 +519,7 @@ def get_failure_reason(test):
                     else:
                         fname = f"{test['testname']}.stderr.ccized.diff"
                     try:
-                        fail[DIFF_STDERR_RESULT] = DIFF_LEGEND + \
+                        fail[DIFF_STDERR_RESULT] = \
                             Path(os.path.join(HERE, "results",
                                  "output", fname)).read_text()
                     except UnicodeDecodeError:
