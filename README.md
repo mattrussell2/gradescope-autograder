@@ -492,6 +492,13 @@ That should be enough to get you up and running! Please feel free to contact me 
 * Update the functionality of `bin/autograde.py` so that if a grader is re-running tests, we don't nuke the entire build folder, but intelligently load the data from alread-run tests. Also, need to verify that the various filter, etc. options work as expected. 
 
 # Changelog
+## [2.0.4] - 2023-05-27
+Merged most of the two build scripts into one - `common_build.sh`, which is now called by both of the `deploy_container.sh`(dockerbuild) and `build_container.sh` (zipbuild) scripts. 
+* Added
+    * `setup/common_build.sh` - does most of the setup for both container styles. 
+* Changed
+    * `setup/dockerbuild/deploy_container.sh`
+    * `setup/zipbuild/build_container.sh`
 ## [2.0.3] - 2023-05-26
 Switch from `diff-so-fancy` to `icdiff` for `pretty_diff` option; used the `ansi` option for gs output for the tests so colorized output works; removed `diff-so-fancy`, and the `lib` dir
 * Changed
