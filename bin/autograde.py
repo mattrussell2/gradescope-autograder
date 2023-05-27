@@ -519,9 +519,8 @@ class Test:
 
         diff_cmd     = "icdiff" if self.pretty_diff else "diff"
         diff_result  = subprocess.run(f"{diff_cmd} {filea} {fileb} > {filec}", shell=True)
-        diff_retcode = diff_result.returncode
-
-        return diff_retcode
+    
+        return diff_result.returncode
 
     def run_diffs(self):
         """
