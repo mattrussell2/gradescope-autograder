@@ -534,6 +534,23 @@ That should be enough to get you up and running! Please feel free to contact me 
 * Update the functionality of `bin/autograde.py` so that if a grader is re-running tests, we don't nuke the entire build folder, but intelligently load the data from alread-run tests. Also, need to verify that the various filter, etc. options work as expected. 
 
 # Changelog
+## [2.1.0] - 2023-05-27
+Pythonified build process, and merged all config files into one `.toml` file. 
+* Added
+    * `etc/config.toml` - how holds all config options from the old `.ini` files
+    * `bin/container_prep.py` - does the logic of common_build.sh; returns the 'secret' config
+    * `setup/dockerbuild/deploy_container.py` - does the logic of `deploy_container.sh`
+* Removed
+    * `etc/autograder_config.ini`
+    * `etc/token_config.ini`
+    * `etc/docker_config.ini`
+    * `setup/dockerbuild/deploy_container.sh`
+* Changed
+    * `bin/validate_submission.py` - minor update to work with new config
+    * `bin/run_autograder` - remove python3.6 workarounds
+    * `setup/dockerbuild/Dockerfile` - update to work with new python build process
+    * `setup/zipbuild/build_container.sh` - update to work with new python build process
+
 ## [2.0.4] - 2023-05-27
 Merged most of the two build scripts into one - `common_build.sh`, which is now called by both of the `deploy_container.sh`(dockerbuild) and `build_container.sh` (zipbuild) scripts. 
 * Added
