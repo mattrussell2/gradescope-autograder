@@ -25,7 +25,7 @@ python3 -m pip install toml dataclasses tqdm filelock python_dateutil psycopg2-b
 source /autograder/source/autograder_config.ini
 
 # update message of the day
-cp "/autograder/source/course-repo/${AUTOGRADING_ROOT}/etc/motd" /etc/motd
+cp "/autograder/source/motd" /etc/motd
 
 # this script needs to be placed in /autograder in order for the autograder to work right. 
 cp /autograder/source/run_autograder /autograder/

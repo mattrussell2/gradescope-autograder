@@ -4,13 +4,6 @@ SOURCE_DIR="/autograder/source"
 REPO_ROOT="$SOURCE_DIR/course-repo"
 ASSIGNMENT_TITLE="${ASSIGNMENT_TITLE// /_}" # replace spaces with underscores
 
-# .zip setup requires us to reset Python version.
-# NOTE! If this is done in setup.sh, it breaks the container when it boots up. Yuck.
-if [[ $(python3 --version) == "Python 3.6.9" ]]; then
-    update-alternatives --install /usr/bin/python3 python3 /usr/bin/python3.9 1
-    update-alternatives --set python3 /usr/bin/python3.9
-fi
-
 # load the config variables
 source $SOURCE_DIR/autograder_config.ini
 

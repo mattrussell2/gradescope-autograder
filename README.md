@@ -16,7 +16,7 @@ a submission is graded. However, there are two distinct methods with which you c
 
 The Docker method is slightly more streamlined once it's setup. After uploading the container, for every assignment, you can point Gradescope to the container location - no `.zip` file uploading required, and no waiting for the container to be built again. If you already use Docker, or are feeling adventurous, go for this option. 
 
-## Autograding git Repo
+## Create Your Autograding Git Repo
 Regardless of which method you choose above, you will need a git repository for your autograder. Whenever an assignment is autograded, the code from your repository will be pulled, the assignment's autograding files will be copied to right place, and our autograding script will run tests and produce results for Gradescope. So, if you don't currently have a repository related to course material, please make one. 
 We suggest using gitlab for this: go to https://gitlab.cs.tufts.edu and 
 login with `LDAP` using your Tufts eecs `utln` and password. Then create a new repository from scratch. You do not need a `README`. 
@@ -62,8 +62,8 @@ The file `etc/config.toml` contains various important bits of information toward
 ```
 [paths]
 ASSIGN_ROOT = "assignments"
-ASSIGN_AUTOGRADING_SUBFOLDER = "autograder"
-AUTOGRADING_ROOT = "staff-bin/autograding"
+ASSIGN_AUTOGRADING_SUBFOLDER = ""
+AUTOGRADING_ROOT = ""
 REPO_REMOTE_VARNAME = "AUTOGRADING_REPO_REMOTE_PATH"
 
 [tokens]
@@ -71,13 +71,13 @@ GRACE_TIME = 15   # 15 minutes
 TOKEN_TIME = 1440 # 24 hours
 STARTING_TOKENS = 5
 MAX_PER_ASSIGN = 2
-MANAGE_TOKENS = "true"
+MANAGE_TOKENS = "false"
 POSTGRES_REMOTE_VARNAME = "POSTGRES_REMOTE_PATH"
 
 [docker]
 CONTAINER_REGISTRY = "ghcr.io"
 CONTAINER_NAME = "gradescope-docker"
-CONTAINER_TAG = "cs15-autobuild-2023su"
+CONTAINER_TAG = "autograder-autobuild"
 REGISTRY_USER_VARNAME = "GHUNAME"
 REGISTRY_PASS_VARNAME = "GHPAT"
 
@@ -95,30 +95,52 @@ Items in the `[paths]` section of the `etc/config.toml` file relate to directory
 | `AUTOGRADING_ROOT` | `""` | Path from repo root which contains the `bin/`, `etc/`, and `setup/` folders |
 | `ASSIGN_ROOT`      | `assignments` | Path from `AUTOGRADING_ROOT` where the assignment folders are |
 | `ASSIGN_AUTOGRADING_SUBFOLDER` | `""` | Path from a given assignment folder which holds the autograding files for that assignment.  |
-| `SUBMISSIONS_PER_ASSIGN` | 5 | Default number of submissions per assignment the student can submit; set to a large value to ignore [ NOTE: this is overridable on a per-assignment basis; see the test .toml configuation options section. ] |
 
-NOTE! do not put any spaces around the `=` characters in this file.
+Here is a visualization of the default directory tree and options 
+```
+.
+|--- assignments/               # ASSIGN_ROOT - path from repo root that holds assignments/
+|   |--- my_first_assignment            
+|       |--- testrunner.sh      # ASSIGN_AUTOGRADING_SUBFOLDER - specifies path where autograding files for an
+|       |--- testset.toml.      # assignment are relative to the directory for that assignment.
+|       |--- testset/
+|   |--- ...
+|   |--- assignment_n            
+|--- bin/                       # AUTOGRADING_ROOT holds path to folder that holds bin/, etc/, and setup/ folders 
+|--- etc/
+|--- setup/
 
-Okay! now continue with one of either the `.zip` or Docker methods below.
+|-
+```
 
-## .zip method
-As mentioned above, with the `.zip` method, you'll need to upload a `.zip` file for each 
-assignment (make sure to select `Ubuntu 22.04` for the container type; the Python version, etc. are configured to work with the Jammy Jellyfish defaults). However, there is no other setup required. For the future, if you make changes to any of the files in the `dockerbuild` folder, or to `bin/run_autograder`, make sure to rebuild and re-upload the `Autograder.zip` file. 
+### [tokens]
+At Tufts, we have a system for students to be able to manage late submissions with 'tokens'. The token system is flexible and generally works well. The idea is that the students maintain a bank of X tokens, where each token is effectively a 1-day extension on a given assignment. For any assignment, the maximum number of tokens a student can use is usually 2 - so up to 2 days late. If you would like to use this system, see the tokens section below; otherwise simply ignore it. 
 
-### First-time setup with the .zip method 
-* `cd setup/zipbuild && ./build_container.sh` - this will produce the necessary `Autograder.zip` file, which will be located in `setup/build/` Note: if you don't change the `setup.sh` or `run_autograder` scripts, you can re-use this file for multiple assigments. However, if you make major changes to the repo, doing a fresh build will put a newer copy into the .zip file.
+### [docker]
+These are settings specific to the docker-build process. If you woud like to manually build your container, you will need them. See the `Docker method` section below for details.
 
-### For each assignment with the .zip method
-* On Gradescope, after creating the programming assignment, upload the `Autograder.zip` file in the `configure autograder' section.
+### [other]
+Extra info. The only one here currently is `SUBMISSIONS_PER_ASSIGN`, which allows you to set a cap on the number of submissions a student can send to the autograder per assignment. Change this to a large value to ignore. 
+
+
+## Build the Container
+Note that both of these methods require a 'first-time' setup, which builds the container and puts your git repo inside of it. You will not need to rebuild your container after the first time, unless you make changes to any of the files in the `dockerbuild` or `zipbuild` folders, or to the `bin/run_autograder` script.  
+
+### .zip: first time setup
+* `cd setup/zipbuild && ./build_container.sh` - this produces the necessary `Autograder.zip` file, which will be located in `setup/build/` 
+
+### .zip: per-assignment todo
+* On Gradescope, after creating the programming assignment:
+    * Go to the `configure autograder` section.
+    * Select `Ubuntu 22.04` for the container type.
+    * Upload the `Autograder.zip` file
 * It should build and be tagged with no errors - if not, check the output of the autograder. 
 
-## Docker method
-This method takes a bit more setup in advance. 
-
-0. If you don't have `Docker Desktop`, install it: https://www.docker.com/products/docker-desktop/. 
+## Docker: first-time setup
+0. Install Docker Desktop https://www.docker.com/products/docker-desktop/. 
 1. You will need to host your container somewhere. We suggest using the [GitHub container registry](https://docs.github.com/en/packages/working-with-a-github-packages-registry/working-with-the-container-registry), however if you have a 'pro' account on Dockerhub, that's also a good option. 
-2. If you use the GitHub registry, make sure to share your repo with `gradescope-autograder-servers` after you upload it; if you use Dockerhub, you'll need to add `gradescopeecs` as a private collaborator to your repo.
-3. See the file `etc/docker_config.ini`. You'll need to update the values of these variables as needed. Variables are as follows:
+2. For either registry, you will need a username and password/access token for that registry.
+3. See the [docker] section of `etc/config.toml`. You'll need to update the values of these variables as needed. Variables are as follows:
 
 |     KEY          |        Default       |        Purpose       |
 |------------------|----------------------|----------------------|
@@ -129,28 +151,25 @@ This method takes a bit more setup in advance.
 | `REGISTRY_PASS_VARNAME` | `GHPAT` | Variable name of the environment variable which holds the password/access token to login to the `CONTAINER_REMOTE` [NB: The PAT needs write:packages permissions]. 
 
 Note that in this case `GHUNAME` and `GHPAT` are the names of environment variables (NOT the values of the variables themselves). So with this example you'd need `export GHUNAME='myghubusername'` in your `~/.bashrc`, etc. Make sure to run `source ~/.bashrc` after editing the file.
-
-### Build and deploy the container
-Once you've updated the `etc/autograder_config.ini` and `etc/docker_config.ini` files with the necessary variables, and have put the necessary exports in your `~/.bashrc` file, run:
+4. Build and deploy the container. Note: in rare cases, the Docker build process hangs in the early stages. If this happens to you, run `rm ~/.docker/config.json` and try again. 
 ```
 cd setup/dockerbuild
-./deploy_container
+python3 deploy_container.py
 ```
-The remote repo will be cloned, and then the container will be built and uploaded to the location you've specified. Note: in rare cases, the Docker build process hangs in the early stages. If this happens to you, run `rm ~/.docker/config.json` and try again. For the future, if you make changes to any of the files in the `dockerbuild` folder, or to `bin/run_autograder`, make sure to re-run this script. 
+5. For either registry, after uploading your container [keep it private!], you will need to share it with gradescope's relevant account:
+    * from github: `gradescope-autograder-servers` 
+    * from dockerhub: `gradescopeecs`
 
-### For each assignment with the Docker method 
-
-* On Gradescope, after creating the programming assignment, select the 'Manual Docker Configuration' option in the configure autograder' section; place the full remote path to your container (e.g. `ghcr.io/ghubusername/ghubpackageregistry:dockertag`) 
-* Note that the container will pull the most recent version of the repo every time it runs...so it's a good idea to rebuild the container if you make massive changes to the repo to keep things snappy.  
-
-That's it! 
+## Docker - per-assignment todos
+Select the 'Manual Docker Configuration' option in the `configure autograder` section of the assignment; place the full remote path to your container (e.g. `ghcr.io/ghubusername/ghubpackageregistry:dockertag`). That's it! 
 
 ## What happens when a student submits code
 When a student submits code: 
-* The Docker container is fired up on `aws` - again, note that with either method you use above, a Docker container is still used.
+* A Docker container based on your build is spun up.
 * The script located at `bin/run_autograder` is run.  This script (basically):
     * Runs `git pull` to get the most recent version of your autograding tests. 
     * Copies files for the assignment's autograder to `/autograder/` - the initial working directory for Gradescope's autograder.
+    * Runs `validate_submission.py` - checks if the submission number and tokens are valid [only used with configs that specify these options]
     * Runs `autograde.py` - our autograding framework [details below]. 
     * Runs `make_gradescope_results.py`, which parses the results files and saves the results at `/autograder/results/results.json` in a form readable by Gradescope. 
 
@@ -176,7 +195,7 @@ CREATE TABLE tokens(pk NAME PRIMARY KEY,
 ```
 POSTGRES_REMOTE_PATH="postgres://abcdefgh:nSgKEZiD55VdHDlzDXNBT@drona.db.elephantsql.com/abcdefgh"
 ```
-4) Edit the variables in the etc/token_config.ini file. Make sure to set `MANAGE_TOKENS` to `"true"`. 
+4) Edit the variables in the `[tokens]` section of the `etc/config.toml` file. Make sure to set `MANAGE_TOKENS` to `"true"`. 
 
 |     KEY          |        Default       |        Purpose       |
 |------------------|----------------------|----------------------|
@@ -184,13 +203,13 @@ POSTGRES_REMOTE_PATH="postgres://abcdefgh:nSgKEZiD55VdHDlzDXNBT@drona.db.elephan
 | `TOKEN_TIME`      | `1440` | Length in minutes that one token provides (default is 24 hours). |
 | `STARTING_TOKENS` | `5` | Number of tokens each student has at the start of a semester | 
 | `MAX_PER_ASSIGN` | `2` | Maximum number of tokens supported for a given assignment. [NOTE: this must be 2 for now, more/less are not yet supported] | 
-| `POSTGRES_REMOTE_VARNAME` | `POSTGRES_REMOTE_PATH` | Variable name of the environment variable which holds the URL of the postgres db. [NOTE!! this variable is substitued with the actual value and put into the container at build time; if you change either the value here, or the actual value of the URL in your `~/.bashrc` file, you will need to rebuild your container. This goes for both Docker and zip build methods.] |
-| `MANAGE_TOKENS` | `"false"` | Whether or not to do token management [default of `"false"` will skip tokens entirely]|
+| `POSTGRES_REMOTE_VARNAME` | `"POSTGRES_REMOTE_PATH"` | Variable name of the environment variable which holds the URL of the postgres db. [NOTE!! this variable is substitued with the actual value and put into the container at build time; if you change either the value here, or the actual value of the URL in your `~/.bashrc` file, you will need to rebuild your container. This goes for both Docker and zip build methods.] |
+| `MANAGE_TOKENS` | `"false"` | Whether or not to do token management [default of `"false"` will skip tokens entirely] - NOTE: variable needs to be in quotes|
 
 Now, every time a student submits, prior to the autograder running, tokens will be checked if the assignment is late. If the token check fails, the autograder will fail immediately. You will want to let students know that in gradescope, if they click 'Submission History' at the bottom of the autograder page, they can 'activate' a different submission. Thus, they can choose which submission they would like to be used for grading. 
 
 ## Conclusion
-Okay, you are ready to setup an autograder! Continue to the next section to learn about the autograding framework, and for a walkthrough to setup an assignment. 
+Continue to the next section to learn about the autograding framework, and for a walkthrough to setup an assignment. 
 
 # Autograding Framework
 ## Introduction
@@ -499,7 +518,7 @@ under a test group, or within a specific test.
 | `max_valgrind_score` | `8` | `[common]` only setting - maximum valgrind score for this assignment [per-test valgrind score is deduced by default based on this value]. 
 | `valgrind_score_visibility` | `"after_due_date"` | `[common]` only setting - visibility of the test which will hold the total valgrind points for the student. 
 | `kill_limit` | `750` | `[common]` only setting - test will be killed if it's memory usage exceeds this value (in `MB`) - soft and hard rlimit_data will be set to this value in a preexec function to the subprocess call. NOTE: this parameter is specifically intended to keep the container from crashing, and thus is `[common]` only. Also, if the program exceeds the limit, it will likely receive `SIGSEGV` or `SIGABRT` from the os. Unfortunately, nothing is produced on `stderr` in this case, so while the test will likely fail based on exitcode, it's difficult to 'know' to report an exceeded memory error. However, if `valgrind` is also run and fails to produce a log file (due to also receiving `SIGSEGV`/`SIGABRT`), the test will be assumed to have exceeded max ram...in general, however, this is tricky to debug. In my experience, `valgrind` will fail to allocate memory but still produce a log file at `~50MB` of ram; any lower and no log file will be produced. The default setting of `750` `MB` should be fine for most tests, and will work with the smallest (default) container. |
-| `max_submissions` | _ | `[common]` only setting - this value will override the default value of `SUBMISSIONS_PER_ASSIGN` in the `autograder_config.ini`. If not set for an assignment, the default value for this is ignored, and the `SUBMISSIONS_PER_ASSIGN` value is used instead. | 
+| `max_submissions` | _ | `[common]` only setting - this value will override the default value of `SUBMISSIONS_PER_ASSIGN` in the `etc/config.toml`. If not set for an assignment, the default value for this is ignored, and the `SUBMISSIONS_PER_ASSIGN` value is used instead. | 
 
 
 ## Visibility settings in Gradescope

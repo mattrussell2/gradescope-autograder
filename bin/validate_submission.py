@@ -91,7 +91,7 @@ COMMANDS = {
     'add_assignment': f"ALTER TABLE tokens ADD COLUMN \"{ASSIGN_NAME}\" INTEGER DEFAULT 0;"
 }
 
-CONN   = psycopg2.connect(TOKEN_CONFIG["PG_REM_PATH"])
+CONN   = psycopg2.connect(TOKEN_CONFIG["POSTGRES_REMOTE"])
 CURSOR = CONN.cursor()
 
 CURSOR.execute(COMMANDS['get_headers'])
