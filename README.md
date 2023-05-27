@@ -129,9 +129,9 @@ Both methods require a 'first-time' setup which builds the container and puts yo
 
 ## Docker: first-time setup
 0. Install Docker Desktop https://www.docker.com/products/docker-desktop/. 
-1. You will need to host your container somewhere. We suggest using the [GitHub container registry](https://docs.github.com/en/packages/working-with-a-github-packages-registry/working-with-the-container-registry), however if you have a 'pro' account on Dockerhub, that's also a good option. 
+1. You will need to host your container somewhere. We suggest using the [GitHub container registry](https://docs.github.com/en/packages/working-with-a-github-packages-registry/working-with-the-container-registry), but a Dockerhub 'pro' (paid) account will also work,
 2. For either registry, you will need a username and password/access token for that registry.
-3. See the [docker] section of `etc/config.toml`. You'll need to update the values of these variables as needed.
+3. See the [docker] section of `etc/config.toml`. You'll need to update the values of these variables as needed. Note that in this case `GHUNAME` and `GHPAT` are the names of environment variables (NOT the values of the variables themselves). So with this example you'd need `export GHUNAME='myghubusername'` in your `~/.bashrc`, etc. Run `source ~/.bashrc` after editing the file.
 
 |     KEY          |        Default       |        Purpose       |
 |------------------|----------------------|----------------------|
@@ -141,7 +141,6 @@ Both methods require a 'first-time' setup which builds the container and puts yo
 | `REGISTRY_USER_VARNAME` | `GHUNAME` | Variable name of the environment variable which holds the username to login to the `CONTAINER_REMOTE`. 
 | `REGISTRY_PASS_VARNAME` | `GHPAT` | Variable name of the environment variable which holds the password/access token to login to the `CONTAINER_REMOTE` [NB: The PAT needs write:packages permissions]. 
 
-Note that in this case `GHUNAME` and `GHPAT` are the names of environment variables (NOT the values of the variables themselves). So with this example you'd need `export GHUNAME='myghubusername'` in your `~/.bashrc`, etc. Run `source ~/.bashrc` after editing the file.
 4. Build and deploy the container. In rare cases, the Docker build process hangs in the early stages. If this happens to you, run `rm ~/.docker/config.json` and try again. 
 ```
 cd setup/dockerbuild
