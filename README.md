@@ -304,12 +304,12 @@ tests = [ { testname = "test0", description = "my first test" }
 ```
 All of the tests in the group [set_of_tests] will have these two argv arguments specified, whereby the string "${testname}" will be replaced with the name of the test. See example configuration #2 below for further details. 
 * Canonicalization of any of the output streams or output files prior to diffing is supported. Functions which are used by the autograder in `canonicalizers.py` must:
-    * take four parameters:
+    * take four parameters (which will be provided by the autograder)
         1.  A string which will contain the student's output from whichever stream is to be canonicalized
         2.  A string which will contain the reference solution's (non-canonicalized) output from whichever stream is to be canonicalized
         3.  A string which will contain the name of the test (e.g. `test01`)
         4.  A dictionary which will contain any specific test configuration options (e.g. `{'my_config_var': 10}`)
-    * And return a string, which contains the canonicalized output of the student
+    * Return a string, which contains the canonicalized output of the student
 See the specification below for the argument specifics. 
 * **Each `summary` file in the `logs/` directory contains a dump of the state of a given test. Specifically, this is literally a dump of the backend `Test` object from the `autograde.py` script - a summary is created upon initialization of the test, and is overwritten after a test finishes. All of the configuration options (e.g. `diff_stdout`, etc.) and results (e.g. `stdout_diff_passed`) are part of the `Test` object, so the `summary` files are very useful for debugging!**
 
