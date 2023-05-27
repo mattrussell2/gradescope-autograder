@@ -16,9 +16,6 @@ cp etc/autograder_config.ini setup/build/
 cp etc/token_config.ini setup/build/
 cp etc/motd setup/build/
 
-# move the dockerfile to the build directory
-cp setup/dockerbuild/Dockerfile setup/build/
-
 gsed -i "s|POSTGRES_REMOTE_VARNAME|PG_REM_PATH|g" setup/build/token_config.ini
 gsed -i "s|${POSTGRES_REMOTE_VARNAME}|${POSTGRES_REMOTE_PATH}|g" setup/build/token_config.ini
 
