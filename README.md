@@ -303,8 +303,8 @@ tests = [ { testname = "test0", description = "my first test" }
 ]
 ```
 All of the tests in the group [set_of_tests] will have these two argv arguments specified, whereby the string "${testname}" will be replaced with the name of the test. See example configuration #2 below for further details. 
-* Canonicalization of any of the output streams or output files prior to diffing is supported. Functions which are used by the autograder in `canonicalizers.py` must:
-    * take four parameters (which will be provided by the autograder)
+* Canonicalization of any of the output streams or output files prior to `diff`ing is supported. Functions which are used by the autograder in `canonicalizers.py` must:
+    * Take four parameters (which will be provided by the autograder)
         1.  A string which will contain the student's output from whichever stream is to be canonicalized
         2.  A string which will contain the reference solution's (non-canonicalized) output from whichever stream is to be canonicalized
         3.  A string which will contain the name of the test (e.g. `test01`)
