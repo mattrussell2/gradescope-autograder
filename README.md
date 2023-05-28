@@ -319,18 +319,18 @@ These express all of the possibilities, but various `.ofile`, `.diff`, `.ccized`
 ```
 ## General Notes
 * Any file in `testset/stdin/` that is named `<testname>.stdin` will be sent to `stdin` for a test with the testname `<testname>`. 
-* For any test, you may specify a variable `argv` which is a list to send as arguments to the executable. For example, the following test will be run as `./test0 1 2 3`.
+* For any test, you may specify a variable `argv` which is a list to send as arguments to the executable. For example, the following test will be run as `./test0 1 2 3`. Note all `arvg` arguments must be written as strings. 
 ```
-{ testname = "test0", description = "my first test", argv = [1, 2, 3] }
+{ testname = "test0", description = "my first test", argv = ["1", "2", "3"] }
 ```
 * In addition to `diff`ing student's `stdout` and `stderr` against a reference output, this framework supports `diff`ing against any number of output files created by the student's program. Such output files must be named `<testname>.ANYTHING_HERE.ofile`; the expectation is that the executable will receive the name of the file to produce as an input argument. For example
 ```
-{ testname = "test0", description = "my first test", argv = [test0.one.ofile, test1.two.ofile] }
+{ testname = "test0", description = "my first test", argv = [ "test0.one.ofile", "test1.two.ofile" ] }
 ```
-You can generalize this functionality to multiple tests with the string `#{testname}.ANYTHING_HERE.ofile` in the `argv` list. For example:
+You can generalize this functionality to multiple tests with the string `#{testname}.ANYTHING_HERE.ofile` in the `argv` list. For example
 ```
 [set_of_tests]
-argv = [#{testname}.cookies.ofile, #{testname}.candy.ofile]
+argv = [ "#{testname}.cookies.ofile", "#{testname}.candy.ofile" ]
 tests = [ { testname = "test0", description = "my first test" }
          ... 
 ]
