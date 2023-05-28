@@ -488,8 +488,6 @@ source ~/.bashrc
 Also, if you don't have `icdiff` installed on your system and would like to use the `pretty_diff` option you'll need to install it (`brew/apt-get icdiff`).
 
 ### Building the Reference Output
-NOTE: the current example `sanity_test` in this repo does not require reference output - it just showcases a demo of expected results from running `.cpp` files. More examples will be added soon, but in the meanwhile, if you want to see the results of `sanity_test`, skip this section and move to `testing with an example submission`. 
-
 Once you've configured your tests, from the assignment's autograder directory [when you run `ls` from here you should see `testset.toml`, `testset`, etc.], run the command
 ```
 build_ref_output
@@ -510,8 +508,6 @@ where `SUBMISSION_DIR` contains the submission code you would like to test. For 
 test_autograder -s testset/solution
 ```
 This script will create a temporary testing directory named `temp_testing_dir`, copy everything there, and run the tests. You can optionally remove this directory after tests are run with the `-d` option.
-
-To test against `sanity_check`, just use a random folder for the submission - it won't be used. 
 
 ### Parallel Execution of Tests
 The `autograde` program supports parallel execution of tests with the `-j` option
