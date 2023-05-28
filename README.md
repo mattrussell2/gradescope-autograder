@@ -89,8 +89,8 @@ Here is a visualization of the default directory tree and options
 |       |--- testset/
 |   |--- ...
 |   |--- assignment_n
-|       |--- testrunner.sh      # ASSIGN_AUTOGRADING_SUBFOLDER - "" - specifies path where autograding files for an
-|       |--- testset.toml.      # assignment are relative to the directory for that assignment -- THIS MUST BE THE SAME FOR ALL ASSIGNMENTS 
+|       |--- testrunner.sh 
+|       |--- testset.toml. 
 |       |--- testset/            
 |--- bin/                       # AUTOGRADING_ROOT - "" - holds path to folder that holds bin/, etc/, and setup/ folders 
 |--- etc/
@@ -109,7 +109,7 @@ With this example repo it doesn't make much sense to get more complicated than t
 |               |--- testset/
 |       |--- ...
 |       |--- assignment_n 
-|           |--- autograder         # ASSIGN_AUTOGRADING_SUBFOLDER - "autograder" -- THIS MUST BE THE SAME FOR ALL ASSIGNMENTS
+|           |--- autograder
 |               |--- testrunner.sh 
 |               |--- testset.toml. 
 |               |--- testset/
