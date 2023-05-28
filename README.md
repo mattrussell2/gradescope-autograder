@@ -108,6 +108,13 @@ Extra info. The only one here currently is `SUBMISSIONS_PER_ASSIGN`, which allow
 
 
 ## Build the Container
+
+### Prereqs
+Prior to building the container, you will need
+1) python3 
+2) to install `toml` for python: `python3 -m pip install toml`
+
+### Intro
 There are two methods by which you can build the Docker container for Gradescope:
 
 1) The `.zip` method - for each assignment, this workflow is to manually upload a `.zip` file to Gradescope that contains two scripts: `setup.sh`, which installs dependencies, and a shell script named `run_autograder`, which runs the autograder. Gradescope then adapts their default container image based on your setup.sh script.
@@ -127,7 +134,7 @@ Both methods require a 'first-time' setup which builds the container and puts yo
     * Upload the `Autograder.zip` file
 * It should build and be tagged with no errors - this will take ~5 minutes.
 
-## Docker: first-time setup
+### Docker: first-time setup
 0. Install Docker Desktop https://www.docker.com/products/docker-desktop/. 
 1. You will need to host your container somewhere. We suggest using the [GitHub container registry](https://docs.github.com/en/packages/working-with-a-github-packages-registry/working-with-the-container-registry), but a Dockerhub 'pro' (paid) account will also work,
 2. For either registry, you will need a username and password/access token for that registry.
@@ -141,7 +148,7 @@ Both methods require a 'first-time' setup which builds the container and puts yo
 | `REGISTRY_USER_VARNAME` | `GHUNAME` | Variable name of the environment variable which holds the username to login to the `CONTAINER_REMOTE`. 
 | `REGISTRY_PASS_VARNAME` | `GHPAT` | Variable name of the environment variable which holds the password/access token to login to the `CONTAINER_REMOTE` [NB: The PAT needs write:packages permissions]. 
 
-4. Build and deploy the container. In rare cases, the Docker build process hangs in the early stages. If this happens to you, run `rm ~/.docker/config.json` and try again. 
+4. Build and deploy the container. In rare cases, the Docker build process hangs in the early stages. If this happens to you, run `rm ~/.docker/config.json` and try again. This will take a few minutes or so; the bottleneck is usually uploading the container. 
 ```
 cd setup/dockerbuild
 python3 deploy_container.py
@@ -150,8 +157,8 @@ python3 deploy_container.py
     * from github: `gradescope-autograder-servers` 
     * from dockerhub: `gradescopeecs`
 
-## Docker - per-assignment todos
-Select the 'Manual Docker Configuration' option in the `configure autograder` section of the assignment; place the full remote path to your container (e.g. `ghcr.io/ghubusername/ghubpackageregistry:dockertag`). Gradescope will then immediately be able to use your container.
+### Docker - per-assignment todos
+Select the `Manual Docker Configuration` option in the `configure autograder` section of the assignment; place the full remote path to your container (e.g. `ghcr.io/ghubusername/ghubpackageregistry:dockertag`). Gradescope will then immediately be able to use your container.
 
 ## Token Management
 At Tufts, we have a system for students to be able to manage late submissions with 'tokens'. The token system is flexible and generally works well. The idea is that the students maintain a bank of X tokens, where each token is effectively a 1-day extension on a given assignment. For any assignment, the maximum number of tokens a student can use is usually 2 - so up to 2 days late. If you don't want to use tokens, just skip this section.
