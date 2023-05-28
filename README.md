@@ -12,8 +12,8 @@ As a high-level overview, each time a submission is provided to gradescope, or a
 * A Docker container based on your build is spun up by Gradescope.
 * `git pull` gets the most recent version of your autograder and tests. 
 *  The submission is checked re: lateness and number of submissions to see if it is acceptable [optional]
-* `Student's code is run and `diff`ed vs. reference output
-* `The results are parsed to produce a `results.json` formatted for Gradescope. 
+* Student's code is run and `diff`ed vs. reference output
+* The results are parsed to produce a `results.json` formatted for Gradescope. 
 
 ## Create Your Autograding Git Repo
 Before we begin, you will need a git repository for your autograder. If you don't currently have a repository related to course material, please make one. We suggest using gitlab for this: go to https://gitlab.cs.tufts.edu and login with `LDAP` using your Tufts eecs `utln` and password. Then create a new repository from scratch [don't add a README]. Then, clone this repo to get the relevant files. 
