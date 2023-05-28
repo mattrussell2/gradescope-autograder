@@ -146,7 +146,7 @@ There are two methods by which you can build the Docker container for Gradescope
 
 Both methods require a 'first-time' setup which builds the container and puts your git repo inside of it, but you will not need to rebuild your container after the first time, unless you make changes to any of the files in the `dockerbuild` or `zipbuild` folders, or to the `bin/run_autograder` script, or elsewhere specified in this document. Also, if you do make major changes to your repo, you might want to rebuild, in order to minimize the amount of autograder time spent doing `git pull`.
 
-Both build methods below use a temporary build directory located in `setup/build`. Feel free to delete this directory after uploading your contianer - it will contain a clone of your repo cloned with the deploy key, which is convenient if you have to iterate on the `run_autograder` process, but otherwise is just taking up space. 
+Both build methods below use a temporary build directory located in `setup/build`. Feel free to delete this directory after uploading your contianer - it will contain a clone of your repo cloned with the deploy key, which is convenient if you have to iterate on the `run_autograder` process, but otherwise is just taking up space. Note that `**/setup/build/` is added to `.gitignore`.
 
 ### .zip: first time setup
 * run `cd setup/zipbuild && ./build_container.sh` to produce `Autograder.zip` file, which will be located in `setup/build/`. You'll want to keep this `.zip` file around, as you can re-use it on subsequent assignments. 
