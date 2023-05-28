@@ -488,7 +488,9 @@ source ~/.bashrc
 Also, if you don't have `icdiff` installed on your system and would like to use the `pretty_diff` option you'll need to install it (`brew/apt-get icdiff`).
 
 ### Building the Reference Output
-Once you've configured your tests, from the assignment's autograder directory [when you run `ls` from here you should see `testset.toml`, `testset`, etc.], run the command 
+NOTE: the current example `sanity_test` in this repo does not require reference output - it just showcases a demo of expected results from running `.cpp` files. More examples will be added soon, but in the meanwhile, if you want to see the results of `sanity_test`, skip this section and move to `testing with an example submission`. 
+
+Once you've configured your tests, from the assignment's autograder directory [when you run `ls` from here you should see `testset.toml`, `testset`, etc.], run the command
 ```
 build_ref_output
 ``` 
@@ -508,6 +510,8 @@ where `SUBMISSION_DIR` contains the submission code you would like to test. For 
 test_autograder -s testset/solution
 ```
 This script will create a temporary testing directory named `temp_testing_dir`, copy everything there, and run the tests. You can optionally remove this directory after tests are run with the `-d` option.
+
+To test against `sanity_check`, just use a random folder for the submission - it won't be used. 
 
 ### Parallel Execution of Tests
 The `autograde` program supports parallel execution of tests with the `-j` option
@@ -573,8 +577,12 @@ That should be enough to get you up and running! Please feel free to contact me 
 
 # TODOS
 * Update the functionality of `bin/autograde.py` so that if a grader is re-running tests, we don't nuke the entire build folder, but intelligently load the data from alread-run tests. Also, need to verify that the various filter, etc. options work as expected. 
+* Since we've removed course code from the repo, we need more examples in `assignments/`.
 
 # Changelog
+## [2.0.1] - 2023-05-28
+README.md updates
+
 ## [2.0.0] - 2023-05-27
 Pythonified build process, and merged all config files into one `.toml` file. 
 After the new, improved, simplified build process, token management system, and security fixes, we're at version 2.0 [!]
