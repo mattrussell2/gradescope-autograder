@@ -104,8 +104,8 @@ With this example repo it doesn't make much sense to get more complicated than t
 |               |--- testrunner.sh 
 |               |--- testset.toml. 
 |               |--- testset/
-|   |--- ...
-|   |--- assignment_n 
+|       |--- ...
+|       |--- assignment_n 
 |--- autograding_framework           # AUTOGRADING_ROOT - "autograding_framework"
 |   |--- bin/                      
 |   |--- etc/
