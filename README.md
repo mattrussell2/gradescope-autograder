@@ -106,6 +106,10 @@ With this example repo it doesn't make much sense to get more complicated than t
 |               |--- testset/
 |       |--- ...
 |       |--- assignment_n 
+|           |--- autograder         # ASSIGN_AUTOGRADING_SUBFOLDER - "autograder" -- THIS MUST BE THE SAME FOR ALL ASSIGNMENTS
+|               |--- testrunner.sh 
+|               |--- testset.toml. 
+|               |--- testset/
 |--- autograding_framework           # AUTOGRADING_ROOT - "autograding_framework"
 |   |--- bin/                      
 |   |--- etc/
