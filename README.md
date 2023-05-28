@@ -327,7 +327,7 @@ These express all of the possibilities, but various `.ofile`, `.diff`, `.ccized`
 ```
 { testname = "test0", description = "my first test", argv = [ "test0.one.ofile", "test1.two.ofile" ] }
 ```
-You can generalize this functionality to multiple tests with the string `#{testname}.ANYTHING_HERE.ofile` in the `argv` list. For example
+You can generalize this functionality to multiple tests with the string `#{testname}.ANYTHING_HERE.ofile` in the `argv` list. In the following example, all of the tests in the group [set_of_tests] will have these two argv arguments specified, whereby the string "#{testname}" will be replaced with the name of the test. See example configuration #2 below for further details. 
 ```
 [set_of_tests]
 argv = [ "#{testname}.cookies.ofile", "#{testname}.candy.ofile" ]
@@ -335,7 +335,6 @@ tests = [ { testname = "test0", description = "my first test" }
          ... 
 ]
 ```
-All of the tests in the group [set_of_tests] will have these two argv arguments specified, whereby the string "${testname}" will be replaced with the name of the test. See example configuration #2 below for further details. 
 * Canonicalization of any of the output streams or output files prior to `diff`ing is supported. Functions which are used by the autograder in `canonicalizers.py` must:
     * Take four parameters (which will be provided by the autograder)
         1.  A string which will contain the student's output from whichever stream is to be canonicalized
