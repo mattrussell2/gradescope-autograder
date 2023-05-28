@@ -39,7 +39,7 @@ export AUTOGRADING_REPO_REMOTE_PATH="https://cs-15-2022uc:glpat-Blah8173Blah8023
 
 Make sure `source ~/.bashrc` (or equivalent) after editing the file.
 
-Note that in the configuration files listed below, you will sometimes specify the *variable name* (not value), which will then be used during the build process. This is for situations with secrets, and enables you maximum flexibility in terms of not having sensitive data in the repo itself. You can rename these variables to whatever you'd like - we suggest adding identifiers associated with your course, in case you use the framework multiple times. 
+Note that in the configuration files listed below, you will sometimes specify the *variable name* (not value), which will then be used during the build process. This is for situations with secrets, and enables you maximum flexibility in terms of not having sensitive data in the repo itself. You can rename these variables to whatever you'd like - we suggest adding identifiers associated with your course, in case you use the framework multiple times: for example, the variable above might be named `AG_REPO_REMOTE_CS15_SUMMER_2023`; in this case, change the value of `REPO_REMOTE_VARNAME` below to match. 
 
 ## etc/config.toml
 The file `etc/config.toml` contains various important bits of information toward deploying your autograder.
