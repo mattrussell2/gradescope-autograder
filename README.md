@@ -348,7 +348,7 @@ See the specification below for the argument specifics.
 ### Driver-based testing notes
 When deploying a set of `cpp` files where each is intended to be their own driver:
 * Files in `testset/cpp/` named `<testname>.cpp` (`test01.cpp`) are intended to be driver files; each one will contain `main()`, and will be compiled and linked with the student's code.
-* You must use a custom `Makefile` where each test has its own target (i.e. we will run `make test01`). The `Makefile` will be run from the `results/build` directory, and will need to compile and link with the driver files which will live in the relative `../../testset/cpp` directory. See an example here: `assignments/sanity_check/testset/makefile/Makefile`.
+* You must use a custom `Makefile` where each test has its own target (i.e. we will run `make test01`). The `Makefile` will be run from the `results/build` directory, and will need to compile and link with the driver files which will live in the relative `../../testset/cpp` directory. See an example here: `assignments/sanity_check/testset/makefile/Makefile`. This has a single rule to build tests named `test00`-`testnn`.
 * Whenever using `our_makefile`, the target to build (e.g. `make target`) must always be named the same as the program to run (e.g. `./target`).
 
 ### Student-executable testing notes
