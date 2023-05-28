@@ -11,9 +11,9 @@ If you have any questions, please reach out to me at `mrussell@cs.tufts.edu`, or
 As a high-level overview, each time a submission is provided to gradescope, or a ta re-runs tests:
 * A Docker container based on your build is spun up by Gradescope.
 * `git pull` gets the most recent version of your autograder and tests. 
-* `validate_submission.py` checks if the submission is acceptable
-* `autograde` runs student code and diff vs. reference output
-* `make_gradescope_results.py` parses the results from `autograde` and produce a `results.json` formatted for Gradescope. 
+*  The submission is checked re: lateness and number of submissions to see if it is acceptable [optional]
+* `Student's code is run and `diff`ed vs. reference output
+* `The results are parsed to produce a `results.json` formatted for Gradescope. 
 
 ## Create Your Autograding Git Repo
 Before we begin, you will need a git repository for your autograder. If you don't currently have a repository related to course material, please make one. We suggest using gitlab for this: go to https://gitlab.cs.tufts.edu and login with `LDAP` using your Tufts eecs `utln` and password. Then create a new repository from scratch [don't add a README]. Then, clone this repo to get the relevant files. 
@@ -26,9 +26,7 @@ git push
 ```
 Great! You will need an Access Token to provide the autograder container with permissions to the repo. To create one, go to gitlab in your browser, and navigate to the course repository you just created. Next, hover over the settings cog on the lower left, and select `Access Tokens`. Create one. We suggest only providing `read repository` access to the token. Feel free to select whatever you'd like for the name, expiration date, and role, however role must be at least `Developer` in order to be able to pull. Once the token is created, copy the key. 
 
-A note on 'secrets': The strategy for handling sensitive data in this repository (like your access token) is to have all of the relevant data be stored in enviornment variables on your system. In the configuration files listed below, you will often specify the *variable name* (not value), which will then be used during the build process. This enables you maximum flexibility in terms of not having sensitive data in the repo itself. You can rename these variables to whatever you'd like - we suggest adding identifiers associated with your course, in case you use the framework multiple times. 
-
-The first example of this will be an environment variable with the remote path to your autograding repo, including the acess token copied above. Open your `~/.bashrc` file (or appropriate file for whichever shell you use), and add the following line (or the appropriate `export` for your shell): 
+A note on 'secrets': The strategy for handling sensitive data in this repository (like your access token) is to have all of the relevant data be stored in enviornment variables on your system. The first example of this will be an environment variable with the remote path to your autograding repo, including the acess token copied above. Open your `~/.bashrc` file (or appropriate file for whichever shell you use), and add the following line (or the appropriate `export` for your shell): 
 
 ```
 export AUTOGRADING_REPO_REMOTE_PATH="https://REPOSITORY-NAME:ACCESS-TOKEN@gitlab.cs.tufts.edu/path/to/repository.git"
@@ -40,6 +38,8 @@ export AUTOGRADING_REPO_REMOTE_PATH="https://cs-15-2022uc:glpat-Blah8173Blah8023
 ```
 
 Make sure `source ~/.bashrc` (or equivalent) after editing the file.
+
+Note that in the configuration files listed below, you will sometimes specify the *variable name* (not value), which will then be used during the build process. This is for situations with secrets, and enables you maximum flexibility in terms of not having sensitive data in the repo itself. You can rename these variables to whatever you'd like - we suggest adding identifiers associated with your course, in case you use the framework multiple times. 
 
 ## etc/config.toml
 The file `etc/config.toml` contains various important bits of information toward deploying your autograder.
@@ -70,7 +70,7 @@ SUBMISSIONS_PER_ASSIGN = 5
 ```
 
 ### [paths]
-Items in the `[paths]` section of the `etc/config.toml` file relate to directory structure of the repo. Options are as follows:
+Items in the `[paths]` section relate to directory structure of the repo. Options are as follows:
 
 |     KEY          |        Default       |      Purpose       |
 |------------------|----------------------|----------------------|
@@ -82,17 +82,34 @@ Items in the `[paths]` section of the `etc/config.toml` file relate to directory
 Here is a visualization of the default directory tree and options 
 ```
 .
-|--- assignments/               # ASSIGN_ROOT - path from repo root that holds assignments/
+|--- assignments/               # ASSIGN_ROOT - "assignments" - path from repo root that holds the assignment folders themselves
 |   |--- my_first_assignment            
-|       |--- testrunner.sh      # ASSIGN_AUTOGRADING_SUBFOLDER - specifies path where autograding files for an
+|       |--- testrunner.sh      # ASSIGN_AUTOGRADING_SUBFOLDER - "" - specifies path where autograding files for an
 |       |--- testset.toml.      # assignment are relative to the directory for that assignment.
 |       |--- testset/
 |   |--- ...
 |   |--- assignment_n            
-|--- bin/                       # AUTOGRADING_ROOT holds path to folder that holds bin/, etc/, and setup/ folders 
+|--- bin/                       # AUTOGRADING_ROOT - "" - holds path to folder that holds bin/, etc/, and setup/ folders 
 |--- etc/
 |--- setup/
-
+|-
+```
+With this example repo it doesn't make much sense to get more complicated than this, but here is another example
+```
+.
+|--- my_random_folder               # ASSIGN_ROOT - "my_random_folder/assignments"
+|    |--- assignments/               
+|       |--- my_first_assignment            
+|           |--- autograder         # ASSIGN_AUTOGRADING_SUBFOLDER - "autograder" -- THIS MUST BE THE SAME FOR ALL ASSIGNMENTS
+|               |--- testrunner.sh 
+|               |--- testset.toml. 
+|               |--- testset/
+|   |--- ...
+|   |--- assignment_n 
+|--- autograding_framework           # AUTOGRADING_ROOT - "autograding_framework"
+|   |--- bin/                      
+|   |--- etc/
+|   |--- setup/
 |-
 ```
 **Note! The assignment name for an assignment in the `assignments/` folder must have the same name as the assignment name on Gradescope. An environment variable $ASSIGNMENT_TITLE is provided to the container by Gradescope, and this is used to find the autograder files. If the names don't match, there will be issues. One caveat is that you may use spaces in place of underscores on gradescope; however, the other text must match exactly (case sensitive).**
@@ -101,7 +118,7 @@ Here is a visualization of the default directory tree and options
 At Tufts, we have a system for students to be able to manage late submissions with 'tokens'. The token system is flexible and generally works well. The idea is that the students maintain a bank of X tokens, where each token is effectively a 1-day extension on a given assignment. For any assignment, the maximum number of tokens a student can use is usually 2 - so up to 2 days late. If you would like to use this system, see the tokens section below; otherwise simply ignore it. 
 
 ### [docker]
-These are settings specific to the docker-build process. If you woud like to manually build your container, you will need them. See the `Docker method` section below for details.
+These are settings specific to the docker-build process. If you woud like to manually build your container, you will need them. See the `Docker method` section below for details; likewise simply ignore this section if you don't want to use docker manually.
 
 ### [other]
 Extra info. The only one here currently is `SUBMISSIONS_PER_ASSIGN`, which allows you to set a cap on the number of submissions a student can send to the autograder per assignment. Change this to a large value to ignore. 
@@ -112,20 +129,20 @@ Extra info. The only one here currently is `SUBMISSIONS_PER_ASSIGN`, which allow
 ### Prereqs
 Prior to building the container, you will need
 1) python3 
-2) to install `toml` for python: `python3 -m pip install toml`
+2) `toml` library for python: `python3 -m pip install toml`
 
 ### Intro
-There are two methods by which you can build the Docker container for Gradescope:
+There are two methods by which you can build the Docker container for Gradescope
 
-1) The `.zip` method - for each assignment, this workflow is to manually upload a `.zip` file to Gradescope that contains two scripts: `setup.sh`, which installs dependencies, and a shell script named `run_autograder`, which runs the autograder. Gradescope then adapts their default container image based on your setup.sh script.
-2) The Docker method - this workflow is to build the Docker container from scratch and upload it to the container registry of your choice. Then for each assignment you simply point gradescope to use your container. 
+1) The `.zip` method - for each assignment, this workflow is to manually upload a `.zip` file to Gradescope that contains two scripts: `setup.sh`, which installs dependencies, and a shell script named `run_autograder`, which runs the autograder. Gradescope then builds a docker container that is adapted based on your setup.sh script. This will work fine if you don't want to get into Docker.
+2) The Docker method - this workflow is to build the Docker container from scratch and upload it to the container registry of your choice. Then for each assignment you simply point gradescope to use your container. If you already use Docker, or are feeling adventurous, go for this option. 
 
-The Docker method is slightly more streamlined once it's setup. After uploading the container, for every assignment, you can point Gradescope to the container location - no `.zip` file uploading required, and no waiting for the container to be built again. If you already use Docker, or are feeling adventurous, go for this option. 
+Both methods require a 'first-time' setup which builds the container and puts your git repo inside of it, but you will not need to rebuild your container after the first time, unless you make changes to any of the files in the `dockerbuild` or `zipbuild` folders, or to the `bin/run_autograder` script, or elsewhere specified in this document. Also, if you do make major changes to your repo, you might want to rebuild, in order to minimize the amount of autograder time spent doing `git pull`.
 
-Both methods require a 'first-time' setup which builds the container and puts your git repo inside of it, but you will not need to rebuild your container after the first time, unless you make changes to any of the files in the `dockerbuild` or `zipbuild` folders, or to the `bin/run_autograder` script, or elsewhere specified in this document.  
+Both build methods below use a temporary build directory located in `setup/build`. Feel free to delete this directory after uploading your contianer - it will contain a clone of your repo cloned with the deploy key, which is convenient if you have to iterate on the `run_autograder` process, but otherwise is just taking up space. 
 
 ### .zip: first time setup
-* `cd setup/zipbuild && ./build_container.sh` - this produces the necessary `Autograder.zip` file, which will be located in `setup/build/` 
+* run `cd setup/zipbuild && ./build_container.sh` to produce `Autograder.zip` file, which will be located in `setup/build/`. You'll want to keep this `.zip` file around, as you can re-use it on subsequent assignments. 
 
 ### .zip: per-assignment todo
 * On Gradescope, after creating the programming assignment:
@@ -187,8 +204,8 @@ POSTGRES_REMOTE_PATH="postgres://abcdefgh:nSgKEZiD55VdHDlzDXNBT@drona.db.elephan
 | `TOKEN_TIME`      | `1440` | Length in minutes that one token provides (default is 24 hours). |
 | `STARTING_TOKENS` | `5` | Number of tokens each student has at the start of a semester | 
 | `MAX_PER_ASSIGN` | `2` | Maximum number of tokens supported for a given assignment. [NOTE: this must be 2 for now, more/less are not yet supported] | 
-| `POSTGRES_REMOTE_VARNAME` | `"POSTGRES_REMOTE_PATH"` | Variable name of the environment variable which holds the URL of the postgres db. [NOTE!! this variable is substitued with the actual value and put into the container at build time; if you change either the value here, or the actual value of the URL in your `~/.bashrc` file, you will need to rebuild your container. This goes for both Docker and zip build methods.] |
 | `MANAGE_TOKENS` | `"false"` | Whether or not to do token management [default of `"false"` will skip tokens entirely] - NOTE: variable needs to be in quotes |
+| `POSTGRES_REMOTE_VARNAME` | `"POSTGRES_REMOTE_PATH"` | Variable name of the environment variable which holds the URL of the postgres db. [NOTE!! this variable is substitued with the actual value and put into the container at build time; if you change either the value here, or the actual value of the URL in your `~/.bashrc` file, you will need to rebuild your container. This goes for both Docker and zip build methods.] |
 
 Now, every time a student submits, prior to the autograder running, tokens will be checked if the assignment is late. If the token check fails, the autograder will fail immediately. You will want to let students know that in gradescope, if they click 'Submission History' at the bottom of the autograder page, they can 'activate' a different submission. Thus, they can choose which submission they would like to be used for grading. 
 
@@ -196,7 +213,7 @@ Now, every time a student submits, prior to the autograder running, tokens will 
 Security concerns have been raised re: Gradescope's containers by a number of people over the years. Our approach to maximizing security is as follows:
 * A non-root user is created (named `student`) during the container build process. 
 * Prior to running any element of a student's submitted code, all of the files of the repository and configuration files created during the build process are chmodded such that they are not visible to `student`.
-* All subprocess calls which will interact with student code [via `make`, or executing files produced by `make`], are run as the user `student`. 
+* All subprocess calls which interact with student code in any way [e.g. via `make`, or executing files produced by `make`], are run as the user `student`. 
 This ensures that any time student's code is run, they should not be able to see any of the back-end autograding files. 
 
 ## Conclusion
