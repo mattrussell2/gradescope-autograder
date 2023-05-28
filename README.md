@@ -84,8 +84,8 @@ Here is a visualization of the default directory tree and options
 .
 |--- assignments/               # ASSIGN_ROOT - "assignments" - path from repo root that holds the assignment folders themselves
 |   |--- my_first_assignment            
-|       |--- testrunner.sh      # ASSIGN_AUTOGRADING_SUBFOLDER - "" - specifies path where autograding files for an
-|       |--- testset.toml.      # assignment are relative to the directory for that assignment -- THIS MUST BE THE SAME FOR ALL ASSIGNMENTS.
+|       |--- testrunner.sh      # ASSIGN_AUTOGRADING_SUBFOLDER - "" - specifies path where autograding files for an assignment  
+|       |--- testset.toml.      # are relative to the directory for that assignment -- THIS MUST BE THE SAME FOR ALL ASSIGNMENTS.
 |       |--- testset/
 |   |--- ...
 |   |--- assignment_n
