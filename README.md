@@ -319,9 +319,9 @@ These express all of the possibilities, but various `.ofile`, `.diff`, `.ccized`
 ```
 ## General Notes
 * Any file in `testset/stdin/` that is named `<testname>.stdin` will be sent to `stdin` for a test with the testname `<testname>`. 
-* For any test, you may specify a variable `argv` which is a list to send as arguments to the executable. For example, the following test will be run as `./test0 1 2 3`. Note all `arvg` arguments must be written as strings. 
+* For any test, you may specify a variable `argv` which is a list to send as arguments to the executable. Note all `arvg` arguments must be written as strings, however they will be passed without strings by default to the executable. To add "" characters, escape them in the `argv` list. For example, the following test will be run as `./test0 1 2 "3"`.  
 ```
-{ testname = "test0", description = "my first test", argv = ["1", "2", "3"] }
+{ testname = "test0", description = "my first test", argv = ["1", "2", "\"3\""] }
 ```
 * In addition to `diff`ing student's `stdout` and `stderr` against a reference output, this framework supports `diff`ing against any number of output files created by the student's program. Such output files must be named `<testname>.ANYTHING_HERE.ofile`; the expectation is that the executable will receive the name of the file to produce as an input argument. For example
 ```
