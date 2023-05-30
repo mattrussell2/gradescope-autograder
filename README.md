@@ -345,7 +345,7 @@ tests = [ { testname = "test0", description = "my first test" }
 See the specification below for the argument specifics. 
 * **Each `testname.summary` file in the `logs/` directory contains a dump of the state of a given test. This is literally a dump of the backend `Test` object from the `autograde.py` script, which contains all of the values of the various configuration options (e.g. `diff_stdout`, etc.) and results (e.g. `stdout_diff_passed`). A first summary is created upon initialization of the test, and it is overwritten after a test finishes with the updated results. `summary` files are very useful for debugging!**
 
-### Driver-based testing notes
+### Staff-Provided Driver Notes
 When deploying a set of `cpp` files where each is intended to be their own driver:
 * Files in `testset/cpp/` named `<testname>.cpp` (`test01.cpp`) are intended to be driver files; each one will contain `main()`, and will be compiled and linked with the student's code.
 * You must use a custom `Makefile` where each test has its own target (i.e. we will run `make test01`). The `Makefile` will be run from the `results/build` directory, and will need to compile and link with the driver files which will live in the relative `../../testset/cpp` directory. See an example here: `assignments/sanity_check/testset/makefile/Makefile`. This has a single rule to build tests named `test00`-`testnn`.
@@ -430,7 +430,7 @@ diff_ofiles  = true            # we will diff the output files produced by the p
 ccize_ofiles = true            # canonicalize the output files before diff'ing
 ccizer_name  = "sort_lines"    # use 'sort_lines' function in canonicalizers.py
 our_makefile = false           # use the student's Makefile
-executable   = "myprog"       # all of the tests will run this executable
+executable   = "myprog"        # all of the tests will run this executable
 
 [set_one]
 argv  = ["myDataFile", "#{testname}.ofile"] 
@@ -443,14 +443,14 @@ tests = [
 [set_two] 
 argv  = ["myOtherDataFile", "#{testname}.ofile"]
 tests = [
-    { testname = "testXX", description = "myTest", valgrind = true }, 
+    { testname = "testXX", description = "myTest" }, 
     { testname = "testYY", description = "myTest2" },
     { testname = "testZZ", description = "myTest3" }
     ...
 ]
 
 [set_three]
-valgrind  = false # for example, if for this set you didn't want to run valgrind
+valgrind  = false # default is to run valgrind, but for this set of tests it will not be run
 max_score = 2.5   # these tests are weighted more
 argv = ["myThirdDataFile", "#{testname}.ofile"]
 tests = [
