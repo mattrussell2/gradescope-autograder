@@ -585,7 +585,6 @@ def report_filelines(filelines, violation, line_print):
 
     slamel01 - 3/1/23
     """
-
     if filelines:
         autograde.INFORM(f"\n    {violation}:", color=autograde.RED)
         for file, lines in filelines.items():
@@ -611,7 +610,8 @@ def report_style_violations(violations):
 
     if violations is None:
         # Adding this print statement just for nicety to whoever is setting up autograder/grader
-        autograde.INFORM("\nStyle check was not run!", color=autograde.CYAN)
+        # this runs all the time? connect with slamel01 on this. 
+        #autograde.INFORM("\nStyle check was not run!", color=autograde.CYAN)
         return
 
     autograde.INFORM("\n== Style Report ==", color=autograde.CYAN)
@@ -678,8 +678,7 @@ def make_valgrind_test():
 def make_results():
     make_token_test()
     #make_test00(style_violations)
-
-    make_style_test(style_violations)
+    #make_style_test(style_violations)
     make_valgrind_test()
 
     for test in TEST_SUMMARIES:
