@@ -503,6 +503,16 @@ These are the configuration options for a test. You may set any of these in `[co
 | `executable` | `(testname)` | executable to build and run |
 | `max_valgrind_score` | `8` | `[common]` only setting - maximum valgrind score for this assignment [per-test valgrind score is deduced by default based on this value]. 
 | `valgrind_score_visibility` | `"after_due_date"` | `[common]` only setting - visibility of the test which will hold the total valgrind points for the student. 
+| `style_score_visbility` | `"after_due_date"` | `[common]` only setting - visibilitiy of the test which will hold the total style points for the student. |
+| `cols_style_weight` | `0` | `[common]` only setting - number of points to take off if a student's code has over `style_max_columns` columns. If all `_style_weight` options are set to `0` (as by default), a style check will not be performed. |
+| `tabs_style_weight` | `0` | `[common]` only setting - number of points to take off if a student's code contains tabs. |
+| `todos_style_weight` | `0` | `[common]` only setting - number of points to take off if a student's code contains TODOs. |
+| `symbol_style_weight` | `0` | `[common]` only setting - number of points to take off if a student's code contains symbols (`&&`, `\|\|`, `!`) instead of keywords (`and`, `or`, `not`). Note `!=` is not considered a violation. |
+| `break_style_weight` | `0` | `[common]` only setting - number of points to take off if a student's code contains `break`. |
+| `boolean_style_weight` | `0` | `[common]` only setting - number of points to take off if a student's code contains boolean style violations (i.e. comparing a boolean variable via `==` or `!=` with `True` or `False` instead of `if (x)` or `if (not x)`). |
+| `non_code_style_checkset` | `["README", ".h", ".cpp"]` | `[common]` only setting - specifies the set of files which will be checked for non-code style violations. Non-code style violations are having more than `style_max_columns` columns, having tabs, or having TODO statements. There are two ways to specify files in the check set. The first is to provide a direct filename such as `"README"`. This means any file in the student's submission which *case-insensitive* matches `"README"` will be checked. The second group of strings in this setting are file extensions. For example, specifying `".cpp"` means any `.cpp` file in the student's submission will be checked. |
+| `code_style_checkset` | `[".h", ".cpp"]` | `[common]` only setting - specifies the set of files which will be checked for code style violations. Code style violations are using symbols instead of keywords, break statements, or not practicing boolean zen. The two ways you can specify files in this checkset are the same as the two ways for `non_code_style_checklist`. |
+| `style_max_columns` | `80` | `[common]` only setting - the number of columns that is considered too many for a single line. |
 | `kill_limit` | `750` | `[common]` only setting - test will be killed if it's memory usage exceeds this value (in `MB`) - soft and hard rlimit_data will be set to this value in a preexec function to the subprocess call. NOTE: this parameter is specifically intended to keep the container from crashing, and thus is `[common]` only. Also, if the program exceeds the limit, it will likely receive `SIGSEGV` or `SIGABRT` from the os. Unfortunately, nothing is produced on `stderr` in this case, so while the test will likely fail based on exitcode, it's difficult to 'know' to report an exceeded memory error. However, if `valgrind` is also run and fails to produce a log file (due to also receiving `SIGSEGV`/`SIGABRT`), the test will be assumed to have exceeded max ram...in general, however, this is tricky to debug. In my experience, `valgrind` will fail to allocate memory but still produce a log file at `~50MB` of ram; any lower and no log file will be produced. The default setting of `750` `MB` should be fine for most tests, and will work with the smallest (default) container. |
 | `max_submissions` | _ | `[common]` only setting - this value will override the default value of `SUBMISSIONS_PER_ASSIGN` in the `etc/config.toml`. If not set for an assignment, the default value for this is ignored, and the `SUBMISSIONS_PER_ASSIGN` value is used instead. | 
 
@@ -563,6 +573,24 @@ That should be enough to get you up and running! Please feel free to contact me 
 * Since we've removed course code from the repo, we need more examples in `assignments/`.
 
 # Changelog
+## [1.3.10] - 2023-05-02
+* Changed
+    * Put submission folder path into variable in `make_gradescope_results.py`, this makes it easier to use the script on Halligan (homework server). 
+    * Update `get_failure_reason` to use a relative path to `results` instead of absolute to `/autograder`, this is done elsewhere in the script and again makes it more portable to Halligan. 
+## [1.3.9] - 2023-04-21
+* Fixed
+    * Bugs in style detection related to ! in character literals. 
+* Changed
+    * `memtime` files produced by resource limited tests now contain CPU times not wall time.
+## [1.3.8] - 2023-03-16
+* Fixed
+    * Bugs in style detection related to boolean zen and `break;` when used in `switch( ) { }`.
+* Changed
+    * Add Gradescope leaderboard support to `run_autograder` via `autograder/make_leaderboard.py`.
+## [1.3.7] - 2023-03-13
+* Changed
+    * `bin/autograde.py` - Updated so that autograder will output a nicer message to students when they fail to produce an output file that the reference did. Also updated to allow for automatic style grading configuration options in the TOML.
+    * `bin/make_gradescope_results.py` - Updated so that the autograder will automatically detect various style violations and deduct points from the student. These violations include use of symbols instead of keywords, improper boolean style, use of break, and more.
 ## [2.0.1] - 2023-05-28
 README.md updates
 
