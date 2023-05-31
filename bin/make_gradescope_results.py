@@ -9,19 +9,7 @@ import toml
 import autograde
 import re
 
-# We need dateutil on Gradescope, but not on Halligan. This library does not
-# exist locally, so we simply pass when running locally.
-try:
-    from dateutil import parser
-    HALLIGAN = False
-    # file made by gs; has useful info like duedatetime of assignment
-    SUBMISSION_METADATA_PATH = "/autograder/submission_metadata.json"
-except:
-    HALLIGAN = True
-
-# Change this if running on Halligan so check_style works properly (e.g.
-# to a solution folder relative to temp_testing_dir such as ../../../solution)
-# slamel01
+SUBMISSION_METADATA_PATH = "/autograder/submission_metadata.json"
 SUBMISSION_FOLDER = "/autograder/submission"
 
 
@@ -421,15 +409,10 @@ save_json(RESULTS_JSONPATH, RESULTS)
 
 
 def before_duedate():
-    if HALLIGAN:
-        return True               # Halligan doesn't care
-    try:
-        metadata = load_json(SUBMISSION_METADATA_PATH)
-        due_date = parser.parse(metadata["assignment"]["due_date"])
-        today = datetime.now(timezone.utc)
-        return today < due_date
-    except:
-        return False               # HACK for hallian, which seems to recognize the library
+    metadata = load_json(SUBMISSION_METADATA_PATH)
+    due_date = parser.parse(metadata["assignment"]["due_date"])
+    today = datetime.now(timezone.utc)
+    return today < due_date
 
 
 def get_autograder_visibility():
