@@ -466,17 +466,18 @@ class Test:
                 # if kill limit exceeded in test valgrind fails, but it can't throw errors :/
                 self.valgrind_passed = not self.memory_leaks and not self.memory_errors and not self.valg_out_of_mem and not self.kill_limit_exceeded
 
-    def run_diff(self, filea, fileb, filec, canonicalize=False):
+    def run_diff(self, filea, fileb, filec, stream=None, canonicalize=False):
         """
             Purpose:
                 Run diff on filea and fileb, and write the output to filec
-                if 'canoniczliaze', run diff on canonicalized output from filea and fileb                
+                if 'canonicalize', run diff on canonicalized output from filea and fileb                
             Precondition: 
                 Assumes filea and fileb both exist.
             Inputs:
                 filea        (str)  : student output filename
                 fileb        (str)  : reference output filename
                 filec        (str)  : file to write diff output to
+                stream       (str)  : which output stream is being diff'd 
                 canonicalize (bool) : whether or not to run diff on canonicalized output.
             Returns: 
                 (int) the return code of the diff.
@@ -503,7 +504,7 @@ class Test:
                         solution_text = Path(fileb).read_bytes().decode('utf-8')
                     else:
                         solution_text = None
-                    ccized = self.canonicalizer(text, solution_text, self.testname, self.ccizer_args)
+                    ccized = self.canonicalizer(text, solution_text, self.testname, stream, self.ccizer_args)
                 except Exception as e:
                     ccized = f"ERROR: canonicalizer failed - {repr(e)}\n{traceback.format_exc()}"
             if ccized == None:
@@ -533,11 +534,11 @@ class Test:
         """
         if self.diff_stdout:
             self.stdout_diff_passed = self.run_diff(self.fpaths['stdout'], self.fpaths['ref_stdout'],
-                                                    self.fpaths['stdout.diff'], self.ccize_stdout) == 0
+                                                    self.fpaths['stdout.diff'], 'stdout', self.ccize_stdout) == 0
 
         if self.diff_stderr:
             self.stderr_diff_passed = self.run_diff(self.fpaths['stderr'], self.fpaths['ref_stderr'],
-                                                    self.fpaths['stderr.diff'], self.ccize_stderr) == 0
+                                                    self.fpaths['stderr.diff'], 'stderr', self.ccize_stderr, ) == 0
 
         if self.diff_ofiles:
             self.fout_diffs_passed = True
@@ -546,7 +547,7 @@ class Test:
             ofilenames             = [x for x in created_files if self.testname in x and x.endswith(".ofile")]
             for ofilename in ofilenames:
                 retcode = self.run_diff(f"{OUTPUT_DIR}/{ofilename}", f"{REF_OUTPUT_DIR}/{ofilename}",
-                                        f"{OUTPUT_DIR}/{ofilename}.diff", self.ccize_ofiles)
+                                        f"{OUTPUT_DIR}/{ofilename}.diff", ofilename, self.ccize_ofiles)
                 if retcode == 2:
                     self.ofile_file_exists = False
 
