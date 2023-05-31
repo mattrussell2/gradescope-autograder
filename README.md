@@ -17,7 +17,7 @@ As a high-level overview, each time a submission is provided to gradescope, or a
 
 ## Create Your Autograding Git Repo
 Before we begin, you will need a git repository for your autograder. If you don't currently have a repository related to course material, please make one. We suggest using gitlab for this: go to https://gitlab.cs.tufts.edu and login with `LDAP` using your Tufts eecs `utln` and password. Then create a new repository from scratch [don't add a README]. Then, clone this repo to get the relevant files. 
-```
+```shell
 git clone git@gitlab.cs.tufts.edu:mrussell/gradescope-autograding
 mv gradescope-autograding YOUR_REPO_FOLDER_NAME
 cd YOUR_REPO_FOLDER NAME
@@ -28,12 +28,12 @@ Great! You will need an Access Token to provide the autograder container with pe
 
 A note on 'secrets': The strategy for handling sensitive data in this repository (like your access token) is to have all of the relevant data be stored in enviornment variables on your system. The first example of this will be an environment variable with the remote path to your autograding repo, including the acess token copied above. Open your `~/.bashrc` file (or appropriate file for whichever shell you use), and add the following line (or the appropriate `export` for your shell): 
 
-```
+```shell
 export AUTOGRADING_REPO_REMOTE_PATH="https://REPOSITORY-NAME:ACCESS-TOKEN@gitlab.cs.tufts.edu/path/to/repository.git"
 ```
 Where the appropriate substitions have been made - for example:
 
-```
+```shell
 export AUTOGRADING_REPO_REMOTE_PATH="https://cs-15-2022uc:glpat-Blah8173Blah8023Blah@gitlab.cs.tufts.edu/mrussell/cs-15-2022uc.git"
 ```
 
@@ -43,7 +43,7 @@ Note that in the configuration files listed below, you will sometimes specify th
 
 ## etc/config.toml
 The file `etc/config.toml` contains various important bits of information toward deploying your autograder.
-```
+```toml
 [paths]
 ASSIGN_ROOT = "assignments"
 ASSIGN_AUTOGRADING_SUBFOLDER = ""
@@ -172,7 +172,7 @@ Also, note that both build methods below use a temporary build directory located
 | `REGISTRY_PASS_VARNAME` | `GHPAT` | Variable name of the environment variable which holds the password/access token to login to the `CONTAINER_REMOTE` [NB: The PAT needs write:packages permissions]. 
 
 4. Build and deploy the container. In rare cases, the Docker build process hangs in the early stages. If this happens to you, run `rm ~/.docker/config.json` and try again. This will take a few minutes or so; the bottleneck is usually uploading the container. 
-```
+```shell
 cd setup/dockerbuild
 python3 deploy_container.py
 ```
@@ -194,13 +194,13 @@ The way the postgres table will be organized, there will be one row per student,
 For even a few hundred students, the free 'TinyTurtle' option at ElephantSQL should work fine. 
 1) Create an account at ElephantSQL and a new TinyTurtle database (free) [or, make and host a postgres db somewhere else].
 2) Run the following query to build the table. With ElephantSQL you can do this in the browser.  Change the value 5 below to the number of tokens you would like your students to have for the semester. Make sure to copy everything else exactly.
-```
+```sql
 CREATE TABLE tokens(pk NAME PRIMARY KEY, 
                     "tokens left" INTEGER DEFAULT 5);
 ```
 3) Copy the URL for the db (in ElephantSQL this is in the details section). Add a line to your `~/.bashrc` as done in previous examples above. The default variable name is `POSTGRES_REMOTE_PATH`, although you may pick another one. The line should look like this:
-```
-POSTGRES_REMOTE_PATH="postgres://abcdefgh:nSgKEZiD55VdHDlzDXNBT@drona.db.elephantsql.com/abcdefgh"
+```shell
+export POSTGRES_REMOTE_PATH="postgres://abcdefgh:nSgKEZiD55VdHDlzDXNBT@drona.db.elephantsql.com/abcdefgh"
 ```
 4) Update the variables in the `[tokens]` section of the `etc/config.toml` file. Make sure to set `MANAGE_TOKENS` to `"true"`. 
 
@@ -289,11 +289,11 @@ After the autograder runs, here is an example of the various files that are crea
 |       |--- test21.valgrind
 |-
 ```
-* **Each `testname.summary` file in the `logs/` directory contains a dump of the state of a given test. This is literally a dump of the backend `Test` object from the `autograde.py` script, which contains all of the values of the various configuration options (e.g. `diff_stdout`, etc.) and results (e.g. `stdout_diff_passed`). A first summary is created upon initialization of the test, and it is overwritten after a test finishes with the updated results. `summary` files are very useful for debugging!**
+**Each `testname.summary` file in the `logs/` directory contains a dump of the state of a given test. This is literally a dump of the backend `Test` object from the `autograde.py` script, which contains all of the values of the various configuration options (e.g. `diff_stdout`, etc.) and results (e.g. `stdout_diff_passed`). A first summary is created upon initialization of the test, and it is overwritten after a test finishes with the updated results. `summary` files are very useful for debugging!**
 
 ## `testset.toml` configuration file
 The framework depends on a `testset.toml` file (https://toml.io) to specify the testing configuration. `testset.toml` must be configured as follows
-```
+```toml
 [common]
 # common test options go here
 # this section can be empty, but is mandatory
@@ -332,7 +332,7 @@ For this simple grading configuration, the autograder assumes that each testname
 
 ### Course-Staff-Provided Makefile
 Here is an example of a corresponding `Makefile`, which would be in the directory `testset/makefile/`. Note that the `make` program will be run from the directory `results/build`. This example produces a target for each of `test01 ... test59`. Also, note that with this particular `Makefile`, the target to build (e.g. `make target`) must always be named the same as the program to run (e.g. `./target`).
-```
+```shell
 # Testing Makefile
 TESTSETDIR=../../testset
 TESTSOURCEDIR=${TESTSETDIR}/cpp
@@ -354,7 +354,7 @@ clean:
 
 ## Example 2: Student Executable Test Configuration
 Let's now assume that a student has written code to produce an executable program. A `testset.toml` file for such an assignment might look like this
-```
+```toml
 [common]
 our_makefile = false           # NOT DEFAULT -- use the student's Makefile to compile their program
 executable   = "myprog"        # all of the tests will use this executable
@@ -380,11 +380,11 @@ Note that the default behavior of the autograder, regardless of testing format, 
 
 ## Command-Line Arguments
 For any test, you may specify a variable `argv` which is a list of command-line arguments to send to the executable. This is doable with either style of assignment-testing demonstrated above. Note all `arvg` arguments must be written as strings, however they will be passed without strings by default to the executable. To add "" characters, escape them in the `argv` list. For example, the following test will be run as `./test0 1 2 "3"`.  
-```
+```toml
 { testname = "test0", description = "my first test", argv = ["1", "2", "\"3\""] }
 ```
 You may specify an `argv` value for a set of tests as well
-```
+```toml
 ...
 [my_group_of_tests]
 argv = ["hello", "world!"] # for each test in tests[] below, will have this list sent as its command-line arguments
@@ -398,11 +398,11 @@ tests = [
 
 ## `diff`ing Output Files
 In addition to `diff`ing student's `stdout` and `stderr` against a reference output, this framework supports `diff`ing against any number of output files created by the student's program. Such output files must be named `<testname>.ANYTHING_HERE.ofile`; **the expectation is that the executable will receive the name of the file to produce as a command-line argument to the program.** For example
-```
+```toml
 { testname = "test0", description = "my first test", argv = [ "test0.one.ofile", "test0.two.ofile" ] }
 ```
 You can generalize this functionality to multiple tests by using the string `#{testname}.ANYTHING_HERE.ofile` in an `argv` list that is set for a group of tests. In the following example, all of the tests in the group [set_of_tests] will have these two argv arguments specified, whereby the string "#{testname}" will be replaced with the name of the test. See example configuration #2 below for further details. 
-```
+```toml
 [set_of_tests]
 argv = [ "#{testname}.cookies.ofile", "#{testname}.candy.ofile" ]
 tests = [ { testname = "test0", description = "my first test" }
@@ -421,7 +421,7 @@ The autograder supports canonicalization of either of `stderr`, `stdout`, or any
     5.  A dictionary which will contain any specific configuration options for a test or set of tests (e.g. `{'my_config_var': 10}`)
 * Return a string, which contains the canonicalized output of the student's program
 Here's an example `testset.toml` file will which canonicalizes of all the possible output streams [ not sure why anyone would actually need to do this :) ]
-```
+```toml
 [common]
 ccize_stdout = true
 ccize_stderr = true
@@ -440,7 +440,7 @@ tests = [
 ```
 And here's a dummy example for `canonicalizers.py` which sorts in order if the stream is `stdout/stderr`, but in reverse order if the output is an ofile. 
 
-```
+```python
 # canonicalizers.py
 
 def sort_lines(student_unccd_output, reference_unccd_output, testname, streamname, params):
@@ -449,7 +449,6 @@ def sort_lines(student_unccd_output, reference_unccd_output, testname, streamnam
     else:
         student_ccd = sort(student_unccd_output, reverse=True)
     return student_ccd
-
 ```
 
 ## Copying / Linking Files and Folders to Build/
@@ -512,7 +511,7 @@ These are the configuration options for a test. You may set any of these in `[co
 
 ### Preliminaries
 In order to build reference output and test your code easily, first add the `bin/` folder of the autograding repo to your `$PATH`. To do this, run the following commands, replacing `REPO_ROOT` with the path to the repository root on your system. 
-```
+```shell
 echo -e "export PATH=\$PATH:/REPO_ROOT/bin\n" >> ~/.bashrc
 source ~/.bashrc
 ```
@@ -520,25 +519,25 @@ Also, if you don't have `icdiff` installed on your system and would like to use 
 
 ### Building the Reference Output
 Once you've configured your tests, from the assignment's autograder directory [when you run `ls` from here you should see `testset.toml`, `testset`, etc.], run the command
-```
+```shell
 build_ref_output -s SOLUTION_PATH
 ``` 
 `SOLUTION_PATH` is assumed to be at `testset/solution`, but if you provide the argument `-s SOLUTION_PATH`, it can be anywhere. The reference code will be run *as a submission*, and the output of the reference will be placed in the `REPO_ROOT/hwname/testset/ref_output/` directory. Also, the default behavior of `build_ref_output` is to keep the temporary `temp_ref_build_dir` directory created to run the autograder and build the reference output. The files in `temp_ref_build_dir/results/` can be invaluable if you have tests which aren't functioning right - `cd`-ing into `temp_ref_build_dir/results/logs` or `temp_ref_build_dir/results/output` can be very helpful! You can optionally remove this directory after the reference output is created run with the `-d` option.
 
 ### Testing with an Example Submission
 After you've produced the reference output, if you'd like to test a given folder against the reference, run
-```
+```shell
 test_autograder -s SUBMISSION_DIR
 ```
 where `SUBMISSION_DIR` contains the submission code you would like to test. For instance, if you want to test with the solution code, run 
-```
+```shell
 test_autograder -s testset/solution
 ```
 This script will create a temporary testing directory named `temp_testing_dir`, copy everything there, and run the tests. You can optionally remove this directory after tests are run with the `-d` option.
 
 ### Parallel Execution of Tests
 The `autograde` program supports parallel execution of tests with the `-j` option
-```
+```shell
 autograde -j NUMCORES
 ```
 where `NUMCORES` is the number of cores you would like to utilize (`-1` will use all available cores). Note that multiple tests may be run on each core concurrently. The default setting is equivalent to `-j 1`, which runs tests without parallelization enabled. You can also supply the `-j NUMCORES` option to the `build_ref_output` or `test_autograder` scripts.
