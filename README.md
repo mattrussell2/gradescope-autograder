@@ -130,7 +130,6 @@ These are settings specific to the docker-build process. If you woud like to man
 ### [other]
 Extra info. The only one here currently is `SUBMISSIONS_PER_ASSIGN`, which allows you to set a cap on the number of submissions a student can send to the autograder per assignment. Change this to a large value to ignore. 
 
-
 ## Build the Container
 
 ### Prereqs
@@ -229,61 +228,34 @@ This ensures that any time student's code is run, they should not be able to see
 Continue to the next section to learn about the autograding framework, and for a walkthrough to setup an assignment. 
 
 # Autograding Framework
+
 ## Introduction
 The autograding framework is designed to have you writing and deploying tests as quickly as possible. 
-There are two primary forms of assignment that this autograder supports:
-* Tests which are a set of `.cpp` driver files, each with its own `main()`. 
-* Tests which build and run a student's executable program with different inputs. 
+There are two methods of testing a student's submission that this autograder supports
 
-In either case, `stdout`/`stderr` will both `diff`'d automatically against the output of a reference implementation. You can optionally send a file to `stdin` for a test, output can be canonicalized before `diff`, and `valgrind` can be run on the programs as well. Limits can be set for memory usage, timeout, etc. See details below.
+1) Tests which are a set of `.cpp` driver files, each with their own `main()`. 
+2) Tests which send different input files to a student's executable program. 
 
-## `testset.toml` configuration file
-The framework depends on a `testset.toml` file (https://toml.io) to specify the testing configuration. `testset.toml` must be configured as follows:
-```
-[common]
-# common test options go here
-# this section can be empty, but is mandatory
-# this section must be named "common" 
+In either case, `stdout`/`stderr` can be `diff`'d automatically against the output of a reference implementation, you can send a file to `stdin` for a test, output can be canonicalized before `diff`, and `valgrind` can be run on the programs as well. Limits can be set for memory usage, timeout, etc. See details below.
 
-[set_of_tests] 
-# subsequent sections in the .toml file contain a group of tests to run
-# configuration options placed under this section here will override the settings in [common] for these tests
-# test group names (e.g. [set_of_tests]) can be anything
-# tests in a section must be placed in a list named `tests'
-# tests = [
-      { testname = "test0", description = "my first test" },
-      { testname = "test1", description = "my second test" },
-      ..., 
-      { testname = "testn", description = "my nth test" },
-]
-# each test **must** have testname and description fields
-# you may add any other option to a given test
-# test-specific options override any 'parent' options
-```
-See the section `test .toml configuration options` for the full details. 
-
-## Setup Files and Directories
-These are all of the possible options, but you may not need many of them 
-depending on your test configuration.
-```
-.
-|---canonicalizers.py [file with canonicalization function(s)]
-|---testrunner.sh     [script that runs `autograde`]
-|---submission/       [student submission (provided by gs)]
-|---testset/          [everything needed to run tests]
-|   |---copy/         [files here will be copied to results/build/]
-|   |---cpp/          [.cpp driver files]
-|   |---link/         [files here will be symlinked in results/build/]
-|   |---makefile/     [contains custom Makefile]
-|   |---ref_output/   [output of reference implementation]
-|   |---solution/     [solution code]
-|   |---stdin/        [files here are sent to stdin]
-|---testest.toml      [testing configuration file]
-|-
-```
+## `autograde.py`
+Before getting into the details, here is a summary of the procedure run by `bin/autograde.py`, which is the script that does the autograding. 
+* Parse input arguments
+* Load `testset.toml` file and validate configuration
+* Create `Test` objects, each of which contains all possible configuration variables.
+* Build directories required to run tests
+* Compile the executable(s) specified in the configuration, and save compilation logs in `results/logs/testname.compile.log`
+* Run each test: 
+    * Save a dump of the initial Test object to `results/logs/testname.summary`
+    * Execute the specified command
+    * Run any `diff`s required based on the testing configuration; run canonicalization prior to `diff` if specified. 
+    * Run `valgrind` if required.
+    * Determine whether the test passed or not
+    * Save a dump of the completed Test object to `results/logs/testname.summary`
+* Report the results to `stdout`.
 
 ## Files/Directories Created by the Autograder
-These express all of the possibilities, but various `.ofile`, `.diff`, `.ccized`, etc. files may not be created depending on your configuration. 
+After the autograder runs, here is an example of the various files that are created. Note that various `.ofile`, `.diff`, `.ccized`, etc. files may not be created depending on your configuration. 
 ```
 .
 |--- results/
@@ -317,17 +289,119 @@ These express all of the possibilities, but various `.ofile`, `.diff`, `.ccized`
 |       |--- test21.valgrind
 |-
 ```
-## General Notes
-* Any file in `testset/stdin/` that is named `<testname>.stdin` will be sent to `stdin` for a test with the testname `<testname>`. 
-* For any test, you may specify a variable `argv` which is a list to send as arguments to the executable. Note all `arvg` arguments must be written as strings, however they will be passed without strings by default to the executable. To add "" characters, escape them in the `argv` list. For example, the following test will be run as `./test0 1 2 "3"`.  
+* **Each `testname.summary` file in the `logs/` directory contains a dump of the state of a given test. This is literally a dump of the backend `Test` object from the `autograde.py` script, which contains all of the values of the various configuration options (e.g. `diff_stdout`, etc.) and results (e.g. `stdout_diff_passed`). A first summary is created upon initialization of the test, and it is overwritten after a test finishes with the updated results. `summary` files are very useful for debugging!**
+
+## `testset.toml` configuration file
+The framework depends on a `testset.toml` file (https://toml.io) to specify the testing configuration. `testset.toml` must be configured as follows
+```
+[common]
+# common test options go here
+# this section can be empty, but is mandatory
+# this section must be named "common" 
+
+[set_of_tests] 
+# subsequent sections in the .toml file contain a group of tests to run
+# configuration options placed under this section here will override the settings in [common] for these tests
+# test group names (e.g. [set_of_tests]) can be anything
+# tests in a section must be placed in a list named `tests'
+# tests = [
+      { testname = "test0", description = "my first test" },
+      { testname = "test1", description = "my second test" },
+      ..., 
+      { testname = "testn", description = "my nth test" },
+]
+# each test **must** have testname and description fields
+# you may add any other option to a given test
+# test-specific options override any 'parent' options
+```
+See the section `test .toml configuration options` for the full details. 
+
+## Example #1: Staff-Provided Driver Test Configuration [Default]
+An assignment with course-staff provided `.cpp` driver files is the default behavior for the autograder. Using the `testset.toml` file above, for example, here is one possible configuration of a corresponding (bare-bones) directory structure 
+```
+.
+|---testrunner.sh     [one-line script that runs the command `autograde`]
+|---testset/          
+|   |---cpp/          [contains .cpp driver files]
+|   |---makefile/     [contains custom Makefile]
+|   |---ref_output/   [contains output of reference implementation]
+|---testest.toml      [testing configuration file]
+|-
+```
+For this simple grading configuration, the autograder assumes that each testname [e.g. `test01` above] corresponds to a file `testset/cpp/testname.cpp` which contains its own `main()`, and that there is a target named `testname` in `testset/makefile/Makefile` which produces an executable named `testname`; it will run `make testname`, and then `./testname`. Then, the default behavior will be to `diff` the output of the student's provided submission with the output in `ref_output`. Reference output can be generated automatically [see `Testing the Autograder` section below].
+
+### Course-Staff-Provided Makefile
+Here is an example of a corresponding `Makefile`, which would be in the directory `testset/makefile/`. Note that the `make` program will be run from the directory `results/build`. This example produces a target for each of `test01 ... test59`. Also, note that with this particular `Makefile`, the target to build (e.g. `make target`) must always be named the same as the program to run (e.g. `./target`).
+```
+# Testing Makefile
+TESTSETDIR=../../testset
+TESTSOURCEDIR=${TESTSETDIR}/cpp
+
+CXX = clang++
+CXXFLAGS = -g3 -Wall -Wextra -std=c++11 -I .
+
+MYTESTS = $(shell bash -c "echo test{01..59}")
+
+${MYTESTS}: StudentFile.o
+	${CXX} ${CXXFLAGS} -o $@ $^ ${TESTSOURCEDIR}/$@.cpp
+
+%.o: %.cpp $(shell echo *.h)
+	${CXX} ${CXXFLAGS} -c $<
+
+clean:
+	rm -rf test?? *.o *.dSYM
+```
+
+## Example 2: Student Executable Test Configuration
+Let's now assume that a student has written code to produce an executable program. A `testset.toml` file for such an assignment might look like this
+```
+[common]
+our_makefile = false           # NOT DEFAULT -- use the student's Makefile to compile their program
+executable   = "myprog"        # all of the tests will use this executable
+
+[set_one]
+tests = [
+    { testname = "test01", description = "my first test },
+    { testname = "test02", description = "my second test },
+    { testname = "test03", description = "my third test" } 
+]
+```
+And the corresponding (bare-bones) directory structure
+```
+.
+|---testrunner.sh     [script that runs `autograde`]
+|---testset/          [everything needed to run tests]
+|   |---ref_output/   [output of reference implementation]
+|   |---stdin/        [files to send as stdin to the tests]
+|---testest.toml      [testing configuration file]
+|-
+```
+Note that the default behavior of the autograder, regardless of testing format, is for Any file in `testset/stdin/` that is named `<testname>.stdin` will be sent to `stdin` for a test with the testname `<testname>`. Also here we do not need a `makefile` folder - it is assumed we will be using the student's `Makefile` instead. 
+
+## Command-Line Arguments
+For any test, you may specify a variable `argv` which is a list of command-line arguments to send to the executable. This is doable with either style of assignment-testing demonstrated above. Note all `arvg` arguments must be written as strings, however they will be passed without strings by default to the executable. To add "" characters, escape them in the `argv` list. For example, the following test will be run as `./test0 1 2 "3"`.  
 ```
 { testname = "test0", description = "my first test", argv = ["1", "2", "\"3\""] }
 ```
-* In addition to `diff`ing student's `stdout` and `stderr` against a reference output, this framework supports `diff`ing against any number of output files created by the student's program. Such output files must be named `<testname>.ANYTHING_HERE.ofile`; the expectation is that the executable will receive the name of the file to produce as an input argument. For example
+You may specify an `argv` value for a set of tests as well
+```
+...
+[my_group_of_tests]
+argv = ["hello", "world!"] # for each test in tests[] below, will have this list sent as its command-line arguments
+tests = [
+    { testname = "test01", description = "my first test },
+    { testname = "test02", description = "my second test },
+    { testname = "test03", description = "my third test" } 
+]
+...
+```
+
+## `diff`ing Output Files
+In addition to `diff`ing student's `stdout` and `stderr` against a reference output, this framework supports `diff`ing against any number of output files created by the student's program. Such output files must be named `<testname>.ANYTHING_HERE.ofile`; **the expectation is that the executable will receive the name of the file to produce as a command-line argument to the program.** For example
 ```
 { testname = "test0", description = "my first test", argv = [ "test0.one.ofile", "test0.two.ofile" ] }
 ```
-You can generalize this functionality to multiple tests with the string `#{testname}.ANYTHING_HERE.ofile` in the `argv` list. In the following example, all of the tests in the group [set_of_tests] will have these two argv arguments specified, whereby the string "#{testname}" will be replaced with the name of the test. See example configuration #2 below for further details. 
+You can generalize this functionality to multiple tests by using the string `#{testname}.ANYTHING_HERE.ofile` in an `argv` list that is set for a group of tests. In the following example, all of the tests in the group [set_of_tests] will have these two argv arguments specified, whereby the string "#{testname}" will be replaced with the name of the test. See example configuration #2 below for further details. 
 ```
 [set_of_tests]
 argv = [ "#{testname}.cookies.ofile", "#{testname}.candy.ofile" ]
@@ -335,200 +409,77 @@ tests = [ { testname = "test0", description = "my first test" }
          ... 
 ]
 ```
-* Canonicalization of any of the output streams or output files prior to `diff`ing is supported. Functions which are used by the autograder in `canonicalizers.py` must:
-    * Take four parameters (which will be provided by the autograder)
-        1.  A string which will contain the student's output from whichever stream is to be canonicalized
-        2.  A string which will contain the reference solution's (non-canonicalized) output from whichever stream is to be canonicalized
-        3.  A string which will contain the name of the test (e.g. `test01`)
-        4.  A dictionary which will contain any specific test configuration options (e.g. `{'my_config_var': 10}`)
-    * Return a string, which contains the canonicalized output of the student
-See the specification below for the argument specifics. 
-* **Each `testname.summary` file in the `logs/` directory contains a dump of the state of a given test. This is literally a dump of the backend `Test` object from the `autograde.py` script, which contains all of the values of the various configuration options (e.g. `diff_stdout`, etc.) and results (e.g. `stdout_diff_passed`). A first summary is created upon initialization of the test, and it is overwritten after a test finishes with the updated results. `summary` files are very useful for debugging!**
+Note that the substitution of "#{testname}" will in practice actually contain the full output path to the appropriate file.
 
-### Staff-Provided Driver Notes
-When deploying a set of `cpp` files where each is intended to be their own driver:
-* Files in `testset/cpp/` named `<testname>.cpp` (`test01.cpp`) are intended to be driver files; each one will contain `main()`, and will be compiled and linked with the student's code.
-* You must use a custom `Makefile` where each test has its own target (i.e. we will run `make test01`). The `Makefile` will be run from the `results/build` directory, and will need to compile and link with the driver files which will live in the relative `../../testset/cpp` directory. See an example here: `assignments/sanity_check/testset/makefile/Makefile`. This has a single rule to build tests named `test00`-`testnn`.
-* Whenever using `our_makefile`, the target to build (e.g. `make target`) must always be named the same as the program to run (e.g. `./target`).
-
-### Student-executable testing notes
-When deploying a set of tests which test a student's executable program:
-* You do not need files in `testset/cpp/` (the folder is not necessary either).
-* You must set `our_makefile = false` in `testset.toml`
-    * You may still choose to have your own custom `Makefile` if you wish; in that case, of course, set `our_makefile=true` (default).
-    * You can select one option for one set of tests and the other for another set as well.
-
-## Example configurations 
-### Example configuration #1
-An example directory/file setup for an assignment with course-staff provided `.cpp` driver files is below
-```
-.
-|---testrunner.sh     [script that runs `autograde`]
-|---testset/          [everything needed to run tests]
-|   |---cpp/          [.cpp driver files]
-|   |---makefile/     [contains custom Makefile]
-|   |---ref_output/   [output of reference implementation]
-|   |---solution/     [solution code]
-|---testest.toml      [testing configuration file]
-|-
-```
-For this assignment, there is no canonicalization required, no input from `stdin`, nothing to copy or link to the build directory. The corresponding `testset.toml` file is as follows
+## Canonicalization Prior to `diff`
+The autograder supports canonicalization of either of `stderr`, `stdout`, or any output files generated by the program prior to `diff`ing against the reference. Functions which are used by the autograder in this capacity must be in a file `canonicalizers.py`, at the root of the assignment's autograder. Such functions must:
+* Take five parameters (which will be provided by the autograder)
+    1.  A string which will contain the student's output from whichever stream is to be canonicalized
+    2.  A string which will contain the reference solution's (non-canonicalized) output from whichever stream is to be canonicalized
+    3.  A string which will contain the name of the test (e.g. `test01`)
+    4.  A string which will contain the name of the stream to be canonicalized [`stdout`, `stderr`, or the output filename in the `argv` list (e.g. `test0.one.ofile` or `test0.two.ofile` in the fist example above)]
+    5.  A dictionary which will contain any specific configuration options for a test or set of tests (e.g. `{'my_config_var': 10}`)
+* Return a string, which contains the canonicalized output of the student's program
+Here's an example `testset.toml` file will which canonicalizes of all the possible output streams [ not sure why anyone would actually need to do this :) ]
 ```
 [common]
-# using defaults! however, empty 'common' should exist
-
-[tests]
-tests = [
-    { testname = "test01", description = "size 0 list to string" },
-    { testname = "test02", description = "size 1 list to string"},
-    { testname = "test03", description = "size 7 list to string" },
-    { testname = "test04", description = "isempty test" },
-    { testname = "test05", description = "isempty test2" },
-    { testname = "test06", description = "clear test on empty list" },
-    { testname = "test07", description = "clear test on nonempty list" },
-    { testname = "test08", description = "size test"},
-    { testname = "test09", description = "size test2"},
-    { testname = "test10", description = "check throw on first() with empty list"},
-    { testname = "test11", description = "first() test"},
-    { testname = "test12", description = "check throw on last() with empty list" },
-    { testname = "test13", description = "last() test2"},
-    { testname = "test14", description = "elementAt test" },
-    { testname = "test15", description = "elementAt test2" },
-    { testname = "test16", description = "elementAt test3"},
-    { testname = "test17", description = "pushAtBack" },
-    { testname = "test18", description = "pushAtBack 2"},
-    { testname = "test19", description = "pushAtBack 3" },
-    { testname = "test20", description = "pushAtFront" },
-    { testname = "test21", description = "pushAtFront2" }
-    # ... more tests here ...
-]
-```
-Here the autograder will assume that `testset/cpp/TESTNAME.cpp` contains `main()`, and that there's a target named `TESTNAME` in `testset/makefile/Makefile` which produces an executable named `TESTNAME`; it will run `make TESTNAME`, and then `./TESTNAME`.
-
-### Example configuration #2
-This is an example set of required files for an assignment which depends on a student-produced executable file. Also, it illustrates the use of canoncializer functions
-```
-.
-|---canonicalizers.py [file with canonicalization functions]
-|---testrunner.sh     [script that runs `autograde`]
-|---testset/          [everything needed to run tests]
-|   |---copy/         [files to copy to build/]
-|   |---link/         [files to symlink to build/]
-|   |---ref_output/   [output of reference implementation]
-|   |---solution/     [solution code]
-|   |---stdin/        [files to send to `stdin`]
-|---testest.toml      [testing configuration file]
-|-
-```
-For this example, let's imagine we want to test the *sorted* output of student code against the *sorted* output of the reference implementation; we would then provide a function in `canonicalizers.py` to do the sorting. 
-
-```
-[common]
-max_time     = 600             # 10 minutes
-max_ram      = 3000            # 3GB
-diff_ofiles  = true            # we will diff the output files produced by the program against the reference
+ccize_stdout = true
+ccize_stderr = true
 ccize_ofiles = true            # canonicalize the output files before diff'ing
 ccizer_name  = "sort_lines"    # use 'sort_lines' function in canonicalizers.py
+ccizer_args  = { "random_variable": 10 }
 our_makefile = false           # use the student's Makefile
-executable   = "myprog"        # all of the tests will run this executable
+executable   = "studProg"      # all of the tests will run this executable
 
-[set_one]
-argv  = ["myDataFile", "#{testname}.ofile"] 
+[the_tests]
+argv  = ["myDataFile", "#{testname}.one.ofile", "#{testname}.two.ofile"] 
 tests = [
     { testname = "test01", description = "my first test },
-    { testname = "test02", description = "my second test },
-    { testname = "test03", description = "my third test" } 
-]
-
-[set_two] 
-argv  = ["myOtherDataFile", "#{testname}.ofile"]
-tests = [
-    { testname = "testXX", description = "myTest" }, 
-    { testname = "testYY", description = "myTest2" },
-    { testname = "testZZ", description = "myTest3" }
     ...
 ]
+```
+And here's a dummy example for `canonicalizers.py` which sorts in order if the stream is `stdout/stderr`, but in reverse order if the output is an ofile. 
 
-[set_three]
-valgrind  = false # default is to run valgrind, but for this set of tests it will not be run
-max_score = 2.5   # these tests are weighted more
-argv = ["myThirdDataFile", "#{testname}.ofile"]
-tests = [
-     { testname = "test31", description = "Hello Reader!" },
-     { testname = "test32", description = "Happy testing!" },
- ]
 ```
-Notice options for custom timeout, max_ram, etc. Details for each option can be found at the end of this document. Regarding output files, the program that the students would stubmit above is expected to take two command-line arguments - the name of some data file, and the name of an output file to write. For each of the tests, `#{testname}.ofile` will be converted to `test01.ofile`, etc. If your students need to write to an output file, please have them take the name of the file as an input argument, and use this template. They can potentially write to multiple files; in the `testset.toml` file, as long the string contains `#{testname}` and ends with an `.ofile` extension, you're good to go. NOTE: For a bit more info, the characters "#{testname}" will actually be replaced with the full path for the autograder's output file for that test. For example, if the testname is "test01", and the output file is "test01.ofile", the full path will be something like "/home/autograder/autograder/testset/test01.ofile". This will be determined by the autograder; however, it's worth noting that #{testname} is only intended to be used in the `argv` field to refer to the output file. 
+# canonicalizers.py
 
-## `autograde.py`
-`autograde.py` is the script that does the autograding. Here's the basic procedure:
-* Parse input arguments
-* Load the `testset.toml` file and validate configuration
-* Create `Test` objects; each `Test` object contains all of the possible configuration variables, either customized, or the defaults. 
-* Build directories required to run tests
-* Compile the executable(s) specified in the configuration
-* Run each test: 
-    * Save the initial Test object to `results/logs/testname.summary`
-    * Execute the specified command
-    * Run any `diff`s required based on the testing configuration; run canonicalization prior to `diff` if specified. 
-    * Run `valgrind` if required.
-    * Determine whether the test passed or not
-    * Save the completed Test object to `results/logs/testname.summary`
-* Report the results to `stdout`.
+def sort_lines(student_unccd_output, reference_unccd_output, testname, streamname, params):
+    if streamname in ['stdout', 'stderr']:
+        student_ccd = sort(student_unccd_output) 
+    else:
+        student_ccd = sort(student_unccd_output, reverse=True)
+    return student_ccd
 
-## Testing the Autograder
-In order to run your autograder, you will need to build reference output from a reference solution. 
-
-### Preliminaries
-In order to build reference output and test your code easily, first add the `bin/` folder of the autograding repo to your `$PATH`. To do this, run the following commands, replacing `REPO_ROOT` with the path to the repository root on your system. 
-```
-echo -e "export PATH=\$PATH:/REPO_ROOT/bin\n" >> ~/.bashrc
-source ~/.bashrc
-```
-Also, if you don't have `icdiff` installed on your system and would like to use the `pretty_diff` option you'll need to install it (`brew/apt-get icdiff`).
-
-### Building the Reference Output
-Once you've configured your tests, from the assignment's autograder directory [when you run `ls` from here you should see `testset.toml`, `testset`, etc.], run the command
-```
-build_ref_output
-``` 
-The reference code will be run *as a submission*, and the output of the reference will be placed in the `REPO_ROOT/hwname/testset/ref_output/` directory. The default behavior of `build_ref_output` is to clean-up the created intermediary autograding files, but if you need to debug your setup, run 
-```
-build_ref_output -k
-```
-This will keep the directories created to run the autograder and build the reference output. These can be invaluable if you have tests which aren't functioning right - `cd`-ing into `results/logs` or `results/output` can be very helpful!
-
-### Testing with an Example Submission
-After you've produced the reference output, if you'd like to test a given folder against the reference, run
-```
-test_autograder -s SUBMISSION_DIR
-```
-where `SUBMISSION_DIR` contains the submission code you would like to test. For instance, if you want to test with the solution code, run 
-```
-test_autograder -s testset/solution
-```
-This script will create a temporary testing directory named `temp_testing_dir`, copy everything there, and run the tests. You can optionally remove this directory after tests are run with the `-d` option.
-
-### Parallel Execution of Tests
-The `autograde` program supports parallel execution of tests with the `-j` option
-```
-autograde -j NUMCORES
-```
-where `NUMCORES` is the number of cores you would like to utilize (`-1` will use all available cores). Note that multiple tests may be run on each core concurrently. The default setting is equivalent to `-j 1`, which runs tests without parallelization enabled. You can also build the reference output with parallelization by running 
-```
-build_ref_output -j NUMCORES
-```
-and, similarly, 
-```
-test_autograder -j NUMCORES
 ```
 
-Note that given limits with resource use you should be careful with enabling multiple cores for Gradescope!
+## Copying / Linking Files and Folders to Build/
+Often you will want to give the executable program access to certain folders and/or files provided by the course staff. 
+* Any files or folders in an optional `testset/copy` directory will be copied to the `build` directory prior to running tests. 
+* Similarly, any files in an optional `testset/link` directory will be symlinked-to from the `build` directory. Symlinking is convenient if you have a particularly large set of directories to work with.
 
-### testrunner.sh
-In Gradescope's docker container, the usual `run_autograder` script runs the assignment-specific script named `testrunner.sh`, which in turn actually runs `autograde`. The reason for this extra step is to maximize flexibility; any changes made to `run_autograder` would have to both require rebuilding the container and would need to propagate across assignments. This setup, by contrast, allows you to make changes for a given assignment and then to just `git push` in order to run the new tests. Feel free to add anything here that you'd like.
+## Test Time and Memory Limits
+Options exist to limit time and memory usage of student programs. See the test configuration options section below for details. 
 
-## Testing Configuration Options
+## All Possible Files and Directories for an Assignment's Autograder
+As expressed above with the simple examples, you will likely not need all of these for a given assignment. Items marked with a * are mandatory in all cases. 
+```
+.
+|---canonicalizers.py [file with canonicalization function(s)]
+|---testrunner.sh     *[script that runs `autograde`]
+|---submission/       *[student submission (provided by gradescope)]
+|---testset/          *[everything needed to run tests]
+|   |---copy/         [files here will be copied to results/build/]
+|   |---cpp/          [.cpp driver files]
+|   |---link/         [files here will be symlinked in results/build/]
+|   |---makefile/     [contains custom Makefile]
+|   |---ref_output/   *[output of reference implementation]
+|   |---solution/     [solution code - this location is the default, but can be anywhere]
+|   |---stdin/        [files here are sent to stdin]
+|---testest.toml      *[testing configuration file]
+|-
+```
+
+## All`testset.toml` Test Configuration Options
 These are the configuration options for a test. You may set any of these in `[common]`, under a test group, or within a specific test.
 
 | option | default | pupose | 
@@ -556,6 +507,43 @@ These are the configuration options for a test. You may set any of these in `[co
 | `kill_limit` | `750` | `[common]` only setting - test will be killed if it's memory usage exceeds this value (in `MB`) - soft and hard rlimit_data will be set to this value in a preexec function to the subprocess call. NOTE: this parameter is specifically intended to keep the container from crashing, and thus is `[common]` only. Also, if the program exceeds the limit, it will likely receive `SIGSEGV` or `SIGABRT` from the os. Unfortunately, nothing is produced on `stderr` in this case, so while the test will likely fail based on exitcode, it's difficult to 'know' to report an exceeded memory error. However, if `valgrind` is also run and fails to produce a log file (due to also receiving `SIGSEGV`/`SIGABRT`), the test will be assumed to have exceeded max ram...in general, however, this is tricky to debug. In my experience, `valgrind` will fail to allocate memory but still produce a log file at `~50MB` of ram; any lower and no log file will be produced. The default setting of `750` `MB` should be fine for most tests, and will work with the smallest (default) container. |
 | `max_submissions` | _ | `[common]` only setting - this value will override the default value of `SUBMISSIONS_PER_ASSIGN` in the `etc/config.toml`. If not set for an assignment, the default value for this is ignored, and the `SUBMISSIONS_PER_ASSIGN` value is used instead. | 
 
+
+## Building Reference Output and Testing the Autograder
+
+### Preliminaries
+In order to build reference output and test your code easily, first add the `bin/` folder of the autograding repo to your `$PATH`. To do this, run the following commands, replacing `REPO_ROOT` with the path to the repository root on your system. 
+```
+echo -e "export PATH=\$PATH:/REPO_ROOT/bin\n" >> ~/.bashrc
+source ~/.bashrc
+```
+Also, if you don't have `icdiff` installed on your system and would like to use the `pretty_diff` option you'll need to install it (`brew/apt-get icdiff`).
+
+### Building the Reference Output
+Once you've configured your tests, from the assignment's autograder directory [when you run `ls` from here you should see `testset.toml`, `testset`, etc.], run the command
+```
+build_ref_output -s SOLUTION_PATH
+``` 
+`SOLUTION_PATH` is assumed to be at `testset/solution`, but if you provide the argument `-s SOLUTION_PATH`, it can be anywhere. The reference code will be run *as a submission*, and the output of the reference will be placed in the `REPO_ROOT/hwname/testset/ref_output/` directory. Also, the default behavior of `build_ref_output` is to keep the temporary `temp_ref_build_dir` directory created to run the autograder and build the reference output. The files in `temp_ref_build_dir/results/` can be invaluable if you have tests which aren't functioning right - `cd`-ing into `temp_ref_build_dir/results/logs` or `temp_ref_build_dir/results/output` can be very helpful! You can optionally remove this directory after the reference output is created run with the `-d` option.
+
+### Testing with an Example Submission
+After you've produced the reference output, if you'd like to test a given folder against the reference, run
+```
+test_autograder -s SUBMISSION_DIR
+```
+where `SUBMISSION_DIR` contains the submission code you would like to test. For instance, if you want to test with the solution code, run 
+```
+test_autograder -s testset/solution
+```
+This script will create a temporary testing directory named `temp_testing_dir`, copy everything there, and run the tests. You can optionally remove this directory after tests are run with the `-d` option.
+
+### Parallel Execution of Tests
+The `autograde` program supports parallel execution of tests with the `-j` option
+```
+autograde -j NUMCORES
+```
+where `NUMCORES` is the number of cores you would like to utilize (`-1` will use all available cores). Note that multiple tests may be run on each core concurrently. The default setting is equivalent to `-j 1`, which runs tests without parallelization enabled. You can also supply the `-j NUMCORES` option to the `build_ref_output` or `test_autograder` scripts.
+
+Note! Given limits with resource use you should be careful with enabling multiple cores for Gradescope!
 
 ## Gradescope Results
 After running the autograder, our program produces results for Gradescope. A few notes on this:

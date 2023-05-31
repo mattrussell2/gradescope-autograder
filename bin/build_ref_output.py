@@ -11,8 +11,9 @@ AUTOGRADER_DIR = ORIG_DIR
 
 ap = argparse.ArgumentParser()      
 ap.add_argument('-j', '--num-jobs',       type=int, default=1, help="concurrent jobs; default=1; -1=number of available cores")
-ap.add_argument('-k', '--keep-build-dir', action='store_true', help="will not destroy temporary directory to build / run reference code")
+ap.add_argument('-d', '--delete-build-dir', action='store_true', help="will destroy temporary directory to build / run reference code")
 ap.add_argument('-n', '--no-copy',        action='store_true', help="will not copy reference files to [hw_path]/testset/ref_output")
+ap.add_argument('-s', '--solution-dir',   type=str, default='testset/solution', help="specify the location of the solution source code")
 
 ARGS = vars(ap.parse_args())
 
@@ -20,7 +21,7 @@ if not os.path.exists('testset'):
     print(f"ERROR: testset folder must exist")
     exit(1)
 
-if not os.path.exists(os.path.join('testset', 'solution')):
+if not os.path.exists(ARGS['solution_dir']):
     print(f"ERROR: solution folder must be in testset/")
     exit(1)
 
@@ -33,7 +34,7 @@ try:
     shutil.copytree('.', TMPDIR, dirs_exist_ok=True)
 
     print("copying solution as submission")
-    shutil.copytree(os.path.join("testset", "solution"), os.path.join(TMPDIR, "submission"))    
+    shutil.copytree(ARGS['solution_dir'], os.path.join(TMPDIR, "submission"))    
     os.chdir(TMPDIR)    
     
     if not os.path.exists(os.path.join('testset','ref_output')):
@@ -50,6 +51,6 @@ try:
     print("done!")
 finally:
     os.chdir('..')
-    if not ARGS['keep_build_dir'] and os.path.exists(ARGS['keep_build_dir']):
+    if ARGS['delete_build_dir'] and os.path.exists(TMPDIR):
         print("deleting temporary build directory")
         shutil.rmtree(TMPDIR)
