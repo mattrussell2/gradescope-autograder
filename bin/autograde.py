@@ -399,7 +399,7 @@ class Test:
                 valgrind writes to a local path. 
         """
         if self.max_ram != -1:
-            prepend = ['/usr/bin/time', '-o', os.path.join('..', '..', self.fpaths['memtime']), '-f', '%M %S %U']
+            prepend = ['/usr/bin/time', '-o', self.fpaths['memtime'], '-f', '%M %S %U']
         else:
             prepend = []
 
