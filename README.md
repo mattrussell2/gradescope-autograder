@@ -525,7 +525,7 @@ NOTE: Building reference output does not work well on OSX. This is for a number 
 1) valgrind doesn't work on OSX
 2) defaults for various gnu programs such as `/usr/bin/time` and `timeout` used in standard Linux systems aren't available on OSX, and are a pain to get working. 
 
-Therefore, it is highly suggested to build your code on a Linux machine. You can use the `remote-containers` extension in `VSCode` to work within an `Ubuntu` container quite easily: https://code.visualstudio.com/docs/devcontainers/containers
+Therefore, it is highly suggested to build your reference output and test your autograder on a Linux machine. You can use the `remote-containers` extension in `VSCode` to work within an `Ubuntu` container quite easily: https://code.visualstudio.com/docs/devcontainers/containers
 
 In order to build reference output and test your code easily, first add the `bin/` folder of the autograding repo to your `$PATH`. To do this, run the following commands, replacing `REPO_ROOT` with the path to the repository root on your system. 
 ```shell
