@@ -523,7 +523,7 @@ These are the configuration options for a test. You may set any of these in `[co
 ### Preliminaries
 NOTE: Building reference output does not work well on OSX. This is for a number of reasons, including:
 1) valgrind doesn't work on OSX
-2) defaults for various gnu programs such as `/usr/bin/time` and `timeout` used in standard linux systems aren't available. 
+2) defaults for various gnu programs such as `/usr/bin/time` and `timeout` used in standard Linux systems aren't available on OSX, and are a pain to get working. 
 
 Therefore, it is highly suggested to build your code on a Linux machine. You can use the `remote-containers` extension in `VSCode` to work within an `Ubuntu` container quite easily: https://code.visualstudio.com/docs/devcontainers/containers
 
