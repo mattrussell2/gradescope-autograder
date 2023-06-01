@@ -495,7 +495,7 @@ These are the configuration options for a test. You may set any of these in `[co
 | `ccizer_args` | `{}` | arguments to pass to canonicalization function |
 | `our_makefile` | `true` | use `testset/makefile/Makefile` to build tests |
 | `exitcodepass` | `0` | return code considered successful by the autograder|
-| `pretty_diff` | `false` | use `icdiff` for easy-to-read diffs |
+| `pretty_diff` | `true` | use `icdiff` for easy-to-read diffs |
 | `max_score` | `1` | maximum points (on Gradescope) for this test |
 | `visibility` | `"after_due_date"` | Gradescope visibility setting |
 | `argv` | `[ ]` | argv input to the program - Note: all arguments in the list must be represented as strings (e.g. ["1", "abcd"...])|

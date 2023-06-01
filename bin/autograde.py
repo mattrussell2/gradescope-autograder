@@ -142,7 +142,7 @@ class TestConfig:
     diff_ofiles: bool = True
 
     valgrind: bool = True
-    pretty_diff: bool = False
+    pretty_diff: bool = True
     our_makefile: bool = True
     exitcodepass: int = 0
     visibility: str = "after_due_date"               # gradescope setting
