@@ -502,7 +502,7 @@ These are the configuration options for a test. You may set any of these in `[co
 | `argv` | `[ ]` | argv input to the program - Note: all arguments in the list must be represented as strings (e.g. ["1", "abcd"...])|
 | `executable` | `(testname)` | executable to build and run |
 | `max_valgrind_score` | `8` | `[common]` only setting - maximum valgrind score for this assignment [per-test valgrind score is deduced by default based on this value]. 
-| `valgrind_score_visibility` | `"after_due_date"` | `[common]` only setting - visibility of the test which will hold the total valgrind points for the student. 
+| `valgrind_score_visibility` | `"after_due_date"` | `[common]` only setting - visibility of the test which will hold the total valgrind points for the student. | 
 <!-- | `style_score_visbility` | `"after_due_date"` | `[common]` only setting - visibilitiy of the test which will hold the total style points for the student. | -->
 <!-- | `cols_style_weight` | `0` | `[common]` only setting - number of points to take off if a student's code has over `style_max_columns` columns. If all `_style_weight` options are set to `0` (as by default), a style check will not be performed. |
 | `tabs_style_weight` | `0` | `[common]` only setting - number of points to take off if a student's code contains tabs. |
