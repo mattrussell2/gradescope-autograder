@@ -47,7 +47,7 @@ def EXIT_FAIL(message):
     exit(1)
 
 def EXIT_SUCCESS(message):
-    message += f"\nYou have used {len(PREV_SUBMISSIONS) + 1} / 5 submissions for this assignment."
+    message += f"\nYou have used {len(PREV_SUBMISSIONS) + 1} / {MAX_SUBMISSIONS} submissions for this assignment."
     with open("/autograder/results/token_results", 'w') as f:
         f.write(message)
     INFORM(message, GREEN) 
