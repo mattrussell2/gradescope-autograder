@@ -442,7 +442,6 @@ And here's a dummy example for `canonicalizers.py` which sorts in order if the s
 
 ```python
 # canonicalizers.py
-
 def sort_lines(student_unccd_output, reference_unccd_output, testname, streamname, params):
     if streamname in ['stdout', 'stderr']:
         student_ccd = sort(student_unccd_output) 
