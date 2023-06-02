@@ -15,10 +15,10 @@ tests = [
     { testname = "test07", description = "SHOULD PASS: sort nums canonicalizer stdout", ccizer_name = "sort_num_lines", ccize_stdout=true },
     { testname = "test08", description = "SHOULD PASS: empty canonicalizer stderr", ccizer_name = "do_nothing", ccize_stderr=true },
     { testname = "test09", description = "SHOULD PASS: sort nums canonicalizer stderr", ccizer_name = "sort_num_lines", ccize_stderr=true },
-    { testname = "test10", description = "SHOULD PASS: ofile output stream", argv=["#{testname}.ofile"] },
-    { testname = "test11", description = "SHOULD PASS: output nums to ofile and canonicalize", argv=["#{testname}.ofile"], ccize_ofiles=true, ccizer_name="sort_num_lines" },
-    { testname = "test12", description = "SHOULD PASS: output info to multiple ofiles", argv=["#{testname}.1.ofile", "#{testname}.2.ofile"] }, 
-    { testname = "test13", description = "SHOULD PASS: output to stdout, stderr, and multiple files", argv=["#{testname}.1.ofile", "#{testname}.2.ofile"] },
+    { testname = "test10", description = "SHOULD PASS: ofile output stream", argv=["${test_ofile_path}.ofile"] },
+    { testname = "test11", description = "SHOULD PASS: output nums to ofile and canonicalize", argv=["${test_ofile_path}.ofile"], ccize_ofiles=true, ccizer_name="sort_num_lines" },
+    { testname = "test12", description = "SHOULD PASS: output info to multiple ofiles", argv=["${test_ofile_path}.1.ofile", "${test_ofile_path}.2.ofile"] }, 
+    { testname = "test13", description = "SHOULD PASS: output to stdout, stderr, and multiple files", argv=["${test_ofile_path}.1.ofile", "${test_ofile_path}.2.ofile"] },
     { testname = "test14", description = "SHOULD PASS: output data from std::cin to std::cout" }
 ]
 [failing_tests]
@@ -28,7 +28,7 @@ tests = [
     { testname = "test17", description = "SHOULD FAIL: exceed kill limit" },
     { testname = "test18", description = "SHOULD FAIL & PASS VALGRIND: random values to std::cout" },
     { testname = "test19", description = "SHOULD FAIL & PASS VALGRIND: random values to std::cerr" },
-    { testname = "test20", description = "SHOULD FAIL & PASS VALGRIND: random values to ofile", argv=["#{testname}.ofile"] }, 
+    { testname = "test20", description = "SHOULD FAIL & PASS VALGRIND: random values to ofile", argv=["${test_ofile_path}.ofile"] }, 
     { testname = "test21", description = "SHOULD FAIL & PASS VALGRIND: return 1 when 0 expected" } # NOTE! No output is shown in terminal results here. 
 ]
 
