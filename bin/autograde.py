@@ -142,7 +142,7 @@ class TestConfig:
     diff_ofiles: bool = True
 
     valgrind: bool = True
-    pretty_diff: bool = False
+    pretty_diff: bool = True
     our_makefile: bool = True
     exitcodepass: int = 0
     visibility: str = "after_due_date"               # gradescope setting
@@ -399,7 +399,7 @@ class Test:
                 valgrind writes to a local path. 
         """
         if self.max_ram != -1:
-            prepend = ['/usr/bin/time', '-o', os.path.join('..', '..', self.fpaths['memtime']), '-f', '%M %S %U']
+            prepend = ['/usr/bin/time', '-o', self.fpaths['memtime'], '-f', '%M %S %U']
         else:
             prepend = []
 
