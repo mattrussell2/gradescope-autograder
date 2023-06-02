@@ -152,7 +152,7 @@ class TestConfig:
     # referenced in this file, however they still must be listed here. If they
     # are not, a TypeError is raised indicating that the TestConfig __init__
     # fails when any of these fields are specified in the TOML - 2/25/2023 slamel01
-    kill_limit: int = 5900               # just below (custom) 6k autograder limit
+    kill_limit: int = 750               
     max_valgrind_score: int = 8
     cols_style_weight: float = 0
     tabs_style_weight: float = 0
@@ -272,8 +272,11 @@ class Test:
                 #{name} shouldn't be used anymore, but keeping it for backwards compatibility
         """
         replacements = {
+            "${test_ofile_path}": f"{OUTPUT_DIR}/{self.testname}",
+            # these are legacy 
             "#{testname}" : f"{OUTPUT_DIR}/{self.testname}",
             "#{name}"     : f"{OUTPUT_DIR}/{self.testname}",
+
         }
         if isinstance(value_s, str):
             for replacement_k, replacement_v in replacements.items():
