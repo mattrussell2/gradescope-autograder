@@ -420,7 +420,7 @@ So, in practice, your test object might look like this
 ```toml
 { testname = "test0", description = "my first test", argv = [ "${test_ofile_path}.one.ofile", "${test_ofile_path}.two.ofile" ] }
 ```
-You can generalize this functionality to multiple tests as well. In the following example, all of the tests in the group [set_of_tests] will have these two argv arguments specified, whereby the string `"${test_ofile_path}"` will be replaced with the full path to the output file (e.g. `/autograder/results/output/test01.`). 
+You can generalize this functionality to multiple tests as well. In the following example, all of the tests in the group [set_of_tests] will have these two argv arguments specified, whereby the string `"${test_ofile_path}"` will be replaced with the full path to the output file (e.g. `/autograder/results/output/test01`). 
 ```toml
 [set_of_tests]
 argv = [ "${test_ofile_path}.cookies.ofile", "${test_ofile_path}.candy.ofile" ]
