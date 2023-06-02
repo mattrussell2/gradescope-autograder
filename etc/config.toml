@@ -9,7 +9,7 @@ GRACE_TIME = 15   # 15 minutes
 TOKEN_TIME = 1440 # 24 hours
 STARTING_TOKENS = 5
 MAX_PER_ASSIGN = 2
-MANAGE_TOKENS = "false"
+MANAGE_TOKENS = false
 POSTGRES_REMOTE_VARNAME = "POSTGRES_REMOTE_PATH"
 
 # only used with manual docker builds

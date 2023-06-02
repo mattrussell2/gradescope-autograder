@@ -70,7 +70,7 @@ MAX_SUBMISSIONS  = TESTSET_TOML.get('max_submissions', AG_CONFIG['SUBMISSIONS_PE
 if len(PREV_SUBMISSIONS) >= MAX_SUBMISSIONS: 
     EXIT_FAIL(f"ERROR: Max submissions exceeded for this assignment.")
 
-if TOKEN_CONFIG['MANAGE_TOKENS'] == "false":
+if not TOKEN_CONFIG['MANAGE_TOKENS']:
     EXIT_SUCCESS("SUCCESS")
 
 GRACE_TIME         = timedelta(minutes=TOKEN_CONFIG["GRACE_TIME"]) 
