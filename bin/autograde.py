@@ -521,10 +521,14 @@ class Test:
             fileb = f"{fileb}.ccized"
             filec = f"{filea}.diff"               # => will be original 'filea'.ccized.diff
 
-        diff_cmd     = "icdiff" if self.pretty_diff else "diff"
-        diff_result  = subprocess.run(f"{diff_cmd} {filea} {fileb} > {filec}", shell=True)
+        # icdiff doesn't always return 1 when we expect!
+        diff_result  = subprocess.run(f"diff {filea} {fileb} > {filec}", shell=True)
+        diff_retcode = diff_result.returncode
+
+        if self.pretty_diff:
+            diff_result  = subprocess.run(f"icdiff {filea} {fileb} > {filec}", shell=True)
     
-        return diff_result.returncode
+        return diff_retcode
 
     def run_diffs(self):
         """
