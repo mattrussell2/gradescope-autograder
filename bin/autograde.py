@@ -169,6 +169,10 @@ class TestConfig:
 
     max_submissions: int = 1
 
+    # only used for manual mode
+    exec_command: str = ""
+
+
     # These will be assigned to a test by the time it finshes execution
     # could keep these as part of the 'Test' class, but it's easier
     # to load a test from file by throwing all the variables into the config.
@@ -248,12 +252,12 @@ class Test:
         # can only get here if the test has compiled
         self.compiled = True
 
-        if self.executable == None or self.executable == "#{testname}":
+        if self.executable == None and not self.exec_command:
             self.executable = self.testname
 
         self.replace_placeholders_in_self()
 
-        if self.executable[0] != '/':
+        if self.executable[0] != '/' and not self.exec_command:
             self.executable = './' + self.executable
 
         if vars(config)["ccizer_name"] != "":
@@ -273,6 +277,8 @@ class Test:
         """
         replacements = {
             "${test_ofile_path}": f"{OUTPUT_DIR}/{self.testname}",
+            "${testname}": self.testname,
+            
             # these are legacy 
             "#{testname}" : f"{OUTPUT_DIR}/{self.testname}",
             "#{name}"     : f"{OUTPUT_DIR}/{self.testname}",
@@ -362,15 +368,16 @@ class Test:
             Note:  
                 If there is a testname.stdin file then it is used as stdin.                
         """
-        exec_cmds = [self.executable] + self.argv
+        if self.exec_command:
+            exec_cmds = self.exec_command.split()
+        else:
+            exec_cmds = [self.executable] + self.argv
+
         if exec_prepend:
             exec_cmds = exec_prepend + exec_cmds
 
-        if os.path.exists(self.fpaths['stdin']):
-            stdin = open(self.fpaths['stdin'], 'r')
-        else:
-            stdin = None
-
+        stdin = open(self.fpaths['stdin'], 'r') if os.path.exists(self.fpaths['stdin']) else None
+   
         if STDOUTPATH:
             stdout = open(STDOUTPATH, 'wb')
             stderr = open(STDERRPATH, 'wb')
@@ -636,81 +643,21 @@ def report_results(TESTS, OPTS):
             None                    
     """
     report = {
-        "Passed" : {
-            "func"  : lambda test: test.success,
-            "tests" : [],
-            "color" : GREEN
-        },
-        "Failed" : {
-            "func"  : lambda test: not test.success,
-            "tests" : [],
-            "color" : RED
-        },
-        "Segfaulted" : {
-            "func"  : lambda test: test.segfault,
-            "tests" : [],
-            "color" : RED
-        },
-        "Failed stdout diff" : {
-            "func"  : lambda test: test.diff_stdout and not test.stdout_diff_passed,
-            "tests" : [],
-            "color" : RED
-        },
-        "Failed stderr diff" : {
-            "func"  : lambda test: test.diff_stderr and not test.stderr_diff_passed,
-            "tests" : [],
-            "color" : RED
-        },
-        "Failed ofile diff" : {
-            "func"  : lambda test: test.diff_ofiles and not test.fout_diffs_passed,
-            "tests" : [],
-            "color" : RED
-        },
-        "Timed Out" : {
-            "func"  : lambda test: test.timed_out,
-            "tests" : [],
-            "color" : RED
-        },
-        "Invalid Exit Code" : {
-            "func"  : lambda test: test.exit_status != test.exitcodepass,
-            "tests" : [],
-            "color" : RED
-        },
-        "Exceeded Max Ram" : {
-            "func"  : lambda test: test.max_ram_exceeded,
-            "tests" : [],
-            "color" : RED
-        },
-        "Exceeded Kill Limit" : {
-            "func"  : lambda test: test.kill_limit_exceeded,
-            "tests" : [],
-            "color" : RED
-        },
-        "Valgrind Passed" : {
-            "func"  : lambda test: test.valgrind and test.valgrind_passed,
-            "tests" : [],
-            "color" : GREEN
-        },
-        "Valgrind Failed" : {
-            "func"  : lambda test: test.valgrind and not test.valgrind_passed,
-            "tests" : [],
-            "color" : RED
-        },
-        "Memory Leak" : {
-            "func"  : lambda test: test.valgrind and test.memory_leaks,
-            "tests" : [],
-            "color" : MAGENTA
-        },
-        "Memory Error" : {
-            "func"  : lambda test: test.valgrind and test.memory_errors,
-            "tests" : [],
-            "color" : MAGENTA
-        },
-        "V. Exceeded Max Ram" : {
-            "func"  : lambda test: test.valgrind and test.valg_out_of_mem,
-            "tests" : [],
-            "color" : RED
-        }
+        "Passed" : { "func"  : lambda test: test.success, "tests" : [], "color" : GREEN},
+        "Failed" : { "func"  : lambda test: not test.success, "tests" : [], "color" : RED },
+        "Segfaulted" : { "func"  : lambda test: test.segfault, "tests" : [], "color" : RED },
+        "Failed stdout diff" : { "func"  : lambda test: test.diff_stdout and not test.stdout_diff_passed, "tests" : [], "color" : RED },
+        "Failed stderr diff" : { "func"  : lambda test: test.diff_stderr and not test.stderr_diff_passed, "tests" : [], "color" : RED },
+        "Failed ofile diff" : { "func"  : lambda test: test.diff_ofiles and not test.fout_diffs_passed, "tests" : [], "color" : RED },
+        "Timed Out" : { "func"  : lambda test: test.timed_out, "tests" : [], "color" : RED },
+        "Invalid Exit Code" : { "func"  : lambda test: test.exit_status != test.exitcodepass, "tests" : [], "color" : RED },
+        "Exceeded Max Ram" : { "func"  : lambda test: test.max_ram_exceeded, "tests" : [], "color" : RED },
+        "Exceeded Kill Limit" : { "func"  : lambda test: test.kill_limit_exceeded, "tests" : [], "color" : RED },
+        "Valgrind Passed" : { "func"  : lambda test: test.valgrind and test.valgrind_passed, "tests" : [], "color" : GREEN },
+        "Valgrind Failed" : { "func"  : lambda test: test.valgrind and not test.valgrind_passed, "tests" : [], "color" : RED },
+        "Memory Leak" : { "func"  : lambda test: test.valgrind and test.memory_leaks, "tests" : [], "color" : MAGENTA },
+        "Memory Error" : { "func"  : lambda test: test.valgrind and test.memory_errors, "tests" : [], "color" : MAGENTA },
+        "V. Exceeded Max Ram" : { "func"  : lambda test: test.valgrind and test.valg_out_of_mem, "tests" : [], "color" : RED }
     }
 
     for cat in report:

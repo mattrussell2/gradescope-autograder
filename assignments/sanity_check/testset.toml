@@ -36,5 +36,12 @@ tests = [
 tests = [
     { testname = "test22", description = "SHOULD FAIL VALGRIND: memory leak"  }, 
     { testname = "test23", description = "SHOULD FAIL VALGRIND: memory error" }
+]
 
+[manual_mode]
+exec_command = "python3 ${testname}"
+valgrind = false
+tests = [
+    { testname = "test_pass.py", description = "SHOULD PASS: manual mode" },
+    { testname = "test_fail.py", description = "SHOULD FAIL: manual mode" }
 ]
