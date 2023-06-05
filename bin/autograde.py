@@ -253,9 +253,6 @@ class Test:
         if self.max_ram != -1:
             self.max_ram *= 1024
 
-        if not self.exec_command:
-            self.valgrind = False
-
         # can only get here if the test has compiled
         self.compiled = True if not self.exec_command else None
 
