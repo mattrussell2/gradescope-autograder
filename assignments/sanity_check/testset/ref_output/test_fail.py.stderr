@@ -1,0 +1,4 @@
+Traceback (most recent call last):
+  File "/workspaces/ubuntu/gradescope-autograding/assignments/sanity_check/temp_ref_build_dir/results/build/test_fail.py", line 4, in <module>
+    assert(1 == 0)
+AssertionError

@@ -65,8 +65,9 @@ VALG_NO_MEM  = "Valgrind's memory management: out of memory"
 
 # Defaults for miscellaneous style settings (besides visibility, and weights)
 DEFAULT_NON_CODE_STYLE_CHECKSET = ['README', '.h', '.cpp']
-DEFAULT_CODE_STYLE_CHECKLIST = ['.h', '.cpp']
-DEFAULT_MAX_COLUMNS = 80
+DEFAULT_CODE_STYLE_CHECKLIST    = ['.h', '.cpp']
+DEFAULT_MAX_COLUMNS             = 80
+
 
 def COLORIZE(s, color):
     return f"{START_COLOR}{color}{s}{RESET_COLOR}"
@@ -116,7 +117,7 @@ def RUN(cmd_ary,
                           input=input,
                           preexec_fn=preexec_fn,
                           stdout=stdout,
-                          stderr=stderr, 
+                          stderr=stderr,
                           user=user)
 
 
@@ -152,7 +153,7 @@ class TestConfig:
     # referenced in this file, however they still must be listed here. If they
     # are not, a TypeError is raised indicating that the TestConfig __init__
     # fails when any of these fields are specified in the TOML - 2/25/2023 slamel01
-    kill_limit: int = 750               
+    kill_limit: int = 750
     max_valgrind_score: int = 8
     cols_style_weight: float = 0
     tabs_style_weight: float = 0
@@ -171,7 +172,6 @@ class TestConfig:
 
     # only used for manual mode
     exec_command: str = ""
-
 
     # These will be assigned to a test by the time it finshes execution
     # could keep these as part of the 'Test' class, but it's easier
@@ -246,25 +246,23 @@ class Test:
             "ref_stderr"  : f"{REF_OUTPUT_DIR}/{self.testname}.stderr",
         }
 
-        # MB -> B; setrlimit uses Bytes
+        # MB -> B;  setrlimit uses Bytes
         self.kill_limit = self.kill_limit * 1024 * 1024
 
-        # can only get here if the test has compiled
-        self.compiled = True
+        # MB -> KB; /usr/bin/time -o %M uses KB
+        if self.max_ram != -1:
+            self.max_ram *= 1024
 
-        if self.executable == None and not self.exec_command:
-            self.executable = self.testname
+        # can only get here if the test has compiled
+        self.compiled = True if not self.exec_command else None
 
         self.replace_placeholders_in_self()
 
-        if self.executable[0] != '/' and not self.exec_command:
-            self.executable = './' + self.executable
+        if self.executable == None and not self.exec_command:
+            self.executable = './' + self.testname
 
         if vars(config)["ccizer_name"] != "":
-            setattr(self, "canonicalizer", getattr(canonicalizers, vars(config)["ccizer_name"]))
-
-        if self.max_ram != -1:
-            self.max_ram *= 1024               #MB -> KB; /usr/bin/time -o %M uses KB
+            self.canonicalizer = getattr(canonicalizers, vars(config)["ccizer_name"])
 
     def replace_placeholders(self, value_s):
         """
@@ -276,13 +274,12 @@ class Test:
                 #{name} shouldn't be used anymore, but keeping it for backwards compatibility
         """
         replacements = {
-            "${test_ofile_path}": f"{OUTPUT_DIR}/{self.testname}",
-            "${testname}": self.testname,
-            
-            # these are legacy 
-            "#{testname}" : f"{OUTPUT_DIR}/{self.testname}",
-            "#{name}"     : f"{OUTPUT_DIR}/{self.testname}",
+            "${test_ofile_path}" : f"{OUTPUT_DIR}/{self.testname}",
+            "${testname}"        : self.testname,
 
+               # these are legacy
+            "#{testname}"        : f"{OUTPUT_DIR}/{self.testname}",
+            "#{name}"            : f"{OUTPUT_DIR}/{self.testname}",
         }
         if isinstance(value_s, str):
             for replacement_k, replacement_v in replacements.items():
@@ -294,7 +291,7 @@ class Test:
     def replace_placeholders_in_self(self):
         """
             Purpose:
-                Replaces all placeholders from the .toml file [#{testname}] with the correct stuff.
+                Replaces all placeholders from the .toml file (e.g. ${testname} ) with the correct stuff.
             Note!
                 Assumes no dictionaries in .toml.
         """
@@ -350,10 +347,8 @@ class Test:
             tmpvars['canonicalizer'] = f"function: [{self.ccizer_name}]"
             pprint(tmpvars, stream=f)
 
-    
     def limit_virtual_memory(self):
         resource.setrlimit(resource.RLIMIT_DATA, (self.kill_limit, self.kill_limit))
-
 
     def run_exec(self, exec_prepend=None, STDOUTPATH=None, STDERRPATH=None, user="student"):
         """
@@ -377,7 +372,7 @@ class Test:
             exec_cmds = exec_prepend + exec_cmds
 
         stdin = open(self.fpaths['stdin'], 'r') if os.path.exists(self.fpaths['stdin']) else None
-   
+
         if STDOUTPATH:
             stdout = open(STDOUTPATH, 'wb')
             stderr = open(STDERRPATH, 'wb')
@@ -391,7 +386,7 @@ class Test:
                      cwd=BUILD_DIR,
                      preexec_fn=self.limit_virtual_memory if user == "student" else None,
                      stdout=stdout,
-                     stderr=stderr, 
+                     stderr=stderr,
                      user=user)
 
         for f in [stdin, stdout, stderr]:
@@ -415,7 +410,7 @@ class Test:
 
         test_rcode = self.run_exec(exec_prepend=prepend,
                                    STDOUTPATH=self.fpaths['stdout'],
-                                   STDERRPATH=self.fpaths['stderr'], 
+                                   STDERRPATH=self.fpaths['stderr'],
                                    user=user)
 
         test_rcode       = abs(test_rcode)               # returns negative value if killed by signal
@@ -452,15 +447,15 @@ class Test:
                 in practice, this usually only happens if the 'main' test has the same issue; 
                 the 'main' test should show a segfault; here, we will set max_ram_exceeded to true
         """
-        valgrind_command = [
-            "/usr/bin/valgrind",               # doesn't have 72,704 bug
-            "--show-leak-kinds=all",               # gimme all the leaks
-            "--leak-check=full",               # catch all kinds of leaks
-            "--errors-for-leak-kinds=none",               # separate errors from leaks
-            "--error-exitcode=1",               # errors return 1
-            f"--log-file={self.fpaths['valgrind']}"
-        ]
         if self.valgrind:
+            valgrind_command = [
+                "/usr/bin/valgrind",               # doesn't have 72,704 bug
+                "--show-leak-kinds=all",               # gimme all the leaks
+                "--leak-check=full",               # catch all kinds of leaks
+                "--errors-for-leak-kinds=none",               # separate errors from leaks
+                "--error-exitcode=1",               # errors return 1
+                f"--log-file={self.fpaths['valgrind']}"
+            ]
             self.valgrind_rcode = self.run_exec(valgrind_command, user=user)
             if not os.path.exists(self.fpaths['valgrind']):
                 self.valgrind_passed  = False
@@ -533,8 +528,8 @@ class Test:
         diff_retcode = diff_result.returncode
 
         if self.pretty_diff:
-            diff_result  = subprocess.run(f"icdiff {filea} {fileb} > {filec}", shell=True)
-    
+            diff_result = subprocess.run(f"icdiff {filea} {fileb} > {filec}", shell=True)
+
         return diff_retcode
 
     def run_diffs(self):
@@ -551,8 +546,13 @@ class Test:
                                                     self.fpaths['stdout.diff'], 'stdout', self.ccize_stdout) == 0
 
         if self.diff_stderr:
-            self.stderr_diff_passed = self.run_diff(self.fpaths['stderr'], self.fpaths['ref_stderr'],
-                                                    self.fpaths['stderr.diff'], 'stderr', self.ccize_stderr, ) == 0
+            self.stderr_diff_passed = self.run_diff(
+                self.fpaths['stderr'],
+                self.fpaths['ref_stderr'],
+                self.fpaths['stderr.diff'],
+                'stderr',
+                self.ccize_stderr,
+            ) == 0
 
         if self.diff_ofiles:
             self.fout_diffs_passed = True
@@ -600,7 +600,7 @@ def print_testgroup(report, keys, OPTS):
         columns, lines = os.get_terminal_size()
     except OSError:
         columns = 144
-        
+
     if OPTS['lengthy_output']:
         col_width = columns
         max_width = col_width // 2
@@ -643,21 +643,81 @@ def report_results(TESTS, OPTS):
             None                    
     """
     report = {
-        "Passed" : { "func"  : lambda test: test.success, "tests" : [], "color" : GREEN},
-        "Failed" : { "func"  : lambda test: not test.success, "tests" : [], "color" : RED },
-        "Segfaulted" : { "func"  : lambda test: test.segfault, "tests" : [], "color" : RED },
-        "Failed stdout diff" : { "func"  : lambda test: test.diff_stdout and not test.stdout_diff_passed, "tests" : [], "color" : RED },
-        "Failed stderr diff" : { "func"  : lambda test: test.diff_stderr and not test.stderr_diff_passed, "tests" : [], "color" : RED },
-        "Failed ofile diff" : { "func"  : lambda test: test.diff_ofiles and not test.fout_diffs_passed, "tests" : [], "color" : RED },
-        "Timed Out" : { "func"  : lambda test: test.timed_out, "tests" : [], "color" : RED },
-        "Invalid Exit Code" : { "func"  : lambda test: test.exit_status != test.exitcodepass, "tests" : [], "color" : RED },
-        "Exceeded Max Ram" : { "func"  : lambda test: test.max_ram_exceeded, "tests" : [], "color" : RED },
-        "Exceeded Kill Limit" : { "func"  : lambda test: test.kill_limit_exceeded, "tests" : [], "color" : RED },
-        "Valgrind Passed" : { "func"  : lambda test: test.valgrind and test.valgrind_passed, "tests" : [], "color" : GREEN },
-        "Valgrind Failed" : { "func"  : lambda test: test.valgrind and not test.valgrind_passed, "tests" : [], "color" : RED },
-        "Memory Leak" : { "func"  : lambda test: test.valgrind and test.memory_leaks, "tests" : [], "color" : MAGENTA },
-        "Memory Error" : { "func"  : lambda test: test.valgrind and test.memory_errors, "tests" : [], "color" : MAGENTA },
-        "V. Exceeded Max Ram" : { "func"  : lambda test: test.valgrind and test.valg_out_of_mem, "tests" : [], "color" : RED }
+        "Passed" : {
+            "func"  : lambda test: test.success,
+            "tests" : [],
+            "color" : GREEN
+        },
+        "Failed" : {
+            "func"  : lambda test: not test.success,
+            "tests" : [],
+            "color" : RED
+        },
+        "Segfaulted" : {
+            "func"  : lambda test: test.segfault,
+            "tests" : [],
+            "color" : RED
+        },
+        "Failed stdout diff" : {
+            "func"  : lambda test: test.diff_stdout and not test.stdout_diff_passed,
+            "tests" : [],
+            "color" : RED
+        },
+        "Failed stderr diff" : {
+            "func"  : lambda test: test.diff_stderr and not test.stderr_diff_passed,
+            "tests" : [],
+            "color" : RED
+        },
+        "Failed ofile diff" : {
+            "func"  : lambda test: test.diff_ofiles and not test.fout_diffs_passed,
+            "tests" : [],
+            "color" : RED
+        },
+        "Timed Out" : {
+            "func"  : lambda test: test.timed_out,
+            "tests" : [],
+            "color" : RED
+        },
+        "Invalid Exit Code" : {
+            "func"  : lambda test: test.exit_status != test.exitcodepass,
+            "tests" : [],
+            "color" : RED
+        },
+        "Exceeded Max Ram" : {
+            "func"  : lambda test: test.max_ram_exceeded,
+            "tests" : [],
+            "color" : RED
+        },
+        "Exceeded Kill Limit" : {
+            "func"  : lambda test: test.kill_limit_exceeded,
+            "tests" : [],
+            "color" : RED
+        },
+        "Valgrind Passed" : {
+            "func"  : lambda test: test.valgrind and test.valgrind_passed,
+            "tests" : [],
+            "color" : GREEN
+        },
+        "Valgrind Failed" : {
+            "func"  : lambda test: test.valgrind and not test.valgrind_passed,
+            "tests" : [],
+            "color" : RED
+        },
+        "Memory Leak" : {
+            "func"  : lambda test: test.valgrind and test.memory_leaks,
+            "tests" : [],
+            "color" : MAGENTA
+        },
+        "Memory Error" : {
+            "func"  : lambda test: test.valgrind and test.memory_errors,
+            "tests" : [],
+            "color" : MAGENTA
+        },
+        "V. Exceeded Max Ram" : {
+            "func"  : lambda test: test.valgrind and test.valg_out_of_mem,
+            "tests" : [],
+            "color" : RED
+        }
     }
 
     for cat in report:
@@ -676,7 +736,7 @@ def run_full_test(tup):
     test = tup[0]
     user = tup[1]
     test.save_status(finished=False)
-    if not os.path.exists(os.path.join(BUILD_DIR, test.executable)):
+    if not test.exec_command and not os.path.exists(os.path.join(BUILD_DIR, test.executable)):
         test.success  = False
         test.compiled = False
         test.save_status(finished=True)
@@ -720,11 +780,15 @@ def compile_exec(target, OPTS):
         Returns:    
             whether or not the compilation was successful
     """
+    if not target:
+        return 0
+
     # if student provides executable, remove it.
     if os.path.exists(os.path.join(BUILD_DIR, target)):
         os.remove(os.path.join(BUILD_DIR, target))
 
-    target = target[2:]               # remove the './' prefix
+    if target[:2] == './':
+        target = target[2:]               # remove the './' prefix
 
     # REFACTOR LOGIC HERE - testname replacement should be something else after path is there.
     # if testname is the target and has been replaced, extract the name from the path
@@ -754,7 +818,8 @@ def compile_exec(target, OPTS):
             compilation_success = False
         else:
             INFORMF("\nbuild completed successfully\n", stream=f, color=GREEN)
-            RUN(["chmod", "a+x", target], cwd=BUILD_DIR, user=user)  # g++ doesn't always play nice, so chmod it
+            RUN(["chmod", "a+x", target], cwd=BUILD_DIR,
+                user=user)               # g++ doesn't always play nice, so chmod it
     return compilation_success
 
 
@@ -998,7 +1063,7 @@ def parse_args(argv):
         'f' : "one or more filters to apply: (f)ailed, (p)assed",
         'd' : "one or more diffs to show: stdout, stderr, and ofile",
         't' : "one or more tests to run",
-        'l' : "show output in one column", 
+        'l' : "show output in one column",
         'n' : "runs tests without running as student user. Used to build container on local system"
     }
     ap = argparse.ArgumentParser(formatter_class=CustomFormatter)

@@ -1,15 +1,15 @@
-==34120== Memcheck, a memory error detector
-==34120== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
-==34120== Using Valgrind-3.18.1 and LibVEX; rerun with -h for copyright info
-==34120== Command: ./test20 /workspaces/ubuntu/gradescope-test/assignments/tests/temp_ref_build_dir/results/output/test20.ofile
-==34120== Parent PID: 34119
-==34120== 
-==34120== 
-==34120== HEAP SUMMARY:
-==34120==     in use at exit: 0 bytes in 0 blocks
-==34120==   total heap usage: 4 allocs, 4 frees, 81,468 bytes allocated
-==34120== 
-==34120== All heap blocks were freed -- no leaks are possible
-==34120== 
-==34120== For lists of detected and suppressed errors, rerun with: -s
-==34120== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)
+==20399== Memcheck, a memory error detector
+==20399== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
+==20399== Using Valgrind-3.18.1 and LibVEX; rerun with -h for copyright info
+==20399== Command: ./test20 /workspaces/ubuntu/gradescope-autograding/assignments/sanity_check/temp_ref_build_dir/results/output/test20.ofile
+==20399== Parent PID: 20398
+==20399== 
+==20399== 
+==20399== HEAP SUMMARY:
+==20399==     in use at exit: 0 bytes in 0 blocks
+==20399==   total heap usage: 4 allocs, 4 frees, 81,482 bytes allocated
+==20399== 
+==20399== All heap blocks were freed -- no leaks are possible
+==20399== 
+==20399== For lists of detected and suppressed errors, rerun with: -s
+==20399== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)
