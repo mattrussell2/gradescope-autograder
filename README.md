@@ -44,7 +44,6 @@ Note that in the configuration files listed below, you will sometimes specify th
 ## Configure Your Autograding Repo
 The file `etc/config.toml` contains various important bits of information related to your autograder configuration.
 ```toml
-
 [repo]
 REPO_REMOTE_VARNAME = "AUTOGRADING_REPO_REMOTE_PATH"
 REPO_BRANCH = "main"
