@@ -321,7 +321,7 @@ The framework depends on a `testset.toml` file (https://toml.io) to specify the 
 # configuration options placed under this section here will override the settings in [common] for these tests
 # test group names (e.g. [set_of_tests]) can be anything
 # tests in a section must be placed in a list named `tests'
-# tests = [
+tests = [
       { testname = "test0", description = "my first test" },
       { testname = "test1", description = "my second test" },
       ..., 
