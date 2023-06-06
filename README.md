@@ -604,7 +604,7 @@ That should be enough to get you up and running! Please feel free to contact me 
 * Since we've removed course code from the repo, we need more examples in `assignments/`.
 
 # Changelog
-## [2.1.0] - 2023-06-06 - 2e17be88
+## [2.1.0] - 2023-06-06 - ad2b64dc
 Updated backend functionality to make use of `.toml` config file properly instead of sourcing forced `.ini` files. Added functionality for selecting repo branch, and for adding users exempt from submission number checks. Updated section names in config to be better [paths->repo, and other->misc]. Dropping file-specific changes from README logs; instead will tag repo commit
 
 ## [2.0.3] - 2023-06-02
