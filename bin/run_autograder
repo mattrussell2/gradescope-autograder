@@ -4,11 +4,13 @@ SOURCE_DIR="/autograder/source"
 REPO_ROOT="$SOURCE_DIR/course-repo"
 ASSIGNMENT_TITLE="${ASSIGNMENT_TITLE// /_}" # replace spaces with underscores
 
-# load the config variables
-source $SOURCE_DIR/autograder_config.ini
+CONFIG="${SOURCE_DIR}/config.toml"
+ASSIGN_ROOT=`cat ${CONFIG} | tomlq ".repo.ASSIGN_ROOT" | tr -d '"'`
+ASSIGN_AUTOGRADING_SUBFOLDER=`cat ${CONFIG} | tomlq ".repo.ASSIGN_AUTOGRADING_SUBFOLDER" | tr -d '"'`
+AUTOGRADING_ROOT=`cat ${CONFIG} | tomlq ".repo.AUTOGRADING_ROOT" | tr -d '"'`
 
 # go to the repo and pull; hide output from students put put in log if needed
-cd  $REPO_ROOT
+cd $REPO_ROOT
 git pull -f > $SOURCE_DIR/PULL_LOG 2>&1
 
 # make bin/ available to autograder (diff-so-pretty, make_gradescope_results.py, etc.)
@@ -27,11 +29,8 @@ if [ $rc -ne 0 ]; then
     exit $rc
 fi
 
-# remove this file so there is no chance of student code accessing the postgres URL
-rm /autograder/source/token_config.ini
-
-# make the repo files unavailable to the student group, but still traversable
-chmod -R 771 $REPO_ROOT
+# make all of our files unavailable to the student group, but still traversable
+chmod -R 771 $SOURCE_DIR
 
 # students still need to access the autograde program
 chmod 775 $REPO_ROOT/$AUTOGRADING_ROOT/bin/autograde*

@@ -20,9 +20,7 @@ ln -s /usr/bin/clang++-12 /usr/bin/clang++
 
 # install pip packages
 python3 -m pip install --upgrade pip
-python3 -m pip install toml dataclasses tqdm filelock python_dateutil psycopg2-binary
-
-source /autograder/source/autograder_config.ini
+python3 -m pip install toml dataclasses tqdm filelock python_dateutil psycopg2-binary yq
 
 # update message of the day
 cp "/autograder/source/motd" /etc/motd

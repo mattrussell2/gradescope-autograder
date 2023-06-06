@@ -44,11 +44,13 @@ Note that in the configuration files listed below, you will sometimes specify th
 ## Configure Your Autograding Repo
 The file `etc/config.toml` contains various important bits of information related to your autograder configuration.
 ```toml
-[paths]
+
+[repo]
+REPO_REMOTE_VARNAME = "AUTOGRADING_REPO_REMOTE_PATH"
+REPO_BRANCH = "main"
 ASSIGN_ROOT = "assignments"
 ASSIGN_AUTOGRADING_SUBFOLDER = ""
 AUTOGRADING_ROOT = ""
-REPO_REMOTE_VARNAME = "AUTOGRADING_REPO_REMOTE_PATH"
 
 [tokens]
 GRACE_TIME = 15   # 15 minutes
@@ -65,18 +67,18 @@ CONTAINER_TAG = "autograder-autobuild"
 REGISTRY_USER_VARNAME = "GHUNAME"
 REGISTRY_PASS_VARNAME = "GHPAT"
 
-[other]
+[misc]
 SUBMISSIONS_PER_ASSIGN = 5
+TEST_USERS = ["Matthew Russell"]
 ```
-
-### [paths]
-Items in the `[paths]` section relate to directory structure of your repo. Options are as follows:
-
-|     KEY          |        Default       |      Purpose       |
-|------------------|----------------------|----------------------|
-| `REPO_REMOTE_VARNAME`   |  `AUTOGRADING_REPO_REMOTE_PATH` | Variable name of the environment variable used to hold the remote path of your autograding repo.  |
+### [repo]
+Items in the `[repo]` section relate to the course repository location and structure. Options are
+|   Key | Default | Purpose |
+|-------|---------|---------|
+| `REPO_REMOTE_VARNAME`   |  `"AUTOGRADING_REPO_REMOTE_PATH"` | Variable name of the environment variable used to hold the remote path of your autograding repo.  |
+| `REPO_BRANCH` | `"main"` | Specific branch of the repo to use for your autograder. This will be the only branch pulled from for the autograding container. |
 | `AUTOGRADING_ROOT` | `""` | Path from repo root which contains the `bin/`, `etc/`, and `setup/` folders |
-| `ASSIGN_ROOT`      | `assignments` | Path from `AUTOGRADING_ROOT` where the assignment folders are |
+| `ASSIGN_ROOT`      | `"assignments"` | Path from `AUTOGRADING_ROOT` where the assignment folders are |
 | `ASSIGN_AUTOGRADING_SUBFOLDER` | `""` | Path from a given assignment folder which holds the autograding files for that assignment.  |
 
 Here is a visualization of the default directory tree and options 
@@ -127,8 +129,13 @@ At Tufts, we have a system for students to be able to manage late submissions wi
 ### [docker]
 These are settings specific to the docker-build process. If you woud like to manually build your container, you will need them. See the `Docker method` section below for details; likewise simply ignore this section if you don't want to use docker manually.
 
-### [other]
-Extra info. The only one here currently is `SUBMISSIONS_PER_ASSIGN`, which allows you to set a cap on the number of submissions a student can send to the autograder per assignment. Change this to a large value to ignore. 
+### [misc]
+Other miscellaneous information. The currently available options are
+|   Key | Default | Purpose |
+|-------|---------|---------|
+| `SUBMISSIONS_PER_ASSIGN`   |  `5` | Allows you to set a cap on the number of submissions a student can send to the autograder per assignment. Change this to a large value to ignore.  |
+| `SUBNUM_EXCEPT_USERS` | `["Matthew Russell"]` | Specify any names of users (names on Gradescope) who are to be exempted from `SUBMISSIONS_PER_ASSIGN` for testing purposes. |
+
 
 ## Build Your Autograding Docker Container
 

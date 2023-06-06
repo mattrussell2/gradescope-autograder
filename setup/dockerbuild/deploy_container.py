@@ -29,4 +29,4 @@ os.chdir('../setup/build')
 subprocess.run(f'docker build --tag {REMOTE_TAG} -f ../dockerbuild/Dockerfile .', shell=True)
 subprocess.run(f'{LOGIN_CMD} && {PUSH_CMD}', shell=True)
 
-os.remove('token_config.ini') # file contains secrets
+os.remove('config.toml') # file contains secrets

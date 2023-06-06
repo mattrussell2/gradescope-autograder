@@ -57,8 +57,9 @@ def EXIT_SUCCESS(message):
         pass
     exit(0)
 
-AG_CONFIG    = toml.load('/autograder/source/autograder_config.ini')
-TOKEN_CONFIG = toml.load('/autograder/source/token_config.ini')
+CONFIG       = toml.load('/autograder/source/config.toml')
+AG_CONFIG    = CONFIG['repo']
+TOKEN_CONFIG = CONFIG['tokens']
 TESTSET_TOML = toml.load('/autograder/testset.toml')['common']
 METADATA     = json.loads(Path('/autograder/submission_metadata.json').read_text())
 
@@ -66,7 +67,10 @@ NAME             = METADATA['users'][0]['name']
 PREV_SUBMISSIONS = METADATA['previous_submissions']
 ASSIGN_NAME      = METADATA['assignment']['title'].replace(' ', '_')
 
-MAX_SUBMISSIONS  = TESTSET_TOML.get('max_submissions', AG_CONFIG['SUBMISSIONS_PER_ASSIGN'])
+MAX_SUBMISSIONS  = TESTSET_TOML.get('max_submissions', CONFIG['misc']['SUBMISSIONS_PER_ASSIGN'])
+if 'TEST_USERS' in CONFIG['misc'] and NAME in CONFIG['misc']['TEST_USERS']:
+    MAX_SUBMISSIONS = 1000
+    
 if len(PREV_SUBMISSIONS) >= MAX_SUBMISSIONS: 
     EXIT_FAIL(f"ERROR: Max submissions exceeded for this assignment.")
 

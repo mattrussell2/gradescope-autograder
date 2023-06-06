@@ -13,4 +13,4 @@ cp ../zipbuild/setup.sh .
 
 zip -r Autograder.zip .
 
-rm token_config.ini # contains secrets so remove it. 
+rm config.toml # contains secrets so remove it. 
