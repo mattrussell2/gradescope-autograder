@@ -2,7 +2,7 @@
 Gradescope is great tool for autograding assignments. Nevertheless, there is still a substantial amount
 of infrastructure required to deploy and run an autograder on Gradescope. This document provides 
 instructions for setting up an autograder on Gradescope which uses our in-house autograding
-framework for `C/C++` code. Setup from start to finish is intended to take roughly 30 minutes.
+framework code. Setup from start to finish is intended to take roughly 30 minutes.
 If you have any questions, please reach out to me at `mrussell@cs.tufts.edu`, or open an issue here. 
 
 # Infrastructure Setup
@@ -134,7 +134,7 @@ Other miscellaneous information. The currently available options are
 |   Key | Default | Purpose |
 |-------|---------|---------|
 | `SUBMISSIONS_PER_ASSIGN`   |  `5` | Allows you to set a cap on the number of submissions a student can send to the autograder per assignment. Change this to a large value to ignore.  |
-| `SUBNUM_EXCEPT_USERS` | `["Matthew Russell"]` | Specify any names of users (names on Gradescope) who are to be exempted from `SUBMISSIONS_PER_ASSIGN` for testing purposes. |
+| `TEST_USERS` | `["Matthew Russell"]` | Specify any names of users (names on Gradescope) who are to be exempted from `SUBMISSIONS_PER_ASSIGN` for testing purposes. |
 
 
 ## Build Your Autograding Docker Container
