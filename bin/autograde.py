@@ -256,6 +256,14 @@ class Test:
         # can only get here if the test has compiled
         self.compiled = True if not self.exec_command else None
 
+        # must do this before replacing placeholders in self. 
+        #TODO: fix this up. logic re: which executable to run is very clunky. 
+        if not self.exec_command:
+            if self.executable and not self.executable.startswith('./'):
+                self.exec_command = f"./{self.executable}"
+            else:
+                self.executable = './' + self.testname
+
         self.replace_placeholders_in_self()
 
         if self.executable == None and not self.exec_command:

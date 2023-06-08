@@ -604,6 +604,12 @@ That should be enough to get you up and running! Please feel free to contact me 
 * Since we've removed course code from the repo, we need more examples in `assignments/`.
 
 # Changelog
+## [2.1.2] - 2023-06-08
+Bug fix re: mistaken earlier changes with adding `./` where appropriate to executable name. TODO: fix up this logic. 
+
+## [2.1.1] - 2023-06-08
+Dump log if `git pull` fails.  
+
 ## [2.1.0] - 2023-06-06 - 0fdbc91f
 Updated backend functionality to make use of `.toml` config file properly instead of sourcing forced `.ini` files. Added functionality for selecting repo branch, and for adding users exempt from submission number checks. Updated section names in config to be better [paths->repo, and other->misc]. Dropping file-specific changes from README logs; instead will tag repo commit that has the major changes. 
 
