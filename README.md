@@ -2,7 +2,7 @@
 Gradescope is great tool for autograding assignments. Nevertheless, there is still a substantial amount
 of infrastructure required to deploy and run an autograder on Gradescope. This document provides 
 instructions for setting up an autograder on Gradescope which uses our in-house autograding
-framework for `C/C++` code. Setup from start to finish is intended to take roughly 30 minutes.
+framework code. Setup from start to finish is intended to take roughly 30 minutes.
 If you have any questions, please reach out to me at `mrussell@cs.tufts.edu`, or open an issue here. 
 
 # Infrastructure Setup
@@ -44,7 +44,6 @@ Note that in the configuration files listed below, you will sometimes specify th
 ## Configure Your Autograding Repo
 The file `etc/config.toml` contains various important bits of information related to your autograder configuration.
 ```toml
-
 [repo]
 REPO_REMOTE_VARNAME = "AUTOGRADING_REPO_REMOTE_PATH"
 REPO_BRANCH = "main"
@@ -134,7 +133,7 @@ Other miscellaneous information. The currently available options are
 |   Key | Default | Purpose |
 |-------|---------|---------|
 | `SUBMISSIONS_PER_ASSIGN`   |  `5` | Allows you to set a cap on the number of submissions a student can send to the autograder per assignment. Change this to a large value to ignore.  |
-| `SUBNUM_EXCEPT_USERS` | `["Matthew Russell"]` | Specify any names of users (names on Gradescope) who are to be exempted from `SUBMISSIONS_PER_ASSIGN` for testing purposes. |
+| `TEST_USERS` | `["Matthew Russell"]` | Specify any names of users (names on Gradescope) who are to be exempted from `SUBMISSIONS_PER_ASSIGN` for testing purposes. |
 
 
 ## Build Your Autograding Docker Container
@@ -322,7 +321,7 @@ The framework depends on a `testset.toml` file (https://toml.io) to specify the 
 # configuration options placed under this section here will override the settings in [common] for these tests
 # test group names (e.g. [set_of_tests]) can be anything
 # tests in a section must be placed in a list named `tests'
-# tests = [
+tests = [
       { testname = "test0", description = "my first test" },
       { testname = "test1", description = "my second test" },
       ..., 
@@ -605,8 +604,15 @@ That should be enough to get you up and running! Please feel free to contact me 
 * Since we've removed course code from the repo, we need more examples in `assignments/`.
 
 # Changelog
-## [2.1.0] - 2023-06-06 - 0fdbc91
-Updated backend functionality to make use of `.toml` config file properly instead of sourcing forced `.ini` files. Added functionality for selecting repo branch, and for adding users exempt from submission number checks. Updated section names in config to be better [paths->repo, and other->misc]. Dropping file-specific changes from README logs; instead will tag repo commit
+
+## [2.1.2] - 2023-06-08 - b5338d47
+Bug fix re: mistaken earlier changes with adding `./` where appropriate to executable name. TODO: fix up this logic. 
+
+## [2.1.1] - 2023-06-08 - 043ceaea
+Dump log if `git pull` fails.  
+
+## [2.1.0] - 2023-06-06 - 0fdbc91f
+Updated backend functionality to make use of `.toml` config file properly instead of sourcing forced `.ini` files. Added functionality for selecting repo branch, and for adding users exempt from submission number checks. Updated section names in config to be better [paths->repo, and other->misc]. Dropping file-specific changes from README logs; instead will tag repo commit that has the major changes. 
 
 ## [2.0.3] - 2023-06-02
 README updates, and moved from "#{testname}" -> "${test_ofile_path}". Documentation is much clearer on this as well. 
