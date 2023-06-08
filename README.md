@@ -604,10 +604,10 @@ That should be enough to get you up and running! Please feel free to contact me 
 * Since we've removed course code from the repo, we need more examples in `assignments/`.
 
 # Changelog
-## [2.1.2] - 2023-06-08
+## [2.1.2] - 2023-06-08 - b5338d47
 Bug fix re: mistaken earlier changes with adding `./` where appropriate to executable name. TODO: fix up this logic. 
 
-## [2.1.1] - 2023-06-08
+## [2.1.1] - 2023-06-08 - 043ceaea
 Dump log if `git pull` fails.  
 
 ## [2.1.0] - 2023-06-06 - 0fdbc91f
