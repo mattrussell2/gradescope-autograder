@@ -12,6 +12,8 @@ def prep_build():
     VARNAME_STR = '_VARNAME'
     for vartype in config:
         for varname in [var for var in config[vartype] if var.endswith(VARNAME_STR)]:
+            if varname == "POSTGRES_REMOTE_VARNAME" and not config['TOKENS']['MANAGE_TOKENS']:
+                continue
             config[vartype][varname[:-len(VARNAME_STR)]] = os.environ[config[vartype][varname]]
             del config[vartype][varname]
 

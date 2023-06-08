@@ -604,6 +604,8 @@ That should be enough to get you up and running! Please feel free to contact me 
 * Since we've removed course code from the repo, we need more examples in `assignments/`.
 
 # Changelog
+## [2.1.2] - 2023-06-08 - 
+Configure container prep to work properly with MANAGE_TOKENS=false
 
 ## [2.1.2] - 2023-06-08 - b5338d47
 Bug fix re: mistaken earlier changes with adding `./` where appropriate to executable name. TODO: fix up this logic. 
