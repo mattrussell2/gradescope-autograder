@@ -502,28 +502,21 @@ class Test:
         """
         if not os.path.exists(filea):
             return 2               # diff's non-existing file return code
+        
         if not os.path.exists(fileb):
             INFORM(f"reference output missing for: {self.testname} " + "- ignore if building reference output",
                    color=MAGENTA)
+        
         if canonicalize:
-            bytes = Path(filea).read_bytes()
+            student_bytes = Path(filea).read_bytes()
+            solution_bytes = Path(fileb).read_bytes() if os.path.exists(fileb) else None
             try:
-                text = bytes.decode('utf-8')
-            except (TypeError, UnicodeDecodeError):
-                ccized = "ERROR: non-utf-8 encodable text in student result"
-            else:
-                try:
-                    if os.path.exists(fileb):
-                        solution_text = Path(fileb).read_bytes().decode('utf-8')
-                    else:
-                        solution_text = None
-                    ccized = self.canonicalizer(text, solution_text, self.testname, stream, self.ccizer_args)
-                except Exception as e:
-                    ccized = f"ERROR: canonicalizer failed - {repr(e)}\n{traceback.format_exc()}"
+                ccized = self.canonicalizer(student_bytes, solution_bytes, self.testname, stream, self.ccizer_args)
+            except Exception as e:
+                ccized = f"ERROR: canonicalizer failed - {repr(e)}\n{traceback.format_exc()}"
             if ccized == None:
                 INFORM(f"canonicalizer for test {self.testname} does not return a string with the" +
-                       "result - defaulting to empty string",
-                       color=MAGENTA)
+                       "result - defaulting to empty string", color=MAGENTA)
                 ccized = ""
 
             Path(f"{filea}.ccized").write_text(ccized)
@@ -536,7 +529,7 @@ class Test:
         diff_retcode = diff_result.returncode
 
         if self.pretty_diff:
-            diff_result = subprocess.run(f"icdiff {filea} {fileb} > {filec}", shell=True)
+            diff_result = subprocess.run(f"python3 -m icdiff {filea} {fileb} > {filec}", shell=True)
 
         return diff_retcode
 
@@ -571,11 +564,12 @@ class Test:
                 retcode = self.run_diff(f"{OUTPUT_DIR}/{ofilename}", f"{REF_OUTPUT_DIR}/{ofilename}",
                                         f"{OUTPUT_DIR}/{ofilename}.diff", ofilename, self.ccize_ofiles)
                 if retcode == 2:
-                    self.ofile_file_exists = False
+                    setattr(self, f"{ofilename}_file_exists", False)
 
-                self.fout_diffs_passed = retcode == 0
-
-                if not self.fout_diffs_passed: break
+                setattr(self, f"{ofilename}_diff_passed", retcode == 0)
+                if not retcode == 0:
+                    self.fout_diffs_passed = False
+                    break
 
     def determine_success(self):
         """
@@ -651,87 +645,29 @@ def report_results(TESTS, OPTS):
             None                    
     """
     report = {
-        "Passed" : {
-            "func"  : lambda test: test.success,
-            "tests" : [],
-            "color" : GREEN
-        },
-        "Failed" : {
-            "func"  : lambda test: not test.success,
-            "tests" : [],
-            "color" : RED
-        },
-        "Segfaulted" : {
-            "func"  : lambda test: test.segfault,
-            "tests" : [],
-            "color" : RED
-        },
-        "Failed stdout diff" : {
-            "func"  : lambda test: test.diff_stdout and not test.stdout_diff_passed,
-            "tests" : [],
-            "color" : RED
-        },
-        "Failed stderr diff" : {
-            "func"  : lambda test: test.diff_stderr and not test.stderr_diff_passed,
-            "tests" : [],
-            "color" : RED
-        },
-        "Failed ofile diff" : {
-            "func"  : lambda test: test.diff_ofiles and not test.fout_diffs_passed,
-            "tests" : [],
-            "color" : RED
-        },
-        "Timed Out" : {
-            "func"  : lambda test: test.timed_out,
-            "tests" : [],
-            "color" : RED
-        },
-        "Invalid Exit Code" : {
-            "func"  : lambda test: test.exit_status != test.exitcodepass,
-            "tests" : [],
-            "color" : RED
-        },
-        "Exceeded Max Ram" : {
-            "func"  : lambda test: test.max_ram_exceeded,
-            "tests" : [],
-            "color" : RED
-        },
-        "Exceeded Kill Limit" : {
-            "func"  : lambda test: test.kill_limit_exceeded,
-            "tests" : [],
-            "color" : RED
-        },
-        "Valgrind Passed" : {
-            "func"  : lambda test: test.valgrind and test.valgrind_passed,
-            "tests" : [],
-            "color" : GREEN
-        },
-        "Valgrind Failed" : {
-            "func"  : lambda test: test.valgrind and not test.valgrind_passed,
-            "tests" : [],
-            "color" : RED
-        },
-        "Memory Leak" : {
-            "func"  : lambda test: test.valgrind and test.memory_leaks,
-            "tests" : [],
-            "color" : MAGENTA
-        },
-        "Memory Error" : {
-            "func"  : lambda test: test.valgrind and test.memory_errors,
-            "tests" : [],
-            "color" : MAGENTA
-        },
-        "V. Exceeded Max Ram" : {
-            "func"  : lambda test: test.valgrind and test.valg_out_of_mem,
-            "tests" : [],
-            "color" : RED
-        }
+        "Passed" :              { "func"  : lambda test: test.success  },
+        "Failed" :              { "func"  : lambda test: not test.success  },
+        "Segfaulted" :          { "func"  : lambda test: test.segfault  },
+        "Failed stdout diff" :  { "func"  : lambda test: test.diff_stdout and not test.stdout_diff_passed  },
+        "Failed stderr diff" :  { "func"  : lambda test: test.diff_stderr and not test.stderr_diff_passed  },
+        "Failed ofile diff" :   { "func"  : lambda test: test.diff_ofiles and not test.fout_diffs_passed  },
+        "Timed Out" :           { "func"  : lambda test: test.timed_out  },
+        "Invalid Exit Code" :   { "func"  : lambda test: test.exit_status != test.exitcodepass  },
+        "Exceeded Max Ram" :    { "func"  : lambda test: test.max_ram_exceeded  },
+        "Exceeded Kill Limit" : { "func"  : lambda test: test.kill_limit_exceeded  },
+        "Valgrind Passed" :     { "func"  : lambda test: test.valgrind and test.valgrind_passed  },
+        "Valgrind Failed" :     { "func"  : lambda test: test.valgrind and not test.valgrind_passed  },
+        "Memory Leak" :         { "func"  : lambda test: test.valgrind and test.memory_leaks  },
+        "Memory Error" :        { "func"  : lambda test: test.valgrind and test.memory_errors  }
     }
+    for report_key in report:
+        report['tests'] = []
+        report['color'] = GREEN if 'Passed' in report_key else MAGENTA if 'Memory' in report_key else RED
 
     for cat in report:
         report[cat]["tests"] = [f"{name} - {t.description}" for name, t in TESTS.items() if report[cat]["func"](t)]
 
-    valgrind_keys = ["Valgrind Passed", "Valgrind Failed", "Memory Leak", "Memory Error", "V. Exceeded Max Ram"]
+    valgrind_keys = ["Valgrind Passed", "Valgrind Failed", "Memory Leak", "Memory Error"]
     normal_keys   = [k for k in report if k not in valgrind_keys]
 
     INFORM(f"\n== Test Report ==", color=CYAN)
@@ -813,12 +749,6 @@ def compile_exec(target, OPTS):
         compilation_success = compilation_proc.returncode == 0
         compilation_color   = GREEN if compilation_success else RED
 
-        # for stream in [compilation_proc.stdout, compilation_proc.stderr]:
-        #     try:
-        #         INFORMF(stream.decode('utf-8'), stream=f, color=compilation_color)
-        #     except:
-        #         INFORMF(stream, stream=f, color=compilation_color)
-
         if not compilation_success:
             INFORMF(f"\ncompilation failed\n", stream=f, color=RED)
         elif target not in os.listdir(BUILD_DIR):
@@ -826,8 +756,8 @@ def compile_exec(target, OPTS):
             compilation_success = False
         else:
             INFORMF("\nbuild completed successfully\n", stream=f, color=GREEN)
-            RUN(["chmod", "a+x", target], cwd=BUILD_DIR,
-                user=user)               # g++ doesn't always play nice, so chmod it
+            RUN(["chmod", "a+x", target], cwd=BUILD_DIR, user=user)      # g++ doesn't always play nice, so chmod it
+
     return compilation_success
 
 
@@ -960,7 +890,6 @@ def filter_tests(TESTS, OPTS):
 
     if OPTS['diff'] == []:
         OPTS['diff'] = ['.stdout.diff', '.stderr.diff', '.ofile.diff']
-
     elif OPTS['diff'] != None:
         OPTS['diff'] = [f".{x}.diff" for x in OPTS['diff']]
 

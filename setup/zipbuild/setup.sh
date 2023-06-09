@@ -13,14 +13,13 @@ apt-get install software-properties-common \
                 time \
                 postgresql-client \
                 jq \
-                icdiff \
                 clang-12 -y
 
 ln -s /usr/bin/clang++-12 /usr/bin/clang++
 
 # install pip packages
 python3 -m pip install --upgrade pip
-python3 -m pip install toml dataclasses tqdm filelock python_dateutil psycopg2-binary yq
+python3 -m pip install toml dataclasses tqdm filelock python_dateutil psycopg2-binary yq icdiff
 
 # update message of the day
 cp "/autograder/source/motd" /etc/motd
