@@ -32,6 +32,7 @@ RUN adduser student --no-create-home --disabled-password --gecos ""
 COPY run_autograder  /autograder/run_autograder
 COPY config.toml     /autograder/source/config.toml
 COPY course-repo/    /autograder/source/course-repo/
-COPY motd            /etc/motd
+
+RUN printf "\n\033[0;36m./run_autograder\033[0m\n\n" > /etc/motd
 
 RUN chmod +x /autograder/run_autograder

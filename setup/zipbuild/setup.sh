@@ -22,7 +22,7 @@ python3 -m pip install --upgrade pip
 python3 -m pip install toml dataclasses tqdm filelock python_dateutil psycopg2-binary yq icdiff
 
 # update message of the day
-cp "/autograder/source/motd" /etc/motd
+printf "\n\033[0;36m./run_autograder\033[0m\n\n" > /etc/motd
 
 # this script needs to be placed in /autograder in order for the autograder to work right. 
 cp /autograder/source/run_autograder /autograder/
