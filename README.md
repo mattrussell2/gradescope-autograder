@@ -606,10 +606,10 @@ That should be enough to get you up and running! Please feel free to contact me 
 * Since we've removed course code from the repo, we need more examples in `assignments/`.
 
 # Changelog
-## [2.1.2] - 2023-06-09 -
+## [2.1.3] - 2023-06-09 -
 Update canonicalizer function arguments to take in bytes instead of utf8-decoded text. Now keep multiple ofile results as variables. Refactor massive report results fn. Changed `icdiff` command to `python3 -m icdiff` for halligan compatibility. Requires rebuild. 
 
-## [2.1.2] - 2023-06-08 - 
+## [2.1.2] - 2023-06-08 - 4fcfc853
 Configure container prep to work properly with MANAGE_TOKENS=false
 
 ## [2.1.2] - 2023-06-08 - b5338d47
