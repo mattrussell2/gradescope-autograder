@@ -660,12 +660,11 @@ def report_results(TESTS, OPTS):
         "Memory Leak" :         { "func"  : lambda test: test.valgrind and test.memory_leaks  },
         "Memory Error" :        { "func"  : lambda test: test.valgrind and test.memory_errors  }
     }
-    for report_key in report:
-        report['tests'] = []
-        report['color'] = GREEN if 'Passed' in report_key else MAGENTA if 'Memory' in report_key else RED
-
+    
     for cat in report:
         report[cat]["tests"] = [f"{name} - {t.description}" for name, t in TESTS.items() if report[cat]["func"](t)]
+        report[cat]['color'] = GREEN if 'Passed' in cat else MAGENTA if 'Memory' in cat else RED
+
 
     valgrind_keys = ["Valgrind Passed", "Valgrind Failed", "Memory Leak", "Memory Error"]
     normal_keys   = [k for k in report if k not in valgrind_keys]
