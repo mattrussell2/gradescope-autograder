@@ -25,21 +25,23 @@ CYAN        = "36m"
 START_COLOR = "\033[1;"
 RESET_COLOR = "\033[0m"
 
+def COLORIZE(s, color):
+    return f"{START_COLOR}{color}{s}{RESET_COLOR}"
+
 def INFORM(s, color): 
-    print(f"{START_COLOR}{color}{s}{RESET_COLOR}")
+    print(COLORIZE(s, color))
 
 INFORM("== Submission Validation ==", CYAN)
 
 def EXIT_FAIL(message):
     message += f"\nIf you have already submitted, you can activate a different submission by clicking the 'Submission History' button below. Whichever submission you activate will be the one that is graded."
+    INFORM(message, MAGENTA)
     with open("/autograder/results/results.json", 'w') as f:
         json.dump( {
                 "score": 0, 
                 "visibility": "visible",
-                "stdout-visibility": "visible", 
-                "tests": [] 
-                }, f)
-    INFORM(message, MAGENTA)
+                "stdout_visibility": "visible"
+            }, f)
     try:
         CONN.close()
     except:
