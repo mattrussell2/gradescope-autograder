@@ -606,7 +606,7 @@ That should be enough to get you up and running! Please feel free to contact me 
 * Since we've removed course code from the repo, we need more examples in `assignments/`.
 
 # Changelog
-## [2.2.0] - 2023-06-15 
+## [2.2.0] - 2023-06-15 - 4b9012f7
 Add submission validation functionality:
 1) Configurable custom `max_submissions_exceptions` dict in assigment's `.toml` file where students can be specified with maximum submissions for an assignment.
 2) Configurable custom `required_files` list in assignment's `.toml` file where submission validation fails if required files aren't specified. 
