@@ -606,6 +606,15 @@ That should be enough to get you up and running! Please feel free to contact me 
 * Since we've removed course code from the repo, we need more examples in `assignments/`.
 
 # Changelog
+## [2.2.0] - 2023-06-15 
+Add submission validation functionality:
+1) Configurable custom `max_submissions_exceptions` dict in assigment's `.toml` file where students can be specified with maximum submissions for an assignment.
+2) Configurable custom `required_files` list in assignment's `.toml` file where submission validation fails if required files aren't specified. 
+3) Set score to -1 if submission validation fails.
+4) Don't count submission validation failure in max_submission test. 
+5) DO report compile logs on failure; DONT ignore compilation failure as counting for a max_submission. 
+
+
 ## [2.1.3] - 2023-06-09 - 65f4bb6e
 Update canonicalizer function arguments to take in bytes instead of utf8-decoded text. Now keep multiple ofile results as variables. Refactor massive report results fn. Changed `icdiff` command to `python3 -m icdiff` for halligan compatibility. Requires rebuild. 
 

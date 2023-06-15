@@ -167,8 +167,10 @@ class TestConfig:
     non_code_style_checkset: List[str] = field(default_factory=lambda: DEFAULT_NON_CODE_STYLE_CHECKSET)
     code_style_checkset: List[str] = field(default_factory=lambda: DEFAULT_CODE_STYLE_CHECKLIST)
     max_columns: int = DEFAULT_MAX_COLUMNS
-
+    
     max_submissions: int = 1
+    max_submission_exceptions: dict = field(default_factory=dict)
+    required_files: List[str] = field(default_factory=list)
 
     # only used for manual mode
     exec_command: str = ""
@@ -256,18 +258,11 @@ class Test:
         # can only get here if the test has compiled
         self.compiled = True if not self.exec_command else None
 
-        # must do this before replacing placeholders in self. 
-        #TODO: fix this up. logic re: which executable to run is very clunky. 
+        # chami fix
         if not self.exec_command:
-            if self.executable and not self.executable.startswith('./'):
-                self.exec_command = f"./{self.executable}"
-            else:
-                self.executable = './' + self.testname
+            self.executable = './' + (self.executable if self.executable else self.testname)
 
         self.replace_placeholders_in_self()
-
-        if self.executable == None and not self.exec_command:
-            self.executable = './' + self.testname
 
         if vars(config)["ccizer_name"] != "":
             self.canonicalizer = getattr(canonicalizers, vars(config)["ccizer_name"])
@@ -533,6 +528,7 @@ class Test:
 
         return diff_retcode
 
+
     def run_diffs(self):
         """
             Purpose:
@@ -569,7 +565,6 @@ class Test:
                 setattr(self, f"{ofilename}_diff_passed", retcode == 0)
                 if not retcode == 0:
                     self.fout_diffs_passed = False
-                    break
 
     def determine_success(self):
         """
@@ -665,7 +660,6 @@ def report_results(TESTS, OPTS):
         report[cat]["tests"] = [f"{name} - {t.description}" for name, t in TESTS.items() if report[cat]["func"](t)]
         report[cat]['color'] = GREEN if 'Passed' in cat else MAGENTA if 'Memory' in cat else RED
 
-
     valgrind_keys = ["Valgrind Passed", "Valgrind Failed", "Memory Leak", "Memory Error"]
     normal_keys   = [k for k in report if k not in valgrind_keys]
 
@@ -749,7 +743,7 @@ def compile_exec(target, OPTS):
         compilation_color   = GREEN if compilation_success else RED
 
         if not compilation_success:
-            INFORMF(f"\ncompilation failed\n", stream=f, color=RED)
+            INFORMF(f"\nbuild failed\n", stream=f, color=RED)
         elif target not in os.listdir(BUILD_DIR):
             INFORMF(f"\n'make {target}' must build a program named {target}", stream=f, color=RED)
             compilation_success = False
@@ -889,6 +883,7 @@ def filter_tests(TESTS, OPTS):
 
     if OPTS['diff'] == []:
         OPTS['diff'] = ['.stdout.diff', '.stderr.diff', '.ofile.diff']
+
     elif OPTS['diff'] != None:
         OPTS['diff'] = [f".{x}.diff" for x in OPTS['diff']]
 
@@ -1019,7 +1014,7 @@ def parse_args(argv):
     return args
 
 
-def report_compile_logs(exitcode=None, type_to_report=None, tests=None):
+def report_compile_logs(exitcode=None, type_to_report=None, tests=None, output_format="stdout"):
     """
         Purpose:
             Prints all of the compilation logs. Will filter by
@@ -1028,6 +1023,7 @@ def report_compile_logs(exitcode=None, type_to_report=None, tests=None):
             type_to_report (string)       : [passed/failed] - will only print these logs
             tests          (list[string]) : will only print the results of compiling these execs
     """
+
     compile_pass = "build completed successfully"
     compile_fail = "build failed"
     build_logs   = find_logs(['.compile.log'], os.listdir(LOG_DIR), directory=LOG_DIR)
@@ -1040,12 +1036,13 @@ def report_compile_logs(exitcode=None, type_to_report=None, tests=None):
         build_logs = {f: log for f, log in build_logs.items() if f.split('compile.log')[0] in tests}
 
     build_pass_fn = lambda x: True if compile_pass in x else False
-    report_log(build_logs, build_pass_fn, print_header=True)
+    logs = report_log(build_logs, build_pass_fn, print_header=True, output_format=output_format)
     if exitcode != None:
         exit(exitcode)
+    return logs
 
 
-def report_log(data_dict, success_fn, print_header=True):
+def report_log(data_dict, success_fn, print_header=True, output_format="stdout"):
     """
         Purpose: 
             Prints a log to to the terminal 
@@ -1055,16 +1052,22 @@ def report_log(data_dict, success_fn, print_header=True):
                                                     which determines if the test passed or failed
             print_header (bool)                   : if True, print the keys of the dict. 
     """
+    output_str = ""
     for header in sorted(data_dict.keys()):
         data    = data_dict[header]
         success = success_fn(data)
         if header and data and print_header:
-            INFORM(header, color=CYAN)
-            INFORM(data, color=GREEN if success_fn(data) else RED)
+            output_str += COLORIZE(header, color=CYAN) + '\n'
+            output_str += COLORIZE(data, color=GREEN if success_fn(data) else RED) + '\n'
         elif header and not data:               # .diff files are empty == success
-            INFORM(header, color=GREEN if success_fn(data) else RED)
+            output_str += COLORIZE(header, color=GREEN if success_fn(data) else RED) + '\n'
         else:
-            INFORM(data, color=GREEN if success_fn(data) else RED)
+            output_str += COLORIZE(data, color=GREEN if success_fn(data) else RED) + '\n'
+
+    if output_format == "stdout":
+        print(output_str)
+    else:
+        return output_str
 
 
 def find_logs(exts, tests_to_report, directory=OUTPUT_DIR):
