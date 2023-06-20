@@ -83,8 +83,8 @@ def prepare_output_folder():
     os.mkdir(TEMP_ROOT_FOLDER)
 
 
-def load_testset_toml():
-    return toml.load(TESTSET_FILE)
+def load_testset_toml_common():
+    return toml.load(TESTSET_FILE)["common"]
 
 
 def copy_solution(destination):
@@ -115,7 +115,7 @@ def make_compile_error():
 
 
 def make_missing_required_files(toml_common):
-    if REQUIRED_FILES_OPTION in toml_common:
+    if REQUIRED_FILES_OPTION in toml_common and len(toml_common[REQUIRED_FILES_OPTION]) > 0:
         missing_required_files_path = os.path.join(
             TEMP_ROOT_FOLDER, MISSING_REQUIRED_FILES_SUBFOLDER)
         copy_solution(missing_required_files_path)
@@ -129,7 +129,7 @@ def make_solution():
 
 def main():
     prepare_output_folder()
-    common = load_testset_toml()
+    common = load_testset_toml_common()
     make_bad_style(common)
     make_compile_error()
     make_missing_required_files(common)
