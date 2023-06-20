@@ -3,7 +3,7 @@ Gradescope is great tool for autograding assignments. Nevertheless, there is sti
 of infrastructure required to deploy and run an autograder on Gradescope. This document provides 
 instructions for setting up an autograder on Gradescope which uses our in-house autograding
 framework code. Setup from start to finish is intended to take roughly 30 minutes.
-If you have any questions, please reach out to me at `mrussell@cs.tufts.edu`, or open an issue here. 
+If you have any questions, please open an issue here. 
 
 # Infrastructure Setup
 
@@ -323,8 +323,8 @@ The framework depends on a `testset.toml` file (https://toml.io) to specify the 
 # tests in a section must be placed in a list named `tests'
 tests = [
       { testname = "test0", description = "my first test" },
-      { testname = "test1", description = "my second test" },
-      ..., 
+      { testname = "test1", description = "my second test" },   
+      # ... 
       { testname = "testn", description = "my nth test" },
 ]
 # each test **must** have testname and description fields
@@ -402,19 +402,22 @@ Note that the default behavior of the autograder, regardless of testing format, 
 ## Command-Line Arguments
 For any test, you may specify a variable `argv` which is a list of command-line arguments to send to the executable. This is doable with either style of assignment-testing demonstrated above. Note all `arvg` arguments must be written as strings, however they will be passed without quotes to the executable. To add `"` characters, escape them in the `argv` list. For example, the following test will be run as `./test0 1 2 "3"`.  
 ```toml
-{ testname = "test0", description = "my first test", argv = ["1", "2", "\"3\""] }
+[my_test_group]
+tests = [ 
+    { testname = "test0", description = "my first test", argv = ["1", "2", "\"3\""] }
+]
 ```
 You may specify an `argv` value for a set of tests as well
 ```toml
-...
+# each test in tests[] below will have the argv list sent as its command-line arguments
 [my_group_of_tests]
-argv = ["hello", "world!"] # for each test in tests[] below, will have this list sent as its command-line arguments
+argv = ["hello", "world!"] 
 tests = [
     { testname = "test01", description = "my first test },
     { testname = "test02", description = "my second test },
     { testname = "test03", description = "my third test" } 
-]functionality
-...
+]
+# ...
 ```
 
 ## `diff`ing Output Files
@@ -428,14 +431,19 @@ In order to make this happen
 
 So, in practice, your test object might look like this
 ```toml
-{ testname = "test0", description = "my first test", argv = [ "${test_ofile_path}.one.ofile", "${test_ofile_path}.two.ofile" ] }
+[set_of_tests]
+tests = [   
+    { testname = "test0", description = "my first test", argv = [ "${test_ofile_path}.one.ofile", "${test_ofile_path}.two.ofile" ] }
+]
 ```
 You can generalize this functionality to multiple tests as well. In the following example, all of the tests in the group [set_of_tests] will have these two argv arguments specified, whereby the string `"${test_ofile_path}"` will be replaced with the full path to the output file (e.g. `/autograder/results/output/test01`). 
 ```toml
 [set_of_tests]
-argv = [ "${test_ofile_path}.cookies.ofile", "${test_ofile_path}.candy.ofile" ]
-tests = [ { testname = "test0", description = "my first test" }
-         ... 
+argv  = [ "${test_ofile_path}.cookies.ofile", "${test_ofile_path}.candy.ofile" ]
+tests = [ 
+    { testname = "test0", description = "my first test" },
+    { testname = "test1", description = "my second test" }
+    # ... 
 ]
 ```
 
@@ -531,11 +539,14 @@ These are the configuration options for a test. You may set any of these in `[co
 | `argv` | `[ ]` | argv input to the program - Note: all arguments in the list must be represented as strings (e.g. ["1", "abcd"...])|
 | `executable` | `(testname)` | executable to build and run |
 | `required_files` | `[]` | List of required files for a given assignment. Submissions provided to the autograder without any files will quit early and show a message to the students with the files they are missing. Such submissions will **not** count against them if there is a `max_submission` limit set in the `config.toml` file. |
+| `exec_command` | `""` | Enables 'manual mode' for a given test. In this mode, specify the specific command to-be-run [e.g. `python3 my_file.py`]. Automatic management of `stdin/stdout/stderr/ofiles` will work as usual; also `kill_limit`, `max_ram`, and `timeout` limits work as normal. Canonicalization will likewise work. Make sure to set `valgrind` to `false` if you don't want it to run for these tests. If `exec_command` is used, the `executable` argument will be ignored. `executable` above will be ignored. | 
 | `max_valgrind_score` | `8` | `[common]` only setting - maximum valgrind score for this assignment [per-test valgrind score is deduced by default based on this value]. 
 | `valgrind_score_visibility` | `"after_due_date"` | `[common]` only setting - visibility of the test which will hold the total valgrind points for the student. | 
 | `kill_limit` | `750` | `[common]` only setting - test will be killed if it's memory usage exceeds this value (in `MB`) - soft and hard rlimit_data will be set to this value in a preexec function to the subprocess call. NOTE: this parameter is specifically intended to keep the container from crashing, and thus is `[common]` only. Also, if the program exceeds the limit, it will likely receive `SIGSEGV` or `SIGABRT` from the os. Unfortunately, nothing is produced on `stderr` in this case, so while the test will likely fail based on exitcode, it's difficult to 'know' to report an exceeded memory error. However, if `valgrind` is also run and fails to produce a log file (due to also receiving `SIGSEGV`/`SIGABRT`), the test will be assumed to have exceeded max ram...in general, however, this is tricky to debug. In my experience, `valgrind` will fail to allocate memory but still produce a log file at `~50MB` of ram; any lower and no log file will be produced. The default setting of `750` `MB` should be fine for most tests, and will work with the smallest (default) container. |
 | `max_submissions` | _ | `[common]` only setting - this value will override the default value of `SUBMISSIONS_PER_ASSIGN` in the `etc/config.toml`. If not set for an assignment, the default value for this is ignored, and the `SUBMISSIONS_PER_ASSIGN` value is used instead. |
-| `exec_command` | `""` | Enables 'manual mode' for a given test. In this mode, specify the specific command to-be-run [e.g. `python3 my_file.py`]. Automatic management of `stdin/stdout/stderr/ofiles` will work as usual; also `kill_limit`, `max_ram`, and `timeout` limits work as normal. Canonicalization will likewise work. Make sure to set `valgrind` to `false` if you don't want it to run for these tests. If `exec_command` is used, the `executable` argument will be ignored. | 
+| `max_submission_exceptions` | {} | `[common]` only setting - dictionary of the form `{ "Student Gradescope Name" = num_max_submissions`, ...}`. |
+| `required_files` | [] | `[common]` only setting - List of files required for an assignment. Autograder will quit prior to running if any files are missing, and the submission will not be used in the count for the `max_submission` value for the student | 
+
 
 <!-- | `style_score_visbility` | `"after_due_date"` | `[common]` only setting - visibilitiy of the test which will hold the total style points for the student. | -->
 <!-- | `cols_style_weight` | `0` | `[common]` only setting - number of points to take off if a student's code has over `style_max_columns` columns. If all `_style_weight` options are set to `0` (as by default), a style check will not be performed. |
@@ -603,15 +614,23 @@ Note that if the `max_score` for a test is `0`, then Gradescope assumes that the
 That should be enough to get you up and running! Please feel free to contact me with any questions you have, and/or any bugs, feature requests, etc. you find. Thanks!
 
 # TODOS
-* Update the functionality of `bin/autograde.py` so that if a grader is re-running tests, we don't nuke the entire build folder, but intelligently load the data from alread-run tests. Also, need to verify that the various filter, etc. options work as expected. 
 * Since we've removed course code from the repo, we need more examples in `assignments/`.
 
 # Changelog
-## [2.1.5] - 2023-06-20
+## [2.2.2] - 2023-06-20
 Add required_files option for validate submission; remove token check for test users. 
 
-## [2.1.4] - 2023-06-13
+## [2.2.1] - 2023-06-13
 Various bug fixes from Chami. Now show students output on invalid max submission/tokens. 
+
+## [2.2.0] - 2023-06-15 - 4b9012f7
+Add submission validation functionality:
+1) Configurable custom `max_submissions_exceptions` dict in assigment's `.toml` file where students can be specified with maximum submissions for an assignment.
+2) Configurable custom `required_files` list in assignment's `.toml` file where submission validation fails if required files aren't specified. 
+3) Set score to -1 if submission validation fails.
+4) Don't count submission validation failure in max_submission test. 
+5) DO report compile logs on failure; DONT ignore compilation failure as counting for a max_submission. 
+
 
 ## [2.1.3] - 2023-06-09 - 65f4bb6e
 Update canonicalizer function arguments to take in bytes instead of utf8-decoded text. Now keep multiple ofile results as variables. Refactor massive report results fn. Changed `icdiff` command to `python3 -m icdiff` for halligan compatibility. Requires rebuild. 

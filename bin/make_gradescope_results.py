@@ -32,7 +32,7 @@ DIFF_STDERR_CONTAINS_BINARY = "Diff Result for stderr contains binary"
 
 TESTPASS = f"{RESULT}{PASSED}"
 
-BUILD_FAIL = "Compilation Failed!\n"
+BUILD_FAIL = "Build Failed!\n"
 COUT_FAIL = "std::cout did not match the reference\n"
 CERR_FAIL = "std::cerr did not match the reference\n"
 NO_OFILE_FILE = "Your program is not sending data to a file, but the reference does.\n"
@@ -408,11 +408,11 @@ RESULTS = {
 save_json(RESULTS_JSONPATH, RESULTS)
 
 
-def before_duedate():
-    metadata = load_json(SUBMISSION_METADATA_PATH)
-    due_date = parser.parse(metadata["assignment"]["due_date"])
-    today = datetime.now(timezone.utc)
-    return today < due_date
+# def before_duedate():
+#     metadata = load_json(SUBMISSION_METADATA_PATH)
+#     due_date = parser.parse(metadata["assignment"]["due_date"])
+#     today = datetime.now(timezone.utc)
+#     return today < due_date
 
 
 def get_autograder_visibility():
@@ -539,22 +539,29 @@ def make_token_test():
 # from Milod so that students can see their style score specifically before
 # the deadline
 def make_test00(style_violations):
-    if before_duedate():
-        name = "Autograder Score"
-        info = "This is your autograder score.\n"
-        if style_violations is not None:
-            info += f"Note that your current autograded style score is {get_style_score(style_violations)}/{TOML_SETTINGS[MAX_STYLE_SCORE]}.\n"
-        info += "The final score will be posted here after the duedate\n"\
-            "If you are not happy with your current score, you may resubmit.\n\n"\
-            "CAUTION: You only have a limited number of submissions (usually 5) per assignment.\n" \
-            "Use them wisely! : )"
-    else:
-        name = "Final Autograder Score"
-        info = "This is your Final Autograder Score"
-
+    #if before_duedate():
+    name = "Autograder Score"
+    info = "This is your autograder score.\n"
     RESULTS["tests"].append(
         make_test_result(name=name, visibility=VISIBLE, score=get_total_score(), max_score=get_max_score(),
                          output=info))
+    # if style_violations is not None:
+    #     info += f"Note that your current autograded style score is {get_style_score(style_violations)}/{TOML_SETTINGS[MAX_STYLE_SCORE]}.\n"
+    # info += "If you are not happy with your current score, and it is before the duedate, you may resubmit.\n\n"\
+    #     "CAUTION: You only have a limited number of submissions (usually 5) per assignment.\n" \
+    #     "Use them wisely!"
+    # else:
+    #     name = "Final Autograder Score"
+    #     info = "This is your Final Autograder Score"
+
+def make_build_test():
+    compilation_results = autograde.report_compile_logs(type_to_report="failed", output_format="str")
+    if compilation_results != "":
+        compilation_results = "ERROR: BUILD FAILED\n" + compilation_results
+        RESULTS["tests"].append(
+            make_test_result(name="Build Fail", visibility=VISIBLE, score=-1, max_score=0,
+                            output=compilation_results))
+
 
 # helper functions for report_style_violations ..
 
@@ -660,6 +667,7 @@ def make_valgrind_test():
 
 def make_results():
     make_token_test()
+    make_build_test()
     #make_test00(style_violations)
     #make_style_test(style_violations)
     make_valgrind_test()
