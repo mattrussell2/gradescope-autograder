@@ -41,9 +41,10 @@ def make_token_report():
         report += f"{assign}: {tokens}"
     return report
 
-def EXIT_FAIL(message):
+def EXIT_FAIL(message, make_report=True):
     message += f"\nIf you have already submitted, you can activate a different submission by clicking the 'Submission History' button below. Whichever submission you activate will be the one that is graded.\n"
-    message += make_token_report()
+    if make_report:
+        message += make_token_report()
     INFORM(message, MAGENTA)
     with open("/autograder/results/results.json", 'w') as f:
         json.dump( {
@@ -57,9 +58,10 @@ def EXIT_FAIL(message):
         pass
     exit(1)
 
-def EXIT_SUCCESS(message):
+def EXIT_SUCCESS(message, make_report=True):
     message += f"\nYou have used {len(PREV_SUBMISSIONS) + 1} / {MAX_SUBMISSIONS} submissions for this assignment.\n"
-    message += make_token_report()
+    if make_report:
+        message += make_token_report()
     with open("/autograder/results/token_results", 'w') as f:
         f.write(message)
     INFORM(message, GREEN) 
@@ -84,19 +86,19 @@ if 'max_submission_exceptions' in TESTSET_TOML and NAME in TESTSET_TOML['max_sub
     MAX_SUBMISSIONS = TESTSET_TOML['max_submission_exceptions'][NAME]
 
 if 'TEST_USERS' in CONFIG['misc'] and NAME in CONFIG['misc']['TEST_USERS']:
-    EXIT_SUCCESS(f"Test user - passing submission validation by default.")
+    EXIT_SUCCESS(f"Test user - passing submission validation by default.", make_report=False)
 
 if len(PREV_SUBMISSIONS) >= MAX_SUBMISSIONS: 
-    EXIT_FAIL(f"ERROR: Max submissions exceeded for this assignment.")
+    EXIT_FAIL(f"ERROR: Max submissions exceeded for this assignment.", make_report=False)
 
 REQUIRED_FILES  = set(TESTSET_TOML.get('required_files', []))
 SUBMITTED_FILES = set(os.listdir('/autograder/submission'))
 MISSING_FILES   = REQUIRED_FILES - SUBMITTED_FILES 
 if len(MISSING_FILES) > 0:
-    EXIT_FAIL(f"ERROR: Required files missing: {MISSING_FILES}")
+    EXIT_FAIL(f"ERROR: Required files missing: {MISSING_FILES}", make_report=False)
 
 if not TOKEN_CONFIG['MANAGE_TOKENS']:
-    EXIT_SUCCESS("SUCCESS")
+    EXIT_SUCCESS("SUCCESS", make_report=False)
 
 GRACE_TIME         = timedelta(minutes=TOKEN_CONFIG["GRACE_TIME"]) 
 TOKEN_TIME         = timedelta(minutes=TOKEN_CONFIG["TOKEN_TIME"])
@@ -106,7 +108,7 @@ ONE_TOKEN_DUE_TIME = DUE_TIME + TOKEN_TIME
 TWO_TOKEN_DUE_TIME = DUE_TIME + TOKEN_TIME * 2
 
 if SUBMISSION_TIME > TWO_TOKEN_DUE_TIME:
-    EXIT_FAIL("ERROR: After two-token deadline.")
+    EXIT_FAIL("ERROR: After two-token deadline.", make_report=False)
 
 COMMANDS = {
     'get_headers': "SELECT column_name FROM information_schema.columns WHERE table_name = 'tokens';",
@@ -129,7 +131,6 @@ if ASSIGN_NAME not in HEADERS:
 
     CURSOR.execute(COMMANDS['get_headers'])
     HEADERS = [x[0] for x in CURSOR.fetchall()]
-
 
 CURSOR.execute(COMMANDS['get_tokens'])
 USERDATA = CURSOR.fetchone()
