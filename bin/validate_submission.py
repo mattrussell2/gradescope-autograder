@@ -37,10 +37,9 @@ def make_token_report():
     assigns = {key:value for key,value in TOKENDATA.items() if key != 'pk' and int(value) > 0}
     report =  "\nTOKEN REPORT\n"
     max_width = max([len(key) for key in assigns.keys()]) + 1
-    headerchar = "-" * max_width + "\n"
-    report += f"{headerchar}\n"
+    report += "-" * max_width + "\n"
     for assign, tokens in assigns.items():
-        report += f"{f'{assign}':-<{max_width}}{tokens}"
+        report += f"{f'{assign}': <{max_width}}{tokens}"
     return report
 
 def EXIT_FAIL(message, make_report=True):
