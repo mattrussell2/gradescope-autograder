@@ -323,8 +323,8 @@ The framework depends on a `testset.toml` file (https://toml.io) to specify the 
 # tests in a section must be placed in a list named `tests'
 tests = [
       { testname = "test0", description = "my first test" },
-      { testname = "test1", description = "my second test" },
-      ..., 
+      { testname = "test1", description = "my second test" },   
+      # ... 
       { testname = "testn", description = "my nth test" },
 ]
 # each test **must** have testname and description fields
@@ -402,7 +402,6 @@ Note that the default behavior of the autograder, regardless of testing format, 
 ## Command-Line Arguments
 For any test, you may specify a variable `argv` which is a list of command-line arguments to send to the executable. This is doable with either style of assignment-testing demonstrated above. Note all `arvg` arguments must be written as strings, however they will be passed without quotes to the executable. To add `"` characters, escape them in the `argv` list. For example, the following test will be run as `./test0 1 2 "3"`.  
 ```toml
-# ...
 [my_test_group]
 tests = [ 
     { testname = "test0", description = "my first test", argv = ["1", "2", "\"3\""] }
@@ -410,7 +409,6 @@ tests = [
 ```
 You may specify an `argv` value for a set of tests as well
 ```toml
-# ...
 # each test in tests[] below will have the argv list sent as its command-line arguments
 [my_group_of_tests]
 argv = ["hello", "world!"] 
@@ -433,14 +431,19 @@ In order to make this happen
 
 So, in practice, your test object might look like this
 ```toml
-{ testname = "test0", description = "my first test", argv = [ "${test_ofile_path}.one.ofile", "${test_ofile_path}.two.ofile" ] }
+[set_of_tests]
+tests = [   
+    { testname = "test0", description = "my first test", argv = [ "${test_ofile_path}.one.ofile", "${test_ofile_path}.two.ofile" ] }
+]
 ```
 You can generalize this functionality to multiple tests as well. In the following example, all of the tests in the group [set_of_tests] will have these two argv arguments specified, whereby the string `"${test_ofile_path}"` will be replaced with the full path to the output file (e.g. `/autograder/results/output/test01`). 
 ```toml
 [set_of_tests]
-argv = [ "${test_ofile_path}.cookies.ofile", "${test_ofile_path}.candy.ofile" ]
-tests = [ { testname = "test0", description = "my first test" }
-         ... 
+argv  = [ "${test_ofile_path}.cookies.ofile", "${test_ofile_path}.candy.ofile" ]
+tests = [ 
+    { testname = "test0", description = "my first test" },
+    { testname = "test1", description = "my second test" }
+    # ... 
 ]
 ```
 
@@ -610,7 +613,6 @@ Note that if the `max_score` for a test is `0`, then Gradescope assumes that the
 That should be enough to get you up and running! Please feel free to contact me with any questions you have, and/or any bugs, feature requests, etc. you find. Thanks!
 
 # TODOS
-* Update the functionality of `bin/autograde.py` so that if a grader is re-running tests, we don't nuke the entire build folder, but intelligently load the data from alread-run tests. Also, need to verify that the various filter, etc. options work as expected. 
 * Since we've removed course code from the repo, we need more examples in `assignments/`.
 
 # Changelog

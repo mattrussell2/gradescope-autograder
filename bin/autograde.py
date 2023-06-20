@@ -3,9 +3,8 @@
 autograde.py 
 matt russell
 5-17-2022
-
-[TODO] be more intelligent in terms of when to re-run tests - now am re-running every time
 """
+
 import os
 import sys
 import subprocess
