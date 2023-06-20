@@ -623,6 +623,9 @@ That should be enough to get you up and running! Please feel free to contact me 
 * Since we've removed course code from the repo, we need more examples in `assignments/`.
 
 # Changelog
+## [2.2.4] - 2023-06-20 
+Various bug fixes associated with recent updates.
+
 ## [2.2.3] - 2023-06-20
 Chami's update - move style checking to separate module; also add make_test_submissions to easily make dummy things to drag-drop to gradescope for quick checks. 
 
