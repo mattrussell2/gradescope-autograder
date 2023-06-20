@@ -135,6 +135,23 @@ Other miscellaneous information. The currently available options are
 | `SUBMISSIONS_PER_ASSIGN`   |  `5` | Allows you to set a cap on the number of submissions a student can send to the autograder per assignment. Change this to a large value to ignore.  |
 | `TEST_USERS` | `["Matthew Russell"]` | Specify any names of users (names on Gradescope) who are to be exempted any token checking / lateness checking / submission # checking. These users would be submitting for testing purposes. |
 
+### [style]
+Options for automatic style checking. 
+[style]
+|   Key | Default | Purpose |
+|-------|---------|---------|
+| `NON_CODE_STYLE_CHECKSET`   |  `['README', '.h', '.cpp']` | Specify files to not check |
+| `TEST_USERS` | `["Matthew Russell"]` | Specify any names of users (names on Gradescope) who are to be exempted any token checking / lateness checking / submission # checking. These users would be submitting for testing purposes. |
+| `NON_CODE_STYLE_CHECKSET` | `['README', '.h', '.cpp']` | Filetypes to check for non-code-related style items |
+| `CODE_STYLE_CHECKSET` | `['.h', '.cpp']` | Filetypes to check for code-related style items |
+| `MAX_COLUMNS` | `80` | Maximum valid number of columns to pass style check |
+| `COLUMNS_STYLE_WEIGHT` | `1` | Relative weight of `MAX_COLUMNS` value on total style check score. |
+| `TABS_STYLE_WEIGHT` | `1` | Relative weight of tab character additions [should be spaces only] on total style check score. |
+| `TODOS_STYLE_WEIGHT` | `0.5` | Relative weight of leaving TODOs in code on total style check score. |
+| `SYMBOL_STYLE_WEIGHT` | `0.5` | Relative weight of symbol use (e.g. && vs and) on total style check score. |
+| `BREAK_STYLE_WEIGHT` | `0.5` | Relative weight of `break` use on total style check score. |
+| `BOOLEAN_STYLE_WEIGHT` | `0.5` | Relative weight of bad boolean zen on total style check score. |
+
 
 ## Build Your Autograding Docker Container
 
