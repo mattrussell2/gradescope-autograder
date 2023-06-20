@@ -3,7 +3,7 @@ Gradescope is great tool for autograding assignments. Nevertheless, there is sti
 of infrastructure required to deploy and run an autograder on Gradescope. This document provides 
 instructions for setting up an autograder on Gradescope which uses our in-house autograding
 framework code. Setup from start to finish is intended to take roughly 30 minutes.
-If you have any questions, please reach out to me at `mrussell@cs.tufts.edu`, or open an issue here. 
+If you have any questions, please open an issue here. 
 
 # Infrastructure Setup
 
