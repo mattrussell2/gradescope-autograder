@@ -33,8 +33,17 @@ def INFORM(s, color):
 
 INFORM("== Submission Validation ==", CYAN)
 
+def make_token_report():
+    assigns = filter(lambda value: return value > 0, TOKENDATA)
+    report =  "TOKEN USAGE REPORT"
+    report += "[assignment]-------[tokens used]"
+    for assign, tokens in assigns.items():
+        report += f"{assign}: {tokens}"
+    return report
+
 def EXIT_FAIL(message):
-    message += f"\nIf you have already submitted, you can activate a different submission by clicking the 'Submission History' button below. Whichever submission you activate will be the one that is graded."
+    message += f"\nIf you have already submitted, you can activate a different submission by clicking the 'Submission History' button below. Whichever submission you activate will be the one that is graded.\n"
+    message += make_token_report()
     INFORM(message, MAGENTA)
     with open("/autograder/results/results.json", 'w') as f:
         json.dump( {
@@ -49,7 +58,8 @@ def EXIT_FAIL(message):
     exit(1)
 
 def EXIT_SUCCESS(message):
-    message += f"\nYou have used {len(PREV_SUBMISSIONS) + 1} / {MAX_SUBMISSIONS} submissions for this assignment."
+    message += f"\nYou have used {len(PREV_SUBMISSIONS) + 1} / {MAX_SUBMISSIONS} submissions for this assignment.\n"
+    message += make_token_report()
     with open("/autograder/results/token_results", 'w') as f:
         f.write(message)
     INFORM(message, GREEN) 
@@ -69,12 +79,12 @@ NAME             = METADATA['users'][0]['name']
 PREV_SUBMISSIONS = [submission for submission in METADATA['previous_submissions'] if float(submission['score']) > 0]
 ASSIGN_NAME      = METADATA['assignment']['title'].replace(' ', '_')
 
-if 'TEST_USERS' in CONFIG['misc'] and NAME in CONFIG['misc']['TEST_USERS']:
-    EXIT_SUCCESS(f"Test user - passing submission validation by default.")
-
 MAX_SUBMISSIONS  = TESTSET_TOML.get('max_submissions', CONFIG['misc']['SUBMISSIONS_PER_ASSIGN'])
 if 'max_submission_exceptions' in TESTSET_TOML and NAME in TESTSET_TOML['max_submission_exceptions']:
     MAX_SUBMISSIONS = TESTSET_TOML['max_submission_exceptions'][NAME]
+
+if 'TEST_USERS' in CONFIG['misc'] and NAME in CONFIG['misc']['TEST_USERS']:
+    EXIT_SUCCESS(f"Test user - passing submission validation by default.")
 
 if len(PREV_SUBMISSIONS) >= MAX_SUBMISSIONS: 
     EXIT_FAIL(f"ERROR: Max submissions exceeded for this assignment.")
