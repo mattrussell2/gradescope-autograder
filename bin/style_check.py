@@ -159,7 +159,7 @@ class StyleChecker:
     def __init__(self):
         self.testset_common = toml.load(TESTSET_TOML_PATH)["common"]
         self.config = toml.load(CONFIG_TOML_PATH)["style"]
-        print(self.testset_common)
+        
         if "style_check" in self.testset_common and self.testset_common["style_check"]:
             self.calculate_max_style_score()
             self.collect_all_style_violations()

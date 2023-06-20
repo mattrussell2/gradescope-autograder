@@ -833,6 +833,7 @@ def build_testing_directories():
     # student code can write to the output/log dirs
     chmod_dir(OUTPUT_DIR, "777")
     chmod_dir(LOG_DIR, "777")
+    chmod_dir(BUILD_DIR, "777")
 
 
 class CustomFormatter(argparse.HelpFormatter):
