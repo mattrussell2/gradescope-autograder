@@ -34,7 +34,7 @@ def INFORM(s, color):
 INFORM("== Submission Validation ==", CYAN)
 
 def make_token_report():
-    assigns = filter(lambda value: value > 0, TOKENDATA)
+    assigns = {key:value for key,value in TOKENDATA.items() if value > 0}
     report =  "TOKEN USAGE REPORT"
     report += "[assignment]-------[tokens used]"
     for assign, tokens in assigns.items():
