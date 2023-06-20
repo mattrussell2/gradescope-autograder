@@ -35,10 +35,12 @@ INFORM("== Submission Validation ==", CYAN)
 
 def make_token_report():
     assigns = {key:value for key,value in TOKENDATA.items() if key != 'pk' and int(value) > 0}
-    report =  "TOKEN USAGE REPORT\n"
-    report += "------------------\n"
+    report =  "\nTOKEN REPORT\n"
+    max_width = max([len(key) for key in assigns.keys()]) + 1
+    headerchar = "-" * max_width + "\n"
+    report += f"{headerchar}\n"
     for assign, tokens in assigns.items():
-        report += f"{assign}: {tokens}"
+        report += f"{f'{assign}':-<{max_width}}{tokens}"
     return report
 
 def EXIT_FAIL(message, make_report=True):
@@ -146,13 +148,13 @@ TOKENS_USED = TOKENDATA[ASSIGN_NAME]
 
 # no tokens required!
 if SUBMISSION_TIME <= DUE_TIME: 
-    EXIT_SUCCESS(f"SUCCESS: Submission arrived before the due date - no tokens required.\nYou have {TOKENS_LEFT} tokens remaining for this semester.")
+    EXIT_SUCCESS(f"SUCCESS: Submission arrived before the due date - no tokens required.")
 
 if SUBMISSION_TIME <= ONE_TOKEN_DUE_TIME:
     
     # already used a token
     if TOKENS_USED == 1:
-        EXIT_SUCCESS(f"SUCCESS: Already used one token previously for {ASSIGN_NAME}, so zero tokens used.\nYou have {TOKENS_LEFT} tokens remaining for this semester.")
+        EXIT_SUCCESS(f"SUCCESS: Already used one token previously for {ASSIGN_NAME}, so zero tokens used.")
 
     # we need to use a token
     if TOKENS_USED == 0:
@@ -161,13 +163,15 @@ if SUBMISSION_TIME <= ONE_TOKEN_DUE_TIME:
 
         CURSOR.execute(COMMANDS['use_token'])
         CONN.commit()
-        EXIT_SUCCESS(f"SUCCESS: Used one token.\nYou have {TOKENS_LEFT - 1} tokens remaining for the semester.")
+        TOKENDATA['tokens left'] -= 1
+        TOKENDATA[ASSIGN_NAME] += 1
+        EXIT_SUCCESS(f"SUCCESS: Used one token.")
     
 
 if SUBMISSION_TIME <= TWO_TOKEN_DUE_TIME:
 
     if TOKENS_USED == 2: 
-        EXIT_SUCCESS(f"SUCCESS: Already used two tokens previously for {ASSIGN_NAME}, so zero tokens used.\nYou have {TOKENS_LEFT} tokens remaining for the semester.")
+        EXIT_SUCCESS(f"SUCCESS: Already used two tokens previously for {ASSIGN_NAME}, so zero tokens used.")
     
     if TOKENS_USED == 1:
         if TOKENS_LEFT == 0:
@@ -175,7 +179,9 @@ if SUBMISSION_TIME <= TWO_TOKEN_DUE_TIME:
 
         CURSOR.execute(COMMANDS['use_token'])
         CONN.commit()
-        EXIT_SUCCESS(f"SUCCESS: Already used one token previously for {ASSIGN_NAME}, but after one token deadline, so one token used.\nYou have {TOKENS_LEFT - 1} tokens remaining for the semester.")
+        TOKENDATA['tokens left'] -= 1
+        TOKENDATA[ASSIGN_NAME] += 1
+        EXIT_SUCCESS(f"SUCCESS: Already used one token previously for {ASSIGN_NAME}, but after one token deadline, so one token used.")
     
     if TOKENS_USED == 0:
         if TOKENS_LEFT < 2:
@@ -183,5 +189,7 @@ if SUBMISSION_TIME <= TWO_TOKEN_DUE_TIME:
 
         CURSOR.execute(COMMANDS['use_token'])
         CURSOR.execute(COMMANDS['use_token'])
+        TOKENDATA['tokens left'] -= 2
+        TOKENDATA[ASSIGN_NAME] += 2
         CONN.commit()
         EXIT_SUCCESS(f"SUCCESS: Used two tokens.\nYou have {TOKENS_LEFT - 2} tokens remaining for the semester.")
