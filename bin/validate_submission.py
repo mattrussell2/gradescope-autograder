@@ -36,8 +36,8 @@ INFORM("== Submission Validation ==", CYAN)
 def make_token_report():
     assigns = {key:value for key,value in TOKENDATA.items() if key != 'pk' and int(value) > 0}
     report =  "\nTOKEN REPORT\n"
-    max_width = max([len(key) for key in assigns.keys()]) + 1
-    report += "-" * max_width + "\n"
+    max_width = max([len(key) for key in assigns.keys()]) + 2
+    report += "-" * max_width + 1 + "\n"
     for assign, tokens in assigns.items():
         report += f"{f'{assign}': <{max_width}}{tokens}"
     return report
