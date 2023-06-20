@@ -133,7 +133,7 @@ Other miscellaneous information. The currently available options are
 |   Key | Default | Purpose |
 |-------|---------|---------|
 | `SUBMISSIONS_PER_ASSIGN`   |  `5` | Allows you to set a cap on the number of submissions a student can send to the autograder per assignment. Change this to a large value to ignore.  |
-| `TEST_USERS` | `["Matthew Russell"]` | Specify any names of users (names on Gradescope) who are to be exempted from `SUBMISSIONS_PER_ASSIGN` for testing purposes. |
+| `TEST_USERS` | `["Matthew Russell"]` | Specify any names of users (names on Gradescope) who are to be exempted any token checking / lateness checking / submission # checking. These users would be submitting for testing purposes. |
 
 
 ## Build Your Autograding Docker Container
@@ -530,6 +530,7 @@ These are the configuration options for a test. You may set any of these in `[co
 | `visibility` | `"after_due_date"` | Gradescope visibility setting |
 | `argv` | `[ ]` | argv input to the program - Note: all arguments in the list must be represented as strings (e.g. ["1", "abcd"...])|
 | `executable` | `(testname)` | executable to build and run |
+| `required_files` | `[]` | List of required files for a given assignment. Submissions provided to the autograder without any files will quit early and show a message to the students with the files they are missing. Such submissions will **not** count against them if there is a `max_submission` limit set in the `config.toml` file. |
 | `max_valgrind_score` | `8` | `[common]` only setting - maximum valgrind score for this assignment [per-test valgrind score is deduced by default based on this value]. 
 | `valgrind_score_visibility` | `"after_due_date"` | `[common]` only setting - visibility of the test which will hold the total valgrind points for the student. | 
 | `kill_limit` | `750` | `[common]` only setting - test will be killed if it's memory usage exceeds this value (in `MB`) - soft and hard rlimit_data will be set to this value in a preexec function to the subprocess call. NOTE: this parameter is specifically intended to keep the container from crashing, and thus is `[common]` only. Also, if the program exceeds the limit, it will likely receive `SIGSEGV` or `SIGABRT` from the os. Unfortunately, nothing is produced on `stderr` in this case, so while the test will likely fail based on exitcode, it's difficult to 'know' to report an exceeded memory error. However, if `valgrind` is also run and fails to produce a log file (due to also receiving `SIGSEGV`/`SIGABRT`), the test will be assumed to have exceeded max ram...in general, however, this is tricky to debug. In my experience, `valgrind` will fail to allocate memory but still produce a log file at `~50MB` of ram; any lower and no log file will be produced. The default setting of `750` `MB` should be fine for most tests, and will work with the smallest (default) container. |
@@ -606,6 +607,12 @@ That should be enough to get you up and running! Please feel free to contact me 
 * Since we've removed course code from the repo, we need more examples in `assignments/`.
 
 # Changelog
+## [2.1.5] - 2023-06-20
+Add required_files option for validate submission; remove token check for test users. 
+
+## [2.1.4] - 2023-06-13
+Various bug fixes from Chami. Now show students output on invalid max submission/tokens. 
+
 ## [2.1.3] - 2023-06-09 - 65f4bb6e
 Update canonicalizer function arguments to take in bytes instead of utf8-decoded text. Now keep multiple ofile results as variables. Refactor massive report results fn. Changed `icdiff` command to `python3 -m icdiff` for halligan compatibility. Requires rebuild. 
 
