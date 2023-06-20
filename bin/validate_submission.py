@@ -38,7 +38,7 @@ def EXIT_FAIL(message):
     INFORM(message, MAGENTA)
     with open("/autograder/results/results.json", 'w') as f:
         json.dump( {
-                "score": 0, 
+                "score": -1, 
                 "visibility": "visible",
                 "stdout_visibility": "visible"
             }, f)
@@ -66,15 +66,24 @@ TESTSET_TOML = toml.load('/autograder/testset.toml')['common']
 METADATA     = json.loads(Path('/autograder/submission_metadata.json').read_text())
 
 NAME             = METADATA['users'][0]['name']
-PREV_SUBMISSIONS = METADATA['previous_submissions']
+PREV_SUBMISSIONS = [submission for submission in METADATA['previous_submissions'] if float(submission['score']) > 0]
 ASSIGN_NAME      = METADATA['assignment']['title'].replace(' ', '_')
 
-MAX_SUBMISSIONS  = TESTSET_TOML.get('max_submissions', CONFIG['misc']['SUBMISSIONS_PER_ASSIGN'])
 if 'TEST_USERS' in CONFIG['misc'] and NAME in CONFIG['misc']['TEST_USERS']:
-    MAX_SUBMISSIONS = 1000
-    
+    EXIT_SUCCESS(f"Test user - passing submission validation by default.")
+
+MAX_SUBMISSIONS  = TESTSET_TOML.get('max_submissions', CONFIG['misc']['SUBMISSIONS_PER_ASSIGN'])
+if 'max_submission_exceptions' in TESTSET_TOML and NAME in TESTSET_TOML['max_submission_exceptions']:
+    MAX_SUBMISSIONS = TESTSET_TOML['max_submission_exceptions'][NAME]
+
 if len(PREV_SUBMISSIONS) >= MAX_SUBMISSIONS: 
     EXIT_FAIL(f"ERROR: Max submissions exceeded for this assignment.")
+
+REQUIRED_FILES  = set(TESTSET_TOML.get('required_files', []))
+SUBMITTED_FILES = set(os.listdir('/autograder/submission'))
+MISSING_FILES   = REQUIRED_FILES - SUBMITTED_FILES 
+if len(MISSING_FILES) > 0:
+    EXIT_FAIL(f"ERROR: Required files missing: {MISSING_FILES}")
 
 if not TOKEN_CONFIG['MANAGE_TOKENS']:
     EXIT_SUCCESS("SUCCESS")
