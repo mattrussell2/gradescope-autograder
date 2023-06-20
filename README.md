@@ -546,19 +546,7 @@ These are the configuration options for a test. You may set any of these in `[co
 | `max_submissions` | _ | `[common]` only setting - this value will override the default value of `SUBMISSIONS_PER_ASSIGN` in the `etc/config.toml`. If not set for an assignment, the default value for this is ignored, and the `SUBMISSIONS_PER_ASSIGN` value is used instead. |
 | `max_submission_exceptions` | {} | `[common]` only setting - dictionary of the form `{ "Student Gradescope Name" = num_max_submissions`, ...}`. |
 | `required_files` | [] | `[common]` only setting - List of files required for an assignment. Autograder will quit prior to running if any files are missing, and the submission will not be used in the count for the `max_submission` value for the student | 
-
-
-<!-- | `style_score_visbility` | `"after_due_date"` | `[common]` only setting - visibilitiy of the test which will hold the total style points for the student. | -->
-<!-- | `cols_style_weight` | `0` | `[common]` only setting - number of points to take off if a student's code has over `style_max_columns` columns. If all `_style_weight` options are set to `0` (as by default), a style check will not be performed. |
-| `tabs_style_weight` | `0` | `[common]` only setting - number of points to take off if a student's code contains tabs. |
-| `todos_style_weight` | `0` | `[common]` only setting - number of points to take off if a student's code contains TODOs. |
-| `symbol_style_weight` | `0` | `[common]` only setting - number of points to take off if a student's code contains symbols (`&&`, `\|\|`, `!`) instead of keywords (`and`, `or`, `not`). Note `!=` is not considered a violation. |
-| `break_style_weight` | `0` | `[common]` only setting - number of points to take off if a student's code contains `break`. |
-| `boolean_style_weight` | `0` | `[common]` only setting - number of points to take off if a student's code contains boolean style violations (i.e. comparing a boolean variable via `==` or `!=` with `True` or `False` instead of `if (x)` or `if (not x)`). |
-| `non_code_style_checkset` | `["README", ".h", ".cpp"]` | `[common]` only setting - specifies the set of files which will be checked for non-code style violations. Non-code style violations are having more than `style_max_columns` columns, having tabs, or having TODO statements. There are two ways to specify files in the check set. The first is to provide a direct filename such as `"README"`. This means any file in the student's submission which *case-insensitive* matches `"README"` will be checked. The second group of strings in this setting are file extensions. For example, specifying `".cpp"` means any `.cpp` file in the student's submission will be checked. |
-| `code_style_checkset` | `[".h", ".cpp"]` | `[common]` only setting - specifies the set of files which will be checked for code style violations. Code style violations are using symbols instead of keywords, break statements, or not practicing boolean zen. The two ways you can specify files in this checkset are the same as the two ways for `non_code_style_checklist`. |
-| `style_max_columns` | `80` | `[common]` only setting - the number of columns that is considered too many for a single line. | -->
-
+| `style_check` | `false` | `[common]` only setting - Automatically perform style checking. See and update `bin/style_check.py` for details on this. | 
 
 ## Building Reference Output and Testing the Autograder
 
@@ -617,6 +605,9 @@ That should be enough to get you up and running! Please feel free to contact me 
 * Since we've removed course code from the repo, we need more examples in `assignments/`.
 
 # Changelog
+## [2.2.3] - 2023-06-20
+Chami's update - move style checking to separate module; also add make_test_submissions to easily make dummy things to drag-drop to gradescope for quick checks. 
+
 ## [2.2.2] - 2023-06-20
 Add required_files option for validate submission; remove token check for test users. 
 
