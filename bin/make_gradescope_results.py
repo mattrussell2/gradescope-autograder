@@ -195,9 +195,12 @@ RESULTS = {
 # else fails.
 save_json(RESULTS_JSONPATH, RESULTS)
 
-
+# sometimes compile log not created if using manual mode
 def get_compile_log(execname):
-    return Path(os.path.join(LOG_DIR, f"{execname}.compile.log")).read_text()
+    if os.path.exists(os.path.join(LOG_DIR, f"{execname}.compile.log")):
+        return Path(os.path.join(LOG_DIR, f"{execname}.compile.log")).read_text()
+    else:
+        return ""
 
 
 def get_compile_logs():
