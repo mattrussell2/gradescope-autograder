@@ -402,19 +402,24 @@ Note that the default behavior of the autograder, regardless of testing format, 
 ## Command-Line Arguments
 For any test, you may specify a variable `argv` which is a list of command-line arguments to send to the executable. This is doable with either style of assignment-testing demonstrated above. Note all `arvg` arguments must be written as strings, however they will be passed without quotes to the executable. To add `"` characters, escape them in the `argv` list. For example, the following test will be run as `./test0 1 2 "3"`.  
 ```toml
-{ testname = "test0", description = "my first test", argv = ["1", "2", "\"3\""] }
+# ...
+[my_test_group]
+tests = [ 
+    { testname = "test0", description = "my first test", argv = ["1", "2", "\"3\""] }
+]
 ```
 You may specify an `argv` value for a set of tests as well
 ```toml
-...
+# ...
+# each test in tests[] below will have the argv list sent as its command-line arguments
 [my_group_of_tests]
-argv = ["hello", "world!"] # for each test in tests[] below, will have this list sent as its command-line arguments
+argv = ["hello", "world!"] 
 tests = [
     { testname = "test01", description = "my first test },
     { testname = "test02", description = "my second test },
     { testname = "test03", description = "my third test" } 
-]functionality
-...
+]
+# ...
 ```
 
 ## `diff`ing Output Files
