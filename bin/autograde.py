@@ -3,9 +3,8 @@
 autograde.py 
 matt russell
 5-17-2022
-
-[TODO] be more intelligent in terms of when to re-run tests - now am re-running every time
 """
+
 import os
 import sys
 import subprocess
@@ -752,11 +751,11 @@ def compile_execs(TOML, TESTS, OPTS):
         Returns:    
             True iff all of the compilations succeeded
         Notes:      
-            Will copy the custom Makefile to build/ if it exists.
+            Will copy the custom Makefile to build/ if it exists. Ignore if using exec_command [test.executable == None].
     """
-    execs_to_compile     = {test.executable: test.our_makefile for test in TESTS.values()}
-    our_makefile_tests   = [test for test in execs_to_compile if execs_to_compile[test]]
-    their_makefile_tests = [test for test in execs_to_compile if not execs_to_compile[test]]
+    execs_to_compile     = { test.executable: test.our_makefile for test in TESTS.values() if test.executable != None }
+    our_makefile_tests   = [ test for test in execs_to_compile if execs_to_compile[test] ]
+    their_makefile_tests = [ test for test in execs_to_compile if not execs_to_compile[test] ]
 
     compiled_list = []
     num_execs     = len(execs_to_compile)
