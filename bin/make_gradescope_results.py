@@ -1,13 +1,12 @@
 #!/usr/bin/env python3
 import os
 import json
-from datetime import datetime, timezone
 import ast
 from pathlib import Path
 from collections import OrderedDict
 import toml
 import autograde
-import re
+import style_check
 
 SUBMISSION_METADATA_PATH = "/autograder/submission_metadata.json"
 SUBMISSION_FOLDER = "/autograder/submission"
@@ -57,88 +56,14 @@ TESTSET = toml.load('testset.toml')
 # All the TOML settings used in this file
 MAX_VALGRIND_SCORE = 'max_valgrind_score'
 VALGRIND_VISIBILITY = 'valgrind_score_visibility'
-MAX_STYLE_SCORE = 'max_style_score'
-STYLE_VISIBILITY = 'style_visibility'
-COLS_STYLE_WEIGHT = 'cols_style_weight'
-TABS_STYLE_WEIGHT = 'tabs_style_weight'
-TODOS_STYLE_WEIGHT = 'todos_style_weight'
-SYMBOL_STYLE_WEIGHT = 'symbol_style_weight'
-BREAK_STYLE_WEIGHT = 'break_style_weight'
-BOOLEAN_STYLE_WEIGHT = 'boolean_style_weight'
-NON_CODE_STYLE_CHECKSET = 'non_code_style_checkset'
-CODE_STYLE_CHECKSET = 'code_style_checkset'
-STYLE_MAX_COLUMNS = 'style_max_columns'
+
 
 # Defaults for all the above except MAX_STYLE_SCORE, used
 # for loading up TOML_SETTINGS
 TOML_DEFAULTS = {
     MAX_VALGRIND_SCORE: 8,
     VALGRIND_VISIBILITY: AFTER_DUE_DATE,
-    STYLE_VISIBILITY: AFTER_DUE_DATE,
-    COLS_STYLE_WEIGHT: 0,
-    TABS_STYLE_WEIGHT: 0,
-    TODOS_STYLE_WEIGHT: 0,
-    SYMBOL_STYLE_WEIGHT: 0,
-    BREAK_STYLE_WEIGHT: 0,
-    BOOLEAN_STYLE_WEIGHT: 0,
-    NON_CODE_STYLE_CHECKSET: autograde.DEFAULT_NON_CODE_STYLE_CHECKSET,
-    CODE_STYLE_CHECKSET: autograde.DEFAULT_CODE_STYLE_CHECKLIST,
-    STYLE_MAX_COLUMNS: autograde.DEFAULT_MAX_COLUMNS
 }
-
-# Violation keys used in dictionary returned by check_style as well as in the
-# definition of VIOL_SYMBOL. These are also the names of the violations that
-# appear when style violations are printed in the autograder output in
-# report_style_violations.
-VIOL_COLS = "Lines with too many columns"
-VIOL_TABS = "Tabs"
-VIOL_TODO = "TODOs"
-VIOL_AND = "&&"
-VIOL_OR = "||"
-VIOL_BREAK = "break"
-VIOL_NOT = "!"
-VIOL_BOOL_ZEN = "boolean style violations (e.g. x == true should be x, y == false should be not y)"
-
-# Map TOML weight settings to the violations they correspond to for
-# get_style_score( ), this also collects all the weights to compute
-# TOML_SETTINGS[MAX_STYLE_SCORE]
-STYLE_WEIGHTS_VIOLATIONS = {
-    COLS_STYLE_WEIGHT: [VIOL_COLS],
-    TABS_STYLE_WEIGHT: [VIOL_TABS],
-    TODOS_STYLE_WEIGHT: [VIOL_TODO],
-    SYMBOL_STYLE_WEIGHT: [VIOL_AND, VIOL_OR, VIOL_NOT],
-    BREAK_STYLE_WEIGHT: [VIOL_BREAK],
-    BOOLEAN_STYLE_WEIGHT: [VIOL_BOOL_ZEN]
-}
-
-# Regexes for identifying comments (block, line inc. EOL comments), ! but not !=,
-# boolean zen violations, C++ string literals, identifying switch() {} statements
-# All used by check_style()
-COMMENTED_REGEX = r"\/\*([\s\S]*?)\*\/\s*|\s*\/\/.*\n*"
-NOT_BUT_NOT_EQ_REGEX = r"![^=]"
-
-# I had to add [^A-Za-z_] because we don't want to falsely penalize students who
-# may say name variables starting with true, for example if they do x == true_datum
-# We only want to deduct if they do (x == true) or (x == true&& ...) or y = x == true;
-BOOLEAN_ZEN_REGEX = r"(=|!)=\s*(true|false)[^A-Za-z_]"
-
-# This handles when there's a \" inside " "
-STRING_LITERAL_REGEX = r"\"(?:\\\"|[^\"])*?\""
-
-# Came up with this using regex101
-CHARACTER_LITERAL_REGEX = r"'([^\\]|\\.)'"
-
-# I had to add this because students are allowed to use break; inside of switch {...}.
-# This does not balance { } (as this can't be done with regex, see:
-# https://stackoverflow.com/questions/546433/regular-expression-to-match-balanced-parentheses)
-# Therefore, it will not identify instances where students put like an if statement or
-# a loop inside the switch { }.
-SWITCH_CASE_REGEX = r"switch\s*\(\s*[A-Za-z_]+\s*\)\s*\{(\n|[^\}])+\}"
-
-# Control violation reporting - how many to show per file, and what should be
-# substituted in the event of an empty violation line (e.g. a line containing just a tab)
-MAX_VIOLATIONS_TO_SHOW = 5
-EMPTY_LINE_SUBSTITUTE = "< whitespace only line >"
 
 
 def load_common_based_on_defaults():
@@ -154,8 +79,7 @@ def load_common_based_on_defaults():
 
 # Here we actually load up all our settings and add in MAX_STYLE_SCORE
 TOML_SETTINGS = load_common_based_on_defaults()
-TOML_SETTINGS[MAX_STYLE_SCORE] = sum(
-    TOML_SETTINGS[k] for k in STYLE_WEIGHTS_VIOLATIONS)
+
 
 # todo: reinsert canonicalization messages, after considering how canonicalizers
 # will be needed in the future
@@ -238,156 +162,20 @@ def get_valgrind_score():
     except ZeroDivisionError:
         return 0
 
-# check_style helper functions ...
-
-
-def should_check(filename, check_files_set):
-    """
-    Determines whether a file should be checked. A file will be checked if:
-    1. It's not a hidden file
-    2. It ends with an extension in check_files_set or matches case insensitive to a member of check_files_set
-    2/11/23 - slamel01
-    """
-
-    return filename[0] != '.' and any([((check_file[0] == '.' and filename.endswith(check_file)) or
-                                        (check_file[0] != '.' and filename.upper() == check_file))
-                                       for check_file in check_files_set])
-
-
-def clean_contents(contents, regex, repl):
-    # Returns contents of an assumed C/C++ source file with all matches on given regex replaced with repl - 2/11/23, slamel01
-    return re.sub(regex, repl, contents)
-
-
-def regex_match_in_code(code, regex):
-    # Determines whether code has a match for a certain regex - 2/9/23, slamel01, atanne02
-    return re.compile(regex).search(code)
-
-
-def collect_violations(check_files, clean, predicate):
-    """
-    Helper function that collects violations of a particular kind over a file check set.
-    check_files - (filename, filepath) list of 2-tuples
-    clean - clean function to apply to the contents of a file (str) and returns cleaned str (can be None)
-    predicate - each line is passed into this predicate, predicate(line) == True => violation on that line
-    Returns dictionary of filename (str) -> list of 2-tuples of (violation line, violation line number)
-    Note that these violation line numbers are in the context of the cleaned lines, so if clean != None, then
-    those line numbers will not be the line numbers of the input file.
-
-    Note: clean should be designed in a way that clean(contents of a file).split("\n") yields lines of a file
-    to be checked
-
-    slamel01 - 3/1/23
-    """
-
-    violations = dict()
-    for filename, filepath in check_files:
-        if clean is None:
-            with open(filepath, 'r', encoding='utf-8') as f:
-                lines = [(line.rstrip('\n'), i + 1)
-                         for i, line in enumerate(f)]
-        else:
-            # The read_text().split() is slightly iffy - it depends to some extent how clean() works - this may
-            # not yield lines in the way the caller intends
-            lines = [(line, i + 1)
-                     for i, line in enumerate(clean(Path(filepath).read_text()).split("\n"))]
-
-        # Each element of lines list is (line, line number) - hence predicate should only be applied to line component
-        lines = list(filter(lambda line_info: predicate(line_info[0]), lines))
-
-        # Obtain violations and if any exist, add into output dict
-        if len(lines) > 0:
-            violations[filename] = lines
-    return violations
-
-
-def code_clean(contents):
-    # Performs file cleaning for code checked files (removing comments, string, character literals) - 4/21/23, slamel01
-    return clean_contents(clean_contents(contents, COMMENTED_REGEX, "\n"), STRING_LITERAL_REGEX, "")
-
-
-def check_style():
-    """
-    Checks student style and constructions dictionary of violations:
-    "cols" -> dict of files:lines with > MAX_COLUMNS columns
-    "tabs" -> dict of files:lines with tabs
-    "TODOs" -> list of files with TODOs in code not in string literals
-    "&&" -> && in code not in comments or string literals
-    "||" -> || in code not in comments or string literals
-    "break" -> break in code not in comments or string literals
-    "!" -> ! in code not in comments or string literals (!= ok)
-
-    None is returned in the event that the max style score is 0 which
-    means style is not being autograded. This is done in the hope that
-    this will trigger apparent crashes in any function that uses the
-    dict of style violations. It does not signify that there are no
-    style violations which would be indicated by empty dicts/lists above
-
-    2/11/23 - slamel01
-    """
-
-    if TOML_SETTINGS[MAX_STYLE_SCORE] == 0:
-        return None
-
-    # Collect names, paths of files to check for style
-    # Using should_check() with 2 different file sets, construct 2 lists
-    # 1st list - files to check for columns, tabs, and TODOs
-    # 2nd list - files to check for break, &&, ||, !
-    first_files_to_check = list()
-    second_files_to_check = list()
-    for entry in os.scandir(SUBMISSION_FOLDER):
-        if entry.is_file():
-            if should_check(entry.name, TOML_SETTINGS[NON_CODE_STYLE_CHECKSET]):
-                first_files_to_check.append((entry.name, entry.path))
-            if should_check(entry.name, TOML_SETTINGS[CODE_STYLE_CHECKSET]):
-                second_files_to_check.append((entry.name, entry.path))
-
-    # Construct violations dictionary using helper functions
-    return {
-        VIOL_COLS: collect_violations(first_files_to_check, None, lambda line: len(line.rstrip('\n')) > TOML_SETTINGS[STYLE_MAX_COLUMNS]),
-        VIOL_TABS: collect_violations(first_files_to_check, None, lambda line: '\t' in line),
-        VIOL_TODO: collect_violations(first_files_to_check, lambda contents: clean_contents(contents, STRING_LITERAL_REGEX, ""), lambda line: 'TODO' in line),
-        VIOL_AND: collect_violations(second_files_to_check, code_clean, lambda line: '&&' in line),
-        VIOL_OR: collect_violations(second_files_to_check, code_clean, lambda line: '||' in line),
-        VIOL_BREAK: collect_violations(second_files_to_check, lambda contents: clean_contents(code_clean(contents), SWITCH_CASE_REGEX, ""), lambda line: 'break;' in line),
-        VIOL_NOT: collect_violations(second_files_to_check, lambda contents: clean_contents(code_clean(contents), CHARACTER_LITERAL_REGEX, ""), lambda line: regex_match_in_code(line, NOT_BUT_NOT_EQ_REGEX)),
-        VIOL_BOOL_ZEN: collect_violations(
-            second_files_to_check, code_clean, lambda line: regex_match_in_code(line, BOOLEAN_ZEN_REGEX))
-    }
-
-
-def get_style_score(style_violations):
-    """
-    Gets the student's style score as follows (out of MAX_STYLE_SCORE): 
-    2/11/23 - slamel01
-    """
-
-    if style_violations is None:
-        return 0
-
-    # Writing out because 1-liner is somewhat hard to read
-    deductions = 0
-    for weight, violations in STYLE_WEIGHTS_VIOLATIONS.items():
-        # Deduct TOML_SETTINGS[weight] points if any of the violations occurred that the
-        # weight corresponds to
-        deductions += TOML_SETTINGS[weight] * \
-            any(style_violations[v] for v in violations)
-    return TOML_SETTINGS[MAX_STYLE_SCORE] - deductions
-
 
 # Checks style and collects violations - this had to be moved up here so that get_total_score() can incorporate
 # it and is put into the initial save_json() call below
-style_violations = check_style()
+style_checker = style_check.StyleChecker()
 
 
 def get_total_score():
     # Modified to include style score, handles when style is not graded (get_style_score just returns 0) - slamel01
-    return sum([x['max_score'] * x['success'] for x in TEST_SUMMARIES]) + get_valgrind_score() + get_style_score(style_violations)
+    return sum([x['max_score'] * x['success'] for x in TEST_SUMMARIES]) + get_valgrind_score() + style_checker.style_score
 
 
 def get_max_score():
     # Modified to include max style score, handles when style is not graded (max style score is just 0) - slamel01
-    return sum([x['max_score'] for x in TEST_SUMMARIES]) + TOML_SETTINGS[MAX_VALGRIND_SCORE] + TOML_SETTINGS[MAX_STYLE_SCORE]
+    return sum([x['max_score'] for x in TEST_SUMMARIES]) + TOML_SETTINGS[MAX_VALGRIND_SCORE] + style_checker.max_style_score
 
 
 HERE = os.getcwd()
@@ -406,17 +194,6 @@ RESULTS = {
 # Set defaults for gradescope now, so at least there's the total score if all
 # else fails.
 save_json(RESULTS_JSONPATH, RESULTS)
-
-
-# def before_duedate():
-#     metadata = load_json(SUBMISSION_METADATA_PATH)
-#     due_date = parser.parse(metadata["assignment"]["due_date"])
-#     today = datetime.now(timezone.utc)
-#     return today < due_date
-
-
-def get_autograder_visibility():
-    return HIDDEN if before_duedate() else VISIBLE
 
 
 def get_compile_log(execname):
@@ -513,15 +290,16 @@ def get_failure_reason(test):
 
     return "\n".join([f"{k}{v}" for k, v in fail.items()])
 
+
 def make_token_test():
     token_results = Path('/autograder/results/token_results').read_text()
     passed = "SUCCESS" in token_results
     RESULTS["tests"].append(make_test_result(
-        name = "Submission Validation",
-        visibility = VISIBLE,
-        score = 0,
-        max_score = 0,
-        output = token_results
+        name="Submission Validation",
+        visibility=VISIBLE,
+        score=0,
+        max_score=0,
+        output=token_results
     ))
 
 # Some BullS*&%t we had to do because Gradescope does not display the top-level
@@ -534,126 +312,33 @@ def make_token_test():
 # the test to 'Final Autograder Score' once the date today is past the
 # due_date. If it is before the due_date, we title it 'Tentative Autograder
 # Score'.
-# Edited by slamel01 on 2/28/2023 to take the currently identified style
-# violations so that the style score could be calculated inside upon request
-# from Milod so that students can see their style score specifically before
-# the deadline
-def make_test00(style_violations):
-    #if before_duedate():
+
+
+def make_test00():
     name = "Autograder Score"
     info = "This is your autograder score.\n"
+    # Edited by slamel01 on 2/28/2023 to take the currently identified style
+    # violations so that the style score could be calculated inside upon request
+    # from Milod so that students can see their style score specifically before
+    # the deadline
+    if style_checker.all_style_violations is not None:
+        info += f"Note that your current autograded style score is {style_checker.style_score}/{style_checker.max_style_score}.\n"
+    info += "If you are not happy with your current score, and it is before the duedate, you may resubmit.\n\n"\
+        "CAUTION: You only have a limited number of submissions (usually 5) per assignment.\n" \
+        "Use them wisely!"
     RESULTS["tests"].append(
         make_test_result(name=name, visibility=VISIBLE, score=get_total_score(), max_score=get_max_score(),
                          output=info))
-    # if style_violations is not None:
-    #     info += f"Note that your current autograded style score is {get_style_score(style_violations)}/{TOML_SETTINGS[MAX_STYLE_SCORE]}.\n"
-    # info += "If you are not happy with your current score, and it is before the duedate, you may resubmit.\n\n"\
-    #     "CAUTION: You only have a limited number of submissions (usually 5) per assignment.\n" \
-    #     "Use them wisely!"
-    # else:
-    #     name = "Final Autograder Score"
-    #     info = "This is your Final Autograder Score"
+
 
 def make_build_test():
-    compilation_results = autograde.report_compile_logs(type_to_report="failed", output_format="str")
+    compilation_results = autograde.report_compile_logs(
+        type_to_report="failed", output_format="str")
     if compilation_results != "":
         compilation_results = "ERROR: BUILD FAILED\n" + compilation_results
         RESULTS["tests"].append(
             make_test_result(name="Build Fail", visibility=VISIBLE, score=-1, max_score=0,
-                            output=compilation_results))
-
-
-# helper functions for report_style_violations ..
-
-
-def report_filelines(filelines, violation, line_print):
-    """
-    Informs the user of the files and lines where violation occurred - helper to report_style_violations
-    filelines - dict from filename (str) -> list with lines where violations occurred
-    violation - name of the violation
-    line_print - function that a line is passed to for each line in filelines lists
-
-    slamel01 - 3/1/23
-    """
-    if filelines:
-        autograde.INFORM(f"\n    {violation}:", color=autograde.RED)
-        for file, lines in filelines.items():
-            autograde.INFORM("        " + file + ": ", color=autograde.RED)
-            for line_info in lines[:MAX_VIOLATIONS_TO_SHOW]:
-                autograde.INFORM("            " +
-                                 line_print(line_info), color=autograde.RED)
-            if len(lines) > MAX_VIOLATIONS_TO_SHOW:
-                autograde.INFORM(
-                    f"            {len(lines) - MAX_VIOLATIONS_TO_SHOW} more violations were found, but were not printed!", color=autograde.RED)
-
-
-def default_line_print(line_info):
-    # Default function for returning string for when a violation line is printed - slamel01, 3/1/23
-    return (line_info[0][:TOML_SETTINGS[STYLE_MAX_COLUMNS]] + " < line cut off >") if len(line_info[0]) > TOML_SETTINGS[STYLE_MAX_COLUMNS] else line_info[0]
-
-
-def report_style_violations(violations):
-    """
-    Reports the style violations from check_style() - i.e. actually prints them to the autograder results
-    3/1/23 - slamel01
-    """
-
-    if violations is None:
-        # Adding this print statement just for nicety to whoever is setting up autograder/grader
-        # this runs all the time? connect with slamel01 on this. 
-        #autograde.INFORM("\nStyle check was not run!", color=autograde.CYAN)
-        return
-
-    autograde.INFORM("\n== Style Report ==", color=autograde.CYAN)
-    if not any(violations.values()):
-        autograde.INFORM("\nStyle check passed, good work!",
-                         color=autograde.GREEN)
-    else:
-        # Define here a dict mapping violation -> how lines with that violation should be printed
-        line_printers = dict()
-
-        # When maximum number of cols are violated, since line numbers are accurate to the original file, we print
-        # the line and the line number
-        line_printers[VIOL_COLS] = lambda line_info: f"line {line_info[1]}: " + default_line_print(
-            line_info)
-
-        # For tabs, it is possible for students to have a line with just a tab that's otherwise blank, which is
-        # visually a little confusing - therefore we have that if the line is empty besides whitespace, we will print
-        # the substitute instead
-        line_printers[VIOL_TABS] = lambda line_info: f"line {line_info[1]}: " + (
-            default_line_print(line_info) if len(line_info[0].strip()) > 0 else EMPTY_LINE_SUBSTITUTE)
-
-        # For all the remaining violations, we just print the line without the number due to cleaning making the line
-        # numbers not make sense (see check_style/collect_violations)
-        line_printers.update(dict.fromkeys(
-            [VIOL_TODO, VIOL_AND, VIOL_OR, VIOL_BREAK, VIOL_NOT, VIOL_BOOL_ZEN], default_line_print))
-
-        for viol, printer in line_printers.items():
-            report_filelines(violations[viol], f"\n{viol} found in", printer)
-
-
-def make_style_test(style_violations):
-    """
-    Adds style test results to JSON. Style violations should be the output
-    of check_style and is necessary for score calculation, unlike Valgrind
-    score which is calculated from TEST_SUMMARIES
-    2/24/23 - slamel01
-    """
-
-    # It seems like even if the maximum score for style is 0, Gradescope
-    # still renders it in the HTML results from the JSON, therefore, not
-    # adding this when score is 0 just to avoid student confusion. Note
-    # if style_violations is None, then get_style_score and MAX_SCORES[STYLE]
-    # will both be 0.
-    if style_violations is None:
-        return
-
-    RESULTS["tests"].append(
-        make_test_result(name="Style Score",
-                         visibility=TOML_SETTINGS[STYLE_VISIBILITY],
-                         score=get_style_score(style_violations),
-                         max_score=TOML_SETTINGS[MAX_STYLE_SCORE],
-                         output="This is your total autograded style score.\n"))
+                             output=compilation_results))
 
 
 def make_valgrind_test():
@@ -665,11 +350,34 @@ def make_valgrind_test():
                          output="This is your total Valgrind score.\n"))
 
 
+def make_style_test():
+    """
+    Adds style test results to JSON. Style violations should be the output
+    of check_style and is necessary for score calculation, unlike Valgrind
+    score which is calculated from TEST_SUMMARIES
+    """
+
+    # It seems like even if the maximum score for style is 0, Gradescope
+    # still renders it in the HTML results from the JSON, therefore, not
+    # adding this when score is 0 just to avoid student confusion. Note
+    # if style_violations is None, then get_style_score and MAX_SCORES[STYLE]
+    # will both be 0.
+    if style_checker.all_style_violations is None:
+        return
+
+    RESULTS["tests"].append(
+        make_test_result(name="Style Score",
+                         visibility=VISIBLE,
+                         score=style_checker.style_score,
+                         max_score=style_checker.max_style_score,
+                         output="This is your total autograded style score.\n"))
+
+
 def make_results():
     make_token_test()
     make_build_test()
-    #make_test00(style_violations)
-    #make_style_test(style_violations)
+    make_test00()
+    make_style_test()
     make_valgrind_test()
 
     for test in TEST_SUMMARIES:
@@ -697,7 +405,7 @@ def make_results():
                              max_score=max_score,
                              output=f"{reason}\n\n{vresult}"))
 
-    report_style_violations(style_violations)
+    style_checker.report_style_violations()
     save_json(RESULTS_JSONPATH, RESULTS)
 
 

@@ -1,0 +1,140 @@
+#!/usr/bin/env python3
+
+"""
+Script that makes test solutions to test the autograder setup on Gradescope.
+
+Chami Lamelas
+June 2023
+"""
+
+import shutil
+import os
+from pathlib import Path
+import toml
+import sys
+
+DESCRIPTION = """
+Builds 2-4 test submission folders to try uploading to Gradescope:
+
+    temp_test_submissions/
+        bad_style/
+            Submission that should get 0 style points if style check is on.
+            This is only created if style_check = true in testset.toml.
+        compile_error/
+            Submission that does not compile.
+        missing_required_files/
+            Submission that is missing 1 required file.
+            Required files are taken from required_files in testset.toml.
+            This is only created if required_files has at least 1 element.
+        solution/
+            Copy of the solution, put here for convenience when testing Gradescope.
+
+These are built assuming you are in the autograder folder of an assignments subfolder 
+with the appropriate configuration.
+"""
+
+SOLUTION_PATH = os.path.join("..", "solution")
+TESTSET_FILE = "testset.toml"
+
+REQUIRED_FILES_OPTION = "required_files"
+STYLE_CHECK_OPTION = "style_check"
+
+TEMP_ROOT_FOLDER = "temp_test_submissions"
+
+BAD_STYLE_SUBFOLDER = "bad_style"
+COMPILE_ERROR_SUBFOLDER = "compile_error"
+MISSING_REQUIRED_FILES_SUBFOLDER = "missing_required_files"
+SOLUTION_SUBFOLDER = "solution"
+
+BAD_STYLE_FILE = "IAMABADSTYLECPLUSPLUSFILE.cpp"
+BAD_STYLE_FILE_CONTENTS = """
+int main() {
+\t\t
+    ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    if (x && y) {}
+    if (x || y) {}
+    break;
+    if (x == true) {}
+    if (x != true) {}
+    if (x == false) {}
+    if (x != false) {}
+    // TODO
+    if (!x) {}
+}
+"""
+
+
+def check_path_exists(path, file):
+    check_func = os.path.isfile if file else os.path.isdir
+    file_type = "file" if file else "directory"
+    if not check_func(path):
+        print(f"{path} is not a {file_type}")
+        sys.exit(1)
+
+
+def check_in_right_place():
+    check_path_exists(TESTSET_FILE, True)
+    check_path_exists(SOLUTION_PATH, False)
+
+
+def prepare_output_folder():
+    if os.path.isdir(TEMP_ROOT_FOLDER):
+        shutil.rmtree(TEMP_ROOT_FOLDER)
+    os.mkdir(TEMP_ROOT_FOLDER)
+
+
+def load_testset_toml():
+    return toml.load(TESTSET_FILE)
+
+
+def copy_solution(destination):
+    shutil.copytree(SOLUTION_PATH, destination)
+
+
+def make_bad_style(common):
+    if STYLE_CHECK_OPTION in common and common[STYLE_CHECK_OPTION]:
+        bad_style_path = os.path.join(TEMP_ROOT_FOLDER, BAD_STYLE_SUBFOLDER)
+        copy_solution(bad_style_path)
+        with open(os.path.join(bad_style_path, BAD_STYLE_FILE), mode='w+', encoding='utf-8') as f:
+            f.write(BAD_STYLE_FILE_CONTENTS)
+
+
+def make_compile_error():
+    compile_error_path = os.path.join(
+        TEMP_ROOT_FOLDER, COMPILE_ERROR_SUBFOLDER)
+    copy_solution(compile_error_path)
+    fileset = os.listdir(compile_error_path)
+    for file in fileset:
+        file_path = os.path.join(compile_error_path, file)
+        if not os.path.isfile(file_path) or not file.endswith(".cpp"):
+            continue
+        tmp_path = file_path + ".tmp"
+        Path(tmp_path).write_text(Path(file_path).read_text().replace(";", ""))
+        os.remove(file_path)
+        os.rename(tmp_path, file_path)
+
+
+def make_missing_required_files(toml_common):
+    if REQUIRED_FILES_OPTION in toml_common:
+        missing_required_files_path = os.path.join(
+            TEMP_ROOT_FOLDER, MISSING_REQUIRED_FILES_SUBFOLDER)
+        copy_solution(missing_required_files_path)
+        os.remove(os.path.join(missing_required_files_path,
+                               toml_common[REQUIRED_FILES_OPTION][0]))
+
+
+def make_solution():
+    copy_solution(os.path.join(TEMP_ROOT_FOLDER, SOLUTION_SUBFOLDER))
+
+
+def main():
+    prepare_output_folder()
+    common = load_testset_toml()
+    make_bad_style(common)
+    make_compile_error()
+    make_missing_required_files(common)
+    make_solution()
+
+
+if __name__ == '__main__':
+    main()

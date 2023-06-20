@@ -3,8 +3,9 @@
 autograde.py 
 matt russell
 5-17-2022
-"""
 
+[TODO] be more intelligent in terms of when to re-run tests - now am re-running every time
+"""
 import os
 import sys
 import subprocess
@@ -61,11 +62,6 @@ MAKEFILE_PATH = f"{TESTSET_DIR}/makefile/Makefile"
 MEMLEAK_PASS = "All heap blocks were freed -- no leaks are possible"
 MEMERR_PASS  = "ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)"
 VALG_NO_MEM  = "Valgrind's memory management: out of memory"
-
-# Defaults for miscellaneous style settings (besides visibility, and weights)
-DEFAULT_NON_CODE_STYLE_CHECKSET = ['README', '.h', '.cpp']
-DEFAULT_CODE_STYLE_CHECKLIST    = ['.h', '.cpp']
-DEFAULT_MAX_COLUMNS             = 80
 
 
 def COLORIZE(s, color):
@@ -154,20 +150,11 @@ class TestConfig:
     # fails when any of these fields are specified in the TOML - 2/25/2023 slamel01
     kill_limit: int = 750
     max_valgrind_score: int = 8
-    cols_style_weight: float = 0
-    tabs_style_weight: float = 0
-    todos_style_weight: float = 0
-    symbol_style_weight: float = 0
-    break_style_weight: float = 0
-    boolean_style_weight: float = 0
     valgrind_score_visibility: str = "after_due_date"
-    style_score_visbility: str = "after_due_date"
-    # default = [...] doesn't work, need to use default_factory that just has a lambda return some specified [...]
-    non_code_style_checkset: List[str] = field(default_factory=lambda: DEFAULT_NON_CODE_STYLE_CHECKSET)
-    code_style_checkset: List[str] = field(default_factory=lambda: DEFAULT_CODE_STYLE_CHECKLIST)
-    max_columns: int = DEFAULT_MAX_COLUMNS
-    
+    style_check: bool = False
+
     max_submissions: int = 1
+    # default = [...] doesn't work, need to use default_factory that just has a lambda return some specified [...]
     max_submission_exceptions: dict = field(default_factory=dict)
     required_files: List[str] = field(default_factory=list)
 
