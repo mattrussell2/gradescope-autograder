@@ -143,27 +143,31 @@ def report_filelines(filelines, violation, line_print):
     violation - name of the violation
     line_print - function that a line is passed to for each line in filelines lists
     """
+    result = ""
     if filelines:
-        autograde.INFORM(f"\n    {violation}:", color=autograde.RED)
+        result += autograde.COLORIZE(f"    {violation}:\n", color=autograde.RED)
         for file, lines in filelines.items():
-            autograde.INFORM("        " + file + ": ", color=autograde.RED)
+            result += autograde.COLORIZE("        " + file + ": \n", color=autograde.RED)
             for line_info in lines[:MAX_VIOLATIONS_TO_SHOW]:
-                autograde.INFORM("            " +
-                                 line_print(line_info), color=autograde.RED)
+                result += autograde.COLORIZE("            " +
+                                 line_print(line_info) + '\n', color=autograde.RED)
             if len(lines) > MAX_VIOLATIONS_TO_SHOW:
-                autograde.INFORM(
-                    f"            {len(lines) - MAX_VIOLATIONS_TO_SHOW} more violations were found, but were not printed!", color=autograde.RED)
+                result += autograde.COLORIZE(
+                    f"            {len(lines) - MAX_VIOLATIONS_TO_SHOW} more violations were found, but were not printed!\n", color=autograde.RED)
+    return result
 
 
 class StyleChecker:
     def __init__(self):
         self.testset_common = toml.load(TESTSET_TOML_PATH)["common"]
         self.config = toml.load(CONFIG_TOML_PATH)["style"]
+        self.style_results = ""
         
         if "style_check" in self.testset_common and self.testset_common["style_check"]:
             self.calculate_max_style_score()
             self.collect_all_style_violations()
             self.calculate_style_score()
+            self.generate_report()
         else:
             self.max_style_score = 0
             self.all_style_violations = None
@@ -235,29 +239,26 @@ class StyleChecker:
         # Default function for returning string for when a violation line is printed
         return (line_info[0][:self.config["MAX_COLUMNS"]] + " < line cut off >") if len(line_info[0]) > self.config["MAX_COLUMNS"] else line_info[0]
 
-    def report_style_violations(self):
+    def generate_report(self):
         """
         Reports the style violations from check_style() - i.e. actually prints them to the autograder results
         """
-
         if self.all_style_violations is None:
             # Adding this print statement just for nicety to whoever is setting up autograder/grader
-            autograde.INFORM("\nStyle check was not run!",
-                             color=autograde.CYAN)
-            return
+            message = autograde.COLORIZE("Style check was not run!\n", autograde.CYAN)
+            return message
 
-        autograde.INFORM("\n== Style Report ==", color=autograde.CYAN)
+        message = ""
+
         if not any(self.all_style_violations.values()):
-            autograde.INFORM("\nStyle check passed, good work!",
-                             color=autograde.GREEN)
+            message += autograde.COLORIZE("\nStyle check passed, good work!\n", color=autograde.GREEN)
         else:
             # Define here a dict mapping violation -> how lines with that violation should be printed
             line_printers = dict()
 
             # When maximum number of cols are violated, since line numbers are accurate to the original file, we print
             # the line and the line number
-            line_printers[VIOL_COLS] = lambda line_info: f"line {line_info[1]}: " + self.default_line_print(
-                line_info)
+            line_printers[VIOL_COLS] = lambda line_info: f"line {line_info[1]}: " + self.default_line_print(line_info)
 
             # For tabs, it is possible for students to have a line with just a tab that's otherwise blank, which is
             # visually a little confusing - therefore we have that if the line is empty besides whitespace, we will print
@@ -271,5 +272,7 @@ class StyleChecker:
                 [VIOL_TODO, VIOL_AND, VIOL_OR, VIOL_BREAK, VIOL_NOT, VIOL_BOOL_ZEN], self.default_line_print))
 
             for viol, printer in line_printers.items():
-                report_filelines(
-                    self.all_style_violations[viol], f"\n{viol} found in", printer)
+                message += report_filelines(
+                    self.all_style_violations[viol], f"{viol} found in", printer)
+
+        self.style_results = message

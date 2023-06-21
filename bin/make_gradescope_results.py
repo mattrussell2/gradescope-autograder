@@ -11,7 +11,6 @@ import style_check
 SUBMISSION_METADATA_PATH = "/autograder/submission_metadata.json"
 SUBMISSION_FOLDER = "/autograder/submission"
 
-
 # Result strings
 RESULT = "Result:   "
 REASON = "Reason:   "
@@ -56,7 +55,6 @@ TESTSET = toml.load('testset.toml')
 # All the TOML settings used in this file
 MAX_VALGRIND_SCORE = 'max_valgrind_score'
 VALGRIND_VISIBILITY = 'valgrind_score_visibility'
-
 
 # Defaults for all the above except MAX_STYLE_SCORE, used
 # for loading up TOML_SETTINGS
@@ -131,8 +129,6 @@ mitigation_map = {
 }
 
 # helper functions for file loading/saving, etc.
-
-
 def load_dict_from_file(d, fname):
     return ast.literal_eval(Path(os.path.join(d, fname)).read_text())
 
@@ -166,7 +162,6 @@ def get_valgrind_score():
 # Checks style and collects violations - this had to be moved up here so that get_total_score() can incorporate
 # it and is put into the initial save_json() call below
 style_checker = style_check.StyleChecker()
-
 
 def get_total_score():
     # Modified to include style score, handles when style is not graded (get_style_score just returns 0) - slamel01
@@ -202,18 +197,14 @@ def get_compile_log(execname):
     else:
         return ""
 
-
 def get_compile_logs():
     return [x for x in LOG_DIR if x.endswith(".compile.log")]
-
 
 def test_compiled(execname):
     return "build completed successfully" in get_compile_log(execname)
 
-
 def build_failed(execname):
     return not test_compiled(execname)
-
 
 def wrong_output_program(execname):
     incorrect_exec = f"make {execname}' must build a program named {execname}"
@@ -223,8 +214,6 @@ def wrong_output_program(execname):
 # Returns a dictionary for a testcase in a form that Gradescope requires.
 # We append dictionaries returned by this function to the results.json["tests"]
 # list.
-
-
 def make_test_result(name, visibility, score, max_score, output):
     return {"name": name, "visibility": visibility, "score": score, "max_score": max_score, "output": output, "output_format": "ansi"}
 
@@ -235,8 +224,6 @@ def make_test_result(name, visibility, score, max_score, output):
 # Format the reason and mitigation into a nice format that looks good on
 # Gradescope. Using a dict, we can dynamically pass in any number of
 # key->value pairs and return a single formatted string.
-
-
 def get_failure_reason(test):
     """
     Modified to handle instances of non UTF-8 characters in diff files.
@@ -315,20 +302,12 @@ def make_token_test():
 # the test to 'Final Autograder Score' once the date today is past the
 # due_date. If it is before the due_date, we title it 'Tentative Autograder
 # Score'.
-
-
 def make_test00():
     name = "Autograder Score"
     info = "This is your autograder score.\n"
-    # Edited by slamel01 on 2/28/2023 to take the currently identified style
-    # violations so that the style score could be calculated inside upon request
-    # from Milod so that students can see their style score specifically before
-    # the deadline
-    if style_checker.all_style_violations is not None:
-        info += f"Note that your current autograded style score is {style_checker.style_score}/{style_checker.max_style_score}.\n"
     info += "If you are not happy with your current score, and it is before the duedate, you may resubmit.\n\n"\
-        "CAUTION: You only have a limited number of submissions (usually 5) per assignment.\n" \
-        "Use them wisely!"
+            "CAUTION: You only have a limited number of submissions (usually 5) per assignment.\n" \
+            "Use them wisely!"
     RESULTS["tests"].append(
         make_test_result(name=name, visibility=VISIBLE, score=get_total_score(), max_score=get_max_score(),
                          output=info))
@@ -359,13 +338,12 @@ def make_style_test():
     of check_style and is necessary for score calculation, unlike Valgrind
     score which is calculated from TEST_SUMMARIES
     """
-
     # It seems like even if the maximum score for style is 0, Gradescope
     # still renders it in the HTML results from the JSON, therefore, not
     # adding this when score is 0 just to avoid student confusion. Note
     # if style_violations is None, then get_style_score and MAX_SCORES[STYLE]
     # will both be 0.
-    if style_checker.all_style_violations is None:
+    if style_checker.all_style_violations == None:
         return
 
     RESULTS["tests"].append(
@@ -373,7 +351,7 @@ def make_style_test():
                          visibility=VISIBLE,
                          score=style_checker.style_score,
                          max_score=style_checker.max_style_score,
-                         output="This is your total autograded style score.\n"))
+                         output=style_checker.style_results))
 
 
 def make_results():
@@ -408,7 +386,8 @@ def make_results():
                              max_score=max_score,
                              output=f"{reason}\n\n{vresult}"))
 
-    style_checker.report_style_violations()
+    autograde.INFORM("\n== Style Report ==", color=autograde.CYAN)        
+    print(style_checker.style_results)
     save_json(RESULTS_JSONPATH, RESULTS)
 
 
