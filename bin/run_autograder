@@ -44,8 +44,14 @@ chmod 775 $REPO_ROOT/$AUTOGRADING_ROOT/bin/autograde*
 
 # run the autograder!
 cd /autograder/
-chmod +x testrunner.sh
-./testrunner.sh $@
+
+# if testrunner.sh doesn't exist, just run `autograde`
+if [ ! -f "testrunner.sh" ]; then
+    autograde
+else 
+    chmod +x testrunner.sh
+    ./testrunner.sh
+fi
 
 # make results and put them in /autograder/results/results.json
 make_gradescope_results.py

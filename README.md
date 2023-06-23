@@ -86,7 +86,7 @@ Here is a visualization of the default directory tree and options
 |--- assignments/               # ASSIGN_ROOT - "assignments" - path from repo root that holds the assignment folders themselves
 |   |--- my_first_assignment            
 |       |--- testrunner.sh      # ASSIGN_AUTOGRADING_SUBFOLDER - "" - specifies path where autograding files for an assignment  
-|       |--- testset.toml.      # are relative to the directory for that assignment -- THIS MUST BE THE SAME FOR ALL ASSIGNMENTS.
+|       |--- testset.toml       # are relative to the directory for that assignment -- THIS MUST BE THE SAME FOR ALL ASSIGNMENTS.
 |       |--- testset/
 |   |--- ...
 |   |--- assignment_n
@@ -366,7 +366,7 @@ For this simple grading configuration, the autograder assumes that each testname
 
 
 ### testrunner.sh
-Note the file `testrunner.sh`. This is an exteremely simple, one-line script which tyipically just calls `autograde`. Why is it here, you ask? Great question. It's useful to have a unique script used by each autograding assignment which is separate from `run_autograder`. This is so that if you need to make any assignment-specific tweaks - prepping any unusual directories or files, or installing anything special programs, etc., you can simply make the relevant updates in this file and `git push`, without having to rebuild the whole autograding container.  
+Note the file `testrunner.sh`. This is an exteremely simple, one-line script which tyipically just calls `autograde`. Why is it here, you ask? Great question. It's useful to have a unique script used by each autograding assignment which is separate from `run_autograder`. This is so that if you need to make any assignment-specific tweaks - prepping any unusual directories or files, or installing anything special programs, etc., you can simply make the relevant updates in this file and `git push`, without having to rebuild the whole autograding container. However, if you do not need to do anything other than run `autograde` (the default behavior), then the autograding program will work without this script. The examples in this repo feature it, but you may remove it as needed. 
 
 ### Course-Staff-Provided Makefile
 Here is an example of a corresponding `Makefile`, which would be in the directory `testset/makefile/`. Note that the `make` program will be run from the directory `results/build`. This example produces a target for each of `test01 ... test59`. Also, note that with this particular `Makefile`, the target to build (e.g. `make target`) must always be named the same as the program to run (e.g. `./target`).
@@ -519,7 +519,7 @@ As expressed above with the simple examples, you will likely not need all of the
 ```
 .
 |---canonicalizers.py [file with canonicalization function(s)]
-|---testrunner.sh     *[script that runs `autograde`]
+|---testrunner.sh     [script that runs `autograde`; only necessary if you need to do anything special, otherwise `autograde` will be run without it]
 |---submission/       *[student submission (provided by gradescope, so doesn't need to be in the repo)]
 |---testset/          *[everything needed to run tests]
 |   |---copy/         [files here will be copied to results/build/]
@@ -623,6 +623,9 @@ That should be enough to get you up and running! Please feel free to contact me 
 * Since we've removed course code from the repo, we need more examples in `assignments/`.
 
 # Changelog
+## [2.2.5] - 2023-06-23 
+Update `run_autograder` to simply run `autograde` if `testrunner.sh` doesn't exist. Should simplify files for most autograders as it's commonly not needed.  
+
 ## [2.2.4] - 2023-06-20 
 Various bug fixes associated with recent updates.
 
