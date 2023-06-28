@@ -99,7 +99,7 @@ class DB:
         return report
 
     def print_report(self, student_name):
-        report, _ = self.make_report(student_name)
+        report = self.make_report(student_name)
         print(report)
 
     def close(self):
