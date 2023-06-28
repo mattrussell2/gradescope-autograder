@@ -157,7 +157,7 @@ if __name__ == "__main__":
         if opt == '5': 
             db.close()
             exit()
-        if opt == '2': 
+        if opt == '3': 
             word = "unuse"
         else:
             word = "use"
