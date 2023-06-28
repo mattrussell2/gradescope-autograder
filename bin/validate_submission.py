@@ -18,34 +18,12 @@ import json
 import os
 import toml
 import psycopg2
+from token_management import *
 
-GREEN       = "32m"
-MAGENTA     = "35m"
-CYAN        = "36m"
-START_COLOR = "\033[1;"
-RESET_COLOR = "\033[0m"
-
-def COLORIZE(s, color):
-    return f"{START_COLOR}{color}{s}{RESET_COLOR}"
-
-def INFORM(s, color): 
-    print(COLORIZE(s, color))
-
-INFORM("== Submission Validation ==", CYAN)
-
-def make_token_report():
-    assigns = {key:value for key,value in TOKENDATA.items() if key != 'pk' and int(value) > 0}
-    report =  "\nTOKEN REPORT\n"
-    max_width = max([len(key) for key in assigns.keys()]) + 2
-    report += "-" * (max_width + 1) + "\n"
-    for assign, tokens in assigns.items():
-        report += f"{f'{assign}': <{max_width}}{tokens}\n"
-    return report
-
-def EXIT_FAIL(message, make_report=True):
+def EXIT_FAIL(message, db=None):
     message += f"\nIf you have already submitted, you can activate a different submission by clicking the 'Submission History' button below. Whichever submission you activate will be the one that is graded.\n"
-    if make_report:
-        message += make_token_report()
+    if db:
+        message += db.make_report(NAME)
     INFORM(message, MAGENTA)
     with open("/autograder/results/results.json", 'w') as f:
         json.dump( {
@@ -54,23 +32,27 @@ def EXIT_FAIL(message, make_report=True):
                 "stdout_visibility": "visible"
             }, f)
     try:
-        CONN.close()
+        db.close()
     except:
         pass
     exit(1)
 
-def EXIT_SUCCESS(message, make_report=True):
+def EXIT_SUCCESS(message, db=None):
     message += f"\nYou have used {len(PREV_SUBMISSIONS) + 1} / {MAX_SUBMISSIONS} submissions for this assignment.\n"
-    if make_report:
-        message += make_token_report()
+    if db:
+        message += db.make_report(NAME)
+    message = COLORIZE(message, GREEN)
     with open("/autograder/results/token_results", 'w') as f:
         f.write(message)
-    INFORM(message, GREEN) 
+    print(message)
     try:
-        CONN.close()
+        db.close()
     except:
         pass
     exit(0)
+
+
+INFORM("== Submission Validation ==", CYAN)
 
 CONFIG       = toml.load('/autograder/source/config.toml')
 AG_CONFIG    = CONFIG['repo']
@@ -87,19 +69,19 @@ if 'max_submission_exceptions' in TESTSET_TOML and NAME in TESTSET_TOML['max_sub
     MAX_SUBMISSIONS = TESTSET_TOML['max_submission_exceptions'][NAME]
 
 if 'TEST_USERS' in CONFIG['misc'] and NAME in CONFIG['misc']['TEST_USERS']:
-    EXIT_SUCCESS(f"Test user - passing submission validation by default.", make_report=False)
+    EXIT_SUCCESS(f"Test user - passing submission validation by default.")
 
 if len(PREV_SUBMISSIONS) >= MAX_SUBMISSIONS: 
-    EXIT_FAIL(f"ERROR: Max submissions exceeded for this assignment.", make_report=False)
+    EXIT_FAIL(f"ERROR: Max submissions exceeded for this assignment.")
 
 REQUIRED_FILES  = set(TESTSET_TOML.get('required_files', []))
 SUBMITTED_FILES = set(os.listdir('/autograder/submission'))
 MISSING_FILES   = REQUIRED_FILES - SUBMITTED_FILES 
 if len(MISSING_FILES) > 0:
-    EXIT_FAIL(f"ERROR: Required files missing: {MISSING_FILES}", make_report=False)
+    EXIT_FAIL(f"ERROR: Required files missing: {MISSING_FILES}")
 
 if not TOKEN_CONFIG['MANAGE_TOKENS']:
-    EXIT_SUCCESS("SUCCESS", make_report=False)
+    EXIT_SUCCESS("SUCCESS")
 
 GRACE_TIME         = timedelta(minutes=TOKEN_CONFIG["GRACE_TIME"]) 
 TOKEN_TIME         = timedelta(minutes=TOKEN_CONFIG["TOKEN_TIME"])
@@ -109,86 +91,56 @@ ONE_TOKEN_DUE_TIME = DUE_TIME + TOKEN_TIME
 TWO_TOKEN_DUE_TIME = DUE_TIME + TOKEN_TIME * 2
 
 if SUBMISSION_TIME > TWO_TOKEN_DUE_TIME:
-    EXIT_FAIL("ERROR: After two-token deadline.", make_report=False)
+    EXIT_FAIL("ERROR: After two-token deadline.")
 
-COMMANDS = {
-    'get_headers': "SELECT column_name FROM information_schema.columns WHERE table_name = 'tokens';",
-    'add_user': f"INSERT INTO tokens(pk) VALUES('{NAME}');",
-    'get_tokens': f"SELECT * FROM tokens WHERE pk = '{NAME}';",
-    'use_token': f"UPDATE tokens SET \"tokens left\" = \"tokens left\" - 1, \"{ASSIGN_NAME}\" = \"{ASSIGN_NAME}\" + 1 WHERE pk = '{NAME}';", 
-    'add_assignment': f"ALTER TABLE tokens ADD COLUMN \"{ASSIGN_NAME}\" INTEGER DEFAULT 0;"
-}
-
-CONN   = psycopg2.connect(TOKEN_CONFIG["POSTGRES_REMOTE"])
-CURSOR = CONN.cursor()
-
-CURSOR.execute(COMMANDS['get_headers'])
-HEADERS = [x[0] for x in CURSOR.fetchall()]
+db = DB(TOKEN_CONFIG["POSTGRES_REMOTE"])
 
 # add the assignment to the db if it not there yet.
-if ASSIGN_NAME not in HEADERS:
-    CURSOR.execute(COMMANDS['add_assignment'])
-    CONN.commit()
+if ASSIGN_NAME not in db.HEADERS:
+    db.add_assignment(ASSIGN_NAME)
 
-    CURSOR.execute(COMMANDS['get_headers'])
-    HEADERS = [x[0] for x in CURSOR.fetchall()]
-
-CURSOR.execute(COMMANDS['get_tokens'])
-USERDATA = CURSOR.fetchone()
+USERDATA = db.get_tokens(NAME)
 if USERDATA == None:
-    CURSOR.execute(COMMANDS['add_user']) 
-    CONN.commit()
-    CURSOR.execute(COMMANDS['get_tokens']) # adding above provides default # of starting tokens
-    USERDATA = CURSOR.fetchone()
+    db.add_user(NAME)
 
-TOKENDATA = dict(zip(HEADERS, USERDATA))
+TOKENDATA = db.get_report_dict(NAME)
 TOKENS_LEFT = TOKENDATA['tokens left']
 TOKENS_USED = TOKENDATA[ASSIGN_NAME]
 
 # no tokens required!
 if SUBMISSION_TIME <= DUE_TIME: 
-    EXIT_SUCCESS(f"SUCCESS: Submission arrived before the due date - no tokens required.")
+    EXIT_SUCCESS(f"SUCCESS: Submission arrived before the due date - no tokens required.", db)
 
 if SUBMISSION_TIME <= ONE_TOKEN_DUE_TIME:
     
     # already used a token
     if TOKENS_USED == 1:
-        EXIT_SUCCESS(f"SUCCESS: Already used one token previously for {ASSIGN_NAME}, so zero tokens used.")
+        EXIT_SUCCESS(f"SUCCESS: Already used one token previously for {ASSIGN_NAME}, so zero tokens used.", db)
 
     # we need to use a token
     if TOKENS_USED == 0:
         if TOKENS_LEFT == 0:
-            EXIT_FAIL("ERROR: Tokens needed: 1, tokens available: 0.")
-
-        CURSOR.execute(COMMANDS['use_token'])
-        CONN.commit()
-        TOKENDATA['tokens left'] -= 1
-        TOKENDATA[ASSIGN_NAME] += 1
-        EXIT_SUCCESS(f"SUCCESS: Used one token.")
+            EXIT_FAIL("ERROR: Tokens needed: 1, tokens available: 0.", db)
+        db.use_token(NAME, ASSIGN_NAME)
+        EXIT_SUCCESS(f"SUCCESS: Used one token.", db)
     
 
 if SUBMISSION_TIME <= TWO_TOKEN_DUE_TIME:
 
     if TOKENS_USED == 2: 
-        EXIT_SUCCESS(f"SUCCESS: Already used two tokens previously for {ASSIGN_NAME}, so zero tokens used.")
+        EXIT_SUCCESS(f"SUCCESS: Already used two tokens previously for {ASSIGN_NAME}, so zero tokens used.", db)
     
     if TOKENS_USED == 1:
         if TOKENS_LEFT == 0:
-            EXIT_FAIL("ERROR: Tokens needed: 2, tokens available: 0.")
+            EXIT_FAIL("ERROR: Tokens needed: 2, tokens available: 0.", db)
 
-        CURSOR.execute(COMMANDS['use_token'])
-        CONN.commit()
-        TOKENDATA['tokens left'] -= 1
-        TOKENDATA[ASSIGN_NAME] += 1
-        EXIT_SUCCESS(f"SUCCESS: Already used one token previously for {ASSIGN_NAME}, but after one token deadline, so one token used.")
+        db.use_token(NAME, ASSIGN_NAME)
+        EXIT_SUCCESS(f"SUCCESS: Already used one token previously for {ASSIGN_NAME}, but after one token deadline, so one token used.", db)
     
     if TOKENS_USED == 0:
         if TOKENS_LEFT < 2:
-            EXIT_FAIL(f"ERROR: Tokens needed: 2, tokens available: {TOKENS_LEFT}.")
+            EXIT_FAIL(f"ERROR: Tokens needed: 2, tokens available: {TOKENS_LEFT}.", db)
 
-        CURSOR.execute(COMMANDS['use_token'])
-        CURSOR.execute(COMMANDS['use_token'])
-        TOKENDATA['tokens left'] -= 2
-        TOKENDATA[ASSIGN_NAME] += 2
-        CONN.commit()
-        EXIT_SUCCESS(f"SUCCESS: Used two tokens.\nYou have {TOKENS_LEFT - 2} tokens remaining for the semester.")
+        db.use_token(NAME, ASSIGN_NAME)
+        db.use_token(NAME, ASSIGN_NAME)
+        EXIT_SUCCESS(f"SUCCESS: Used two tokens.", db)

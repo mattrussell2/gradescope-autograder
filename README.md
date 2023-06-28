@@ -243,6 +243,8 @@ Now, every time a student submits, prior to the autograder running, tokens will 
 
 Note also that students rows and assignment columns will be added the database automatically by the autograder. 
 
+You may also manually adjust tokens for whatever reason with the script `validate_submission.py` in `bin/`. This script assumes that you have (in the above case), `POSTGRES_REMOTE_PATH=...` in your `~/.bashrc`. It will communicate with the database and allows you to perform a variety of useful operations for a given student. 
+
 ## Security
 Security concerns have been raised re: Gradescope's containers by a number of people over the years. Our approach to maximizing security is as follows:
 * A non-root user is created (named `student`) during the container build process. 
@@ -623,6 +625,9 @@ That should be enough to get you up and running! Please feel free to contact me 
 * Since we've removed course code from the repo, we need more examples in `assignments/`.
 
 # Changelog
+## [2.2.6] - 2023-06-28 
+Create `bin/token_management.py` which contains a DB class to perform the communication with the database; the file also if run will allow you to perform basic token manipulation operations for students. Update `validate_submission.py` to use the `DB` interface in this file. 
+
 ## [2.2.5] - 2023-06-23 
 Update `run_autograder` to simply run `autograde` if `testrunner.sh` doesn't exist. Should simplify files for most autograders as it's commonly not needed.  
 
