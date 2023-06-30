@@ -625,6 +625,12 @@ That should be enough to get you up and running! Please feel free to contact me 
 * Since we've removed course code from the repo, we need more examples in `assignments/`.
 
 # Changelog
+## [2.2.8] - 2023-06-30
+Actually put `token_management.py` in the repo!
+
+## [2.2.7] - 2023-06-30
+Revert to regular `diff` if `icdiff` hangs [posting on gh about this]. Skip diffing alltogether if test times out. Make gradescope results add OFILE_FAIL entry to mitigation map. Update `validate_submission` to quit if not an active submission [in this case there is no user specified in `submission_metadata.json`]. 
+
 ## [2.2.6] - 2023-06-28 
 Create `bin/token_management.py` which contains a DB class to perform the communication with the database; the file also if run will allow you to perform basic token manipulation operations for students. Update `validate_submission.py` to use the `DB` interface in this file. 
 

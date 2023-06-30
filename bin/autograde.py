@@ -527,6 +527,9 @@ class Test:
                 These files will be written to by the student's program        
                 Design here requires that student's program reads in the filename to write to 
         """
+        if self.timed_out:
+            return
+
         if self.diff_stdout:
             self.stdout_diff_passed = self.run_diff(self.fpaths['stdout'], self.fpaths['ref_stdout'],
                                                     self.fpaths['stdout.diff'], 'stdout', self.ccize_stdout) == 0

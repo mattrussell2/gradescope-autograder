@@ -60,6 +60,9 @@ TOKEN_CONFIG = CONFIG['tokens']
 TESTSET_TOML = toml.load('/autograder/testset.toml')['common']
 METADATA     = json.loads(Path('/autograder/submission_metadata.json').read_text())
 
+if len(METADATA['users']) == 0:
+    EXIT_FAIL("ERROR: No users in submission metadata - you can only run an active submission.")
+
 NAME             = METADATA['users'][0]['name']
 PREV_SUBMISSIONS = [submission for submission in METADATA['previous_submissions'] if float(submission['score']) > 0]
 ASSIGN_NAME      = METADATA['assignment']['title'].replace(' ', '_')
