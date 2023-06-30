@@ -626,7 +626,7 @@ That should be enough to get you up and running! Please feel free to contact me 
 
 # Changelog
 ## [2.2.8] - 2023-06-30
-Actually put `token_management.py` in the repo!
+Actually put `token_management.py` in the repo! Be nice if the config var isn't there. 
 
 ## [2.2.7] - 2023-06-30
 Revert to regular `diff` if `icdiff` hangs [posting on gh about this]. Skip diffing alltogether if test times out. Make gradescope results add OFILE_FAIL entry to mitigation map. Update `validate_submission` to quit if not an active submission [in this case there is no user specified in `submission_metadata.json`]. 

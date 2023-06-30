@@ -110,7 +110,13 @@ if __name__ == "__main__":
     FPATH = os.path.dirname(__file__)
     CONFIG = toml.load(f"{FPATH}/../etc/config.toml")
     
-    db = DB(os.environ[CONFIG['tokens']["POSTGRES_REMOTE_VARNAME"]])
+    try:
+        db = DB(os.environ[CONFIG['tokens']["POSTGRES_REMOTE_VARNAME"]])
+    except:
+        print("ERROR! Could not connect to the database. Check your environment variables. You need to set the following:")
+        print(f"  {CONFIG['tokens']['POSTGRES_REMOTE_VARNAME']}")
+        print("To be clear, you need an environment variable that has the key of the value of the above variable in your etc/config.toml file")
+        exit()
 
     print("Token Management")
     print("NOTE! This program allows you to make any token updates for a student.")
