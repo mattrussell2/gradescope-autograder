@@ -509,7 +509,11 @@ class Test:
         diff_retcode = diff_result.returncode
 
         if self.pretty_diff:
-            diff_result = subprocess.run(f"python3 -m icdiff {filea} {fileb} > {filec}", shell=True)
+            # for some wacky reason, icdiff hangs sometimes. 
+            try:
+                diff_result = subprocess.run(f"python3 -m icdiff {filea} {fileb} > {filec}", shell=True, timeout=5)
+            except subprocess.TimeoutExpired:
+                diff_result = subprocess.run(f"diff {filea} {fileb} > {filec}", shell=True)
 
         return diff_retcode
 

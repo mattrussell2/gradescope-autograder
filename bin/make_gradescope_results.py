@@ -94,6 +94,11 @@ mitigation_map = {
         Check that your output to std::cerr and/or your Exception Message EXACTLY matches
         that of the Assignment Spec and/or the reference. (Watch out for trailing whitespace!)",
     """,
+    OFILE_FAIL: """
+        Your output to an output file produced by your program.
+        Check that your output to all files produced by your program EXACTLY match
+        that of the Assignment Spec and/or the reference. (Watch out for trailing whitespace!)",
+    """,
     NO_OFILE_FILE: """
         Produce all necessary output files
     """,
