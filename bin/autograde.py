@@ -263,7 +263,7 @@ class Test:
         """
         replacements = {
             "${test_ofile_path}" : f"{OUTPUT_DIR}/{self.testname}",
-            "${testname}"        : f"{OUTPUT_DIR}/{self.testname}",
+            "${testname}"        : self.testname",
 
             # these are legacy
             "#{testname}"        : f"{OUTPUT_DIR}/{self.testname}",
