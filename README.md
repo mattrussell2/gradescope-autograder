@@ -1,3 +1,4 @@
+![autograding output](./etc/autograding_output.png)
 # Gradescope Autograding 
 Gradescope is great tool for autograding assignments. Nevertheless, there is still a substantial amount
 of infrastructure required to deploy and run an autograder on Gradescope. This document provides 
