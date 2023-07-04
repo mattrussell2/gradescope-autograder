@@ -626,6 +626,9 @@ That should be enough to get you up and running! Please feel free to contact me 
 * Since we've removed course code from the repo, we need more examples in `assignments/`.
 
 # Changelog
+## [2.2.9] - 2023-07-04
+Update output styling.
+
 ## [2.2.8] - 2023-06-30
 Actually put `token_management.py` in the repo! Be nice if the config var isn't there. 
 
