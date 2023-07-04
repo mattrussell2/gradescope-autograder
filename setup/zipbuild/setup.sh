@@ -19,7 +19,7 @@ ln -s /usr/bin/clang++-12 /usr/bin/clang++
 
 # install pip packages
 python3 -m pip install --upgrade pip
-python3 -m pip install toml dataclasses tqdm filelock python_dateutil psycopg2-binary yq icdiff
+python3 -m pip install toml dataclasses tqdm filelock python_dateutil psycopg2-binary yq icdiff tabulate
 
 # update message of the day
 cp "/autograder/source/motd" /etc/motd

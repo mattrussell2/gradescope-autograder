@@ -19,6 +19,7 @@ import pprint
 pp = pprint.PrettyPrinter(indent=4)
 
 GREEN       = "32m"
+BLUE        = "33m"
 MAGENTA     = "35m"
 CYAN        = "36m"
 START_COLOR = "\033[1;"

@@ -21,7 +21,7 @@ RUN ln -s /usr/bin/clang++-12 /usr/bin/clang++
 
 # install python packages
 RUN python3 -m pip install --upgrade pip
-RUN python3 -m pip install toml dataclasses tqdm filelock python_dateutil psycopg2-binary yq icdiff
+RUN python3 -m pip install toml dataclasses tqdm filelock python_dateutil psycopg2-binary yq icdiff tabulate
 
 # pretty bash terminal header
 RUN printf "export PS1=\"\\u@gs:\\W\\$ \"\n" >> ~/.bashrc
