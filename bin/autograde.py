@@ -12,6 +12,7 @@ import argparse
 import shutil
 import traceback
 import toml as tml
+from tabulate import tabulate
 from pathlib import Path
 from copy import deepcopy
 from dataclasses import dataclass, field
@@ -33,6 +34,7 @@ if 'canonicalizers.py' in os.listdir():
 RED         = "31m"
 GREEN       = "32m"
 YELLOW      = "33m"
+BLUE        = "34m"
 CYAN        = "36m"
 MAGENTA     = "35m"
 LGRAY       = "37m"
@@ -263,7 +265,7 @@ class Test:
         """
         replacements = {
             "${test_ofile_path}" : f"{OUTPUT_DIR}/{self.testname}",
-            "${testname}"        : self.testname",
+            "${testname}"        : self.testname,
 
             # these are legacy
             "#{testname}"        : f"{OUTPUT_DIR}/{self.testname}",
@@ -422,7 +424,7 @@ class Test:
             try:
                 stderrdata = Path(self.fpaths['stderr']).read_bytes().decode('utf-8')
             except (TypeError, UnicodeDecodeError):
-                stderrdata = "ERROR: non-utf-8 encodable text in student result"
+                stderrdata = "ERROR: non-utf-8 decodable text in student result"
             if "std::bad_alloc" in stderrdata:
                 self.kill_limit_exceeded = True
 
@@ -437,10 +439,10 @@ class Test:
         """
         if self.valgrind:
             valgrind_command = [
-                "/usr/bin/valgrind",               # doesn't have 72,704 bug
-                "--show-leak-kinds=all",               # gimme all the leaks
-                "--leak-check=full",               # catch all kinds of leaks
-                "--errors-for-leak-kinds=none",               # separate errors from leaks
+                "/usr/bin/valgrind",                # doesn't have 72,704 bug
+                "--show-leak-kinds=all",            # gimme all the leaks
+                "--leak-check=full",                # catch all kinds of leaks
+                "--errors-for-leak-kinds=none",     # separate errors from leaks
                 "--error-exitcode=1",               # errors return 1
                 f"--log-file={self.fpaths['valgrind']}"
             ]
@@ -509,7 +511,8 @@ class Test:
         diff_retcode = diff_result.returncode
 
         if self.pretty_diff:
-            # for some wacky reason, icdiff hangs sometimes. 
+            # for some wacky reason, icdiff hangs sometimes; we've opened a github issue:
+            # https://github.com/jeffkaufman/icdiff/issues/213
             try:
                 diff_result = subprocess.run(f"python3 -m icdiff {filea} {fileb} > {filec}", shell=True, timeout=5)
             except subprocess.TimeoutExpired:
@@ -575,91 +578,49 @@ class Test:
         else:
             self.success = True
 
-
-def print_testgroup(report, keys, OPTS):
+def report_results(TESTS):
     """
         Purpose:
-            Print a group of test results (regular/valgrind) to the terminal
-        Returns: 
-            None                    
-        Notes: 
-            Depending on OPTS['lengthy_output'], will print one or two columns
-    """
-    try:
-        columns, lines = os.get_terminal_size()
-    except OSError:
-        columns = 144
-
-    if OPTS['lengthy_output']:
-        col_width = columns
-        max_width = col_width // 2
-    else:
-        col_width = columns // 2
-        max_width = col_width - 2
-
-    for key in keys:
-        for i, test in enumerate(report[key]['tests']):
-            report[key]['tests'][i] = f"{report[key]['tests'][i][:max_width]: <{col_width}}"
-
-    keys = [k for k in keys if len(report[k]['tests']) > 0]
-    # headers
-    for title in keys:
-        INFORM(f"{title: <{max([len(x) for x in keys])}} {len(report[title]['tests'])}", color=report[title]["color"])
-    print()
-
-    outstrs = []
-    keys    = [k for k in keys if k not in ["Failed", "Valgrind Failed"]]
-    for title in keys:
-        outstrs.append(COLORIZE(f"{f'{title:-^{max_width}}': <{col_width}}", report[title]['color']))
-        for teststr in report[title]['tests']:
-            outstrs.append(COLORIZE(teststr, report[title]["color"]))
-
-    if OPTS['lengthy_output'] or len(outstrs) <= 5:
-        print('\n'.join(outstrs))
-    else:
-        if len(outstrs) % 2 != 0:
-            outstrs.append(" " * col_width)
-
-        colwstr = "{0" + f": <{col_width}" + "}{1" + f": <{col_width}" + "}"
-        print('\n'.join([colwstr.format(*x) for x in zip(outstrs[:len(outstrs) // 2], outstrs[len(outstrs) // 2:])]))
-
-
-def report_results(TESTS, OPTS):
-    """
-        Purpose:
-            Print test results to the terminal
-        Returns: 
-            None                    
+            Print test results to the terminal                 
     """
     report = {
-        "Passed" :              { "func"  : lambda test: test.success  },
-        "Failed" :              { "func"  : lambda test: not test.success  },
-        "Segfaulted" :          { "func"  : lambda test: test.segfault  },
-        "Failed stdout diff" :  { "func"  : lambda test: test.diff_stdout and not test.stdout_diff_passed  },
-        "Failed stderr diff" :  { "func"  : lambda test: test.diff_stderr and not test.stderr_diff_passed  },
-        "Failed ofile diff" :   { "func"  : lambda test: test.diff_ofiles and not test.fout_diffs_passed  },
-        "Timed Out" :           { "func"  : lambda test: test.timed_out  },
-        "Invalid Exit Code" :   { "func"  : lambda test: test.exit_status != test.exitcodepass  },
-        "Exceeded Max Ram" :    { "func"  : lambda test: test.max_ram_exceeded  },
-        "Exceeded Kill Limit" : { "func"  : lambda test: test.kill_limit_exceeded  },
-        "Valgrind Passed" :     { "func"  : lambda test: test.valgrind and test.valgrind_passed  },
-        "Valgrind Failed" :     { "func"  : lambda test: test.valgrind and not test.valgrind_passed  },
-        "Memory Leak" :         { "func"  : lambda test: test.valgrind and test.memory_leaks  },
-        "Memory Error" :        { "func"  : lambda test: test.valgrind and test.memory_errors  }
-    }
+        "segfault"    : lambda test: test.segfault,
+        "timeout"     : lambda test: test.timed_out,
+        "ofile diff"  : lambda test: test.diff_ofiles and not test.fout_diffs_passed,
+        "stdout diff" : lambda test: test.diff_stdout and not test.stdout_diff_passed,
+        "stderr diff" : lambda test: test.diff_stderr and not test.stderr_diff_passed,
+        "exit code"   : lambda test: test.exit_status != test.exitcodepass,
+        "max ram"     : lambda test: test.max_ram_exceeded,
+        "kill limit"  : lambda test: test.kill_limit_exceeded
+    } 
+
+    table = []
+    for testname, test in TESTS.items():
+        if test.success and test.valgrind_passed:
+            table.append([COLORIZE("✅", GREEN), COLORIZE("✅", GREEN), f"{testname} - {test.description}"])
+        elif test.success and not test.valgrind:
+            table.append([COLORIZE("✅", GREEN), COLORIZE("➖", GREEN), f"{testname} - {test.description}"])
+        elif test.success and not test.valgrind_passed:
+            if test.memory_leaks and test.memory_errors:
+                table.append([COLORIZE("✅", GREEN), COLORIZE("❌ leaks and errors", MAGENTA), f"{testname} - {test.description}"])
+            elif test.memory_leaks:
+                table.append([COLORIZE("✅", GREEN), COLORIZE("❌ leaks", MAGENTA), f"{testname} - {test.description}"])
+            elif test.memory_error:
+                table.append([COLORIZE("✅", GREEN), COLORIZE("❌ errors", MAGENTA), f"{testname} - {test.description}"])
+        else:
+            for testtype, success_test in report.items():
+                if success_test(test):
+                    table.append([COLORIZE("❌ " + testtype, RED), "🚫", f"{testname} - {test.description}"])
+                    break
     
-    for cat in report:
-        report[cat]["tests"] = [f"{name} - {t.description}" for name, t in TESTS.items() if report[cat]["func"](t)]
-        report[cat]['color'] = GREEN if 'Passed' in cat else MAGENTA if 'Memory' in cat else RED
-
-    valgrind_keys = ["Valgrind Passed", "Valgrind Failed", "Memory Leak", "Memory Error"]
-    normal_keys   = [k for k in report if k not in valgrind_keys]
-
-    INFORM(f"\n== Test Report ==", color=CYAN)
-    print_testgroup(report, normal_keys, OPTS)
-    INFORM(f"\n== Valgrind Report ==", color=CYAN)
-    print_testgroup(report, valgrind_keys, OPTS)
-
+    INFORM("🧪 Test Results", BLUE)
+    print(tabulate(table, headers=["Result", "Valgrind Result", "Test Name"], tablefmt="pretty", colalign=("center","center", "left")))
+    legend = []
+    legend = legend + [[COLORIZE("✅", GREEN), "Test passed"]]
+    legend = legend + [[COLORIZE("❌", RED), "Test failed"]]
+    legend = legend + [[COLORIZE("🚫", RED), "Valgrind test failed by default"]]
+    legend = legend + [[COLORIZE("➖", GREEN), "No valgrind component for this test"]]
+    print(tabulate(legend, headers=["Symbol", "Meaning"], tablefmt="simple", colalign=("center","left")))
 
 def run_full_test(tup):
     test = tup[0]
@@ -677,7 +638,6 @@ def run_full_test(tup):
         test.save_status(finished=True)
     return test
 
-
 def run_tests(TESTS, OPTS):
     """
         Purpose:
@@ -688,13 +648,12 @@ def run_tests(TESTS, OPTS):
             Tests are run in parallel, on per process       
             Make sure to store result as list before returning
     """
-    INFORM(f"\n== Running {len(TESTS)} test{'s' if len(TESTS) > 1 else ''} ==", color=CYAN)
+    INFORM(f"⏱ Running {len(TESTS)} test{'s' if len(TESTS) > 1 else ''}\n", color=BLUE)
     user = None if OPTS["no_user"] else "student"
     if OPTS['jobs'] == 1:
         return {test.testname: run_full_test((test, user)) for test in TESTS.values()}
     else:
         result = process_map(run_full_test, [(x, user) for x in TESTS.values()], ncols=60, max_workers=OPTS['jobs'])
-
         return {test.testname: test for test in result}
 
 
@@ -729,18 +688,18 @@ def compile_exec(target, OPTS):
     user = None if OPTS["no_user"] else "student"
 
     with open(f"{LOG_DIR}/{target}.compile.log", "w") as f:
-        INFORMF(f"== running make {target} ==\n", f, color=CYAN)
+        f.write(COLORIZE(f"🔨 running make {target}", BLUE))
         compilation_proc    = RUN(["make", target], cwd=BUILD_DIR, stdout=f, stderr=subprocess.STDOUT, user=user)
         compilation_success = compilation_proc.returncode == 0
         compilation_color   = GREEN if compilation_success else RED
 
         if not compilation_success:
-            INFORMF(f"\nbuild failed\n", stream=f, color=RED)
+            INFORMF(f"❌ build failed\n", stream=f, color=RED)
         elif target not in os.listdir(BUILD_DIR):
-            INFORMF(f"\n'make {target}' must build a program named {target}", stream=f, color=RED)
+            INFORMF(f"  \n'make {target}' must build a program named {target}", stream=f, color=RED)
             compilation_success = False
         else:
-            INFORMF("\nbuild completed successfully\n", stream=f, color=GREEN)
+            INFORMF("✅ build completed successfully\n", stream=f, color=GREEN)
             RUN(["chmod", "a+x", target], cwd=BUILD_DIR, user=user)      # g++ doesn't always play nice, so chmod it
 
     return compilation_success
@@ -766,17 +725,16 @@ def compile_execs(TOML, TESTS, OPTS):
 
     compiled_list = []
     num_execs     = len(execs_to_compile)
-    INFORM(f"== Compiling {num_execs} executable{'s' if num_execs >= 1 else ''} ==", color=CYAN)
     if their_makefile_tests:
         INFORM(
-            f"== Compiling {len(their_makefile_tests)} executable{'s' if len(their_makefile_tests) >= 1 else ''} with the student's makefile ==",
-            color=CYAN)
+            f"🔨 Building {len(their_makefile_tests)} executable{'s' if len(their_makefile_tests) >= 1 else ''} with the student's makefile\n",
+            color=BLUE)
         compiled_list = [compile_exec(x, OPTS) for x in their_makefile_tests]
 
     if our_makefile_tests:
         INFORM(
-            f"== Compiling {len(our_makefile_tests)} executable{'s' if len(our_makefile_tests) >= 1 else ''} with our makefile ==",
-            color=CYAN)
+            f"🔨 Building {len(our_makefile_tests)} executable{'s' if len(our_makefile_tests) >= 1 else ''} with our makefile\n",
+            color=BLUE)
         if not os.path.exists(MAKEFILE_PATH):
             print("our_makefile option requires a custom Makefile in testset/makefile/")
         else:
@@ -1129,7 +1087,7 @@ def run_autograder(argv):
             vtest_pass = lambda x: MEMERR_PASS in x and MEMLEAK_PASS in x
             report_log(vtests, vtest_pass)
         else:
-            report_results(TESTS, OPTS)
+            report_results(TESTS)
 
     except Exception as e:
         print("ERROR WHILE RUNNING TESTS")

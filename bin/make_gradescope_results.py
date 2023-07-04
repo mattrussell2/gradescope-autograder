@@ -391,7 +391,7 @@ def make_results():
                              max_score=max_score,
                              output=f"{reason}\n\n{vresult}"))
 
-    autograde.INFORM("\n== Style Report ==", color=autograde.CYAN)        
+    autograde.INFORM('\n' + "🕶️ Style Report", color=autograde.BLUE)        
     print(style_checker.style_results)
     save_json(RESULTS_JSONPATH, RESULTS)
 
