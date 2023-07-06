@@ -26,6 +26,7 @@ def EXIT_FAIL(message, db=None):
     if db:
         message += db.make_report(NAME)
     message = COLORIZE(message, MAGENTA) + "\n"
+    print(message)
     with open("/autograder/results/results.json", 'w') as f:
         json.dump( {
                 "score": -1, 
