@@ -605,7 +605,7 @@ def report_results(TESTS):
                 table.append([COLORIZE("✅", GREEN), COLORIZE("❌ leaks and errors", MAGENTA), f"{testname} - {test.description}"])
             elif test.memory_leaks:
                 table.append([COLORIZE("✅", GREEN), COLORIZE("❌ leaks", MAGENTA), f"{testname} - {test.description}"])
-            elif test.memory_error:
+            elif test.memory_errors:
                 table.append([COLORIZE("✅", GREEN), COLORIZE("❌ errors", MAGENTA), f"{testname} - {test.description}"])
         else:
             for testtype, success_test in report.items():
