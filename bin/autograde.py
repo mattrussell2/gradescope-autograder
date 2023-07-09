@@ -753,7 +753,8 @@ def chmod_dir(d, permissions):
         Notes:
             This is used so the student code doesn't overwrite read-only files
     """
-    subprocess.run([f"chmod -R {permissions} {d}"], shell=True)
+    if os.path.exists(d):
+        subprocess.run([f"chmod -R {permissions} {d}"], shell=True)
 
 
 def build_testing_directories():
@@ -793,12 +794,13 @@ def build_testing_directories():
     Path(f'{LOG_DIR}/status').write_text("")
 
     # don't allow students to see/write/execute anything related to the testset
-    chmod_dir(TESTSET_DIR, "550")
+    chmod_dir(TESTSET_DIR, "551")
 
     # student code can write to the output/log dirs
     chmod_dir(OUTPUT_DIR, "777")
     chmod_dir(LOG_DIR, "777")
     chmod_dir(BUILD_DIR, "777")
+    chmod_dir(LINK_DIR, "775")
 
 
 class CustomFormatter(argparse.HelpFormatter):
