@@ -626,6 +626,10 @@ That should be enough to get you up and running! Please feel free to contact me 
 * Since we've removed course code from the repo, we need more examples in `assignments/`.
 
 # Changelog
+
+## [2.3.1] - 2023-07-09
+Updated mitigation suggestions to be more clear; show all issues per test, rather than just the first one. 
+
 ## [2.3.0] - 2023-07-09
 BUG: Fixed permissions issue for LINK_DIR where 'student' user couldn't read into the LINK_DIR.
 

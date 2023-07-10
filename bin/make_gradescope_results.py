@@ -30,16 +30,16 @@ DIFF_STDERR_CONTAINS_BINARY = "Diff Result for stderr contains binary"
 
 TESTPASS = f"{RESULT}{PASSED}"
 
-BUILD_FAIL = "Build Failed!\n"
-COUT_FAIL = "std::cout did not match the reference\n"
-CERR_FAIL = "std::cerr did not match the reference\n"
+BUILD_FAIL    = "Build Failed!\n"
+COUT_FAIL     = "std::cout did not match the reference\n"
+CERR_FAIL     = "std::cerr did not match the reference\n"
 NO_OFILE_FILE = "Your program is not sending data to a file, but the reference does.\n"
-OFILE_FAIL = "The contents of a file output by your program are incorrect\n"
-BADEXEC_FAIL = "Makefile Built Incorrect Executable\n"
-SEGFAULT = "The program segfaulted during the test\n"
-EXIT_FAIL = "The program did not finish successfully (nonzero exit code)\n"
-TIMEOUT = "The program timed out during execution\n"
-OUTOFMEMORY = "The program exceeded the maximum amount of memory allowed\n"
+OFILE_FAIL    = "The contents of a file output by your program are incorrect\n"
+BADEXEC_FAIL  = "Makefile built an incorrect executable, or code did not compile\n"
+SEGFAULT      = "The program segfaulted during the test\n"
+EXIT_FAIL     = "The program did not finish successfully (nonzero exit code)\n"
+TIMEOUT       = "The program timed out during execution\n"
+OUTOFMEMORY   = "The program exceeded the maximum amount of memory allowed\n"
 
 # Gradescope visibility options
 VISIBLE = "visible"               # Used for "public" group
@@ -92,19 +92,19 @@ mitigation_map = {
     CERR_FAIL: """
         Your output to std::cerr and/or your Exception Message did not match the expected output.
         Check that your output to std::cerr and/or your Exception Message EXACTLY matches
-        that of the Assignment Spec and/or the reference. (Watch out for trailing whitespace!)",
+        that of the Assignment Spec and/or the reference. (Watch out for trailing whitespace!),
     """,
     OFILE_FAIL: """
-        Your output to an output file produced by your program.
         Check that your output to all files produced by your program EXACTLY match
-        that of the Assignment Spec and/or the reference. (Watch out for trailing whitespace!)",
+        that of the Assignment Spec and/or the reference. (Watch out for trailing whitespace!)
+        Also be sure that if your program produces an output file, the reference does as well.
     """,
     NO_OFILE_FILE: """
         Produce all necessary output files
     """,
     BUILD_FAIL: """
         Check the compiler output above. Make sure your function names,
-        input and output types mSECOND_CHECKED_FILES = {'.c', '.h', '.cpp'}atch the spec EXACTLY!",
+        input and output types mSECOND_CHECKED_FILES = {'.c', '.h', '.cpp'}atch the spec EXACTLY!,
     """,
     BADEXEC_FAIL: """
         make must build the same name as the target (i.e. make myprogram must
@@ -127,9 +127,6 @@ mitigation_map = {
     """,
     TIMEOUT: """
         Be sure your code is running as efficiently as possible, and has no infinite loops!
-    """,
-    "OTHER": """
-        No standard mitigation suggestion is available!
     """
 }
 
@@ -240,23 +237,23 @@ def get_failure_reason(test):
 
     # use == True/False, because defaults are 'None', so not x will return True, even if it is uninitialialized.
     failure_tests = {
-        SEGFAULT: test['segfault'] == True,
-        TIMEOUT: test['timed_out'] == True,
-        NO_OFILE_FILE: test['ofile_file_exists'] == False,
-        COUT_FAIL: test['stdout_diff_passed'] == False,
-        CERR_FAIL: test['stderr_diff_passed'] == False,
-        OFILE_FAIL: wrong_output_program(test['executable']),
-        EXIT_FAIL: not (test['exit_status'] == test['exitcodepass']),
-        BUILD_FAIL: build_failed(test['executable']),
-        OUTOFMEMORY: test['max_ram_exceeded'] == True,
-        "OTHER": True
+        SEGFAULT:       test['segfault'] == True,
+        TIMEOUT:        test['timed_out'] == True,
+        NO_OFILE_FILE:  test['ofile_file_exists'] == False,
+        COUT_FAIL:      test['stdout_diff_passed'] == False,
+        CERR_FAIL:      test['stderr_diff_passed'] == False,
+        OFILE_FAIL:     test['fout_diffs_passed'] == False,
+        BADEXEC_FAIL:   wrong_output_program(test['executable']) or test['compiled'] == False,
+        EXIT_FAIL:      not (test['exit_status'] == test['exitcodepass']),
+        BUILD_FAIL:     build_failed(test['executable']),
+        OUTOFMEMORY:    test['max_ram_exceeded'] == True
     }
     if failure_tests[BUILD_FAIL]:
         fail[COMPILE_LOG] = get_compile_log(test['executable'])
     else:
         for failtype, res in failure_tests.items():
             if res:
-                fail[REASON] = failtype
+                fail[REASON] = fail[REASON] + '\n' + failtype if REASON in fail else failtype
                 if failtype == COUT_FAIL:
                     if not test['ccize_stdout']:
                         fname = f"{test['testname']}.stdout.diff"
@@ -280,8 +277,9 @@ def get_failure_reason(test):
                     except UnicodeDecodeError:
                         fail[DIFF_STDERR_RESULT] = DIFF_STDERR_CONTAINS_BINARY
 
-                fail[POS_MITIGATE] = mitigation_map[failtype]
-                break
+                fail[POS_MITIGATE] = fail[POS_MITIGATE] + '\n' + mitigation_map[failtype] if POS_MITIGATE in fail else mitigation_map[failtype]
+    if fail == OrderedDict([(RESULT, FAILED)]):
+        fail["Unknown Failure"] = "No standard mitigation suggestion is available"
 
     return "\n".join([f"{k}{v}" for k, v in fail.items()])
 
@@ -390,9 +388,11 @@ def make_results():
                              score=score,
                              max_score=max_score,
                              output=f"{reason}\n\n{vresult}"))
-
-    autograde.INFORM('\n' + "🕶️ Style Report", color=autograde.BLUE)        
-    print(style_checker.style_results)
+    
+    if TESTSET['common'].get('check style', False):
+        autograde.INFORM('\n' + "🕶️ Style Report", color=autograde.BLUE)        
+        print(style_checker.style_results)
+    
     save_json(RESULTS_JSONPATH, RESULTS)
 
 
