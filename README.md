@@ -1,4 +1,8 @@
 ![autograding output](./etc/autograding_output.png)
+
+NOTE: If you are a Tufts faculty member, please see the main repo branch; this is a more general 
+legacy variant intended for anyone. 
+
 # Gradescope Autograding 
 Gradescope is great tool for autograding assignments. Nevertheless, there is still a substantial amount
 of infrastructure required to deploy and run an autograder on Gradescope. This document provides 
