@@ -134,8 +134,8 @@ MAX_PER_ASSIGN  = 2
 # TEST_USERS -> gradescope users who are exempt from submission validation
 SUBMISSIONS_PER_ASSIGN = 5
 TEST_USERS             = ["Matthew P. Russell"]
-
-
+```
+```toml
 [style]
 #
 # [style] contains auto style-checker info
@@ -160,10 +160,6 @@ SYMBOL_STYLE_WEIGHT     = 0.5
 BREAK_STYLE_WEIGHT      = 0.5
 BOOLEAN_STYLE_WEIGHT    = 0.5
 ```
-
-
-
-
 
 ## Establish the CI/CD Runner
 In order for code to be run when you `git push`, we need a `runner`. Fortunately, the Tufts EECS staff have setup the requisite infrastucture such that getting this ready is straightforward. Before we get it running, you'll need a registration token. In the `gitlab.cs.tufts.edu` web interface, click the settings cog (lower-left side of the screen), and then select CI/CD. Expand the `runners` section. Keep this handy. Now, open a shell.
@@ -197,6 +193,8 @@ At this point the runner will start running. You can exit out of the terminal, a
 |----------|--------------------|------|
 | `AUTOGRADING_ROOT` | `autograding/` | Directory path in you repo where the autograding folder is. |
 | `REPO_WRITE_DEPLOY_TOKEN` | ... | Deploy token for your repository. Create one in the gitlab web interface with settings->access tokens. The token must have `read_repository` and `write_repository` permissions, and must have at least the `maintainer` role |
+
+
 
 ## Conclusion
 Continue to the next section to learn about the autograding framework, and for a walkthrough to setup an assignment. 
@@ -347,8 +345,8 @@ executable   = "myprog"        # all of the tests will use this executable
 
 [set_one]
 tests = [
-    { testname = "test01", description = "my first test },
-    { testname = "test02", description = "my second test },
+    { testname = "test01", description = "my first test" },
+    { testname = "test02", description = "my second test" },
     { testname = "test03", description = "my third test" } 
 ]
 ```
@@ -513,45 +511,7 @@ These are the configuration options for a test. You may set any of these in `[co
 | `max_submission_exceptions` | {} | `[common]` only setting - dictionary of the form `{ "Student Gradescope Name" = num_max_submissions`, ...}`. Note that `toml` requires the dict to be one-line. Alternatively, you can specify `[common.max_submission_exceptions]`, with the relevant key-valud pairs underneath.  |
 | `required_files` | [] | `[common]` only setting - List of files required for an assignment. Autograder will quit prior to running if any files are missing, and the submission will not be used in the count for the `max_submission` value for the student | 
 | `style_check` | `false` | `[common]` only setting - Automatically perform style checking. See and update `bin/style_check.py` for details on this. | 
-
-## Building Reference Output and Testing the Autograder
-
-### Preliminaries
-NOTE: Building reference output does not work well on OSX. This is for a number of reasons, including:
-1) valgrind doesn't work on OSX
-2) defaults for various gnu programs such as `/usr/bin/time` and `timeout` used in standard Linux systems aren't available on OSX, and are a pain to get working. 
-
-Therefore, it is highly suggested to build your reference output and test your autograder on a Linux machine. You can use the `remote-containers` extension in `VSCode` to work within an `Ubuntu` container quite easily: https://code.visualstudio.com/docs/devcontainers/containers
-
-In order to build reference output and test your code easily, first add the `bin/` folder of the autograding repo to your `$PATH`. To do this, run the following commands, replacing `REPO_ROOT` with the path to the repository root on your system. 
-```shell
-echo -e "export PATH=\$PATH:/REPO_ROOT/bin\n" >> ~/.bashrc
-source ~/.bashrc
-```
-Also, if you don't have `icdiff` installed on your system and would like to use the `pretty_diff` option you'll need to install it (`brew/apt-get icdiff`).
-
-### Building the Reference Output
-Once you've configured your tests, from the assignment's autograder directory [when you run `ls` from here you should see `testset.toml`, `testset`, etc.], run the command
-```shell
-build_ref_output -s SOLUTION_PATH
-``` 
-where `SOLUTION_PATH` is the path to a folder with the reference solution. The reference code will be run *as a submission*, and the output of the reference will be placed in the `REPO_ROOT/hwname/testset/ref_output/` directory. The default behavior of `build_ref_output` is to keep the temporary `temp_ref_build_dir` directory created to run the autograder and build the reference output. The files in `temp_ref_build_dir/results/` can be invaluable if you have tests which aren't functioning right - `cd`-ing into `temp_ref_build_dir/results/logs` or `temp_ref_build_dir/results/output` can be very helpful! You can optionally remove this directory after the reference output is created run with the `-d` option.
-
-### Testing with an Example Submission
-After you've produced the reference output, if you'd like to test a given folder against the produced reference output, run
-```shell
-test_autograder -s SUBMISSION_PATH
-```
-where `SUBMISSION_PATH` contains the path to a folder with the submission code you would like to test. This script will create a temporary testing directory named `temp_testing_dir`, copy everything there, and run the tests. You can optionally remove this directory after tests are run with the `-d` option.
-
-### Parallel Execution of Tests
-The `autograde` program supports parallel execution of tests with the `-j` option
-```shell
-autograde -j NUMCORES
-```
-where `NUMCORES` is the number of cores you would like to utilize (`-1` will use all available cores). Note that multiple tests may be run on each core concurrently. The default setting is equivalent to `-j 1`, which runs tests without parallelization enabled. You can also supply the `-j NUMCORES` option to the `build_ref_output` or `test_autograder` scripts.
-
-Note! Given resource limits on gradescope use you should be careful with enabling multiple cores for Gradescope! This is most likely useful when building reference output on your local system. 
+ 
 
 ## Gradescope Results
 After running the autograder, our program produces results for Gradescope. A few notes on this:
@@ -567,311 +527,5 @@ Note that if the `max_score` for a test is `0`, then Gradescope assumes that the
 # Conclusion
 That should be enough to get you up and running! Please feel free to contact me with any questions you have, and/or any bugs, feature requests, etc. you find. Thanks!
 
-# TODOS
-* Since we've removed course code from the repo, we need more examples in `assignments/`.
-
 # Changelog
-
-## [2.3.1] - 2023-07-09
-Updated mitigation suggestions to be more clear; show all issues per test, rather than just the first one. 
-
-## [2.3.0] - 2023-07-09
-BUG: Fixed permissions issue for LINK_DIR where 'student' user couldn't read into the LINK_DIR.
-
-## [2.2.9] - 2023-07-04
-Update output styling.
-
-## [2.2.8] - 2023-06-30
-Actually put `token_management.py` in the repo! Be nice if the config var isn't there. 
-
-## [2.2.7] - 2023-06-30
-Revert to regular `diff` if `icdiff` hangs [posting on gh about this]. Skip diffing alltogether if test times out. Make gradescope results add OFILE_FAIL entry to mitigation map. Update `validate_submission` to quit if not an active submission [in this case there is no user specified in `submission_metadata.json`]. 
-
-## [2.2.6] - 2023-06-28 
-Create `bin/token_management.py` which contains a DB class to perform the communication with the database; the file also if run will allow you to perform basic token manipulation operations for students. Update `validate_submission.py` to use the `DB` interface in this file. 
-
-## [2.2.5] - 2023-06-23 
-Update `run_autograder` to simply run `autograde` if `testrunner.sh` doesn't exist. Should simplify files for most autograders as it's commonly not needed.  
-
-## [2.2.4] - 2023-06-20 
-Various bug fixes associated with recent updates.
-
-## [2.2.3] - 2023-06-20
-Chami's update - move style checking to separate module; also add make_test_submissions to easily make dummy things to drag-drop to gradescope for quick checks. 
-
-## [2.2.2] - 2023-06-20
-Add required_files option for validate submission; remove token check for test users. 
-
-## [2.2.1] - 2023-06-13
-Various bug fixes from Chami. Now show students output on invalid max submission/tokens. 
-
-## [2.2.0] - 2023-06-15 - 4b9012f7
-Add submission validation functionality:
-1) Configurable custom `max_submissions_exceptions` dict in assigment's `.toml` file where students can be specified with maximum submissions for an assignment.
-2) Configurable custom `required_files` list in assignment's `.toml` file where submission validation fails if required files aren't specified. 
-3) Set score to -1 if submission validation fails.
-4) Don't count submission validation failure in max_submission test. 
-5) DO report compile logs on failure; DONT ignore compilation failure as counting for a max_submission. 
-
-
-## [2.1.3] - 2023-06-09 - 65f4bb6e
-Update canonicalizer function arguments to take in bytes instead of utf8-decoded text. Now keep multiple ofile results as variables. Refactor massive report results fn. Changed `icdiff` command to `python3 -m icdiff` for halligan compatibility. Requires rebuild. 
-
-## [2.1.2] - 2023-06-08 - 4fcfc853
-Configure container prep to work properly with MANAGE_TOKENS=false
-
-## [2.1.2] - 2023-06-08 - b5338d47
-Bug fix re: mistaken earlier changes with adding `./` where appropriate to executable name. TODO: fix up this logic. 
-
-## [2.1.1] - 2023-06-08 - 043ceaea
-Dump log if `git pull` fails.  
-
-## [2.1.0] - 2023-06-06 - 0fdbc91f
-Updated backend functionality to make use of `.toml` config file properly instead of sourcing forced `.ini` files. Added functionality for selecting repo branch, and for adding users exempt from submission number checks. Updated section names in config to be better [paths->repo, and other->misc]. Dropping file-specific changes from README logs; instead will tag repo commit that has the major changes. 
-
-## [2.0.3] - 2023-06-02
-README updates, and moved from "#{testname}" -> "${test_ofile_path}". Documentation is much clearer on this as well. 
-* Changed
-    * `autograde.py`
-    * `README`
-
-## [2.0.2] - 2023-06-01
-Merged Chami's branch. 
-## [2.0.1] - 2023-05-28
-README.md updates
-
-## [2.0.0] - 2023-05-27
-Pythonified build process, and merged all config files into one `.toml` file. 
-After the new, improved, simplified build process, token management system, and security fixes, we're at version 2.0 [!]
-* Added
-    * `etc/config.toml` - how holds all config options from the old `.ini` files
-    * `bin/container_prep.py` - does the logic of common_build.sh; returns the 'secret' config
-    * `setup/dockerbuild/deploy_container.py` - does the logic of `deploy_container.sh`
-* Removed
-    * `etc/autograder_config.ini`
-    * `etc/token_config.ini`
-    * `etc/docker_config.ini`
-    * `setup/dockerbuild/deploy_container.sh`
-* Changed
-    * `bin/validate_submission.py` - minor update to work with new config
-    * `bin/run_autograder` - remove python3.6 workarounds
-    * `setup/dockerbuild/Dockerfile` - update to work with new python build process
-    * `setup/zipbuild/build_container.sh` - update to work with new python build process
-    * `README.md` - significan README clarifications
-
-## [1.4.6] - 2023-05-27
-Merged most of the two build scripts into one - `common_build.sh`, which is now called by both of the `deploy_container.sh`(dockerbuild) and `build_container.sh` (zipbuild) scripts. 
-* Added
-    * `setup/common_build.sh` - does most of the setup for both container styles. 
-* Changed
-    * `setup/dockerbuild/deploy_container.sh`
-    * `setup/zipbuild/build_container.sh`
-## [1.4.5] - 2023-05-26
-Switch from `diff-so-fancy` to `icdiff` for `pretty_diff` option; used the `ansi` option for gs output for the tests so colorized output works; removed `diff-so-fancy`, and the `lib` dir
-* Changed
-    * `setup/dockerbuild/deploy_container.sh` - remove references to `lib`
-    * `setup/dockerbuild/Dockerfile` - remove references to `lib`; add `icdiff` to `apt-get` list
-    * `setup/zipbuild/setup.sh` - remove references to `lib`; add `icdiff` to `apt-get` list
-    * `setup/run_autograder.sh` - remove references to `lib`
-    * `bin/make_gradescope_results.py` - use `ansi` option for gradescope test output for color output [!]
-    * `bin/autograde.py` - simplify `diff` logic (`icdiff` returns nonzero exit code on different files as expected)
-* Removed
-    * `bin/diff-so-fancy`
-    * `lib/DiffHighlight.pm` - used by `diff-so-fancy`
-    * `lib/` - no longer needed.
-## [1.4.4] - 2023-05-26
-* Changed
-    * `setup/dockerbuild/deploy_container.sh` - update build dir to setup/build
-    * `setup/zipbuild/build_container.sh` - update with all recent fixes for version 2.0; also fixed issue where default python version in 22.04 container is 3.10
-    * `setup/zipbuild/setup.sh` - update with all recent fixes for version 2.0
-## [1.4.3] - 2023-05-24
-* Changed
-    * `bin/build_ref_output.py` - add argument to autograde to not use 'student' user if building reference output
-    * `bin/autograde.py` - support arugment for not using `student` user. Also wrapped preexec fn in lambda - this was
-                           a latent bug! The preexec fn was being run globally rather than as a preexec. This still worked to limit the container's ram usage, but was functioning slightly differently than we thought. 
-## [1.4.2] - 2023-05-24
-* Changed
-    * `bin/run_autograder` - chmod directories for security
-    * `bin/autograde.py` - add user argument to subprocess calls that run student code; pass "student" to those calls, 
-                         - also makes any non-student-facing files (solution, repo, etc.) 770.
-    * `setup/dockerbuild/Dockerfile` - add command to create 'student' user without elevated permissions
-    * `README.md` - remove security TODO
-
-## [1.4.1] - 2023-05-24
-* Changed
-    * `bin/run_autograder` - delete the file that contains the postgres URL prior to executing the autograder. 
-    * `README.md` - added more security TODOs. 
-
-## [1.4.0] - 2023-05-24
-* Added
-    * `etc/token_config.ini` - token management configuration
-    * `bin/validate_submision.py` - do #submission validation and token validation
-    * `bin/validate_submission` - symlink to validate.py
-* Changed
-    * `setup/dockerbuild/deploy_container.sh` - reorganized logic to use build/ directory; clone repo and keep local copy to use for faster building of the container. 
-    * `setup/zipbuild/build_container.sh` - reorganized logic to use build/ directory; also clone repo and keep copy locally to use, so no deploy key in the container itself.  
-    * `.gitignore` - add `**/setup/build` so the repo clone won't be copied to itself!
-    * `etc/autograder_config.ini` - added `SUBMISSIONS_PER_ASSSIGN` argument
-    * `bin/autograde.py`- add a default argument for max_submissions, which is ignored unless specified [`SUBMISSIONS_PER_ASSIGN` in `etc/autograder_config.ini` is used by default]. 
-    * `run_autograder` - always call `validate_submission`. If it fails, quit.
-
-## [1.3.7] - 2023-05-23
-* Changed
-    * `setup/dockerbuild/deploy_container.sh` - clone repo before docker build; no more ARG with deploy key; delete after build
-    * `setup/dockerbuild/Dockerfile` - use `COPY` to move the repo files over
-## [1.3.6] - 2023-02-08
-* Changed
-    * `bin/autograde.py` - autograder's output fixed to show all results for all tests (last test with an odd number was being dropped)    
-## [1.3.5] - 2022-10-26
-* Changed 
-    * `bin/autograde.py` - updated default `kill_limit` setting to 750. 
-## [1.3.4] - 2022-9-30
-* Changed
-    * `bin/autograde.py` - updated autograde to be interoperable with `our_makefile=true` for some tests and `false` for others. Note that a global setting for either will break; just set the relevant setting within the test subgroup if using both for one assignment. 
-## [1.3.3] - 2022-9-13
-* Changed
-    * `bin/autograde.py` - unicodedecodeerror fix crashing issue when student ccized / stderr has non-utf-8-decodeable text in their output. 
-## [1.3.2] - 2022-9-12
-* Removed
-    * `assignments/` - everything removed here except for `assignments/sanity_check`
-* Changed
-    * `README.md` - update docs to not discuss tufts-course-specific items. 
-
-## [1.3.1] - 2022-9-7
-* Changed
-    * `bin/autograde.py` - Minor updates to print more info in test summary.
-* Added
-    * `assignments/sanity_check` - A 'sanity check' assignment with checks for expected passing and failure cases. Good for future deployments. Put more tests here! This is of the 'arraylist' variety - perhaps add a sanity check for the 'gerp' variety of testset as well.
-## [1.3.0] - 2022-9-7
-* Changed
-    * `bin/autograde.py` - Refactored code to not use the `capture_output=True` param of subprocess module. Problem was that if the max rlimit is passed due to a bunch of output (for instance with an infinite loop printing to cout), than the captured stream's bytes exceedes the rlimit and the autograder crashes. Instead, refactored RUN() to call subprocess.run() with stdin/stderr params; these are /dev/null if not otherwise specified. For 'regular' tests, they'll always be the default (`output/testname.stdout`, `output/testname.stderr`), and valgrind is called with `--logfile=...`, so the valgrind tests send their logs to the logfile as usual. Minor assumption here that `valgrind` tests aren't going to be checked for their `stdout` content, but based on the other structure here this is natural. This should finally fix the kerfuffle with max_ram/kill_limit being overrun. 
-
-## [1.2.2] - 2022-9-7
-* Changed 
-    * `bin/autograde.py` - remove any student files that are also in the link directory prior
-to symlinking. 
-* Changed
-    * `bin/autograde.py` - update rlimit code to limit BOTH the soft and hard limits. Should avoid crashing the autograder from now on. Fixed bug with `self.max_ram_exceeded` value being incorrectly deduced.
-    * `README.md` - Minor updates.
-## [1.2.1] - 2022-9-7
-* Changed 
-    * `README.md` - `Guest` permissions for the Gitlab PAT can't pull!
-    * `setup/dockerbuild/deploy_container.sh` - fixed incorrect tag during dockerbuild step.
-## [1.2.0] - 2022-8-23
-* Changed
-    * `setup/dockerbuild/deploy_container.sh` - updated local tag to include username and reponame; this fixes error where container wouldn't be found when trying to push to dockerhub. 
-## [1.1.9] - 2022-8-21
-* Changed
-    * `README` - indicate that `Ubuntu 22.04` should be used in zip builds.
-    * `setup/zipbuild/setup.sh` - changed clang version to clang-12; this avoids known compatibility issues with most recent clang and valgrind versions.
-    * `setup/zipbuild/build_container.sh` - remove any currently existing `Autograder.zip` file, without this, every time the script runs, the size of the zip file will increase. 
-## [1.1.8] - 2022-8-7
-* Changed 
-    * `bin/autograde.py` - set `max_ram` to be in `MB` in the `testset.toml` files to be consistent with `kill_limit` form.
-    * `bin/autograde.py` - lower `max_time` to `10` seconds.
-## [1.1.7] - 2022-8-1
-* 'Breaking Change' related to canonicalization.
-* Changed
-    * `bin/autograde.py` - added `testset.toml` config variable `ccizer_args` - this is a dictionary of arguments to pass to the canonicalization function. 
-    * `bin/autograde.py` - canonicalization function now takes 4 arguments instead of 1 - arguments now include:
-      * student output
-      * reference output
-      * test name
-      * canonicalizer options
-These arguments will be provided by default to the canonicalization function. For backwards compatibility, change the paramters of your canonicalization function to include `*args`.
-    
-## [1.1.6] - 2022-7-28
-* Changed 
-  * `bin/autograde.py` - `autograde.py` now correctly handles the case where  `"#{testname}"` is provided as the value of the `executable` variable in the `testset.toml` file for a test.
-
-## [1.1.5] - 2022-7-12
-Substantial revision of setup configuration - updated configuation to manage secret keeping better by using environment variables for Docker configuration - some configuration variables now hold name of the environnment variable, rather than the data itself. Updated default to not use Dockerhub anymore, but rather GitHub Container registry; this avoid sketchy sharing of private info (dockercreds), and makes the docker setup more generalized (can login to any container registry with new setup).
-* Created
-    - `etc/docker_config.ini` - Placed docker-only configuration here
-* Changed
-    - `etc/autograder_config.ini` - Updated variable names, separated out docker-only variables
-    - `setup/dockerbuild/deploy_container.sh` - use better secret keeping
-    - `setup/zipbuild/build_container.sh` and `.../setup.sh` - use better secret keeping
-
-## [1.1.4] - 2022-7-9
-* Changed 
-    - `bin/make_gradescope_results.py` - Don't crash when `diff_stderr=False` 
-## [1.1.3] - 2022-6-27
-* Changed
-    - `bin/make_gradescope_results.py` - Don't crash when no valgrind tests. 
-
-## [1.1.2] - 2022-6-23
-* Changed 
-    - `bin/autograde.py` - Changed `MAX_V_MEMORY` to `kill_limit`, which is now a configurable parameter for tests; default value is `500` `MB`; updated the preexec function setting the limit to take a parameter.
-    - `bin/autograde.py` - Added `max_valgrind_score` and `valgrind_score_visibility` `[common]` only parameters. 
-    - `bin/autograde.py` - Added `valg_out_of_mem` test result, which will fire if the test file is not created; this way, the autograder won't crash on valgrind being killed b/c out of ram do not producing a log file. 
-    - `bin/autograde.py` - Changed reporting mechanism to output # of failed tests, and to display only failures (# segfaults, etc.) when there are any; added `Exceeded Max Ram` and `V. Exceeded Max Ram`.
-    - `bin/make_gradescope_results.py` - added the valgrind test; loads the global data from the `testset.toml` file; note that the defaults for these (8, `"after_due_date"`) are set in this file - [TODO] refactor to set defaults in `autograde.py` and load them from any given test in this file?
-
-## [1.1.1] - 2022-6-20
-* Changed
-    - `bin/autograde.py` - added `--errors-for-leak-kinds=none` to `valgrind` args - this will prevent
-leaks from being shown as errors. Refactored scoring logic to deduce valgrind failure from combination
-of no leaks/errors (no longer checking exit code).
-    - `bin/autograde.py` - reformatted output to two columns for easier viewing. Added optional arg `-l`
-which forces single-column output. Generally cleaned up logic of test reporting for easy add-ons later.
-
-## [1.1.0] - 2022-6-17
-* Changed
-    - `bin/run_autograder` - now will replace any spaces in `$ASSIGNMENT_TITLE` with underscores. This 
-will allow spaces in the gradescope title. Note that upgrading to this version requires rebuilding the container.
-    - `bin/autograde.py` - negative returncode values are now handled correctly.
-    - `bin/autograde.py` - fix bug where stdout/stderr diffs are attempted even though `diff_stdout` and `diff_stderr` are `false`
-## [1.0.9] - 2022-6-16
-* Changed
-    - `bin/autograde.py` - updated default max memory usage per proc to `1GB` - valgrind was crashing at the `100MB` cap during `CalcYouLater` testing!
-## [1.0.8] - 2022-6-14
-* Changed
-    - `bin/autograde.py` - first draft of an enforced max memory usage; separate from the `max_ram` param used for 'correctness' purposes. 
-    - `README.md` - added `[TODO]` section above.
-
-## [1.0.7] - 2022-6-13
-* Changed 
-    - `bin/make_gradescope_results.py` - updated code to correctly display canonicalized `stdout`/`stderr` if required.
-
-## [1.0.6] - 2022-6-9
-* Changed
-    - `bin/autograde.py` - added `compiled` variable to `Test` class, and added logic to not run 
-test on compilation failure. 
-    - `bin/autograde.py` - changed output to compilation log files to be `utf-8` encoded strings; 
-will also write binary if output from `make` is not `utf-8` encodable for whatever reason.
-    - `bin/make_gradescope_results.py` - work correctly with tests that didn't compile - instead of failing, 
-show the compilation log.
-
-## [1.0.5] - 2022-6-6
-* Changed
-    - `bin/autograde.py` - automatically remove any `.o` files and any executables needed for testing.
-    - `bin/autograde.py` - removed header comments, added [TODO] related to `Test` var which notes compilation failure - needed if we're going to try to run tests even if some didn't compile!   
-
-## [1.0.4] - 2022-6-2
-* Changed
-    - `README.md` - max points note
-    - `README.md` - changed arrangement of Changelog to be most recent first. 
-
-## [1.0.3] - 2022-6-1
-* Changed
-    - `/bin/autograde.py` - refactored multi-processed `tqdm` with `-j 1` (default behavior) to manually run a loop instead of `process_map` with a lock - on @Marty's Mac, for whatever reason the call to `process_map` was not working correctly, and this fixes the issue.
-
-## [1.0.2] - 2022-5-31
-* Changed
-    - `bin/autograde.py` - change `RUN` command option `universal_newlines=True` to `universal_newlines=False`; this will produce binary output for `result.stdout` and `result.stderr`, so changed `Path(STDOUTPATH/STDERRPATH).write_text(result.stdout/result.stderr)` to `write_bytes`. This will mean that student code which is invalid binary output will not crash program; also, `read_bytes` and decode with `utf-8` before sending to canonicalizer; write fail message to `.diff` if cannot be decoded. Note that regular `diff` on 'binary' files will work fine; as long as the text is `utf-8` encodable, 
-    `diff` will function as normal; otherwise, will get 'binary files differ' message, which is good. 
-
-## [1.0.1] - 2022-5-30
-* Changed
-    - `README.md` - `after-due-date` -> `after_due_date`; added discussion of `after_published`
-    - `bin/autograde.py` - `after-due-date` -> `after_due_date`
-
-## [1.0.0] - 2022-5-29
-* Changed
-  - `README.md`        - added changelog; fixed perl library include path instructions; clarified that `bin/`, `etc/`, `lib/` and `setup/` all `AUTOGRADING_ROOT` in the `setup/config.ini` file
-  - `bin/autograde.py` - diffs now correctly save to a file [diffs were being done and incorrect output was being caught, but `.diff` files weren't being written to]; make `pretty_diff` false by default
-  - `setup/dockerbuild/deploy_container.sh` - update `grep -v` instruction to exclude `REPO_REMOTE_PATH`
-  - `setup/dockerbuild/Dockerfile` - copy `lib/DiffHighlight.pm` to `/usr/share/perl5`
-  - `setup/zipbuild/setup.sh`      - copy `lib/DiffHighlight.pm` to `/usr/share/perl5`
-  - Added `tokens` branch with token setup [currently in alpha, will use for cs-15 summer if prof. biswas wants.]
+[1.0.0] - Port over from old `gradescope-autograding` setup.
