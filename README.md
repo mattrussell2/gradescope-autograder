@@ -28,27 +28,27 @@ git push -u origin YOUR_DEFAULT_BRANCH_HERE
 The default expected repository structure is as follows. Note that some of these paths are configurable - see `config.toml` below for details.
 ```
 .
-|--- assignments/              
-|   |--- my_first_assignment/
-|       |--- autograder/
-|       |--- solution/
-|       |--- files/
-|       |--- spec/
-|   |--- ...
-|   |--- assignment_n
-|       |--- autograder/
-|       |--- solution/
-|       |--- files/
-|       |--- spec/            
-|--- autograding/
-|       |--- bin/
-|       |--- etc/
-|--- bin/
-|--- files/
-|--- public_html/
-|--- staff-bin/
-|- config.toml
-|
+├── assignments
+│   ├── my_first_assign
+│   │   ├── autograder
+│   │   ├── files
+│   │   ├── solution
+│   │   └── spec
+|   ...
+|   |
+│   └── my_nth_assign
+│       ├── autograder
+│       ├── files
+│       ├── solution
+│       └── spec
+├── autograding
+│   ├── bin
+│   └── etc
+├── bin
+├── files
+├── public_html
+├── staff-bin
+└── config.toml
 ```
 
 ## per-assignment structure
@@ -248,40 +248,14 @@ Before getting into the details, here is a summary of the procedure run by `bin/
 * Report the results to `stdout`.
 
 ## Files/Directories Created by the Autograder
-After the autograder runs, here is an example of the various files that are created. Note that various `.ofile`, `.diff`, `.ccized`, etc. files may not be created depending on your configuration. 
+After the autograder runs, here are the directories produced. 
 ```
-.
-|--- results/
-|   |--- build/      
-|   |   |--- [student submission files]
-|   |   |--- [files copied from copy/ and symlinks that symlink to files in link/]
-|   |   |--- test01   [compiled executables]
-|   |   |--- ...
-|   |   |--- testnn
-|   |--- logs/
-|   |   |--- status
-|   |   |--- test01.compile.log
-|   |   |--- test01.summary
-|   |   |--- ...
-|   |   |--- testnn.summary
-|   |--- output/
-|       |--- test01.memtime
-|       |--- test01.ofile
-|       |--- test01.ofile.diff
-|       |--- test01.ofile.ccized
-|       |--- test01.ofile.ccized.diff
-|       |--- test01.stderr
-|       |--- test01.stderr.diff
-|       |--- test01.stderr.ccized
-|       |--- test01.stderr.ccized.diff 
-|       |--- test01.stdout
-|       |--- test01.stdout.diff
-|       |--- test01.stdout.ccized
-|       |--- test01.stdout.ccized.diff
-|       |--- test01.valgrind
-|       |--- ...
-|       |--- testnn.valgrind
-|-
+results
+├── build/
+├── logs/
+├── output/
+└── results.json
+
 ```
 ### build/
 Inside the `build` directory are all of the students submitted files, and any course-staff-provided files which need to be copied over [see `copy` and `link` directories below]. Also there are the executables produced during the compilation step. 
@@ -290,7 +264,32 @@ Inside the `build` directory are all of the students submitted files, and any co
 A set of compilation logs and summary files for each test. **Each `testname.summary` file in the `logs/` directory contains a dump of the state of a given test. This is literally a dump of the backend `Test` object from the `autograde.py` script, which contains all of the values of the various configuration options (e.g. `diff_stdout`, etc.) and results (e.g. `stdout_diff_passed`). A first summary is created upon initialization of the test, and it is overwritten after a test finishes with the updated results. `summary` files are very useful for debugging!**
 
 ### output/
-Output of each test. There are output files created for `stdout`, `stderr`, output files produced by the program (marked with the `.ofile` extension) and `valgrind`. `diff` files contain the result of `diff`ing the given output against the reference output are also here. If any of the output streams are to-be canonicalized prior to `diff`, then the `.ccized` file is created for that output stream [e.g. `testname.stdout.ccized`], along with the `.ccized.diff`, indicating that the files `diff`'d are the canoncialized outputs. Also here is a `.memtime` file, which contains the result of running `/usr/bin/time -v %M %S %U` on the given program. This file is only produced in the case where memory limits are set in the configuration.
+Output of each test. There are output files created for `stdout`, `stderr`, output files produced by the program (marked with the `.ofile` extension) and `valgrind`. `.diff` files contain the result of `diff`ing the given output against the reference output are also here. If any of the output streams are to-be canonicalized prior to `diff`, then the `.ccized` file is created for that output stream [e.g. `testname.stdout.ccized`], along with the `.ccized.diff`, indicating that the files `diff`'d are the canoncialized outputs. Also here is a `.memtime` file, which contains the result of running `/usr/bin/time -v %M %S %U` on the given program. This file is only produced in the case where memory limits are set in the configuration. Here's an example of possible outputs:
+
+results
+├── output
+│   ├── test01.memtime
+│   ├── test01.ofile
+│   ├── test01.ofile.ccized
+│   ├── test01.ofile.ccized.diff
+│   ├── test01.stderr
+│   ├── test01.stderr.diff
+│   ├── test01.stdout
+│   ├── test01.stdout.diff
+│   ├── test01.valgrind
+|   ...
+│   ├── testn.memtime
+│   ├── testnn.ofile
+│   ├── testnn.ofile.ccized
+│   ├── testnn.ofile.ccized.diff
+│   ├── testnn.stderr
+│   ├── testnn.stderr.diff
+│   ├── testnn.stdout
+│   └── testnn.stdout.diff
+└
+```
+### `results.json`
+`results.json` is the results file the gradescope parses to produce results in the web interface. 
 
 ## `testset.toml` configuration file
 The framework depends on a `testset.toml` file (https://toml.io) to specify the testing configuration. `testset.toml` must be configured as follows
