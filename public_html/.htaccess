@@ -1,0 +1,8 @@
+Options -Indexes
+Header set Cache-Control "max-age=0, no-cache, no-store, must-revalidate"
+
+
+<IfModule mod_rewrite.c>
+    Options +FollowSymLinks
+    RewriteEngine On
+</IfModule>

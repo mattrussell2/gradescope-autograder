@@ -1,0 +1,268 @@
+#
+# three jobs are structured as a DAG
+#
+# A) update halligan server 
+#    updates files on the halligan server in /g/COURSENUM/TERM and resets file permissions
+#
+# B) deploy autograding container
+#    builds and uploads the docker container with relevant autograding files
+#    
+# C) build reference output
+#    uses the autograding container to run reference as a submission; pushes the results back to the repo
+#
+# If B and C are both to be run, B runs first.
+# A can run concurrently with either. 
+
+
+
+#
+# This job updates halligan server files and file-permissions. 
+#
+update halligan server:
+  
+  #
+  # only run this script when server-facing files are updated
+  #
+  rules:
+    - when: always
+      changes:
+        paths:
+        - assignments/**/*
+        - bin/**/*
+        - files/**/*
+        - public_html/**/*
+        - staff-bin/**/*
+        - staff-docs/**/*
+
+  #
+  # extract relevant variables from `config.toml`
+  #
+  before_script:
+    - /bin/bash
+
+    #
+    # load the halligan info from config.toml
+    # NOTE: make sure toml-cli is installed first. 
+    #
+    - python3 -m pip install toml-cli &>/dev/null
+    - export HALLIGAN_COURSE_NUM=$(toml get halligan.COURSE_NUM)
+    - export HALLIGAN_TERM=$(toml get halligan.TERM)            
+    - export HALLIGAN_FILE_GROUP=$(toml get halligan.FILE_GROUP)
+    - export HALLIGAN_UTLN=$(toml get halligan.FILE_OWNER) 
+    - export HALLIGAN_REPO_PATH="/g/${HALLIGAN_COURSE_NUM}/${HALLIGAN_TERM}" 
+  
+  script:
+    #
+    # log the most recent commit
+    #
+    - git log -1 --stat | tee server_log
+
+    #
+    # sync the repo with halligan
+    #
+    - rsync -a --exclude='.git/' ./ ${HALLIGAN_REPO_PATH}
+    
+    #
+    # set course files to the right group
+    #
+    - chgrp -R ${HALLIGAN_FILE_GROUP} ${HALLIGAN_REPO_PATH}
+    
+    #
+    # restore course file permission
+    #
+    - chmod +x ${HALLIGAN_REPO_PATH}/staff-bin/*
+    - cd ${HALLIGAN_REPO_PATH}/staff-bin
+    - sg ${HALLIGAN_FILE_GROUP} -c "./restore-permissions | tee -a ../server_log"
+
+
+#
+# This job builds and deploys the autograding container for gradescope. 
+#
+deploy autograding container:
+  
+  #
+  # only update docker container when necessary
+  #
+  rules:
+    - when: always
+      changes:
+        paths:
+        - ${AUTOGRADING_ROOT}/bin/run_autograder
+        - ${AUTOGRADING_ROOT}/bin/container_prep.py
+        - ${AUTOGRADING_ROOT}/bin/login.sh
+        - ${AUTOGRADING_ROOT}/etc/*
+        - .gitlab-ci.yml
+        - config.toml
+
+  variables: 
+    #
+    # automatically determine path for docker container
+    # NOTE: uses group level variables to do this; pushes to a private dockerhub acct visible only to gradescope. 
+    # CAUTION: !!! IF YOU CHANGE THESE VARIABLES ENSURE THAT THE RESULTING REMOTE IS PRIVATE !!!
+    #
+    REMOTE_TAG: ${CONTAINER_REGISTRY}/${CONTAINER_REGISTRY_USER}/${CONTAINER_NAME}:${CI_PROJECT_NAME}
+   
+    #
+    # automatically determine path of git repo
+    # NOTE: uses ${REPO_PAT} - by default, a read-only [w/ developer permissions] group-level token for course-repos.
+    #
+    REPO_REMOTE_PATH: https://${CI_PROJECT_NAME}:${REPO_PAT}@gitlab.cs.tufts.edu/${CI_PROJECT_PATH}.git
+
+  before_script:
+    #
+    # login to the container registry
+    #
+    - echo ${CONTAINER_REGISTRY_PASS} | docker login ${CONTAINER_REGISTRY} --username ${CONTAINER_REGISTRY_USER} --password-stdin
+  
+  script:
+    # 
+    # create a .secrets file for token management
+    # NOTE: this file is deleted by a PAM module when anyone ssh-s into the container
+    # NOTE: if anyone accesses the container directly, then they can access the info; see !!!CAUTION!!! above. 
+    # 
+    - echo "TOKENS_PASS=\"\"\"${TOKENS_PASS}\"\"\""  > .secrets
+    - echo "TOKENS_UTLN=\"${TOKENS_UTLN}\""         >> .secrets
+    - echo "TOKENS_HOST=\"${TOKENS_HOST}\""         >> .secrets
+    - echo "COURSE_SLUG=\"${CI_PROJECT_NAME}\""     >> .secrets
+    - echo "MYSQL_USER=\"${MYSQL_USER}\""           >> .secrets
+    - echo "MYSQL_PASS=\"${MYSQL_PASS}\""           >> .secrets
+    - echo "MYSQL_DBNAME=\"${MYSQL_DBNAME}\""       >> .secrets
+    - echo "MYSQL_LOC=\"${MYSQL_LOC}\""             >> .secrets
+
+    #
+    # build and push the container
+    #
+    - podman build --pull --tag ${REMOTE_TAG} --build-arg AUTOGRADING_ROOT=${AUTOGRADING_ROOT} --build-arg REPO_REMOTE=${REPO_REMOTE_PATH} --build-arg REPO_BRANCH=${CI_COMMIT_BRANCH} -f ${AUTOGRADING_ROOT}/etc/Dockerfile . 
+    - podman push ${REMOTE_TAG} 
+
+    #
+    # cleanup
+    #
+    - rm .secrets
+
+
+#
+# This job builds reference output for the autograder.
+#
+build reference output:
+  
+  #
+  # If we have to update the container for some reason, only build ref output after the fact. 
+  #
+  needs: [deploy autograding container]
+
+  #
+  # Only build reference output when changes are made inside of an autograding or solution folder. 
+  #
+  rules:
+    - when: always
+      changes:
+        paths:
+        - "**/autograder/**/*"
+        - "**/solution/**/*"
+  
+  variables:
+    #
+    # automatically determine repo remote path
+    # NOTE: Uses a repo-level environment variable REPO_WRITE_DEPLOY_TOKEN
+    # NOTE: REPO_WRITE_DEPLOY_TOKEN must have 'read' and 'write' permission and 'maintainer' access to your repo.
+    #
+    REPO_REMOTE_PATH: https://${CI_PROJECT_NAME}:${REPO_WRITE_DEPLOY_TOKEN}@gitlab.cs.tufts.edu/${CI_PROJECT_PATH}.git
+    REMOTE_TAG: ${CONTAINER_REGISTRY}/${CONTAINER_REGISTRY_USER}/${CONTAINER_NAME}:${CI_PROJECT_NAME}
+
+
+  before_script:
+    - /bin/bash
+    - python3 -m pip install toml-cli &>/dev/null
+    - export ASSIGN_ROOT=$(toml get repo.ASSIGN_ROOT)
+    - export ASSIGN_AG_DIR=$(toml get repo.ASSIGN_AG_DIR)
+    - export ASSIGN_SOL_DIR=$(toml get repo.ASSIGN_SOL_DIR)
+    - export HALLIGAN_UTLN=$(toml get halligan.FILE_OWNER) 
+
+  script:
+    - /bin/bash
+  
+    #
+    # Update the default repo's remote to include the deploy token. Checkout branch and pull. 
+    #
+    - git remote set-url origin ${REPO_REMOTE_PATH}
+    - git fetch origin ${CI_COMMIT_BRANCH}
+    - git checkout -B ${CI_COMMIT_BRANCH} origin/${CI_COMMIT_BRANCH}
+    - git pull origin ${CI_COMMIT_BRANCH}
+
+    #
+    # Determine which assignments' autograder/ or solution/ directories have changed. 
+    #
+    - changed_assignments=$(git diff-tree --no-commit-id --name-only -r $CI_COMMIT_SHA | grep -o -E "${ASSIGN_ROOT}/[^/]*/${ASSIGN_AG_DIR}|${ASSIGN_ROOT}/${ASSIGN_SOL_DIR}" | awk -F'/' '{print $2}' | sort | uniq)
+
+    #
+    # Build the reference output for each changed assignment
+    # To do this, copy the reference into the autograding container as the submission, run the autograder, and push the results
+    # back to the repo [make sure not to run the pipelines on the push]
+    # NOTE: !!! Can't work with podman in the nfs mount, so do the work in /var/tmp/utln !!!
+    #
+    - >
+      for ASSIGN_NAME in $changed_assignments; do
+        ASSIGN_DIR=${CI_PROJECT_DIR}/${ASSIGN_ROOT}/${ASSIGN_NAME}
+        AUTOGRADER=${ASSIGN_DIR}/${ASSIGN_AG_DIR}
+  
+        #
+        # Again, need to work in /var/tmp because of the mind-mount podman issue. 
+        #
+        cd /var/tmp/${HALLIGAN_UTLN}
+
+        #
+        # Start fresh.
+        #
+        if [ -d ${CI_PROJECT_NAME}-build ]; then rm -rf ${CI_PROJECT_NAME}-build/*; fi
+        mkdir -p ${CI_PROJECT_NAME}-build
+
+        cd ${CI_PROJECT_NAME}-build
+
+
+        if [ -d results ]; then rm -rf results/*; fi
+        mkdir -p results
+
+        #
+        # Grab solution code. 
+        #
+        cp -r ${ASSIGN_DIR}/solution .
+        
+        #
+        # Run the autograder!
+        # NOTE: The -v X:Y indicates to mount local:container.
+        # NOTE: This works bi-directionally, so output will be available
+        # NOTE: at $PWD/results when the container finishes. 
+        #
+        podman run                                \
+          --env ASSIGNMENT_TITLE=${ASSIGN_NAME}   \
+          -v $PWD/solution:/autograder/submission \
+          -v $PWD/results:/autograder/results/    \
+          ${REMOTE_TAG}                           \
+          /autograder/run_autograder
+        
+        #
+        # .diff files are irrelevant [reference diffing against what?]
+        #
+        rm results/output/*.diff*
+
+        #
+        # if the autograder has reference output already, then remove it
+        #
+        if [ -d ${AUTOGRADER}/testset/ref_output ]; then rm -rf ${AUTOGRADER}/testset/ref_output/*; fi
+        
+        #
+        # copy the new reference output to the repo
+        #
+        mkdir -p ${AUTOGRADER}/testset/ref_output
+        cp -r results/output/* ${AUTOGRADER}/testset/ref_output
+
+        #
+        # commit and push the new reference output back to the repo.
+        # NOTE: push with -o ci.skip to avoid an infinite loop of rebuilds :)
+        #
+        cd ${AUTOGRADER}
+        git add testset/ref_output
+        git commit -m "build ref output for ${ASSIGN_NAME}"
+        git push origin ${CI_COMMIT_BRANCH} -o ci.skip 
+      done

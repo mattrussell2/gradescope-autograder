@@ -1,0 +1,52 @@
+#!/usr/bin/python3
+"""
+reveal-current-assignments
+a nifty script to update permissions on the server for assignments that should be visible
+matt russell
+
+This script depends on public_html/schedule/assignments.toml to reveal the current assignments to students. 
+That file is also used by the html/js code which manages the course website. Details are below. 
+
+"""
+import os
+import stat
+import pathlib
+import toml
+from datetime import datetime, timedelta
+from itertools import chain
+from copy import deepcopy
+import subprocess
+
+ASSIGN_FLDR      = os.path.join('../', 'assignments')
+ASSIGN_TOML_PATH = os.path.join('../', 'public_html', 'assignments.toml')
+
+# required format for the assignments.toml file
+DATETIME_FORMAT  = '%Y-%m-%d %H:%M:%S'
+
+REVEAL_MODE = "u=rwX,go=rX"
+
+if __name__ == '__main__':
+    ASSIGNMENTS_TOML = toml.load(ASSIGN_TOML_PATH)
+    
+    revealed = []
+    for name, data in ASSIGNMENTS_TOML.items():
+
+        folder      = os.path.join(ASSIGN_FLDR, data.get('fpath', name))
+        assign_type = data.get('a_type', 'lab')
+        to_reveal   = data.get('folders', ['prelab'] if assign_type == 'prelab' else ['files', 'spec'])
+        release     = data.get('e_out', data['out'])
+        release     = datetime.strptime(release, DATETIME_FORMAT)
+        
+        if datetime.now() >= release:
+            revealed.append([name, to_reveal, release])
+            for subfolder in to_reveal:
+                p = os.path.join(folder, subfolder)
+                if os.path.exists(p):
+                    subprocess.run([f"chmod -R {REVEAL_MODE} {p}"], shell=True, check=True)
+
+    TXT_BLUE  = "\033[1;34m"    
+    TXT_CLEAR = "\033[0m"       
+    print(f"{TXT_BLUE}revealed the following assignments and their respective subfolders")
+    for name, to_reveal, _ in sorted(revealed, key=lambda x: x[2], reverse=True):
+        print(f'\t{name.ljust(max(len(x[0]) for x in revealed) + 1)}: {to_reveal}')
+    print(TXT_CLEAR)

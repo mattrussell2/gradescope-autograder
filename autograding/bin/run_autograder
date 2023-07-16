@@ -1,0 +1,83 @@
+#!/bin/bash 
+ 
+# for whatever reason this isn't working when installed via docker
+python3 -m pip install toml-cli &>/dev/null
+
+SOURCE_DIR="/autograder/source"
+ASSIGNMENT_TITLE="${ASSIGNMENT_TITLE// /_}" # replace spaces with underscores
+
+CONFIG="${SOURCE_DIR}/config.toml"
+AUTOGRADING_ROOT=$(toml get --toml-path ${CONFIG} repo.AUTOGRADING_ROOT)
+ASSIGN_ROOT=$(toml get --toml-path ${CONFIG} repo.ASSIGN_ROOT)
+ASSIGN_AG_DIR=$(toml get --toml-path ${CONFIG} repo.ASSIGN_AG_DIR)
+
+# go to the repo and pull; hide output from students put put in log if needed
+cd $SOURCE_DIR
+git pull -f > PULL_LOG 2>&1
+
+rc=$?
+if [ $rc -ne 0 ]; then 
+    echo "Repo failed to pull correctly. See log below. Exiting"
+    cat "$SOURCE_DIR/PULL_LOG"
+    exit $rc
+fi
+
+# make bin/ available to autograder (diff-so-pretty, make_gradescope_results.py, etc.)
+export PATH=$PATH:$SOURCE_DIR/$AUTOGRADING_ROOT/bin
+export PATH=$PATH:$SOURCE_DIR/$AUTOGRADING_ROOT/lib
+
+chmod -R +x $SOURCE_DIR/$AUTOGRADING_ROOT/bin
+
+# copy the autograding files for this assignment
+cp -r $SOURCE_DIR/$ASSIGN_ROOT/$ASSIGNMENT_TITLE/$ASSIGN_AG_DIR/* /autograder/
+
+# make all of our files unavailable to the student group, but still traversable
+chmod -R 771 $SOURCE_DIR
+
+if [ -f "/autograder/submission_metadata.json" ]; then
+    BUILD_REF_MODE=false
+    BUILD_ARGS=''
+else
+    BUILD_REF_MODE=true
+    BUILD_ARGS='--no-user'
+fi
+
+if [ -f "$SOURCE_DIR/.secrets" ]; then
+    SECRET_MODE=true
+else
+    SECRET_MODE=false
+fi
+
+# only validate if we're not building reference and we have a .secrets file
+# validation comprises checking submission # and tokens if necessary. 
+if ! $BUILD_REF_MODE && $SECRET_MODE; then
+    validate_submission
+    
+    rc=$?
+    if [ $rc -ne 0 ]; then
+        echo "Submission validation failed. Exiting."
+        exit $rc
+    fi
+fi
+
+# run the autograder!
+cd /autograder/
+
+# if testrunner.sh doesn't exist, just run `autograde`
+if [ ! -f "testrunner.sh" ]; then
+    autograde $BUILD_ARGS
+else 
+    chmod +x testrunner.sh
+    ./testrunner.sh $@ $BUILD_ARGS
+fi
+
+if ! $GRADING_MODE; then
+    exit 0
+fi
+
+# make results and put them in /autograder/results/results.json
+make_gradescope_results.py
+
+if [ -f "make_leaderboard.py" ]; then
+    python3 make_leaderboard.py
+fi

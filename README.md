@@ -1,261 +1,202 @@
-![autograding output](./etc/autograding_output.png)
+# Notes
+1) If you are not part of the Tufts community, or don't want to use the CI/CD pipeline described below, please see the 'global' repo branch; this is a more general variant that anyone can use without Tufts infrastructure. 
+2) Before beginning, you will need access to the **`course-repos`** group under the tufts eecs gitlab instance. If you don't have access to this group, email `mrussell at cs dot tufts dot edu` and he'll add you. If you have never logged into `gitlab.cs.tufts.edu` before, please do so; login with `LDAP` using your Tufts eecs `utln` and password. You will need to do this prior to sending him the email. 
 
-NOTE: If you are a Tufts faculty member, please see the main repo branch; this is a more general 
-legacy variant intended for anyone. 
+# Tufts Course Setup
+Although Tufts provides a great set of tools for faculty, developing and maintaining course infrastructure is nevertheless quite a challenge. This repository leverages a CI/CD framework, along with a custom autograding platform, to make life ez-pz for you. 
 
-# Gradescope Autograding 
-Gradescope is great tool for autograding assignments. Nevertheless, there is still a substantial amount
-of infrastructure required to deploy and run an autograder on Gradescope. This document provides 
-instructions for setting up an autograder on Gradescope which uses our in-house autograding
-framework code. Setup from start to finish is intended to take roughly 30 minutes.
-If you have any questions, please open an issue here. 
-
-# Infrastructure Setup
-
-## Background
-As a high-level overview, each time a submission is provided to gradescope, or a ta re-runs tests:
-* A Docker container based on your build is spun up by Gradescope.
-* `git pull` gets the most recent version of your autograder and tests. 
-*  The submission is checked re: lateness and number of submissions to see if it is acceptable [optional]
-* Student's code is run and `diff`ed vs. reference output
-* The results are parsed to produce a `results.json` formatted for Gradescope. 
+## CI/CD Overview
+The essential infrastructure component here here is a gitlab CI/CD pipeline which `automagically` performs up to three tasks every time you push changes to the repo. 
+1) Update course files and (file permissions!) on the halligan server.
+2) Build a gradescope autograding docker container that will work for all the assignments in your course. 
+3) Create reference solution outputs for any given assignment.
 
 ## Create Your Autograding Git Repo
-Before we begin, you will need a git repository for your autograder. If you don't currently have a repository related to course material, please make one. We suggest using gitlab for this: go to https://gitlab.cs.tufts.edu and login with `LDAP` using your Tufts eecs `utln` and password. Then create a new repository from scratch [don't add a README]. Then, clone this repo to get the relevant files. 
-```shell
+In a web browser, navigate to `https://gitlab.cs.tufts.edu/course-repos`. If your course is not listed under the available groups, please create a new one for your course. If you'd like to make a further subgroup, feel free, but that's up to you. After making your group/subgroups, navigate to the one you'll use and select the `New Project` button; pick `Create a blank project`. Choose a slug that reflects both your course and the term. We suggest 'COURSENUM-TERM', for instance: `cs15-2023s`. **Don't** initialize with a README. Great! Now, in your terminal clone this repo to get the relevant files. 
+```
 git clone git@gitlab.cs.tufts.edu:mrussell/gradescope-autograding
-mv gradescope-autograding YOUR_REPO_FOLDER_NAME
-cd YOUR_REPO_FOLDER NAME
-git remote set-url origin git@gitlab.cs.tufts.edu:YOUR_UTLN/YOUR_REPO_NAME.git
-git push
-```
-Great! You will need an Access Token to provide the autograder container with permissions to the repo. To create one, go to gitlab in your browser, and navigate to the course repository you just created. Next, hover over the settings cog on the lower left, and select `Access Tokens`. Create one. We suggest only providing `read repository` access to the token. Feel free to select whatever you'd like for the name, expiration date, and role, however role must be at least `Developer` in order to be able to pull. Once the token is created, copy the key. 
-
-A note on 'secrets': The strategy for handling sensitive data in this repository (like your access token) is to have all of the relevant data be stored in enviornment variables on your system. The first example of this will be an environment variable with the remote path to your autograding repo, including the acess token copied above. Open your `~/.bashrc` file (or appropriate file for whichever shell you use), and add the following line (or the appropriate `export` for your shell): 
-
-```shell
-export AUTOGRADING_REPO_REMOTE_PATH="https://REPOSITORY-NAME:ACCESS-TOKEN@gitlab.cs.tufts.edu/path/to/repository.git"
-```
-Where the appropriate substitions have been made - for example:
-
-```shell
-export AUTOGRADING_REPO_REMOTE_PATH="https://cs-15-2022uc:glpat-Blah8173Blah8023Blah@gitlab.cs.tufts.edu/mrussell/cs-15-2022uc.git"
+mv gradescope-autograding WHATEVER_FOLDER_YOU_WANT
+cd WHATEVER_FOLDER_YOU_WANT
+rm -rf .git
+git init
+git remote add origin git@gitlab.cs.tufts.edu:course-repos/PATH/TO/YOUR/REPO.git
+git add .
+git commit -m "First commit"
+git push -u origin YOUR_DEFAULT_BRANCH_HERE
 ```
 
-Make sure `source ~/.bashrc` (or equivalent) after editing the file.
-
-Note that in the configuration files listed below, you will sometimes specify the *variable name* (not value), which will then be used during the build process. This is for situations with secrets, and enables you maximum flexibility in terms of not having sensitive data in the repo itself. You can rename these variables to whatever you'd like - we suggest adding identifiers associated with your course, in case you use the framework multiple times: for example, the variable above might be named `AG_REPO_REMOTE_CS15_SUMMER_2023`; in this case, change the value of the variable `REPO_REMOTE_VARNAME` below to match (i.e. so replace `"AUTOGRADING_REPO_REMOTE_PATH"` with `"AG_REPO_REMOTE_CS15_SUMMER_2023"`, etc.) . 
-
-## Configure Your Autograding Repo
-The file `etc/config.toml` contains various important bits of information related to your autograder configuration.
-```toml
-[repo]
-REPO_REMOTE_VARNAME = "AUTOGRADING_REPO_REMOTE_PATH"
-REPO_BRANCH = "main"
-ASSIGN_ROOT = "assignments"
-ASSIGN_AUTOGRADING_SUBFOLDER = ""
-AUTOGRADING_ROOT = ""
-
-[tokens]
-GRACE_TIME = 15   # 15 minutes
-TOKEN_TIME = 1440 # 24 hours
-STARTING_TOKENS = 5
-MAX_PER_ASSIGN = 2
-MANAGE_TOKENS = false
-POSTGRES_REMOTE_VARNAME = "POSTGRES_REMOTE_PATH"
-
-[docker]
-CONTAINER_REGISTRY = "ghcr.io"
-CONTAINER_NAME = "gradescope-docker"
-CONTAINER_TAG = "autograder-autobuild"
-REGISTRY_USER_VARNAME = "GHUNAME"
-REGISTRY_PASS_VARNAME = "GHPAT"
-
-[misc]
-SUBMISSIONS_PER_ASSIGN = 5
-TEST_USERS = ["Matthew Russell"]
-```
-### [repo]
-Items in the `[repo]` section relate to the course repository location and structure. Options are
-|   Key | Default | Purpose |
-|-------|---------|---------|
-| `REPO_REMOTE_VARNAME`   |  `"AUTOGRADING_REPO_REMOTE_PATH"` | Variable name of the environment variable used to hold the remote path of your autograding repo.  |
-| `REPO_BRANCH` | `"main"` | Specific branch of the repo to use for your autograder. This will be the only branch pulled from for the autograding container. |
-| `AUTOGRADING_ROOT` | `""` | Path from repo root which contains the `bin/`, `etc/`, and `setup/` folders |
-| `ASSIGN_ROOT`      | `"assignments"` | Path from `AUTOGRADING_ROOT` where the assignment folders are |
-| `ASSIGN_AUTOGRADING_SUBFOLDER` | `""` | Path from a given assignment folder which holds the autograding files for that assignment.  |
-
-Here is a visualization of the default directory tree and options 
+## Repository Structure
+The organization of the directory structure is configurable, but for the various systems to work properly, there must be some well-defined directory structure. The default structure is as follows
 ```
 .
-|--- assignments/               # ASSIGN_ROOT - "assignments" - path from repo root that holds the assignment folders themselves
-|   |--- my_first_assignment            
-|       |--- testrunner.sh      # ASSIGN_AUTOGRADING_SUBFOLDER - "" - specifies path where autograding files for an assignment  
-|       |--- testset.toml       # are relative to the directory for that assignment -- THIS MUST BE THE SAME FOR ALL ASSIGNMENTS.
-|       |--- testset/
+|--- assignments/              
+|   |--- my_first_assignment/
+|       |--- autograder/
+|       |--- solution/
+|       |--- files/
+|       |--- spec/
 |   |--- ...
 |   |--- assignment_n
-|       |--- testrunner.sh 
-|       |--- testset.toml. 
-|       |--- testset/            
-|--- bin/                       # AUTOGRADING_ROOT - "" - holds path to folder that holds bin/, etc/, and setup/ folders 
-|--- etc/
-|--- setup/
+|       |--- autograder/
+|       |--- solution/
+|       |--- files/
+|       |--- spec/            
+|--- autograding/
+|       |--- bin/
+|       |--- etc/
+|--- bin/
+|--- files/
+|--- public_html/
+|--- staff-bin/
+|- config.toml
 |-
 ```
-With this example repo it doesn't make much sense to get more complicated than this, but here is another example
+Some of these paths are configurable - see `config.toml` for details.
+
+### per-assignment structure
+Each assignment usually contains 4 folders
+* **`autograder`** - contains autograding files; is covered in detail later in this document.
+* **`solution`** - contains the solution code. 
+* **`files`** - contains all student-facing code files.
+* **`spec`** - contains all spec-related files.
+
+Add additional folders as you need to.  
+
+### **files** and **public_html** directories
+The top-level **`files`** and **`public_html`** directories have symlinks which point to the actual files; these are useful to provide an easy access for students to web links, and to copy starter code on the halligan server. To make symlinks, you can run the `staff-bin/make-symlinks` script, although this script depends on the default directory structure, so you will need to configure it as necessary if you change things. 
+
+### **bin**
+Contains code executable by students 
+
+### **staff-bin**
+Contains code executable by staff
+
+### **`config.toml`**
+The `config.toml` file contains various essential bits of information related to the directory structure, and the CI/CD pipeline. Please configure it as appropriate.
+
+
+```toml
+# These correspond to the folders above
+[repo]
+AUTOGRADING_ROOT = "autograding" 
+ASSIGN_ROOT      = "assignments" 
+ASSIGN_AG_DIR    = "autograder"  
+ASSIGN_SOL_DIR   = "solution"
 ```
-.
-|--- my_random_folder               # ASSIGN_ROOT - "my_random_folder/assignments"
-|    |--- assignments/               
-|       |--- my_first_assignment            
-|           |--- autograder         # ASSIGN_AUTOGRADING_SUBFOLDER - "autograder" -- THIS MUST BE THE SAME FOR ALL ASSIGNMENTS
-|               |--- testrunner.sh 
-|               |--- testset.toml. 
-|               |--- testset/
-|       |--- ...
-|       |--- assignment_n 
-|           |--- autograder
-|               |--- testrunner.sh 
-|               |--- testset.toml. 
-|               |--- testset/
-|--- autograding_framework           # AUTOGRADING_ROOT - "autograding_framework"
-|   |--- bin/                      
-|   |--- etc/
-|   |--- setup/
-|-
+
+
+```toml
+[halligan]
+#
+# the [halligan] section contains variables relating to storage of 
+# data from the course repo on the halligan server. These variables
+# will be used by the CI/CD pipeline to
+#   1) place the course files in /g/${COURSE_NUM}/${TERM}
+#   2) course files will be created as the user ${FILE_OWNER}
+#   3) course files will be chgrp'd as ${FILE_GROUP}
+COURSE_NUM = 15
+TERM       = "2023s"
+FILE_GROUP = "ta15"
+FILE_OWNER = "mrussell"
 ```
-**Note! The assignment name for an assignment in the `assignments/` folder must have the same name as the assignment name on Gradescope. An environment variable $ASSIGNMENT_TITLE is provided to the container by Gradescope, and this is used to find the autograder files. If the names don't match, there will be issues. One caveat is that you may use spaces in place of underscores on gradescope; however, the other text must match exactly (case sensitive).**
+```toml
+[tokens]
+#
+# the [tokens] section contains token-related information. 
+# 
+# MANAGE_TOKENS   -> whether to manage tokens or not
+# GRACE_TIME      -> submission time is subtracted by this value (in minutes)
+# TOKEN_TIME      -> time per token (in minutes)
+# STARTING_TOKENS -> value in all students accounts to begin the semester
+#                    note: this value *is* modifiable mid-semester
+#
+# MAX_PER_ASSIGN  -> maximum number of tokens a student can use per assignment
+#                    note: for now MUST be 2, so tweak TOKEN_TIME instead
+#
+# EXCEPTIONS      -> dictionary of the form "TOKEN USER" = MAX_TOKENS
+#                    note: must EXACTLY match the student's gradescope name
+MANAGE_TOKENS   = true
+GRACE_TIME      = 15   
+TOKEN_TIME      = 1440 
+STARTING_TOKENS = 5
+MAX_PER_ASSIGN  = 2
+[tokens.EXCEPTIONS]
+"Matthew P. Russell" = 1
+```
+```toml
+[misc]
+#
+# [misc] contains other miscellaneous information
+#
+# SUBMISSIONS_PER_ASSIGN -> max submissions each student has per assignment
+#                           note: is overridable an assign's testset.toml
+#
+# TEST_USERS -> gradescope users who are exempt from submission validation
+SUBMISSIONS_PER_ASSIGN = 5
+TEST_USERS             = ["Matthew P. Russell"]
 
-### [tokens]
-At Tufts, we have a system for students to be able to manage late submissions with 'tokens'. The token system is flexible and generally works well. The idea is that the students maintain a bank of X tokens, where each token is effectively a 1-day extension on a given assignment. For any assignment, the maximum number of tokens a student can use is usually 2 - so up to 2 days late. If you would like to use this system, see the tokens section below; otherwise simply ignore it. 
 
-### [docker]
-These are settings specific to the docker-build process. If you woud like to manually build your container, you will need them. See the `Docker method` section below for details; likewise simply ignore this section if you don't want to use docker manually.
-
-### [misc]
-Other miscellaneous information. The currently available options are
-|   Key | Default | Purpose |
-|-------|---------|---------|
-| `SUBMISSIONS_PER_ASSIGN`   |  `5` | Allows you to set a cap on the number of submissions a student can send to the autograder per assignment. Change this to a large value to ignore.  |
-| `TEST_USERS` | `["Matthew Russell"]` | Specify any names of users (names on Gradescope) who are to be exempted any token checking / lateness checking / submission # checking. These users would be submitting for testing purposes. |
-
-### [style]
-Options for automatic style checking. 
 [style]
-|   Key | Default | Purpose |
-|-------|---------|---------|
-| `NON_CODE_STYLE_CHECKSET`   |  `['README', '.h', '.cpp']` | Specify files to not check |
-| `TEST_USERS` | `["Matthew Russell"]` | Specify any names of users (names on Gradescope) who are to be exempted any token checking / lateness checking / submission # checking. These users would be submitting for testing purposes. |
-| `NON_CODE_STYLE_CHECKSET` | `['README', '.h', '.cpp']` | Filetypes to check for non-code-related style items |
-| `CODE_STYLE_CHECKSET` | `['.h', '.cpp']` | Filetypes to check for code-related style items |
-| `MAX_COLUMNS` | `80` | Maximum valid number of columns to pass style check |
-| `COLUMNS_STYLE_WEIGHT` | `1` | Relative weight of `MAX_COLUMNS` value on total style check score. |
-| `TABS_STYLE_WEIGHT` | `1` | Relative weight of tab character additions [should be spaces only] on total style check score. |
-| `TODOS_STYLE_WEIGHT` | `0.5` | Relative weight of leaving TODOs in code on total style check score. |
-| `SYMBOL_STYLE_WEIGHT` | `0.5` | Relative weight of symbol use (e.g. && vs and) on total style check score. |
-| `BREAK_STYLE_WEIGHT` | `0.5` | Relative weight of `break` use on total style check score. |
-| `BOOLEAN_STYLE_WEIGHT` | `0.5` | Relative weight of bad boolean zen on total style check score. |
-
-
-## Build Your Autograding Docker Container
-
-### Prereqs
-Prior to building the container, you will need
-1) python3 
-2) `toml` library for python: `python3 -m pip install toml`
-
-### Intro
-There are two methods by which you can build the autograding Docker container for Gradescope
-1) The `.zip` method - for each assignment, this workflow is to manually upload a `.zip` file to Gradescope that contains two scripts: `setup.sh`, which installs dependencies, and a shell script named `run_autograder`, which runs the autograder. Gradescope then builds a docker container that is adapted based on your setup.sh script. This will work fine if you don't want to get into Docker yourself.
-2) The Docker method - this workflow is to build the Docker container from scratch and upload it to the container registry of your choice. Then for each assignment you simply point gradescope to use your container. If you already use Docker, or are feeling adventurous, go for this option. 
-
-### .zip: first time setup
-* run `cd setup/zipbuild && ./build_container.sh` to produce `Autograder.zip` file, which will be located in `setup/build/`. You'll want to keep this `.zip` file around, as you can re-use it on subsequent assignments. 
-
-### .zip: per-assignment todo
-* On Gradescope, after creating the programming assignment:
-    * Go to the `configure autograder` section.
-    * Select `Ubuntu 22.04` for the container type.
-    * Upload the `Autograder.zip` file
-* It should build and be tagged with no errors - this will take ~5 minutes.
-
-### Docker: first-time setup
-0. Install Docker Desktop https://www.docker.com/products/docker-desktop/. 
-1. You will need to host your container somewhere. We suggest using the [GitHub container registry](https://docs.github.com/en/packages/working-with-a-github-packages-registry/working-with-the-container-registry), but a Dockerhub 'pro' (paid) account will also work.
-2. For either registry, you will need a username and password/access token for that registry.
-3. See the [docker] section of `etc/config.toml`. You'll need to update the values of these variables as needed. Note that in this case `GHUNAME` and `GHPAT` are the names of environment variables (NOT the values of the variables themselves). So with this example you'd need `export GHUNAME='myghubusername'` in your `~/.bashrc`, etc. Run `source ~/.bashrc` after editing the file.
-
-|     KEY          |        Default       |        Purpose       |
-|------------------|----------------------|----------------------|
-| `CONTAINER_REMOTE`  | `ghcr.io` | Which container registry you use (default is GitHub) |
-| `CONTAINER_NAME` | `gradescope-docker` | Name of the package repo that will hold your autograding docker container. |
-| `CONTAINER_TAG` | `autograder-autobuild` | Tag of the container which will be used for the course's autograder. One tag will be used per course| 
-| `REGISTRY_USER_VARNAME` | `GHUNAME` | Variable name of the environment variable which holds the username to login to the `CONTAINER_REMOTE`. 
-| `REGISTRY_PASS_VARNAME` | `GHPAT` | Variable name of the environment variable which holds the password/access token to login to the `CONTAINER_REMOTE` [NB: The PAT needs write:packages permissions]. 
-
-4. Build and deploy the container. 
-```shell
-cd setup/dockerbuild
-python3 deploy_container.py
+#
+# [style] contains auto style-checker info
+#
+# NON_CODE_STYLE_CHECKSET -> files to stylecheck outside of code (e.g. 80 cols)
+# CODE_STYLE_CHECKSET     -> files to stylecheck for code stuff
+# MAX_COLUMNS             -> max allowable columns for 'good style'
+# XXXXXX_STYLE_WEIGHT     -> relative points to take off for:
+#     COLUMNS -> exceeding MAX_COLUMNS
+#     TABS    -> tab characters
+#     TODOS   -> string "TODO"
+#     SYMBOL  -> &&, ||, !, etc.
+#     BREAK   -> "break"
+#     BOOLEAN -> x == true, y == false
+NON_CODE_STYLE_CHECKSET = ['README', '.h', '.cpp']
+CODE_STYLE_CHECKSET     = ['.h', '.cpp']
+MAX_COLUMNS             = 80
+COLUMNS_STYLE_WEIGHT    = 1
+TABS_STYLE_WEIGHT       = 1
+TODOS_STYLE_WEIGHT      = 0.5
+SYMBOL_STYLE_WEIGHT     = 0.5
+BREAK_STYLE_WEIGHT      = 0.5
+BOOLEAN_STYLE_WEIGHT    = 0.5
 ```
-5. For either registry, after uploading your container [keep it private!], you will need to share it with gradescope's relevant account - this will only have to be done once.
-* from github: `gradescope-autograder-servers` 
-* from dockerhub: `gradescopeecs`
 
-### Docker - per-assignment todos
-Select the `Manual Docker Configuration` option in the `configure autograder` section of the assignment; place the full remote path to your container (e.g. `ghcr.io/ghubusername/ghubpackageregistry:dockertag`). Gradescope will then immediately be able to use your container.
 
-### When to Rebuild the Container
-In general, you will only need to build `Autograder.zip` or to deploy your docker container once. However, notable exceptions include
-* Changes to the variables in the `etc/config.toml` file
-* Changes to the values of any of the environment variables referenced to by the `etc.toml` file
-* Changes to any of the files in the `dockerbuild` or `zipbuild` folders
-* Changes to the `bin/run_autograder` script
-* If you make major changes to the repo, such that the time taken to `git pull` is becoming more than you'd like.
 
-## Token Management
-At Tufts, we have a system for students to be able to manage late submissions with 'tokens'. The token system is flexible and generally works well. The idea is that the students maintain a bank of X tokens, where each token is effectively a 1-day extension on a given assignment. For any assignment, the maximum number of tokens a student can use is usually 2 - so up to 2 days late. If you don't want to use tokens, just skip this section.
 
-### Postgres
-The solution presented here to manage tokens is Postgres. All of the connection to the server is maintained in the back-end of the scripts here: you only have to setup the server (free), create one environment variable on your system, and tweak a few options in `etc/config.toml`.
 
-The way the postgres table will be organized, there will be one row per student, with one column representing the tokens remaining ('tokens left'), and one column per assignment. These will be created automatically. The value of the assignment columns will default to 0, and will increase by 1 for each token the student uses on that assignment. Likewise, the 'tokens left' value will decrement for each token used. 
-
-For even a few hundred students, the free 'TinyTurtle' option at ElephantSQL should work fine. 
-1) Create an account at ElephantSQL and a new TinyTurtle database (free) [or, make and host a postgres db somewhere else].
-2) Run the following query to build the table. With ElephantSQL you can do this in the browser.  Change the value 5 below to the number of tokens you would like your students to have for the semester. Make sure to copy everything else exactly.
-```sql
-CREATE TABLE tokens(pk NAME PRIMARY KEY, 
-                    "tokens left" INTEGER DEFAULT 5);
+## Establish the CI/CD Runner
+In order for code to be run when you `git push`, we need a `runner`. Fortunately, the Tufts EECS staff have setup the requisite infrastucture such that getting this ready is straightforward. Before we get it running, you'll need a registration token. In the `gitlab.cs.tufts.edu` web interface, click the settings cog (lower-left side of the screen), and then select CI/CD. Expand the `runners` section. Keep this handy. Now, open a shell.
 ```
-3) Copy the URL for the db (in ElephantSQL this is in the details section). Add a line to your `~/.bashrc` as done in previous examples above. The default variable name is `POSTGRES_REMOTE_PATH`, although you may pick another one. The line should look like this:
-```shell
-export POSTGRES_REMOTE_PATH="postgres://abcdefgh:nSgKEZiD55VdHDlzDXNBT@drona.db.elephantsql.com/abcdefgh"
+ssh your-utln@linux.cs.tufts.edu
+ssh vm-podman01
+gitlab-runner register
 ```
-4) Update the variables in the `[tokens]` section of the `etc/config.toml` file. Make sure to set `MANAGE_TOKENS` to `true`. 
+Here are the variables you'll need:
+* GitLab instance URL: https://gitlab.cs.tufts.edu
+* Registration Token: (what you copied above)
+* Description, Tags, and Maintenance Note: [optional] whatever you'd like
+* Executor: `shell`
 
-|     KEY          |        Default       |        Purpose       |
-|------------------|----------------------|----------------------|
-| `GRACE_TIME`   | `15` | Number of minutes you give the students as 'grace' when they submit |
-| `TOKEN_TIME`      | `1440` | Length in minutes that one token provides (default is 24 hours). |
-| `STARTING_TOKENS` | `5` | Number of tokens each student has at the start of a semester | 
-| `MAX_PER_ASSIGN` | `2` | Maximum number of tokens supported for a given assignment. [NOTE: this must be 2 for now, more/less are not yet supported] | 
-| `MANAGE_TOKENS` | `false` | Whether or not to do token management [default of `false` skips tokens entirely] |
-| `POSTGRES_REMOTE_VARNAME` | `"POSTGRES_REMOTE_PATH"` | Variable name of the environment variable which holds the URL of the postgres db. [NOTE!! this variable is substitued with the actual value and put into the container at build time; if you change either the value here, or the actual value of the URL in your `~/.bashrc` file, you will need to rebuild your container. This goes for both Docker and zip build methods.] |
+Now, copy the following text and put it in a file on the halligan server located at `~/.config/containers/storage.conf` [make the directories if needed]. Make sure to update your utln for the `graphroot` variable.
+```toml
+[storage]
+driver = "overlay"
+graphroot = "/var/tmp/YOUR_HALLIGAN_UTLN_HERE/containers/storage"
 
-Now, every time a student submits, prior to the autograder running, tokens will be checked if the assignment is late. If the token check fails, the autograder will fail immediately. You will want to let students know that in Gradescope, if they click 'Submission History' at the bottom of the autograder page, they can 'activate' a different submission. Thus, they can choose which submission they would like to be used for grading. 
+[storage.options.overlay]
+ignore_chown_errors = "true"
+```
+Lastly, run the command:
+```bash
+gitlab-runner run &
+```
+At this point the runner will start running. You can exit out of the terminal, and due to the system configuration, this runner will stay alive. Now refresh the web page in the gitlab interface and expand the `runners` section again - you should see your runner available. **One thing to ensure - select the pencil icon next to the runner name, and make sure `Run untagged jobs` is checked. Good!** Now, Go back to the CI/CD settings, and expand the `variables` section. Add 2 variables here.
 
-Note also that students rows and assignment columns will be added the database automatically by the autograder. 
-
-You may also manually adjust tokens for whatever reason with the script `validate_submission.py` in `bin/`. This script assumes that you have (in the above case), `POSTGRES_REMOTE_PATH=...` in your `~/.bashrc`. It will communicate with the database and allows you to perform a variety of useful operations for a given student. 
-
-## Security
-Security concerns have been raised re: Gradescope's containers by a number of people over the years. Our approach to maximizing security is as follows:
-* A non-root user is created (named `student`) during the container build process. 
-* Prior to running any element of a student's submitted code, all of the files of the repository and configuration files created during the build process are chmodded such that they are not visible to `student`.
-* All subprocess calls which interact with student code in any way [e.g. via `make`, or executing files produced by `make`], are run as the user `student`. 
-This ensures that any time student's code is run, they should not be able to see any of the back-end autograding files. 
+| Variable Key  |    <div style="width:295px">Example Value</div> | Purpose |
+|----------|--------------------|------|
+| `AUTOGRADING_ROOT` | `autograding/` | Directory path in you repo where the autograding folder is. |
+| `REPO_WRITE_DEPLOY_TOKEN` | ... | Deploy token for your repository. Create one in the gitlab web interface with settings->access tokens. The token must have `read_repository` and `write_repository` permissions, and must have at least the `maintainer` role |
 
 ## Conclusion
 Continue to the next section to learn about the autograding framework, and for a walkthrough to setup an assignment. 

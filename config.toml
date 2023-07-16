@@ -1,0 +1,114 @@
+# config.toml
+# course configuration file 
+# Matt Russell
+
+[repo]
+#
+# the [repo] section contains information related to the directory 
+# structure of the repository. 
+#
+#
+# AUTOGRADING_ROOT -> path to the course autograding files (bin/ and etc/)
+# ASSIGN_ROOT      -> path to the directory that holds assignment folders
+# ASSIGN_AG_DIR    -> path within an assignment where autograding files are
+# ASSIGN_SOL_DIR   -> path within an assignment which has the solution
+#
+# with the variables set as below, expected structure from the repo root is:
+#
+# autograding/           -> AUTOGRADING_ROOT
+#     bin/
+#     etc/
+# assignments/           -> ASSIGN_ROOT
+#     assign_one/
+#         autograder/    -> ASSIGN_AG_DIR
+#         solution/      -> ASSIGN_SOL_DIR
+#         ...[anything]
+#     assign_whatever/
+#         autograder/    -> ASSIGN_AG_DIR
+#         solution/      -> ASSIGN_SOL_DIR
+#         ...[anything]
+#     ...[other assigns]
+# ...[anything]
+#
+# NOTE: no terminating slashes, but path/to/here is fine.
+#
+AUTOGRADING_ROOT = "autograding" 
+ASSIGN_ROOT      = "assignments" 
+ASSIGN_AG_DIR    = "autograder"  
+ASSIGN_SOL_DIR   = "solution"
+
+
+[halligan]
+#
+# the [halligan] section contains variables relating to storage of 
+# data from the course repo on the halligan server.
+#
+# course code will be:
+#   1) placed in /g/${COURSE_NUM}/${TERM}
+#   2) created as the user ${FILE_OWNER}
+#   3) chgrp'd as ${FILE_GROUP}
+COURSE_NUM = 15
+TERM       = "2023s"
+FILE_GROUP = "ta15"
+FILE_OWNER = "mrussell"
+
+
+
+[tokens]
+#
+# the [tokens] section contains token-related information. 
+# 
+# MANAGE_TOKENS   -> whether to manage tokens or not
+# GRACE_TIME      -> submission time is subtracted by this value (in minutes)
+# TOKEN_TIME      -> time per token (in minutes)
+# STARTING_TOKENS -> value in all students accounts to begin the semester
+#                       note: this value *is* modifiable mid-semester
+#
+# MAX_PER_ASSIGN  -> maximum number of tokens a student can use per assignment
+#                       note: for now MUST be 2, so tweak TOKEN_TIME instead
+#
+# EXCEPTIONS      -> dictionary of the form "TOKEN USER" = MAX_TOKENS
+#                       note: must EXACTLY match the student's gradescope name
+MANAGE_TOKENS   = true
+GRACE_TIME      = 15   # 15 minutes
+TOKEN_TIME      = 1440 # 24 hours
+STARTING_TOKENS = 5
+MAX_PER_ASSIGN  = 2    # NOTE: 2 is the only valid value atm
+[tokens.EXCEPTIONS]
+"Matthew P. Russell" = 1
+
+[misc]
+#
+# [misc] contains other miscellaneous information
+#
+# SUBMISSIONS_PER_ASSIGN -> max submissions each student has per assignment
+#                               note: is overridable an assign's testset.toml
+#
+# TEST_USERS -> gradescope users who are exempt from submission validation
+SUBMISSIONS_PER_ASSIGN = 5
+#TEST_USERS             = ["Matthew P. Russell"]
+
+
+[style]
+#
+# [style] contains auto style-checker info
+#
+# NON_CODE_STYLE_CHECKSET -> files to stylecheck outside of code (e.g. 80 cols)
+# CODE_STYLE_CHECKSET     -> files to stylecheck for code stuff
+# MAX_COLUMNS             -> max allowable columns for 'good style'
+# XXXXXX_STYLE_WEIGHT     -> relative points to take off for:
+#     COLUMNS -> exceeding MAX_COLUMNS
+#     TABS    -> tab characters
+#     TODOS   -> string "TODO"
+#     SYMBOL  -> &&, ||, !, etc.
+#     BREAK   -> "break"
+#     BOOLEAN -> x == true, y == false
+NON_CODE_STYLE_CHECKSET = ['README', '.h', '.cpp']
+CODE_STYLE_CHECKSET     = ['.h', '.cpp']
+MAX_COLUMNS             = 80
+COLUMNS_STYLE_WEIGHT    = 1
+TABS_STYLE_WEIGHT       = 1
+TODOS_STYLE_WEIGHT      = 0.5
+SYMBOL_STYLE_WEIGHT     = 0.5
+BREAK_STYLE_WEIGHT      = 0.5
+BOOLEAN_STYLE_WEIGHT    = 0.5

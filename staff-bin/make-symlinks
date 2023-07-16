@@ -1,0 +1,32 @@
+#!/bin/bash
+# setup-symbolic-links
+# mrussell
+# 9/18/2021
+# this command will export the commands needed to make symbolic links in the
+# files/ directory that link to ../assignments/assignname/files directories
+
+cd ../files
+
+# find the names of each of the assigments/labs/projects
+NAMES=$(find ../assignments/*/files -maxdepth 0 -type d | xargs -0 | cut -d "/" -f 3)
+
+for name in $NAMES; do
+
+    # remove a symlink if it exists already
+    if [ -L $name ]; then
+        rm $name
+    fi
+
+    ln -s ../assignments/$name/files $name
+done
+
+
+cd ../public_html/
+for name in $NAMES; do
+    # remove a symlink if it exists already
+    if [ -L $name ]; then
+        rm $name
+    fi
+    
+    ln -s ../assignments/$name/spec/$name.pdf $name.pdf
+done

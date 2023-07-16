@@ -1,0 +1,32 @@
+#!/bin/bash 
+
+# restore-permissions
+# this script 'resets' permissions for directories in cs-15
+# matt russell
+# Notes: 
+# it's expected that reveal-current-assignments will be called after this script
+
+cd ..
+
+chmod 775 ./
+
+# students can read and execute files
+chmod -R 775 bin
+
+# students can read files and read/navigate directories
+chmod -R u=rwX,go=rX public_html files 
+
+# students can navigate directories, can't read anything (yet)
+chmod -R u=rwX,g=rX,o=X assignments 
+
+# students can't do anything
+chmod -R u=rwX,g=rX,o-rwx staff-docs admin
+
+# staff can execute
+chmod -R 750 staff-bin
+
+# staff can read, write, execute [for hitme updates]
+chmod -R 770 staff-bin/hitme
+
+cd staff-bin
+./reveal-current-assignments

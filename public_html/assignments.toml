@@ -1,0 +1,76 @@
+# each assignment is a dictionary of the following form
+
+# [servername] -> (dictionary key), is the path for assignments/<servername>
+#   out     -> [required] out date for students [will out files / be used for date outd on calendar]
+#   e_out   -> [optional] out date for early access [will out files early but show date on web calendar still as out]
+#   label   -> [optional] label for the website
+#   name    -> [optional] name to use on the website
+#   due     -> [optional] due date for students (for website link colors)
+#   fname   -> [optional] name of the spec file (default: <servername>.pdf)
+#   a_type  -> [optional] one of [hw, lab, proj, prelab, misc]
+#   folders -> [optional] list of subfolders to reveal (default: ["files", "spec"] for non-prelab, ["prelab"] otherwise)
+
+[hw_arraylists]
+    out = "2023-06-01 20:00:00"
+
+[hw_linkedlists]
+    out = "2023-06-08 20:00:00"
+    
+[proj_MetroSim]
+    out = "2023-06-15 20:00:00"
+        
+[hw_bst]
+    out = "2023-07-06 21:00:00"
+
+[hw_gerp]
+    out = "2023-07-20 21:30:00"
+      
+[lab_system_setup]
+    e_out = "2023-05-20 20:00:00"
+    out = "2023-05-25 20:00:00" 
+    
+[lab_arraylists]
+    out = "2023-06-01 20:00:00"
+
+[lab_linkedlists]
+    out = "2023-06-08 20:00:00"
+
+[lab_stacks_queues_cb]
+    out = "2023-06-15 20:00:00"
+
+[lab_recursion]
+    out = "2023-06-22 20:00:00"
+
+[lab_make]
+    out = "2023-06-26 20:00:00"
+    
+[lab_tree_traversals]
+    out = "2023-07-06 20:00:00"
+
+[lab_avl_trees]
+    out = "2023-07-06 20:00:00"
+
+[lab_heaps]
+    out = "2023-07-13 20:00:00"
+        
+[lab_hashing]
+    out = "2023-07-20 20:00:00"
+
+[lab_dijkstras]
+    out = "2023-07-27 20:00:00"    
+    fname = "lab_dijkstras.pdf"
+
+[lab_sorting]
+    out = "2023-08-03 20:00:00"
+
+[midterm_review]
+    out = "2023-06-22 20:00:00"
+    a_type = "misc"
+
+#         {
+#             "name": "Dijkstra's Worksheet Solutions", 
+#             "out": "2023-4-18 19:00:00", 
+#             "fname": "dijkstra_solution", 
+#             "spectype": ".pdf",
+#             "labname": "lab12_Dijkstras_algorithm"
+#         },
