@@ -1,32 +1,37 @@
 #!/bin/bash
-# setup-symbolic-links
+# make-symlinks
 # mrussell
 # 9/18/2021
-# this command will export the commands needed to make symbolic links in the
-# files/ directory that link to ../assignments/assignname/files directories
+# 7-16-2023 - simplified the script; load course config info from config.toml
+#
+# Assumes staff-bin, which contains this file, is in the root of the repo
+# Assumes pdfs are named the same as the assignment name + .pdf
+#
+python3 -m pip install toml-cli &> /dev/null
 
-cd ../files
+SCRIPT_DIR=$( cd -- "$( dirname -- "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )
+cd $SCRIPT_DIR/..
+
+COURSE_NUM=$(toml get halligan.COURSE_NUM)
+TERM=$(toml get halligan.TERM)
+ASSIGN_ROOT=$(toml get assignments.root)
+COURSE_ROOT=/g/${COURSE_NUM}/${TERM}
 
 # find the names of each of the assigments/labs/projects
-NAMES=$(find ../assignments/*/files -maxdepth 0 -type d | xargs -0 | cut -d "/" -f 3)
+NAMES=$(find ${COURSE_ROOT}/${ASSIGN_ROOT}/*/files -maxdepth 0 -type d | xargs -0 | rev | cut -d "/" -f 2 | rev)
 
 for name in $NAMES; do
 
     # remove a symlink if it exists already
-    if [ -L $name ]; then
-        rm $name
+    if [ -L ${COURSE_ROOT}/files/${name} ]; then
+        rm ${COURSE_ROOT}/files/${name}
     fi
 
-    ln -s ../assignments/$name/files $name
-done
-
-
-cd ../public_html/
-for name in $NAMES; do
-    # remove a symlink if it exists already
-    if [ -L $name ]; then
-        rm $name
+    if [ -L ${COURSE_ROOT}/public_html/${name}.pdf ]; then
+        rm ${COURSE_ROOT}/public_html/${name}.pdf
     fi
-    
-    ln -s ../assignments/$name/spec/$name.pdf $name.pdf
+
+    ln -s ${COURSE_ROOT}/${ASSIGN_ROOT}/${name}/files            files/${name}
+    ln -s ${COURSE_ROOT}/${ASSIGN_ROOT}/${name}/spec/${name}.pdf public_html/${name}.pdf
+
 done

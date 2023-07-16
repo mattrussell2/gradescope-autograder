@@ -1,20 +1,19 @@
 # Notes
 1) If you are not part of the Tufts community, or don't want to use the CI/CD pipeline described below, please see the 'global' repo branch; this is a more general variant that anyone can use without Tufts infrastructure. 
-2) Before beginning, you will need access to the **`course-repos`** group under the tufts eecs gitlab instance. If you don't have access to this group, email `mrussell at cs dot tufts dot edu` and he'll add you. If you have never logged into `gitlab.cs.tufts.edu` before, please do so; login with `LDAP` using your Tufts eecs `utln` and password. You will need to do this prior to sending him the email. 
+2) Before beginning, you will need access to the **`course-repos`** group under the tufts eecs gitlab instance. If you don't have access to this group, email your eecs `utln` to `mrussell at cs dot tufts dot edu` and he'll add you. If you have never logged into `gitlab.cs.tufts.edu` before, login with `LDAP` using your Tufts eecs `utln` and password. You will need to do this prior to sending him the email. 
 
-# Tufts Course Setup
-Although Tufts provides a great set of tools for faculty, developing and maintaining course infrastructure is nevertheless quite a challenge. This repository leverages a CI/CD framework, along with a custom autograding platform, to make life ez-pz for you. 
+# Introduction
+Although Tufts provides a great set of tools for faculty, developing and maintaining course infrastructure is nevertheless quite a challenge. This repository leverages a CI/CD framework, along with a custom autograding platform, to make life as straightforward as possible for you. 
 
-## CI/CD Overview
-The essential infrastructure component here here is a gitlab CI/CD pipeline which `automagically` performs up to three tasks every time you push changes to the repo. 
-1) Update course files and (file permissions!) on the halligan server.
-2) Build a gradescope autograding docker container that will work for all the assignments in your course. 
-3) Create reference solution outputs for any given assignment.
+The organizing principle of the process here is that everything is centered around the course `git` respository. This repository will be the place where you interact with files, and will be  connected to a `runner` which runs a preconfigured `CI/CD` pipeline on the halligan servers. This way, every time you push code to the repo, up to three tasks will happen automatically 
+1) Course files and (file permissions!) will be updated on the halligan server.
+2) A gradescope autograding docker container that will work for all the assignments in your course will be rebuilt if necessecary. 
+3) Reference solution outputs for any given assignment will be created if needed.
 
-## Create Your Autograding Git Repo
-In a web browser, navigate to `https://gitlab.cs.tufts.edu/course-repos`. If your course is not listed under the available groups, please create a new one for your course. If you'd like to make a further subgroup, feel free, but that's up to you. After making your group/subgroups, navigate to the one you'll use and select the `New Project` button; pick `Create a blank project`. Choose a slug that reflects both your course and the term. We suggest 'COURSENUM-TERM', for instance: `cs15-2023s`. **Don't** initialize with a README. Great! Now, in your terminal clone this repo to get the relevant files. 
+# Create Your Autograding Git Repo
+In a web browser, navigate to `https://gitlab.cs.tufts.edu/course-repos`. If your course is not listed under the available groups, please create a new one for your course. If you'd like to make a further subgroup, feel free to do so. After making your group/subgroups, navigate to the one you'll use and select the `New Project` button; pick `Create a blank project`. Choose a slug that reflects both your course and the term. We suggest 'COURSENUM-TERM', for instance: `cs15-2023s`. **Don't** initialize with a README. Great! Now, in your terminal
 ```
-git clone git@gitlab.cs.tufts.edu:mrussell/gradescope-autograding
+git clone git@gitlab.cs.tufts.edu:mrussell/gradescope-autograder
 mv gradescope-autograding WHATEVER_FOLDER_YOU_WANT
 cd WHATEVER_FOLDER_YOU_WANT
 rm -rf .git
@@ -25,8 +24,8 @@ git commit -m "First commit"
 git push -u origin YOUR_DEFAULT_BRANCH_HERE
 ```
 
-## Repository Structure
-The organization of the directory structure is configurable, but for the various systems to work properly, there must be some well-defined directory structure. The default structure is as follows
+# Repository Structure
+The default expected repository structure is as follows. Note that some of these paths are configurable - see `config.toml` below for details.
 ```
 .
 |--- assignments/              
@@ -49,30 +48,33 @@ The organization of the directory structure is configurable, but for the various
 |--- public_html/
 |--- staff-bin/
 |- config.toml
-|-
+|
 ```
-Some of these paths are configurable - see `config.toml` for details.
 
-### per-assignment structure
+## per-assignment structure
 Each assignment usually contains 4 folders
-* **`autograder`** - contains autograding files; is covered in detail later in this document.
+* **`autograder`** - contains autograding files; this is covered in detail later in this document.
 * **`solution`** - contains the solution code. 
 * **`files`** - contains all student-facing code files.
 * **`spec`** - contains all spec-related files.
 
-Add additional folders as you need to.  
+Add additional folders as you need.  
 
-### **files** and **public_html** directories
-The top-level **`files`** and **`public_html`** directories have symlinks which point to the actual files; these are useful to provide an easy access for students to web links, and to copy starter code on the halligan server. To make symlinks, you can run the `staff-bin/make-symlinks` script, although this script depends on the default directory structure, so you will need to configure it as necessary if you change things. 
+## **files** and **public_html** directories
+The top-level **`files`** and **`public_html`** directories have symlinks - these are useful to provide an easy access for students to access course files. 
+* `public_html/` contains symlinks to the `assignments/${assign_name}/spec/${assign_name}.pdf` spec files
+* `files/` contains symlinks to the `assignments/${assign_name}/files` directory wich contains copy starter code.
 
-### **bin**
+The script `staff-bin/make-symlinks` will make these symlinks for you automatically. Note that if you change any of the file paths that are **not** in the `[repo]` section of `config.toml` (see below) you'll have to specify them in the script.   
+
+## **bin**
 Contains code executable by students 
 
-### **staff-bin**
+## **staff-bin**
 Contains code executable by staff
 
-### **`config.toml`**
-The `config.toml` file contains various essential bits of information related to the directory structure, and the CI/CD pipeline. Please configure it as appropriate.
+# **`config.toml`**
+The `config.toml` file contains various essential bits of information related to the directory structure, and your course configuration in general. Please configure it as appropriate.
 
 
 ```toml
@@ -161,8 +163,8 @@ BREAK_STYLE_WEIGHT      = 0.5
 BOOLEAN_STYLE_WEIGHT    = 0.5
 ```
 
-## Establish the CI/CD Runner
-In order for code to be run when you `git push`, we need a `runner`. Fortunately, the Tufts EECS staff have setup the requisite infrastucture such that getting this ready is straightforward. Before we get it running, you'll need a registration token. In the `gitlab.cs.tufts.edu` web interface, click the settings cog (lower-left side of the screen), and then select CI/CD. Expand the `runners` section. Keep this handy. Now, open a shell.
+# Establish the CI/CD Runner
+In order for code to be run (see the .gitlab-ci.yml section below) when you `git push`, we need a `runner`. Fortunately, the Tufts EECS staff have setup the requisite infrastucture such that getting this ready is straightforward. Before we get it running, you'll need a registration token. In the `gitlab.cs.tufts.edu` web interface, click the settings cog (lower-left side of the screen), and then select CI/CD. Expand the `runners` section. Keep this handy. Now, open a shell.
 ```
 ssh your-utln@linux.cs.tufts.edu
 ssh vm-podman01
@@ -194,7 +196,26 @@ At this point the runner will start running. You can exit out of the terminal, a
 | `AUTOGRADING_ROOT` | `autograding/` | Directory path in you repo where the autograding folder is. |
 | `REPO_WRITE_DEPLOY_TOKEN` | ... | Deploy token for your repository. Create one in the gitlab web interface with settings->access tokens. The token must have `read_repository` and `write_repository` permissions, and must have at least the `maintainer` role |
 
+# .gitlab-ci.yml
+The 'magic' all happens by way of the `.gitlab-ci.yml` file, which gitlab works with automatically whenever you run `git push`. The file is already configured to do what you'll need to (assuming your `config.toml` is set up properly). 
 
+## course-repos variables
+To make this all work, the `.gitlab-ci.yml` file relies on gitlab environment variables that are set at a course-repos group level, and which are automatically accessible by every course under that group. **DO NOT MODIFY THESE VARIABLES! Furthemore, these variables contain sensitive information intended to be visible only to trusted members of the Tufts CS community, so please be careful to whom you give privileged access to your course repository!**
+
+## Gitlab-runner jobs
+For reference, again, the three jobs which will run if required are
+### Updating course files and (file permissions!) on the halligan server
+This is done with `rsync`. Remember that the runner runs *on the halligan servers*, so it can do all of this locally. Whichever account created the runner will own the files. They will be chmodded and chgrpd according to `config.toml`.
+
+
+### Building a gradescope autograding docker container
+Gradescope relies on docker containers to do the autograding for your course. One job that the runner will run is to build the container with a clone of your course repo inside of it; it will then upload that 
+
+
+### Building reference output for a given assignment
+If you update the solution code or autograder code for a given assignment, the reference output for that assignment will be rebuilt. This works by the runner loading the solution code into a local copy of the autograding docker container, running the solution as the submission, and copying/pushing the resulting output files back to the repo. For relatively new assignments, often it is useful to debug. Yet, pushing these debugging files to/from the repo is a bit excessive. Therefore, these files will be automatically copied to `/g/COURSE_NUM/TERM/grading/assignment_name/`. `/grading/` is a legacy folder name which is relatively arbitrary here - feel free to update it in the `.gitlab-ci.yml` file. For details on the debug output for the autograder, see the framework below. 
+
+If you'd like to read more of the details, see that file - it is explained in detail. Tweak it to your heart's content!
 
 ## Conclusion
 Continue to the next section to learn about the autograding framework, and for a walkthrough to setup an assignment. 
