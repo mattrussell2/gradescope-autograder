@@ -1,31 +1,15 @@
 # Notes
 1) If you are not part of the Tufts community, or don't want to use the CI/CD pipeline described below, please see the 'global' repo branch; this is a more general variant that anyone can use without Tufts infrastructure. 
-2) Before beginning, you will need access to the **`course-repos`** group under the tufts eecs gitlab instance. If you don't have access to this group, email your eecs `utln` to `mrussell at cs dot tufts dot edu` and he'll add you. If you have never logged into `gitlab.cs.tufts.edu` before, login with `LDAP` using your Tufts eecs `utln` and password. You will need to do this prior to sending him the email. 
+2) Before beginning, you will need to email `mrussell at cs dot tufts dot edu` with a) your eecs utln [note you need to have logged in to gitlab.cs.tufts.edu at least once using `LDAP` with your Tufts eecs `utln` and password], b) which course you are working with (e.g. cs15), and c) what term the course will be for (e.g. spring, fall, etc.). He will create the template repo for you and add you as the `Owner`. This step will enable your repo to access the group-level variables used in the CI/CD pipeline.
 
 # Introduction
-Although Tufts provides a great set of tools for faculty, developing and maintaining course infrastructure is nevertheless quite a challenge. This repository leverages a CI/CD framework, along with a custom autograding platform, to make life as straightforward as possible for you. 
-
-The organizing principle of the process here is that everything is centered around the course `git` respository. This repository will be the place where you interact with files, and will be  connected to a `runner` which runs a preconfigured `CI/CD` pipeline on the halligan servers. This way, every time you push code to the repo, up to three tasks will happen automatically 
+The organizing principle of the process here is to center everything around the course `git` respository. Your repository will be the place where you interact with files, and will be connected to a `runner` which runs a preconfigured `CI/CD` pipeline on the halligan servers. This way, every time you push code to the repo, up to three tasks will happen automatically 
 1) Course files and (file permissions!) will be updated on the halligan server.
-2) A gradescope autograding docker container that will work for all the assignments in your course will be rebuilt if necessecary. 
-3) Reference solution outputs for any given assignment will be created if needed.
-
-# Create Your Autograding Git Repo
-In a web browser, navigate to `https://gitlab.cs.tufts.edu/course-repos`. If your course is not listed under the available groups, please create a new one for your course. If you'd like to make a further subgroup, feel free to do so. After making your group/subgroups, navigate to the one you'll use and select the `New Project` button; pick `Create a blank project`. Choose a slug that reflects both your course and the term. We suggest 'COURSENUM-TERM', for instance: `cs15-2023s`. **Don't** initialize with a README. Great! Now, in your terminal
-```
-git clone git@gitlab.cs.tufts.edu:mrussell/gradescope-autograder
-mv gradescope-autograding WHATEVER_FOLDER_YOU_WANT
-cd WHATEVER_FOLDER_YOU_WANT
-rm -rf .git
-git init
-git remote add origin git@gitlab.cs.tufts.edu:course-repos/PATH/TO/YOUR/REPO.git
-git add .
-git commit -m "First commit"
-git push -u origin YOUR_DEFAULT_BRANCH_HERE
-```
+2) A gradescope autograding docker container that will work for all the assignments in your course will be rebuilt if necessary. 
+3) Reference solution outputs for any given assignment will be generated if needed.
 
 # Repository Structure
-The default expected repository structure is as follows. Note that some of these paths are configurable - see `config.toml` below for details.
+Once you have received the email from `mrussell`, clone your repo. Let's investigate the components of the code provided. The default expected repository structure is as follows. Note that some of these paths are configurable - see `config.toml` below for details.
 ```
 .
 ├── assignments
@@ -76,7 +60,6 @@ Contains code executable by staff
 # **`config.toml`**
 The `config.toml` file contains various essential bits of information related to the directory structure, and your course configuration in general. Please configure it as appropriate.
 
-
 ```toml
 # These correspond to the folders above
 [repo]
@@ -101,6 +84,7 @@ TERM       = "2023s"
 FILE_GROUP = "ta15"
 FILE_OWNER = "mrussell"
 ```
+
 ```toml
 [tokens]
 #
@@ -125,6 +109,7 @@ MAX_PER_ASSIGN  = 2
 [tokens.EXCEPTIONS]
 "Matthew P. Russell" = 1
 ```
+
 ```toml
 [misc]
 #
@@ -137,6 +122,7 @@ MAX_PER_ASSIGN  = 2
 SUBMISSIONS_PER_ASSIGN = 5
 TEST_USERS             = ["Matthew P. Russell"]
 ```
+
 ```toml
 [style]
 #
@@ -193,27 +179,36 @@ At this point the runner will start running. You can exit out of the terminal, a
 
 | Variable Key  |    <div style="width:295px">Example Value</div> | Purpose |
 |----------|--------------------|------|
-| `AUTOGRADING_ROOT` | `autograding/` | Directory path in you repo where the autograding folder is. |
+| `AUTOGRADING_ROOT` | `autograding` | Directory path in you repo where the autograding folder is - should be the same as the `AUTOGRADING_ROOT` variable in the `config.toml` file |
 | `REPO_WRITE_DEPLOY_TOKEN` | ... | Deploy token for your repository. Create one in the gitlab web interface with settings->access tokens. The token must have `read_repository` and `write_repository` permissions, and must have at least the `maintainer` role |
 
-# .gitlab-ci.yml
-The 'magic' all happens by way of the `.gitlab-ci.yml` file, which gitlab works with automatically whenever you run `git push`. The file is already configured to do what you'll need to (assuming your `config.toml` is set up properly). 
+# Notes on podman
+* Note that the eecs server uses `podman`, as `RHEL` doesn't directly support docker.
+* You can expect that the disk usage on your system will be directly proportional to the number of available processes you provide to your runner, as each separate process has its own clone of the repo. 
+* `podman` containers **cannot** be mounted on nfs drives (e.g. your home directory); this is one of the reasons the `storage.conf` file is necessary above. 
+* Despite that your containers will be built in `/var/tmp/YOUR_HALLIGAN_UTLN_HERE/containers/storage`, there is still a upper-limit to the storage space. I ran out at ~20gb. A few handy `podman` commands in regard to this
+    * podman system df          -> shows your podman disk usage
+    * podman system prune --all -> frees unused space from podman
+                                -> note that the output re: space freed can be misleading if your containers share layers. 
+* If the EECS folks have to restart the `vm-podman01` server, for now you will have to manually restart your runner (`gitlab-runner run &`). 
 
-## course-repos variables
-To make this all work, the `.gitlab-ci.yml` file relies on gitlab environment variables that are set at a course-repos group level, and which are automatically accessible by every course under that group. **DO NOT MODIFY THESE VARIABLES! Furthemore, these variables contain sensitive information intended to be visible only to trusted members of the Tufts CS community, so please be careful to whom you give privileged access to your course repository!**
+# .gitlab-ci.yml
+The 'magic' here all happens by way of the `.gitlab-ci.yml` file, which gitlab works with automatically whenever you run `git push`. The file is already configured to do what you'll need to (assuming your `config.toml` is set up properly). 
+
+## NOTE: **`course-repos`** group-level variables
+To make this all work, the `.gitlab-ci.yml` file also relies on some gitlab environment variables that are set at a course-repos group level, and which are automatically accessible by every course under that group. **DO NOT MODIFY THESE GROUP-LEVEL VARIABLES! Furthemore, these variables contain sensitive information intended to be visible only to trusted members of the Tufts CS community, so please be careful to whom you give privileged access to your course repository!**
 
 ## Gitlab-runner jobs
-For reference, again, the three jobs which will run if required are
-### Updating course files and (file permissions!) on the halligan server
-This is done with `rsync`. Remember that the runner runs *on the halligan servers*, so it can do all of this locally. Whichever account created the runner will own the files. They will be chmodded and chgrpd according to `config.toml`.
+For reference, again, the three jobs which will run automatically (if required) on `git push` are
 
+### Updating course files and (file permissions!) on the halligan server
+This is done with `rsync`. Remember that the runner runs *on the halligan servers*, so it can do all of this locally. Whichever account created the runner will own the files. They will be chmodded and chgrpd according to `config.toml`. The scripts `autograding/bin/restore-permissions` and `autograding/bin/reveal-current-assignments` will be run to rework the permissions of all the files in the repo, according to the release dates in the file `public_html/assignments.toml`.
 
 ### Building a gradescope autograding docker container
-Gradescope relies on docker containers to do the autograding for your course. One job that the runner will run is to build the container with a clone of your course repo inside of it; it will then upload that 
-
+Gradescope relies on docker containers to do the autograding for your course. One job that the runner will run is to build the container with a clone of your course repo inside of it; it will then upload that container to a private dockerhub repository at the location: **`tuftscs/gradescope-autograder:YOUR_COURSE_SLUG`**. This will happen automatically, so after it uploads, you simply need to enter this address in gradescope under the manual docker configuration for an autograding assignment. It will work immediately after the `CI/CD` job finishes. Note that the names in gradescope for your autograding assignments must match their names in the `assignments/` folder, with the exception that space characters on gradecsope are converted to underscores by the autograder. 
 
 ### Building reference output for a given assignment
-If you update the solution code or autograder code for a given assignment, the reference output for that assignment will be rebuilt. This works by the runner loading the solution code into a local copy of the autograding docker container, running the solution as the submission, and copying/pushing the resulting output files back to the repo. For relatively new assignments, often it is useful to debug. Yet, pushing these debugging files to/from the repo is a bit excessive. Therefore, these files will be automatically copied to `/g/COURSE_NUM/TERM/grading/assignment_name/`. `/grading/` is a legacy folder name which is relatively arbitrary here - feel free to update it in the `.gitlab-ci.yml` file. For details on the debug output for the autograder, see the framework below. 
+If you update the solution code or autograder code for a given assignment, the reference output for that assignment will be rebuilt. This works by the runner loading the solution code into a local copy of the autograding docker container, running the solution as the submission, and copying/pushing the resulting output files back to the repo. For relatively new assignments, often it is useful to debug. Yet, pushing these debugging files to/from the repo is a bit excessive. Therefore, these files will be automatically copied to `/g/COURSE_NUM/TERM/grading/${ASSIGN_NAME}/results/`. `/grading/` is a legacy folder name which is relatively arbitrary here - feel free to update it in the `.gitlab-ci.yml` file. For details on the debug output for the autograder, see the framework below. 
 
 If you'd like to read more of the details, see that file - it is explained in detail. Tweak it to your heart's content!
 

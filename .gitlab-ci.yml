@@ -147,7 +147,7 @@ deploy autograding container:
 build reference output:
   
   #
-  # If we have to update the container, only build ref output after the fact. 
+  # If we have to update the container for some reason, only build ref output after the fact. 
   #
   needs: 
     - job: deploy autograding container
@@ -171,6 +171,7 @@ build reference output:
     #
     REPO_REMOTE_PATH: https://${CI_PROJECT_NAME}:${REPO_WRITE_DEPLOY_TOKEN}@gitlab.cs.tufts.edu/${CI_PROJECT_PATH}.git
     REMOTE_TAG: ${CONTAINER_REGISTRY}/${CONTAINER_REGISTRY_USER}/${CONTAINER_NAME}:${CI_PROJECT_NAME}
+    GRADER_DEV_FOLDER: "grading"
 
 
   before_script:
@@ -180,6 +181,11 @@ build reference output:
     - export ASSIGN_AG_DIR=$(toml get repo.ASSIGN_AG_DIR)
     - export ASSIGN_SOL_DIR=$(toml get repo.ASSIGN_SOL_DIR)
     - export HALLIGAN_UTLN=$(toml get halligan.FILE_OWNER) 
+    
+    - export HALLIGAN_COURSE_NUM=$(toml get halligan.COURSE_NUM)
+    - export HALLIGAN_TERM=$(toml get halligan.TERM)            
+    - export HALLIGAN_FILE_GROUP=$(toml get halligan.FILE_GROUP)
+    - export HALLIGAN_REPO_PATH="/g/${HALLIGAN_COURSE_NUM}/${HALLIGAN_TERM}" 
 
   script:
     - /bin/bash
@@ -244,6 +250,17 @@ build reference output:
           /autograder/run_autograder
         
         #
+        # for debugging, copy all of the resulting files; don't follow symlinks! [gerp!]
+        # note: chgrp and chmod the parent folder to make sure graders can update everything. 
+        #
+        RESULTS_FOR_GRADERS_PATH=${HALLIGAN_REPO_PATH}/${GRADER_DEV_FOLDER}/${ASSIGN_NAME}/results/
+        if [ -d ${RESULTS_FOR_GRADERS_PATH} ]; then rm -rf ${RESULTS_FOR_GRADERS_PATH}; fi
+        mkdir -p ${RESULTS_FOR_GRADERS_PATH}
+        cp -r --no-dereference results/* ${RESULTS_FOR_GRADERS_PATH}
+        chgrp -R ${HALLIGAN_FILE_GROUP} ${HALLIGAN_REPO_PATH}/${GRADER_DEV_FOLDER}
+        chmod -R 770 ${HALLIGAN_REPO_PATH}/${GRADER_DEV_FOLDER}
+        
+        #
         # .diff files are irrelevant [reference diffing against what?]
         #
         rm results/output/*.diff*
@@ -265,6 +282,6 @@ build reference output:
         #
         cd ${AUTOGRADER}
         git add testset/ref_output
-        git commit -m "build ref output for ${ASSIGN_NAME}"
+        git commit -m "build ref output for ${ASSIGN_NAME}" || echo "No changes to commit or commit failed; reference output is likely the same as it was before"
         git push origin ${CI_COMMIT_BRANCH} -o ci.skip 
       done
