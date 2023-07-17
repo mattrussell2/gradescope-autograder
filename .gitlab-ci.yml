@@ -147,9 +147,11 @@ deploy autograding container:
 build reference output:
   
   #
-  # If we have to update the container for some reason, only build ref output after the fact. 
+  # If we have to update the container, only build ref output after the fact. 
   #
-  needs: [deploy autograding container]
+  needs: 
+    - job: deploy autograding container
+      optional: true
 
   #
   # Only build reference output when changes are made inside of an autograding or solution folder. 
