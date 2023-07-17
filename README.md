@@ -449,7 +449,7 @@ executable   = "studProg"      # all of the tests will run this executable
 [the_tests]
 argv  = ["myDataFile", "${test_ofile_path}.one.ofile", "${test_ofile_path}.two.ofile"] 
 tests = [
-    { testname = "test01", description = "my first test },
+    { testname = "test01", description = "my first test" },
     ...
 ]
 ```
