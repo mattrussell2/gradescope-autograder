@@ -391,8 +391,8 @@ You may specify an `argv` value for a set of tests as well
 [my_group_of_tests]
 argv = ["hello", "world!"] 
 tests = [
-    { testname = "test01", description = "my first test },
-    { testname = "test02", description = "my second test },
+    { testname = "test01", description = "my first test" },
+    { testname = "test02", description = "my second test" },
     { testname = "test03", description = "my third test" } 
 ]
 # ...
