@@ -315,7 +315,6 @@ See the section `test .toml configuration options` for the full details.
 An assignment with course-staff provided `.cpp` driver files is the default behavior for the autograder. Using the `testset.toml` file above, for example, here is one possible configuration of a corresponding (bare-bones) directory structure 
 ```
 .
-|---testrunner.sh     [one-line script that runs the command `autograde`]
 |---testset/          
 |   |---cpp/          [contains .cpp driver files]
 |   |---makefile/     [contains custom Makefile]
@@ -327,7 +326,7 @@ For this simple grading configuration, the autograder assumes that each testname
 
 
 ### testrunner.sh
-Note the file `testrunner.sh`. This is an exteremely simple, one-line script which tyipically just calls `autograde`. Why is it here, you ask? Great question. It's useful to have a unique script used by each autograding assignment which is separate from `run_autograder`. This is so that if you need to make any assignment-specific tweaks - prepping any unusual directories or files, or installing anything special programs, etc., you can simply make the relevant updates in this file and `git push`, without having to rebuild the whole autograding container. However, if you do not need to do anything other than run `autograde` (the default behavior), then the autograding program will work without this script. The examples in this repo feature it, but you may remove it as needed. 
+Note the file `testrunner.sh`. This is an optional script must call `autograde`. Why would you need this, you ask? Great question. It's useful to have a unique script used by each autograding assignment which is separate from `run_autograder`. This is so that if you need to make any assignment-specific tweaks - prepping any unusual directories or files, or installing anything special programs, etc., you can simply make the relevant updates in this file and `git push`, without having to rebuild the whole autograding container. However, if you do not need to do anything other than run `autograde` (the default behavior), then the autograding program will work without this script. Some examples in this repo feature it, but you may remove it as needed. 
 
 ### Course-Staff-Provided Makefile
 Here is an example of a corresponding `Makefile`, which would be in the directory `testset/makefile/`. Note that the `make` program will be run from the directory `results/build`. This example produces a target for each of `test01 ... test59`. Also, note that with this particular `Makefile`, the target to build (e.g. `make target`) must always be named the same as the program to run (e.g. `./target`).
@@ -368,7 +367,7 @@ tests = [
 And the corresponding (bare-bones) directory structure
 ```
 .
-|---testrunner.sh     [script that runs `autograde`]
+|---testrunner.sh     [optional script that runs `autograde`]
 |---testset/          [everything needed to run tests]
 |   |---ref_output/   [output of reference implementation]
 |   |---stdin/        [files to send as stdin to the tests]
