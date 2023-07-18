@@ -280,6 +280,7 @@ build reference output:
         # NOTE: push with -o ci.skip to avoid an infinite loop of rebuilds :)
         #
         cd ${AUTOGRADER}
+        git config pull.rebase true
         git add testset/ref_output
         git commit -m "build ref output for ${ASSIGN_NAME}" || echo "No changes to commit or commit failed; reference output is likely the same as it was before"
         git push origin ${CI_COMMIT_BRANCH} -o ci.skip 
