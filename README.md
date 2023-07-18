@@ -216,6 +216,7 @@ If you'd like to read more of the details, see that file - it is explained in de
 Continue to the next section to learn about the autograding framework, and for a walkthrough to setup an assignment. 
 
 # Autograding Framework
+![autograding image](_images/sanity_check_assignment_output.png)
 
 ## Introduction
 The autograding framework is designed to have you writing and deploying tests as quickly as possible. 
