@@ -134,10 +134,15 @@ deploy autograding container:
     - podman push ${REMOTE_TAG} 
 
     #
-    # cleanup
+    # cleanup secrets file just because
     #
     - rm .secrets
+    
+    #
+    # cleanup podman images so we don't have things lingering, and show current podman disk usage
+    #
     - podman system prune --all --force
+    - podman system df 
 
 
 #
@@ -262,7 +267,7 @@ build reference output:
         #
         # .diff files are irrelevant [reference diffing against what?]
         #
-        rm -f results/output/*.diff*
+        rm results/output/*.diff*
 
         #
         # if the autograder has reference output already, then remove it
@@ -287,6 +292,7 @@ build reference output:
       done
 
     #
-    # cleanup podman images so we don't have things lingering
+    # cleanup podman images so we don't have things lingering, and show current podman disk usage
     #
     - podman system prune --all --force
+    - podman system df 
