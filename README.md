@@ -162,7 +162,7 @@ Here are the variables you'll need:
 * Description, Tags, and Maintenance Note: [optional] whatever you'd like
 * Executor: `shell`
 
-Now, copy the following text and put it in a file on the halligan server located at `~/.config/containers/storage.conf` [make the directories if needed]. Make sure to update your utln for the `graphroot` variable.
+There are two wrinkles with `podman` on our `RHEL` instance: you can't use `podman` on an nfs mount, and the permissions vis-a-vis `UID/GID` issues are tricky. Fortunately there are solutions to both of these problems. Copy the following text and put it in a file on the halligan server located at `~/.config/containers/storage.conf` [make the directories if needed]. Make sure to update your utln for the `graphroot` variable.
 ```toml
 [storage]
 driver = "overlay"
