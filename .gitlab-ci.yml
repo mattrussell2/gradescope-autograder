@@ -31,6 +31,7 @@ update halligan server:
         - public_html/**/*
         - staff-bin/**/*
         - staff-docs/**/*
+        - .gitlab-ci.yml
 
   #
   # extract relevant variables from `config.toml`
@@ -57,7 +58,7 @@ update halligan server:
     #
     # sync the repo with halligan
     #
-    - rsync -a --exclude='.git/' ./ ${HALLIGAN_REPO_PATH}
+    - rsync -a --force --exclude='.git/' ./ ${HALLIGAN_REPO_PATH}
     
     #
     # set course files to the right group

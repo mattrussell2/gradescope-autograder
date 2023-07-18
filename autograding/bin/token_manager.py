@@ -26,8 +26,8 @@ def replaceNonAlphaNum(s, c='_'):
 class DB: 
     def __init__(self, ASSIGN, STUDENT, OPENING_BALANCE, SECRETS):
 
-        self.ASSIGN          = replaceNonAlphaNum(ASSIGN)
-        self.STUDENT         = replaceNonAlphaNum(STUDENT)
+        self.ASSIGN          = replaceNonAlphaNum(ASSIGN).lower()
+        self.STUDENT         = replaceNonAlphaNum(STUDENT).lower()
         self.OPENING_BALANCE = OPENING_BALANCE
 
         self.TOKENS_HOST     = SECRETS['TOKENS_HOST']
@@ -37,7 +37,7 @@ class DB:
         self.MYSQL_PASS      = SECRETS['MYSQL_PASS']
         self.MYSQL_DBNAME    = SECRETS['MYSQL_DBNAME']
         self.MYSQL_LOC       = SECRETS['MYSQL_LOC']
-        self.TABLE           = replaceNonAlphaNum(SECRETS['COURSE_SLUG'])
+        self.TABLE           = replaceNonAlphaNum(SECRETS['COURSE_SLUG']).lower()
 
         self.COMMANDS = {
             'create_table'   : f"CREATE TABLE {self.TABLE}(pk VARCHAR(255) PRIMARY KEY);",
