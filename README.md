@@ -7,6 +7,8 @@ The organizing principle of the process here is to center everything around the 
 1) Course files and (file permissions!) will be updated on the halligan server.
 2) A gradescope autograding docker container that will work for all the assignments in your course will be rebuilt if necessary. 
 3) Reference solution outputs for any given assignment will be generated if needed.
+![pipeline image](_images/gitlab_deploy_pipeline.png)
+
 
 # Repository Structure
 Once you have received the email from `mrussell`, clone your repo. Let's investigate the components of the code provided. The default expected repository structure is as follows. Note that some of these paths are configurable - see `config.toml` below for details.
