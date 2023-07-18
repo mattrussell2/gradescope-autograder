@@ -260,7 +260,7 @@ build reference output:
         #
         # .diff files are irrelevant [reference diffing against what?]
         #
-        rm results/output/*.diff*
+        rm -f results/output/*.diff*
 
         #
         # if the autograder has reference output already, then remove it
