@@ -137,6 +137,7 @@ deploy autograding container:
     # cleanup
     #
     - rm .secrets
+    - podman system prune --all --force
 
 
 #
@@ -240,6 +241,7 @@ build reference output:
         # NOTE: at $PWD/results when the container finishes. 
         #
         podman run                                \
+          --rm                                    \
           --env ASSIGNMENT_TITLE=${ASSIGN_NAME}   \
           -v $PWD/solution:/autograder/submission \
           -v $PWD/results:/autograder/results/    \
@@ -282,3 +284,8 @@ build reference output:
         git commit -m "build ref output for ${ASSIGN_NAME}" || echo "No changes to commit or commit failed; reference output is likely the same as it was before"
         git push origin ${CI_COMMIT_BRANCH} -o ci.skip 
       done
+
+    #
+    # cleanup podman images so we don't have things lingering
+    #
+    - podman system prune --all --force
