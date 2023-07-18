@@ -13,8 +13,6 @@
 # If B and C are both to be run, B runs first.
 # A can run concurrently with either. 
 
-
-
 #
 # This job updates halligan server files and file-permissions. 
 #
@@ -48,7 +46,6 @@ update halligan server:
     - export HALLIGAN_COURSE_NUM=$(toml get halligan.COURSE_NUM)
     - export HALLIGAN_TERM=$(toml get halligan.TERM)            
     - export HALLIGAN_FILE_GROUP=$(toml get halligan.FILE_GROUP)
-    - export HALLIGAN_UTLN=$(toml get halligan.FILE_OWNER) 
     - export HALLIGAN_REPO_PATH="/g/${HALLIGAN_COURSE_NUM}/${HALLIGAN_TERM}" 
   
   script:
@@ -180,7 +177,6 @@ build reference output:
     - export ASSIGN_ROOT=$(toml get repo.ASSIGN_ROOT)
     - export ASSIGN_AG_DIR=$(toml get repo.ASSIGN_AG_DIR)
     - export ASSIGN_SOL_DIR=$(toml get repo.ASSIGN_SOL_DIR)
-    - export HALLIGAN_UTLN=$(toml get halligan.FILE_OWNER) 
     
     - export HALLIGAN_COURSE_NUM=$(toml get halligan.COURSE_NUM)
     - export HALLIGAN_TERM=$(toml get halligan.TERM)            
@@ -201,7 +197,7 @@ build reference output:
     #
     # Determine which assignments' autograder/ or solution/ directories have changed. 
     #
-    - changed_assignments=$(git diff-tree --no-commit-id --name-only -r $CI_COMMIT_SHA | grep -o -E "${ASSIGN_ROOT}/[^/]*/${ASSIGN_AG_DIR}|${ASSIGN_ROOT}/${ASSIGN_SOL_DIR}" | awk -F'/' '{print $2}' | sort | uniq)
+    - changed_assignments=$(git diff-tree --no-commit-id --name-only -r $CI_COMMIT_SHA | grep -o -E "${ASSIGN_ROOT}/[^/]*/(${ASSIGN_AG_DIR}|${ASSIGN_SOL_DIR})" | awk -F'/' '{print $2}' | sort | uniq)
 
     #
     # Build the reference output for each changed assignment
@@ -217,7 +213,7 @@ build reference output:
         #
         # Again, need to work in /var/tmp because of the mind-mount podman issue. 
         #
-        cd /var/tmp/${HALLIGAN_UTLN}
+        cd /var/tmp/${USER}
 
         #
         # Start fresh.

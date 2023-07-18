@@ -45,13 +45,10 @@ ASSIGN_SOL_DIR   = "solution"
 #
 # course code will be:
 #   1) placed in /g/${COURSE_NUM}/${TERM}
-#   2) created as the user ${FILE_OWNER}
-#   3) chgrp'd as ${FILE_GROUP}
+#   2) chgrp'd as ${FILE_GROUP}
 COURSE_NUM = 15
 TERM       = "2023s"
 FILE_GROUP = "ta15"
-FILE_OWNER = "mrussell"
-
 
 
 [tokens]
