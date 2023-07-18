@@ -13,7 +13,7 @@ ASSIGN_AG_DIR=$(toml get --toml-path ${CONFIG} repo.ASSIGN_AG_DIR)
 
 # go to the repo and pull; hide output from students put put in log if needed
 cd $SOURCE_DIR
-git pull -f > PULL_LOG 2>&1
+git pull --force --rebase --autostash  > PULL_LOG 2>&1
 
 rc=$?
 if [ $rc -ne 0 ]; then 
