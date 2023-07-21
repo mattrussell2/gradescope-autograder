@@ -156,6 +156,7 @@ In order for code to be run (see the .gitlab-ci.yml section below) when you `git
 ```
 ssh your-utln@linux.cs.tufts.edu
 ssh vm-podman01
+python3 -m pip install toml-cli # this will be needed by the runner
 gitlab-runner register
 ```
 Here are the variables you'll need:

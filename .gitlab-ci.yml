@@ -12,6 +12,10 @@
 #
 # If B and C are both to be run, B runs first.
 # A can run concurrently with either. 
+#
+# Note! toml-cli is required to be installed on the runner host's python acct
+#        python3 -m pip install toml-cli
+#
 
 #
 # This job updates halligan server files and file-permissions. 
@@ -41,13 +45,11 @@ update halligan server:
 
     #
     # load the halligan info from config.toml
-    # NOTE: make sure toml-cli is installed first. 
     #
-    - python3 -m pip install toml-cli &>/dev/null
     - export HALLIGAN_COURSE_NUM=$(toml get halligan.COURSE_NUM)
-    - export HALLIGAN_TERM=$(toml get halligan.TERM)            
-    - export HALLIGAN_FILE_GROUP=$(toml get halligan.FILE_GROUP)
-    - export HALLIGAN_REPO_PATH="/g/${HALLIGAN_COURSE_NUM}/${HALLIGAN_TERM}" 
+    - export HALLIGAN_COURSE_SEM=$(toml get halligan.TERM)            
+    - export HALLIGAN_COURSE_GRP=$(toml get halligan.FILE_GROUP)
+    - export HALLIGAN_COURSE_PTH="/g/${HALLIGAN_COURSE_NUM}/${HALLIGAN_COURSE_SEM}" 
   
   script:
     #
@@ -58,19 +60,20 @@ update halligan server:
     #
     # sync the repo with halligan
     #
-    - rsync -a --force --exclude='.git/' ./ ${HALLIGAN_REPO_PATH}
+    - rsync -a --force --exclude='.git/' ./ ${HALLIGAN_COURSE_PTH}
     
     #
     # set course files to the right group
     #
-    - chgrp -R ${HALLIGAN_FILE_GROUP} ${HALLIGAN_REPO_PATH}
+    - chgrp -R ${HALLIGAN_COURSE_GRP} ${HALLIGAN_COURSE_PTH}
     
     #
     # restore course file permission
     #
-    - chmod +x ${HALLIGAN_REPO_PATH}/staff-bin/*
-    - cd ${HALLIGAN_REPO_PATH}/staff-bin
-    - sg ${HALLIGAN_FILE_GROUP} -c "./restore-permissions | tee -a ../server_log"
+    - chmod +x ${HALLIGAN_COURSE_PTH}/staff-bin/*
+    - cd       ${HALLIGAN_COURSE_PTH}/staff-bin
+
+    - sg ${HALLIGAN_COURSE_GRP} -c "./restore-permissions | tee -a ../server_log"
 
 
 #
@@ -169,26 +172,24 @@ build reference output:
   
   variables:
     #
-    # automatically determine repo remote path
+    # automatically determine repo remote path and remote tag as above
     # NOTE: Uses a repo-level environment variable REPO_WRITE_DEPLOY_TOKEN
     # NOTE: REPO_WRITE_DEPLOY_TOKEN must have 'read' and 'write' permission and 'maintainer' access to your repo.
     #
-    REPO_REMOTE_PATH: https://${CI_PROJECT_NAME}:${REPO_WRITE_DEPLOY_TOKEN}@gitlab.cs.tufts.edu/${CI_PROJECT_PATH}.git
-    REMOTE_TAG: ${CONTAINER_REGISTRY}/${CONTAINER_REGISTRY_USER}/${CONTAINER_NAME}:${CI_PROJECT_NAME}
+    REPO_REMOTE_PATH:  https://${CI_PROJECT_NAME}:${REPO_WRITE_DEPLOY_TOKEN}@gitlab.cs.tufts.edu/${CI_PROJECT_PATH}.git
+    REMOTE_TAG:        ${CONTAINER_REGISTRY}/${CONTAINER_REGISTRY_USER}/${CONTAINER_NAME}:${CI_PROJECT_NAME}
     GRADER_DEV_FOLDER: "grading"
-
 
   before_script:
     - /bin/bash
-    - python3 -m pip install toml-cli &>/dev/null
-    - export ASSIGN_ROOT=$(toml get repo.ASSIGN_ROOT)
-    - export ASSIGN_AG_DIR=$(toml get repo.ASSIGN_AG_DIR)
-    - export ASSIGN_SOL_DIR=$(toml get repo.ASSIGN_SOL_DIR)
+    - export REPO_ASSIGN_RDIR=$(toml get repo.ASSIGN_ROOT)
+    - export REPO_ASSIGN_AUGD=$(toml get repo.ASSIGN_AG_DIR)
+    - export REPO_ASSIGN_SOLD=$(toml get repo.ASSIGN_SOL_DIR)
     
     - export HALLIGAN_COURSE_NUM=$(toml get halligan.COURSE_NUM)
-    - export HALLIGAN_TERM=$(toml get halligan.TERM)            
-    - export HALLIGAN_FILE_GROUP=$(toml get halligan.FILE_GROUP)
-    - export HALLIGAN_REPO_PATH="/g/${HALLIGAN_COURSE_NUM}/${HALLIGAN_TERM}" 
+    - export HALLIGAN_COURSE_SEM=$(toml get halligan.TERM)            
+    - export HALLIGAN_COURSE_GRP=$(toml get halligan.FILE_GROUP)
+    - export HALLIGAN_COURSE_PTH="/g/${HALLIGAN_COURSE_NUM}/${HALLIGAN_COURSE_SEM}" 
 
   script:
     - /bin/bash
@@ -196,10 +197,10 @@ build reference output:
     #
     # Update the default repo's remote to include the deploy token. Checkout branch and pull. 
     #
-    - git remote set-url origin ${REPO_REMOTE_PATH}
-    - git fetch origin ${CI_COMMIT_BRANCH}
-    - git checkout -B ${CI_COMMIT_BRANCH} origin/${CI_COMMIT_BRANCH}
-    - git pull origin ${CI_COMMIT_BRANCH}
+    - git remote   set-url origin                 ${REPO_REMOTE_PATH}
+    - git fetch            origin                 ${CI_COMMIT_BRANCH}
+    - git checkout -B      ${CI_COMMIT_BRANCH}    origin/${CI_COMMIT_BRANCH}
+    - git pull             origin                 ${CI_COMMIT_BRANCH}
 
     #
     # Determine which assignments' autograder/ or solution/ directories have changed. 
@@ -214,81 +215,82 @@ build reference output:
     #
     - >
       for ASSIGN_NAME in $changed_assignments; do
-        ASSIGN_DIR=${CI_PROJECT_DIR}/${ASSIGN_ROOT}/${ASSIGN_NAME}
-        AUTOGRADER=${ASSIGN_DIR}/${ASSIGN_AG_DIR}
-  
-        #
-        # Again, need to work in /var/tmp because of the mind-mount podman issue. 
-        #
-        cd /var/tmp/${USER}
 
         #
-        # Start fresh.
+        # determine path to files within the repo for the assignment
         #
-        if [ -d ${CI_PROJECT_NAME}-build ]; then rm -rf ${CI_PROJECT_NAME}-build/*; fi
-        mkdir -p ${CI_PROJECT_NAME}-build
-
-        cd ${CI_PROJECT_NAME}-build
-
-
-        if [ -d results ]; then rm -rf results/*; fi
-        mkdir -p results
+        REPO_ASSGN_DIR=${CI_PROJECT_DIR}/${REPO_ASSIGN_RDIR}/${ASSIGN_NAME}
+        REPO_SOLTN_DIR=${REPO_ASSGN_DIR}/${REPO_ASSIGN_SOLD}
+        REPO_AUTOG_DIR=${REPO_ASSGN_DIR}/${REPO_ASSIGN_AUGD}
+        
+        #
+        # determine directories to run the autograder and to copy the results to
+        #
+        RUN_DIR=/var/tmp/${USER}/${CI_PROJECT_NAME}-${ASSIGN_NAME}-build
+        GRD_DIR=${HALLIGAN_COURSE_PTH}/${GRADER_DEV_FOLDER}/${ASSIGN_NAME}
+        
+        #
+        # create results directories; wipe first if they exist
+        #
+        rm    -rf ${RUN_DIR}         ${GRD_DIR}
+        mkdir -p  ${RUN_DIR}/results ${GRD_DIR}/results
 
         #
         # Grab solution code. 
         #
-        cp -r ${ASSIGN_DIR}/solution .
+        cp -r ${REPO_SOLTN_DIR} ${RUN_DIR}
         
         #
         # Run the autograder!
         # NOTE: The -v X:Y indicates to mount local:container.
         # NOTE: This works bi-directionally, so output will be available
-        # NOTE: at $PWD/results when the container finishes. 
+        # NOTE: at ${RUN_DIR}/results when the container finishes. 
         #
-        podman run                                \
-          --rm                                    \
-          --env ASSIGNMENT_TITLE=${ASSIGN_NAME}   \
-          -v $PWD/solution:/autograder/submission \
-          -v $PWD/results:/autograder/results/    \
-          ${REMOTE_TAG}                           \
-          /autograder/run_autograder
-        
-        #
-        # for debugging, copy all of the resulting files; don't follow symlinks! [gerp!]
-        # note: chgrp and chmod the parent folder to make sure graders can update everything. 
-        #
-        RESULTS_FOR_GRADERS_PATH=${HALLIGAN_REPO_PATH}/${GRADER_DEV_FOLDER}/${ASSIGN_NAME}/results/
-        if [ -d ${RESULTS_FOR_GRADERS_PATH} ]; then rm -rf ${RESULTS_FOR_GRADERS_PATH}; fi
-        mkdir -p ${RESULTS_FOR_GRADERS_PATH}
-        cp -r --no-dereference results/* ${RESULTS_FOR_GRADERS_PATH}
-        chgrp -R ${HALLIGAN_FILE_GROUP} ${HALLIGAN_REPO_PATH}/${GRADER_DEV_FOLDER}
-        chmod -R 770 ${HALLIGAN_REPO_PATH}/${GRADER_DEV_FOLDER}
-        
+        podman run                                      \
+          --rm                                          \
+          --env ASSIGNMENT_TITLE=${ASSIGN_NAME}         \
+          -v ${RUN_DIR}/solution:/autograder/submission \
+          -v ${RUN_DIR}/results:/autograder/results/    \
+          ${REMOTE_TAG}                                 \
+          /autograder/run_autograder 2>&1 | tee ${RUN_DIR}/autograder_results.txt
+
         #
         # .diff files are irrelevant [reference diffing against what?]
         #
-        rm results/output/*.diff*
+        rm ${RUN_DIR}/results/output/*.diff*
 
+        # 
+        # copy the results to grader-visible spot; don't follow symlinks! [gerp!]
         #
-        # if the autograder has reference output already, then remove it
+        cp -r --no-dereference ${RUN_DIR}/results ${RUN_DIR}/autograder_results.txt ${GRD_DIR}
+    
+        # 
+        # chgrp and chmod so graders can rwx everything.
+        # note: chmod parent dir to be safe. 
         #
-        if [ -d ${AUTOGRADER}/testset/ref_output ]; then rm -rf ${AUTOGRADER}/testset/ref_output/*; fi
+        chgrp -R ${HALLIGAN_COURSE_GRP} ${HALLIGAN_COURSE_PTH}/${GRADER_DEV_FOLDER}
+        chmod -R 770                    ${HALLIGAN_COURSE_PTH}/${GRADER_DEV_FOLDER}
         
         #
         # copy the new reference output to the repo
+        # note: nuke old output if it exists first
         #
-        mkdir -p ${AUTOGRADER}/testset/ref_output
-        cp -r results/output/* ${AUTOGRADER}/testset/ref_output
+        rm    -rf                            ${REPO_AUTOG_DIR}/testset/ref_output
+        mkdir -p                             ${REPO_AUTOG_DIR}/testset/ref_output
+        cp    -r ${RUN_DIR}/results/output/* ${REPO_AUTOG_DIR}/testset/ref_output/
 
         #
         # commit and push the new reference output back to the repo.
         # NOTE: push with -o ci.skip to avoid an infinite loop of rebuilds :)
         #
-        cd ${AUTOGRADER}
+        cd ${REPO_AUTOG_DIR}
+
         git config pull.rebase true
-        git add testset/ref_output
-        git commit -m "build ref output for ${ASSIGN_NAME}" || echo "No changes to commit or commit failed; reference output is likely the same as it was before"
+        git add                testset/ref_output
+        git commit -m          "build ref output for ${ASSIGN_NAME}"      || \
+                              echo "No changes to repo or commit failed"
         git push origin ${CI_COMMIT_BRANCH} -o ci.skip 
+      
       done
 
     #
