@@ -257,7 +257,7 @@ build reference output:
         #
         # .diff files are irrelevant [reference diffing against what?]
         #
-        rm ${RUN_DIR}/results/output/*.diff*
+        rm -f ${RUN_DIR}/results/output/*.diff*
 
         # 
         # copy the results to grader-visible spot; don't follow symlinks! [gerp!]
