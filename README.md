@@ -79,12 +79,10 @@ ASSIGN_SOL_DIR   = "solution"
 # data from the course repo on the halligan server. These variables
 # will be used by the CI/CD pipeline to
 #   1) place the course files in /g/${COURSE_NUM}/${TERM}
-#   2) course files will be created as the user ${FILE_OWNER}
-#   3) course files will be chgrp'd as ${FILE_GROUP}
+#   2) course files will be chgrp'd as ${FILE_GROUP}
 COURSE_NUM = 15
 TERM       = "2023s"
 FILE_GROUP = "ta15"
-FILE_OWNER = "mrussell"
 ```
 
 ```toml
