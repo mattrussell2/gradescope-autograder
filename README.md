@@ -192,7 +192,7 @@ At this point the runner will start running. You can exit out of the terminal, a
     * `podman system prune --all` -> frees unused space from podman
                                   -> note that the output re: space freed can be misleading (look super large) if your containers share layers. 
 * If the EECS folks have to restart the `vm-podman01` server, for now you will have to manually restart your runner (`gitlab-runner run &`). 
-* The default behavior of our `CI/CD` scripts that use podman is to automatically run `podman system prune --all --force` to cleanup. This is not the most efficient in terms of space usage, but should keep your space on `/tmp` from filling up, which would prevent the script from running at all. 
+* The default behavior of our `CI/CD` scripts that use podman is to automatically run `podman system prune --all --force` to cleanup. This is not the most efficient in that the autograding containers will need to be pulled every time rather than leveraging a cache, but should keep your space on `/tmp` from filling up, which would prevent the script from running at all. 
 
 # .gitlab-ci.yml
 The 'magic' here all happens by way of the `.gitlab-ci.yml` file, which gitlab works with automatically whenever you run `git push`. The file is already configured to do what you'll need to (assuming your `config.toml` is set up properly). 
