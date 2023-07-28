@@ -144,6 +144,7 @@ deploy autograding container:
     #
     # cleanup podman images so we don't have things lingering, and show current podman disk usage
     #
+    - podman rmi --all --force
     - podman system prune --all --force
     - podman system df 
 
@@ -222,12 +223,35 @@ build reference output:
         REPO_ASSGN_DIR=${CI_PROJECT_DIR}/${REPO_ASSIGN_RDIR}/${ASSIGN_NAME}
         REPO_SOLTN_DIR=${REPO_ASSGN_DIR}/${REPO_ASSIGN_SOLD}
         REPO_AUTOG_DIR=${REPO_ASSGN_DIR}/${REPO_ASSIGN_AUGD}
+
+        #
+        # sometimes the assignment name is empty; skip it if so
+        #
+        if [ ! -d ${REPO_SOLUTN_DIR} ]; then
+          echo "solution dir doesn't exit for assignment: ${ASSIGN_NAME}; skipping"
+          continue
+        fi
+
+        if [ ! -d ${REPO_AUTOG_DIR} ]; then
+          echo "autograder dir doesn't exit for assignment: ${ASSIGN_NAME}; skipping"
+          continue
+        fi
         
         #
         # determine directories to run the autograder and to copy the results to
         #
         RUN_DIR=/var/tmp/${USER}/${CI_PROJECT_NAME}-${ASSIGN_NAME}-build
         GRD_DIR=${HALLIGAN_COURSE_PTH}/${GRADER_DEV_FOLDER}/${ASSIGN_NAME}
+
+        # debug - am getting a weird error re: solution dir for first time; don't know yet. 
+        #         all of these paths look right!
+        echo "REPO_ASSGN_DIR=${REPO_ASSGN_DIR}" > tmp.txt
+        echo "REPO_SOLTN_DIR=${REPO_SOLTN_DIR}" >> tmp.txt
+        echo "REPO_AUTOG_DIR=${REPO_AUTOG_DIR}" >> tmp.txt
+        echo "RUN_DIR=${RUN_DIR}"               >> tmp.txt
+        echo "GRD_DIR=${GRD_DIR}"               >> tmp.txt
+        cat tmp.txt
+        cp tmp.txt ~/tmp.txt
         
         #
         # create results directories; wipe first if they exist
@@ -238,7 +262,7 @@ build reference output:
         #
         # Grab solution code. 
         #
-        cp -r ${REPO_SOLTN_DIR} ${RUN_DIR}
+        cp -r ${REPO_SOLTN_DIR} ${RUN_DIR}/solution
         
         #
         # Run the autograder!
@@ -288,7 +312,8 @@ build reference output:
         git config pull.rebase true
         git add                testset/ref_output
         git commit -m          "build ref output for ${ASSIGN_NAME}"      || \
-                              echo "No changes to repo or commit failed"
+                               echo "No changes to repo or commit failed"
+        git pull
         git push origin ${CI_COMMIT_BRANCH} -o ci.skip 
       
       done
@@ -296,5 +321,9 @@ build reference output:
     #
     # cleanup podman images so we don't have things lingering, and show current podman disk usage
     #
+    - podman rmi --all --force
     - podman system prune --all --force
     - podman system df 
+
+
+    ### TODO: add no-pull job that does hard podman cleanup on disk space failure. 
