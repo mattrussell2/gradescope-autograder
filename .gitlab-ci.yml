@@ -206,7 +206,7 @@ build reference output:
     #
     # Determine which assignments' autograder/ or solution/ directories have changed. 
     #
-    - changed_assignments=$(git diff-tree --no-commit-id --name-only -r $CI_COMMIT_SHA | grep -o -E "${ASSIGN_ROOT}/[^/]*/(${ASSIGN_AG_DIR}|${ASSIGN_SOL_DIR})" | awk -F'/' '{print $2}' | sort | uniq)
+    - changed_assignments=$(git diff-tree --no-commit-id --name-only -r $CI_COMMIT_SHA | grep -o -E "${REPO_ASSIGN_RDIR}/[^/]*/(${REPO_ASSIGN_AUGD}|${REPO_ASSIGN_SOLD})" | awk -F'/' '{print $2}' | sort | uniq)
 
     #
     # Build the reference output for each changed assignment
@@ -227,7 +227,7 @@ build reference output:
         #
         # sometimes the assignment name is empty; skip it if so
         #
-        if [ ! -d ${REPO_SOLUTN_DIR} ]; then
+        if [ ! -d ${REPO_SOLTN_DIR} ]; then
           echo "solution dir doesn't exit for assignment: ${ASSIGN_NAME}; skipping"
           continue
         fi
@@ -242,7 +242,6 @@ build reference output:
         #
         RUN_DIR=/var/tmp/${USER}/${CI_PROJECT_NAME}-${ASSIGN_NAME}-build
         GRD_DIR=${HALLIGAN_COURSE_PTH}/${GRADER_DEV_FOLDER}/${ASSIGN_NAME}
-
         
         #
         # create results directories; wipe first if they exist
