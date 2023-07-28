@@ -243,15 +243,6 @@ build reference output:
         RUN_DIR=/var/tmp/${USER}/${CI_PROJECT_NAME}-${ASSIGN_NAME}-build
         GRD_DIR=${HALLIGAN_COURSE_PTH}/${GRADER_DEV_FOLDER}/${ASSIGN_NAME}
 
-        # debug - am getting a weird error re: solution dir for first time; don't know yet. 
-        #         all of these paths look right!
-        echo "REPO_ASSGN_DIR=${REPO_ASSGN_DIR}" > tmp.txt
-        echo "REPO_SOLTN_DIR=${REPO_SOLTN_DIR}" >> tmp.txt
-        echo "REPO_AUTOG_DIR=${REPO_AUTOG_DIR}" >> tmp.txt
-        echo "RUN_DIR=${RUN_DIR}"               >> tmp.txt
-        echo "GRD_DIR=${GRD_DIR}"               >> tmp.txt
-        cat tmp.txt
-        cp tmp.txt ~/tmp.txt
         
         #
         # create results directories; wipe first if they exist
