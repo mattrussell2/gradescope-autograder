@@ -14,24 +14,28 @@ cd $SCRIPT_DIR/..
 
 COURSE_NUM=$(toml get halligan.COURSE_NUM)
 TERM=$(toml get halligan.TERM)
-ASSIGN_ROOT=$(toml get assignments.root)
+ASSIGN_ROOT=$(toml get repo.ASSIGN_ROOT)
 COURSE_ROOT=/g/${COURSE_NUM}/${TERM}
 
 # find the names of each of the assigments/labs/projects
-NAMES=$(find ${COURSE_ROOT}/${ASSIGN_ROOT}/*/files -maxdepth 0 -type d | xargs -0 | rev | cut -d "/" -f 2 | rev)
-
-for name in $NAMES; do
+FILES_NAMES=$(find ${ASSIGN_ROOT}/*/files -maxdepth 0 -type d | xargs -0 | rev | cut -d "/" -f 2 | rev)
+for name in $FILES_NAMES; do
 
     # remove a symlink if it exists already
-    if [ -L ${COURSE_ROOT}/files/${name} ]; then
-        rm ${COURSE_ROOT}/files/${name}
+    if [ -L files/${name} ]; then
+        rm files/${name}
     fi
 
-    if [ -L ${COURSE_ROOT}/public_html/${name}.pdf ]; then
-        rm ${COURSE_ROOT}/public_html/${name}.pdf
+    ln -s ${COURSE_ROOT}/${ASSIGN_ROOT}/${name}/files  files/${name}
+done
+
+SPEC_NAMES=$(find ${ASSIGN_ROOT}/*/spec -maxdepth 0 -type d | xargs -0 | rev | cut -d "/" -f 2 | rev)
+for name in $SPEC_NAMES; do
+
+    # remove a symlink if it exists already
+    if [ -L public_html/${name}.pdf ]; then
+        rm public_html/${name}.pdf
     fi
 
-    ln -s ${COURSE_ROOT}/${ASSIGN_ROOT}/${name}/files            files/${name}
     ln -s ${COURSE_ROOT}/${ASSIGN_ROOT}/${name}/spec/${name}.pdf public_html/${name}.pdf
-
 done
