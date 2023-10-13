@@ -858,17 +858,16 @@ def build_testing_directories():
     Path(f'{LOG_DIR}/status.lock').write_text("Lockfile for status reporting")
     Path(f'{LOG_DIR}/status').write_text("")
 
-    # students still need access to link/, stdin/, and cpp/
-    chmod_dir(TESTSET_DIR, "551")
-    chmod_dir(LINK_DIR, "553")
-    chmod_dir(STDIN_DIR, "553")
-    chmod_dir(TEST_CPP_DIR, "553")
-   
-    # student code can write to the output/log dirs
+    # students need read access to link/stdin/cpp dirs
+    chmod_dir(TESTSET_DIR, "551") 
+    chmod_dir(LINK_DIR, "775")   
+    chmod_dir(STDIN_DIR, "775")
+    chmod_dir(TEST_CPP_DIR, "775")    
+    
+    # students need write access to the output/log/build dirs
     chmod_dir(OUTPUT_DIR, "777")
     chmod_dir(LOG_DIR, "777")
-    chmod_dir(BUILD_DIR, "777")
-    chmod_dir(LINK_DIR, "775")
+    chmod_dir(BUILD_DIR, "777")    
 
 
 class CustomFormatter(argparse.HelpFormatter):
