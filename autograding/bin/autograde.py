@@ -6,6 +6,8 @@ matt russell
 """
 
 import os
+import pwd
+import grp
 import sys
 import subprocess
 import argparse
@@ -91,7 +93,9 @@ def RUN(cmd_ary,
         preexec_fn=None,
         stdout=None,
         stderr=None,
-        user=None):
+        user=None, 
+        group=None, 
+        extra_groups=[]):
     """
         Runs the subprocess module on the given command and returns the result.
 
@@ -108,7 +112,13 @@ def RUN(cmd_ary,
         Notes:
             Always capture output; universal newlines = False so binary output okay.
             Always add a timeout argument - this is adjustable in the .toml file
+            Subprocess module when setting user will NOT set the group information!
     """
+    # Set group information (used for student user)
+    if user is not None:                
+        gname = pwd.getpwnam(user).pw_name
+        group = grp.getgrnam(gname).gr_gid
+
     return subprocess.run(["timeout", str(timeout)] + cmd_ary,
                           stdin=stdin,
                           capture_output=capture_output,
@@ -118,8 +128,9 @@ def RUN(cmd_ary,
                           preexec_fn=preexec_fn,
                           stdout=stdout,
                           stderr=stderr,
-                          user=user) # try "root" to debug
-
+                          user=user,
+                          group=group, 
+                          extra_groups=extra_groups)
 
 def FAIL(s):
     INFORM(s, color=RED)
@@ -149,11 +160,11 @@ class TestConfig:
     visibility: str = "after_due_date"               # gradescope setting
     argv: List[str] = field(default_factory=list)
 
-    # assignment-wide ([common]) settings - note that all besides kill_limit are not even
+    # assignment-widfe ([common]) settings - note that all besides kill_limit are not even
     # referenced in this file, however they still must be listed here. If they
     # are not, a TypeError is raised indicating that the TestConfig __init__
     # fails when any of these fields are specified in the TOML - 2/25/2023 slamel01
-    kill_limit: int = 750
+    kill_limit: int = 5900
     max_valgrind_score: int = 8
     valgrind_score_visibility: str = "after_due_date"
     style_check: bool = False
@@ -239,14 +250,15 @@ class Test:
             "ref_stderr"  : f"{REF_OUTPUT_DIR}/{self.testname}.stderr",
         }
 
-        # MB -> B;  setrlimit uses Bytes
+        # B -> MB;  setrlimit uses Bytes
         self.kill_limit = self.kill_limit * 1024 * 1024
 
-        # MB -> KB; /usr/bin/time -o %M uses KB
+        # KB -> MB; /usr/bin/time -o %M uses KB
         if self.max_ram != -1:
             self.max_ram *= 1024
 
-        # can only get here if the test has compiled
+        # can only get here if the test has compiled, so True by default
+        # however, if exec_command is set, we want manual mode, so compilation is irrelevant
         self.compiled = True if not self.exec_command else None
 
         # chami fix
@@ -397,11 +409,9 @@ class Test:
                 add ../../ to memtime file because we'll be running from testset/build/ directory and 
                 valgrind writes to a local path. 
         """
-        if self.max_ram != -1:
-            prepend = ['/usr/bin/time', '-o', self.fpaths['memtime'], '-f', '%M %S %U']
-        else:
-            prepend = []
-
+        # always produce a memtime file - helpful for debugging. 
+        prepend = ['/usr/bin/time', '-o', self.fpaths['memtime'], '-f', '%M %S %U']
+        
         test_rcode = self.run_exec(exec_prepend=prepend,
                                    STDOUTPATH=self.fpaths['stdout'],
                                    STDERRPATH=self.fpaths['stderr'],
@@ -412,19 +422,35 @@ class Test:
         self.timed_out   = test_rcode == 124
         self.segfault    = test_rcode in [11, 139]
 
-        self.max_ram_exceeded = False
+        self.max_ram_exceeded    = False
+        self.kill_limit_exceeded = False
+
         # ISSUE: if process is killed, no memtime output file is produced; then we need to rely on valgrind results
         if os.path.exists(self.fpaths['memtime']):
             memdata = Path(self.fpaths['memtime']).read_text()
             if memdata != '':               # this might happen if timeout kills program
-                max_rss = int(memdata.splitlines()[-1].split()
-                              [0])               # if segfault, last line has max_rss info; data in KB
+                memlines = memdata.splitlines()
 
+                # sometimes with errors (see below), max_rss info won't be first line; guaranteed to be last line in file
+                max_rss = int(memlines[-1].split()[0])  
                 self.max_ram_exceeded = (self.max_ram != -1 and max_rss > self.max_ram)
 
+                if "Command terminated by signal 6" in memlines[0]:
+                    self.kill_limit_exceeded = True
+
+                elif "Command terminated by signal 9" in memlines[0]:
+                    print("Please share the following note with a TA")
+                    print("This is NOT a usual kill_limit_exceeded occurrence. If you see this, odds are that the ")
+                    print("kill limit for the assignment is less than that of the container. Sometimes you just forgot ")
+                    print("to up the value for a memory-heavy assignment, but other times things actually do bug out ")
+                    print("on gradescope's side and the container's actual RAM value isn't what it seems. Saving an ")
+                    print("'incorrect' value in the gs web interface for the assignment settings, and then saving the ")
+                    print("correct value after that should fix the issue.")
+                    self.kill_limit_exceeded = True
+                
+
         # Checking for std::bad_alloc is a bit bittle.
-        self.kill_limit_exceeded = False
-        if os.path.exists(self.fpaths['stderr']):
+        if not self.kill_limit_exceeded and os.path.exists(self.fpaths['stderr']):
             try:
                 stderrdata = Path(self.fpaths['stderr']).read_bytes().decode('utf-8')
             except (TypeError, UnicodeDecodeError):
@@ -452,16 +478,17 @@ class Test:
             ]
             self.valgrind_rcode = self.run_exec(valgrind_command, user=user)
             if not os.path.exists(self.fpaths['valgrind']):
-                self.valgrind_passed  = False
-                self.memory_leaks     = False
-                self.memory_errors    = True
-                self.max_ram_exceeded = True               # valgrind killed so no output file produced
-                self.valg_out_of_mem  = True
+                self.valgrind_passed     = False
+                self.memory_leaks        = False
+                self.memory_errors       = True
+                self.kill_limit_exceeded = True     # valgrind killed so no output file produced
+                self.valg_out_of_mem     = True
             else:
                 valgrind_output      = Path(self.fpaths['valgrind']).read_text()
                 self.memory_leaks    = MEMLEAK_PASS not in valgrind_output
                 self.memory_errors   = MEMERR_PASS not in valgrind_output
                 self.valg_out_of_mem = VALG_NO_MEM in valgrind_output
+                
                 # if kill limit exceeded in test valgrind fails, but it can't throw errors :/
                 self.valgrind_passed = not self.memory_leaks and not self.memory_errors and not self.valg_out_of_mem and not self.kill_limit_exceeded
 
@@ -620,9 +647,9 @@ def report_results(TESTS, console=None):
     
     for testname, test in TESTS.items():
         if test.success and test.valgrind_passed:
-            table.add_row( f"{test.description}", CHECK, CHECK, "")
+            table.add_row(f"{test.description}", CHECK, CHECK, "")
         elif test.success and not test.valgrind:
-            table.add_row(f"{test.description}", CHECK,  DASH if CHECK != "🐘" else "🐘", "")
+            table.add_row(f"{test.description}", CHECK, DASH if CHECK != "🐘" else "🐘", "")
         elif test.success and not test.valgrind_passed:
             if test.memory_leaks and test.memory_errors:
                 table.add_row( f"{test.description}", CHECK, f":water_wave::thinking_face:", "")
@@ -635,7 +662,7 @@ def report_results(TESTS, console=None):
             for testtype, test_mitigation_obj in report.items():
                 if test_mitigation_obj['test'](test):
                     symbols += test_mitigation_obj['symbol']
-            table.add_row(f"{test.description}", EX, CNCL, symbols  )
+            table.add_row(f"{test.description}", EX, CNCL if test.valgrind else DASH, symbols)
     
     if not console:
         console = Console(force_terminal=True)
@@ -647,7 +674,7 @@ def report_results(TESTS, console=None):
                        Column("Details", justify="left"),
                        box=box.HORIZONTALS)
     if CHECK == "🐘":
-        mitigation.add_row("🐘", " ", "You crushed it! All tests passed!")
+        mitigation.add_row("🐘", "", "You crushed it! All tests passed!")
     else:
         mitigation.add_row("✅", "Test Pass", "Nice work! Test passed")
         mitigation.add_row("❌", "Test Fail", "Test failed")
