@@ -858,9 +858,12 @@ def build_testing_directories():
     Path(f'{LOG_DIR}/status.lock').write_text("Lockfile for status reporting")
     Path(f'{LOG_DIR}/status').write_text("")
 
-    # students still need access to link/
+    # students still need access to link/, stdin/, and cpp/
     chmod_dir(TESTSET_DIR, "551")
-
+    chmod_dir(LINK_DIR, "553")
+    chmod_dir(STDIN_DIR, "553")
+    chmod_dir(TEST_CPP_DIR, "553")
+   
     # student code can write to the output/log dirs
     chmod_dir(OUTPUT_DIR, "777")
     chmod_dir(LOG_DIR, "777")
