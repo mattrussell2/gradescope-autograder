@@ -6,13 +6,14 @@ matt russell
 """
 
 import os
+import pwd
+import grp
 import sys
 import subprocess
 import argparse
 import shutil
 import traceback
 import toml as tml
-from tabulate import tabulate
 from pathlib import Path
 from copy import deepcopy
 from dataclasses import dataclass, field
@@ -25,6 +26,10 @@ from filelock import FileLock
 import traceback
 from functools import reduce, partial
 import resource
+from rich.console import Console
+from rich.table import Table, Column
+from rich import print as rprint
+from rich import box
 from collections.abc import Iterable
 if 'canonicalizers.py' in os.listdir():
     sys.path.append(os.getcwd())
@@ -54,15 +59,15 @@ COPY_DIR       = f"{TESTSET_DIR}/copy"
 LINK_DIR       = f"{TESTSET_DIR}/link"
 STDIN_DIR      = f"{TESTSET_DIR}/stdin"
 
-BUILD_DIR  = f"{RESULTS_DIR}/build"
-LOG_DIR    = f"{RESULTS_DIR}/logs"
-OUTPUT_DIR = f"{RESULTS_DIR}/output"
+BUILD_DIR      = f"{RESULTS_DIR}/build"
+LOG_DIR        = f"{RESULTS_DIR}/logs"
+OUTPUT_DIR     = f"{RESULTS_DIR}/output"
 
-MAKEFILE_PATH = f"{TESTSET_DIR}/makefile/Makefile"
+MAKEFILE_PATH  = f"{TESTSET_DIR}/makefile/Makefile"
 
-MEMLEAK_PASS = "All heap blocks were freed -- no leaks are possible"
-MEMERR_PASS  = "ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)"
-VALG_NO_MEM  = "Valgrind's memory management: out of memory"
+MEMLEAK_PASS   = "All heap blocks were freed -- no leaks are possible"
+MEMERR_PASS    = "ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)"
+VALG_NO_MEM    = "Valgrind's memory management: out of memory"
 
 
 def COLORIZE(s, color):
@@ -71,6 +76,7 @@ def COLORIZE(s, color):
 
 def INFORMF(s, stream, color):
     stream.write(COLORIZE(s, color))
+    stream.flush()
 
 
 def INFORM(s, color):
@@ -87,7 +93,9 @@ def RUN(cmd_ary,
         preexec_fn=None,
         stdout=None,
         stderr=None,
-        user=None):
+        user=None, 
+        group=None, 
+        extra_groups=[]):
     """
         Runs the subprocess module on the given command and returns the result.
 
@@ -104,7 +112,13 @@ def RUN(cmd_ary,
         Notes:
             Always capture output; universal newlines = False so binary output okay.
             Always add a timeout argument - this is adjustable in the .toml file
+            Subprocess module when setting user will NOT set the group information!
     """
+    # Set group information (used for student user)
+    if user is not None:                
+        gname = pwd.getpwnam(user).pw_name
+        group = grp.getgrnam(gname).gr_gid
+
     return subprocess.run(["timeout", str(timeout)] + cmd_ary,
                           stdin=stdin,
                           capture_output=capture_output,
@@ -114,8 +128,9 @@ def RUN(cmd_ary,
                           preexec_fn=preexec_fn,
                           stdout=stdout,
                           stderr=stderr,
-                          user=user)
-
+                          user=user,
+                          group=group, 
+                          extra_groups=extra_groups)
 
 def FAIL(s):
     INFORM(s, color=RED)
@@ -165,25 +180,25 @@ class TestConfig:
     # These will be assigned to a test by the time it finshes execution
     # could keep these as part of the 'Test' class, but it's easier
     # to load a test from file by throwing all the variables into the config.
-    compiled: bool = None
-    success: bool = None
-    valgrind_passed: bool = None
-    ofile_file_exists: bool = None
-    stdout_diff_passed: bool = None
-    stderr_diff_passed: bool = None
-    fout_diffs_passed: bool = None
-    timed_out: bool = None
-    memory_errors: bool = None
-    memory_leaks: bool = None
-    valg_out_of_mem: bool = None
-    segfault: bool = None
-    max_ram_exceeded: bool = None
+    compiled:            bool = None
+    success:             bool = None
+    valgrind_passed:     bool = None
+    ofile_file_exists:   bool = None
+    stdout_diff_passed:  bool = None
+    stderr_diff_passed:  bool = None
+    fout_diffs_passed:   bool = None
+    timed_out:           bool = None
+    memory_errors:       bool = None
+    memory_leaks:        bool = None
+    valg_out_of_mem:     bool = None
+    segfault:            bool = None
+    max_ram_exceeded:    bool = None
     kill_limit_exceeded: bool = None
-    exit_status: int = None
-    description: str = None
-    testname: str = None
-    executable: str = None
-    fpaths: dict = field(default_factory=dict)
+    exit_status:         int = None
+    description:         str = None
+    testname:            str = None
+    executable:          str = None
+    fpaths:              dict = field(default_factory=dict)
 
     # this is set as the function with the name provided in the .toml file
     # it must:
@@ -235,14 +250,15 @@ class Test:
             "ref_stderr"  : f"{REF_OUTPUT_DIR}/{self.testname}.stderr",
         }
 
-        # MB -> B;  setrlimit uses Bytes
+        # B -> MB;  setrlimit uses Bytes
         self.kill_limit = self.kill_limit * 1024 * 1024
 
-        # MB -> KB; /usr/bin/time -o %M uses KB
+        # KB -> MB; /usr/bin/time -o %M uses KB
         if self.max_ram != -1:
             self.max_ram *= 1024
 
-        # can only get here if the test has compiled
+        # can only get here if the test has compiled, so True by default
+        # however, if exec_command is set, we want manual mode, so compilation is irrelevant
         self.compiled = True if not self.exec_command else None
 
         # chami fix
@@ -362,7 +378,7 @@ class Test:
             exec_cmds = exec_prepend + exec_cmds
 
         stdin = open(self.fpaths['stdin'], 'r') if os.path.exists(self.fpaths['stdin']) else None
-
+        
         if STDOUTPATH:
             stdout = open(STDOUTPATH, 'wb')
             stderr = open(STDERRPATH, 'wb')
@@ -393,11 +409,9 @@ class Test:
                 add ../../ to memtime file because we'll be running from testset/build/ directory and 
                 valgrind writes to a local path. 
         """
-        if self.max_ram != -1:
-            prepend = ['/usr/bin/time', '-o', self.fpaths['memtime'], '-f', '%M %S %U']
-        else:
-            prepend = []
-
+        # always produce a memtime file - helpful for debugging. 
+        prepend = ['/usr/bin/time', '-o', self.fpaths['memtime'], '-f', '%M %S %U']
+        
         test_rcode = self.run_exec(exec_prepend=prepend,
                                    STDOUTPATH=self.fpaths['stdout'],
                                    STDERRPATH=self.fpaths['stderr'],
@@ -408,19 +422,35 @@ class Test:
         self.timed_out   = test_rcode == 124
         self.segfault    = test_rcode in [11, 139]
 
-        self.max_ram_exceeded = False
+        self.max_ram_exceeded    = False
+        self.kill_limit_exceeded = False
+
         # ISSUE: if process is killed, no memtime output file is produced; then we need to rely on valgrind results
         if os.path.exists(self.fpaths['memtime']):
             memdata = Path(self.fpaths['memtime']).read_text()
             if memdata != '':               # this might happen if timeout kills program
-                max_rss = int(memdata.splitlines()[-1].split()
-                              [0])               # if segfault, last line has max_rss info; data in KB
+                memlines = memdata.splitlines()
 
+                # sometimes with errors (see below), max_rss info won't be first line; guaranteed to be last line in file
+                max_rss = int(memlines[-1].split()[0])  
                 self.max_ram_exceeded = (self.max_ram != -1 and max_rss > self.max_ram)
 
+                if "Command terminated by signal 6" in memlines[0]:
+                    self.kill_limit_exceeded = True
+
+                elif "Command terminated by signal 9" in memlines[0]:
+                    print("Please share the following note with a TA")
+                    print("This is NOT a usual kill_limit_exceeded occurrence. If you see this, odds are that the ")
+                    print("kill limit for the assignment is less than that of the container. Sometimes you just forgot ")
+                    print("to up the value for a memory-heavy assignment, but other times things actually do bug out ")
+                    print("on gradescope's side and the container's actual RAM value isn't what it seems. Saving an ")
+                    print("'incorrect' value in the gs web interface for the assignment settings, and then saving the ")
+                    print("correct value after that should fix the issue.")
+                    self.kill_limit_exceeded = True
+                
+
         # Checking for std::bad_alloc is a bit bittle.
-        self.kill_limit_exceeded = False
-        if os.path.exists(self.fpaths['stderr']):
+        if not self.kill_limit_exceeded and os.path.exists(self.fpaths['stderr']):
             try:
                 stderrdata = Path(self.fpaths['stderr']).read_bytes().decode('utf-8')
             except (TypeError, UnicodeDecodeError):
@@ -448,16 +478,17 @@ class Test:
             ]
             self.valgrind_rcode = self.run_exec(valgrind_command, user=user)
             if not os.path.exists(self.fpaths['valgrind']):
-                self.valgrind_passed  = False
-                self.memory_leaks     = False
-                self.memory_errors    = True
-                self.max_ram_exceeded = True               # valgrind killed so no output file produced
-                self.valg_out_of_mem  = True
+                self.valgrind_passed     = False
+                self.memory_leaks        = False
+                self.memory_errors       = True
+                self.kill_limit_exceeded = True     # valgrind killed so no output file produced
+                self.valg_out_of_mem     = True
             else:
                 valgrind_output      = Path(self.fpaths['valgrind']).read_text()
                 self.memory_leaks    = MEMLEAK_PASS not in valgrind_output
                 self.memory_errors   = MEMERR_PASS not in valgrind_output
                 self.valg_out_of_mem = VALG_NO_MEM in valgrind_output
+                
                 # if kill limit exceeded in test valgrind fails, but it can't throw errors :/
                 self.valgrind_passed = not self.memory_leaks and not self.memory_errors and not self.valg_out_of_mem and not self.kill_limit_exceeded
 
@@ -507,16 +538,16 @@ class Test:
             filec = f"{filea}.diff"               # => will be original 'filea'.ccized.diff
 
         # icdiff doesn't always return 1 when we expect!
-        diff_result  = subprocess.run(f"diff {filea} {fileb} > {filec}", shell=True)
+        diff_result  = subprocess.run(f"diff {filea} {fileb} > {filec} 2> /dev/null", shell=True)
         diff_retcode = diff_result.returncode
 
         if self.pretty_diff:
             # for some wacky reason, icdiff hangs sometimes; we've opened a github issue:
             # https://github.com/jeffkaufman/icdiff/issues/213
             try:
-                diff_result = subprocess.run(f"python3 -m icdiff {filea} {fileb} > {filec}", shell=True, timeout=5)
+                diff_result = subprocess.run(f"python3 -m icdiff {filea} {fileb} > {filec} 2> /dev/null", shell=True, timeout=5)
             except subprocess.TimeoutExpired:
-                diff_result = subprocess.run(f"diff {filea} {fileb} > {filec}", shell=True)
+                diff_result = subprocess.run(f"diff {filea} {fileb} > {filec} 2> /dev/null", shell=True)
 
         return diff_retcode
 
@@ -550,8 +581,8 @@ class Test:
             self.fout_diffs_passed = True
             created_files          = os.listdir(REF_OUTPUT_DIR) if os.path.exists(REF_OUTPUT_DIR) else []
             created_files          = list(set(created_files + os.listdir(OUTPUT_DIR)))
-            ofilenames             = [x for x in created_files if self.testname in x and x.endswith(".ofile")]
-            for ofilename in ofilenames:
+            self.produced_ofiles   = [x for x in created_files if self.testname in x and x.endswith(".ofile")]
+            for ofilename in self.produced_ofiles:
                 retcode = self.run_diff(f"{OUTPUT_DIR}/{ofilename}", f"{REF_OUTPUT_DIR}/{ofilename}",
                                         f"{OUTPUT_DIR}/{ofilename}.diff", ofilename, self.ccize_ofiles)
                 if retcode == 2:
@@ -578,49 +609,82 @@ class Test:
         else:
             self.success = True
 
-def report_results(TESTS):
+
+# def pad_emoji(text, width):
+#     return text + ' ' * (width - wcswidth(text))
+
+def report_results(TESTS, console=None):
     """
         Purpose:
             Print test results to the terminal                 
     """
     report = {
-        "segfault"    : lambda test: test.segfault,
-        "timeout"     : lambda test: test.timed_out,
-        "ofile diff"  : lambda test: test.diff_ofiles and not test.fout_diffs_passed,
-        "stdout diff" : lambda test: test.diff_stdout and not test.stdout_diff_passed,
-        "stderr diff" : lambda test: test.diff_stderr and not test.stderr_diff_passed,
-        "exit code"   : lambda test: test.exit_status != test.exitcodepass,
-        "max ram"     : lambda test: test.max_ram_exceeded,
-        "kill limit"  : lambda test: test.kill_limit_exceeded
+        "segfault"    : { 'test': lambda test: test.segfault,                                    'symbol': "💥", 'mitigation': "See course reference page on debugging segfaults" },
+        "timeout"     : { 'test': lambda test: test.timed_out,                                   'symbol': "⏰", 'mitigation': "Infinite loop, or inefficient code" },
+        "ofile diff"  : { 'test': lambda test: test.diff_ofiles and not test.fout_diffs_passed,  'symbol': "📝", 'mitigation': "Check your file output (including spaces!)" }, 
+        "stdout diff" : { 'test': lambda test: test.diff_stdout and not test.stdout_diff_passed, 'symbol': "💬", 'mitigation': "Check your std::cout output (including spaces!)" },
+        "stderr diff" : { 'test': lambda test: test.diff_stderr and not test.stderr_diff_passed, 'symbol': "🧯", 'mitigation': "Check your std::cerr output (including spaces!)" },
+        "exit code"   : { 'test': lambda test: test.exit_status != test.exitcodepass,            'symbol': "🚪", 'mitigation': "Exit code mismatch. Usually should be EXIT_SUCCESS" },
+        "max ram"     : { 'test': lambda test: test.max_ram_exceeded,                            'symbol': "💾", 'mitigation': "Program's memory usage exceeds specified limit" },
+        "kill limit"  : { 'test': lambda test: test.kill_limit_exceeded,                         'symbol': "💀", 'mitigation': "Program was killed for excessive memory usage" },
+        "build"       : { 'test': lambda test: not test.compiled,                                'symbol': "🔨", 'mitigation': "Unsuccessful build, or wrong executable produced" }
     } 
-
-    table = []
+    FAIL_COLOR = "red"
+    CHECK = "[green]:white_heavy_check_mark:[/]"
+    EX    = f"[bold][{FAIL_COLOR}]:x:[/]"
+    CNCL  = f"[{FAIL_COLOR}]:no_entry_sign:[/]"
+    DASH  = "[bold][grey]:heavy_minus_sign:[/]"
+    mitigation_table = {}
+    table = Table("Test Description", 
+                  Column("Result", justify="center"),
+                  Column("Valgrind", justify="center"),
+                  Column("Errors", justify="left"),
+                  title="🧪 [blue]Test Results[/]", title_justify="left", box=box.HORIZONTALS)
+    
+    # Jumbo easter egg on all tests passed & passed valgrind
+    if all([test.success and (test.valgrind_passed or not test.valgrind) for test in TESTS.values()]):
+        CHECK = "🐘"
+    
     for testname, test in TESTS.items():
         if test.success and test.valgrind_passed:
-            table.append([COLORIZE("✅", GREEN), COLORIZE("✅", GREEN), f"{testname} - {test.description}"])
+            table.add_row(f"{test.description}", CHECK, CHECK, "")
         elif test.success and not test.valgrind:
-            table.append([COLORIZE("✅", GREEN), COLORIZE("➖", GREEN), f"{testname} - {test.description}"])
+            table.add_row(f"{test.description}", CHECK, DASH if CHECK != "🐘" else "🐘", "")
         elif test.success and not test.valgrind_passed:
             if test.memory_leaks and test.memory_errors:
-                table.append([COLORIZE("✅", GREEN), COLORIZE("❌ leaks and errors", MAGENTA), f"{testname} - {test.description}"])
+                table.add_row( f"{test.description}", CHECK, f":water_wave::thinking_face:", "")
             elif test.memory_leaks:
-                table.append([COLORIZE("✅", GREEN), COLORIZE("❌ leaks", MAGENTA), f"{testname} - {test.description}"])
+                table.add_row( f"{test.description}", CHECK, f":water_wave:", "")
             elif test.memory_errors:
-                table.append([COLORIZE("✅", GREEN), COLORIZE("❌ errors", MAGENTA), f"{testname} - {test.description}"])
+                table.add_row( f"{test.description}", CHECK, f":thinking_face:", "")
         else:
-            for testtype, success_test in report.items():
-                if success_test(test):
-                    table.append([COLORIZE("❌ " + testtype, RED), "🚫", f"{testname} - {test.description}"])
-                    break
+            symbols = ""
+            for testtype, test_mitigation_obj in report.items():
+                if test_mitigation_obj['test'](test):
+                    symbols += test_mitigation_obj['symbol']
+            table.add_row(f"{test.description}", EX, CNCL if test.valgrind else DASH, symbols)
     
-    INFORM("🧪 Test Results", BLUE)
-    print(tabulate(table, headers=["Result", "Valgrind Result", "Test Name"], tablefmt="pretty", colalign=("center","center", "left")))
-    legend = []
-    legend = legend + [[COLORIZE("✅", GREEN), "Test passed"]]
-    legend = legend + [[COLORIZE("❌", RED), "Test failed"]]
-    legend = legend + [[COLORIZE("🚫", RED), "Valgrind test failed by default"]]
-    legend = legend + [[COLORIZE("➖", GREEN), "No valgrind component for this test"]]
-    print(tabulate(legend, headers=["Symbol", "Meaning"], tablefmt="simple", colalign=("center","left")))
+    if not console:
+        console = Console(force_terminal=True)
+    
+    console.print(table)
+
+    mitigation = Table(Column("Symbol", justify="center"),
+                       Column("Failure Code", justify="left"), 
+                       Column("Details", justify="left"),
+                       box=box.HORIZONTALS)
+    if CHECK == "🐘":
+        mitigation.add_row("🐘", "", "You crushed it! All tests passed!")
+    else:
+        mitigation.add_row("✅", "Test Pass", "Nice work! Test passed")
+        mitigation.add_row("❌", "Test Fail", "Test failed")
+        mitigation.add_row("🚫", "No Valgrind", "Test failed, so no valgrind run [counted as valgrind fail]")
+        mitigation.add_row("➖", "No Valgrind", "No valgrind for this test [not counted as valgrind fail]")
+        for k, v in report.items():
+            mitigation.add_row(v['symbol'], k, v['mitigation'])
+        mitigation.add_row(":water_wave:", "Memory Leak", "Memory leak detected")
+        mitigation.add_row(":thinking_face:", "Memory Error", "Memory error detected")
+    console.print(mitigation)
 
 def run_full_test(tup):
     test = tup[0]
@@ -648,14 +712,13 @@ def run_tests(TESTS, OPTS):
             Tests are run in parallel, on per process       
             Make sure to store result as list before returning
     """
-    INFORM(f"⏱ Running {len(TESTS)} test{'s' if len(TESTS) > 1 else ''}\n", color=BLUE)
+    INFORM(f"🕐 Running {len(TESTS)} test{'s' if len(TESTS) > 1 else ''}", color=BLUE)
     user = None if OPTS["no_user"] else "student"
     if OPTS['jobs'] == 1:
         return {test.testname: run_full_test((test, user)) for test in TESTS.values()}
     else:
         result = process_map(run_full_test, [(x, user) for x in TESTS.values()], ncols=60, max_workers=OPTS['jobs'])
         return {test.testname: test for test in result}
-
 
 def compile_exec(target, OPTS):
     """
@@ -688,7 +751,7 @@ def compile_exec(target, OPTS):
     user = None if OPTS["no_user"] else "student"
 
     with open(f"{LOG_DIR}/{target}.compile.log", "w") as f:
-        f.write(COLORIZE(f"🔨 running make {target}", BLUE))
+        INFORMF(f"🔨 running make {target}\n", stream=f, color=BLUE)
         compilation_proc    = RUN(["make", target], cwd=BUILD_DIR, stdout=f, stderr=subprocess.STDOUT, user=user)
         compilation_success = compilation_proc.returncode == 0
         compilation_color   = GREEN if compilation_success else RED
@@ -727,13 +790,13 @@ def compile_execs(TOML, TESTS, OPTS):
     num_execs     = len(execs_to_compile)
     if their_makefile_tests:
         INFORM(
-            f"🔨 Building {len(their_makefile_tests)} executable{'s' if len(their_makefile_tests) >= 1 else ''} with the student's makefile\n",
+            f"🔨 Building {len(their_makefile_tests)} executable{'s' if len(their_makefile_tests) >= 1 else ''} with the student's makefile",
             color=BLUE)
         compiled_list = [compile_exec(x, OPTS) for x in their_makefile_tests]
 
     if our_makefile_tests:
         INFORM(
-            f"🔨 Building {len(our_makefile_tests)} executable{'s' if len(our_makefile_tests) >= 1 else ''} with our makefile\n",
+            f"🔨 Building {len(our_makefile_tests)} executable{'s' if len(our_makefile_tests) >= 1 else ''} with our makefile",
             color=BLUE)
         if not os.path.exists(MAKEFILE_PATH):
             print("our_makefile option requires a custom Makefile in testset/makefile/")
@@ -742,9 +805,10 @@ def compile_execs(TOML, TESTS, OPTS):
         compiled_list += [compile_exec(x, OPTS) for x in our_makefile_tests]
 
     if sum(compiled_list) != num_execs:
-        INFORM(f"== Some Tests Failed to Compile! ==\n", color=RED)
-        report_compile_logs()
-
+        INFORM("❌ Some Tests Failed to Build!\n", color=RED)
+        report_compile_logs(type_to_report="fail")
+    else:
+        print("🟢 Build successful\n")
 
 def chmod_dir(d, permissions):
     """
@@ -786,6 +850,7 @@ def build_testing_directories():
     shutil.copytree(SUBMISSION_DIR, BUILD_DIR, dirs_exist_ok=True)
     if os.path.exists(COPY_DIR):
         shutil.copytree(COPY_DIR, BUILD_DIR, dirs_exist_ok=True)
+    
     if os.path.exists(LINK_DIR):
         for f in os.listdir(LINK_DIR):
             os.symlink(os.path.join('..', '..', LINK_DIR, f), os.path.join(BUILD_DIR, f))
@@ -793,14 +858,16 @@ def build_testing_directories():
     Path(f'{LOG_DIR}/status.lock').write_text("Lockfile for status reporting")
     Path(f'{LOG_DIR}/status').write_text("")
 
-    # don't allow students to see/write/execute anything related to the testset
-    chmod_dir(TESTSET_DIR, "551")
-
-    # student code can write to the output/log dirs
+    # students need read access to link/stdin/cpp dirs
+    chmod_dir(TESTSET_DIR, "551") 
+    chmod_dir(LINK_DIR, "775")   
+    chmod_dir(STDIN_DIR, "775")
+    chmod_dir(TEST_CPP_DIR, "775")    
+    
+    # students need write access to the output/log/build dirs
     chmod_dir(OUTPUT_DIR, "777")
     chmod_dir(LOG_DIR, "777")
-    chmod_dir(BUILD_DIR, "777")
-    chmod_dir(LINK_DIR, "775")
+    chmod_dir(BUILD_DIR, "777")    
 
 
 class CustomFormatter(argparse.HelpFormatter):
@@ -1037,7 +1104,8 @@ def find_logs(exts, tests_to_report, directory=OUTPUT_DIR):
 
 
 def cleanup():
-    chmod_dir(TESTSET_DIR, "770")
+    pass
+    #chmod_dir(TESTSET_DIR, "770")
 
 
 def run_autograder(argv):
@@ -1048,16 +1116,6 @@ def run_autograder(argv):
 
     TOML = tml.load('testset.toml')
 
-    #[TODO] make below feature 'work' as-expected.
-    # if we've run tests already, load them in from the log files; otherwise build fresh tests
-    # gradescope makes a file /autograder/results/stdout
-    # if os.path.exists("results") and os.listdir("results") not in [[], ['stdout']]:
-
-    #     TESTS = {}
-    #     for f in [x for x in os.listdir(LOG_DIR) if x.endswith(".summary")]:
-    #         fdata = Path(os.path.join(LOG_DIR, f)).read_text()
-    #         TESTS[f.split('.summary')[0]] = Test(TestConfig(**ast.literal_eval(fdata)))
-    # else:
     TESTS = load_tests(TOML)
 
     # make sure user called program correctly
@@ -1070,6 +1128,7 @@ def run_autograder(argv):
         build_testing_directories()
         compile_execs(TOML, TESTS, OPTS)
         TESTS = run_tests(TESTS, OPTS)
+        print("🟢 Tests ran successfully\n")
 
         if OPTS['status']:
             statusfile    = Path(f"{LOG_DIR}/status").read_text().splitlines()
@@ -1090,9 +1149,14 @@ def run_autograder(argv):
             report_log(vtests, vtest_pass)
         else:
             report_results(TESTS)
+            visible_tests = {k: v for k, v in TESTS.items() if v.visibility == "visible"}
+            out_file = f"{RESULTS_DIR}/visible_results_output.txt"
+            with open(out_file, "w") as f:
+                console = Console(file=f)
+                report_results(visible_tests, console=console)
 
     except Exception as e:
-        print("ERROR WHILE RUNNING TESTS")
+        print("🔴 Error while running tests!\n")
         print(traceback.format_exc())
 
     finally:
