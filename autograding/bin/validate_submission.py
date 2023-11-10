@@ -5,7 +5,7 @@ matt russell
 5-23-2023
 
 validates that a provided submission is acceptable; either it's before the due date or token-acceptable, 
-and it's submission # <= the max permissible for the course.
+and its submission # <= the max permissible for the course.
 
 uses tokens if required. 
 
