@@ -95,7 +95,7 @@ def RUN(cmd_ary,
         stderr=None,
         user=None, 
         group=None, 
-        extra_groups=[]):
+        extra_groups=None):
     """
         Runs the subprocess module on the given command and returns the result.
 
@@ -118,6 +118,7 @@ def RUN(cmd_ary,
     if user is not None:                
         gname = pwd.getpwnam(user).pw_name
         group = grp.getgrnam(gname).gr_gid
+        extra_groups = []
 
     return subprocess.run(["timeout", str(timeout)] + cmd_ary,
                           stdin=stdin,
