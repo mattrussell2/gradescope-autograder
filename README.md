@@ -1,17 +1,17 @@
 # Notes
 1) If you are not part of the Tufts community, or don't want to use the CI/CD pipeline described below, please see the 'global' repo branch; this is a more general variant that anyone can use without Tufts infrastructure. 
-2) Before beginning, you will need to email `mrussell at cs dot tufts dot edu` with a) your eecs utln [note you need to have logged in to gitlab.cs.tufts.edu at least once using `LDAP` with your Tufts eecs `utln` and password], b) which course you are working with (e.g. cs15), and c) what term the course will be for (e.g. spring, fall, etc.). He will create the template repo for you and add you as the `Owner`. This step will enable your repo to access the group-level variables used in the CI/CD pipeline.
+2) Before beginning, you will need to email `mrussell at cs dot tufts dot edu` with a) your eecs utln [note you need to have logged in to gitlab.cs.tufts.edu at least once using `LDAP` with your Tufts eecs `utln` and password], b) which course you are working with (e.g. cs15), and c) what term the course will be for (e.g. spring, fall, etc.). He will create the template repo for you and add you as the `Owner`. This step will enable your repo to access group-level variables used in the CI/CD pipeline.
 
 # Introduction
-The organizing principle of the process here is to center everything around the course `git` respository. Your repository will be the place where you interact with files, and will be connected to a `runner` which runs a preconfigured `CI/CD` pipeline on the halligan servers. This way, every time you push code to the repo, up to three tasks will happen automatically 
-1) Course files and (file permissions!) will be updated on the halligan server.
+The central organizing principle here is that everything for the course works via the git respository. Day-to-day, there is little to no human interaction with the halligan server. Instead, every time you push code to the repo, an automated `CI/CD` script will spawn up to three jobs automatically:
+1) Course files and file permissions (!!!) will be updated on the halligan server.
 2) A gradescope autograding docker container that will work for all the assignments in your course will be rebuilt if necessary. 
-3) Reference solution outputs for any given assignment will be generated if needed.
+3) Reference solution outputs for any updated assignments will be generated.
 ![pipeline image](_images/gitlab_deploy_pipeline.png)
 
 
 # Repository Structure
-Once you have received the email from `mrussell`, clone your repo. Let's investigate the components of the code provided. The default expected repository structure is as follows. Note that some of these paths are configurable - see `config.toml` below for details.
+Once you have received the email from `mrussell`, clone your repo. The default expected repository structure is as follows. Note that some of these paths are configurable - see `config.toml` below for details.
 ```
 .
 ├── assignments
@@ -70,7 +70,6 @@ ASSIGN_ROOT      = "assignments"
 ASSIGN_AG_DIR    = "autograder"  
 ASSIGN_SOL_DIR   = "solution"
 ```
-
 
 ```toml
 [halligan]
@@ -150,11 +149,11 @@ BOOLEAN_STYLE_WEIGHT    = 0.5
 ```
 
 # Establish the CI/CD Runner
-In order for code to be run (see the .gitlab-ci.yml section below) when you `git push`, we need a `runner`. Fortunately, the Tufts EECS staff have setup the requisite infrastucture such that getting this ready is straightforward. Before we get it running, you'll need a registration token. In the `gitlab.cs.tufts.edu` web interface, click the settings cog (lower-left side of the screen), and then select CI/CD. Expand the `runners` section. Keep this handy. Now, open a shell.
+In order for code to be run (see the .gitlab-ci.yml section below) when you `git push`, you will need a `runner`. Fortunately, the Tufts EECS staff have setup the requisite infrastucture such that getting this ready is straightforward. Note that you may want to use a course-specific user account to set this runner up, since the CI/CD script will otherwise have access to your personal files. staff@eecs.tufts.edu are excellent about creating such accounts promptly. Before we get it running, you'll need to register it, which requires a registration token from your repo. In the `gitlab.cs.tufts.edu` web interface, click the settings cog (lower-left side of the screen), and then select CI/CD. Expand the `runners` section. Keep this handy. Now, open a shell.
 ```
-ssh your-utln@linux.cs.tufts.edu
+ssh [or the course-specific utln]@linux.cs.tufts.edu
 ssh vm-podman01
-python3 -m pip install toml-cli # this will be needed by the runner
+python3 -m pip install toml-cli # this is used by the runner
 gitlab-runner register
 ```
 Here are the variables you'll need:
@@ -163,7 +162,17 @@ Here are the variables you'll need:
 * Description, Tags, and Maintenance Note: [optional] whatever you'd like
 * Executor: `shell`
 
-There are two wrinkles with `podman` on our `RHEL` instance: you can't use `podman` on an nfs mount, and the permissions vis-a-vis `UID/GID` issues are tricky. Fortunately there are solutions to both of these problems. Copy the following text and put it in a file on the halligan server located at `~/.config/containers/storage.conf` [make the directories if needed]. Make sure to update your utln for the `graphroot` variable.
+## Update the runner's default directory
+By default, the gitlab runner saves data in the home directory of the user (under `~/.gitlab-runner/builds`). In general this is okay, but, particularly if you're working with your own account, making use of the `/data/` directory on the halligan server works well. This directory is deleted every 30 days, but the gitlab-runner reproduces the necessary folders on its own without issue. In order to update this, you can open the file: `~/.gitlab-runner/config.toml`, and, under `[[runners]]`, add (or update):
+
+```
+builds_dir = "/data/your_utln/builds/course"
+cache_dir = "/data/your_utln/builds/cache"
+```
+If you ever want to see 'behind-the-scenes' of the gitlab-runner's working directory, etc. you can do so through the builds_dir here. 
+
+## Configure podman
+Recall that our gitlab-runner will be used to automatically build Docker containers for autograding. Given that we are on `RHEL`, which does not have native `Docker` support, we will use `podman` instead. There are two wrinkles with `podman` on our `RHEL` instance: you can't use `podman` on an nfs mount, and the permissions vis-a-vis `UID/GID` issues are tricky. Fortunately there are solutions to both of these problems. Copy the following text and put it in a file on the halligan server located at `~/.config/containers/storage.conf` [make the directories if needed]. Make sure to update your utln for the `graphroot` variable.
 ```toml
 [storage]
 driver = "overlay"
@@ -172,11 +181,14 @@ graphroot = "/var/tmp/YOUR_HALLIGAN_UTLN_HERE/containers/storage"
 [storage.options.overlay]
 ignore_chown_errors = "true"
 ```
+## Start the Runner
 Lastly, run the command:
 ```bash
 gitlab-runner run &
 ```
-At this point the runner will start running. You can exit out of the terminal, and due to the system configuration, this runner will stay alive. Now refresh the web page in the gitlab interface and expand the `runners` section again - you should see your runner available. **One thing to ensure - select the pencil icon next to the runner name, and make sure `Run untagged jobs` is checked. Good!** Now, Go back to the CI/CD settings, and expand the `variables` section. Add 2 variables here.
+At this point the runner will start running. 
+
+You can exit out of the terminal, and due to the system configuration, this runner will stay alive. Now refresh the web page in the gitlab interface and expand the `runners` section again - you should see your runner available. **One thing to ensure - select the pencil icon next to the runner name, and make sure `Run untagged jobs` is checked. Good!** Now, Go back to the CI/CD settings, and expand the `variables` section. Add 2 variables here.
 
 | Variable Key  |    <div style="width:295px">Example Value</div> | Purpose |
 |----------|--------------------|------|
