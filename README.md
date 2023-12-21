@@ -4,8 +4,8 @@
 
 # Introduction
 The central organizing principle here is that everything for the course works via the git respository. Day-to-day, there is little to no human interaction with the halligan server. Instead, every time you push code to the repo, an automated `CI/CD` script will spawn up to three jobs automatically:
-1) Course files and file permissions (!!!) will be updated on the halligan server.
-2) A gradescope autograding docker container that will work for all the assignments in your course will be rebuilt if necessary. 
+1) Course files and file permissions will be updated on the halligan server.
+2) A gradescope autograding docker container that will work for all the assignments in your course will be rebuilt if necessary and uploaded to a private Dockerhub account. 
 3) Reference solution outputs for any updated assignments will be generated.
 ![pipeline image](_images/gitlab_deploy_pipeline.png)
 
@@ -149,11 +149,11 @@ BOOLEAN_STYLE_WEIGHT    = 0.5
 ```
 
 # Establish the CI/CD Runner
-In order for code to be run (see the .gitlab-ci.yml section below) when you `git push`, you will need a `runner`. Fortunately, the Tufts EECS staff have setup the requisite infrastucture such that getting this ready is straightforward. Note that you may want to use a course-specific user account to set this runner up, since the CI/CD script will otherwise have access to your personal files. staff@eecs.tufts.edu are excellent about creating such accounts promptly. Before we get it running, you'll need to register it, which requires a registration token from your repo. In the `gitlab.cs.tufts.edu` web interface, click the settings cog (lower-left side of the screen), and then select CI/CD. Expand the `runners` section. Keep this handy. Now, open a shell.
+In order for code to be run (see the .gitlab-ci.yml section below) when you `git push`, you will need a `runner`. Fortunately, the Tufts EECS staff have setup the requisite infrastucture such that getting this ready is straightforward. Note that you may want to use a course-specific user account to set this runner up, since the CI/CD script will otherwise have access to your personal files. staff@eecs.tufts.edu are excellent about creating such accounts promptly; the account will need to be in the group listed in `config.toml` [usually, `taCOURSENUM`, e.g. `ta15`]; note that this group will have to be available on the podman-vm01 server. Before we get it running, you'll need to register it, which requires a registration token from your repo. In the `gitlab.cs.tufts.edu` web interface, click the settings cog (lower-left side of the screen), and then select CI/CD. Expand the `runners` section. Keep this handy. Now, open a shell.
 ```
 ssh [or the course-specific utln]@linux.cs.tufts.edu
 ssh vm-podman01
-python3 -m pip install toml-cli # this is used by the runner
+/usr/bin/python3 -m pip install toml-cli toml --user # these are used by the runner; make sure to specify the python location as well.
 gitlab-runner register
 ```
 Here are the variables you'll need:
@@ -181,6 +181,9 @@ graphroot = "/var/tmp/YOUR_HALLIGAN_UTLN_HERE/containers/storage"
 [storage.options.overlay]
 ignore_chown_errors = "true"
 ```
+
+The `graphroot` directory is where the podman (docker) containers for your course's autograding container will actually be stored - if you receive any odd podman-related errors, nuking this directory is a good first idea [it will be repopulated by podman automatically].
+
 ## Start the Runner
 Lastly, run the command:
 ```bash
@@ -204,8 +207,9 @@ You can exit out of the terminal, and due to the system configuration, this runn
     * `podman system prune --all` -> frees unused space from podman
                                   -> note that the output re: space freed can be misleading (look super large) if your containers share layers. 
     * `podman rmi --all --force`  -> cleans any containers that might be in-use (sometimes is an issue if containers-builds are quit mid-process)
-* If the EECS folks have to restart the `vm-podman01` server, for now you will have to manually restart your runner (`gitlab-runner run &`). 
-* The default behavior of our `CI/CD` scripts that use podman is to automatically run `podman system prune --all --force` and `podman rmi --all --force` to cleanup. This is not the most efficient in that the autograding containers will need to be pulled every time rather than leveraging a cache, but should keep your space on `/tmp` from filling up, which would prevent the script from running at all. TODO: update script to run the `prune/rmi` commands when `podman df` reports usage over ~10 (?) gb.
+ 
+    * The default behavior of our `CI/CD` scripts that use podman is to automatically run `podman system prune --all --force` and `podman rmi --all --force` to cleanup. This is not the most efficient in that the autograding containers will need to be pulled every time rather than leveraging a cache, but should keep your space on `/tmp` from filling up, which would prevent the script from running at all. TODO: update script to run the `prune/rmi` commands when `podman df` reports usage over ~10 (?) gb.
+* If the EECS folks have to restart the `vm-podman01` server, for now you will have to manually restart your runner (`gitlab-runner run &`) [note that this has not happened in the first year of the server being up].
 
 # .gitlab-ci.yml
 The 'magic' here all happens by way of the `.gitlab-ci.yml` file, which gitlab works with automatically whenever you run `git push`. The file is already configured to do what you'll need to (assuming your `config.toml` is set up properly). 
