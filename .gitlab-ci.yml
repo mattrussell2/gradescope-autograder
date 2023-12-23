@@ -59,8 +59,9 @@ update halligan server:
 
     #
     # sync the repo with halligan
+    # TEMPORARY --omit-dir-times while eecs staff is dealing with /comp/15/ chown situation
     #
-    - rsync -a --force --exclude='.git/' ./ ${HALLIGAN_COURSE_PTH}
+    - rsync ---omit-dir-times -a --force --exclude='.git/' ./ ${HALLIGAN_COURSE_PTH}
     
     #
     # set course files to the right group
