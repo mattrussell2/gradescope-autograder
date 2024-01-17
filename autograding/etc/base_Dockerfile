@@ -1,0 +1,37 @@
+# This is a 'base' configuration which will be used for all courses
+# mrussell maintains it at on Dockerhub at tuftscs/gradescope-docker:base
+# To make updates to the configuration, edit the Dockerfile in this directory; 
+# this is here for reference purposes only. 
+#
+# Matt Russell
+# 1/17/2024 
+
+#use gradescope's image as base
+FROM gradescope/autograder-base:ubuntu-22.04
+
+# initial apt stuff
+RUN apt-get update --fix-missing -y && apt-get upgrade -y
+RUN apt-get install software-properties-common \
+                    lsb-release \
+                    build-essential \
+                    wget \
+                    git \
+                    clang-format \
+                    valgrind \
+                    ssh \                    
+                    time \
+                    postgresql-client \
+                    clang-12 -y
+
+# use clang++
+RUN ln -s /usr/bin/clang++-12 /usr/bin/clang++
+
+# install python packages
+RUN python3 -m pip install --upgrade pip
+RUN python3 -m pip install toml dataclasses tqdm filelock python_dateutil psycopg2-binary toml-cli icdiff paramiko wcwidth tabulate rich
+
+# pretty bash terminal header
+RUN printf "export PS1=\"\\u@gs:\\W\\$ \"\n" >> ~/.bashrc
+
+# use this user to run components of the autograder that run student code
+RUN adduser student --no-create-home --disabled-password --gecos ""
