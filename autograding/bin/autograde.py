@@ -423,6 +423,10 @@ class Test:
         self.timed_out   = test_rcode == 124
         self.segfault    = test_rcode in [11, 139]
 
+        # exitcode 134 is 'interrupted by exit code 6'
+        if self.exit_status in [6, 134] and self.exitcodepass in [6, 134]:
+            self.exit_status = self.exitcodepass
+
         self.max_ram_exceeded    = False
         self.kill_limit_exceeded = False
 
@@ -436,7 +440,14 @@ class Test:
                 max_rss = int(memlines[-1].split()[0])  
                 self.max_ram_exceeded = (self.max_ram != -1 and max_rss > self.max_ram)
 
-                if "Command terminated by signal 6" in memlines[0]:
+                # TODO: REFACTOR THIS. Potentially add a new failure condition of uncaught exception, assuming 
+                #       that the kill_limit isn't breached. 
+                # signal 6 is SIGABRT; usually this is sent when kill limit is exceeded, 
+                # however sometimes a program will terminate by throwing an uncaught exception, which produces SIGABRT
+                # we attempt to deal with this by checking if the max_ram value is exceeded and that the program doesn't
+                # expect a return code of 6; if not it's likely that
+                # it's just an uncaught exception; if so, we assume kill limit is exceeded.  
+                if "Command terminated by signal 6" in memlines[0] and self.exitcodepass != 6 and self.max_ram_exceeded:
                     self.kill_limit_exceeded = True
 
                 elif "Command terminated by signal 9" in memlines[0]:
