@@ -239,12 +239,13 @@ Continue to the next section to learn about the autograding framework, and for a
 
 ## Introduction
 The autograding framework is designed to have you writing and deploying tests as quickly as possible. 
-There are two methods of testing a student's submission that this autograder supports
+There are three methods of testing a student's submission that this autograder supports
 
 1) Tests which are a set of `.cpp` driver files, each with their own `main()`. 
 2) Tests which send different input files to a student's executable program. 
+3) Run your own code.
 
-In either case, `stdout`/`stderr` can be `diff`'d automatically against the output of a reference implementation, you can send a file to `stdin` for a test, output can be canonicalized before `diff`, and `valgrind` can be run on the programs as well. Limits can be set for memory usage, timeout, etc. See details below.
+In any case above, `stdout`/`stderr` can be `diff`'d automatically against the output of a reference implementation, you can send a file to `stdin` for a test, output can be canonicalized before `diff`, and `valgrind` can be run on the programs as well. Limits can likewise be set for memory usage, timeout, etc. See details below.
 
 ## `autograde.py`
 Before getting into the details, here is a summary of the procedure run by `bin/autograde.py`, which is the script that does the autograding. 
@@ -258,12 +259,12 @@ Before getting into the details, here is a summary of the procedure run by `bin/
     * Execute the specified command
     * Run any `diff`s required based on the testing configuration; run canonicalization prior to `diff` if specified. 
     * Run `valgrind` if required.
-    * Determine whether the test passed or not
+    * Determine whether the test passed or not.
     * Save a dump of the completed Test object to `results/logs/testname.summary`
 * Report the results to `stdout`.
 
 ## Files/Directories Created by the Autograder
-After the autograder runs, here are the directories produced. 
+The directories produced by the autograder are 
 ```
 results
 ├── build/
@@ -279,7 +280,7 @@ Inside the `build` directory are all of the students submitted files, and any co
 A set of compilation logs and summary files for each test. **Each `testname.summary` file in the `logs/` directory contains a dump of the state of a given test. This is literally a dump of the backend `Test` object from the `autograde.py` script, which contains all of the values of the various configuration options (e.g. `diff_stdout`, etc.) and results (e.g. `stdout_diff_passed`). A first summary is created upon initialization of the test, and it is overwritten after a test finishes with the updated results. `summary` files are very useful for debugging!**
 
 ### output/
-Output of each test. There are output files created for `stdout`, `stderr`, output files produced by the program (marked with the `.ofile` extension) and `valgrind`. `.diff` files contain the result of `diff`ing the given output against the reference output are also here. If any of the output streams are to-be canonicalized prior to `diff`, then the `.ccized` file is created for that output stream [e.g. `testname.stdout.ccized`], along with the `.ccized.diff`, indicating that the files `diff`'d are the canoncialized outputs. Also here is a `.memtime` file, which contains the result of running `/usr/bin/time -v %M %S %U` on the given program. This file is only produced in the case where memory limits are set in the configuration. Here's an example of possible outputs:
+Output of each test. Files in `output` are automatically generated for `stdout` and `stderr` streams, and are saved as `testxx.std{out/err}`. Likewise `{testname}.valgrind` files contain valgrind output. `.diff` files contain the result of `diff`ing the given output against the reference output are also here. If any of the output streams are to-be canonicalized prior to `diff`, then a `.ccized` file is created for that output stream [e.g. `testname.stdout.ccized`], along with the `.ccized.diff`, indicating that the files `diff`'d are the canoncialized outputs. Also here is a `.memtime` file, which contains the result of running `/usr/bin/time -v %M %S %U` on the given program. This file is only produced in the case where memory limits are set in the configuration. Lastly, `.ofile` files are produced for files written to by the program (see details below). Here's an example of possible outputs:
 ```
 results
 ├── output
@@ -394,7 +395,7 @@ And the corresponding (bare-bones) directory structure
 |---testest.toml      [testing configuration file]
 |-
 ```
-Note that the default behavior of the autograder, regardless of testing format, is for Any file in `testset/stdin/` that is named `<testname>.stdin` will be sent to `stdin` for a test with the testname `<testname>`. Also here we do not need a `makefile` folder - it is assumed we will be using the student's `Makefile` instead. 
+Note that the default behavior of the autograder, regardless of testing format, is for any file in `testset/stdin/` that is named `<testname>.stdin` will be sent to `stdin` for a test with the testname `<testname>`. Also here we do not need a `makefile` folder - it is assumed we will be using the student's `Makefile` instead. 
 
 ## Command-Line Arguments
 For any test, you may specify a variable `argv` which is a list of command-line arguments to send to the executable. This is doable with either style of assignment-testing demonstrated above. Note all `arvg` arguments must be written as strings, however they will be passed without quotes to the executable. To add `"` characters, escape them in the `argv` list. For example, the following test will be run as `./test0 1 2 "3"`.  
