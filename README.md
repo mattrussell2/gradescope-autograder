@@ -1,14 +1,29 @@
-# Notes
-1) If you are not part of the Tufts community, or don't want to use the CI/CD pipeline described below, please see the 'global' repo branch; this is a more general variant that anyone can use without Tufts infrastructure. 
-2) Before beginning, you will need to email `mrussell at cs dot tufts dot edu` with a) your eecs utln [note you need to have logged in to gitlab.cs.tufts.edu at least once using `LDAP` with your Tufts eecs `utln` and password], b) which course you are working with (e.g. cs15), and c) what term the course will be for (e.g. spring, fall, etc.). He will create the template repo for you and add you as the `Owner`. This step will enable your repo to access group-level variables used in the CI/CD pipeline.
+# Intro 
+Although this repo is named 'gradescope-autograder', it is really two things:
+1) A CI/CD pipeline that smoothly maintains the course and supports the autograder. 
+2) An autograding framework.
 
-# Introduction
-The central organizing principle here is that everything for the course works via the git respository. Day-to-day, there is little to no human interaction with the halligan server. Instead, every time you push code to the repo, an automated `CI/CD` script will spawn up to three jobs automatically:
-1) Course files and file permissions will be updated on the halligan server.
-2) A gradescope autograding docker container that will work for all the assignments in your course will be rebuilt if necessary and uploaded to a private Dockerhub account. 
-3) Reference solution outputs for any updated assignments will be generated.
-![pipeline image](_images/gitlab_deploy_pipeline.png)
+If you don't want to use the infrasturcture framework, see the 'global' repo branch. Otherwise, email `mrussell at cs dot tufts dot edu` with a) your eecs utln [note you need to have logged in to gitlab.cs.tufts.edu at least once using `LDAP` with your Tufts eecs `utln` and password], b) which course you are working with (e.g. cs15), and c) what term the course will be for (e.g. spring, fall, etc.). He will create the template repo for you and add you as the `Owner`. This step will enable your repo to access group-level variables used by the CI/CD pipeline.
 
+# Architecture Visualizations
+This is all of the architecture used here. Aside from setting up the gitlab-runner instance, you will not manually interface with the architecture; your job will only be to push to the repo. 🥳
+<div align="center">
+    <img src="https://gitlab.cs.tufts.edu/mrussell/gradescope-autograder/-/raw/main/_images/system_architecture.png" width="100%" height="100%">
+</div>
+
+
+## Gradescope Autograding Pipeline Visualization 
+What happens when a student submits code to Gradscope. This pipeline is automated; you will only update assignment autograding code within the framework detailed below. [below](#autograding-framework).
+<div align="center">
+    <img src="https://gitlab.cs.tufts.edu/mrussell/gradescope-autograder/-/raw/main/_images/autograding_flowchart.png" width="100%" height="100%">
+</div>
+
+
+## CI/CD Pipeline Visualization
+CI/CD pipeline that runs when you push code to the repo. The steps in orange are handled by Gitlab and the gitlab-runner. The steps in teal have been written by course-staff. 
+<div align="center">
+    <img src="https://gitlab.cs.tufts.edu/mrussell/gradescope-autograder/-/raw/main/_images/ci_cd_pipeline.png" width="100%" height="100%">
+</div>
 
 # Repository Structure
 Once you have received the email from `mrussell`, clone your repo. The default expected repository structure is as follows. Note that some of these paths are configurable - see `config.toml` below for details.
@@ -37,21 +52,11 @@ Once you have received the email from `mrussell`, clone your repo. The default e
 └── config.toml
 ```
 
-## per-assignment structure
-Each assignment usually contains 4 folders
-* **`autograder`** - contains autograding files; this is covered in detail later in this document.
-* **`solution`** - contains the solution code. 
-* **`files`** - contains all student-facing code files.
-* **`spec`** - contains all spec-related files.
-
-Add additional folders as you need.  
-
 ## **files** and **public_html** directories
-The top-level **`files`** and **`public_html`** directories have symlinks - these are useful to provide an easy access for students to access course files. 
-* `public_html/` contains symlinks to the `assignments/${assign_name}/spec/${assign_name}.pdf` spec files
-* `files/` contains symlinks to the `assignments/${assign_name}/files` directory wich contains copy starter code.
+* `public_html/` contains symlinks to the `assignments/${assign_name}/spec/${assign_name}.pdf` spec files.
+* `files/` contains symlinks to the `assignments/${assign_name}/files` starter code directories.
 
-The script `staff-bin/make-symlinks` will make these symlinks for you automatically. Note that if you change any of the file paths that are **not** in the `[repo]` section of `config.toml` (see below) you'll have to specify them in the script.   
+The script `staff-bin/make-symlinks` will create these symlinks for you.
 
 ## **bin**
 Contains code executable by students 
