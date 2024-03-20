@@ -1,7 +1,7 @@
 # Intro 
 Although this repo is named 'gradescope-autograder', it is really two things:
 1) A CI/CD pipeline that smoothly maintains the course and supports the autograder. 
-2) An autograding framework.
+2) An autograding framework [that seamlessly interoperates with Gradescope].
 
 If you don't want to use the infrasturcture framework, see the 'global' repo branch. Otherwise, email `mrussell at cs dot tufts dot edu` with a) your eecs utln [note you need to have logged in to gitlab.cs.tufts.edu at least once using `LDAP` with your Tufts eecs `utln` and password], b) which course you are working with (e.g. cs15), and c) what term the course will be for (e.g. spring, fall, etc.). He will create the template repo for you and add you as the `Owner`. This step will enable your repo to access group-level variables used by the CI/CD pipeline.
 
