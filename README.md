@@ -68,102 +68,56 @@ Contains code executable by staff
 The `config.toml` file contains various essential bits of information related to the directory structure, and your course configuration in general. Please configure it as appropriate.
 
 ```toml
-# These correspond to the folders above
 [repo]
 AUTOGRADING_ROOT = "autograding" 
 ASSIGN_ROOT      = "assignments" 
-ASSIGN_AG_DIR    = "autograder"  
-ASSIGN_SOL_DIR   = "solution"
-```
+ASSIGN_AG_DIR    = "autograder"   # e.g. assignments/my_assign/autograder
+ASSIGN_SOL_DIR   = "solution"     # e.g. assignments/my_assign/solution
 
-```toml
 [halligan]
-#
-# the [halligan] section contains variables relating to storage of 
-# data from the course repo on the halligan server. These variables
-# will be used by the CI/CD pipeline to
-#   1) place the course files in /g/${COURSE_NUM}/${TERM}
-#   2) course files will be chgrp'd as ${FILE_GROUP}
 COURSE_NUM = 15
-TERM       = "2023s"
-FILE_GROUP = "ta15"
-```
+TERM       = "2023s"     # CI/CD puts course files to /g/$COURSE_NUM/$TERM
+FILE_GROUP = "ta15"      # CI/CD chgrps course files as $FILE_GROUP
 
-```toml
 [tokens]
-#
-# the [tokens] section contains token-related information. 
-# 
-# MANAGE_TOKENS   -> whether to manage tokens or not
-# GRACE_TIME      -> submission time is subtracted by this value (in minutes)
-# TOKEN_TIME      -> time per token (in minutes)
-# STARTING_TOKENS -> value in all students accounts to begin the semester
-#                    note: this value *is* modifiable mid-semester
-#
-# MAX_PER_ASSIGN  -> maximum number of tokens a student can use per assignment
-#                    note: for now MUST be 2, so tweak TOKEN_TIME instead
-#
-# EXCEPTIONS      -> dictionary of the form "TOKEN USER" = MAX_TOKENS
-#                    note: must EXACTLY match the student's gradescope name
-MANAGE_TOKENS   = true
-GRACE_TIME      = 15   
-TOKEN_TIME      = 1440 
-STARTING_TOKENS = 5
-MAX_PER_ASSIGN  = 2
-[tokens.EXCEPTIONS]
-"Matthew P. Russell" = 1
-```
+MANAGE_TOKENS   = true   # manage tokens or not?
+GRACE_TIME      = 15     # (in minutes)
+TOKEN_TIME      = 1440   # (in minutes)
+STARTING_TOKENS = 5      # max per-student: modifiable anytime
+MAX_PER_ASSIGN  = 2      # (this must be 2 for now)
+[tokens.EXCEPTIONS]      
+"Matthew P. Russell" = 1 # adjust student max: EXACT name on gradescope
 
-```toml
 [misc]
-#
-# [misc] contains other miscellaneous information
-#
-# SUBMISSIONS_PER_ASSIGN -> max submissions each student has per assignment
-#                           note: is overridable an assign's testset.toml
-#
-# TEST_USERS -> gradescope users who are exempt from submission validation
-SUBMISSIONS_PER_ASSIGN = 5
-TEST_USERS             = ["Matthew P. Russell"]
-```
+SUBMISSIONS_PER_ASSIGN = 5                      # overridable in testset.toml
+TEST_USERS             = ["Matthew P. Russell"] # EXACT gs name
 
-```toml
 [style]
-#
-# [style] contains auto style-checker info
-#
-# NON_CODE_STYLE_CHECKSET -> files to stylecheck outside of code (e.g. 80 cols)
-# CODE_STYLE_CHECKSET     -> files to stylecheck for code stuff
-# MAX_COLUMNS             -> max allowable columns for 'good style'
-# XXXXXX_STYLE_WEIGHT     -> relative points to take off for:
-#     COLUMNS -> exceeding MAX_COLUMNS
-#     TABS    -> tab characters
-#     TODOS   -> string "TODO"
-#     SYMBOL  -> &&, ||, !, etc.
-#     BREAK   -> "break"
-#     BOOLEAN -> x == true, y == false
 NON_CODE_STYLE_CHECKSET = ['README', '.h', '.cpp']
 CODE_STYLE_CHECKSET     = ['.h', '.cpp']
 MAX_COLUMNS             = 80
-COLUMNS_STYLE_WEIGHT    = 1
+COLUMNS_STYLE_WEIGHT    = 1    # XXX_STYLE_WEIGHT relative points to deduct
 TABS_STYLE_WEIGHT       = 1
-TODOS_STYLE_WEIGHT      = 0.5
-SYMBOL_STYLE_WEIGHT     = 0.5
-BREAK_STYLE_WEIGHT      = 0.5
-BOOLEAN_STYLE_WEIGHT    = 0.5
+TODOS_STYLE_WEIGHT      = 0.5  # TODO comments in code
+SYMBOL_STYLE_WEIGHT     = 0.5  # &&, ||, !, etc.
+BREAK_STYLE_WEIGHT      = 0.5  # 'break'
+BOOLEAN_STYLE_WEIGHT    = 0.5  # x == true, y == false
 ```
 
 # Establish the CI/CD Runner
-In order for code to be run (see the .gitlab-ci.yml section below) when you `git push`, you will need a `runner`. Fortunately, the Tufts EECS staff have setup the requisite infrastucture such that getting this ready is straightforward. Note that you may want to use a course-specific user account to set this runner up, since the CI/CD script will otherwise have access to your personal files. staff@eecs.tufts.edu are excellent about creating such accounts promptly; the account will need to be in the group listed in `config.toml` [usually, `taCOURSENUM`, e.g. `ta15`]; note that this group will have to be available on the podman-vm01 server. Before we get it running, you'll need to register it, which requires a registration token from your repo. In the `gitlab.cs.tufts.edu` web interface, click the settings cog (lower-left side of the screen), and then select CI/CD. Expand the `runners` section. Keep this handy. Now, open a shell.
+## Preliminaries
+You will need a `gitlab-runner` in order for the CI/CD pipeline to run when you `git push`.  Fortunately, the EECS staff have setup the requisite infrastucture such that getting this ready is straightforward. Note that you may want to use a course-specific user account to set this runner up, since the CI/CD script will otherwise have access to your personal files. `staff@eecs.tufts.edu` are excellent about creating such accounts promptly; things to tell them: 1) the account will need to be in the group listed in `config.toml` [usually, `taCOURSENUM`, e.g. `ta15`], 2) this group will have to be available on the `podman-vm01` server. 
+
+Now, open a shell.
 ```
 ssh [or the course-specific utln]@linux.cs.tufts.edu
 ssh vm-podman01
-/usr/bin/python3 -m pip install toml-cli toml --user # these are used by the runner; make sure to specify the python location as well.
+/usr/bin/python3 -m pip install toml-cli toml --user # this line must be exact
 gitlab-runner register
 ```
 Here are the variables you'll need:
 * GitLab instance URL: https://gitlab.cs.tufts.edu
-* Registration Token: (what you copied above)
+* Registration Token: In the `gitlab.cs.tufts.edu` web interface, click the settings cog (lower-left side of the screen), and then select CI/CD. Expand the `runners` section. Copy the token.
 * Description, Tags, and Maintenance Note: [optional] whatever you'd like
 * Executor: `shell`
 
@@ -196,7 +150,7 @@ gitlab-runner run &
 ```
 At this point the runner will start running. 
 
-You can exit out of the terminal, and due to the system configuration, this runner will stay alive. Now refresh the web page in the gitlab interface and expand the `runners` section again - you should see your runner available. **One thing to ensure - select the pencil icon next to the runner name, and make sure `Run untagged jobs` is checked. Good!** Now, Go back to the CI/CD settings, and expand the `variables` section. Add 2 variables here.
+You can exit out of the terminal, and due to the system configuration this runner will stay alive. Now refresh the web page in the gitlab interface and expand the `runners` section again - you should see your runner available. **One thing to ensure - select the pencil icon next to the runner name, and make sure `Run untagged jobs` is checked. Good!** Now, Go back to the CI/CD settings, and expand the `variables` section. Add 2 variables here.
 
 | Variable Key  |    <div style="width:295px">Example Value</div> | Purpose |
 |----------|--------------------|------|
@@ -204,22 +158,21 @@ You can exit out of the terminal, and due to the system configuration, this runn
 | `REPO_WRITE_DEPLOY_TOKEN` | ... | Deploy token for your repository. Create one in the gitlab web interface with settings->access tokens. The token must have `read_repository` and `write_repository` permissions, and must have at least the `maintainer` role |
 
 # Notes on podman
-* Note that the eecs server uses `podman`, as `RHEL` doesn't directly support docker.
 * You can expect that the disk usage on your system will be directly proportional to the number of available processes you provide to your runner, as each separate process has its own clone of the repo. 
 * `podman` containers **cannot** be mounted on nfs drives (e.g. your home directory); this is one of the reasons the `storage.conf` file is necessary above. 
 * Despite that your containers will be built in `/var/tmp/YOUR_HALLIGAN_UTLN_HERE/containers/storage`, there is still a upper-limit to the storage space. I ran out at ~20gb. A few handy `podman` commands in regard to this
     * `podman system df`          -> shows your podman disk usage
     * `podman system prune --all` -> frees unused space from podman
-                                  -> note that the output re: space freed can be misleading (look super large) if your containers share layers. 
+                                  -> the output re: space freed can be misleading (look super large) if your containers share layers. 
     * `podman rmi --all --force`  -> cleans any containers that might be in-use (sometimes is an issue if containers-builds are quit mid-process)
  
     * The default behavior of our `CI/CD` scripts that use podman is to automatically run `podman system prune --all --force` and `podman rmi --all --force` to cleanup. This is not the most efficient in that the autograding containers will need to be pulled every time rather than leveraging a cache, but should keep your space on `/tmp` from filling up, which would prevent the script from running at all. TODO: update script to run the `prune/rmi` commands when `podman df` reports usage over ~10 (?) gb.
-* If the EECS folks have to restart the `vm-podman01` server, for now you will have to manually restart your runner (`gitlab-runner run &`) [note that this has not happened in the first year of the server being up].
+* If the EECS folks have to restart the `vm-podman01` server, for now you will have to manually restart your runner (`gitlab-runner run &`) [note that this has happened once the first year of the server being up].
 
 # .gitlab-ci.yml
 The 'magic' here all happens by way of the `.gitlab-ci.yml` file, which gitlab works with automatically whenever you run `git push`. The file is already configured to do what you'll need to (assuming your `config.toml` is set up properly). 
 
-## NOTE: **`course-repos`** group-level variables
+## **`course-repos`** group-level variables
 To make this all work, the `.gitlab-ci.yml` file also relies on some gitlab environment variables that are set at a course-repos group level, and which are automatically accessible by every course under that group. **DO NOT MODIFY THESE GROUP-LEVEL VARIABLES! Furthemore, these variables contain sensitive information intended to be visible only to trusted members of the Tufts CS community, so please be careful to whom you give privileged access to your course repository!**
 
 ## Gitlab-runner jobs
