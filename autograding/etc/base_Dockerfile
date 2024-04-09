@@ -11,7 +11,7 @@ FROM gradescope/autograder-base:ubuntu-22.04
 
 # initial apt stuff
 RUN apt-get update --fix-missing -y && apt-get upgrade -y
-RUN apt-get install software-properties-common \
+RUN apt-get install -y software-properties-common \
                     lsb-release \
                     build-essential \
                     wget \
@@ -20,11 +20,11 @@ RUN apt-get install software-properties-common \
                     valgrind \
                     ssh \                    
                     time \
-                    postgresql-client \
-                    clang-12 -y
+                    postgresql-client                   
 
-# use clang++
-RUN ln -s /usr/bin/clang++-12 /usr/bin/clang++
+# install clang++ 16
+RUN wget https://apt.llvm.org/llvm.sh && chmod +x llvm.sh && yes | ./llvm.sh 16
+RUN ln -s /usr/bin/clang++-16 /usr/bin/clang++
 
 # install python packages
 RUN python3 -m pip install --upgrade pip
