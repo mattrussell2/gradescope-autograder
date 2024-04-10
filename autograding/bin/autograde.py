@@ -481,7 +481,7 @@ class Test:
         """
         if self.valgrind:
             valgrind_command = [
-                "/usr/bin/valgrind",                # doesn't have 72,704 bug
+                "valgrind",
                 "--show-leak-kinds=all",            # gimme all the leaks
                 "--leak-check=full",                # catch all kinds of leaks
                 "--errors-for-leak-kinds=none",     # separate errors from leaks
