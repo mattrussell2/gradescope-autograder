@@ -14,10 +14,10 @@ RUN apt-get update --fix-missing -y && apt-get upgrade -y
 RUN apt-get install -y software-properties-common \
                     lsb-release \
                     build-essential \
+                    automake \
                     wget \
                     git \
                     clang-format \
-                    valgrind \
                     ssh \                    
                     time \
                     postgresql-client                   
@@ -25,6 +25,9 @@ RUN apt-get install -y software-properties-common \
 # install clang++ 16
 RUN wget https://apt.llvm.org/llvm.sh && chmod +x llvm.sh && yes | ./llvm.sh 16
 RUN ln -s /usr/bin/clang++-16 /usr/bin/clang++
+
+RUN wget https://sourceware.org/pub/valgrind/valgrind-3.21.0.tar.bz2 && tar xvf valgrind-3.21.0.tar.bz2
+RUN cd valgrind-3.21.0 && ./configure && make && make install
 
 # install python packages
 RUN python3 -m pip install --upgrade pip
