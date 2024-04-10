@@ -20,6 +20,7 @@ RUN apt-get install -y software-properties-common \
                     clang-format \
                     ssh \                    
                     time \
+                    libc6-dbg \
                     postgresql-client                   
 
 # install clang++ 16
