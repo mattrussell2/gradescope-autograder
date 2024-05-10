@@ -31,6 +31,7 @@ from rich.table import Table, Column
 from rich import print as rprint
 from rich import box
 from collections.abc import Iterable
+
 if 'canonicalizers.py' in os.listdir():
     sys.path.append(os.getcwd())
     import canonicalizers
@@ -69,6 +70,8 @@ MEMLEAK_PASS   = "All heap blocks were freed -- no leaks are possible"
 MEMERR_PASS    = "ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)"
 VALG_NO_MEM    = "Valgrind's memory management: out of memory"
 
+TRUNCATION_MESSAGE  = "\nFile was truncated by the autograder for being too large"
+
 
 def COLORIZE(s, color):
     return f"{START_COLOR}{color}{s}{RESET_COLOR}"
@@ -81,6 +84,11 @@ def INFORMF(s, stream, color):
 
 def INFORM(s, color):
     print(COLORIZE(s, color))
+
+
+def FAIL(s):
+    INFORM(s, color=RED)
+    exit(1)
 
 
 def RUN(cmd_ary,
@@ -133,11 +141,6 @@ def RUN(cmd_ary,
                           group=group, 
                           extra_groups=extra_groups)
 
-def FAIL(s):
-    INFORM(s, color=RED)
-    exit(1)
-
-
 @dataclass
 class TestConfig:
     max_time: int = 10
@@ -154,6 +157,12 @@ class TestConfig:
     diff_stderr: bool = True
     diff_ofiles: bool = True
 
+    # this is the maximum file size that can be produced in
+    # by running a test -- by default it is 2 MB, this is the
+    # maximum allowed size for any single stdout, stderr,
+    # or ofile -- adjust per necessary (e.g. gerp)
+    file_size_limit: int = 2
+
     valgrind: bool = True
     pretty_diff: bool = True
     our_makefile: bool = True
@@ -161,7 +170,7 @@ class TestConfig:
     visibility: str = "after_due_date"               # gradescope setting
     argv: List[str] = field(default_factory=list)
 
-    # assignment-widfe ([common]) settings - note that all besides kill_limit are not even
+    # assignment-wide ([common]) settings - note that all besides kill_limit are not even
     # referenced in this file, however they still must be listed here. If they
     # are not, a TypeError is raised indicating that the TestConfig __init__
     # fails when any of these fields are specified in the TOML - 2/25/2023 slamel01
@@ -174,6 +183,7 @@ class TestConfig:
     # default = [...] doesn't work, need to use default_factory that just has a lambda return some specified [...]
     max_submission_exceptions: dict = field(default_factory=dict)
     required_files: List[str] = field(default_factory=list)
+    manage_tokens: bool = True 
 
     # only used for manual mode
     exec_command: str = ""
@@ -251,7 +261,10 @@ class Test:
             "ref_stderr"  : f"{REF_OUTPUT_DIR}/{self.testname}.stderr",
         }
 
-        # B -> MB;  setrlimit uses Bytes
+        # MB -> B, truncate_file( ) works in bytes
+        self.file_size_limit *= (1024 * 1024)
+
+        # MB -> B;  setrlimit uses Bytes
         self.kill_limit = self.kill_limit * 1024 * 1024
 
         # KB -> MB; /usr/bin/time -o %M uses KB
@@ -528,8 +541,17 @@ class Test:
         if not os.path.exists(filea):
             return 2               # diff's non-existing file return code
         
+        # Chami: We do this here and not before run_diff( ) is called in case
+        # filea doesn't exist -- originally, this was called with OUTPUT_DIR/ofilename
+        # in the loop that calls run_diff( ). However, ofilename, is not
+        # guarnanteed to have been produced by the student but may be expected
+        # in the reference output because ofilenames is a set union of reference
+        # output and student output files 
+        self.truncate_file(filea)
+
         if not os.path.exists(fileb):
-            INFORM(f"reference output missing for: {self.testname} " + "- ignore if building reference output",
+            # Chami: added the basename here for better debugging (which ref output file is missing)
+            INFORM(f"reference output missing for: {self.testname} file: {os.path.basename(fileb)}" + "- ignore if building reference output",
                    color=MAGENTA)
         
         if canonicalize:
@@ -562,6 +584,30 @@ class Test:
                 diff_result = subprocess.run(f"diff {filea} {fileb} > {filec} 2> /dev/null", shell=True)
 
         return diff_retcode
+    
+    def truncate_file(self, filepath):
+        """
+        Purpose:
+            Truncates a file to be only a certain size. This is to prevent
+            issues of students (usually inadvertently) creating huge files. 
+            One example was found with zap where a student used
+            ZapUtil::printTree( ) on a big tree on every test which 
+            loaded the container disk space and caused a crash. 
+
+            This function protects against this because after every test
+            is run, before the diffs are run, we truncate down the
+            stdout, stderr, and any produced ofiles. 
+        
+        Parameters:
+            filepath: str
+                File to be truncated in size -- it is assumed to exist
+        """
+
+        if os.path.getsize(filepath) > self.file_size_limit:
+            with open(filepath, 'rb') as rf:
+                contents = rf.read(self.file_size_limit)
+            with open(filepath, 'wb') as wf:
+                wf.write(contents + TRUNCATION_MESSAGE.encode("utf-8"))
 
 
     def run_diffs(self):
@@ -577,10 +623,12 @@ class Test:
             return
 
         if self.diff_stdout:
+            self.truncate_file(self.fpaths['stdout'])
             self.stdout_diff_passed = self.run_diff(self.fpaths['stdout'], self.fpaths['ref_stdout'],
                                                     self.fpaths['stdout.diff'], 'stdout', self.ccize_stdout) == 0
 
         if self.diff_stderr:
+            self.truncate_file(self.fpaths['stderr'])
             self.stderr_diff_passed = self.run_diff(
                 self.fpaths['stderr'],
                 self.fpaths['ref_stderr'],
@@ -658,23 +706,29 @@ def report_results(TESTS, console=None):
         CHECK = "🐘"
     
     for testname, test in TESTS.items():
+        # Chami: I changed the reference output table to not just have the test description
+        # but also the test name... when students come and ask like "why am I failing
+        # this ..." it's useful to know the test name ... that way I can then look 
+        # at the autograder results on gradescope and go to a stdin file, output file, etc.
+        # as everything there is key'd on testname (so we don't have to look in toml first)
+        prefix = f"{test.testname}: {test.description}"
         if test.success and test.valgrind_passed:
-            table.add_row(f"{test.description}", CHECK, CHECK, "")
+            table.add_row(prefix, CHECK, CHECK, "")
         elif test.success and not test.valgrind:
-            table.add_row(f"{test.description}", CHECK, DASH if CHECK != "🐘" else "🐘", "")
+            table.add_row(prefix, CHECK, DASH if CHECK != "🐘" else "🐘", "")
         elif test.success and not test.valgrind_passed:
             if test.memory_leaks and test.memory_errors:
-                table.add_row( f"{test.description}", CHECK, f":water_wave::thinking_face:", "")
+                table.add_row(prefix, CHECK, f":water_wave::thinking_face:", "")
             elif test.memory_leaks:
-                table.add_row( f"{test.description}", CHECK, f":water_wave:", "")
+                table.add_row(prefix, CHECK, f":water_wave:", "")
             elif test.memory_errors:
-                table.add_row( f"{test.description}", CHECK, f":thinking_face:", "")
+                table.add_row(prefix, CHECK, f":thinking_face:", "")
         else:
             symbols = ""
             for testtype, test_mitigation_obj in report.items():
                 if test_mitigation_obj['test'](test):
                     symbols += test_mitigation_obj['symbol']
-            table.add_row(f"{test.description}", EX, CNCL if test.valgrind else DASH, symbols)
+            table.add_row(prefix, EX, CNCL if test.valgrind else DASH, symbols)
     
     if not console:
         console = Console(force_terminal=True)
@@ -871,15 +925,17 @@ def build_testing_directories():
     Path(f'{LOG_DIR}/status').write_text("")
 
     # students need read access to link/stdin/cpp dirs
-    chmod_dir(TESTSET_DIR, "551") 
+    chmod_dir(TESTSET_DIR, "555") 
     chmod_dir(LINK_DIR, "775")   
     chmod_dir(STDIN_DIR, "775")
     chmod_dir(TEST_CPP_DIR, "775")    
     
+    chmod_dir(RESULTS_DIR, "755")
+
     # students need write access to the output/log/build dirs
     chmod_dir(OUTPUT_DIR, "777")
     chmod_dir(LOG_DIR, "777")
-    chmod_dir(BUILD_DIR, "777")    
+    chmod_dir(BUILD_DIR, "777")
 
 
 class CustomFormatter(argparse.HelpFormatter):

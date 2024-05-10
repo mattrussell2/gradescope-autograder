@@ -5,11 +5,12 @@ matt russell
 5-23-2023
 
 validates that a provided submission is acceptable; either it's before the due date or token-acceptable, 
-and its submission # <= the max permissible for the course.
+and it's submission # <= the max permissible for the course.
 
 uses tokens if required. 
 
 """
+
 import os
 import json
 import toml
@@ -17,6 +18,7 @@ from pathlib import Path
 from dateutil import parser as dateparser
 from datetime import timedelta
 from token_manager import DB, INFORM, BLUE
+
 
 def EXIT_FAIL(message, db=None):
     message = "❌ " + message
@@ -58,6 +60,43 @@ def EXIT_SUCCESS(message, db=None):
             db.close()
     exit(0)
 
+def make_dict_case_insensitive(d):
+    """
+    Chami: 
+
+    Prepares a dictionary for case insensitive queries -- i.e. it makes its
+    keys lowercase. If a dictionary has 2 keys which are the same when
+    compared case insensitively, an error is raised. 
+
+    Parameters:
+        d - dict[str, Any]
+
+    Returns:
+        New dictionary matching above (dict[str, Any])
+
+    Usage:
+        Convert token, submission exemption dictionaries to enable case insensitive 
+        search on email. Again, this is because emails by definition are meant to 
+        be case insensitive anyway.
+
+        We raise an error to signify that in either of these cases if there are 2
+        different casings of the same email specified in the configuration, that's 
+        a problem. 
+
+        Example: we want to inform a staff member if they've done something like 
+
+        { "swaminathan.lamelas@tufts.edu" = 3, "Swaminathan.Lamelas@tufts.edu" = 2 }
+    """
+
+    new_dict = dict() 
+    for k, v in d.items():
+        k_insensitive = k.lower() 
+        if k_insensitive in new_dict:
+            raise RuntimeError(f"Invalid configuration, have multiple casings of \'{k_insensitive}\', configuration keys = {', '.join(d)}")
+        new_dict[k_insensitive] = v 
+    return new_dict
+
+
 
 INFORM("🔑 Submission Validation", BLUE)
 
@@ -81,37 +120,74 @@ TOKEN_CONFIG  = CONFIG['tokens']
 ASSIGN_NAME   = METADATA['assignment']['title']
 
 """
-    extract the name of the user from the metadata file.  
+    extract the email of the user from the metadata file.  
     notes:
         weird case with gradescope - the only submission that has a 'user' field is the active one
+
+    CL: This swapped from 'name' to 'email' to account for the case of multiple students having the same name
+    (which would double count tokens for the lack of a better word) or a student sharing a name with a 
+    staff member (which could have them bypass the token check)
+
+    Lastly, the use of email is consistent with the CLI hitme system which uses it as a primary key in
+    the hitme database. 
+
+    We lowercase the email to enable case insentive email comparison when looking in the various 
+    TOML configuration files where users could have entered submission or token exemptions.
 """ 
 try:
-    GRADESCOPE_NAME = METADATA['users'][0]['name']
+    GRADESCOPE_NAME = METADATA['users'][0]['email'].lower()
+    print(f"Submitter: {GRADESCOPE_NAME}")
 except:
     EXIT_FAIL("ERROR: You can only run an active submission on gradescope.")
+
+
+"""
+    test set of required files
+    Chami: moved this to be before TEST_USER check just so that if a TA submits 
+    some code under their name missing a required file then that should be
+    reported immediately before they bypass the token and submission limit
+    checks that occur below. Otherwise, the autograder tries to run all
+    the tests and it takes awhile for them to all fail compilation
+"""
+REQUIRED_FILES  = set(TESTSET_TOML.get('required_files', []))
+SUBMITTED_FILES = set(os.listdir(SUBMISSION_DIR))
+MISSING_FILES   = REQUIRED_FILES - SUBMITTED_FILES 
+if len(MISSING_FILES) > 0:
+    EXIT_FAIL(f"ERROR: Required files missing: {MISSING_FILES} -- this does not count as a submission!")
+
 
 """ 
     extract the number of current / maximum submissions
     notes:
         if student has an exception for the given assignment, then use that value instead of the course default
+
+    Chami: moved this here because MAX_SUB_NUM and CURR_SUB_NUM must be defined before the first call
+    to EXIT_SUCCESS including when test user is passing by default 
 """
 PREV_SUBMISSIONS = [submission for submission in METADATA['previous_submissions'] if float(submission['score']) > 0]
 CURR_SUB_NUM     = len(PREV_SUBMISSIONS) + 1
 try: 
+    # chami: convert user specifications in testset.toml for max submission exceptions to enable case insensitive 
+    # search by converting all specified emails to lowercase -- this is done here because 'max_submission_exceptions'
+    # may not be in common section of testset.toml
+    TESTSET_TOML['max_submission_exceptions'] = make_dict_case_insensitive(TESTSET_TOML['max_submission_exceptions'])
     MAX_SUB_NUM  = TESTSET_TOML['max_submission_exceptions'][GRADESCOPE_NAME]
-except: 
-    MAX_SUB_NUM  = TESTSET_TOML.get('max_submissions', CONFIG['misc']['SUBMISSIONS_PER_ASSIGN'])    
+except KeyError: 
+    MAX_SUB_NUM  = TESTSET_TOML.get('max_submissions', CONFIG['gradescope']['SUBMISSIONS_PER_ASSIGN'])    
+
 
 """
     If the user is a test user, we're done. 
-    notes: 
-        CURR_SUB_NUM and MAX_SUB num are required by EXIT_SUCCESS.
+
+    Chami: We do a case insensitive check here -- GRADESCOPE_NAME has already been
+    lowercased, and here we lowercase the user specified test users in config.toml 
 """
 try:
-    if GRADESCOPE_NAME in CONFIG['misc']['TEST_USERS']:
+    if GRADESCOPE_NAME in { u.lower() for u in CONFIG['gradescope']['TEST_USERS'] }:
         EXIT_SUCCESS("Test user - passing submission validation by default.")
 except KeyError:
     pass
+
 
 """
     test the max submission number
@@ -119,20 +195,20 @@ except KeyError:
 if CURR_SUB_NUM > MAX_SUB_NUM:
     EXIT_FAIL(f"ERROR: Max submissions exceeded for this assignment.")
 
-"""
-    test set of required files
-"""
-REQUIRED_FILES  = set(TESTSET_TOML.get('required_files', []))
-SUBMITTED_FILES = set(os.listdir(SUBMISSION_DIR))
-MISSING_FILES   = REQUIRED_FILES - SUBMITTED_FILES 
-if len(MISSING_FILES) > 0:
-    EXIT_FAIL(f"ERROR: Required files missing: {MISSING_FILES}")
 
-"""
-    done if we're not managing tokens
-"""
-if not TOKEN_CONFIG['MANAGE_TOKENS']:
-    EXIT_SUCCESS("not managing tokens - passed by default")
+# If for this assignment we specified in testset.toml not to manage tokens, exit early 
+# Example for gerp medium large
+if 'manage_tokens' in TESTSET_TOML and not TESTSET_TOML['manage_tokens']:
+    EXIT_SUCCESS(f"not managing tokens for {ASSIGN_NAME} - passed by default")
+
+# If manage_tokens was not specified for this assignment but was turned off course wide,
+# exit early (not used for 15 but for compatability) -- note we assume MANAGE_TOKENS is
+# always provided in config.toml 
+if 'manage_tokens' not in TESTSET_TOML and not TOKEN_CONFIG['MANAGE_TOKENS']:
+    EXIT_SUCCESS("not managing tokens for course - passed by default")
+
+# Otherwise, at this point manage_tokens is either set in testset.toml as true or it
+# was enabled course wide -- so we move forward to token check
 
 """
     establish token constants
@@ -150,6 +226,10 @@ TWO_TOKEN_DUE_TIME = DUE_TIME + TOKEN_TIME + TOKEN_TIME
         if they are an 'excepted' user then use that value, otherwise choose course default
 """
 try:
+    # chami: convert user specifications in config.toml for token exceptions to enable case insensitive 
+    # search by converting all specified emails to lowercase -- this is done here because 'exceptions'
+    # may not be in token section of config.toml
+    TOKEN_CONFIG['EXCEPTIONS'] = make_dict_case_insensitive(TOKEN_CONFIG['EXCEPTIONS'])
     OPENING_BALANCE = TOKEN_CONFIG['EXCEPTIONS'][GRADESCOPE_NAME]
 except KeyError:
     OPENING_BALANCE = TOKEN_CONFIG['STARTING_TOKENS']
@@ -160,7 +240,7 @@ except KeyError:
         the db session is specific to the assignment and the student. 
         assignment and student will be added to the db if needed. 
 """
-db = DB(ASSIGN_NAME, GRADESCOPE_NAME, OPENING_BALANCE, SECRETS)
+db = DB(ASSIGN_NAME, GRADESCOPE_NAME, OPENING_BALANCE, SECRETS, CONFIG)
 TOKENS_LEFT, ASSIGN_TOKENS_USED = db.get_tokens_left_and_assign_usage()
 
 """

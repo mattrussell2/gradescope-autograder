@@ -65,14 +65,14 @@ FILE_GROUP = "ta15"
 #                       note: for now MUST be 2, so tweak TOKEN_TIME instead
 #
 # EXCEPTIONS      -> dictionary of the form "TOKEN USER" = MAX_TOKENS
-#                       note: must EXACTLY match the student's gradescope name
+#                       note: must EXACTLY match the student's gradescope email
 MANAGE_TOKENS   = true
 GRACE_TIME      = 15   # 15 minutes
 TOKEN_TIME      = 1440 # 24 hours
 STARTING_TOKENS = 5
 MAX_PER_ASSIGN  = 2    # NOTE: 2 is the only valid value atm
 [tokens.EXCEPTIONS]
-"Matthew P. Russell" = 1
+"mrussell@cs.tufts.edu" = 1
 
 [misc]
 #
@@ -83,7 +83,7 @@ MAX_PER_ASSIGN  = 2    # NOTE: 2 is the only valid value atm
 #
 # TEST_USERS -> gradescope users who are exempt from submission validation
 SUBMISSIONS_PER_ASSIGN = 5
-#TEST_USERS             = ["Matthew P. Russell"]
+#TEST_USERS             = ["mrussell@cs.tufts.edu"]
 
 
 [style]

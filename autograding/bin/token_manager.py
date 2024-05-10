@@ -20,14 +20,16 @@ import sys
 sys.path.append(os.path.dirname(__file__))
 from autograde import COLORIZE, INFORM, GREEN, MAGENTA, CYAN, BLUE
 
+paramiko.util.log_to_file('paramiko.log')
+
 def replaceNonAlphaNum(s, c='_'):
     return re.sub('[^0-9a-zA-Z]+', c, s)
 
 class DB: 
-    def __init__(self, ASSIGN, STUDENT, OPENING_BALANCE, SECRETS):
+    def __init__(self, ASSIGN, STUDENT, OPENING_BALANCE, SECRETS, CONFIG):
 
         self.ASSIGN          = replaceNonAlphaNum(ASSIGN).lower()
-        self.STUDENT         = replaceNonAlphaNum(STUDENT).lower()
+        self.STUDENT         = replaceNonAlphaNum(STUDENT)
         self.OPENING_BALANCE = OPENING_BALANCE
 
         self.TOKENS_HOST     = SECRETS['TOKENS_HOST']
@@ -37,7 +39,7 @@ class DB:
         self.MYSQL_PASS      = SECRETS['MYSQL_PASS']
         self.MYSQL_DBNAME    = SECRETS['MYSQL_DBNAME']
         self.MYSQL_LOC       = SECRETS['MYSQL_LOC']
-        self.TABLE           = replaceNonAlphaNum(SECRETS['COURSE_SLUG']).lower()
+        self.TABLE           = replaceNonAlphaNum(f"{SECRETS['COURSE_SLUG']}_{CONFIG['halligan']['TERM']}")
 
         self.COMMANDS = {
             'create_table'   : f"CREATE TABLE {self.TABLE}(pk VARCHAR(255) PRIMARY KEY);",
@@ -61,9 +63,32 @@ class DB:
         self.add_student_if_needed()
         
     def create_db_conn(self):
-        self.ssh = paramiko.SSHClient()
-        self.ssh.set_missing_host_key_policy(paramiko.AutoAddPolicy())
-        self.ssh.connect(hostname = self.TOKENS_HOST, username = self.TOKENS_UTLN, password = self.TOKENS_PASS)
+        """
+        Connect to the server that hosts the db.
+        Occasionally the connection fails (homework server issue); try the individual vms in that case.
+        """
+        self.ssh = None
+
+        servers_to_try = [self.TOKENS_HOST] + [f"vm-hw0{i}.cs.tufts.edu" for i in range(10)]        
+
+        for server in servers_to_try:
+            try:
+                ssh_client = paramiko.SSHClient()
+                ssh_client.set_missing_host_key_policy(paramiko.AutoAddPolicy())
+                ssh_client.connect(hostname=server, username=self.TOKENS_UTLN, password=self.TOKENS_PASS, look_for_keys=False)
+                
+                self.ssh = ssh_client
+                return  # Exit once connected successfully
+            except Exception as e:
+                # Wait for an increasing amount of time before next retry.
+                time.sleep(2 ** servers_to_try.index(server))
+
+        # If we've exhausted all servers and still failed to connect.
+        if self.ssh is None:
+            print("Error! Please email the following to mrussell@cs.tufts.edu")            
+            with open('paramiko.log', 'r') as f:
+                print(f.readlines())
+            raise Exception("halligan server token connection error; token acct password may need to be reset")
 
     def register_sql_login(self):
         register_cmd = f"mysql_config_editor set "    + \
@@ -81,7 +106,7 @@ class DB:
     def create_table_if_needed(self):
         stdin, stdout, stderr = self.run_db_cmd(self.COMMANDS['describe_table'])
         if self.ERRORS['no_table'] in str(stderr.read()):
-            print("Course doesn't yet exist in db. Creating table named {self.TABLE}...}")
+            print(f"Course doesn't yet exist in db. Creating table named {self.TABLE}...")
             _, stdout, stderr = self.run_db_cmd(self.COMMANDS['create_table'])
 
     def get_db_colnames(self):

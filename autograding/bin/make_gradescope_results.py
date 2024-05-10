@@ -83,7 +83,7 @@ style_checker = style_check.StyleChecker()
 
 def get_total_score():
     # Modified to include style score, handles when style is not graded (get_style_score just returns 0) - slamel01
-    return sum([x['max_score'] * x['success'] for x in TEST_SUMMARIES]) + get_valgrind_score() + style_checker.style_score
+    return sum([x['max_score'] * (x['success'] if x['success'] is not None else 0) for x in TEST_SUMMARIES]) + get_valgrind_score() + style_checker.style_score
 
 
 def get_max_score():
@@ -252,9 +252,13 @@ def make_results():
 
     for test in TEST_SUMMARIES:
         RESULTS["tests"].append(
-            make_test_result(name       = test["description"],
+            # Chami: for a similar to reason why I added the name to the autograder 
+            # results table, I'm adding the testname here as well -- it's useful
+            # for infra folks to track down associated files for failing
+            # tests which are keyed by testname 
+            make_test_result(name       = f"{test['testname']}: {test['description']}",
                              visibility = test['visibility'],
-                             score      = test['max_score'] * test['success'],
+                             score      = test['max_score'] * (test['success'] if test['success'] is not None else 0),
                              max_score  = test['max_score'],
                              output     = make_test_output(test)))
     

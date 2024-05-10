@@ -508,6 +508,7 @@ These are the configuration options for a test. You may set any of these in `[co
 | `max_submission_exceptions` | {} | `[common]` only setting - dictionary of the form `{ "Student Gradescope Name" = num_max_submissions`, ...}`. Note that `toml` requires the dict to be one-line. Alternatively, you can specify `[common.max_submission_exceptions]`, with the relevant key-valud pairs underneath.  |
 | `required_files` | [] | `[common]` only setting - List of files required for an assignment. Autograder will quit prior to running if any files are missing, and the submission will not be used in the count for the `max_submission` value for the student | 
 | `style_check` | `false` | `[common]` only setting - Automatically perform style checking. See and update `bin/style_check.py` for details on this. | 
+| `manage_tokens` | `config.toml 'MANAGE_TOKENS' value` | `[common]` only setting - whether or not to manage tokens for this specific assignment. Defaults to managing them if specified as such in the coursewide `config.toml` file, but this is a convenient per-assignment override. |
  
 
 ## Gradescope Results
@@ -525,4 +526,5 @@ Note that if the `max_score` for a test is `0`, then Gradescope assumes that the
 That should be enough to get you up and running! Please feel free to contact me with any questions you have, and/or any bugs, feature requests, etc. you find. Thanks!
 
 # Changelog
+[1.0.1] - Sync updates from 15 2024s
 [1.0.0] - Port over from old `gradescope-autograding` setup.
