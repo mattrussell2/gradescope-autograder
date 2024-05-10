@@ -86,11 +86,11 @@ TOKEN_TIME      = 1440   # (in minutes)
 STARTING_TOKENS = 5      # max per-student: modifiable anytime
 MAX_PER_ASSIGN  = 2      # (this must be 2 for now)
 [tokens.EXCEPTIONS]      
-"Matthew P. Russell" = 1 # adjust student max: EXACT name on gradescope
+"mrussell@cs.tufts.edu" = 1 # adjust student max: EXACT email on gradescope
 
 [misc]
 SUBMISSIONS_PER_ASSIGN = 5                      # overridable in testset.toml
-TEST_USERS             = ["Matthew P. Russell"] # EXACT gs name
+TEST_USERS             = ["mrussell@cs.tufts.edu"] # EXACT gs email
 
 [style]
 NON_CODE_STYLE_CHECKSET = ['README', '.h', '.cpp']
