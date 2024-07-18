@@ -122,7 +122,7 @@ Here are the variables you'll need:
 * Executor: `shell`
 
 ## Update the runner's default directory
-By default, the gitlab runner saves data in the home directory of the user (under `~/.gitlab-runner/builds`). To save space in your home directory, the `/data/` directory on the halligan server is a good directory to use as well for builds. This directory is deleted every 30 days, but the gitlab-runner reproduces the necessary folders on its own without issue. In order to update this, you can open the file: `~/.gitlab-runner/config.toml`, and, under `[[runners]]`, add (or update):
+By default, the gitlab runner saves data in the home directory of the user (under `~/.gitlab-runner/builds`). If you are using the pipeline to auto-build docker containers for gradescope, this will not work out-of-the-box because the scripts used by the pipeline to make the builds rely on podman, and podman does not work by default on nfs mounted drives. Also, the builds directory can take up quite a bit of space in your home directory. The `/data/` directory on the halligan server is a good directory to use and will avoid both of these issues. This directory is deleted every 30 days, but the gitlab-runner reproduces the necessary folders on its own without issue. In order to update this, you can open the file: `~/.gitlab-runner/config.toml`, and, under `[[runners]]`, add (or update):
 
 ```
 builds_dir = "/data/your_utln/builds/course"
