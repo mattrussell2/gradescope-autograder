@@ -122,7 +122,7 @@ Here are the variables you'll need:
 * Executor: `shell`
 
 ## Update the runner's default directory
-By default, the gitlab runner saves data in the home directory of the user (under `~/.gitlab-runner/builds`). In general this is okay, but, particularly if you're working with your own account, making use of the `/data/` directory on the halligan server works well. This directory is deleted every 30 days, but the gitlab-runner reproduces the necessary folders on its own without issue. In order to update this, you can open the file: `~/.gitlab-runner/config.toml`, and, under `[[runners]]`, add (or update):
+By default, the gitlab runner saves data in the home directory of the user (under `~/.gitlab-runner/builds`). This will *not* work because podman cannot use nfs mounted drives. Therefore, the `/data/` directory on the halligan server works well. This directory is deleted every 30 days, but the gitlab-runner reproduces the necessary folders on its own without issue. In order to update this, you can open the file: `~/.gitlab-runner/config.toml`, and, under `[[runners]]`, add (or update):
 
 ```
 builds_dir = "/data/your_utln/builds/course"
