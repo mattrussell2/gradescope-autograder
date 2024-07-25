@@ -121,7 +121,7 @@ deploy autograding container:
     # NOTE: this file is deleted by a PAM module when anyone ssh-s into the container
     # NOTE: if anyone accesses the container directly, then they can access the info; see !!!CAUTION!!! above. 
     # 
-    - echo "TOKENS_PASS=\"\"\"${TOKENS_PASS}\"\"\""  > .secrets
+    - echo "TOKENS_PKEY=\"\"\"${TOKENS_PKEY}\"\"\""  > .secrets
     - echo "TOKENS_UTLN=\"${TOKENS_UTLN}\""         >> .secrets
     - echo "TOKENS_HOST=\"${TOKENS_HOST}\""         >> .secrets
     - echo "COURSE_SLUG=\"${CI_PROJECT_NAME}\""     >> .secrets

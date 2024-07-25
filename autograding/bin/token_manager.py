@@ -34,7 +34,7 @@ class DB:
 
         self.TOKENS_HOST     = SECRETS['TOKENS_HOST']
         self.TOKENS_UTLN     = SECRETS['TOKENS_UTLN']
-        self.TOKENS_PASS     = SECRETS['TOKENS_PASS']
+        self.TOKENS_PKEY     = SECRETS['TOKENS_PKEY']
         self.MYSQL_USER      = SECRETS['MYSQL_USER']
         self.MYSQL_PASS      = SECRETS['MYSQL_PASS']
         self.MYSQL_DBNAME    = SECRETS['MYSQL_DBNAME']
@@ -69,13 +69,16 @@ class DB:
         """
         self.ssh = None
 
+        pkey_file = io.StringIO(self.TOKENS_PKEY)
+        pkey_obj  = paramiko.RSAKey.from_private_key(pkey_file)
+
         servers_to_try = [self.TOKENS_HOST] + [f"vm-hw0{i}.cs.tufts.edu" for i in range(10)]        
 
         for server in servers_to_try:
             try:
                 ssh_client = paramiko.SSHClient()
                 ssh_client.set_missing_host_key_policy(paramiko.AutoAddPolicy())
-                ssh_client.connect(hostname=server, username=self.TOKENS_UTLN, password=self.TOKENS_PASS, look_for_keys=False)
+                ssh_client.connect(hostname=server, username=self.TOKENS_UTLN, pkey=pkey_obj)
                 
                 self.ssh = ssh_client
                 return  # Exit once connected successfully
