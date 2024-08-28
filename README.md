@@ -108,16 +108,16 @@ BOOLEAN_STYLE_WEIGHT    = 0.5  # x == true, y == false
 ## Preliminaries
 You will need a `gitlab-runner` in order for the CI/CD pipeline to run when you `git push`.  Fortunately, the EECS staff have setup the requisite infrastucture such that getting this ready is straightforward. Note that you may want to use a course-specific user account to set this runner up, since the CI/CD script will otherwise have access to your personal files. `staff@eecs.tufts.edu` are excellent about creating such accounts promptly; things to tell them: 1) the account will need to be in the group listed in `config.toml` [usually, `taCOURSENUM`, e.g. `ta15`], 2) this group will have to be available on the `podman-vm01` server. 
 
-Now, open a shell.
+Now, open a shell, and run the following commands. 
 ```
 ssh [or the course-specific utln]@linux.cs.tufts.edu
 ssh vm-podman01
-/usr/bin/python3 -m pip install toml-cli toml --user # this line must be exact
+/usr/bin/python3 -m pip install toml-cli toml --user
 gitlab-runner register
 ```
 Here are the variables you'll need:
 * GitLab instance URL: https://gitlab.cs.tufts.edu
-* Registration Token: In the `gitlab.cs.tufts.edu` web interface, click the settings cog (lower-left side of the screen), and then select CI/CD. Expand the `runners` section. Copy the token.
+* Registration Token: In the `gitlab.cs.tufts.edu` web interface, navigate to your course repo, click the settings cog (lower-left side of the screen), and then select CI/CD. Expand the `runners` section. Copy the token.
 * Description, Tags, and Maintenance Note: [optional] whatever you'd like
 * Executor: `shell`
 
