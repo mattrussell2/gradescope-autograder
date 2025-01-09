@@ -23,12 +23,12 @@ RUN apt-get install -y software-properties-common \
                     libc6-dbg \
                     postgresql-client                   
 
-# install clang++ 16
-RUN wget https://apt.llvm.org/llvm.sh && chmod +x llvm.sh && yes | ./llvm.sh 16
-RUN ln -s /usr/bin/clang++-16 /usr/bin/clang++
+# install clang++ 18
+RUN wget https://apt.llvm.org/llvm.sh && chmod +x llvm.sh && yes | ./llvm.sh 18
+RUN ln -s /usr/bin/clang++-18 /usr/bin/clang++
 
-RUN wget https://sourceware.org/pub/valgrind/valgrind-3.21.0.tar.bz2 && tar xvf valgrind-3.21.0.tar.bz2
-RUN cd valgrind-3.21.0 && ./configure && make && make install
+RUN wget https://sourceware.org/pub/valgrind/valgrind-3.22.0.tar.bz2 && tar xvf valgrind-3.22.0.tar.bz2
+RUN cd valgrind-3.22.0 && ./configure && make && make install
 
 # install python packages
 RUN python3 -m pip install --upgrade pip
