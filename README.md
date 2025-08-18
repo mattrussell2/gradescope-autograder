@@ -13,7 +13,7 @@ This is all of the architecture used here. Aside from setting up the gitlab-runn
 
 
 ## Gradescope Autograding Pipeline Visualization 
-What happens when a student submits code to Gradscope. This pipeline is automated; you will only update assignment autograding code within the framework detailed below. [below](#autograding-framework).
+What happens when a student submits code to Gradscope. This pipeline is automated; you will only update assignment autograding code within the framework detailed [below](#autograding-framework).
 <div align="center">
     <img src="https://gitlab.cs.tufts.edu/mrussell/gradescope-autograder/-/raw/main/_images/autograding_flowchart.png" width="100%" height="100%">
 </div>
@@ -176,17 +176,17 @@ The 'magic' here all happens by way of the `.gitlab-ci.yml` file, which gitlab w
 To make this all work, the `.gitlab-ci.yml` file also relies on some gitlab environment variables that are set at a course-repos group level, and which are automatically accessible by every course under that group. **DO NOT MODIFY THESE GROUP-LEVEL VARIABLES! Furthemore, these variables contain sensitive information intended to be visible only to trusted members of the Tufts CS community, so please be careful to whom you give privileged access to your course repository!**
 
 ## Gitlab-runner jobs
-For reference, again, the three jobs which will run automatically (if required) on `git push` are
+The jobs which will run automatically (if required) on `git push` are
 
-### Updating course files and (file permissions!) on the eecs server
+### 1. Updating course files and (file permissions!) on the eecs server
 This is done with `rsync`. Remember that the runner runs *on the eecs servers*, so it can do all of this locally. Whichever account created the runner will own the files. They will be chmodded and chgrpd according to `config.toml`. The scripts `autograding/bin/restore-permissions` and `autograding/bin/reveal-current-assignments` will be run to rework the permissions of all the files in the repo, according to the release dates in the file `public_html/assignments.toml`.
 
 Note: although the scripts to set permissions occur at every pipeline run, they will not by default run at the `correct' times to release student files. To fix this, at the start of the semester you can implement a pipeline schedule in gitlab so that the pipeline will run just after the release time you specify. The default pipeline will work fine, just change the time to your liking. See [here](https://docs.gitlab.com/ci/pipelines/schedules/#add-a-pipeline-schedule) for details.
 
-### Building a gradescope autograding docker container
+### 2. Building a gradescope autograding docker container
 Gradescope relies on docker containers to do the autograding for your course. One job that the runner will run is to build the container with a clone of your course repo inside of it; it will then upload that container to a private dockerhub repository at the location: **`tuftscs/gradescope-autograder:YOUR_COURSE_SLUG`**. This will happen automatically, so after it uploads, you simply need to enter this address in gradescope under the manual docker configuration for an autograding assignment. It will work immediately after the `CI/CD` job finishes. Note that the names in gradescope for your autograding assignments must match their names in the `assignments/` folder, with the exception that space characters on gradecsope are converted to underscores by the autograder. 
 
-### Building reference output for a given assignment
+### 3. Building reference output for a given assignment
 If you update the solution code or autograder code for a given assignment, the reference output for that assignment will be rebuilt. This works by the runner loading the solution code into a local copy of the autograding docker container, running the solution as the submission, and copying/pushing the resulting output files back to the repo. For relatively new assignments, often it is useful to debug. Yet, pushing these debugging files to/from the repo is a bit excessive. Therefore, these files will be automatically copied to `/g/COURSE_NUM/TERM/grading/${ASSIGN_NAME}/results/`. `/grading/` is a legacy folder name which is relatively arbitrary here - feel free to update it in the `.gitlab-ci.yml` file - the relevant portion is `GRADER_DEV_FOLDER: "grading"`; simply update `grading` to be that path from your `/g/COURSENUM/TERM/` folder on the server which TAs can access. This folder and subfolders/files will be chmodded 770. For details on the debug output for the autograder, see the framework below. Note! for changes to be discovered properly, you will likely want to set `git config pull.rebase true`; otherwise, if you have commited changes and need to pull before pushing, the uploaded merge won't correctly identify the changed files. 
 
 If you'd like to read more of the details, see that file - it is explained in detail. Tweak it to your heart's content!
