@@ -74,7 +74,7 @@ ASSIGN_ROOT      = "assignments"
 ASSIGN_AG_DIR    = "autograder"   # e.g. assignments/my_assign/autograder
 ASSIGN_SOL_DIR   = "solution"     # e.g. assignments/my_assign/solution
 
-[halligan]
+[eecs]
 COURSE_NUM = 15
 TERM       = "2023s"     # CI/CD puts course files to /g/$COURSE_NUM/$TERM
 FILE_GROUP = "ta15"      # CI/CD chgrps course files as $FILE_GROUP
@@ -122,7 +122,7 @@ Here are the variables you'll need:
 * Executor: `shell`
 
 ## Update the runner's default directory
-By default, the gitlab runner saves data in the home directory of the user (under `~/.gitlab-runner/builds`). If you are using the pipeline to auto-build docker containers for gradescope, this will not work out-of-the-box because the scripts used by the pipeline to make the builds rely on podman, and podman does not work by default on nfs mounted drives. Also, the builds directory can take up quite a bit of space in your home directory. The `/data/` directory on the halligan server is a good directory to use and will avoid both of these issues. This directory is deleted every 30 days, but the gitlab-runner reproduces the necessary folders on its own without issue. In order to update this, you can open the file: `~/.gitlab-runner/config.toml`, and, under `[[runners]]`, add (or update):
+By default, the gitlab runner saves data in the home directory of the user (under `~/.gitlab-runner/builds`). If you are using the pipeline to auto-build docker containers for gradescope, this will not work out-of-the-box because the scripts used by the pipeline to make the builds rely on podman, and podman does not work by default on nfs mounted drives. Also, the builds directory can take up quite a bit of space in your home directory. The `/data/` directory on the eecs server is a good directory to use and will avoid both of these issues. This directory is deleted every 30 days, but the gitlab-runner reproduces the necessary folders on its own without issue. In order to update this, you can open the file: `~/.gitlab-runner/config.toml`, and, under `[[runners]]`, add (or update):
 
 ```
 builds_dir = "/data/your_utln/builds/course"
@@ -131,11 +131,11 @@ cache_dir = "/data/your_utln/builds/cache"
 If you ever want to see 'behind-the-scenes' of the gitlab-runner's working directory, etc. you can do so through the builds_dir here. 
 
 ## Configure podman
-Recall that our gitlab-runner will be used to automatically build Docker containers for autograding. Given that we are on `RHEL`, which does not have native `Docker` support, we will use `podman` instead. There are two wrinkles with `podman` on our `RHEL` instance: you can't use `podman` on an nfs mount, and the permissions vis-a-vis `UID/GID` issues are tricky. Fortunately there are solutions to both of these problems. Copy the following text and put it in a file on the halligan server located at `~/.config/containers/storage.conf` [make the directories if needed]. Make sure to update your utln for the `graphroot` variable.
+Recall that our gitlab-runner will be used to automatically build Docker containers for autograding. Given that we are on `RHEL`, which does not have native `Docker` support, we will use `podman` instead. There are two wrinkles with `podman` on our `RHEL` instance: you can't use `podman` on an nfs mount, and the permissions vis-a-vis `UID/GID` issues are tricky. Fortunately there are solutions to both of these problems. Copy the following text and put it in a file on the eecs server located at `~/.config/containers/storage.conf` [make the directories if needed]. Make sure to update your utln for the `graphroot` variable.
 ```toml
 [storage]
 driver = "overlay"
-graphroot = "/var/tmp/YOUR_HALLIGAN_UTLN_HERE/containers/storage"
+graphroot = "/var/tmp/YOUR_eecs_UTLN_HERE/containers/storage"
 
 [storage.options.overlay]
 ignore_chown_errors = "true"
@@ -160,7 +160,7 @@ You can exit out of the terminal, and due to the system configuration this runne
 # Notes on podman
 * You can expect that the disk usage on your system will be directly proportional to the number of available processes you provide to your runner, as each separate process has its own clone of the repo. 
 * `podman` containers **cannot** be mounted on nfs drives (e.g. your home directory); this is one of the reasons the `storage.conf` file is necessary above. 
-* Despite that your containers will be built in `/var/tmp/YOUR_HALLIGAN_UTLN_HERE/containers/storage`, there is still a upper-limit to the storage space. I ran out at ~20gb. A few handy `podman` commands in regard to this
+* Despite that your containers will be built in `/var/tmp/YOUR_eecs_UTLN_HERE/containers/storage`, there is still a upper-limit to the storage space. I ran out at ~20gb. A few handy `podman` commands in regard to this
     * `podman system df`          -> shows your podman disk usage
     * `podman system prune --all` -> frees unused space from podman
                                   -> the output re: space freed can be misleading (look super large) if your containers share layers. 
@@ -178,8 +178,10 @@ To make this all work, the `.gitlab-ci.yml` file also relies on some gitlab envi
 ## Gitlab-runner jobs
 For reference, again, the three jobs which will run automatically (if required) on `git push` are
 
-### Updating course files and (file permissions!) on the halligan server
-This is done with `rsync`. Remember that the runner runs *on the halligan servers*, so it can do all of this locally. Whichever account created the runner will own the files. They will be chmodded and chgrpd according to `config.toml`. The scripts `autograding/bin/restore-permissions` and `autograding/bin/reveal-current-assignments` will be run to rework the permissions of all the files in the repo, according to the release dates in the file `public_html/assignments.toml`.
+### Updating course files and (file permissions!) on the eecs server
+This is done with `rsync`. Remember that the runner runs *on the eecs servers*, so it can do all of this locally. Whichever account created the runner will own the files. They will be chmodded and chgrpd according to `config.toml`. The scripts `autograding/bin/restore-permissions` and `autograding/bin/reveal-current-assignments` will be run to rework the permissions of all the files in the repo, according to the release dates in the file `public_html/assignments.toml`.
+
+Note: although the scripts to set permissions occur at every pipeline run, they will not by default run at the `correct' times to release student files. To fix this, at the start of the semester you can implement a pipeline schedule in gitlab so that the pipeline will run just after the release time you specify. The default pipeline will work fine, just change the time to your liking. See [here](https://docs.gitlab.com/ci/pipelines/schedules/#add-a-pipeline-schedule) for details.
 
 ### Building a gradescope autograding docker container
 Gradescope relies on docker containers to do the autograding for your course. One job that the runner will run is to build the container with a clone of your course repo inside of it; it will then upload that container to a private dockerhub repository at the location: **`tuftscs/gradescope-autograder:YOUR_COURSE_SLUG`**. This will happen automatically, so after it uploads, you simply need to enter this address in gradescope under the manual docker configuration for an autograding assignment. It will work immediately after the `CI/CD` job finishes. Note that the names in gradescope for your autograding assignments must match their names in the `assignments/` folder, with the exception that space characters on gradecsope are converted to underscores by the autograder. 
@@ -200,7 +202,7 @@ See below for a table of problems and solutions for debugging pipeline related i
 | "There has been a timeout failure or the job got stuck. Check your timeout limits or try again" | EECS server has been reset so we need to restart the runner. | login to `RUNNER_ACCT@vm-podman01` (see [here](#Preliminaries) for an example) and run the command `gitlab-runner run &`, then exit and via the web interface restart the job that failed. |
 
 # Tokens
-Tokens are handled completely behind-the-scenes by the container, which communicates with a `mysql` database hosted on the Tufts EECS servers during non-login sessions into the container [handled by `PAM`] (NOTE that this means that no token information is used when TA's ssh into the container; further,any token-related information is removed from the container during a login session via `PAM`). This communication occurs via a custom user account created by EECS IT staff. Variables which hold the account's information (username, private key) as well as the location of the tokens server and login information are held at `gitlab.cs.tufts.edu/course-repos`. Your course's slug (e.g. `gitlab.cs.tufts.edu/course-repos/cs15/{COURSE_SLUG}`) and the current semester (e.g. `2024s`) are used together as the database table automatically. In addition to automatic creation of the table, students and assignments are added automatically. The table holds the number of tokens currently used for a given student for each assignment. The information within the table is then used by the autograder (see `autograding/bin/token_manager.py` and `autograding/bin/validate_submission.py`) to validate a student's submission vis-a-vis tokens. You can change the way submissions are validated (e.g. max number of tokens per-student) via the `tokens` section of the `config.toml` file. You can do this for an individual student or for the entire roster. At this time the maximum number of supported tokens is 2, however the code could certaily be tweaked to allow for `N` tokens. If you *need* to manually access the database, you can do so by ssh'ing to the halligan servers under the account information specified above, and simply run `mysql --login-path=eecs_token_db`. Tread lightly as all token info is here for all courses! [...but don't worry too much as the EECS staff make daily backups].
+Tokens are handled completely behind-the-scenes by the container, which communicates with a `mysql` database hosted on the Tufts EECS servers during non-login sessions into the container [handled by `PAM`] (NOTE that this means that no token information is used when TA's ssh into the container; further,any token-related information is removed from the container during a login session via `PAM`). This communication occurs via a custom user account created by EECS IT staff. Variables which hold the account's information (username, private key) as well as the location of the tokens server and login information are held at `gitlab.cs.tufts.edu/course-repos`. Your course's slug (e.g. `gitlab.cs.tufts.edu/course-repos/cs15/{COURSE_SLUG}`) and the current semester (e.g. `2024s`) are used together as the database table automatically. In addition to automatic creation of the table, students and assignments are added automatically. The table holds the number of tokens currently used for a given student for each assignment. The information within the table is then used by the autograder (see `autograding/bin/token_manager.py` and `autograding/bin/validate_submission.py`) to validate a student's submission vis-a-vis tokens. You can change the way submissions are validated (e.g. max number of tokens per-student) via the `tokens` section of the `config.toml` file. You can do this for an individual student or for the entire roster. At this time the maximum number of supported tokens is 2, however the code could certaily be tweaked to allow for `N` tokens. If you *need* to manually access the database, you can do so by ssh'ing to the eecs servers under the account information specified above, and simply run `mysql --login-path=eecs_token_db`. Tread lightly as all token info is here for all courses! [...but don't worry too much as the EECS staff make daily backups].
 
 ## Conclusion
 Continue to the next section to learn about the autograding framework, and for a walkthrough to setup an assignment. 
