@@ -887,7 +887,7 @@ def chmod_dir(d, permissions):
         subprocess.run([f"chmod -R {permissions} {d}"], shell=True)
 
 
-def build_testing_directories():
+def build_testing_directories(OPTS):
     """
         Purpose:
             Builds directories required to run tests.
@@ -896,9 +896,11 @@ def build_testing_directories():
             there should be no need to change them.
             don't remove results_dir directly because gradescope puts the 'stdout' file there
     """
+    no_nuke = OPTS.get('dont_nuke', [])
+    
     if os.path.exists(RESULTS_DIR):
         for fldr in BUILD_DIR, LOG_DIR, OUTPUT_DIR:
-            if os.path.exists(fldr):
+            if os.path.exists(fldr) and fldr not in no_nuke:
                 shutil.rmtree(fldr)
 
     for fldr in [RESULTS_DIR, BUILD_DIR, LOG_DIR, OUTPUT_DIR]:
@@ -1083,7 +1085,8 @@ def parse_args(argv):
         'd' : "one or more diffs to show: stdout, stderr, and ofile",
         't' : "one or more tests to run",
         'l' : "show output in one column",
-        'n' : "runs tests without running as student user. Used to build container on local system"
+        'n' : "runs tests without running as student user. Used to build container on local system",
+        'k' : "don't nuke these autograder directories before starting. Used to preserve dirs if needed given custom file configs."
     }
     ap = argparse.ArgumentParser(formatter_class=CustomFormatter)
     ap.add_argument('-s', '--status', action='store_true', help=HELP['s'])
@@ -1095,6 +1098,7 @@ def parse_args(argv):
     ap.add_argument('-f', '--filter', nargs='*', metavar="filteropt", type=str, help=HELP['f'])
     ap.add_argument('-t', '--tests', nargs='*', metavar="testXX", type=str, help=HELP['t'])
     ap.add_argument('-n', '--no-user', action='store_true', help=HELP['n'])
+    ap.add_argument('-k', '--dont-nuke', nargs='*', metavar="dirname", type=str, help=HELP['k'])
 
     args = vars(ap.parse_args(argv))
     if args['jobs'] == -1:
@@ -1193,7 +1197,7 @@ def run_autograder(argv):
     TESTS = filter_tests(TESTS, OPTS)
 
     try:
-        build_testing_directories()
+        build_testing_directories(OPTS)
         compile_execs(TOML, TESTS, OPTS)
         TESTS = run_tests(TESTS, OPTS)
         print("🟢 Tests ran successfully\n")
