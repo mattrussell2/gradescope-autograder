@@ -1,3 +1,6 @@
+<img width="191" height="20" alt="image" src="https://github.com/user-attachments/assets/43af871c-804d-46ca-9cc2-8f77b06d6045" />
+
+
 # Intro 
 Although this repo is named 'gradescope-autograder', it is really two things:
 1) A CI/CD pipeline that smoothly maintains the course and supports the autograder. 
