@@ -1,4 +1,4 @@
-<img width="191" height="20" alt="image" src="https://github.com/user-attachments/assets/43af871c-804d-46ca-9cc2-8f77b06d6045" />
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.19599294.svg)](https://doi.org/10.5281/zenodo.19599294)
 
 
 # Intro 
